@@ -18,11 +18,12 @@ this.legend_recruitment_druid_encounter <- this.inherit("scripts/encounters/enco
             List = [],
 			Characters = [],
 			Options = [
-
             {
                 Text="Let us pay our respects."
-                    return "recruit";
-
+                function getResult( _event )
+				{
+					return "recruit";
+				}
             }
 			{
 				Text = "A frivolous whim, nothing more.",
@@ -58,8 +59,7 @@ this.legend_recruitment_druid_encounter <- this.inherit("scripts/encounters/enco
 					}
 
 				},
-			],
-		});
+			]});
             function start(_event) {
 				local roster = ::World.getTemporaryRoster();
 				_event.m.Druid = roster.create("scripts/entity/tactical/player");
@@ -72,18 +72,18 @@ this.legend_recruitment_druid_encounter <- this.inherit("scripts/encounters/enco
 		local currentTile = this.World.State.getPlayer().getTile();
 		if (currentTile.Type != this.Const.World.TerrainType.Forest | currentTile.Type != this.Const.World.TerrainType.SnowyForest && currentTile.Type != this.Const.World.TerrainType.LeaveForest && currentTile.Type != this.Const.World.TerrainType.AutumnForest)
 		{
-			return;
+			return false;
 		}
 		if (::World.getPlayerRoster().getSize() >= ::World.Assets.getBrothersMax())
 			return false;
 
 		local totalbrothers = 0;
 		local brotherlevels = 0;
-		foreach (bro in ::World.getPlayerRoster().getAll()) {//vala druid check
-		// 	if (bro.getBackground().getID() == "background.legend_vala")
-		// 		return false;
-		// 	if (bro.getBackground().getID() == "background.legend_commander_vala")
-		// 		return false;
+		foreach (bro in ::World.getPlayerRoster().getAll()) {
+			if (bro.getBackground().getID() == "background.legend_druid")
+				return false;
+			if (bro.getBackground().getID() == "background.legend_commander_druid")
+				return false;
 			totalbrothers += 1;
 			brotherlevels += bro.getLevel();
 		}

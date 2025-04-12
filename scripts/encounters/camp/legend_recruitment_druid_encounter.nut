@@ -2,6 +2,7 @@ this.legend_recruitment_druid_encounter <- this.inherit("scripts/encounters/enco
     m = {
 		Druid = null
     },
+
     function create() {
         this.createScreens();
         this.m.Type = "encounter.legend_recruitment_druid_encounter";
@@ -71,27 +72,31 @@ this.legend_recruitment_druid_encounter <- this.inherit("scripts/encounters/enco
             }
         });
     }
+
     function isValid(_settlement) {
-		local currentTile = this.World.State.getPlayer().getTile();
-		if (currentTile.Type != this.Const.World.TerrainType.Forest && currentTile.Type != this.Const.World.TerrainType.SnowyForest && currentTile.Type != this.Const.World.TerrainType.LeaveForest && currentTile.Type != this.Const.World.TerrainType.AutumnForest)
-		{
+		local currentTile = ::World.State.getPlayer().getTile();
+		if (currentTile.Type != ::Const.World.TerrainType.Forest
+			&& currentTile.Type != ::Const.World.TerrainType.SnowyForest
+			&& currentTile.Type != ::Const.World.TerrainType.LeaveForest
+			&& currentTile.Type != ::Const.World.TerrainType.AutumnForest
+		) {
 			return false;
 		}
 		if (::World.getPlayerRoster().getSize() >= ::World.Assets.getBrothersMax())
 			return false;
 
-		local totalbrothers = 0;
-		local brotherlevels = 0;
+		local totalBrothers = 0;
+		local brotherLevels = 0;
 		foreach (bro in ::World.getPlayerRoster().getAll()) {
 			if (bro.getBackground().getID() == "background.legend_druid")
 				return false;
 			if (bro.getBackground().getID() == "background.legend_commander_druid")
 				return false;
-			totalbrothers += 1;
-			brotherlevels += bro.getLevel();
+			totalBrothers += 1;
+			brotherLevels += bro.getLevel();
 		}
 
-		if (totalbrothers < 1 || brotherlevels < 30)
+		if (totalBrothers < 1 || brotherLevels < 30)
 			return false;
 
         return true;

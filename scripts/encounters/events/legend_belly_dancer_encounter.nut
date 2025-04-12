@@ -110,13 +110,13 @@ this.legend_belly_dancer_encounter <- this.inherit("scripts/encounters/encounter
 				_event.m.Dude.setStartValuesEx([
 					"belly_dancer_background"
 				]);
-				_event.m.Dude.getBackground().m.RawDescription = "You found %name% in " + _event.m.Town.getName() + ", masked by green silk and drawing crowds with rhythmic movements and impressively precise fruit slicing. The latter skill is a boon to any mercenary company, and so you didn\'t hesitate to recruit them	.";
+				_event.m.Dude.getBackground().m.RawDescription = "You found %name% in " + ::Legends.S.getClosestSettlement().getName() + ", masked by green silk and drawing crowds with rhythmic movements and impressively precise fruit slicing. The latter skill is a boon to any mercenary company, and so you didn\'t hesitate to recruit them	.";
 				_event.m.Dude.getBackground().buildDescription(true);
 				::Legends.Traits.grant(_event.m.Dude, ::Legends.Trait.Dexterous);
 				this.Characters.push(_event.m.Dude.getImagePath());
 			}
 
-		
+
     	});
 		this.m.Screens.push({
 			ID = "D",
@@ -205,7 +205,7 @@ this.legend_belly_dancer_encounter <- this.inherit("scripts/encounters/encounter
 			}
 		});
     }
-    
+
     function isValid(_settlement) {
 		if (!this.World.getTime().IsDaytime)
 		{

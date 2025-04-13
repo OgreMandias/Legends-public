@@ -87,7 +87,7 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/effects
 	{
 		if (_v)
 		{
-			if (distance == 2)
+			if (_distance == 2)
 			{
 				this.getContainer().getActor().m.IsUsingZoneOfControl = false;
 			}
@@ -112,6 +112,10 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/effects
 
 	function onMovementFinished()
 	{
+		if (this.getContainer().getActor() == null)
+			return;
+
+		local distance = this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile());
 		if (!this.checkEntities())
 		{
 			this.updateEffect(false, distance);

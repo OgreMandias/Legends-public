@@ -291,33 +291,31 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 	    //Militia
 	        case _item.getID() == "weapon.militia_spear" || _item.getID() == "weapon.legend_wooden_spear" || _item.getID() == "weapon.ancient_spear":
 	            return this.Const.Perks.MilitiaClassTree;
-	    }
-
-			// WeaponTypes
-				default:
-					local ret = []; // Push all applicable WeaponTypes into array (supports Hybrid weapons)
-					local weaponToPerkMap = {
-						Axe = this.Const.Perks.AxeTree,
-						Bow = this.Const.Perks.BowTree,
-						Cleaver = this.Const.Perks.CleaverTree,
-						Crossbow = this.Const.Perks.CrossbowTree,
-						Dagger = this.Const.Perks.DaggerTree,
-						Firearm = this.Const.Perks.CrossbowTree,
-						Flail = this.Const.Perks.FlailTree,
-						Hammer = this.Const.Perks.HammerTree,
-						Mace = this.Const.Perks.MaceTree,
-						Polearm = this.Const.Perks.PolearmTree,
-						Sling = this.Const.Perks.SlingTree,
-						Spear = this.Const.Perks.SpearTree,
-						Sword = this.Const.Perks.SwordTree,
-						Staff = this.Const.Perks.StaffTree,
-						Throwing = this.Const.Perks.ThrowingTree
-					}
-					foreach (weapon, tree in weaponToPerkMap)
-					{
-						if (_item.isWeaponType(this.Const.Items.WeaponType[weapon])) ret.push(tree);
-					}
-					return ret;
+		// WeaponTypes
+			default:
+				local ret = []; // Push all applicable WeaponTypes into array (supports Hybrid weapons)
+				local weaponToPerkMap = {
+					Axe = this.Const.Perks.AxeTree,
+					Bow = this.Const.Perks.BowTree,
+					Cleaver = this.Const.Perks.CleaverTree,
+					Crossbow = this.Const.Perks.CrossbowTree,
+					Dagger = this.Const.Perks.DaggerTree,
+					Firearm = this.Const.Perks.CrossbowTree,
+					Flail = this.Const.Perks.FlailTree,
+					Hammer = this.Const.Perks.HammerTree,
+					Mace = this.Const.Perks.MaceTree,
+					Polearm = this.Const.Perks.PolearmTree,
+					Sling = this.Const.Perks.SlingTree,
+					Spear = this.Const.Perks.SpearTree,
+					Sword = this.Const.Perks.SwordTree,
+					Staff = this.Const.Perks.StaffTree,
+					Throwing = this.Const.Perks.ThrowingTree
+				}
+				foreach (weapon, tree in weaponToPerkMap)
+				{
+					if (_item.isWeaponType(this.Const.Items.WeaponType[weapon])) ret.push(tree);
+				}
+				return ret;
 		}
 
 		return null;

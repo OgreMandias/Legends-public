@@ -56,7 +56,7 @@ this.perk_legend_specialist_poacher <- this.inherit("scripts/skills/legend_speci
 		{
 			local user = _skill.getContainer().getActor();
 			local ammo = user.getItems().getItemAtSlot(this.Const.ItemSlot.Ammo);
-			if (ammo != null && ::Legends.S.patternIsInText("Piercing", ammo.getName()))
+			if (ammo != null && ::Legends.S.patternIsInText("Broad Head", ammo.getName()))
 			{
 				::Legends.Effects.grant(_targetEntity, ::Legends.Effect.LegendGrazedEffect);
 

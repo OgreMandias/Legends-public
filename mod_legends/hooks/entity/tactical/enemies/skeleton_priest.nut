@@ -30,7 +30,7 @@
 		this.m.Items.equip(item);
 
 		local item = this.Const.World.Common.pickHelmet([
-			[99, "ancient/ancient_priest_diadem"]
+			[99, ::Legends.Helmet.Ancient.ancient_priest_diadem]
 		]);
 		if (item != null)
 		{

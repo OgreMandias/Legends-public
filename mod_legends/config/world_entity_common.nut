@@ -1218,7 +1218,7 @@ if (!("World" in ::Const))
 		return null;
 	// return this.new("scripts/items/helmets/" + helm);
 
-	local layersObj = this.Const.LegendMod.Helmets[helm];
+	local layersObj = typeof(helm) == "string" ? ::Const.LegendMod.Helmets[helm] : helm;
 	if (layersObj.Script != "")
 	{
 		local helmet = this.new(layersObj.Script);
@@ -1287,10 +1287,10 @@ if (!("World" in ::Const))
 	if (armorID == "")
 		return null;
 
-	if (!(armorID in this.Const.LegendMod.Armors))
+	if (!(armorID in this.Const.LegendMod.Armors) && typeof(armorID) == "string")
 		return this.new("scripts/items/armor/" + armorID);
 
-	local layersObj = this.Const.LegendMod.Armors[armorID];
+	local layersObj = typeof(armorID) == "string" ? ::Const.LegendMod.Armors[armorID] : armorID;
 	if (layersObj.Script != "") {
 		local item = this.new(layersObj.Script);
 		if (faction != null) {
@@ -1301,7 +1301,7 @@ if (!("World" in ::Const))
 
 	local set = layersObj.Sets[this.Math.rand(0, layersObj.Sets.len() -1)];
 	local armor = ::Const.World.Common.pickLegendArmor(set.Cloth);
-	if (armor == null)
+	if (armor == null && typeof(armorID) == "string")
 		return this.new("scripts/items/armor/" + armorID);
 
 	if (faction != null) {

@@ -58,8 +58,8 @@ this.legend_skeleton_gladiator <- this.inherit("scripts/entity/tactical/skeleton
 		this.m.Items.equip(item);
 
 		local item = this.Const.World.Common.pickHelmet([
-			[34, ""],
-			[66, "ancient/ancient_gladiator_helmet"]
+			[34, ::Legends.Helmet.None],
+			[66, ::Legends.Helmet.Ancient.ancient_gladiator_helmet]
 		]);
 		if (item != null)
 		{

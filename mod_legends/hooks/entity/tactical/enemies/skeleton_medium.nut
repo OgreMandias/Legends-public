@@ -45,8 +45,8 @@
 		this.m.Items.equip(item);
 
 		local item = this.Const.World.Common.pickHelmet([
-			[99, "ancient/ancient_honorguard_helmet"],
-			[1, "ancient/legend_ancient_legionary_helmet_restored"]
+			[99, ::Legends.Helmet.Ancient.ancient_honorguard_helmet],
+			[1, ::Legends.Helmet.Ancient.legend_ancient_legionary_helmet_restored]
 		]);
 		if (item != null)
 		{

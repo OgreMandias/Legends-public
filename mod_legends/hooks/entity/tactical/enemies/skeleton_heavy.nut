@@ -72,7 +72,7 @@
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head))
 		{
 			local item = this.Const.World.Common.pickHelmet([
-				[66, "ancient/ancient_honorguard_helmet"]
+				[66, ::Legends.Helmet.Ancient.ancient_honorguard_helmet]
 			]);
 			if (item != null)
 			{

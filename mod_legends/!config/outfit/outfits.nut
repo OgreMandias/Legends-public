@@ -1,19 +1,3 @@
-if (!("LegendMod" in ::Const)) {
-	::Const.LegendMod <- {};
-}
-
-if (!("OutfitObjs" in ::Const.LegendMod)) {
-	::Const.LegendMod.OutfitObjs <- [];
-}
-
-if (!("Outfits" in ::Const.LegendMod)) {
-	::Const.LegendMod.Outfits <- {};
-}
-
-if (!("Outfit" in ::Legends)) {
-	::Legends.Outfit <- {};
-}
-
 ::Legends.Outfit.northern_mercenary_outfit_00 <- {
 	ID = "northern_mercenary_outfit_00",
 	Body = [

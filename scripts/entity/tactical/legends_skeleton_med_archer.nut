@@ -36,8 +36,8 @@ this.legends_skeleton_med_archer <- this.inherit("scripts/entity/tactical/legend
 
 
 		local item = this.Const.World.Common.pickHelmet([
-			[34, ""],
-			[66, "ancient/ancient_household_helmet"]
+			[34, ::Legends.Helmet.None],
+			[66, ::Legends.Helmet.Ancient.ancient_household_helmet]
 		]);
 
 		if (item != null)

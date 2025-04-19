@@ -143,7 +143,7 @@
 			[1, "hood"],
 			[1, "open_leather_cap"],
 			[1, "headscarf"],
-			[1, "ancient/ancient_household_helmet"]
+			[1, ::Legends.Helmet.Ancient.ancient_household_helmet]
 		]));
 	}
 

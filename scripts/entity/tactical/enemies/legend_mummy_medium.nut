@@ -58,8 +58,8 @@ this.legend_mummy_medium <- this.inherit("scripts/entity/tactical/legend_mummy",
 		this.m.Items.equip(item);
 
 		local item = this.Const.World.Common.pickHelmet([
-			[3, "ancient/legend_mummy_bandages"],
-			[1, ""]
+			[3, ::Legends.Helmet.Ancient.legend_mummy_bandages],
+			[1, ::Legends.Helmet.None]
 		]);
 		if (item != null)
 		{

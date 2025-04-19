@@ -1393,7 +1393,7 @@ if (!("World" in ::Const))
 	local selected = candidates.filter(@(idx, t) (r -= t[0]) <= 0);
 	local outfitID = selected.len() > 0 ? selected[0][1] : "";
 
-	local layersObj = ::Const.LegendMod.Outfits[outfitID];
+	local layersObj = typeof(outfitID) == "string" ? ::Const.LegendMod.Outfits[outfitID] : outfitID;
 	// this.logInfo("Pick outfit picked an outfit")
 	return [::Const.World.Common.pickArmor(layersObj.Body), ::Const.World.Common.pickHelmet(layersObj.Helmet)]
 }

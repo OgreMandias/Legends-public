@@ -1,7 +1,7 @@
 this.legend_free_company_slayer <- this.inherit("scripts/entity/tactical/legend_free_company_abstract", {
 	m = {
 		Outfits = [
-			[1, "mercenary_spearman_outfit_00"]
+			[1, ::Legends.Outfit.mercenary_spearman_outfit_00]
 		],
 		PerkList = this.Const.EnemyPerks.FreeCompanySlayer,
 		PerkPower = 12

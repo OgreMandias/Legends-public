@@ -145,7 +145,7 @@
 			];
 
 			local outfits = [
-				[1, "red_bandit_leader_outfit_00"]
+				[1, ::Legends.Outfit.red_bandit_leader_outfit_00]
 			];
 
 			foreach( item in this.Const.World.Common.pickOutfit(outfits, armor, helmet) )

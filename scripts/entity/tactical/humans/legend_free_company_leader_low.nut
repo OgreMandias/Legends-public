@@ -1,7 +1,7 @@
 this.legend_free_company_leader_low <- this.inherit("scripts/entity/tactical/humans/legend_free_company_leader", {
 	m = {
 		Outfits = [
-			[1, "low_tier_unit_catchall_outfit_00"]
+			[1, ::Legends.Outfit.low_tier_unit_catchall_outfit_00]
 		],
 		PerkList = this.Const.EnemyPerks.FreeCompanyLeader,
 		PerkPower = 2

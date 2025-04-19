@@ -1,7 +1,7 @@
 this.legend_free_company_crossbow <- this.inherit("scripts/entity/tactical/legend_free_company_abstract", {
 	m = {
 		Outfits = [
-			[1, "mercenary_crossbow_outfit_00"]
+			[1, ::Legends.Outfit.mercenary_crossbow_outfit_00]
 		],
 		PerkList = this.Const.EnemyPerks.FreeCompanyCrossbow,
 		PerkPower = 6

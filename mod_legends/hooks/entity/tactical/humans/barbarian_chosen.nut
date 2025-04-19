@@ -50,9 +50,9 @@
 			];
 
 			local outfits = [
-				[1, "barbarian_chosen_outfit_00"],
-				[1, "barbarian_chosen_outfit_01"],
-				[1, "barbarian_chosen_outfit_02"]
+				[1, ::Legends.Outfit.barbarian_chosen_outfit_00],
+				[1, ::Legends.Outfit.barbarian_chosen_outfit_01],
+				[1, ::Legends.Outfit.barbarian_chosen_outfit_02]
 			];
 
 			foreach( item in this.Const.World.Common.pickOutfit(outfits, armor, helmet) )

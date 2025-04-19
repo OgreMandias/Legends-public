@@ -1,8 +1,8 @@
 this.legend_free_company_spearman_low <- this.inherit("scripts/entity/tactical/humans/legend_free_company_spearman", {
 	m = {
 		Outfits = [
-			[1, "low_tier_unit_catchall_outfit_01"]
-			// [1, "mercenary_spearman_outfit_01"]
+			[1, ::Legends.Outfit.low_tier_unit_catchall_outfit_01],
+			// [1, ::Legends.Outfit.mercenary_spearman_outfit_01]
 		]
 		PerkList = this.Const.EnemyPerks.FreeCompanySpearman,
 		PerkPower = 3
@@ -58,10 +58,10 @@ this.legend_free_company_spearman_low <- this.inherit("scripts/entity/tactical/h
 			else
 			{
 				this.m.Items.equip(this.new("scripts/items/shields/wooden_shield"));
-			}	
+			}
 		}
-			
-		
+
+
 		this.legend_free_company_abstract.assignRandomEquipment();
 	}
 

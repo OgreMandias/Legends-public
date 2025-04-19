@@ -1164,97 +1164,59 @@ if (!("World" in ::Const))
 	}
 }
 
-::Const.World.Common.pickLegendArmor <- function (_list)
-{
-	return this.Const.World.Common.pickItem(_list, "scripts/items/legend_armor/");
+::Const.World.Common.pickLegendArmor <- function (_list) {
+	return ::Const.World.Common.pickItem(_list, "scripts/items/legend_armor/");
 }
 
-::Const.World.Common.pickLegendHelmet <- function (_list)
-{
-	return this.Const.World.Common.pickItem(_list, "scripts/items/legend_helmets/");
+::Const.World.Common.pickLegendHelmet <- function (_list) {
+	return ::Const.World.Common.pickItem(_list, "scripts/items/legend_helmets/");
 }
 
 ::Const.World.Common.pickItem <- function (_list, _script = "")
 {
-	local candidates = [];
-	local totalWeight = 0;
-	local w = 0;
-	foreach (t in _list)
-	{
-		if (t[0] == 0)
-		{
-			continue;
-		}
-		candidates.push(t);
-		totalWeight += t[0];
-	}
+	local candidates = _list.filter(@(idx, t) t[0] > 0);
+	if (!candidates.len())
+		return null;
 
-	local r = this.Math.rand(0, totalWeight);
-	foreach (t in candidates)
-	{
-		r = r - t[0];
-		if (r > 0)
-		{
-			continue;
-		}
+	local totalWeight = candidates.map(@(t) t[0]).reduce(@(p, c) p + c);
+	local r = ::Math.rand(0, totalWeight);
+	local selected = candidates.filter(@(idx, t) (r -= t[0]) <= 0);
 
-		if (_script == "")
-		{
-			return t[1];
-		}
+	if (!selected.len())
+		return null;
+	selected = selected[0];
 
-		if (t[1] == "")
-		{
-			return null
-		}
-		local ret = this.new(_script + t[1]);
-		if (t.len() == 3)
-			ret.setVariant(t[2]);
-		return ret;
-	}
-	return null;
+	if (_script == "")
+		return selected[1];
+
+	if (selected[1] == "")
+		return null;
+
+	local ret = ::new(_script + selected[1]);
+	if (selected.len() == 3)
+		ret.setVariant(selected[2]);
+	return ret;
 }
 
 ::Const.World.Common.pickHelmet <- function (_helms)
 {
-	local candidates = [];
-	local totalWeight = 0;
-	foreach (t in _helms)
-	{
-		if (t[0] == 0)
-		{
-			continue;
-		}
-		candidates.push(t);
-		totalWeight += t[0];
-	}
+	local candidates = _helms.filter(@(idx, t) t[0] > 0);
+	local totalWeight = candidates.map(@(t) t[0]).reduce(@(p, c) p + c);
 
-	local r = this.Math.rand(0, totalWeight);
-	local helm = "";
-	local variant = null;
-	foreach (t in candidates)
-	{
-		r = r - t[0];
-		if (r > 0)
-		{
-			continue;
-		}
-		helm = t[1];
+	local r = ::Math.rand(0, totalWeight);
+	local selected = candidates.filter(@(idx, t) (r -= t[0]) <= 0);
 
-		if (t.len() == 3)
-		{
-			variant = t[2];
-		}
-		break;
-	}
+	if (!selected.len())
+		return null;
+	selected = selected[0];
+
+	local helm = selected[1];
+	local variant = selected.len() == 3 ? selected[2] : null;
 
 	//Disabling helmet layers temporariliy
 	if (helm == "")
-	{
 		return null;
-	}
 	// return this.new("scripts/items/helmets/" + helm);
-
 
 	local layersObj = this.Const.LegendMod.Helmets[helm];
 	if (layersObj.Script != "")
@@ -1310,103 +1272,64 @@ if (!("World" in ::Const))
 
 ::Const.World.Common.pickArmor <- function (_armors)
 {
-	local candidates = [];
-	local totalWeight = 0;
-	foreach (t in _armors)
-	{
-		if (t[0] == 0)
-		{
-			continue;
-		}
-		candidates.push(t);
-		totalWeight += t[0];
-	}
+	local candidates = _armors.filter(@(idx, t) t[0] > 0);
+	local totalWeight = candidates.map(@(t) t[0]).reduce(@(p, c) p + c);
 
-	local r = this.Math.rand(0, totalWeight);
-	local armorID = "";
-	local variant = null;
-	local faction = null;
-	foreach (t in candidates)
-	{
-		r = r - t[0];
-		if (r > 0)
-		{
-			continue;
-		}
-		armorID = t[1];
-		if (t.len() == 3)
-		{
-			variant = t[2];
-		}
-		if (t.len() == 4)
-		{
-			faction = t[3];
-		}
-		break;
-	}
+	local r = ::Math.rand(0, totalWeight);
+	local selected = candidates.filter(@(idx, t) (r -= t[0]) <= 0);
 
-	if (armorID == "")
-	{
+	if (!selected.len())
 		return null;
-	}
+	selected = selected[0];
 
+	local armorID = selected[1];
+	local faction = selected.len() == 4 ? selected[3] : null;
+	if (armorID == "")
+		return null;
 
 	if (!(armorID in this.Const.LegendMod.Armors))
-	{
-
 		return this.new("scripts/items/armor/" + armorID);
-	}
 
 	local layersObj = this.Const.LegendMod.Armors[armorID];
-	if (layersObj.Script != "")
-	{
+	if (layersObj.Script != "") {
 		local item = this.new(layersObj.Script);
-		if (faction != null)
-		{
+		if (faction != null) {
 			item.setupArmor(faction);
 		}
 		return item;
 	}
 
 	local set = layersObj.Sets[this.Math.rand(0, layersObj.Sets.len() -1)];
-	local armor = this.Const.World.Common.pickLegendArmor(set.Cloth);
+	local armor = ::Const.World.Common.pickLegendArmor(set.Cloth);
 	if (armor == null)
-	{
 		return this.new("scripts/items/armor/" + armorID);
-	}
 
-	if (faction != null)
-	{
+	if (faction != null) {
 		armor.setupArmor(faction);
 	}
 
-	local chain = this.Const.World.Common.pickLegendArmor(set.Chain);
-	if (chain != null)
-	{
+	local chain = ::Const.World.Common.pickLegendArmor(set.Chain);
+	if (chain != null) {
 		armor.setUpgrade(chain)
 	}
 
-	local plate = this.Const.World.Common.pickLegendArmor(set.Plate);
-	if (plate != null)
-	{
+	local plate = ::Const.World.Common.pickLegendArmor(set.Plate);
+	if (plate != null) {
 		armor.setUpgrade(plate)
 	}
 
-	local cloak = this.Const.World.Common.pickLegendArmor(set.Cloak);
-	if (cloak != null)
-	{
+	local cloak = ::Const.World.Common.pickLegendArmor(set.Cloak);
+	if (cloak != null) {
 		armor.setUpgrade(cloak)
 	}
 
-	local tab = this.Const.World.Common.pickLegendArmor(set.Tabard);
-	if (tab != null)
-	{
+	local tab = ::Const.World.Common.pickLegendArmor(set.Tabard);
+	if (tab != null) {
 		armor.setUpgrade(tab)
 	}
 
-	local att = this.Const.World.Common.pickLegendArmor(set.Attachments);
-	if (att != null)
-	{
+	local att = ::Const.World.Common.pickLegendArmor(set.Attachments);
+	if (att != null) {
 		armor.setUpgrade(att)
 	}
 
@@ -1415,183 +1338,83 @@ if (!("World" in ::Const))
 
 ::Const.World.Common.pickArmorUpgrade <- function (_armors)
 {
-	local candidates = [];
-	local totalWeight = 0;
-	foreach (t in _armors)
-	{
-		if (t[0] == 0)
-		{
-			continue;
-		}
-		candidates.push(t);
-		totalWeight += t[0];
-	}
+	local candidates = _armors.filter(@(idx, t) t[0] > 0);
+	local totalWeight = candidates.map(@(t) t[0]).reduce(@(p, c) p + c);
 
-	local r = this.Math.rand(0, totalWeight);
-	local armorID = "";
-	local variant = null;
-	local faction = null;
-	foreach (t in candidates)
-	{
-		r = r - t[0];
-		if (r > 0)
-		{
-			continue;
-		}
-		armorID = t[1];
-		if (t.len() == 3)
-		{
-			variant = t[2];
-		}
-		if (t.len() == 4)
-		{
-			faction = t[3];
-		}
-		break;
-	}
+	local r = ::Math.rand(0, totalWeight);
+	local selected = candidates.filter(@(idx, t) (r -= t[0]) <= 0);
+	if (!selected.len())
+		return null;
+	local armorID = selected[0][1];
 
-
-	if (!(armorID in this.Const.LegendMod.Armors))
-	{
+	if (!(armorID in ::Const.LegendMod.Armors))
 		return this.new("scripts/items/armor_upgrades/" + armorID);
-	}
 
-	local layersObj = this.Const.LegendMod.Armors[armorID];
+	local layersObj = ::Const.LegendMod.Armors[armorID];
 	if (layersObj.Script != "")
-	{
 		return this.new(layersObj.Script);
-	}
 
 	return null;
 }
 
-/*
-
-	_outfitArr
-	[
-		[1, "my outfit"]
-		[1, "my outfit"]
-	]
-
-	_armorArr same
-	_helmetArr same
-
-
+/**
+* Operating assuming that if we have chance not -1 we sent in an armor and helmet array that aren't null
+*	_outfitArr
+*	[
+*		[1, "my outfit"]
+*		[1, "my outfit"]
+*	]
+*	_armorArr same
+*	_helmetArr same
 */
-
-//Operating assuming that if we have chance not -1 we sent in an armor and helmet array that aren't null
 ::Const.World.Common.pickOutfit <- function ( _outfitArr, _armorArr = null, _helmetArr = null, _chance = 0)
 {
-	if (_chance != 0)
-	{
-		if (this.Math.rand(1, 100) >= _chance)
-		{
+	if (_chance != 0) {
+		if (::Math.rand(1, 100) >= _chance) {
 			// this.logInfo("Pick outfit rolled against a chance and returned two things")
-			return [this.Const.World.Common.pickArmor(_armorArr), this.Const.World.Common.pickHelmet(_helmetArr)]
+			return [::Const.World.Common.pickArmor(_armorArr), ::Const.World.Common.pickHelmet(_helmetArr)]
 		}
 	}
-	else if (_armorArr != null && _helmetArr != null && _armorArr.len() > 0 && _helmetArr.len() > 0)
-	{
-		local armorCount = 0;
-		local helmCount = 0;
-		local outfitCount = 0;
+	else if (_armorArr != null && _helmetArr != null && _armorArr.len() > 0 && _helmetArr.len() > 0) {
+		local armorCount = _armorArr.filter(@(idx, t) t[0] > 0).len();
+		local helmCount = _helmetArr.filter(@(idx, t) t[0] > 0).len();
+		local outfitCount = _outfitArr.filter(@(idx, t) t[0] > 0).len();
 
-		foreach (t in _armorArr)
-		{
-			if (t[0] > 0)
-			{
-				armorCount += 1;
-			}
-		}
-		foreach (t in _helmetArr)
-		{
-			if (t[0] > 0)
-			{
-				helmCount += 1;
-			}
-		}
-		foreach (t in _outfitArr)
-		{
-			if (t[0] > 0)
-			{
-				outfitCount += 1;
-			}
-		}
-
-		if (this.Math.rand(1, armorCount * helmCount) > outfitCount)
-		{
+		if (::Math.rand(1, armorCount * helmCount) > outfitCount) {
 			// this.logInfo("Pick outfit rolled against an armor*helmcount and returned two things")
-			return [this.Const.World.Common.pickArmor(_armorArr), this.Const.World.Common.pickHelmet(_helmetArr)]
+			return [::Const.World.Common.pickArmor(_armorArr), ::Const.World.Common.pickHelmet(_helmetArr)]
 		}
 	}
 
-	local candidates = [];
-	local totalWeight = 0;
-	foreach (t in _outfitArr)
-	{
-		if (t[0] == 0)
-		{
-			continue;
-		}
-		candidates.push(t);
-		totalWeight += t[0];
-	}
+	local candidates = _outfitArr.filter(@(idx, t) t[0] > 0);
+	local totalWeight = candidates.map(@(t) t[0]).reduce(@(p, c) p + c);
 
-	local r = this.Math.rand(0, totalWeight);
-	local outfitID = "";
-	foreach (t in candidates)
-	{
-		r = r - t[0];
-		if (r > 0)
-		{
-			continue;
-		}
-		outfitID = t[1];
-		break;
-	}
+	local r = ::Math.rand(0, totalWeight);
+	local selected = candidates.filter(@(idx, t) (r -= t[0]) <= 0);
+	local outfitID = selected.len() > 0 ? selected[0][1] : "";
 
-	local layersObj = this.Const.LegendMod.Outfits[outfitID];
+	local layersObj = ::Const.LegendMod.Outfits[outfitID];
 	// this.logInfo("Pick outfit picked an outfit")
-	return [this.Const.World.Common.pickArmor(layersObj.Body), this.Const.World.Common.pickHelmet(layersObj.Helmet)]
-
+	return [::Const.World.Common.pickArmor(layersObj.Body), ::Const.World.Common.pickHelmet(layersObj.Helmet)]
 }
 
 ::Const.World.Common.convNameToList <- function ( _named )
 {
 	local findString = ["helmets/", "armor/", "legend_armor/", "legend_helmets/"];
-	local retArr = [];
-	foreach( search in findString )
-	{
-		if (_named[0].find(search) != null ) //was this list
-		{
-			foreach( item in _named )
-			{
-				retArr.push(
-					[1, item.slice(item.find(search) + search.len())]
-				);
-			}
-			break; //can skip 1-2 list[0].finds with this
+	foreach (search in findString) {
+		if (_named[0].find(search) != null ) { //was this list
+			return _named.map(@(item) [1, item.slice(item.find(search) + search.len())]);
 		}
 	}
-	return retArr;
+	return [];
 }
 
 ::Const.World.Common.getArenaBros <- function()
 {
-	local ret = [];
-	local roster = this.World.getPlayerRoster().getAll();
-
-	foreach( bro in roster )
-	{
+	return ::World.getPlayerRoster().getAll().filter(function (bro) {
 		local item = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Accessory);
-
-		if (item != null && item.getID() == "accessory.legend_arena_collar")
-		{
-			ret.push(bro);
-		}
-	}
-
-	return ret;
+		return item != null && item.getID() == "accessory.legend_arena_collar";
+	});
 }
 
 if (!("LegendMod" in ::Const))
@@ -1667,61 +1490,28 @@ if (!("LegendMod" in ::Const))
 	if (_power == 0)
 		return [];
 
-	local candidates = [];
-	local totalWeight = 0;
-	foreach (t in _perks)
-	{
-		if (t[0] == 0)
-			continue;
-
-		if (t[2] > _power)
-			continue; //no need to add stuff that's a cost higher than our power selector
-
-		candidates.push(t);
-		totalWeight += t[0];
-	}
+	local candidates = _perks.filter(@(idx, t) t[0] != 0 && t[2] <= _power);
+	local totalWeight = candidates.map(@(t) t[0]).reduce(@(p, c) p + c);
 
 	local ret = [];
-	while (_power > 0) {
-		if (candidates.len() == 0)
-			return ret;
+	while (_power > 0 && candidates.len() > 0) {
+		local r = ::Math.rand(0, totalWeight);
+		local selected = candidates.filter(@(idx, t) (r -= t[0]) <= 0);
+		if (!selected.len())
+			break;
+		local t = selected[0];
 
-		local r = this.Math.rand(0, totalWeight);
-		foreach (i, t in candidates)
-		{
-			r -= t[0];
-			if (r > 0)
-				continue;
+		local skill = null;
+		if (typeof t[1] == "number")
+			ret.push(t[1]);
+		else if (typeof t[1] == "array")
+			ret.extend(t[1]);
+		else
+			::logWarning("Attempted to select perks from something that isn't a number or an array");
 
-			local skill = null;
-			if (typeof t[1] == "number")
-			{
-				ret.push(t[1]);
-			}
-			else if (typeof t[1] == "array")
-			{
-				ret.extend(t[1]);
-			}
-			else {
-				::logWarning("Attempted to select perks from something that isn't a number or an array")
-			}
-
-			totalWeight -= t[0];
-			_power -= t[2];
-			candidates.remove(i);
-		}
-		//we necessarily had to have selected something to get here so we check if anything has a higher power + remove it
-		local garbage = [];
-		foreach (i, t in candidates)
-		{
-			if (t[2] > _power)
-				garbage.push(i)  //checking like this means if we only have 2 power costs left and have 1 it won't put us negative
-		}
-		garbage.reverse();
-		foreach (i in garbage)
-		{
-			candidates.remove(i)
-		}
+		totalWeight -= t[0];
+		_power -= t[2];
+		candidates = candidates.filter(@(idx, t) t[2] <= _power);
 	}
 	return ret;
 }

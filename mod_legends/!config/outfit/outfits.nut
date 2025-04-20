@@ -613,7 +613,3 @@
 	]
 };
 ::Const.LegendMod.OutfitObjs.push(::Legends.Outfit.noble_footman_veteran_00);
-
-foreach( i, v in ::Const.LegendMod.OutfitObjs ) {
-	::Const.LegendMod.Outfits[v.ID] <- v;
-}

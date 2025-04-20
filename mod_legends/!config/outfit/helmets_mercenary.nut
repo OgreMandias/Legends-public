@@ -1,14 +1,6 @@
-if (!("LegendMod" in ::Const))
-{
-	::Const.LegendMod <- {};
-}
-if (!("HelmObjs" in ::Const.LegendMod))
-{
-	::Const.LegendMod.HelmObjs <- [];
-}
+::Legends.Helmet.Mercenary <- {};
 
-::Const.LegendMod.HelmObjs.extend([
-{
+::Legends.Helmet.Mercenary.mercenary_archer_helmet_00 <- {
 	ID = "mercenary_archer_helmet_00", // goes with armor 0/1
 	Script = "",
 	Sets = [{
@@ -22,8 +14,10 @@ if (!("HelmObjs" in ::Const.LegendMod))
 		Vanity= [
 		]
 	}]
-},
-{
+};
+::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Mercenary.mercenary_archer_helmet_00);
+
+::Legends.Helmet.Mercenary.mercenary_infantry_helmet_00 <- {
 	ID = "mercenary_infantry_helmet_00",
 	Script = "",
 	Sets = [{
@@ -42,9 +36,11 @@ if (!("HelmObjs" in ::Const.LegendMod))
 		Vanity= [
 		]
 	}]
-},
-{
-	ID = "mercenary_infantry_helmet_01", 
+};
+::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Mercenary.mercenary_infantry_helmet_00);
+
+::Legends.Helmet.Mercenary.mercenary_infantry_helmet_01 <- {
+	ID = "mercenary_infantry_helmet_01",
 	Script = "",
 	Sets = [{
 		Hoods = [
@@ -60,8 +56,10 @@ if (!("HelmObjs" in ::Const.LegendMod))
 			[1, "vanity/legend_helmet_hood_cloth_long", 3] //10
 		]
 	}]
-},
-{
+};
+::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Mercenary.mercenary_infantry_helmet_01);
+
+::Legends.Helmet.Mercenary.mercenary_crossbow_helmet_00 <- {
 	ID = "mercenary_crossbow_helmet_00",
 	Script = "",
 	Sets = [{
@@ -78,8 +76,10 @@ if (!("HelmObjs" in ::Const.LegendMod))
 		Vanity = [
 		]
 	}]
-},
-{
+};
+::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Mercenary.mercenary_crossbow_helmet_00);
+
+::Legends.Helmet.Mercenary.mercenary_crossbow_helmet_01 <- {
 	ID = "mercenary_crossbow_helmet_01",
 	Script = "",
 	Sets = [{
@@ -95,8 +95,10 @@ if (!("HelmObjs" in ::Const.LegendMod))
 		Vanity = [
 		]
 	}]
-},
-{
+};
+::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Mercenary.mercenary_crossbow_helmet_01);
+
+::Legends.Helmet.Mercenary.mercenary_crossbow_helmet_02 <- {
 	ID = "mercenary_crossbow_helmet_02",
 	Script = "",
 	Sets = [{
@@ -112,8 +114,10 @@ if (!("HelmObjs" in ::Const.LegendMod))
 		Vanity = [
 		]
 	}]
-},
-{
+};
+::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Mercenary.mercenary_crossbow_helmet_02);
+
+::Legends.Helmet.Mercenary.mercenary_spearman_helmet_00 <- {
 	ID = "mercenary_spearman_helmet_00",
 	Script = "",
 	Sets = [{
@@ -131,8 +135,10 @@ if (!("HelmObjs" in ::Const.LegendMod))
 			[1, "vanity/legend_helmet_plait"]
 		]
 	}]
-},
-{
+};
+::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Mercenary.mercenary_spearman_helmet_00);
+
+::Legends.Helmet.Mercenary.mercenary_spearman_helmet_01 <- {
 	ID = "mercenary_spearman_helmet_01",
 	Script = "",
 	Sets = [{
@@ -153,8 +159,10 @@ if (!("HelmObjs" in ::Const.LegendMod))
 
 		]
 	}]
-},
-{
+};
+::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Mercenary.mercenary_spearman_helmet_01);
+
+::Legends.Helmet.Mercenary.mercenary_leader_helmet_uncommon_00 <- {
 	ID = "mercenary_leader_helmet_uncommon_00",
 	Script = "",
 	Sets = [{
@@ -171,8 +179,10 @@ if (!("HelmObjs" in ::Const.LegendMod))
 			[1, "vanity/legend_helmet_wolf_helm"]
 		]
 	}]
-},
-{
+};
+::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Mercenary.mercenary_leader_helmet_uncommon_00);
+
+::Legends.Helmet.Mercenary.mercenary_leader_helmet_00 <- {
 	ID = "mercenary_leader_helmet_00",
 	Script = "",
 	Sets = [{
@@ -200,8 +210,10 @@ if (!("HelmObjs" in ::Const.LegendMod))
 			[1, "vanity_lower/legend_helmet_orc_tail"]
 		]
 	}]
-},
-{
+};
+::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Mercenary.mercenary_leader_helmet_00);
+
+::Legends.Helmet.Mercenary.mercenary_leader_helmet_gilded_00 <- {
 	ID = "mercenary_leader_helmet_gilded_00",
 	Script = "",
 	Sets = [{
@@ -217,8 +229,10 @@ if (!("HelmObjs" in ::Const.LegendMod))
 		Vanity = [
 		]
 	}]
-},
-{
+};
+::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Mercenary.mercenary_leader_helmet_gilded_00);
+
+::Legends.Helmet.Mercenary.mercenary_billman_helmet_00 <- {
 	ID = "mercenary_billman_helmet_00",
 	Script = "",
 	Sets = [{
@@ -227,7 +241,7 @@ if (!("HelmObjs" in ::Const.LegendMod))
 			[1, "hood/legend_helmet_padded_hood", 1]
 		],
 		Helms = [
-			[1, "helm/legend_helmet_barbute", 7],			
+			[1, "helm/legend_helmet_barbute", 7],
 			[1, "helm/legend_helmet_norman_helm", 1],
 			[1, "helm/legend_helmet_flat_top_helm_low", 1]
 		],
@@ -238,8 +252,10 @@ if (!("HelmObjs" in ::Const.LegendMod))
 			[1, "vanity/legend_helmet_plait"]
 		]
 	}]
-},
-{
+};
+::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Mercenary.mercenary_billman_helmet_00);
+
+::Legends.Helmet.Mercenary.mercenary_longbow_helmet_00 <- {
 	ID = "mercenary_longbow_helmet_00",
 	Script = "",
 	Sets = [{
@@ -247,7 +263,7 @@ if (!("HelmObjs" in ::Const.LegendMod))
 			[1, "hood/legend_helmet_simple_hood"],
 			[1, "hood/legend_helmet_leather_cap"]
 		],
-		Helms = [		
+		Helms = [
 			[2, "helm/legend_helmet_norman_helm", 1],
 			[1, "helm/legend_helmet_sallet", 1]
 		],
@@ -260,5 +276,6 @@ if (!("HelmObjs" in ::Const.LegendMod))
 			[1, "vanity/legend_helmet_southern_patterned_headwrap"]
 		]
 	}]
-},
-])
+};
+::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Mercenary.mercenary_longbow_helmet_00);
+

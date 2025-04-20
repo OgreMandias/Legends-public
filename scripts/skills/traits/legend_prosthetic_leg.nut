@@ -56,12 +56,10 @@ this.legend_prosthetic_leg <- this.inherit("scripts/skills/traits/character_trai
 		else
 		{
 			ret.push({
-				{
-					id = 7,
-					type = "text",
-					icon = "ui/icons/melee_defense.png",
-					text = "[color=#400080]Kick[/color] will now deal 15-30 damage"
-				}
+				id = 7,
+				type = "text",
+				icon = "ui/icons/melee_defense.png",
+				text = "[color=#400080]Kick[/color] will now deal 15-30 damage"
 			});
 		}
 

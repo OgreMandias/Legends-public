@@ -45,8 +45,8 @@ this.perk_legend_push_the_advantage <- this.inherit("scripts/skills/skill", {
 
 	function isAttackEligible (_skill)
 	{
-		local isH2h = _skill.getID == ::Legends.Actives.getID(::Legends.Active.HandToHand)
-		local is1h = _skill.getItem() != null && _skill.getItem().isItemType(this.Const.Items.ItemType.Weapon) && _skill.getItem().isItemType(this.Const.Items.ItemType.OneHanded)))
+		local isH2h = _skill.getID == ::Legends.Actives.getID(::Legends.Active.HandToHand);
+		local is1h = _skill.getItem() != null && _skill.getItem().isItemType(this.Const.Items.ItemType.Weapon) && _skill.getItem().isItemType(this.Const.Items.ItemType.OneHanded);
 		if (!isH2h && !is1h)
 			return false;
 
@@ -65,7 +65,7 @@ this.perk_legend_push_the_advantage <- this.inherit("scripts/skills/skill", {
 			return;
 
 		if (!this.isAttackEligible(_skill))
-			return;		
+			return;
 
 		local actor = this.getContainer().getActor();
 		// actor.setFatigue(this.Math.max(0, actor.getFatigue() - this.Math.floor(_skill.getFatigueCost() * 0.2)));

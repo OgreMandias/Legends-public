@@ -1,6 +1,6 @@
 this.perk_legend_backswing <- this.inherit("scripts/skills/skill", {
 	m = {
-		IsBackswing = false;
+		IsBackswing = false,
 		Skills = [
 			::Legends.Actives.getID(::Legends.Active.Swing),
 			::Legends.Actives.getID(::Legends.Active.Thresh),

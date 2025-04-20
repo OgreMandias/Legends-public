@@ -31,7 +31,7 @@ this.legend_prosthetic_hand <- this.inherit("scripts/skills/traits/character_tra
 			}];
 
 		local malus = this.m.IsUpgraded ? 5 : 10;
-		ret.extend[{
+		ret.extend([{
 			id = 10,
 			type = "text",
 			icon = "ui/icons/melee_defense.png",
@@ -54,7 +54,7 @@ this.legend_prosthetic_hand <- this.inherit("scripts/skills/traits/character_tra
 			type = "text",
 			icon = "ui/icons/ranged_skill.png",
 			text = "[color=" + this.Const.UI.Color.NegativeValue + "]-" + malus + "%[/color] Ranged Skill when NOT using a shield"
-		}];
+		}]);
 
 		if (this.m.IsUpgraded)
 		{

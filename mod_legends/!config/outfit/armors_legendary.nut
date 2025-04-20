@@ -1,15 +1,4 @@
-if (!("LegendMod" in ::Const))
-{
-	::Const.LegendMod <- {};
-}
-
-if (!("ArmorObjs" in ::Const.LegendMod))
-{
-	::Const.LegendMod.ArmorObjs <- [];
-}
-
-::Const.LegendMod.ArmorObjs.extend([
-{
+::Legends.Armor.Legendary.armor_of_davkul <- {
 	ID = "legendary/armor_of_davkul", // this.m.ConditionMax
 	Script = "",
 	Sets = [{
@@ -33,8 +22,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},
-{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Legendary.armor_of_davkul);
+
+::Legends.Armor.Legendary.legend_emperors_armor <- {
 	ID = "legendary/legend_emperors_armor", // 400
 	Script = "",
 	Sets = [{
@@ -55,8 +46,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},
-{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Legendary.legend_emperors_armor);
+
+::Legends.Armor.Legendary.emperors_armor_fake <- {
 	ID = "legendary/emperors_armor_fake", // 380
 	Script = "scripts/items/legend_armor/legendary/legend_emperors_armor_fake",
 	Sets = [{
@@ -76,13 +69,17 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},
-{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Legendary.emperors_armor_fake);
+
+::Legends.Armor.Legendary.legend_ijirok_armor <- {
 	ID = "legendary/legend_ijirok_armor", //310.0
 	Script = "scripts/items/legend_armor/legendary/legend_ijirok_armor",
 	Sets = []
-},
-{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Legendary.legend_ijirok_armor);
+
+::Legends.Armor.Legendary.legend_mountain_armor <- {
 	ID = "legendary/legend_mountain_armor", // this.m.ConditionMax
 	Script = "",
 	Sets = [{
@@ -102,8 +99,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},
-{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Legendary.legend_mountain_armor);
+
+::Legends.Armor.Legendary.legend_skin_armor <- {
 	ID = "legendary/legend_skin_armor", // 160
 	Script = "",
 	Sets = [{
@@ -125,8 +124,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},
-{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Legendary.legend_skin_armor);
+
+::Legends.Armor.Legendary.legend_named_warlock_cloak <- {
 	ID = "named/legend_named_warlock_cloak", // 180
 	Script = "scripts/items/legend_armor/legendary/legend_armor_named_warlock_cloak",
 	Sets = [{
@@ -146,8 +147,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},
-{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Legendary.legend_named_warlock_cloak);
+
+::Legends.Armor.Legendary.lindwurm_armor <- {
 	ID = "named/lindwurm_armor", // 300
 	Script = "scripts/items/legend_armor/legendary/legend_lindwurm_armor",
 	Sets = [{
@@ -167,4 +170,6 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-}]);
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Legendary.lindwurm_armor);
+

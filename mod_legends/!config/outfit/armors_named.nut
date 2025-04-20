@@ -1,16 +1,4 @@
-if (!("LegendMod" in ::Const))
-{
-	::Const.LegendMod <- {};
-}
-
-if (!("ArmorObjs" in ::Const.LegendMod))
-{
-	::Const.LegendMod.ArmorObjs <- [];
-}
-
-::Const.LegendMod.ArmorObjs.extend([
-{
-	//TODO souther
+::Legends.Armor.Named.black_and_gold_armor <- {
 	ID = "named/black_and_gold_armor", // 210
 	Script = "",
 	Sets = [{
@@ -53,7 +41,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Named.black_and_gold_armor);
+
+::Legends.Armor.Named.black_leather_armor <- {
 	ID = "named/black_leather_armor", // 110
 	Script = "",
 	Sets = [{
@@ -97,7 +88,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Named.black_leather_armor);
+
+::Legends.Armor.Named.blue_studded_mail_armor <- {
 	ID = "named/blue_studded_mail_armor", // 150
 	Script = "",
 	Sets = [{
@@ -141,7 +135,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments = [
 		]
 	}]
-},{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Named.blue_studded_mail_armor);
+
+::Legends.Armor.Named.brown_coat_of_plates_armor <- {
 	ID = "named/brown_coat_of_plates_armor", // 300
 	Script = "",
 	Sets = [{
@@ -193,7 +190,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Named.brown_coat_of_plates_armor);
+
+::Legends.Armor.Named.golden_scale_armor <- {
 	ID = "named/golden_scale_armor", // 230
 	Script = "",
 	Sets = [{
@@ -243,7 +243,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Named.golden_scale_armor);
+
+::Legends.Armor.Named.green_coat_of_plates_armor <- {
 	ID = "named/green_coat_of_plates_armor", // 320
 	Script = "",
 	Sets = [{
@@ -294,7 +297,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Named.green_coat_of_plates_armor);
+
+::Legends.Armor.Named.heraldic_mail_armor <- {
 	ID = "named/heraldic_mail_armor", // 210
 	Script = "",
 	Sets = [{
@@ -341,7 +347,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Named.heraldic_mail_armor);
+
+::Legends.Armor.Named.leopard_armor <- {
 	//TODO Southern
 	ID = "named/leopard_armor", // 290
 	Script = "",
@@ -388,7 +397,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Named.leopard_armor);
+
+::Legends.Armor.Named.named_bronze_armor <- {
 	ID = "named/named_bronze_armor", // 280
 	Script = "",
 	Sets = [{
@@ -432,7 +444,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Named.named_bronze_armor);
+
+::Legends.Armor.Named.named_golden_lamellar_armor <- {
 	ID = "named/named_golden_lamellar_armor", // 285
 	Script = "",
 	Sets = [{
@@ -476,7 +491,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Named.named_golden_lamellar_armor);
+
+::Legends.Armor.Named.named_noble_mail_armor <- {
 	ID = "named/named_noble_mail_armor", // 160
 	Script = "",
 	Sets = [{
@@ -520,7 +538,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Named.named_noble_mail_armor);
+
+::Legends.Armor.Named.named_plated_fur_armor <- {
 	ID = "named/named_plated_fur_armor", // 130
 	Script = "",
 	Sets = [{
@@ -564,7 +585,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Named.named_plated_fur_armor);
+
+::Legends.Armor.Named.named_sellswords_armor <- {
 	ID = "named/named_sellswords_armor", // 260
 	Script = "",
 	Sets = [{
@@ -618,7 +642,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Named.named_sellswords_armor);
+
+::Legends.Armor.Named.named_skull_and_chain_armor <- {
 	ID = "named/named_skull_and_chain_armor", // 190
 	Script = "",
 	Sets = [{
@@ -665,5 +692,6 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 			[1, "armor_upgrades/legend_armor_skull_chain_upgrade"]
 		]
 	}]
-}
-])
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Named.named_skull_and_chain_armor);
+

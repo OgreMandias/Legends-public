@@ -1,15 +1,4 @@
-if (!("LegendMod" in ::Const))
-{
-	::Const.LegendMod <- {};
-}
-
-if (!("ArmorObjs" in ::Const.LegendMod))
-{
-	::Const.LegendMod.ArmorObjs <- [];
-}
-
-::Const.LegendMod.ArmorObjs.extend([
-{
+::Legends.Armor.Southern.assassin_robe <- {
 	ID = "oriental/assassin_robe", // 120
 	Script = "",
 	Sets = [{
@@ -157,7 +146,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Southern.assassin_robe);
+
+::Legends.Armor.Southern.cloth_sash <- {
 	ID = "oriental/cloth_sash", // 20
 	Script = "",
 	Sets = [{
@@ -195,7 +187,7 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 			[0, "cloth/legend_southern_noble_surcoat"],// 55
 		],
 		Chain = [
-		   [0, "chain/legend_armor_ancient_mail"],// 35
+			[0, "chain/legend_armor_ancient_mail"],// 35
 			[0, "chain/legend_armor_basic_mail"],// 85
 			[0, "chain/legend_armor_hauberk"],// 95
 			[0, "chain/legend_armor_hauberk_full"],// 115
@@ -304,7 +296,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Southern.cloth_sash);
+
+::Legends.Armor.Southern.gladiator_harness <- {
 	ID = "oriental/gladiator_harness", // 40
 	Script = "",
 	Sets = [{
@@ -321,7 +316,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		],
 		Attachments =[]
 	}]
-},{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Southern.gladiator_harness);
+
+::Legends.Armor.Southern.leather_nomad_robe <- {
 	ID = "oriental/leather_nomad_robe", // 65
 	Script = "",
 	Sets = [{
@@ -377,7 +375,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Southern.leather_nomad_robe);
+
+::Legends.Armor.Southern.linothorax <- {
 	ID = "oriental/linothorax", // 75
 	Script = "",
 	Sets = [{
@@ -415,7 +416,7 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 			[0, "cloth/legend_southern_noble_surcoat"],// 55
 		],
 		Chain = [
-		   [1, "chain/legend_armor_ancient_mail"],// 35
+			[1, "chain/legend_armor_ancient_mail"],// 35
 			[0, "chain/legend_armor_basic_mail"],// 85
 			[0, "chain/legend_armor_hauberk"],// 95
 			[0, "chain/legend_armor_hauberk_full"],// 115
@@ -524,7 +525,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Southern.linothorax);
+
+::Legends.Armor.Southern.mail_and_lamellar_plating <- {
 	ID = "oriental/mail_and_lamellar_plating", // 135
 	Script = "",
 	Sets = [{
@@ -562,7 +566,7 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 			[5, "cloth/legend_southern_noble_surcoat"],// 55
 		],
 		Chain = [
-		   [1, "chain/legend_armor_ancient_mail"],// 35
+			[1, "chain/legend_armor_ancient_mail"],// 35
 			[0, "chain/legend_armor_basic_mail"],// 85
 			[0, "chain/legend_armor_hauberk"],// 95
 			[0, "chain/legend_armor_hauberk_full"],// 115
@@ -671,7 +675,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Southern.mail_and_lamellar_plating);
+
+::Legends.Armor.Southern.nomad_robe <- {
 	ID = "oriental/nomad_robe", // 30
 	Script = "",
 	Sets = [{
@@ -709,7 +716,7 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 			[0, "cloth/legend_southern_noble_surcoat"],// 55
 		],
 		Chain = [
-		   [0, "chain/legend_armor_ancient_mail"],// 35
+			[0, "chain/legend_armor_ancient_mail"],// 35
 			[0, "chain/legend_armor_basic_mail"],// 85
 			[0, "chain/legend_armor_hauberk"],// 95
 			[0, "chain/legend_armor_hauberk_full"],// 115
@@ -818,7 +825,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Southern.nomad_robe);
+
+::Legends.Armor.Southern.padded_mail_and_lamellar_hauberk <- {
 	ID = "oriental/padded_mail_and_lamellar_hauberk", // 290
 	Script = "",
 	Sets = [{
@@ -856,7 +866,7 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 			[1, "cloth/legend_southern_noble_surcoat"],// 55
 		],
 		Chain = [
-		   [0, "chain/legend_armor_ancient_mail"],// 35
+			[0, "chain/legend_armor_ancient_mail"],// 35
 			[0, "chain/legend_armor_basic_mail"],// 85
 			[0, "chain/legend_armor_hauberk"],// 95
 			[0, "chain/legend_armor_hauberk_full"],// 115
@@ -965,7 +975,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Southern.padded_mail_and_lamellar_hauberk);
+
+::Legends.Armor.Southern.padded_vest <- {
 	ID = "oriental/padded_vest", // 60
 	Script = "",
 	Sets = [{
@@ -1003,7 +1016,7 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 			[0, "cloth/legend_southern_noble_surcoat"],// 55
 		],
 		Chain = [
-		   [0, "chain/legend_armor_ancient_mail"],// 35
+			[0, "chain/legend_armor_ancient_mail"],// 35
 			[0, "chain/legend_armor_basic_mail"],// 85
 			[0, "chain/legend_armor_hauberk"],// 95
 			[0, "chain/legend_armor_hauberk_full"],// 115
@@ -1112,7 +1125,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Southern.padded_vest);
+
+::Legends.Armor.Southern.plated_nomad_mail <- {
 	ID = "oriental/plated_nomad_mail", // 105
 	Script = "",
 	Sets = [{
@@ -1150,7 +1166,7 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 			[1, "cloth/legend_southern_noble_surcoat"],// 55
 		],
 		Chain = [
-		   [0, "chain/legend_armor_ancient_mail"],// 35
+			[0, "chain/legend_armor_ancient_mail"],// 35
 			[0, "chain/legend_armor_basic_mail"],// 85
 			[0, "chain/legend_armor_hauberk"],// 95
 			[0, "chain/legend_armor_hauberk_full"],// 115
@@ -1259,7 +1275,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Southern.plated_nomad_mail);
+
+::Legends.Armor.Southern.southern_long_mail_with_padding <- {
 	ID = "oriental/southern_long_mail_with_padding", // 200
 	Script = "",
 	Sets = [{
@@ -1290,7 +1309,7 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 			[0, "cloth/legend_tunic_noble"], // 40
 		],
 		Chain = [
-		   [0, "chain/legend_armor_ancient_mail"],// 35
+			[0, "chain/legend_armor_ancient_mail"],// 35
 			[0, "chain/legend_armor_basic_mail"],// 85
 			[0, "chain/legend_armor_hauberk"],// 95
 			[0, "chain/legend_armor_hauberk_full"],// 115
@@ -1399,7 +1418,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Southern.southern_long_mail_with_padding);
+
+::Legends.Armor.Southern.southern_mail_shirt <- {
 	ID = "oriental/southern_mail_shirt", // 110
 	Script = "",
 	Sets = [{
@@ -1549,7 +1571,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Southern.southern_mail_shirt);
+
+::Legends.Armor.Southern.stitched_nomad_armor <- {
 	ID = "oriental/stitched_nomad_armor", // 80
 	Script = "",
 	Sets = [{
@@ -1587,7 +1612,7 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 			[0, "cloth/legend_southern_noble_surcoat"],// 55
 		],
 		Chain = [
-		   [0, "chain/legend_armor_ancient_mail"],// 35
+			[0, "chain/legend_armor_ancient_mail"],// 35
 			[0, "chain/legend_armor_basic_mail"],// 85
 			[0, "chain/legend_armor_hauberk"],// 95
 			[0, "chain/legend_armor_hauberk_full"],// 115
@@ -1696,7 +1721,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Southern.stitched_nomad_armor);
+
+::Legends.Armor.Southern.thick_nomad_robe <- {
 	ID = "oriental/thick_nomad_robe", // 50
 	Script = "",
 	Sets = [{
@@ -1738,7 +1766,7 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 			[1, "cloth/legend_southern_noble_surcoat"],// 55
 		],
 		Chain = [
-		   [0, "chain/legend_armor_ancient_mail"],// 35
+			[0, "chain/legend_armor_ancient_mail"],// 35
 			[0, "chain/legend_armor_basic_mail"],// 85
 			[0, "chain/legend_armor_hauberk"],// 95
 			[0, "chain/legend_armor_hauberk_full"],// 115
@@ -1847,7 +1875,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Southern.thick_nomad_robe);
+
+::Legends.Armor.Southern.vizier_gear <- {
 	ID = "oriental/vizier_gear", // 10
 	Script = "",
 	Sets = [{
@@ -1889,7 +1920,7 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 			[3, "cloth/legend_southern_noble_surcoat"],// 55
 		],
 		Chain = [
-		   [0, "chain/legend_armor_ancient_mail"],// 35
+			[0, "chain/legend_armor_ancient_mail"],// 35
 			[0, "chain/legend_armor_basic_mail"],// 85
 			[0, "chain/legend_armor_hauberk"],// 95
 			[0, "chain/legend_armor_hauberk_full"],// 115
@@ -1998,7 +2029,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Southern.vizier_gear);
+
+::Legends.Armor.Southern.blade_dancer_armor_00 <- {
 	ID = "blade_dancer_armor_00", //127
 	Script = "",
 	Sets = [{
@@ -2019,7 +2053,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Southern.blade_dancer_armor_00);
+
+::Legends.Armor.Southern.nomad_archer_armor_00 <- {
 	ID = "nomad_archer_armor_00", //127
 	Script = "",
 	Sets = [{
@@ -2040,5 +2077,6 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-}
-])
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Southern.nomad_archer_armor_00);
+

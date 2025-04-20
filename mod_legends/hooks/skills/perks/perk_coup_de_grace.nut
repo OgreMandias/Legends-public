@@ -46,14 +46,14 @@
 
 		foreach (effect in this.m.HighBonus)
 		{
-			if (_targetEntity.getSkills().hasEffect(effect)
+			if (_targetEntity.getSkills().hasEffect(effect))
 			{
 				bonus += 10;
 			}
 		}
 		foreach (effect in this.m.LowBonus)
 		{
-			if (_targetEntity.getSkills().hasEffect(effect)
+			if (_targetEntity.getSkills().hasEffect(effect))
 			{
 				bonus += 5;
 			}

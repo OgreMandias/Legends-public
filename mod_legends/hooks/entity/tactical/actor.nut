@@ -212,6 +212,10 @@
 		foreach(i, actor in otherActors) {
 			isAliedPtrs.push(actor.isAlliedWith);
 			actor.isAlliedWith = function(_other) {
+				if (this == null)
+					return false;
+				if (_other == null)
+					return false;
 				// check if checkMorale should happen when enemies are affected by it
 				return isAliedPtrs[i](_other) && this.m.CurrentProperties.IsAffectedByMovementMorale;
 			}.bindenv(actor);
@@ -229,8 +233,11 @@
 		// Lionheart perk stop
 		onMovementFinish(_tile);
 		// restore state
-		foreach (i, actor in otherActors)
+		foreach (i, actor in otherActors) {
+			if (actor == null)
+				continue;
 			actor.isAlliedWith = isAliedPtrs[i];
+		}
 		this.checkMorale = fnPtr;
 	}
 

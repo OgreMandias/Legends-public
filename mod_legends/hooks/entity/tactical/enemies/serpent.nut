@@ -1,5 +1,12 @@
 ::mods_hookExactClass("entity/tactical/enemies/serpent", function(o)
 {
+	local create = o.create;
+	o.create = function ()
+	{
+		create();
+		this.m.ExcludedInjuries.push("injury.cut_leg_muscles");
+	}
+
 	local onInit = o.onInit;
 	o.onInit = function ()
 	{

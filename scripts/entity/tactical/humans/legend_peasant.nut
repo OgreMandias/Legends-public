@@ -107,11 +107,11 @@ this.legend_peasant <- this.inherit("scripts/entity/tactical/legend_randomized_u
 
 
 	// 	this.m.Items.equip(this.Const.World.Common.pickArmor([
-	// 		[1, "sackcloth"],
-	// 		[1, "thick_tunic"],
-	// 		[1, "apron"],
-	// 		[1, "tattered_sackcloth"],
-	// 		[4, "linen_tunic"]
+	// 		[1, ::Legends.Armor.Standard.sackcloth],
+	// 		[1, ::Legends.Armor.Standard.thick_tunic],
+	// 		[1, ::Legends.Armor.Standard.apron],
+	// 		[1, ::Legends.Armor.Standard.tattered_sackcloth],
+	// 		[4, ::Legends.Armor.Standard.linen_tunic]
 	// 	]));
 
 	// 	if (this.Math.rand(1, 100) <= 33)

@@ -11,7 +11,7 @@
 		if (r <= 7)
 		{
 			this.m.Items.equip(this.Const.World.Common.pickArmor([
-				[1, "linen_tunic"]
+				[1, ::Legends.Armor.Standard.linen_tunic]
 			]));
 
 			if (this.Math.rand(1, 100) <= 33)
@@ -25,13 +25,13 @@
 		else if (r <= 9)
 		{
 			this.m.Items.equip(this.Const.World.Common.pickArmor([
-				[1, "noble_tunic"]
+				[1, ::Legends.Armor.Standard.noble_tunic]
 			]));
 		}
 		else if (r == 10)
 		{
 			this.m.Items.equip(this.Const.World.Common.pickArmor([
-				[1, "monk_robe"]
+				[1, ::Legends.Armor.Standard.monk_robe]
 			]));
 			withDetail = false;
 			withHelmet = false;
@@ -39,7 +39,7 @@
 		else if (r == 11)
 		{
 			this.m.Items.equip(this.Const.World.Common.pickArmor([
-				[1, "wizard_robe"]
+				[1, ::Legends.Armor.Standard.wizard_robe]
 			]));
 			withDetail = false;
 

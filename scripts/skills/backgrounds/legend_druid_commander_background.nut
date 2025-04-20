@@ -302,7 +302,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 		stash.removeByID("supplies.ground_grains");
 		items.equip(this.new("scripts/items/weapons/legend_staff"));
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "barbarians/hide_and_bone_armor"]
+			[1, ::Legends.Armor.Barbarian.hide_and_bone_armor]
 		]));
 
 		items.equip(this.Const.World.Common.pickHelmet([

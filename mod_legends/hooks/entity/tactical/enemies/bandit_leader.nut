@@ -120,16 +120,16 @@
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body) && this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head))
 		{
 			local armor = [
-				[1, "coat_of_plates"],
-				[1, "coat_of_scales"],
-				[1, "heavy_lamellar_armor"],
-				[1, "footman_armor"],
-				[1, "brown_hedgeknight_armor"],
-				[1, "northern_mercenary_armor_02"],
-				[1, "lamellar_harness"],
-				[1, "reinforced_mail_hauberk"],
-				[1, "leather_scale_armor"],
-				[1, "light_scale_armor"]
+				[1, ::Legends.Armor.Standard.coat_of_plates],
+				[1, ::Legends.Armor.Standard.coat_of_scales],
+				[1, ::Legends.Armor.Standard.heavy_lamellar_armor],
+				[1, ::Legends.Armor.Standard.footman_armor],
+				[1, ::Legends.Armor.Standard.brown_hedgeknight_armor],
+				[1, ::Legends.Armor.Standard.northern_mercenary_armor_02],
+				[1, ::Legends.Armor.Standard.lamellar_harness],
+				[1, ::Legends.Armor.Standard.reinforced_mail_hauberk],
+				[1, ::Legends.Armor.Standard.leather_scale_armor],
+				[1, ::Legends.Armor.Standard.light_scale_armor]
 			];
 
 			local helmet = [
@@ -158,13 +158,13 @@
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body) == null)
 		{
 			local armor = [
-				[1, "reinforced_mail_hauberk"],
-				[2, "heavy_lamellar_armor"],
-				[2, "bandit_armor_heavy"],
-				[1, "footman_armor"],
-				[1, "leather_scale_armor"],
-				[1, "light_scale_armor"],
-				[1, "red_bandit_leader_armor"]
+				[1, ::Legends.Armor.Standard.reinforced_mail_hauberk],
+				[2, ::Legends.Armor.Standard.heavy_lamellar_armor],
+				[2, ::Legends.Armor.Standard.bandit_armor_heavy],
+				[1, ::Legends.Armor.Standard.footman_armor],
+				[1, ::Legends.Armor.Standard.leather_scale_armor],
+				[1, ::Legends.Armor.Standard.light_scale_armor],
+				[1, ::Legends.Armor.Standard.red_bandit_leader_armor]
 			];
 
 			this.m.Items.equip(this.Const.World.Common.pickArmor(armor))

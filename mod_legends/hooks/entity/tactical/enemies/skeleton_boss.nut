@@ -39,7 +39,7 @@
 		}
 
 		local item = this.Const.World.Common.pickArmor([
-			[1, "legendary/emperors_armor_fake"] //legend_emperors_armor_fake
+			[1, ::Legends.Armor.Legendary.emperors_armor_fake] //legend_emperors_armor_fake
 		]);
 		this.m.Items.equip(item);
 

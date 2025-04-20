@@ -24,7 +24,7 @@
 		this.m.Items.addToBag(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[1, "oriental/plated_nomad_mail"]
+			[1, ::Legends.Armor.Southern.plated_nomad_mail]
 		]));
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head) && this.Math.rand(1, 100) <= 75)
@@ -62,7 +62,7 @@
 		else
 		{
 			this.m.Items.equip(this.Const.World.Common.pickArmor([
-				[1, "named/black_leather_armor"]
+				[1, ::Legends.Armor.Named.black_leather_armor]
 			]));
 		}
 

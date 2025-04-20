@@ -50,8 +50,8 @@ this.legend_peasant_butcher <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[7, "butcher_apron"],
-			[1, "leather_wraps"]
+			[7, ::Legends.Armor.Standard.butcher_apron],
+			[1, ::Legends.Armor.Standard.leather_wraps]
 		]));
 
 

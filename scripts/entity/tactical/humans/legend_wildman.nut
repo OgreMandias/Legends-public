@@ -113,7 +113,7 @@ this.legend_wildman <- this.inherit("scripts/entity/tactical/human", {
 
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[1, "leather_wraps"]
+			[1, ::Legends.Armor.Standard.leather_wraps]
 		]));
 	}
 

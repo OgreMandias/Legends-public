@@ -31,7 +31,7 @@
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body))
 		{
 			this.m.Items.equip(this.Const.World.Common.pickArmor([
-				[1, "barbarians/barbarian_ritual_armor"]
+				[1, ::Legends.Armor.Barbarian.barbarian_ritual_armor]
 			]));
 		}
 

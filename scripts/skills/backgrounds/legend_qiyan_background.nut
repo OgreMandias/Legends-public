@@ -124,7 +124,7 @@ this.legend_qiyan_background <- this.inherit("scripts/skills/backgrounds/charact
 	{
 		local items = this.getContainer().getActor().getItems();
 		local armor = this.Const.World.Common.pickArmor([
-			[1, "oriental/cloth_sash"]
+			[1, ::Legends.Armor.Southern.cloth_sash]
 		]);
 		items.equip(armor);
 		items.equip(this.Const.World.Common.pickHelmet([

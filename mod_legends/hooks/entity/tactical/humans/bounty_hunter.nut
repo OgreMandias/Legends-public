@@ -96,12 +96,12 @@
 		}
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[1, "ragged_surcoat"],
-			[1, "padded_leather"],
-			[1, "patched_mail_shirt"],
-			[1, "leather_lamellar"],
-			[1, "basic_mail_shirt"],
-			[1, "mail_hauberk"]
+			[1, ::Legends.Armor.Standard.ragged_surcoat],
+			[1, ::Legends.Armor.Standard.padded_leather],
+			[1, ::Legends.Armor.Standard.patched_mail_shirt],
+			[1, ::Legends.Armor.Standard.leather_lamellar],
+			[1, ::Legends.Armor.Standard.basic_mail_shirt],
+			[1, ::Legends.Armor.Standard.mail_hauberk]
 		]));
 
 		if (this.Math.rand(1, 100) <= 90)

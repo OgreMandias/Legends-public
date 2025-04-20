@@ -89,10 +89,10 @@ this.legend_caravan_hand <- this.inherit("scripts/entity/tactical/legend_randomi
 	// 	}
 
 	// 	local item = this.Const.World.Common.pickArmor([
-	// 		[1, "leather_tunic", this.Math.rand(6,7)],
-	// 		[1, "padded_leather"],
-	// 		[1, "padded_surcoat"],
-	// 		[1, "leather_lamellar"]
+	//		[1, ::Legends.Armor.Standard.leather_tunic, this.Math.rand(6,7)],
+	// 		[1, ::Legends.Armor.Standard.padded_leather],
+	// 		[1, ::Legends.Armor.Standard.padded_surcoat],
+	// 		[1, ::Legends.Armor.Standard.leather_lamellar]
 	// 	]);
 	// 	this.m.Items.equip(item);
 

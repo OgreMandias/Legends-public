@@ -129,7 +129,7 @@ this.legend_ancient_summoner_background <- this.inherit("scripts/skills/backgrou
 			[1, ::Legends.Helmet.Standard.cultist_leather_hood]
 		]));
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "thick_dark_tunic"]
+			[1, ::Legends.Armor.Standard.thick_dark_tunic]
 		]));
 		local r;
 		r = this.Math.rand(0, 8);

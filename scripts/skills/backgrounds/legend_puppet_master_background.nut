@@ -207,8 +207,8 @@ this.legend_puppet_master_background <- this.inherit("scripts/skills/backgrounds
 		]));
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "ragged_dark_surcoat"],
-			[1, "dark_southern_armor_00"]
+			[1, ::Legends.Armor.Standard.ragged_dark_surcoat],
+			[1, ::Legends.Armor.Standard.dark_southern_armor_00]
 		]));
 
 		items.equip(this.new("scripts/items/weapons/oriental/light_southern_mace"));

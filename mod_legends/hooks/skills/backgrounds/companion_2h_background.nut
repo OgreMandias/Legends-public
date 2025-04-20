@@ -165,9 +165,9 @@
 		local items = this.getContainer().getActor().getItems();
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "ragged_surcoat"],
-			[1, "padded_surcoat"],
-			[1, "gambeson"]
+			[1, ::Legends.Armor.Standard.ragged_surcoat],
+			[1, ::Legends.Armor.Standard.padded_surcoat],
+			[1, ::Legends.Armor.Standard.gambeson]
 		]));
 
 		items.equip(this.new("scripts/items/weapons/woodcutters_axe"));

@@ -49,9 +49,9 @@
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body))
 		{
 			this.m.Items.equip(this.Const.World.Common.pickArmor([
-				[1, "oriental/padded_mail_and_lamellar_hauberk"],
-				[1, "oriental/southern_long_mail_with_padding"],
-				[1, "oriental/mail_and_lamellar_plating"]
+				[1, ::Legends.Armor.Southern.padded_mail_and_lamellar_hauberk],
+				[1, ::Legends.Armor.Southern.southern_long_mail_with_padding],
+				[1, ::Legends.Armor.Southern.mail_and_lamellar_plating]
 			]));
 		}
 

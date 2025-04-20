@@ -77,13 +77,13 @@
 		this.m.Items.equip(shield);
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[1, "seedmaster_noble_armor"],
-			[1, "citreneking_noble_armor"]
+			[1, ::Legends.Armor.Standard.seedmaster_noble_armor],
+			[1, ::Legends.Armor.Standard.citreneking_noble_armor]
 		]));
 		// this.m.Items.equip(this.Const.World.Common.pickArmor([
 		// 	[1, "mail_hauberk", 28],
-		// 	[1, "mail_shirt"],
-		// 	[1, "basic_mail_shirt"]
+		// 	[1, ::Legends.Armor.Standard.mail_shirt],
+		// 	[1, ::Legends.Armor.Standard.basic_mail_shirt]
 		// ]));
 
 		local helmet;

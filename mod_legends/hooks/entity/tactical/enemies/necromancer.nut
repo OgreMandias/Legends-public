@@ -34,8 +34,8 @@
 		}
 
 		local item = this.Const.World.Common.pickArmor([
-			[1, "ragged_dark_surcoat"],
-			[1, "thick_dark_tunic"]
+			[1, ::Legends.Armor.Standard.ragged_dark_surcoat],
+			[1, ::Legends.Armor.Standard.thick_dark_tunic]
 		]);
 		this.m.Items.equip(item);
 

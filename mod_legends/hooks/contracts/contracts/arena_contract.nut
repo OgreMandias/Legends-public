@@ -231,7 +231,7 @@
 						{
 						case 1:
 							a = this.Const.World.Common.pickArmor([
-									[1, "oriental/gladiator_harness"],
+									[1, ::Legends.Armor.Southern.gladiator_harness],
 							]);
 							a.setUpgrade(this.new("scripts/items/legend_armor/armor_upgrades/legend_light_gladiator_upgrade"));
 
@@ -244,7 +244,7 @@
 
 						case 2:
 							a = this.Const.World.Common.pickArmor([
-									[1, "oriental/gladiator_harness"],
+									[1, ::Legends.Armor.Southern.gladiator_harness],
 							]);
 							a.setUpgrade(this.new("scripts/items/legend_armor/armor_upgrades/legend_heavy_gladiator_upgrade"));
 							this.List.push({

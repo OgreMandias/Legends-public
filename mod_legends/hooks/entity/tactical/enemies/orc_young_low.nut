@@ -74,10 +74,10 @@
 
 		r = this.Math.rand(1, 5);
 		local item = this.Const.World.Common.pickArmor([
-			[1, "greenskins/orc_young_very_light_armor"],
-			[1, "greenskins/orc_young_light_armor"],
-			[1, "greenskins/orc_young_medium_armor"],
-			[2, ""]
+			[1, ::Legends.Armor.Greenskin.orc_young_very_light_armor],
+			[1, ::Legends.Armor.Greenskin.orc_young_light_armor],
+			[1, ::Legends.Armor.Greenskin.orc_young_medium_armor],
+			[2, ::Legends.Armor.None]
 		]);
 		this.m.Items.equip(item);
 

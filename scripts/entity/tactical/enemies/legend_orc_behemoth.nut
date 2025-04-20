@@ -338,7 +338,7 @@ this.legend_orc_behemoth <- this.inherit("scripts/entity/tactical/actor", {
 			}
 
 			local item = this.Const.World.Common.pickArmor([
-				[1, "greenskins/legend_orc_behemoth_armor"]
+				[1, ::Legends.Armor.Greenskin.legend_orc_behemoth_armor]
 			]);
 			this.m.Items.equip(item);
 

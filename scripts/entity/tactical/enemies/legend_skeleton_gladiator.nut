@@ -53,7 +53,7 @@ this.legend_skeleton_gladiator <- this.inherit("scripts/entity/tactical/skeleton
 
 
 		local item = this.Const.World.Common.pickArmor([
-			[1, "ancient/ancient_ripped_cloth"]
+			[1, ::Legends.Armor.Ancient.ancient_ripped_cloth]
 		]);
 		this.m.Items.equip(item);
 

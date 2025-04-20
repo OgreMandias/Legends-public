@@ -53,9 +53,9 @@
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body) && this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head))
 		{
 			local armor = [
-				[1, "coat_of_plates"],
-				[1, "coat_of_scales"],
-				[1, "heavy_lamellar_armor"]
+				[1, ::Legends.Armor.Standard.coat_of_plates],
+				[1, ::Legends.Armor.Standard.coat_of_scales],
+				[1, ::Legends.Armor.Standard.heavy_lamellar_armor]
 			];
 
 			local helmet = [
@@ -96,11 +96,11 @@
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body))
 		{
 			local armor = [
-				[1, "coat_of_plates"],
-				[1, "coat_of_scales"],
-				//[1, "reinforced_mail_hauberk"],
-				[1, "heavy_lamellar_armor"],
-				[1, "brown_hedgeknight_armor"]
+				[1, ::Legends.Armor.Standard.coat_of_plates],
+				[1, ::Legends.Armor.Standard.coat_of_scales],
+				//[1, ::Legends.Armor.Standard.reinforced_mail_hauberk],
+				[1, ::Legends.Armor.Standard.heavy_lamellar_armor],
+				[1, ::Legends.Armor.Standard.brown_hedgeknight_armor]
 			];
 			this.m.Items.equip(this.Const.World.Common.pickArmor(
 				armor
@@ -163,9 +163,9 @@
 		if (r == 1)
 		{
 			this.m.Items.equip(this.Const.World.Common.pickArmor([
-				[1, "named/brown_coat_of_plates_armor"],
-				[1, "named/golden_scale_armor"],
-				[1, "named/green_coat_of_plates_armor"]
+				[1, ::Legends.Armor.Named.brown_coat_of_plates_armor],
+				[1, ::Legends.Armor.Named.golden_scale_armor],
+				[1, ::Legends.Armor.Named.green_coat_of_plates_armor]
 			]));
 		}
 		else

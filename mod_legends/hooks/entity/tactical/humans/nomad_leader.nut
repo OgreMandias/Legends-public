@@ -62,8 +62,8 @@
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body) && this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head))
 		{
 			local armor = [
-				[1, "oriental/plated_nomad_mail"],
-				[1, "oriental/southern_long_mail_with_padding"],
+				[1, ::Legends.Armor.Southern.plated_nomad_mail],
+				[1, ::Legends.Armor.Southern.southern_long_mail_with_padding],
 			];
 
 			local helmet = [
@@ -86,11 +86,11 @@
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body) == null)
 		{
 			this.m.Items.equip(this.Const.World.Common.pickArmor([
-				[3, "oriental/plated_nomad_mail"],
-				[2, "oriental/southern_long_mail_with_padding"],
-				[1, "theamson_nomad_leader_armor_heavy"],
-				[2, "citrene_nomad_leader_armor_00"],
-				[1, "southern_knight_armor"]
+				[3, ::Legends.Armor.Southern.plated_nomad_mail],
+				[2, ::Legends.Armor.Southern.southern_long_mail_with_padding],
+				[1, ::Legends.Armor.Standard.theamson_nomad_leader_armor_heavy],
+				[2, ::Legends.Armor.Standard.citrene_nomad_leader_armor_00],
+				[1, ::Legends.Armor.Standard.southern_knight_armor]
 			]));
 		}
 

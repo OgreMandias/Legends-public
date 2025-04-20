@@ -25,7 +25,7 @@
 	o.assignRandomEquipment = function ()
 	{
 		local armor = [
-			[1, "ancient/ancient_lich_attire"]
+			[1, ::Legends.Armor.Ancient.ancient_lich_attire]
 		];
 		local item = this.Const.World.Common.pickArmor(armor);
 		this.m.Items.equip(item);

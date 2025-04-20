@@ -79,8 +79,8 @@ this.legend_peasant_minstrel <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[1, "sackcloth"],
-			[9, "linen_tunic"]
+			[1, ::Legends.Armor.Standard.sackcloth],
+			[9, ::Legends.Armor.Standard.linen_tunic]
 		]));
 
 		if (this.Math.rand(1, 100) <= 66)

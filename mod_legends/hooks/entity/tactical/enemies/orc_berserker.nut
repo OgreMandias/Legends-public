@@ -143,9 +143,9 @@
 		}
 
 		local item = this.Const.World.Common.pickArmor([
-			[1, "greenskins/orc_berserker_light_armor"],
-			[1, "greenskins/orc_berserker_medium_armor"],
-			[3, ""]
+			[1, ::Legends.Armor.Greenskin.orc_berserker_light_armor],
+			[1, ::Legends.Armor.Greenskin.orc_berserker_medium_armor],
+			[3, ::Legends.Armor.None]
 		]);
 		this.m.Items.equip(item);
 

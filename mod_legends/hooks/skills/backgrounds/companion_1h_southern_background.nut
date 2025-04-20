@@ -57,9 +57,9 @@
 		items.equip(this.new("scripts/items/weapons/oriental/firelance"));
 		items.equip(this.new("scripts/items/shields/oriental/southern_light_shield"));
 		local item = this.Const.World.Common.pickArmor([
-			[1, "oriental/thick_nomad_robe"],
-			[1, "oriental/padded_vest"],
-			[1, "oriental/leather_nomad_robe"]
+			[1, ::Legends.Armor.Southern.thick_nomad_robe],
+			[1, ::Legends.Armor.Southern.padded_vest],
+			[1, ::Legends.Armor.Southern.leather_nomad_robe]
 		]);
 		items.equip(item);
 

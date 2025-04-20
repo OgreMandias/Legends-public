@@ -25,9 +25,9 @@
 		}
 
 		local armor = [
-			[1, "ancient/ancient_scale_harness"],
-			[1, "ancient/ancient_mail"],
-			[1, "ancient/ancient_double_layer_mail"]
+			[1, ::Legends.Armor.Ancient.ancient_scale_harness],
+			[1, ::Legends.Armor.Ancient.ancient_mail],
+			[1, ::Legends.Armor.Ancient.ancient_double_layer_mail]
 		];
 		local item = this.Const.World.Common.pickArmor(armor);
 		this.m.Items.equip(item);

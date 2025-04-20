@@ -220,8 +220,8 @@
 		}
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "oriental/thick_nomad_robe"],
-			[1, "oriental/assassin_robe"]
+			[1, ::Legends.Armor.Southern.thick_nomad_robe],
+			[1, ::Legends.Armor.Southern.assassin_robe]
 		]));
 
 		items.equip(this.Const.World.Common.pickHelmet([

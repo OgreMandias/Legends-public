@@ -146,11 +146,11 @@ this.legend_man_at_arms_background <- this.inherit("scripts/skills/backgrounds/c
 		];
 
 		items.equip(this.Const.World.Common.pickArmor([ //1 = least likely
-			[1, "worn_mail_shirt"],
-			[2, "patched_mail_shirt"],
-			[3, "leather_lamellar"],
-			[3, "basic_mail_shirt"],
-			[4, "gambeson"]
+			[1, ::Legends.Armor.Standard.worn_mail_shirt],
+			[2, ::Legends.Armor.Standard.patched_mail_shirt],
+			[3, ::Legends.Armor.Standard.leather_lamellar],
+			[3, ::Legends.Armor.Standard.basic_mail_shirt],
+			[4, ::Legends.Armor.Standard.gambeson]
 		]));
 
 		items.equip(this.Const.World.Common.pickHelmet([

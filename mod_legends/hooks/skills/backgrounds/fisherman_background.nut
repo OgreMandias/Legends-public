@@ -122,9 +122,9 @@
 		items.equip(this.new("scripts/items/tools/throwing_net"));
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "sackcloth"],
-			[1, "leather_tunic"],
-			[1, "linen_tunic", this.Math.rand(6, 7)]
+			[1, ::Legends.Armor.Standard.sackcloth],
+			[1, ::Legends.Armor.Standard.leather_tunic],
+			[1, ::Legends.Armor.Standard.linen_tunic, this.Math.rand(6, 7)]
 		]));
 
 		items.equip(this.Const.World.Common.pickHelmet([

@@ -200,8 +200,8 @@ this.legend_warlock_summoner_background <- this.inherit("scripts/skills/backgrou
 		]));
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "thick_dark_tunic"],
-			[1, "ragged_dark_surcoat"]
+			[1, ::Legends.Armor.Standard.thick_dark_tunic],
+			[1, ::Legends.Armor.Standard.ragged_dark_surcoat]
 		]));
 
 		items.equip(this.new("scripts/items/weapons/legend_staff"));

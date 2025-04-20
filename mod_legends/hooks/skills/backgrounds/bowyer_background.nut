@@ -169,7 +169,7 @@
 
 		items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "apron"]
+			[1, ::Legends.Armor.Standard.apron]
 		]));
 
 

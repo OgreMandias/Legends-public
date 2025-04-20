@@ -155,10 +155,10 @@
 		}
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "gambeson"],
-			[1, "padded_leather"],
-			[1, "thick_tunic"],
-			[1, "leather_tunic"]
+			[1, ::Legends.Armor.Standard.gambeson],
+			[1, ::Legends.Armor.Standard.padded_leather],
+			[1, ::Legends.Armor.Standard.thick_tunic],
+			[1, ::Legends.Armor.Standard.leather_tunic]
 		]));
 
 		local item = this.Const.World.Common.pickHelmet([

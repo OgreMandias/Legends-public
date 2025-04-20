@@ -129,7 +129,7 @@ this.legend_necromancer_background <- this.inherit("scripts/skills/backgrounds/c
 			[1, ::Legends.Helmet.Standard.dark_cowl]
 		]));
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "thick_dark_tunic"]
+			[1, ::Legends.Armor.Standard.thick_dark_tunic]
 		]));
 		items.equip(this.new("scripts/items/weapons/legend_grisly_scythe"));
 		local stash = this.World.Assets.getStash()

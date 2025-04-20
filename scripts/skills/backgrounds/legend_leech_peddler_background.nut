@@ -174,8 +174,8 @@ this.legend_leech_peddler_background <- this.inherit("scripts/skills/backgrounds
 		}
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "thick_dark_tunic"],
-			[1, "linen_tunic", this.Math.rand(6, 7)]
+			[1, ::Legends.Armor.Standard.thick_dark_tunic],
+			[1, ::Legends.Armor.Standard.linen_tunic, this.Math.rand(6, 7)]
 		]));
 
 		items.equip(this.Const.World.Common.pickHelmet([

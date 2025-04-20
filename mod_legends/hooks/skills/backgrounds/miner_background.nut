@@ -149,7 +149,7 @@
 		items.equip(this.new("scripts/items/weapons/pickaxe"));
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "sackcloth"]
+			[1, ::Legends.Armor.Standard.sackcloth]
 		]));
 
 		items.equip(this.Const.World.Common.pickHelmet([

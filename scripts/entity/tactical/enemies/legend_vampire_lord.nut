@@ -337,7 +337,7 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 	{
 
 		local item = this.Const.World.Common.pickArmor([
-			[1, "legend_vampire_lord_armor"]
+			[1, ::Legends.Armor.Standard.legend_vampire_lord_armor]
 		]);
 		this.m.Items.equip(item);
 		local item = this.Const.World.Common.pickHelmet([

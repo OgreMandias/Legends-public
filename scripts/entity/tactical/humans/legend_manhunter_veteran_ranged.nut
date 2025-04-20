@@ -133,18 +133,18 @@ this.legend_manhunter_veteran_ranged <- this.inherit("scripts/entity/tactical/hu
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body))
 		{
 			local armors = [
-				[1, "oriental/mail_and_lamellar_plating"],
-				[1, "oriental/southern_long_mail_with_padding"],
-				[1, "mail_hauberk"],
-				[1, "reinforced_mail_hauberk"],
-				[1, "lamellar_harness"]
+				[1, ::Legends.Armor.Southern.mail_and_lamellar_plating],
+				[1, ::Legends.Armor.Southern.southern_long_mail_with_padding],
+				[1, ::Legends.Armor.Standard.mail_hauberk],
+				[1, ::Legends.Armor.Standard.reinforced_mail_hauberk],
+				[1, ::Legends.Armor.Standard.lamellar_harness]
 			];
 
 			if (this.Const.DLC.Unhold)
 			{
 				armors.extend([
-					[1, "leather_scale_armor"],
-					[1, "footman_armor"]
+					[1, ::Legends.Armor.Standard.leather_scale_armor],
+					[1, ::Legends.Armor.Standard.footman_armor]
 				]);
 			}
 

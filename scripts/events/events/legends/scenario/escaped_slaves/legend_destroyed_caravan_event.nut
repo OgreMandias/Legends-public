@@ -28,10 +28,10 @@ this.legend_destroyed_caravan_event <- this.inherit("scripts/events/event", {
 				local items = [];
 
 				items.push(this.Const.World.Common.pickArmor([
-					[1, "oriental/cloth_sash"]
+					[1, ::Legends.Armor.Southern.cloth_sash]
 				]));
 				items.push(this.Const.World.Common.pickArmor([
-					[1, "oriental/cloth_sash"]
+					[1, ::Legends.Armor.Southern.cloth_sash]
 				]));
 				items.push(this.Const.World.Common.pickHelmet([
 					[1, ::Legends.Helmet.Southern.gunner_hat]
@@ -87,10 +87,10 @@ this.legend_destroyed_caravan_event <- this.inherit("scripts/events/event", {
 				local items = [];
 
 				items.push(this.Const.World.Common.pickArmor([
-					[1, "linen_tunic"]
+					[1, ::Legends.Armor.Standard.linen_tunic]
 				]));
 				items.push(this.Const.World.Common.pickArmor([
-					[1, "wizard_robe"]
+					[1, ::Legends.Armor.Standard.wizard_robe]
 				]));
 				items.push(this.Const.World.Common.pickHelmet([
 					[1, ::Legends.Helmet.Standard.wizard_hat]
@@ -141,10 +141,10 @@ this.legend_destroyed_caravan_event <- this.inherit("scripts/events/event", {
 				local items = [];
 
 				items.push(this.Const.World.Common.pickArmor([
-					[1, "noble_tunic"]
+					[1, ::Legends.Armor.Standard.noble_tunic]
 				]));
 				items.push(this.Const.World.Common.pickArmor([
-					[1, "barbarians/hide_and_bone_armor"]
+					[1, ::Legends.Armor.Barbarian.hide_and_bone_armor]
 				]));
 				items.push(this.Const.World.Common.pickHelmet([
 					[1, ::Legends.Helmet.Standard.wizard_hat]

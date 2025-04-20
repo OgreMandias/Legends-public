@@ -41,10 +41,10 @@ this.legends_skeleton_med <- this.inherit("scripts/entity/tactical/legend_skelet
 		}
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[1, "ancient/ancient_scale_harness"],
-			[1, "ancient/ancient_breastplate"],
-			[1, "ancient/ancient_mail"],
-			[1, "ancient/ancient_double_layer_mail"]
+			[1, ::Legends.Armor.Ancient.ancient_scale_harness],
+			[1, ::Legends.Armor.Ancient.ancient_breastplate],
+			[1, ::Legends.Armor.Ancient.ancient_mail],
+			[1, ::Legends.Armor.Ancient.ancient_double_layer_mail]
 		]));
 
 

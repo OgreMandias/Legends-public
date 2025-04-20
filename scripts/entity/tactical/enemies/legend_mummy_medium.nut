@@ -49,9 +49,9 @@ this.legend_mummy_medium <- this.inherit("scripts/entity/tactical/legend_mummy",
 		}
 
 		local armor = [
-			[1, "ancient/legend_mummy_bandages"],
-			[1, "ancient/legend_mummy_plate"]
-			//[1, "legend_armor_plate_ancient_scale_coat_restored"],
+			[1, ::Legends.Armor.Ancient.legend_mummy_bandages],
+			[1, ::Legends.Armor.Ancient.legend_mummy_plate]
+			//[1, ::Legends.Armor.Ancient.legend_armor_plate_ancient_scale_coat_restored],
 			//[1, "scripts/items/armor/ancient/legend_armor_plate_ancient_scale_harness_restored"],
 		];
 		local item = this.Const.World.Common.pickArmor(armor);

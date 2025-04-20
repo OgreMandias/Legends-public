@@ -51,7 +51,7 @@ this.legend_peasant_witchhunter <- this.inherit("scripts/entity/tactical/human",
 		this.m.Items.addToBag(this.new("scripts/items/weapons/shortsword"));
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[1, "thick_tunic"]
+			[1, ::Legends.Armor.Standard.thick_tunic]
 		]));
 
 		if (this.Math.rand(1, 100) <= 66)

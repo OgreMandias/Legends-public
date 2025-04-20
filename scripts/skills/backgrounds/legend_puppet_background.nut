@@ -284,20 +284,20 @@ this.legend_puppet_background <- this.inherit("scripts/skills/backgrounds/charac
 		}
 
 		items.equip(this.Const.World.Common.pickArmor([ //1 = least likely
-		//	[1, "decayed_coat_of_plates"],
-		//	[1, "southern_knight_armor"],
-			[1, "decayed_coat_of_scales"],
-			[1, "dark_southern_armor_00"],
-			[2, ""],
-			[2, "decayed_reinforced_mail_hauberk"],
-			[2, "cultist_leather_robe"],
-			[3, "basic_mail_shirt"],
-			[3, "gambeson"],
-			[4, "apron"],
-			[4, "butcher_apron"],
-			[4, "leather_tunic"],
-			[5, "leather_wraps"],
-			[5, "linen_tunic", this.Math.rand(6, 7)]
+		//	[1, ::Legends.Armor.Standard.decayed_coat_of_plates],
+		//	[1, ::Legends.Armor.Standard.southern_knight_armor],
+			[1, ::Legends.Armor.Standard.decayed_coat_of_scales],
+			[1, ::Legends.Armor.Standard.dark_southern_armor_00],
+			[2, ::Legends.Armor.None],
+			[2, ::Legends.Armor.Standard.decayed_reinforced_mail_hauberk],
+			[2, ::Legends.Armor.Standard.cultist_leather_robe],
+			[3, ::Legends.Armor.Standard.basic_mail_shirt],
+			[3, ::Legends.Armor.Standard.gambeson],
+			[4, ::Legends.Armor.Standard.apron],
+			[4, ::Legends.Armor.Standard.butcher_apron],
+			[4, ::Legends.Armor.Standard.leather_tunic],
+			[5, ::Legends.Armor.Standard.leather_wraps],
+			[5, ::Legends.Armor.Standard.linen_tunic, this.Math.rand(6, 7)]
 		]));
 
 		items.equip(this.Const.World.Common.pickHelmet([

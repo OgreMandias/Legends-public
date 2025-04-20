@@ -19,7 +19,7 @@
 		local r;
 		this.m.Items.equip(this.new("scripts/items/weapons/greenskins/goblin_staff"));
 		local item = this.Const.World.Common.pickArmor([
-			[1, "greenskins/goblin_shaman_armor"]
+			[1, ::Legends.Armor.Greenskin.goblin_shaman_armor]
 		]);
 		this.m.Items.equip(item);
 		local item = this.Const.World.Common.pickHelmet([

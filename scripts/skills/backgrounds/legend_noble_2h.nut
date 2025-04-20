@@ -175,9 +175,9 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 		items.equip(this.new("scripts/items/weapons/legend_infantry_axe"));
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "padded_surcoat"],
-			[2, "basic_mail_shirt"],
-			[1, "gambeson"]
+			[1, ::Legends.Armor.Standard.padded_surcoat],
+			[2, ::Legends.Armor.Standard.basic_mail_shirt],
+			[1, ::Legends.Armor.Standard.gambeson]
 		]));
 
 		items.equip(this.Const.World.Common.pickHelmet([

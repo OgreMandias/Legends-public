@@ -208,13 +208,13 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body) == null)
 		{
 			local armor = [
-				[1, "bandit_armor_ultraheavy"],
-				[2, "coat_of_plates"],
-				[2, "coat_of_scales"],
-				[2, "heavy_lamellar_armor"],
-				[1, "reinforced_mail_hauberk"],
-				[1, "brown_hedgeknight_armor"],
-				[1, "northern_mercenary_armor_02"]
+				[1, ::Legends.Armor.Standard.bandit_armor_ultraheavy],
+				[2, ::Legends.Armor.Standard.coat_of_plates],
+				[2, ::Legends.Armor.Standard.coat_of_scales],
+				[2, ::Legends.Armor.Standard.heavy_lamellar_armor],
+				[1, ::Legends.Armor.Standard.reinforced_mail_hauberk],
+				[1, ::Legends.Armor.Standard.brown_hedgeknight_armor],
+				[1, ::Legends.Armor.Standard.northern_mercenary_armor_02]
 			];
 
 			local item = this.Const.World.Common.pickArmor(armor);

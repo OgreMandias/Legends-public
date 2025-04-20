@@ -109,14 +109,14 @@
 		}
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[5, "gambeson"],
-			[2, "werewolf_mail_armor"],
-			[1, "northern_mercenary_armor_00"],
-			[3, "northern_mercenary_armor_01"],
-			[3, "padded_surcoat"],
-			[4, "basic_mail_shirt"],
-			[4, "mail_shirt"],
-			[4, "mail_hauberk"]
+			[5, ::Legends.Armor.Standard.gambeson],
+			[2, ::Legends.Armor.Standard.werewolf_mail_armor],
+			[1, ::Legends.Armor.Standard.northern_mercenary_armor_00],
+			[3, ::Legends.Armor.Standard.northern_mercenary_armor_01],
+			[3, ::Legends.Armor.Standard.padded_surcoat],
+			[4, ::Legends.Armor.Standard.basic_mail_shirt],
+			[4, ::Legends.Armor.Standard.mail_shirt],
+			[4, ::Legends.Armor.Standard.mail_hauberk]
 		]));
 
 		if (this.Math.rand(1, 100) <= 90)

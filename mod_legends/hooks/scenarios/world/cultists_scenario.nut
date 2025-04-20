@@ -76,10 +76,7 @@
 			[1, ::Legends.Helmet.Standard.cultist_leather_hood]
 		]));
 		items.equip(this.Const.World.Common.pickArmor([
-			[
-				1,
-				"leather_wraps"
-			]
+			[1, ::Legends.Armor.Standard.leather_wraps]
 		]));
 		bros[3].setStartValuesEx([ //edgyboy 2, armour
 			"cultist_background"
@@ -97,10 +94,7 @@
 			[1, ::Legends.Helmet.Standard.cultist_hood]
 		]));
 		items.equip(this.Const.World.Common.pickArmor([
-			[
-				1,
-				"leather_wraps"
-			]
+			[1, ::Legends.Armor.Standard.leather_wraps]
 		]));
 		bros[4].setStartValuesEx([ //ranged support
 			"legend_lurker_background"

@@ -229,9 +229,9 @@
 		}
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[2, "undertaker_apron"],
-			[2, "wanderers_coat"],
-			[1, "reinforced_leather_tunic"]
+			[2, ::Legends.Armor.Standard.undertaker_apron],
+			[2, ::Legends.Armor.Standard.wanderers_coat],
+			[1, ::Legends.Armor.Standard.reinforced_leather_tunic]
 		]));
 
 		items.equip(this.Const.World.Common.pickHelmet([

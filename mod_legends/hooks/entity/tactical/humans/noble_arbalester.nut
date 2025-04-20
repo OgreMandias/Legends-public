@@ -63,8 +63,8 @@
 		}
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[1, "padded_surcoat"],
-			[1, "gambeson"]
+			[1, ::Legends.Armor.Standard.padded_surcoat],
+			[1, ::Legends.Armor.Standard.gambeson]
 		]));
 
 		local helmet = this.Const.World.Common.pickHelmet([

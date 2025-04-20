@@ -198,12 +198,12 @@
 		}
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "mail_hauberk"],
-			[1, "leather_scale_armor"],
-			[1, "noble_mail_armor"],
-			[1, "light_scale_armor"],
-			[1, "footman_armor"],
-			[1, "reinforced_mail_hauberk"]
+			[1, ::Legends.Armor.Standard.mail_hauberk],
+			[1, ::Legends.Armor.Standard.leather_scale_armor],
+			[1, ::Legends.Armor.Standard.noble_mail_armor],
+			[1, ::Legends.Armor.Standard.light_scale_armor],
+			[1, ::Legends.Armor.Standard.footman_armor],
+			[1, ::Legends.Armor.Standard.reinforced_mail_hauberk]
 		]));
 
 		local helm = [

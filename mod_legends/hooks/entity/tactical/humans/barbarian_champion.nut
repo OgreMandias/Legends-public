@@ -53,12 +53,12 @@
 		}
 
 		local armor = [
-				[33, "barbarians/rugged_scale_armor"],
-				[34, "barbarians/heavy_iron_armor"],
-				[33, "barbarians/thick_plated_barbarian_armor"]
+				[33, ::Legends.Armor.Barbarian.rugged_scale_armor],
+				[34, ::Legends.Armor.Barbarian.heavy_iron_armor],
+				[33, ::Legends.Armor.Barbarian.thick_plated_barbarian_armor]
 		];
 		armor.push(
-			[5, "barbarians/reinforced_heavy_iron_armor"]
+			[5, ::Legends.Armor.Barbarian.reinforced_heavy_iron_armor]
 		);
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor(armor));

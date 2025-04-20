@@ -101,16 +101,16 @@ this.legend_manhunter <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Items.equip(this.new("scripts/items/tools/throwing_net"));
 
 		local armor = [
-			[1, "leather_lamellar"],
-			[1, "oriental/plated_nomad_mail"],
-			[1, "oriental/southern_mail_shirt"]
+			[1, ::Legends.Armor.Standard.leather_lamellar],
+			[1, ::Legends.Armor.Southern.plated_nomad_mail],
+			[1, ::Legends.Armor.Southern.southern_mail_shirt]
 		];
 
 		if (this.World.getTime().Days > 18)
 		{
 			armor.extend([
-				[1, "mail_shirt"],
-				[1, "oriental/mail_and_lamellar_plating"]
+				[1, ::Legends.Armor.Standard.mail_shirt],
+				[1, ::Legends.Armor.Southern.mail_and_lamellar_plating]
 			]);
 		}
 		this.m.Items.equip(this.Const.World.Common.pickArmor(armor));

@@ -183,8 +183,8 @@ this.legend_battle_sister_background <- this.inherit("scripts/skills/backgrounds
 		}
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "reinforced_mail_hauberk"],
-			[1, "worn_mail_shirt"]
+			[1, ::Legends.Armor.Standard.reinforced_mail_hauberk],
+			[1, ::Legends.Armor.Standard.worn_mail_shirt]
 		]));
 
 		items.equip(this.Const.World.Common.pickHelmet([

@@ -64,10 +64,10 @@ this.legend_poacher_guest <- this.inherit("scripts/entity/tactical/player", {
 		this.m.Items.addToBag(this.new("scripts/items/weapons/hatchet"));
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[1, "leather_tunic"],
-			[1, "linen_tunic"],
-			[1, "tattered_sackcloth"],
-			[1, "sackcloth"]
+			[1, ::Legends.Armor.Standard.leather_tunic],
+			[1, ::Legends.Armor.Standard.linen_tunic],
+			[1, ::Legends.Armor.Standard.tattered_sackcloth],
+			[1, ::Legends.Armor.Standard.sackcloth]
 		]));
 
 		if (this.Math.rand(1, 100) <= 50)

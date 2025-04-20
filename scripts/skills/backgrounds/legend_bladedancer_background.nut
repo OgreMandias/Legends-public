@@ -194,8 +194,8 @@ this.legend_bladedancer_background <- this.inherit("scripts/skills/backgrounds/c
 		}
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "oriental/assassin_robe"],
-			[1, "blade_dancer_armor_00"]
+			[1, ::Legends.Armor.Southern.assassin_robe],
+			[1, ::Legends.Armor.Southern.blade_dancer_armor_00]
 		]));
 		items.equip(this.Const.World.Common.pickHelmet([
 			[1, ::Legends.Helmet.Southern.blade_dancer_head_wrap],

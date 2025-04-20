@@ -247,10 +247,10 @@ this.legend_peddler_commander_background <- this.inherit("scripts/skills/backgro
 		}
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[4, "linen_tunic"],
-			[2, "oriental/cloth_sash"],
-			[3, "noble_tunic"],
-			[1, "noble_gear"]
+			[4, ::Legends.Armor.Standard.linen_tunic],
+			[2, ::Legends.Armor.Southern.cloth_sash],
+			[3, ::Legends.Armor.Standard.noble_tunic],
+			[1, ::Legends.Armor.Standard.noble_gear]
 		]));
 
 		items.equip(this.Const.World.Common.pickHelmet([ //higher number = more likely to spawn

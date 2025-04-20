@@ -211,11 +211,11 @@ this.legend_youngblood_background <- this.inherit("scripts/skills/backgrounds/ch
 		}
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[2, "ragged_surcoat"],
-			[2, "padded_leather"],
-			[1, "leather_tunic"],
-			[1, "padded_surcoat"],
-			[1, "gambeson"]
+			[2, ::Legends.Armor.Standard.ragged_surcoat],
+			[2, ::Legends.Armor.Standard.padded_leather],
+			[1, ::Legends.Armor.Standard.leather_tunic],
+			[1, ::Legends.Armor.Standard.padded_surcoat],
+			[1, ::Legends.Armor.Standard.gambeson]
 		]));
 
 		items.equip(this.Const.World.Common.pickHelmet([

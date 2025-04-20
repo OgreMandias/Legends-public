@@ -272,10 +272,10 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 		]));
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "thick_dark_tunic"],
-			[1, "ragged_dark_surcoat"],
-			[2, "undertaker_apron"],
-			[2, "wanderers_coat"]
+			[1, ::Legends.Armor.Standard.thick_dark_tunic],
+			[1, ::Legends.Armor.Standard.ragged_dark_surcoat],
+			[2, ::Legends.Armor.Standard.undertaker_apron],
+			[2, ::Legends.Armor.Standard.wanderers_coat]
 		]));
 
 		local r;

@@ -60,10 +60,10 @@
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body))
 		{
 			local armor = [
-				[1, "ancient/ancient_plated_scale_hauberk"],
-				[1, "ancient/ancient_scale_coat"],
-				[1, "ancient/ancient_plate_harness"],
-				[1, "ancient/ancient_plated_mail_hauberk"]
+				[1, ::Legends.Armor.Ancient.ancient_plated_scale_hauberk],
+				[1, ::Legends.Armor.Ancient.ancient_scale_coat],
+				[1, ::Legends.Armor.Ancient.ancient_plate_harness],
+				[1, ::Legends.Armor.Ancient.ancient_plated_mail_hauberk]
 			];
 			local item = this.Const.World.Common.pickArmor(armor);
 			this.m.Items.equip(item);

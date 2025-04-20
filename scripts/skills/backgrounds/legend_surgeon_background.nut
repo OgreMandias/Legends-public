@@ -215,9 +215,9 @@ this.legend_surgeon_background <- this.inherit("scripts/skills/backgrounds/chara
 		}
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "oriental/vizier_gear"],
-			[2, "oriental/cloth_sash"],
-			[3, "butcher_apron"]
+			[1, ::Legends.Armor.Southern.vizier_gear],
+			[2, ::Legends.Armor.Southern.cloth_sash],
+			[3, ::Legends.Armor.Standard.butcher_apron]
 		]));
 
 		items.equip(this.Const.World.Common.pickHelmet([

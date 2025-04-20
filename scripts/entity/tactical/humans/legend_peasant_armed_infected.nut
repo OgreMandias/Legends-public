@@ -148,11 +148,11 @@ this.legend_peasant_armed_infected <- this.inherit("scripts/entity/tactical/huma
 
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[2, "sackcloth"],
-			[1, "thick_tunic"],
-			[2, "apron"],
-			[1, "tattered_sackcloth"],
-			[2, "linen_tunic"]
+			[2, ::Legends.Armor.Standard.sackcloth],
+			[1, ::Legends.Armor.Standard.thick_tunic],
+			[2, ::Legends.Armor.Standard.apron],
+			[1, ::Legends.Armor.Standard.tattered_sackcloth],
+			[2, ::Legends.Armor.Standard.linen_tunic]
 		]));
 
 

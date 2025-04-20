@@ -77,7 +77,7 @@ this.legend_runesmith_background <- this.inherit("scripts/skills/backgrounds/cha
 
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "legend_blacksmith_apron"]
+			[1, ::Legends.Armor.Standard.legend_blacksmith_apron]
 		]));
 
 		items.equip(this.Const.World.Common.pickHelmet([

@@ -889,28 +889,28 @@
 	{
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[1, "padded_surcoat"],
-			[1, "mail_shirt"],
-			[1, "coat_of_plates"],
-			[1, "gambeson"],
-			[1, "leather_tunic"],
-			[1, "lamellar_harness"],
-			[1, "sackcloth"],
-			[1, "heavy_lamellar_armor"],
-			[1, "basic_mail_shirt"],
-			[1, "scale_armor"],
-			[1, "coat_of_scales"],
-			[1, "linen_tunic"],
-			[1, "tattered_sackcloth"],
-			[1, "heraldic_mail"],
-			[1, "named/black_leather_armor"],
-			[1, "named/golden_scale_armor"],
-			[1, "named/blue_studded_mail_armor"],
-			[1, "named/brown_coat_of_plates_armor"],
-			[1, "named/green_coat_of_plates_armor"],
-			[1, "reinforced_mail_hauberk"],
-			[1, "mail_hauberk"],
-			[1, "leather_lamellar"],
+			[1, ::Legends.Armor.Standard.padded_surcoat],
+			[1, ::Legends.Armor.Standard.mail_shirt],
+			[1, ::Legends.Armor.Standard.coat_of_plates],
+			[1, ::Legends.Armor.Standard.gambeson],
+			[1, ::Legends.Armor.Standard.leather_tunic],
+			[1, ::Legends.Armor.Standard.lamellar_harness],
+			[1, ::Legends.Armor.Standard.sackcloth],
+			[1, ::Legends.Armor.Standard.heavy_lamellar_armor],
+			[1, ::Legends.Armor.Standard.basic_mail_shirt],
+			[1, ::Legends.Armor.Standard.scale_armor],
+			[1, ::Legends.Armor.Standard.coat_of_scales],
+			[1, ::Legends.Armor.Standard.linen_tunic],
+			[1, ::Legends.Armor.Standard.tattered_sackcloth],
+			[1, ::Legends.Armor.Standard.heraldic_mail],
+			[1, ::Legends.Armor.Named.black_leather_armor],
+			[1, ::Legends.Armor.Named.golden_scale_armor],
+			[1, ::Legends.Armor.Named.blue_studded_mail_armor],
+			[1, ::Legends.Armor.Named.brown_coat_of_plates_armor],
+			[1, ::Legends.Armor.Named.green_coat_of_plates_armor],
+			[1, ::Legends.Armor.Standard.reinforced_mail_hauberk],
+			[1, ::Legends.Armor.Standard.mail_hauberk],
+			[1, ::Legends.Armor.Standard.leather_lamellar],
 		]));
 
 		local item = this.Const.World.Common.pickHelmet([
@@ -1026,16 +1026,16 @@
 	o.assignRandomRangedEquipment = function()
 	{
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[1, "padded_surcoat"],
-			[1, "mail_shirt"],
-			[1, "padded_leather"],
-			[1, "gambeson"],
-			[1, "leather_tunic"],
-			[1, "sackcloth"],
-			[1, "linen_tunic"],
-			[1, "tattered_sackcloth"],
-			[1, "ragged_surcoat"],
-			[1, "thick_tunic"],
+			[1, ::Legends.Armor.Standard.padded_surcoat],
+			[1, ::Legends.Armor.Standard.mail_shirt],
+			[1, ::Legends.Armor.Standard.padded_leather],
+			[1, ::Legends.Armor.Standard.gambeson],
+			[1, ::Legends.Armor.Standard.leather_tunic],
+			[1, ::Legends.Armor.Standard.sackcloth],
+			[1, ::Legends.Armor.Standard.linen_tunic],
+			[1, ::Legends.Armor.Standard.tattered_sackcloth],
+			[1, ::Legends.Armor.Standard.ragged_surcoat],
+			[1, ::Legends.Armor.Standard.thick_tunic],
 		]));
 
 		local item = this.Const.World.Common.pickHelmet([
@@ -1080,14 +1080,14 @@
 	o.assignRandomThrowingEquipment = function()
 	{
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[1, "padded_surcoat"],
-			[1, "mail_shirt"],
-			[1, "padded_leather"],
-			[1, "gambeson"],
-			[1, "leather_tunic"],
-			[1, "sackcloth"],
-			[1, "linen_tunic"],
-			[1, "tattered_sackcloth"],
+			[1, ::Legends.Armor.Standard.padded_surcoat],
+			[1, ::Legends.Armor.Standard.mail_shirt],
+			[1, ::Legends.Armor.Standard.padded_leather],
+			[1, ::Legends.Armor.Standard.gambeson],
+			[1, ::Legends.Armor.Standard.leather_tunic],
+			[1, ::Legends.Armor.Standard.sackcloth],
+			[1, ::Legends.Armor.Standard.linen_tunic],
+			[1, ::Legends.Armor.Standard.tattered_sackcloth],
 		]));
 
 		local item = this.Const.World.Common.pickHelmet([

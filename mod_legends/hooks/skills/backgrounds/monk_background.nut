@@ -173,15 +173,15 @@
 			]));
 
 			items.equip(this.Const.World.Common.pickArmor([
-				[2, "legend_nun_robe_dark"],
-				[1, "legend_nun_robe_light"]
+				[2, ::Legends.Armor.Standard.legend_nun_robe_dark],
+				[1, ::Legends.Armor.Standard.legend_nun_robe_light]
 			]));
 		}
 		else
 		{
 			local items = this.getContainer().getActor().getItems();
 			items.equip(this.Const.World.Common.pickArmor([
-				[1, "monk_robe"]
+				[1, ::Legends.Armor.Standard.monk_robe]
 			]))
 		}
 	}

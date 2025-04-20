@@ -9,9 +9,9 @@
 		local withHelmet = true;
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-				[1, "oriental/padded_mail_and_lamellar_hauberk"],
-				[1, "oriental/mail_and_lamellar_plating"],
-				[1, "oriental/vizier_gear"]
+				[1, ::Legends.Armor.Southern.padded_mail_and_lamellar_hauberk],
+				[1, ::Legends.Armor.Southern.mail_and_lamellar_plating],
+				[1, ::Legends.Armor.Southern.vizier_gear]
 		]));
 
 		if (withDetails && (alwaysWithDetails || this.Math.rand(1, 100) <= 50))

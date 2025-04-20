@@ -199,8 +199,8 @@ this.legend_conscript_background <- this.inherit("scripts/skills/backgrounds/cha
 		}
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[2, "oriental/linothorax"],
-			[1, "oriental/southern_mail_shirt"]
+			[2, ::Legends.Armor.Southern.linothorax],
+			[1, ::Legends.Armor.Southern.southern_mail_shirt]
 		]));
 
 		local helm = this.Const.World.Common.pickHelmet([

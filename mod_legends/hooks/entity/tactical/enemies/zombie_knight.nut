@@ -56,9 +56,9 @@
 		}
 
 		local aList = [
-			[1, "decayed_coat_of_plates"],
-			[1, "decayed_coat_of_scales"],
-			[1, "decayed_reinforced_mail_hauberk"]
+			[1, ::Legends.Armor.Standard.decayed_coat_of_plates],
+			[1, ::Legends.Armor.Standard.decayed_coat_of_scales],
+			[1, ::Legends.Armor.Standard.decayed_reinforced_mail_hauberk]
 		];
 		local armor = this.Const.World.Common.pickArmor(aList);
 

@@ -141,7 +141,7 @@ this.legend_inventor_background <- this.inherit("scripts/skills/backgrounds/char
 		local r;
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "apron"]
+			[1, ::Legends.Armor.Standard.apron]
 		]));
 
 		items.equip(this.Const.World.Common.pickHelmet([

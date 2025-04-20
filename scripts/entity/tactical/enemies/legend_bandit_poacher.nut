@@ -102,7 +102,7 @@ this.legend_bandit_poacher <- this.inherit("scripts/entity/tactical/legend_rando
 	// 	}
 
 	// 	local item = this.Const.World.Common.pickArmor([
-	// 		[20, "leather_wraps"]
+	// 		[20, ::Legends.Armor.Standard.leather_wraps]
 	// 	])
 	// 	this.m.Items.equip(item);
 

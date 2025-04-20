@@ -99,12 +99,12 @@ this.legend_bandit_raider_wolf <- this.inherit("scripts/entity/tactical/enemies/
 		}
 
 		local item = this.Const.World.Common.pickArmor([
-			[20, "ragged_surcoat"],
-			[20, "padded_leather"],
-			[20, "worn_mail_shirt"],
-			[20, "patched_mail_shirt"],
-			[20, "leather_lamellar"],
-			[20, "basic_mail_shirt"]
+			[20, ::Legends.Armor.Standard.ragged_surcoat],
+			[20, ::Legends.Armor.Standard.padded_leather],
+			[20, ::Legends.Armor.Standard.worn_mail_shirt],
+			[20, ::Legends.Armor.Standard.patched_mail_shirt],
+			[20, ::Legends.Armor.Standard.leather_lamellar],
+			[20, ::Legends.Armor.Standard.basic_mail_shirt]
 		]);
 		item.setUpgrade(this.new("scripts/items/legend_armor/armor_upgrades/legend_direwolf_pelt_upgrade"));
 		this.m.Items.equip(item);

@@ -19,7 +19,7 @@
 							item = this.new("scripts/items/weapons/wooden_stick");
 						else if (r == 2)
 							item = this.Const.World.Common.pickArmor([
-								[1, "tattered_sackcloth"],
+								[1, ::Legends.Armor.Standard.tattered_sackcloth],
 							]);
 						else if (r == 3)
 							item = this.new("scripts/items/weapons/knife");

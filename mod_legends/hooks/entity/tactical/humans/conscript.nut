@@ -57,8 +57,8 @@
 		else
 			variant = 8;
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[2, "oriental/linothorax", variant],
-			[1, "oriental/southern_mail_shirt"]
+			[2, ::Legends.Armor.Southern.linothorax, variant],
+			[1, ::Legends.Armor.Southern.southern_mail_shirt]
 		]));
 
 		local variant = 7;

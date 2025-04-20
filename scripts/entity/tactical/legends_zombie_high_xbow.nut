@@ -28,10 +28,10 @@ this.legends_zombie_high_xbow <- this.inherit("scripts/entity/tactical/legend_zo
 		this.m.Items.equip(this.new("scripts/items/ammo/quiver_of_bolts"));
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[1, "padded_leather"],
-			[1, "worn_mail_shirt"],
-			[1, "patched_mail_shirt"],
-			[1, "ragged_surcoat"]
+			[1, ::Legends.Armor.Standard.padded_leather],
+			[1, ::Legends.Armor.Standard.worn_mail_shirt],
+			[1, ::Legends.Armor.Standard.patched_mail_shirt],
+			[1, ::Legends.Armor.Standard.ragged_surcoat]
 		]));
 
 

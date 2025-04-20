@@ -207,7 +207,7 @@ this.legend_preserver_background <- this.inherit("scripts/skills/backgrounds/cha
 		]));
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "thick_dark_tunic"]
+			[1, ::Legends.Armor.Standard.thick_dark_tunic]
 		]));
 		local r;
 		r = this.Math.rand(0, 8);

@@ -164,10 +164,10 @@
 		}
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "patched_mail_shirt"],
-			[1, "padded_leather"],
-			[1, "basic_mail_shirt"],
-			[1, "worn_mail_shirt"]
+			[1, ::Legends.Armor.Standard.patched_mail_shirt],
+			[1, ::Legends.Armor.Standard.padded_leather],
+			[1, ::Legends.Armor.Standard.basic_mail_shirt],
+			[1, ::Legends.Armor.Standard.worn_mail_shirt]
 		]));
 
 		items.equip(this.Const.World.Common.pickHelmet([

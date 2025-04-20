@@ -167,9 +167,9 @@
 		items.equip(this.new("scripts/items/weapons/militia_spear"));
 		items.equip(this.new("scripts/items/shields/wooden_shield"));
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "ragged_surcoat"],
-			[1, "padded_surcoat"],
-			[1, "gambeson"]
+			[1, ::Legends.Armor.Standard.ragged_surcoat],
+			[1, ::Legends.Armor.Standard.padded_surcoat],
+			[1, ::Legends.Armor.Standard.gambeson]
 		]));
 
 		local item = this.Const.World.Common.pickHelmet([

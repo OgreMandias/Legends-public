@@ -77,9 +77,9 @@
 				item = this.Const.World.Common.pickHelmet([[1, ::Legends.Helmet.Standard.feathered_hat]]);
 			else {
 				item = this.Const.World.Common.pickArmor([
-					[1, "linen_tunic"],
-					[1, "leather_wraps"],
-					[1, "tattered_sackcloth"],
+					[1, ::Legends.Armor.Standard.linen_tunic],
+					[1, ::Legends.Armor.Standard.leather_wraps],
+					[1, ::Legends.Armor.Standard.tattered_sackcloth],
 				]);
 			}
 

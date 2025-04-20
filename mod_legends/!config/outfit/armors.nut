@@ -2222,7 +2222,7 @@
 };
 ::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Standard.indebted_armor_rags);
 
-::Legends.Armor.Standard.special/heraldic_armor <- {
+::Legends.Armor.Standard.heraldic_armor <- {
 	ID = "special/heraldic_armor", // 250
 	Script = "",
 	Sets = [{
@@ -2243,9 +2243,9 @@
 		]
 	}]
 };
-::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Standard.special/heraldic_armor);
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Standard.heraldic_armor);
 
-::Legends.Armor.Standard.special/wardog_armor <- {
+::Legends.Armor.Standard.wardog_armor <- {
 	ID = "special/wardog_armor", // 55
 	Script = "",
 	Sets = [{
@@ -2263,9 +2263,9 @@
 		]
 	}]
 };
-::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Standard.special/wardog_armor);
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Standard.wardog_armor);
 
-::Legends.Armor.Standard.special/wardog_heavy_armor <- {
+::Legends.Armor.Standard.wardog_heavy_armor <- {
 	ID = "special/wardog_heavy_armor", // 85
 	Script = "",
 	Sets = [{
@@ -2283,7 +2283,7 @@
 		]
 	}]
 };
-::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Standard.special/wardog_heavy_armor);
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Standard.wardog_heavy_armor);
 
 ::Legends.Armor.Standard.adorned_heavy_mail_hauberk <- {
 	ID = "adorned_heavy_mail_hauberk", //

@@ -103,7 +103,7 @@ this.legend_philosopher_background <- this.inherit("scripts/skills/backgrounds/c
 			[1, ::Legends.Helmet.Standard.witchhunter_hat]
 		]));
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "thick_dark_tunic"]
+			[1, ::Legends.Armor.Standard.thick_dark_tunic]
 		]));
 		items.equip(this.new("scripts/items/weapons/ancient/broken_ancient_sword"));
 		local stash = this.World.Assets.getStash()

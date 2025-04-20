@@ -364,11 +364,11 @@ this.legend_bandit_veteran <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		local item = this.Const.World.Common.pickArmor([
-			[1, "reinforced_mail_hauberk"],
-			[1, "scale_armor"],
-			[2, "heavy_lamellar_armor"],
-			[2, "bandit_armor_heavy"],
-			[3, "bandit_armor_ultraheavy"]
+			[1, ::Legends.Armor.Standard.reinforced_mail_hauberk],
+			[1, ::Legends.Armor.Standard.scale_armor],
+			[2, ::Legends.Armor.Standard.heavy_lamellar_armor],
+			[2, ::Legends.Armor.Standard.bandit_armor_heavy],
+			[3, ::Legends.Armor.Standard.bandit_armor_ultraheavy]
 		]);
 		this.m.Items.equip(item);
 

@@ -38,9 +38,9 @@
 		this.m.Items.equip(weapon);
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[1, "mail_hauberk", 28],
-			[1, "mail_shirt"],
-			[2, "basic_mail_shirt"]
+			[1, ::Legends.Armor.Standard.mail_hauberk, 28],
+			[1, ::Legends.Armor.Standard.mail_shirt],
+			[2, ::Legends.Armor.Standard.basic_mail_shirt]
 		]));
 
 		if (this.Math.rand(1, 100) <= 75)

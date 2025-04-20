@@ -36,8 +36,8 @@
 		}
 
 		local item = this.Const.World.Common.pickArmor([
-			[1, "greenskins/goblin_light_armor"],
-			[1, "greenskins/goblin_medium_armor"]
+			[1, ::Legends.Armor.Greenskin.goblin_light_armor],
+			[1, ::Legends.Armor.Greenskin.goblin_medium_armor]
 		]);
 		this.m.Items.equip(item);
 

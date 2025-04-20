@@ -27,7 +27,7 @@
 		this.m.Items.equip(this.new("scripts/items/weapons/barbarians/thorned_whip"));
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-				[1, "barbarians/hide_and_bone_armor"]
+				[1, ::Legends.Armor.Barbarian.hide_and_bone_armor]
 		]));
 
 		this.m.Items.equip(this.Const.World.Common.pickHelmet([

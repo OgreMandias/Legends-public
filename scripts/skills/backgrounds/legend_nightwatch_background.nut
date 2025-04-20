@@ -180,8 +180,8 @@ this.legend_nightwatch_background <- this.inherit("scripts/skills/backgrounds/ch
 		}
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "sackcloth"],
-			[1, "linen_tunic", this.Math.rand(6, 7)]
+			[1, ::Legends.Armor.Standard.sackcloth],
+			[1, ::Legends.Armor.Standard.linen_tunic, this.Math.rand(6, 7)]
 		]));
 
 		items.equip(this.Const.World.Common.pickHelmet([

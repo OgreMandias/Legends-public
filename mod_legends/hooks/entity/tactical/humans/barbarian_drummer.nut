@@ -40,9 +40,9 @@
 		this.m.Items.equip(this.new("scripts/items/weapons/barbarians/drum_item"));
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-				[1, "barbarians/thick_furs_armor"],
-				[1, "barbarians/animal_hide_armor"],
-				[1, "barbarians/reinforced_animal_hide_armor"]
+				[1, ::Legends.Armor.Barbarian.thick_furs_armor],
+				[1, ::Legends.Armor.Barbarian.animal_hide_armor],
+				[1, ::Legends.Armor.Barbarian.reinforced_animal_hide_armor]
 		]));
 
 		local item = this.Const.World.Common.pickHelmet([

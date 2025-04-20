@@ -36,7 +36,7 @@
 		}
 
 		local armor = [
-			[1, "ancient/ancient_ripped_cloth"]
+			[1, ::Legends.Armor.Ancient.ancient_ripped_cloth]
 		];
 		local item = this.Const.World.Common.pickArmor(armor);
 		this.m.Items.equip(item);

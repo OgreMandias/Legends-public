@@ -51,12 +51,12 @@
 
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			// [2, "mail_hauberk", 28],
-			// [1, "scale_armor"],
-			// [1, "reinforced_mail_hauberk"],
-			// [2, "footman_armor"],
-			[2, "seedmaster_noble_armor"],
-			[2, "citreneking_noble_armor"]
+			// [2, ::Legends.Armor.Standard.mail_hauberk, 28],
+			// [1, ::Legends.Armor.Standard.scale_armor],
+			// [1, ::Legends.Armor.Standard.reinforced_mail_hauberk],
+			// [2, ::Legends.Armor.Standard.footman_armor],
+			[2, ::Legends.Armor.Standard.seedmaster_noble_armor],
+			[2, ::Legends.Armor.Standard.citreneking_noble_armor]
 		]));
 
 

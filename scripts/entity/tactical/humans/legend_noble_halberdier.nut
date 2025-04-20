@@ -82,8 +82,8 @@ this.legend_noble_halberdier <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[1, "seedmaster_noble_armor"],
-			[1, "citreneking_noble_armor"],
+			[1, ::Legends.Armor.Standard.seedmaster_noble_armor],
+			[1, ::Legends.Armor.Standard.citreneking_noble_armor],
 		]));
 
 		if (this.Math.rand(1, 100) <= 90)

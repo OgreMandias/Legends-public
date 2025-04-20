@@ -8,8 +8,8 @@
 					this.Characters.push(_event.m.Anatomist.getImagePath());
 
 					local item = this.Const.World.Common.pickArmor([
-					[1, "decayed_coat_of_scales"],
-					[1, "decayed_reinforced_mail_hauberk"]
+					[1, ::Legends.Armor.Standard.decayed_coat_of_scales],
+					[1, ::Legends.Armor.Standard.decayed_reinforced_mail_hauberk]
 					]);
 
 					item.setCondition(item.getConditionMax() / 2 - 1);

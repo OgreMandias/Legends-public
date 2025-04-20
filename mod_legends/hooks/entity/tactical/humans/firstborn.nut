@@ -9,7 +9,7 @@
 	{
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[1, "linen_tunic"]
+			[1, ::Legends.Armor.Standard.linen_tunic]
 		]));
 
 		this.m.Items.equip(this.Const.World.Common.pickHelmet([

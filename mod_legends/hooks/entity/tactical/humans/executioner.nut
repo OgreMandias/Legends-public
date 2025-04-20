@@ -38,8 +38,8 @@
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body))
 		{
 			this.m.Items.equip(this.Const.World.Common.pickArmor([
-				[1, "lamellar_harness"],
-				[1, "heavy_lamellar_armor"]
+				[1, ::Legends.Armor.Standard.lamellar_harness],
+				[1, ::Legends.Armor.Standard.heavy_lamellar_armor]
 			]));
 		}
 

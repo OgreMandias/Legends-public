@@ -47,7 +47,7 @@
 
 						case 5:
 							item = this.Const.World.Common.pickArmor([
-								[1, "ancient/ancient_mail"],
+								[1, ::Legends.Armor.Ancient.ancient_mail],
 							]);
 							break;
 

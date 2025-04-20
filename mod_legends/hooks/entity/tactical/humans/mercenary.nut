@@ -98,21 +98,21 @@
 		}
 
 		local armor = [
-			[1, "sellsword_armor"],
-			// [1, "padded_leather"],
-			// [1, "patched_mail_shirt"],
-			// [1, "basic_mail_shirt"],
-			// [1, "mail_shirt"],
-			[1, "reinforced_mail_hauberk"],
-			[1, "mail_hauberk"],
-			[1, "traze_northern_mercenary_armor"],
-			[1, "northern_mercenary_armor_00"],
-			[1, "northern_mercenary_armor_01"],
-			[1, "northern_mercenary_armor_02"],
-			[1, "lamellar_harness"],
-			[1, "footman_armor"],
-			[1, "light_scale_armor"],
-			[1, "leather_scale_armor"]
+			[1, ::Legends.Armor.Standard.sellsword_armor],
+			// [1, ::Legends.Armor.Standard.padded_leather],
+			// [1, ::Legends.Armor.Standard.patched_mail_shirt],
+			// [1, ::Legends.Armor.Standard.basic_mail_shirt],
+			// [1, ::Legends.Armor.Standard.mail_shirt],
+			[1, ::Legends.Armor.Standard.reinforced_mail_hauberk],
+			[1, ::Legends.Armor.Standard.mail_hauberk],
+			[1, ::Legends.Armor.Standard.traze_northern_mercenary_armor],
+			[1, ::Legends.Armor.Standard.northern_mercenary_armor_00],
+			[1, ::Legends.Armor.Standard.northern_mercenary_armor_01],
+			[1, ::Legends.Armor.Standard.northern_mercenary_armor_02],
+			[1, ::Legends.Armor.Standard.lamellar_harness],
+			[1, ::Legends.Armor.Standard.footman_armor],
+			[1, ::Legends.Armor.Standard.light_scale_armor],
+			[1, ::Legends.Armor.Standard.leather_scale_armor]
 		];
 
 		local helm = [

@@ -86,8 +86,8 @@
 		}
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[1, "coat_of_plates"],
-			[1, "coat_of_scales"]
+			[1, ::Legends.Armor.Standard.coat_of_plates],
+			[1, ::Legends.Armor.Standard.coat_of_scales]
 		]));
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head))

@@ -99,7 +99,7 @@
 				});
 
 				item = this.Const.World.Common.pickArmor([
-					[1, "leather_lamellar"]
+					[1, ::Legends.Armor.Standard.leather_lamellar]
 				]);
 				this.World.Assets.getStash().add(item);
 				this.List.push({
@@ -157,7 +157,7 @@
 				});
 
 				item = this.Const.World.Common.pickArmor([
-					[1, "patched_mail_shirt"]
+					[1, ::Legends.Armor.Standard.patched_mail_shirt]
 				]);
 				this.World.Assets.getStash().add(item);
 				this.List.push({
@@ -217,7 +217,7 @@
 				});
 
 				item = this.Const.World.Common.pickArmor([
-					[1, "leather_lamellar"]
+					[1, ::Legends.Armor.Standard.leather_lamellar]
 				]);
 				this.World.Assets.getStash().add(item);
 				this.List.push({
@@ -283,7 +283,7 @@
 				});
 
 				item = this.Const.World.Common.pickArmor([
-					[1, "padded_leather"]
+					[1, ::Legends.Armor.Standard.padded_leather]
 				]);
 				this.World.Assets.getStash().add(item);
 				this.List.push({
@@ -350,7 +350,7 @@
 				});
 
 				item = this.Const.World.Common.pickArmor([
-					[1, "patched_mail_shirt"]
+					[1, ::Legends.Armor.Standard.patched_mail_shirt]
 				]);
 				this.World.Assets.getStash().add(item);
 				this.List.push({
@@ -401,7 +401,7 @@
 				});
 
 				item = this.Const.World.Common.pickArmor([
-					[1, "reinforced_mail_hauberk"]
+					[1, ::Legends.Armor.Standard.reinforced_mail_hauberk]
 				]);
 				this.World.Assets.getStash().add(item);
 				this.List.push({

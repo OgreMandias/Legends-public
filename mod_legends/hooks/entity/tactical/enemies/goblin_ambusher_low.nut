@@ -13,7 +13,7 @@
 
 		this.m.Items.addToBag(this.new("scripts/items/weapons/greenskins/goblin_notched_blade"));
 		local item = this.Const.World.Common.pickArmor([
-				[1, "greenskins/goblin_skirmisher_armor"]
+				[1, ::Legends.Armor.Greenskin.goblin_skirmisher_armor]
 			]);
 			this.m.Items.equip(item);
 

@@ -71,7 +71,7 @@
 
 
 		local armor = this.Const.World.Common.pickArmor([
-			[1, "oriental/gladiator_harness"]
+			[1, ::Legends.Armor.Southern.gladiator_harness]
 		]);
 
 		if (this.Math.rand(1,3) <= 2)

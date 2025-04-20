@@ -166,7 +166,7 @@
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body) == null)
 		{
 			local item = this.Const.World.Common.pickArmor([
-				[1, "greenskins/orc_warlord_armor"]
+				[1, ::Legends.Armor.Greenskin.orc_warlord_armor]
 			]);
 			this.m.Items.equip(item);
 		}

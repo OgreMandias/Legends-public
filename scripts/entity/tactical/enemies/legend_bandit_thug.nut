@@ -272,26 +272,26 @@ this.legend_bandit_thug <- this.inherit("scripts/entity/tactical/legend_randomiz
 	// 	{
 
 	// 		 item = this.Const.World.Common.pickArmor([
-	// 			[20, "blotched_gambeson"],
-	// 			[20, "bandit_armor_light"],
-	// 			[20, "ragged_surcoat"],
-	// 			[20, "padded_surcoat"],
-	// 			[20, "gambeson"]
+	// 			[20, ::Legends.Armor.Standard.blotched_gambeson],
+	// 			[20, ::Legends.Armor.Standard.bandit_armor_light],
+	// 			[20, ::Legends.Armor.Standard.ragged_surcoat],
+	// 			[20, ::Legends.Armor.Standard.padded_surcoat],
+	// 			[20, ::Legends.Armor.Standard.gambeson]
 	// 		])
 	// 	}
 	// 	else
 	// 	{
 	// 		item = this.Const.World.Common.pickArmor([
-	// 			[20, "leather_wraps"],
-	// 			[20, "thick_tunic"],
-	// 			[20, "monk_robe"],
-	// 			[20, "bandit_armor_light"],
-	// 			[20, "tattered_sackcloth"],
-	// 			[20, "leather_tunic"],
-	// 			[20, "blotched_gambeson"],
-	// 			[20, "ragged_surcoat"],
-	// 			[20, "padded_surcoat"],
-	// 			[20, "gambeson"]
+	// 			[20, ::Legends.Armor.Standard.leather_wraps],
+	// 			[20, ::Legends.Armor.Standard.thick_tunic],
+	// 			[20, ::Legends.Armor.Standard.monk_robe],
+	// 			[20, ::Legends.Armor.Standard.bandit_armor_light],
+	// 			[20, ::Legends.Armor.Standard.tattered_sackcloth],
+	// 			[20, ::Legends.Armor.Standard.leather_tunic],
+	// 			[20, ::Legends.Armor.Standard.blotched_gambeson],
+	// 			[20, ::Legends.Armor.Standard.ragged_surcoat],
+	// 			[20, ::Legends.Armor.Standard.padded_surcoat],
+	// 			[20, ::Legends.Armor.Standard.gambeson]
 	// 		])
 	// 	}
 	// 	this.m.Items.equip(item);

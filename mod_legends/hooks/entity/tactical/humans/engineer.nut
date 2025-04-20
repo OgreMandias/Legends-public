@@ -29,7 +29,7 @@
 			}
 		}
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[1, "oriental/padded_vest"]
+			[1, ::Legends.Armor.Southern.padded_vest]
 		]));
 		local helm =this.Const.World.Common.pickHelmet([
 				[1, ::Legends.Helmet.Southern.engineer_hat]

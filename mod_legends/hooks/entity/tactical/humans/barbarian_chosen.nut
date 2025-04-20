@@ -38,8 +38,8 @@
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body) && this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head))
 		{
 			local armor = [
-				[1, "barbarians/thick_plated_barbarian_armor"],
-				[1, "barbarians/reinforced_heavy_iron_armor"],
+				[1, ::Legends.Armor.Barbarian.thick_plated_barbarian_armor],
+				[1, ::Legends.Armor.Barbarian.reinforced_heavy_iron_armor],
 			];
 
 			local helmet = [
@@ -65,10 +65,10 @@
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body))
 		{
 			local armor = [
-				[1, "barbarians/thick_plated_barbarian_armor"],
-				[1, "barbarians/reinforced_heavy_iron_armor"],
-				[1, "barbarian_chosen_armor_00"],
-				[1, "barbarian_chosen_armor_01"]
+				[1, ::Legends.Armor.Barbarian.thick_plated_barbarian_armor],
+				[1, ::Legends.Armor.Barbarian.reinforced_heavy_iron_armor],
+				[1, ::Legends.Armor.Standard.barbarian_chosen_armor_00],
+				[1, ::Legends.Armor.Standard.barbarian_chosen_armor_01]
 			];
 			this.m.Items.equip(this.Const.World.Common.pickArmor(armor));
 		}

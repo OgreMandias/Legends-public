@@ -59,11 +59,11 @@ this.legend_peasant_monk <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		local armor = [
-			[1, "sackcloth"],
-			[1, "thick_tunic"],
-			[1, "apron"],
-			[1, "tattered_sackcloth"],
-			[6, "linen_tunic"]
+			[1, ::Legends.Armor.Standard.sackcloth],
+			[1, ::Legends.Armor.Standard.thick_tunic],
+			[1, ::Legends.Armor.Standard.apron],
+			[1, ::Legends.Armor.Standard.tattered_sackcloth],
+			[6, ::Legends.Armor.Standard.linen_tunic]
 		];
 
 		local helmet = [

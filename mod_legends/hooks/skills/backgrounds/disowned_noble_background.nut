@@ -215,11 +215,11 @@
 
 
 			items.equip(this.Const.World.Common.pickArmor([
-				[1, "padded_leather"],
-				[1, "gambeson"],
-				[1, "basic_mail_shirt"],
-				[1, "mail_shirt"],
-				[1, "mail_hauberk"]
+				[1, ::Legends.Armor.Standard.padded_leather],
+				[1, ::Legends.Armor.Standard.gambeson],
+				[1, ::Legends.Armor.Standard.basic_mail_shirt],
+				[1, ::Legends.Armor.Standard.mail_shirt],
+				[1, ::Legends.Armor.Standard.mail_hauberk]
 			]));
 
 			items.equip(this.Const.World.Common.pickHelmet([
@@ -259,12 +259,12 @@
 			}
 
 			items.equip(this.Const.World.Common.pickArmor([
-				[1, "padded_leather"],
-				[1, "gambeson"],
-				[1, "basic_mail_shirt"],
-				[1, "mail_shirt"],
-				[1, "mail_hauberk"],
-				[1, "padded_surcoat"]
+				[1, ::Legends.Armor.Standard.padded_leather],
+				[1, ::Legends.Armor.Standard.gambeson],
+				[1, ::Legends.Armor.Standard.basic_mail_shirt],
+				[1, ::Legends.Armor.Standard.mail_shirt],
+				[1, ::Legends.Armor.Standard.mail_hauberk],
+				[1, ::Legends.Armor.Standard.padded_surcoat]
 			]));
 
 			items.equip(this.Const.World.Common.pickHelmet([

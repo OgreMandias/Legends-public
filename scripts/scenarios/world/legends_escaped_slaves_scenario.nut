@@ -255,38 +255,14 @@ this.legends_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/st
 
 		if (getsArmor) {
 			items.equip(this.Const.World.Common.pickArmor([
-				[
-					10,
-					"oriental/nomad_robe"
-				],
-				[
-					10,
-					"oriental/thick_nomad_robe"
-				],
-				[
-					10,
-					"oriental/padded_vest"
-				],
-				[
-					5,
-					"oriental/stitched_nomad_armor"
-				],
-				[
-					5,
-					"oriental/plated_nomad_mail"
-				],
-				[
-					5,
-					"oriental/linothorax"
-				],
-				[
-					5,
-					"legend_rabble_fur"
-				],
-				[
-					5,
-					"legend_rabble_tunic"
-				]
+				[10, ::Legends.Armor.Southern.nomad_robe],
+				[10, ::Legends.Armor.Southern.thick_nomad_robe],
+				[10, ::Legends.Armor.Southern.padded_vest],
+				[5, ::Legends.Armor.Southern.stitched_nomad_armor],
+				[5, ::Legends.Armor.Southern.plated_nomad_mail],
+				[5, ::Legends.Armor.Southern.linothorax],
+				[5, ::Legends.Armor.Standard.legend_rabble_fur],
+				[5, ::Legends.Armor.Standard.legend_rabble_tunic]
 			]));
 			local armor = items.getItemAtSlot(this.Const.ItemSlot.Body);
 

@@ -281,14 +281,8 @@ this.legend_hunting_redback_webknechts_contract <- this.inherit("scripts/contrac
 			function start()
 			{
 				local item = this.Const.World.Common.pickArmor([
-					[
-						1,
-						"mail_hauberk"
-					],
-					[
-						1,
-						"coat_of_scales"
-					]
+					[1, ::Legends.Armor.Standard.mail_hauberk],
+					[1, ::Legends.Armor.Standard.coat_of_scales]
 				]);
 				this.World.Assets.getStash().add(item);
 				this.List.push({

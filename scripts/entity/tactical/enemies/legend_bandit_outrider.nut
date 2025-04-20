@@ -327,8 +327,8 @@ this.legend_bandit_outrider <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		local item = this.Const.World.Common.pickArmor([
-			[3, "gambeson"],
-			[1, "padded_surcoat"]
+			[3, ::Legends.Armor.Standard.gambeson],
+			[1, ::Legends.Armor.Standard.padded_surcoat]
 		]);
 		this.m.Items.equip(item);
 

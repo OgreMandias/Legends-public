@@ -40,10 +40,10 @@ this.legends_skeleton_high <- this.inherit("scripts/entity/tactical/legend_skele
 		}
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[1, "ancient/ancient_plated_scale_hauberk"],
-			[1, "ancient/ancient_scale_coat"],
-			[1, "ancient/ancient_plate_harness"],
-			[1, "ancient/ancient_plated_mail_hauberk"]
+			[1, ::Legends.Armor.Ancient.ancient_plated_scale_hauberk],
+			[1, ::Legends.Armor.Ancient.ancient_scale_coat],
+			[1, ::Legends.Armor.Ancient.ancient_plate_harness],
+			[1, ::Legends.Armor.Ancient.ancient_plated_mail_hauberk]
 		]));
 
 		this.m.Items.equip(this.Const.World.Common.pickHelmet([

@@ -216,11 +216,11 @@ this.legend_pilgrim_background <- this.inherit("scripts/skills/backgrounds/chara
 		];
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "leather_tunic"],
-			[1, "tattered_sackcloth"],
-			[1, "padded_surcoat"],
-			[1, "gambeson"],
-			[1, "linen_tunic"]
+			[1, ::Legends.Armor.Standard.leather_tunic],
+			[1, ::Legends.Armor.Standard.tattered_sackcloth],
+			[1, ::Legends.Armor.Standard.padded_surcoat],
+			[1, ::Legends.Armor.Standard.gambeson],
+			[1, ::Legends.Armor.Standard.linen_tunic]
 		]));
 
 		items.equip(this.Const.World.Common.pickHelmet([

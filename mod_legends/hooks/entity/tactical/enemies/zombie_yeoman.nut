@@ -52,11 +52,11 @@
 		}
 
 		local aList = [
-			[1, "padded_leather"],
-			[1, "worn_mail_shirt"],
-			[1, "patched_mail_shirt"],
-			[1, "ragged_surcoat"],
-			[1, "basic_mail_shirt"]
+			[1, ::Legends.Armor.Standard.padded_leather],
+			[1, ::Legends.Armor.Standard.worn_mail_shirt],
+			[1, ::Legends.Armor.Standard.patched_mail_shirt],
+			[1, ::Legends.Armor.Standard.ragged_surcoat],
+			[1, ::Legends.Armor.Standard.basic_mail_shirt]
 		];
 		local armor = this.Const.World.Common.pickArmor(aList);
 

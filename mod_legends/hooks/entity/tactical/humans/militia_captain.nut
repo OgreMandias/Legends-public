@@ -71,9 +71,9 @@
 		}
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[1, "basic_mail_shirt"],
-			[1, "padded_leather"],
-			[1, "mail_shirt"]
+			[1, ::Legends.Armor.Standard.basic_mail_shirt],
+			[1, ::Legends.Armor.Standard.padded_leather],
+			[1, ::Legends.Armor.Standard.mail_shirt]
 		]));
 
 		local r = this.Math.rand(1, 4);

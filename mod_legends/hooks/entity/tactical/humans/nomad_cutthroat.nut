@@ -32,12 +32,12 @@
 		}
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[2, "oriental/nomad_robe"],
-			[2, "oriental/thick_nomad_robe"],
-			[2, "oriental/cloth_sash"],
-			// [1, "citrene_nomad_cutthroat_armor_00"],
-			// [1, "citrene_nomad_cutthroat_armor_01"],
-			[1, "leather_wraps"]
+			[2, ::Legends.Armor.Southern.nomad_robe],
+			[2, ::Legends.Armor.Southern.thick_nomad_robe],
+			[2, ::Legends.Armor.Southern.cloth_sash],
+			// [1, ::Legends.Armor.Standard.citrene_nomad_cutthroat_armor_00],
+			// [1, ::Legends.Armor.Standard.citrene_nomad_cutthroat_armor_01],
+			[1, ::Legends.Armor.Standard.leather_wraps]
 		]));
 
 		local helmet = [

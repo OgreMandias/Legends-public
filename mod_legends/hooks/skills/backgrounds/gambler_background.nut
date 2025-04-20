@@ -152,9 +152,9 @@
 	{
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "noble_tunic"],
-			[1, "linen_tunic"],
-			[2, ""]
+			[1, ::Legends.Armor.Standard.noble_tunic],
+			[1, ::Legends.Armor.Standard.linen_tunic],
+			[2, ::Legends.Armor.None]
 		]));
 
 		items.equip(this.Const.World.Common.pickHelmet([

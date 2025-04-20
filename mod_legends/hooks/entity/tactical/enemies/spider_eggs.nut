@@ -28,7 +28,7 @@
 	o.assignRandomEquipment <- function ()
 	{
 		local armor = [
-			[1, "ancient/ancient_priest_attire"]
+			[1, ::Legends.Armor.Ancient.ancient_priest_attire]
 		];
 		local item = this.Const.World.Common.pickArmor(armor);
 		this.m.Items.equip(item);

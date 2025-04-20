@@ -206,9 +206,9 @@
 		}
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "leather_tunic"],
-			[1, "leather_wraps"],
-			[1, "ragged_surcoat"]
+			[1, ::Legends.Armor.Standard.leather_tunic],
+			[1, ::Legends.Armor.Standard.leather_wraps],
+			[1, ::Legends.Armor.Standard.ragged_surcoat]
 		]));
 
 		items.equip(this.Const.World.Common.pickHelmet([

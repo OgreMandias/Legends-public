@@ -63,15 +63,15 @@ this.legends_zombie_low <- this.inherit("scripts/entity/tactical/legend_zombie",
 		}
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[4, "leather_tunic"],
-			[4, "linen_tunic"],
-			[3, "sackcloth"],
-			[3, "padded_surcoat"],
-			[2, "leather_wraps"],
-			[2, "monk_robe"],
-			[2, "apron"],
-			[2, "butcher_apron"],
-			[1, "cultist_leather_robe"]
+			[4, ::Legends.Armor.Standard.leather_tunic],
+			[4, ::Legends.Armor.Standard.linen_tunic],
+			[3, ::Legends.Armor.Standard.sackcloth],
+			[3, ::Legends.Armor.Standard.padded_surcoat],
+			[2, ::Legends.Armor.Standard.leather_wraps],
+			[2, ::Legends.Armor.Standard.monk_robe],
+			[2, ::Legends.Armor.Standard.apron],
+			[2, ::Legends.Armor.Standard.butcher_apron],
+			[1, ::Legends.Armor.Standard.cultist_leather_robe]
 		]));
 
 		local item = this.Const.World.Common.pickHelmet([

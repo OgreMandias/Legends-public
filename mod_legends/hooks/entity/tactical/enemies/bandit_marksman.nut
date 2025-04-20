@@ -111,10 +111,10 @@
 		}
 
 		local item = this.Const.World.Common.pickArmor([
-			[20, "thick_tunic"],
-			[20, "padded_surcoat"],
-			[20,"leather_wraps"],
-			[20,"blotched_gambeson"]
+			[20, ::Legends.Armor.Standard.thick_tunic],
+			[20, ::Legends.Armor.Standard.padded_surcoat],
+			[20, ::Legends.Armor.Standard.leather_wraps],
+			[20, ::Legends.Armor.Standard.blotched_gambeson]
 		]);
 		this.m.Items.equip(item);
 

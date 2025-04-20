@@ -65,10 +65,7 @@ this.legends_solo_necro_scenario <- this.inherit("scripts/scenarios/world/starti
 			[1, ::Legends.Helmet.Standard.wizard_hat]
 		]));
 		items.equip(this.Const.World.Common.pickArmor([
-			[
-				1,
-				"wizard_robe"
-			]
+			[1, ::Legends.Armor.Standard.wizard_robe]
 		]));
 
 		bros[2].setStartValuesEx([
@@ -88,10 +85,7 @@ this.legends_solo_necro_scenario <- this.inherit("scripts/scenarios/world/starti
 			[1, ::Legends.Helmet.Standard.jesters_hat]
 		]));
 		items.equip(this.Const.World.Common.pickArmor([
-			[
-				1,
-				"noble_tunic"
-			]
+			[1, ::Legends.Armor.Standard.noble_tunic]
 		]));
 
 		bros[3].setStartValuesEx([

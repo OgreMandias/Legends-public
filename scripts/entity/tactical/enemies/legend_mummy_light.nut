@@ -91,7 +91,7 @@ this.legend_mummy_light <- this.inherit("scripts/entity/tactical/legend_mummy", 
 		}
 
 		local armor = [
-			[2, "ancient/legend_mummy_bandages"],
+			[2, ::Legends.Armor.Ancient.legend_mummy_bandages],
 			[3, ""]
 
 		];

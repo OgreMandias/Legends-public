@@ -29,7 +29,7 @@
 						text = "You gain " + item.getName()
 					});
 
-					item = this.Const.World.Common.pickArmor([[1, "legendary/legend_ijirok_armor"]]);
+					item = this.Const.World.Common.pickArmor([[1, ::Legends.Armor.Legendary.legend_ijirok_armor]]);
 
 					this.World.Assets.getStash().add(item);
 					this.List.push({

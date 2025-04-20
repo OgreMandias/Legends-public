@@ -1,3 +1,5 @@
+::Legends.Armor.Ancient <- {};
+
 ::Legends.Armor.Ancient.ancient_breastplate <- {
 	ID = "ancient/ancient_breastplate", // 135
 	Script = "",

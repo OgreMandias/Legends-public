@@ -1,3 +1,5 @@
+::Legends.Armor.Greenskin <- {};
+
 ::Legends.Armor.Greenskin.goblin_heavy_armor <- {
 	ID = "greenskins/goblin_heavy_armor", // 90
 	Script = "",

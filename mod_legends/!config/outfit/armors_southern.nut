@@ -1,3 +1,5 @@
+::Legends.Armor.Southern <- {};
+
 ::Legends.Armor.Southern.assassin_robe <- {
 	ID = "oriental/assassin_robe", // 120
 	Script = "",

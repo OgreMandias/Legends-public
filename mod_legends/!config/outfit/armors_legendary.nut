@@ -1,3 +1,5 @@
+::Legends.Armor.Legendary <- {};
+
 ::Legends.Armor.Legendary.armor_of_davkul <- {
 	ID = "legendary/armor_of_davkul", // this.m.ConditionMax
 	Script = "",

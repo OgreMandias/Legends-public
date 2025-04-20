@@ -1,3 +1,5 @@
+::Legends.Armor.Barbarian <- {};
+
 ::Legends.Armor.Barbarian.animal_hide_armor <- {
 	ID = "barbarians/animal_hide_armor", // 45
 	Script = "",

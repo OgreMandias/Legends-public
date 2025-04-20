@@ -1,3 +1,5 @@
+::Legends.Armor.Attachment <- {};
+
 ::Legends.Armor.Attachment.metal_plating_upgrade <- {
 	ID = "metal_plating_upgrade", // 85
 	Script = "scripts/items/legend_armor/armor_upgrades/legend_metal_plating_upgrade",

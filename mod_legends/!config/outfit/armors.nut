@@ -1,3 +1,5 @@
+::Legends.Armor.Standard <- {};
+
 ::Legends.Armor.Standard.apron <- {
 	ID = "apron",
 	Script = "",

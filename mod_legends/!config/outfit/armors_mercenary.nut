@@ -1,3 +1,5 @@
+::Legends.Armor.Mercenary <- {};
+
 ::Legends.Armor.Mercenary.mercenary_archer_armor_00 <- {
 	ID = "mercenary_archer_armor_00", // goes with helm 00
 	Script = "",

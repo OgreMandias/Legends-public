@@ -1,3 +1,5 @@
+::Legends.Armor.Named <- {};
+
 ::Legends.Armor.Named.black_and_gold_armor <- {
 	ID = "named/black_and_gold_armor", // 210
 	Script = "",

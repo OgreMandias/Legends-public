@@ -538,6 +538,7 @@ if (!("World" in ::Const))
 		local chance = _minibossify;
 		chance += ::World.getTime().Days > 100 ? 0 : -1;
 		chance += ::Const.LegendMod.GetFavEnemyBossChance(troop.Type.ID);
+		chance += ::World.Assets.m.ChampionChanceAdditional;
 		minibossChanceMap[troop.Type.ID] <- chance;
 	}
 	return minibossChanceMap;
@@ -664,9 +665,8 @@ if (!("World" in ::Const))
 
 	if (troop.Variant > 0)
 	{
-		_minibossify = _minibossify + this.World.Assets.m.ChampionChanceAdditional;
 		local upperBound = ("DieRoll" in troop) ? troop.DieRoll : 100;
-		if (!this.Const.DLC.Wildmen || this.Math.rand(1, upperBound) > troop.Variant + _minibossify + (this.World.getTime().Days > 90 ? 0 : -1))
+		if (!this.Const.DLC.Wildmen || this.Math.rand(1, upperBound) > troop.Variant + _minibossify)
 		{
 			troop.Variant = 0;
 		}
@@ -766,7 +766,7 @@ if (!("World" in ::Const))
 			if (unit.Variant > 0)
 			{
 				local upperBound = ("DieRoll" in unit) ? unit.DieRoll : 100;
-				if (this.Math.rand(1, upperBound) > unit.Variant + minibossChanceMap[t.Type.ID] + (this.World.getTime().Days > 100 ? 0 : -1))
+				if (this.Math.rand(1, upperBound) > unit.Variant + minibossChanceMap[t.Type.ID])
 				{
 					unit.Variant = 0;
 				}
@@ -1166,11 +1166,6 @@ if (!("World" in ::Const))
 	});
 }
 
-if (!("LegendMod" in ::Const))
-{
-	::Const.LegendMod <- {};
-}
-
 ::Const.LegendMod.BoxMuller <- {
 	UseLast = false,
 	NextValue = 0.0,
@@ -1218,13 +1213,10 @@ if (!("LegendMod" in ::Const))
 ::Const.World.Common.addHostileUnitsToCombat <- function ( _into, _partyList, _resources, _faction, _minibossify = 0)
 {
 	local fact = _faction;
-	// this.logWarning("Faction: " + fact)
-	if (this.World.FactionManager.isAlliedWithPlayer(_faction))
-	{
+	if (::World.FactionManager.isAlliedWithPlayer(_faction)) {
 		fact = this.World.FactionManager.getFactionOfType(this.Const.FactionType.DummyFaction).getID();
-		// this.logWarning("Modified: " + fact)
 	}
-	this.Const.World.Common.addUnitsToCombat(_into, _partyList, _resources, fact, _minibossify = 0)
+	this.Const.World.Common.addUnitsToCombat(_into, _partyList, _resources, fact, _minibossify)
 }
 
 //Perks array is [weight, perk name, cost]

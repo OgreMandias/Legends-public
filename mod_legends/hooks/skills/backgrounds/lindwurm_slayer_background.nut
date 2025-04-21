@@ -198,22 +198,20 @@
 		}
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "mail_hauberk"],
-			[1, "leather_scale_armor"],
-			[1, "noble_mail_armor"],
-			[1, "light_scale_armor"],
-			[1, "footman_armor"],
-			[1, "reinforced_mail_hauberk"]
+			[1, ::Legends.Armor.Standard.mail_hauberk],
+			[1, ::Legends.Armor.Standard.leather_scale_armor],
+			[1, ::Legends.Armor.Standard.noble_mail_armor],
+			[1, ::Legends.Armor.Standard.light_scale_armor],
+			[1, ::Legends.Armor.Standard.footman_armor],
+			[1, ::Legends.Armor.Standard.reinforced_mail_hauberk]
 		]));
 
-		local helm = [
-			[1, "feathered_hat"],
-			[1, "headscarf"],
-			[1, "mail_coif"],
-			[1, "greatsword_hat"]
-		];
-
-		items.equip(this.Const.World.Common.pickHelmet(helm));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, ::Legends.Helmet.Standard.feathered_hat],
+			[1, ::Legends.Helmet.Standard.headscarf],
+			[1, ::Legends.Helmet.Standard.mail_coif],
+			[1, ::Legends.Helmet.Standard.greatsword_hat]
+		]));
 	}
 
 });

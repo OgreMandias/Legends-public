@@ -1,15 +1,6 @@
-if (!("LegendMod" in ::Const))
-{
-	::Const.LegendMod <- {};
-}
+::Legends.Armor.Barbarian <- {};
 
-if (!("ArmorObjs" in ::Const.LegendMod))
-{
-	::Const.LegendMod.ArmorObjs <- [];
-}
-
-::Const.LegendMod.ArmorObjs.extend([
-{
+::Legends.Armor.Barbarian.animal_hide_armor <- {
 	ID = "barbarians/animal_hide_armor", // 45
 	Script = "",
 	Sets = [{
@@ -29,7 +20,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Barbarian.animal_hide_armor);
+
+::Legends.Armor.Barbarian.barbarian_ritual_armor <- {
 	ID = "barbarians/barbarian_ritual_armor", // 300
 	Script = "scripts/items/armor/barbarians/barbarian_ritual_armor",
 	Sets = [{
@@ -46,7 +40,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Barbarian.barbarian_ritual_armor);
+
+::Legends.Armor.Barbarian.heavy_iron_armor <- {
 	ID = "barbarians/heavy_iron_armor", // 170
 	Script = "",
 	Sets = [{
@@ -67,7 +64,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Barbarian.heavy_iron_armor);
+
+::Legends.Armor.Barbarian.reinforced_heavy_iron_armor <- {
 	ID = "barbarians/reinforced_heavy_iron_armor", // 235
 	Script = "",
 	Sets = [{
@@ -88,7 +88,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Barbarian.reinforced_heavy_iron_armor);
+
+::Legends.Armor.Barbarian.hide_and_bone_armor <- {
 	ID = "barbarians/hide_and_bone_armor", // 95
 	Script = "",
 	Sets = [{
@@ -108,7 +111,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Barbarian.hide_and_bone_armor);
+
+::Legends.Armor.Barbarian.reinforced_animal_hide_armor <- {
 	ID = "barbarians/reinforced_animal_hide_armor", // 65
 	Script = "",
 	Sets = [{
@@ -128,7 +134,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Barbarian.reinforced_animal_hide_armor);
+
+::Legends.Armor.Barbarian.rugged_scale_armor <- {
 	ID = "barbarians/rugged_scale_armor", // 140
 	Script = "",
 	Sets = [{
@@ -148,7 +157,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Barbarian.rugged_scale_armor);
+
+::Legends.Armor.Barbarian.legend_barbarian_southern_armor <- {
 	ID = "barbarians/legend_barbarian_southern_armor", // 70 ; from Kamy in fashion-show
 	Script = "",
 	Sets = [{
@@ -169,7 +181,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 			[1, "armor_upgrades/legend_leather_shoulderguards_upgrade"]
 		]
 	}]
-},{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Barbarian.legend_barbarian_southern_armor);
+
+::Legends.Armor.Barbarian.scrap_metal_armor <- {
 	ID = "barbarians/scrap_metal_armor", // 75
 	Script = "",
 	Sets = [{
@@ -190,7 +205,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Barbarian.scrap_metal_armor);
+
+::Legends.Armor.Barbarian.thick_furs_armor <- {
 	ID = "barbarians/thick_furs_armor", // 30
 	Script = "",
 	Sets = [{
@@ -213,7 +231,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Barbarian.thick_furs_armor);
+
+::Legends.Armor.Barbarian.thick_plated_barbarian_armor <- {
 	ID = "barbarians/thick_plated_barbarian_armor", // 230
 	Script = "",
 	Sets = [{
@@ -236,7 +257,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Barbarian.thick_plated_barbarian_armor);
+
+::Legends.Armor.Barbarian.unhold_armor_heavy <- {
 	ID = "barbarians/unhold_armor_heavy", // 400
 	Script = "scripts/items/armor/barbarians/unhold_armor_heavy",
 	Sets = [{
@@ -253,7 +277,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Barbarian.unhold_armor_heavy);
+
+::Legends.Armor.Barbarian.unhold_armor_light <- {
 	ID = "barbarians/unhold_armor_light", // 35
 	Script = "scripts/items/armor/barbarians/unhold_armor_light",
 	Sets = [{
@@ -270,5 +297,6 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-}
-])
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Barbarian.unhold_armor_light);
+

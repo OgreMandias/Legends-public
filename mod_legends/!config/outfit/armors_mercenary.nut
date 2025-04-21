@@ -1,15 +1,6 @@
-if (!("LegendMod" in ::Const))
-{
-	::Const.LegendMod <- {};
-}
+::Legends.Armor.Mercenary <- {};
 
-if (!("ArmorObjs" in ::Const.LegendMod))
-{
-	::Const.LegendMod.ArmorObjs <- [];
-}
-
-::Const.LegendMod.ArmorObjs.extend([
-{
+::Legends.Armor.Mercenary.mercenary_archer_armor_00 <- {
 	ID = "mercenary_archer_armor_00", // goes with helm 00
 	Script = "",
 	Sets = [{
@@ -29,8 +20,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 			[1, "armor_upgrades/legend_leather_shoulderguards_upgrade"]
 		]
 	}]
-},
-{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Mercenary.mercenary_archer_armor_00);
+
+::Legends.Armor.Mercenary.mercenary_archer_armor_01 <- {
 	ID = "mercenary_archer_armor_01", // goes with helm 00
 	Script = "",
 	Sets = [{
@@ -52,8 +45,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 			[1, "armor_upgrades/legend_leather_shoulderguards_upgrade"]
 		]
 	}]
-},
-{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Mercenary.mercenary_archer_armor_01);
+
+::Legends.Armor.Mercenary.mercenary_infantry_armor_00 <- {
 	ID = "mercenary_infantry_armor_00", // goes with helm 00 ; 200ish
 	Script = "",
 	Sets = [{
@@ -76,8 +71,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},
-{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Mercenary.mercenary_infantry_armor_00);
+
+::Legends.Armor.Mercenary.mercenary_infantry_armor_01 <- {
 	ID = "mercenary_infantry_armor_01",
 	Script = "",
 	Sets = [{
@@ -95,7 +92,7 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		],
 		Plate = [
 			[1, "plate/legend_armor_leather_lamellar"],
-			[1, "plate/legend_armor_leather_lamellar_reinforced"], 
+			[1, "plate/legend_armor_leather_lamellar_reinforced"],
 			[1, "plate/legend_armor_leather_riveted_light"]
 		],
 		Cloak = [
@@ -105,8 +102,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},
-{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Mercenary.mercenary_infantry_armor_01);
+
+::Legends.Armor.Mercenary.mercenary_crossbow_armor_00 <- {
 	ID = "mercenary_crossbow_armor_00",
 	Script = "",
 	Sets = [{
@@ -121,7 +120,7 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		],
 		Plate = [
 			[1, "plate/legend_armor_leather_lamellar"],
-			[1, "plate/legend_armor_leather_lamellar_reinforced"], 
+			[1, "plate/legend_armor_leather_lamellar_reinforced"],
 			[1, "plate/legend_armor_leather_riveted_light"]
 		],
 		Cloak = [
@@ -135,8 +134,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 			[1, "armor_upgrades/legend_leather_shoulderguards_upgrade"]
 		]
 	}]
-},
-{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Mercenary.mercenary_crossbow_armor_00);
+
+::Legends.Armor.Mercenary.mercenary_spearman_armor_00 <- {
 	ID = "mercenary_spearman_armor_00",
 	Script = "",
 	Sets = [{
@@ -167,8 +168,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 			[1, "armor_upgrades/legend_leather_shoulderguards_upgrade"]
 		]
 	}]
-},
-{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Mercenary.mercenary_spearman_armor_00);
+
+::Legends.Armor.Mercenary.mercenary_spearman_armor_01 <- {
 	ID = "mercenary_spearman_armor_01",
 	Script = "",
 	Sets = [{
@@ -189,8 +192,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},
-{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Mercenary.mercenary_spearman_armor_01);
+
+::Legends.Armor.Mercenary.mercenary_leader_armor_uncommon_00 <- {
 	ID = "mercenary_leader_armor_uncommon_00",
 	Script = "",
 	Sets = [{
@@ -210,8 +215,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},
-{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Mercenary.mercenary_leader_armor_uncommon_00);
+
+::Legends.Armor.Mercenary.mercenary_leader_armor_00 <- {
 	ID = "mercenary_leader_armor_00",
 	Script = "",
 	Sets = [{
@@ -243,8 +250,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 			[1, "armor_upgrades/legend_leather_shoulderguards_upgrade"]
 		]
 	}]
-},
-{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Mercenary.mercenary_leader_armor_00);
+
+::Legends.Armor.Mercenary.mercenary_leader_armor_gilded_00 <- {
 	ID = "mercenary_leader_armor_gilded_00",
 	Script = "",
 	Sets = [{
@@ -264,8 +273,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Attachments =[
 		]
 	}]
-},
-{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Mercenary.mercenary_leader_armor_gilded_00);
+
+::Legends.Armor.Mercenary.mercenary_billman_armor_00 <- {
 	ID = "mercenary_billman_armor_00",
 	Script = "",
 	Sets = [{
@@ -280,7 +291,7 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		],
 		Plate = [
 			[1, "plate/legend_armor_leather_padded"],
-			[1, "plate/legend_armor_leather_lamellar_harness_reinforced"], 
+			[1, "plate/legend_armor_leather_lamellar_harness_reinforced"],
 			[1, "plate/legend_armor_leather_lamellar"],
 		],
 		Cloak = [
@@ -292,8 +303,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 			[1, "armor_upgrades/legend_leather_shoulderguards_upgrade"]
 		]
 	}]
-},
-{
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Mercenary.mercenary_billman_armor_00);
+
+::Legends.Armor.Mercenary.mercenary_longbow_armor_00 <- {
 	ID = "mercenary_longbow_armor_00",
 	Script = "",
 	Sets = [{
@@ -316,6 +329,6 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 			[1, "armor_upgrades/legend_leather_shoulderguards_upgrade"]
 		]
 	}]
-},
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Mercenary.mercenary_longbow_armor_00);
 
-]);

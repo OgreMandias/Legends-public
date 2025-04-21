@@ -128,13 +128,13 @@
 	{
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.Const.World.Common.pickArmor([
-			[3, "oriental/cloth_sash"],
-			[1, ""]
+			[3, ::Legends.Armor.Southern.cloth_sash],
+			[1, ::Legends.Armor.None]
 		]));
 
 		items.equip(this.Const.World.Common.pickHelmet([
-			[1, ""],
-			[4, "legend_jewelry"]
+			[1, ::Legends.Helmet.None],
+			[4, ::Legends.Helmet.Southern.legend_jewelry]
 		]));
 	}
 });

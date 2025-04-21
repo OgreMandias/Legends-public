@@ -1,8 +1,8 @@
 this.legend_free_company_leader <- this.inherit("scripts/entity/tactical/legend_free_company_abstract", {
 	m = {
 		Outfits = [
-			[1, "mercenary_leader_outfit_uncommon_00"],
-			[1, "mercenary_leader_outfit_00"]
+			[1, ::Legends.Outfit.mercenary_leader_outfit_uncommon_00],
+			[1, ::Legends.Outfit.mercenary_leader_outfit_00]
 		],
 		PerkList = this.Const.EnemyPerks.FreeCompanyLeader,
 		PerkPower = 10
@@ -50,30 +50,21 @@ this.legend_free_company_leader <- this.inherit("scripts/entity/tactical/legend_
 
 	function assignRandomEquipment()
 	{
-		local weapons = [
-			"weapons/bardiche",
-			"weapons/greataxe",
-			"weapons/greatsword",
-			"weapons/two_handed_flanged_mace",
-			"weapons/fighting_axe",
-			"weapons/legend_military_goedendag",
-			"weapons/legend_military_warscythe",
-		];
+		this.getItems().equip(::Const.World.Common.pickItem([
+			[1, "weapons/bardiche"],
+			[1, "weapons/greataxe"],
+			[1, "weapons/greatsword"],
+			[1, "weapons/two_handed_flanged_mace"],
+			[1, "weapons/fighting_axe"],
+			[1, "weapons/legend_military_goedendag"],
+			[1, "weapons/legend_military_warscythe"],
+		], "scripts/items/"));
 
-		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
-
-		if (this.getIdealRange() == 1)
-		{
-			r = this.Math.rand(1, 2);
-
-			if (r == 1)
-			{
-				this.m.Items.addToBag(this.new("scripts/items/weapons/throwing_axe"));
-			}
-			else if (r == 2)
-			{
-				this.m.Items.addToBag(this.new("scripts/items/weapons/javelin"));
-			}
+		if (this.getIdealRange() == 1) {
+			this.getItems().addToBag(::Const.World.Common.pickItem([
+				[1, "weapons/throwing_axe"],
+				[1, "weapons/javelin"],
+			], "scripts/items/"));
 		}
 
 		this.legend_free_company_abstract.assignRandomEquipment();

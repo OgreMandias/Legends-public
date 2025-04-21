@@ -62,7 +62,7 @@ this.legend_piercing_shot_skill <- ::inherit("scripts/skills/actives/aimed_shot"
 	{
 		this.aimed_shot.onAfterUpdate(_properties);
 		m.AdditionalAccuracy = m.Item.getAdditionalAccuracy();
-		local bonusRange = (_properties.IsSpecializedInBows ? 1 : 0) + (this.getSkills().hasPerk(::Legends.Perk.LegendSpecialistSharpshooter) ? 1 : 0);
+		local bonusRange = (_properties.IsSpecializedInBows ? 1 : 0) + (this.getContainer().hasPerk(::Legends.Perk.LegendSpecialistSharpshooter) ? 1 : 0);
 		this.m.MaxRange = this.m.Item.getRangeMax() + bonusRange;
 	}
 

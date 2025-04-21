@@ -73,19 +73,12 @@ this.legend_noble_fencer <- this.inherit("scripts/entity/tactical/human", {
 			this.getSprite("surcoat").setBrush("surcoat_" + (banner < 10 ? "0" + banner : banner));
 		}
 
+		this.getItems().equip(::Const.World.Common.pickItem([
+			[1, "weapons/legend_estoc"],
+			[1, "weapons/fencing_sword"],
+		], "scripts/items/"));
 
-		r = this.Math.rand(0, 2);
-
-		if (r <= 1)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/legend_estoc"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/fencing_sword"));
-		}
-
-		this.m.Items.equip(this.Const.World.Common.pickArmor([
+		this.getItems().equip(this.Const.World.Common.pickArmor([
 			[1, ::Legends.Armor.Standard.seedmaster_noble_armor],
 			[1, ::Legends.Armor.Standard.citreneking_noble_armor],
 		]));
@@ -125,12 +118,12 @@ this.legend_noble_fencer <- this.inherit("scripts/entity/tactical/human", {
 			if (helmet != null)
 			{
 				if ("setPlainVariant" in helmet) { helmet.setPlainVariant(); }
-				this.m.Items.equip(helmet);
+				this.getItems().equip(helmet);
 			}
 		}
 		else
 		{
-			this.m.Items.equip(this.Const.World.Common.pickHelmet([
+			this.getItems().equip(this.Const.World.Common.pickHelmet([
 				[2, ::Legends.Helmet.Standard.aketon_cap],
 				[1, ::Legends.Helmet.Standard.full_aketon_cap],
 				[1, ::Legends.Helmet.Standard.headscarf],
@@ -160,11 +153,11 @@ this.legend_noble_fencer <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.Math.rand(1, 100) <= 70)
 		{
-			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
+			this.getItems().equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		}
 		else
 		{
-			this.m.Items.equip(this.Const.World.Common.pickArmor(
+			this.getItems().equip(this.Const.World.Common.pickArmor(
 				this.Const.World.Common.convNameToList(
 					armor
 				)

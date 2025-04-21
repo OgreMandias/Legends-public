@@ -49,20 +49,18 @@ this.legend_free_company_archer <- this.inherit("scripts/entity/tactical/legend_
 
 	function assignRandomEquipment()
 	{
-		local r = this.Math.rand(1, 100);
-		if (r <= 95)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/short_bow"));
-		}
-		else
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/hunting_bow"));
-		}
+		this.getItems().equip(::Const.World.Common.pickItem([
+			[19, "weapons/short_bow"],
+			[1, "weapons/hunting_bow"]
+		], "scripts/items/"));
 
-		this.m.Items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
-		this.m.Items.addToBag(this.new("scripts/items/weapons/knife"));
+		this.getItems().equip(this.new("scripts/items/ammo/quiver_of_arrows"));
 
 		this.legend_free_company_abstract.assignRandomEquipment();
+
+		this.getItems().addToBag(::Const.World.Common.pickItem([
+			[1, "weapons/knife"]
+		], "scripts/items/"));
 	}
 
 });

@@ -117,9 +117,10 @@ this.legend_manhunter_veteran <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/tools/throwing_net"));
 		}
 
-		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() == "weapon.battle_whip")
-		{
-			this.m.Items.addToBag(this.new("scripts/items/weapons/oriental/light_southern_mace"));
+		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() == "weapon.battle_whip") {
+			this.getItems().addToBag(::Const.World.Common.pickItem([
+				[1, "weapons/oriental/light_southern_mace"],
+			], "scripts/items/"));
 		}
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body))

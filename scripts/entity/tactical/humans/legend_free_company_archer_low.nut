@@ -41,9 +41,12 @@ this.legend_free_company_archer_low <- this.inherit("scripts/entity/tactical/hum
 	{
 		this.m.Items.equip(this.new("scripts/items/weapons/short_bow"));
 		this.m.Items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
-		this.m.Items.addToBag(this.new("scripts/items/weapons/knife"));
 
 		this.legend_free_company_abstract.assignRandomEquipment();
+
+		this.getItems().addToBag(::Const.World.Common.pickItem([
+			[1, "weapons/knife"]
+		], "scripts/items/"));
 	}
 
 });

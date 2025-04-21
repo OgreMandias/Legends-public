@@ -46,7 +46,7 @@ this.legend_peasant_butcher <- this.inherit("scripts/entity/tactical/human", {
 	{
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Mainhand))
 		{
-				this.m.Items.equip(this.new("scripts/items/weapons/butchers_cleaver"));
+			this.m.Items.equip(this.new("scripts/items/weapons/butchers_cleaver"));
 		}
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([

@@ -74,14 +74,12 @@ this.legend_noble_halberdier <- this.inherit("scripts/entity/tactical/human", {
 			this.getSprite("surcoat").setBrush("surcoat_" + (banner < 10 ? "0" + banner : banner));
 		}
 
-		local weapons = [
-			"weapons/legend_halberd",
-			"weapons/legend_battle_glaive"
-		];
+		this.getItems().equip(::Const.World.Common.pickItem([
+			[1, "weapons/legend_halberd"],
+			[1, "weapons/legend_battle_glaive"],
+		], "scripts/items/"));
 
-		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
-
-		this.m.Items.equip(this.Const.World.Common.pickArmor([
+		this.getItems().equip(this.Const.World.Common.pickArmor([
 			[1, ::Legends.Armor.Standard.seedmaster_noble_armor],
 			[1, ::Legends.Armor.Standard.citreneking_noble_armor],
 		]));
@@ -134,12 +132,12 @@ this.legend_noble_halberdier <- this.inherit("scripts/entity/tactical/human", {
 			if (helmet != null)
 			{
 				if ("setPlainVariant" in helmet) { helmet.setPlainVariant(); }
-				this.m.Items.equip(helmet);
+				this.getItems().equip(helmet);
 			}
 		}
 		else
 		{
-			this.m.Items.equip(this.Const.World.Common.pickHelmet([
+			this.getItems().equip(this.Const.World.Common.pickHelmet([
 				[2, ::Legends.Helmet.Standard.aketon_cap],
 				[1, ::Legends.Helmet.Standard.full_aketon_cap]
 			]))

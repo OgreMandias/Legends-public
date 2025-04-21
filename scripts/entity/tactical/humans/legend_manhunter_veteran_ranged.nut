@@ -115,19 +115,17 @@ this.legend_manhunter_veteran_ranged <- this.inherit("scripts/entity/tactical/hu
 		}
 
 		local mainhandWeaponID = this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).getID();
-		if (mainhandWeaponID == "weapon.handgonne" || mainhandWeaponID == "weapon.named_handgonne")
-		{
-			this.m.Items.addToBag(this.new("scripts/items/weapons/oriental/qatal_dagger"));
-		}
-		else
-		{
-			local backupWeapons = [
-				"weapons/hooked_blade",
-				"weapons/warbrand",
-				"weapons/oriental/two_handed_saif",
-				"weapons/warfork"
-			];
-			this.m.Items.addToBag(this.new("scripts/items/" + backupWeapons[this.Math.rand(0, backupWeapons.len() - 1)]));
+		if (mainhandWeaponID == "weapon.handgonne" || mainhandWeaponID == "weapon.named_handgonne") {
+			this.getItems().addToBag(::Const.World.Common.pickItem([
+				[1, "weapons/oriental/qatal_dagger"],
+			], "scripts/items/"));
+		} else {
+			this.getItems().addToBag(::Const.World.Common.pickItem([
+				[1, "weapons/hooked_blade"],
+				[1, "weapons/warbrand"],
+				[1, "weapons/oriental/two_handed_saif"],
+				[1, "weapons/warfork"],
+			], "scripts/items/"));
 		}
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body))

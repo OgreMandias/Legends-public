@@ -46,17 +46,10 @@ this.legend_peasant_monk <- this.inherit("scripts/entity/tactical/human", {
 
 	function assignRandomEquipment()
 	{
-		local r;
-		r = this.Math.rand(1, 4);
-
-		if (r <= 3)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/legend_staff"));
-		}
-		else if (r == 4)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/legend_tipstaff"));
-		}
+		this.getItems().equip(::Const.World.Common.pickItem([
+			[3, "weapons/legend_staff"],
+			[1, "weapons/legend_tipstaff"],
+		], "scripts/items/"));
 
 		local armor = [
 			[1, ::Legends.Armor.Standard.sackcloth],

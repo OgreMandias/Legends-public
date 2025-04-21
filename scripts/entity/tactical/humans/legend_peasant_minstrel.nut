@@ -51,32 +51,16 @@ this.legend_peasant_minstrel <- this.inherit("scripts/entity/tactical/human", {
 
 	function assignRandomEquipment()
 	{
-		local r;
-		r = this.Math.rand(1, 100);
-		if (r == 1)
-		{
-		this.m.Items.equip(this.new("scripts/items/weapons/named/legend_named_lute"));
-		}
-		else
-		{
-		this.m.Items.equip(this.new("scripts/items/weapons/lute"));
-		}
+		this.getItems().equip(::Const.World.Common.pickItem([
+			[1, "weapons/named/legend_named_lute"],
+			[25, "weapons/legend_drum"],
+			[74, "weapons/lute"],
+		], "scripts/items/"));
 
-		local r;
-		r = this.Math.rand(1, 4);
-
-
-		if (r >= 3)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/legend_drum"));
-		}
-
-		local r;
-		r = this.Math.rand(1, 10);
-		if (r == 1)
-		{
-			this.m.Items.equip(this.new("scripts/items/tools/throwing_net"));
-		}
+		this.getItems().addToBag(::Const.World.Common.pickItem([
+			[1, "tools/throwing_net"],
+			[3, null],
+		], "scripts/items/"));
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
 			[1, ::Legends.Armor.Standard.sackcloth],

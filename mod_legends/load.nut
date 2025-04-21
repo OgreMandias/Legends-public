@@ -4,7 +4,6 @@ if (!("LegendMod" in ::Const)) {
 
 // load order
 foreach (dir in [
-	"mod_legends/!!!config",
 	"mod_legends/!!config",
 	"mod_legends/!config/outfit",
 	"mod_legends/!config",

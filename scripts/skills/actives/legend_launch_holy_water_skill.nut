@@ -131,9 +131,8 @@ this.legend_launch_holy_water_skill <- this.inherit("scripts/skills/actives/thro
 		if (!_target.getFlags().has("undead"))
 			return;
 
-		::Legends.Effects.grant(_target, ::Legends.Effect.HolyWater, function(_effect) {
-			_effect.resetTime();
-		});
+		local effect = ::Legends.Effects.grant(_target, ::Legends.Effect.HolyWater);
+		effect.resetTime();
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )

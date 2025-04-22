@@ -168,7 +168,7 @@
 
 	o.onUpdateDraftList( _draftList ) //insert specfic backgrounds at x renown level(s). *most* crafting/support backgrounds ahve been removed from this master list - companions from events cover any gaps re: retinue/camp tasks.
 	{
-		if (this.World.Assets.getBusinessReputation() < 750) { //peasant/lowborn + Squires
+		if (this.World.Assets.getBusinessReputation() > 750) { //peasant/lowborn + Squires
 			_draftList.push("brawler_background");
 			_draftList.push("squire_background");
 			_draftList.push("butcher_background");
@@ -207,7 +207,7 @@
 			// _draftList.push("legend_herbalist_background");
 		}
 
-		else if (this.World.Assets.getBusinessReputation() < 1500) { //basic fighters
+		if (this.World.Assets.getBusinessReputation() > 1500) { //basic fighters
 			_draftList.push("militia_background");
 			_draftList.push("deserter_background");
 			_draftList.push("retired_soldier_background");
@@ -223,7 +223,7 @@
 			_draftList.push("blacksmith_background");	
 		}
 
-		else if (this.World.Assets.getBusinessReputation() < 2500) { //high tier
+		if (this.World.Assets.getBusinessReputation() > 2500) { //high tier
 			_draftList.push("adventurous_noble_background");
 			_draftList.push("disowned_noble_background");
 			_draftList.push("beast_hunter_background");	
@@ -232,7 +232,7 @@
 			_draftList.push("raider_background");
 		}
 
-		else if (this.World.Assets.getBusinessReputation() < 3500) { //elite
+		if (this.World.Assets.getBusinessReputation() > 3500) { //elite
 			_draftList.push("hedge_knight_background");
 			_draftList.push("sellsword_background");
 			_draftList.push("swordmaster_background");
@@ -242,7 +242,7 @@
 			_draftList.push("gladiator_background");
 		}
 
-		else if (this.World.Assets.getBusinessReputation() < 4500) { //special
+		if (this.World.Assets.getBusinessReputation() > 4500) { //special
 			_draftList.push("legend_noble_2h");
 			_draftList.push("legend_noble_shield");
 			_draftList.push("legend_noble_ranged");
@@ -251,10 +251,7 @@
 			_draftList.push("legend_conscript_background");
 			_draftList.push("paladin_background");
 			_draftList.push("legend_inventor_background");
-			_draftList.push("legend_crusader_background");
 			_draftList.push("legend_berserker_background");	
-			_draftList.push("legend_vala_background"); //balance-wise, I think this is fine, 12 bro slots means this won't get out of control and having 1-3 valas could be a fun gameplay loop. Women are scary.
-			_draftList.push("legend_ranger_background");
 		}
 	}
 

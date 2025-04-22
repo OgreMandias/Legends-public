@@ -5,14 +5,7 @@
 		local candidates = [];
 		local not_candidates = [];
 
-		if (brothers.len() > 2) {
-			for (local i = 0; i < brothers.len(); i = ++i) {
-				if (brothers[i].getSkills().hasTrait(::Legends.Trait.Player)) {
-					brothers.remove(i);
-					break;
-				}
-			}
-		}
+		// given how much avatars legends sometimes has, player check should be omited
 
 		foreach (bro in brothers) {
 			local p = bro.getCurrentProperties();
@@ -28,7 +21,7 @@
 		}
 
 		if (not_candidates.len() == 0) {
-			not_candidates = candidates;
+			not_candidates.push(candidates.pop());
 		}
 
 		_vars.push([

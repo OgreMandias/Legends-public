@@ -1,6 +1,5 @@
 ::mods_hookExactClass("skills/actives/prong_skill", function(o)
 {
-	local getTooltip = o.getTooltip;
 	o.getTooltip = function ()
 	{
 		local tooltip = this.getDefaultTooltip();

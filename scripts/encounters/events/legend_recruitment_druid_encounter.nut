@@ -72,31 +72,37 @@ this.legend_recruitment_druid_encounter <- this.inherit("scripts/encounters/enco
             }
         });
     }
+
     o.onPrepareVariables = function (_vars) {
         this.Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Dude.getGender(), "Druid");
     }
-    function isValid(_settlement) {
-		local currentTile = this.World.State.getPlayer().getTile();
-		if (currentTile.Type != this.Const.World.TerrainType.Forest && currentTile.Type != this.Const.World.TerrainType.SnowyForest && currentTile.Type != this.Const.World.TerrainType.LeaveForest && currentTile.Type != this.Const.World.TerrainType.AutumnForest)
-		{
-			return false;
-		}
-		if (::World.getPlayerRoster().getSize() >= ::World.Assets.getBrothersMax())
-			return false;
+  
+    function isValid(_camp) {
+      local currentTile = this.World.State.getPlayer().getTile();
+      if (currentTile.Type != this.Const.World.TerrainType.Forest && currentTile.Type != this.Const.World.TerrainType.SnowyForest && currentTile.Type != this.Const.World.TerrainType.LeaveForest && currentTile.Type != this.Const.World.TerrainType.AutumnForest)
+      {
+        return false;
+      }
+      if (::World.getPlayerRoster().getSize() >= ::World.Assets.getBrothersMax())
+        return false;
 
-		local totalbrothers = 0;
-		local brotherlevels = 0;
-		foreach (bro in ::World.getPlayerRoster().getAll()) {
-			if (bro.getBackground().getID() == "background.legend_druid")
-				return false;
-			if (bro.getBackground().getID() == "background.legend_commander_druid")
-				return false;
-			totalbrothers += 1;
-			brotherlevels += bro.getLevel();
-		}
+      local totalbrothers = 0;
+      local brotherlevels = 0;
 
-		if (totalbrothers < 1 || brotherlevels < 30)
-			return false;
+      foreach(t in towns){
+        if (t.getTile().getDistanceTo(playerTile)<=7)
+          return false //if too close to town, disable
+      }		
+      foreach (bro in ::World.getPlayerRoster().getAll()) {
+        if ((bro.getBackground().getID() == "background.legend_druid") || (bro.getBackground().getID() == "background.legend_commander_druid"))
+          return false;
+
+        totalbrothers += 1;
+        brotherlevels += bro.getLevel();
+      }
+
+      if (totalbrothers < 1 || brotherlevels < 30)
+        return false;
 
 	    return !isOnCooldown();
     }

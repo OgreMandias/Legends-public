@@ -631,15 +631,15 @@
 
 
 		// Drops net if net flags are met. It should be used in dropLoot to free space here
-		if (this.getFlags().has("DropNet") && this.getFlags().get("DropNet")){
+		if (this.getFlags().get("DropNet")){
 			local net;
 
-			if (this.getFlags().has("IsReinforcedNet") && this.getFlags().get("IsReinforcedNet"))
+			if (this.getFlags().get("IsReinforcedNet"))
 				net = this.new("scripts/items/tools/reinforced_throwing_net");
 			else
 				net = this.new("scripts/items/tools/throwing_net");
 
-			if (!this.getFlags().has("IsByNetCasting") || !this.getFlags().get("IsByNetCasting")){
+			if (!this.getFlags().get("IsByNetCasting")){
 				net.m.Ammo = 0; 
 				net.updateAmmo();
 			}

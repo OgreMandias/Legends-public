@@ -141,7 +141,7 @@
 			}
 
 			//DropNet Check
-			if (_user.getFlags().has("DropNet") && _user.getFlags().get("DropNet")) { //Check if break free attempt comes from a net
+			if (_user.getFlags().get("DropNet")) { //Check if break free attempt comes from a net
 				local net;
 				if (_user.getFlags().get("IsReinforcedNet") && _user.getFlags().get("IsByNetCasting")){
 					net = this.new("scripts/items/tools/reinforced_throwing_net");

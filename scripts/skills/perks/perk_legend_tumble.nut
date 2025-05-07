@@ -1,7 +1,7 @@
 this.perk_legend_tumble <- this.inherit("scripts/skills/skill", {
 	m = {
 		Skills = [
-			//::Legends.Actives.getID(::Legends.Active.Lunge),
+			::Legends.Actives.getID(::Legends.Active.Lunge),
 			::Legends.Actives.getID(::Legends.Active.Footwork),
 			::Legends.Actives.getID(::Legends.Active.Rotation),
 			::Legends.Actives.getID(::Legends.Active.LegendTumble),
@@ -34,7 +34,7 @@ this.perk_legend_tumble <- this.inherit("scripts/skills/skill", {
 				}
 				else 
 				{
-					skill.m.ActionPointCost -= 1; //For Footwork, Tumble and Rotation
+					skill.m.ActionPointCost -= 1; //For Footwork, Tumble, Rotation and Lunge
 				}
 			}
 		}

@@ -32,6 +32,10 @@ this.perk_legend_tumble <- this.inherit("scripts/skills/skill", {
 				{
 					skill.m.ActionPointCost /= 2;
 				}
+				else if (skill.getID() != ::Legends.Actives.getID(::Legends.Active.Lunge))
+				{
+					skill.m.ActionPointCost -= 1; //For Footwork, Tumble and Rotation
+				}
 			}
 		}
 	}

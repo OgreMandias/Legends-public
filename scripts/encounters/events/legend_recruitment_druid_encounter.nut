@@ -87,9 +87,10 @@ this.legend_recruitment_druid_encounter <- this.inherit("scripts/encounters/enco
 
 		local totalbrothers = 0;
 		local brotherlevels = 0;
-
+		
+		local towns = this.World.EntityManager.getSettlements();
 		foreach(t in towns){
-			if (t.getTile().getDistanceTo(playerTile)<=7)
+			if (t.getTile().getDistanceTo(currentTile)<=7)
 				return false //if too close to town, disable
 		}		
 		foreach (bro in ::World.getPlayerRoster().getAll()) {

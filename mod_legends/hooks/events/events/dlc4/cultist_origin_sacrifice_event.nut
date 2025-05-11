@@ -58,7 +58,7 @@
 								hasProphet = true;
 								this.updateAchievement("VoiceOfDavkul", 1, 1);
 								::Legends.Traits.remove(skills, ::Legends.Trait.CultistChosen);
-								skill = ::Legends.Actives.grant(this, ::Legends.Active.VoiceOfDavkul, function (_skill) {
+								skill = ::Legends.Actives.grant(bro, ::Legends.Active.VoiceOfDavkul, function (_skill) {
 									this.List.push({
 										id = 10,
 										icon = _skill.getIcon(),

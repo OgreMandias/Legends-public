@@ -1,4 +1,4 @@
-this.legend_recruitment_druid_encounter <- this.inherit("scripts/encounters/encounter", {
+this.legend_recruitment_druid_camp_encounter <- this.inherit("scripts/encounters/encounter", {
     m = {
 		Druid = null
     },
@@ -78,7 +78,38 @@ this.legend_recruitment_druid_encounter <- this.inherit("scripts/encounters/enco
 	}
 
 	function isValid(_camp) {
-		return false; // disabled in towns, removed on dev
+		if (::World.getPlayerRoster().getSize() >= ::World.Assets.getBrothersMax())
+			return false;
+
+		local currentTile = this.World.State.getPlayer().getTile();
+
+		if (currentTile.Type != this.Const.World.TerrainType.Forest
+			&& currentTile.Type != this.Const.World.TerrainType.SnowyForest
+			&& currentTile.Type != this.Const.World.TerrainType.LeaveForest
+			&& currentTile.Type != this.Const.World.TerrainType.AutumnForest)
+			return false;
+
+		local totalbrothers = 0;
+		local brotherlevels = 0;
+
+		local towns = this.World.EntityManager.getSettlements();
+		foreach(t in towns){
+			if (t.getTile().getDistanceTo(currentTile) <= 7)
+				return false //if too close to town, disable
+		}
+
+		foreach (bro in ::World.getPlayerRoster().getAll()) {
+			if ((bro.getBackground().getID() == "background.legend_druid") || (bro.getBackground().getID() == "background.legend_commander_druid"))
+				return false;
+
+			totalbrothers += 1;
+			brotherlevels += bro.getLevel();
+		}
+
+		if (totalbrothers < 1 || brotherlevels < 30)
+			return false;
+
+		return !isOnCooldown();
 	}
 
 	function onClear() {

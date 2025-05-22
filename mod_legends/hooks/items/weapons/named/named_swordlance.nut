@@ -18,6 +18,7 @@
 				_skill.m.IconDisabled = "skills/active_200_sw.png";
 				_skill.m.Overlay = "active_200";
 			}.bindenv(this));
+			return;
 		}
 
 		weapon.addSkill(_skill);

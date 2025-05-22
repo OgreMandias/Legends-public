@@ -3,7 +3,12 @@
 	o.addSkill <- function( _skill )
 	{
 		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.SlashLightning))
+		{
 			::Legends.Actives.grant(this, ::Legends.Active.Slash);
+			return;
+		}
+
+		weapon.addSkill(_skill);
 	}
 
 	o.onDamageDealt <- function ( _target, _skill, _hitInfo )

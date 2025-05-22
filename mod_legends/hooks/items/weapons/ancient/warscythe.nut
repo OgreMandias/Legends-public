@@ -11,7 +11,10 @@
 	o.addSkill <- function( _skill )
 	{
 		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.Strike))
-			::Legends.Actives.grant(this, ::Legends.Active.LegendScytheCleave); // replace strike with scythe cleave
+		{
+			::Legends.Actives.grant(this, ::Legends.Active.LegendScytheCleave);
+			return;
+		}
 
 		weapon.addSkill(_skill);
 	}

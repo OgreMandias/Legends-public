@@ -3,6 +3,19 @@
 		"sounds/combat/dlc2/legendary_lightning_01.wav",
 		"sounds/combat/dlc2/legendary_lightning_02.wav"
 	];
+	o.m.TargetTile <- null;
+
+	o.getTooltip = function ()
+	{
+		local result = this.weapon.getTooltip();
+		result.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Any successful attack will spawn lightning, which inflicts an additional [color=" + this.Const.UI.Color.DamageValue + "]10[/color] - [color=" + this.Const.UI.Color.DamageValue + "]20[/color] damage that ignores armor and chains to up to three targets"
+		});
+		return result;
+	}
 
 	o.addSkill <- function( _skill )
 	{
@@ -13,6 +26,15 @@
 		}
 
 		weapon.addSkill(_skill);
+	}
+
+	o.onAnySkillUsed <- function ( _skill, _targetEntity, _properties )
+	{
+		if (_skill.getItem() != null && _skill.getItem().getID() == this.getID() && _targetEntity != null)
+		{
+			::logInfo("we're adding tile");
+			this.m.TargetTile = _targetEntity.getTile();
+		}
 	}
 
 	o.applyEffect <- function ( _data, _delay )
@@ -26,9 +48,13 @@
 		}, _data);
 
 		if (_data.Target == null)
-		{
 			return;
-		}
+
+		if (!_data.Target.isAlive())
+			return;
+
+		if (_data.Target.isDying())
+			return;
 
 		this.Time.scheduleEvent(this.TimeUnit.Virtual, _delay + 200, function ( _data )
 		{
@@ -48,7 +74,7 @@
 		local potentialTargets = [];
 		local potentialTiles = [];
 		local target = null;
-		local targetTile = _target.getTile();
+		local targetTile = this.m.TargetTile != null ? this.m.TargetTile : _target.getTile();
 		local user = this.getContainer().getActor();
 		local myTile = user.getTile();
 		if (this.m.SoundOnLightning.len() != 0)
@@ -56,8 +82,9 @@
 			this.Sound.play(this.m.SoundOnLightning[this.Math.rand(0, this.m.SoundOnLightning.len() - 1)], this.Const.Sound.Volume.Skill * 2.0, user.getPos());
 		}
 
-		if (targetTile != null && !targetTile.IsEmpty && _target.isAlive())
+		if (targetTile != null && _target != null && _target.isAlive() && !_target.isDying())
 		{
+			::logInfo("we're here");
 			target = targetTile.getEntity();
 			selectedTargets.push(target.getID());
 		}
@@ -88,6 +115,7 @@
 
 				if (!tile.IsOccupiedByActor || !tile.getEntity().isAttackable() || tile.getEntity().isAlliedWith(user) || selectedTargets.find(tile.getEntity().getID()) != null)
 				{
+					continue;
 				}
 				else
 				{
@@ -122,6 +150,7 @@
 		{
 			if (!targetTile.hasNextTile(i))
 			{
+				continue;
 			}
 			else
 			{

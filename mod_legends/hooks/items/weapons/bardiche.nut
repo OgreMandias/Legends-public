@@ -15,12 +15,23 @@
 		this.m.ArmamentIcon = "icon_bardiche_0" + this.m.Variant;
 	}
 
+	o.addSkill <- function( _skill )
+	{
+		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.SplitShield) && !::Legends.Actives.has(this.getContainer().getActor(), ::Legends.Active.Swing))
+		{
+			::Legends.Actives.grant(this, ::Legends.Active.Swing, function (_skill) {
+				_skill.setApplyAxeMastery(true);
+			}.bindenv(this));
+			return;
+		}
+
+		weapon.addSkill(_skill);
+	}
+
 	local onEquip = o.onEquip;
 	o.onEquip = function ()
 	{
 		onEquip();
-		::Legends.Actives.grant(this, ::Legends.Active.Swing, function (_skill) {
-			_skill.setApplyAxeMastery(true);
-		}.bindenv(this));
+		::Legends.Actives.grant(this, ::Legends.Active.SplitShield)
 	}
 });

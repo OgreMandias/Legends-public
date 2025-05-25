@@ -21,7 +21,7 @@
 			{
 				damage = damage + this.Math.max(1, damage / 2);
 			}
-			if (shield.getID() == "weapon.legend_parrying_dagger" || shield.getID() == "shield.legend_named_parrying_dagger")
+			if (shield.getID() == "shield.legend_parrying_dagger" || shield.getID() == "shield.legend_named_parrying_dagger")
 			{
 				damage *= 0.20;
 			}

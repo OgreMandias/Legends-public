@@ -27,7 +27,7 @@ this.legend_parrying_dagger <- this.inherit("scripts/items/shields/shield", {
 		this.m.ShowOnCharacter = true;
 		this.m.Variants = [1];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() -1)];
-		this.m.ItemType = this.Const.Items.ItemType.Defensive | this.Const.Items.ItemType.Weapon;
+		this.m.ItemType = this.Const.Items.ItemType.Shield | this.Const.Items.ItemType.Defensive | this.Const.Items.ItemType.Weapon;
 		this.updateVariant();
 		this.m.Value = 500;
 		this.m.MeleeDefense = 5;

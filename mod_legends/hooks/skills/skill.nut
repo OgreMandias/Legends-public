@@ -906,8 +906,28 @@
 				text = desc + " " + "\n(" + colorize(sign + diff + "%") + " Lunge damage)"
 			});
 		};
+		local addShieldDamageRow = function ()
+		{
+			if (thisSkill.getID() != ::Legends.Actives.getID(::Legends.Active.SplitShield) && thisSkill.getID() != ::Legends.Actives.getID(::Legends.Active.ThrowSpear))
+				return;
+
+			if (!_targetTile.IsOccupiedByActor)
+				return;
+
+			if (!targetEntity.isArmedWithShield())
+				return;
+
+			local damage = thisSkill.calculateDamage(targetEntity);
+			if (targetEntity.getCurrentProperties().IsSpecializedInShields)
+				damage *= 0.50;
+			ret.push({
+				icon = "ui/icons/shield_damage.png",
+				text = red(damage) + " Shield Damage"
+			});
+		};
 		addDamageResistanceRow();
 		addLungeDamageRow();
+		addShieldDamageRow();
 		return ret;
 	}
 

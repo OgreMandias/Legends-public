@@ -2,6 +2,8 @@
 {
 	o.m.AdditionalAccuracy <- 20;
 	o.m.AdditionalHitChance <- -10;
+	o.m.OverflowDamage <- 0;
+
 	o.getTooltip = function ()
 	{
 		local tooltip = this.getRangedTooltip(this.getDefaultTooltip());
@@ -93,6 +95,17 @@
 		this.m.AdditionalAccuracy = 20 + this.m.Item.getAdditionalAccuracy();
 	}
 
+	o.calculateDamage <- function (_target)
+	{
+		local damage = this.getItem().getShieldDamage();
+		local shield = _target.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
+
+		if (shield.getID() == "shield.legend_parrying_dagger" || shield.getID() == "shield.legend_named_parrying_dagger")
+			damage *= 0.20;
+
+		return this.Math.floor(damage);
+	}
+
 	o.onUse = function ( _user, _targetTile )
 	{
 		local targetEntity = _targetTile.getEntity();
@@ -101,7 +114,7 @@
 
 		if (shield != null && shield.isItemType(this.Const.Items.ItemType.Shield))
 		{
-			local damage = _user.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getShieldDamage();
+			local damage = this.calculateDamage();
 
 			if (shield.getID() == "weapon.legend_parrying_dagger" || shield.getID() == "shield.legend_named_parrying_dagger")
 			{
@@ -152,6 +165,10 @@
 			{
 				this.m.IsUsingHitchance = true;
 			}
+			_properties.DamageRegularMin = this.m.OverflowDamage;
+			_properties.DamageRegularMax = this.m.OverflowDamage;
+			_properties.HitChanceMult[this.Const.BodyPart.Head] = 0.0;
+			_properties.HitChanceMult[this.Const.BodyPart.Body] = 1.0;
 		}
 	}
 
@@ -167,21 +184,11 @@
 			{
 				_tag.User.setActionPoints(this.Math.min(_tag.User.getActionPointsMax(), _tag.User.getActionPoints() + 4));
 				this.Tactical.EventLog.log(logMessage + " and recovered 4 Action Points");
-				if (overflowDamage > 1)
+				if (overflowDamage > 0)
 				{
-					local p = this.getContainer().buildPropertiesForUse(this, _tag.TargetTile.getEntity());
-					local hitInfo = clone this.Const.Tactical.HitInfo;
-					local damageMult = p.MeleeDamageMult * p.DamageTotalMult;
-					local damageRegular = overflowDamage * p.DamageRegularMult;
-					local damageArmor = overflowDamage * p.DamageArmorMult;
-					local damageDirect = this.Math.minf(1.0, p.DamageDirectMult * (this.m.DirectDamageMult + p.DamageDirectAdd + p.DamageDirectMeleeAdd));
-					hitInfo.DamageRegular = damageRegular * damageMult;
-					hitInfo.DamageArmor = damageArmor * damageMult;
-					hitInfo.DamageDirect = damageDirect;
-					hitInfo.BodyPart = this.Const.BodyPart.Body;
-					hitInfo.BodyDamageMult = 1.0;
-					hitInfo.FatalityChanceMult = 0.0;
-					_tag.TargetTile.getEntity().onDamageReceived(this.getContainer().getActor(), this, hitInfo);
+					this.m.OverflowDamage = overflowDamage;
+					this.attackEntity(_user, targetEntity);
+					this.m.OverflowDamage = 0;
 				}
 			}
 			else

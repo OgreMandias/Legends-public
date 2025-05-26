@@ -129,12 +129,12 @@
 				Shield = shield,
 				Damage = damage
 			});
+			return true;
 		}
 		else
 		{
-			local ret = this.attackEntity(_user, targetEntity);
+			return this.attackEntity(_user, target);
 		}
-		return true;
 	}
 
 	o.onAnySkillUsed = function ( _skill, _targetEntity, _properties )
@@ -165,10 +165,13 @@
 			{
 				this.m.IsUsingHitchance = true;
 			}
-			_properties.DamageRegularMin = this.m.OverflowDamage;
-			_properties.DamageRegularMax = this.m.OverflowDamage;
-			_properties.HitChanceMult[this.Const.BodyPart.Head] = 0.0;
-			_properties.HitChanceMult[this.Const.BodyPart.Body] = 1.0;
+			if (this.m.OverflowDamage > 0)
+			{
+				_properties.DamageRegularMin = this.m.OverflowDamage;
+				_properties.DamageRegularMax = this.m.OverflowDamage;
+				_properties.HitChanceMult[this.Const.BodyPart.Head] = 0.0;
+				_properties.HitChanceMult[this.Const.BodyPart.Body] = 1.0;
+			}
 		}
 	}
 
@@ -187,7 +190,7 @@
 				if (overflowDamage > 0)
 				{
 					this.m.OverflowDamage = overflowDamage;
-					this.attackEntity(_user, targetEntity);
+					this.attackEntity(_tag.User, _tag.TargetTile.getEntity());
 					this.m.OverflowDamage = 0;
 				}
 			}

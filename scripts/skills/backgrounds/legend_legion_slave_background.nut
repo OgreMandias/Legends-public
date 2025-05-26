@@ -7,8 +7,8 @@ this.legend_legion_slave_background <- this.inherit("scripts/skills/backgrounds/
 		this.m.Name = "Servus";
 		this.m.Icon = "ui/backgrounds/background_puppet.png"; //to do
 		this.m.BackgroundDescription = "Taken from a distant land lost to time, this slave still fights for their household.";
-		this.m.GoodEnding = "."; //to do
-		this.m.BadEnding = ""; //to do
+		// this.m.GoodEnding = ""; //to do
+		// this.m.BadEnding = ""; //to do
 		this.m.HiringCost = 0;
 		this.m.DailyCost = 0;
 		this.m.Excluded = [ //can roll; brute, clubfooted, clumsy, fragile, huge, hesitant, strong, sure footing, survivor, tiny, tough, bright, lucky, shortsighted, aggressive, martial, predictable, lumbering, quick, swift, team player, hate nobles, frail, etc (see commented out below)
@@ -69,6 +69,11 @@ this.legend_legion_slave_background <- this.inherit("scripts/skills/backgrounds/
 			// ::Legends.Traits.getID(::Legends.Trait.LegendTalented),
 		];
 
+		this.m.ExcludedTalents = [
+			this.Const.Attributes.Hitpoints,
+			this.Const.Attributes.Fatigue
+		];
+
 		//apperance
 		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.CommonMale;
@@ -95,7 +100,7 @@ this.legend_legion_slave_background <- this.inherit("scripts/skills/backgrounds/
 				0.03, //autumn_forest
 				0.0, //mountains
 				0.0, // ?
-				0.1, //farmland
+				0.05, //farmland
 				0.02, //snow
 				0.02, //badlands
 				0.02, //highlands
@@ -110,10 +115,11 @@ this.legend_legion_slave_background <- this.inherit("scripts/skills/backgrounds/
 				this.Const.Perks.ShieldTree,
 				this.Const.Perks.SwordTree,
 				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.CleaverTree				
+				this.Const.Perks.CleaverTree 
 			],
 			Defense = [
-				this.Const.Perks.LightArmorTree
+				this.Const.Perks.LightArmorTree,
+				this.Const.Perks.ClothArmorTree
 			],
 			Traits = [
 				this.Const.Perks.TrainedTree,
@@ -154,16 +160,16 @@ this.legend_legion_slave_background <- this.inherit("scripts/skills/backgrounds/
 	{
 		local c = {
 			Hitpoints = [
-				-4,
+				-3,
 				7
 			],
-			Bravery = [ //not needed
+			Bravery = [ //not needed except for resisting charm and sleep
 				0,
 				0
 			],
-			Stamina = [ //not needed
+			Stamina = [ //not needed except for equipment weight
 				0,
-				0
+				5
 			],
 			MeleeSkill = [
 				-2,
@@ -235,7 +241,7 @@ this.legend_legion_slave_background <- this.inherit("scripts/skills/backgrounds/
 	{
 		local items = this.getContainer().getActor().getItems();
 		local r;
-		r = this.Math.rand(0, 3);
+		r = this.Math.rand(1, 3);
 
 		if (r == 1)
 		{

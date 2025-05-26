@@ -196,11 +196,15 @@
 		if (isParryingDagger(this)) {
 			return;
 		}
-		local actor = getContainer().getActor();
+		local container = getContainer();
+		if (container == null || !("getActor" in container)) {
+			return;
+		}
+		local actor = container.getActor();
 		if (actor == null || !("getOffhandItem" in actor)) {
 			return;
 		}
-		local offhand = getContainer().getActor().getOffhandItem();
+		local offhand = actor.getOffhandItem();
 		if (!isParryingDagger(offhand)) {
 			return;
 		}

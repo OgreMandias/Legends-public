@@ -2,12 +2,11 @@
 {
 	o.m.AdditionalAccuracy <- 20;
 	o.m.AdditionalHitChance <- -10;
-	o.m.OverflowDamage <- 0;
 
 	o.getTooltip = function ()
 	{
 		local tooltip = this.getRangedTooltip(this.getDefaultTooltip());
-
+		local actor = this.getContainer().getActor();
 		local ammo = this.getAmmo();
 
 		if (ammo > 0)
@@ -29,7 +28,7 @@
 			});
 		}
 
-		local damage = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getShieldDamage();
+		local damage = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getShieldDamage();
 		tooltip.push({
 			id = 7,
 			type = "text",
@@ -37,7 +36,7 @@
 			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + damage + "[/color] damage to shields"
 		});
 
-		if (this.Tactical.isActive() && this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()))
+		if (this.Tactical.isActive() && actor.getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()) && !::Legends.Perks.has(this, ::Legends.Perk.LegendCloseCombatArcher))
 		{
 			tooltip.push({
 				id = 9,
@@ -165,33 +164,46 @@
 			{
 				this.m.IsUsingHitchance = true;
 			}
-			if (this.m.OverflowDamage > 0)
-			{
-				_properties.DamageRegularMin = this.m.OverflowDamage;
-				_properties.DamageRegularMax = this.m.OverflowDamage;
-				_properties.HitChanceMult[this.Const.BodyPart.Head] = 0.0;
-				_properties.HitChanceMult[this.Const.BodyPart.Body] = 1.0;
-			}
 		}
 	}
 
 	o.onApplyShieldDamage = function ( _tag )
 	{
 		local conditionBefore = _tag.Shield.getCondition();
+		local target = _tag.TargetTile.getEntity();
 		_tag.Shield.applyShieldDamage(_tag.Damage);
 		local overflowDamage = this.Math.floor(_tag.Damage - conditionBefore);
 		if (_tag.Shield != null && _tag.Shield.getCondition() == 0)
 		{
-			local logMessage = this.Const.UI.getColorizedEntityName(_tag.User) + " has destroyed " + this.Const.UI.getColorizedEntityName(_tag.TargetTile.getEntity()) + "\'s shield";
+			local logMessage = this.Const.UI.getColorizedEntityName(_tag.User) + " has destroyed " + this.Const.UI.getColorizedEntityName(target) + "\'s shield";
 			if (this.getContainer().hasPerk(::Legends.Perk.LegendSmashingShields))
 			{
 				_tag.User.setActionPoints(this.Math.min(_tag.User.getActionPointsMax(), _tag.User.getActionPoints() + 4));
 				this.Tactical.EventLog.log(logMessage + " and recovered 4 Action Points");
 				if (overflowDamage > 0)
-				{
-					this.m.OverflowDamage = overflowDamage;
-					this.attackEntity(_tag.User, _tag.TargetTile.getEntity());
-					this.m.OverflowDamage = 0;
+				{	
+					local rand = this.Math.rand(1, 100);
+					if (rand <= this.getHitchance(target))
+					{
+						this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_tag.User) + " uses Throw Spear and hits " + this.Const.UI.getColorizedEntityName(target) + " (Chance: " + this.getHitchance(target) + ", Rolled: " + rand + ")");
+						local p = this.getContainer().buildPropertiesForUse(this, target);
+						local hitInfo = clone this.Const.Tactical.HitInfo;
+						local damageMult = p.RangedDamageMult * p.DamageTotalMult;
+						local damageRegular = overflowDamage * p.DamageRegularMult * 0.5;
+						local damageArmor = overflowDamage * p.DamageArmorMult * 0.5;
+						local damageDirect = this.Math.minf(1.0, p.DamageDirectMult * (this.m.DirectDamageMult + p.DamageDirectAdd + p.DamageDirectRangedAdd));
+						hitInfo.DamageRegular = damageRegular * damageMult;
+						hitInfo.DamageArmor = damageArmor * damageMult;
+						hitInfo.DamageDirect = damageDirect;
+						hitInfo.BodyPart = this.Const.BodyPart.Body;
+						hitInfo.BodyDamageMult = 1.0;
+						hitInfo.FatalityChanceMult = 1.0;
+						target.onDamageReceived(this.getContainer().getActor(), this, hitInfo);
+					}
+					else
+					{
+						this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(_tag.User) + " uses Throw Spear and misses " + this.Const.UI.getColorizedEntityName(target) + " (Chance: " + this.getHitchance(target) + ", Rolled: " + rand + ")");
+					}
 				}
 			}
 			else

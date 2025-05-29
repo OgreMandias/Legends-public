@@ -65,15 +65,15 @@ this.legend_recruitment_druid_camp_encounter <- this.inherit("scripts/encounters
 			],
 
 			function start(_event) {
-				local roster = ::World.getTemporaryRoster();
-				_event.m.Druid = roster.create("scripts/entity/tactical/player");
-				_event.m.Druid.setStartValuesEx(["legend_druid_background"]);
 				this.Characters.push(_event.m.Druid.getImagePath());
 			}
 		});
 	}
 
 	function onPrepareVariables (_vars) {
+		local roster = ::World.getTemporaryRoster();
+		this.m.Druid = roster.create("scripts/entity/tactical/player");
+		this.m.Druid.setStartValuesEx(["legend_druid_background"]);
 		this.Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Druid.getGender(), "Druid");
 	}
 

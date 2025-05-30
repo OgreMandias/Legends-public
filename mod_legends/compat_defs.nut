@@ -131,6 +131,7 @@
 ::Legends.Compat.HardIncompat.add("mod_equipment_loot_chance", "1.0.4");
 ::Legends.Compat.HardIncompat.add("mod_every_item_drops", "1.1.1"); // Waterplouf version
 ::Legends.Compat.HardIncompat.add("mod_extra_keybinds", "2.1.0"); // a lot of bug reports lately with this mod...
+::Legends.Compat.HardIncompat.add("fantasyReforgedTrees");
 ::Legends.Compat.HardIncompat.add("mod_faster", null, "Use Swifter instead, found on Nexus");
 ::Legends.Compat.HardIncompat.add("mod_fastest", null, "Use Swifter instead, found on Nexus");
 ::Legends.Compat.HardIncompat.add("mod_legends_favoured_enemy_refund", "2.0.1");
@@ -224,7 +225,7 @@
 ::Legends.Compat.SoftIncompat.add("mod_camps_and_artifacts", "3.4");
 ::Legends.Compat.SoftIncompat.add("mod_career_stats", "1.0.2");
 ::Legends.Compat.SoftIncompat.add("mod_cultists", "1.04"); // Davkul Rising
-::Legends.Compat.SoftIncompat.add("mod_fantasybro", "1.0");
+::Legends.Compat.SoftIncompat.add("mod_fantasybro", "1.0"); // Yorik's "Legends patches are poorly built"
 ::Legends.Compat.SoftIncompat.add("mod_find_legendary_locations", "1", "Use Chopek's Find Legendary Maps instead, at Nexus or Legends Discord (#submod_files/Find Legendary Maps)");
 ::Legends.Compat.SoftIncompat.add("mod_necropolis", "1.0");
 ::Legends.Compat.SoftIncompat.add("mod_PLHO", "0.1.1"); // Darx's Player Hideout

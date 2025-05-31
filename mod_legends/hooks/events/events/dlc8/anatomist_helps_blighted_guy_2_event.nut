@@ -9,9 +9,10 @@
 					this.Characters.push(_event.m.MilitiaCaptain.getImagePath());
 					local bg = this.new("scripts/skills/backgrounds/militia_background");
 					bg.m.IsNew = false;
+					local oldPerkTree = _event.m.MilitiaCaptain.getBackground().m.CustomPerkTree;
 					_event.m.MilitiaCaptain.getSkills().removeByID("background.vagabond");
 					_event.m.MilitiaCaptain.getSkills().add(bg);
-					_event.m.MilitiaCaptain.getBackground().m.RawDescription = "You found %name% being buried alive for carrying some unknown blight. The anatomists took interest in %them_militiacaptain% and rescued %them_militiacaptain%, nursing %them_militiacaptain% back to health. Now, %they_militiacaptain% fights for you, putting to use the skills that made %them_militiacaptain% captain of the guard in a previous life.";
+					_event.m.MilitiaCaptain.getBackground().m.RawDescription = "You found %name% being buried alive for carrying some unknown blight. The anatomists took interest in %them% and rescued %them%, nursing %them% back to health. Now, %they% fights for you, putting to use the skills that made %them% captain of the guard in a previous life.";
 					_event.m.MilitiaCaptain.getBackground().buildDescription(true);
 					_event.m.MilitiaCaptain.getBackground().rebuildPerkTree(oldPerkTree);
 					_event.m.MilitiaCaptain.resetPerks();

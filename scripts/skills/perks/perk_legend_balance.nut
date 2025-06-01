@@ -13,7 +13,7 @@ this.perk_legend_balance <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
-	o.getTooltip = function ()
+	function getTooltip ()
 	{
 		local bonus = this.getBonus();
 		return [

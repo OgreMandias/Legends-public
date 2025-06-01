@@ -3960,6 +3960,17 @@ perkDefObjects.push({
 	Const = "LegendWoodworking"
 });
 
+::Legends.Perk.LegendOreHunter <- null;
+perkDefObjects.push({
+	ID = "perk.legend_ore_hunter",
+	Script = "scripts/skills/perks/perk_legend_ore_hunter",
+	Name = this.Const.Strings.PerkName.LegendOreHunter,
+	Tooltip = this.Const.Strings.PerkDescription.LegendOreHunter,
+	Icon = "ui/perks/pickaxe_02.png",
+	IconDisabled = "ui/perks/pickaxe_bw.png",
+	Const = "LegendOreHunter"
+});
+
 ::Legends.Perk.LegendSurpressUrges <- null;
 perkDefObjects.push({
 	ID = "perk.legend_surpress_urges",

@@ -59,9 +59,12 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 			],
 			Enemy = [],
 			Class = [
-				this.Const.Perks.HealerClassTree,
-				this.Const.Perks.ChefClassTree,
 				this.Const.Perks.StaffClassTree
+			],
+			Profession = [
+				this.Const.Perks.HealerProfessionTree,
+				this.Const.Perks.ChefProfessionTree,
+				this.Const.Perks.HerbalistProfessionTree
 			],
 			Magic = [
 				this.Const.Perks.ValaChantMagicTree,

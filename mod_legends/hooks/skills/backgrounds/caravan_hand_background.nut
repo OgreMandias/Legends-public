@@ -73,6 +73,7 @@
 				this.Const.Perks.OutlandersTree
 			],
 			Class = [],
+			Profession = [], 
 			Magic = []
 		}
 	}

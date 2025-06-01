@@ -238,6 +238,16 @@
 		}
 	}
 
+	local onPutIntoBag = o.onPutIntoBag;
+	o.onPutIntoBag = function () {
+		if (this.m.Container != null) {
+			if (this.m.Container.getActor() != null) {
+				this.m.LastEquippedByFaction = this.m.Container.getActor().getFaction();
+			}
+		}
+		onPutIntoBag();
+	}
+
 	o.onEquipRuneSigil <- function ()
 	{
 		local def = ::Legends.Runes.get(this.getRuneVariant());

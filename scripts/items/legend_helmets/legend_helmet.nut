@@ -212,7 +212,25 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 
 	function getStaminaModifier()
 	{
-		return this.getAddedValue("getStaminaModifier", this.m.StaminaModifier);
+		local addedValue = this.getAddedValue("getStaminaModifier", this.m.StaminaModifier);
+		if (this.getContainer() != null)
+			return addedValue;
+
+		if (this.getContainer().getActor())
+			return addedValue;
+
+		local skill = ::Legends.Perks.get(this, ::Legends.Perk.LegendFashionable);
+		if (skill)
+		{
+			foreach (slot in skill.m.FreeSlotTypes)
+			{
+				if (this.m.SlotType == slot)
+				{
+					return 0;
+				}
+			}
+		}
+		return addedValue;
 	}
 
 	function getValue()

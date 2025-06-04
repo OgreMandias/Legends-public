@@ -4,9 +4,7 @@ this.perk_legend_tumble <- this.inherit("scripts/skills/skill", {
 			::Legends.Actives.getID(::Legends.Active.Lunge),
 			::Legends.Actives.getID(::Legends.Active.Footwork),
 			::Legends.Actives.getID(::Legends.Active.Rotation),
-			::Legends.Actives.getID(::Legends.Active.LegendTumble),
 			::Legends.Actives.getID(::Legends.Active.LegendLeap),
-			::Legends.Actives.getID(::Legends.Active.LegendHorsePirouette)
 		]
 	},
 	function create()
@@ -34,10 +32,9 @@ this.perk_legend_tumble <- this.inherit("scripts/skills/skill", {
 				}
 				else if (skill.getID() != ::Legends.Actives.getID(::Legends.Active.Lunge))
 				{
-					skill.m.ActionPointCost -= 1; //For Footwork, Tumble and Rotation
+					skill.m.ActionPointCost -= 1; // For Footwork and Rotation
 				}
 			}
 		}
 	}
 });
-

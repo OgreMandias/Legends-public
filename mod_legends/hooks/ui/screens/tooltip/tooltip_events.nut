@@ -169,6 +169,12 @@
 			}
 
 			return entity.getRemoveLayerTooltip(this.Const.ItemSlot.Head, _itemId);
+
+		case "paperdoll.toggle-accessory-visibility":
+			if (entity == null) {
+				return null;
+			}
+			return entity.getToggleAccessoryTooltip(this.Const.ItemSlot.Accessory, _itemId);
 		}
 
 		return null;
@@ -672,6 +678,12 @@
 			}
 
 			return entity.getRemoveLayerTooltip(this.Const.ItemSlot.Head, _itemId);
+
+		case "paperdoll.toggle-accessory-visibility":
+			if (entity == null) {
+				return null;
+			}
+			return entity.getToggleAccessoryTooltip(this.Const.ItemSlot.Accessory, _itemId);
 		}
 
 		return null;

@@ -167,7 +167,7 @@ this.legend_legion_auxiliary_background <- this.inherit("scripts/skills/backgrou
 		local c = {
 			Hitpoints = [
 				-1,
-				2
+				4
 			],
 			Bravery = [ //not needed except for resisting charm and sleep
 				0,
@@ -182,8 +182,8 @@ this.legend_legion_auxiliary_background <- this.inherit("scripts/skills/backgrou
 				3
 			],
 			RangedSkill = [
-				4,
-				8
+				9,
+				14
 			],
 			MeleeDefense = [
 				0,
@@ -194,8 +194,8 @@ this.legend_legion_auxiliary_background <- this.inherit("scripts/skills/backgrou
 				4
 			],
 			Initiative = [
-				0,
-				3
+				20,
+				30
 			]
 		};
 		return c;

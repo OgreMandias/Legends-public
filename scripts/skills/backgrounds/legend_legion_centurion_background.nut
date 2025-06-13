@@ -92,14 +92,10 @@ this.legend_legion_centurion_background <- this.inherit("scripts/skills/backgrou
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Merciless;
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
-		// this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[1];
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[1];
-		// this.m.Modifiers.Fletching = this.Const.LegendMod.ResourceModifiers.Fletching[1];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[3]; // 0.0, 0.1, 0.2, 0.3
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[3]; // 5, 8, 13, 21, 34, 55
 		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[2]; // 0.0, 0.05, 0.10, 0.20
-		// this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[3]; // 0.0, 0.10, 0.30, 0.50, 1.0
-		// this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[3]; // 0.0, 0.10, 0.30, 0.50
 		this.m.Modifiers.Terrain = [
 				0.0, // ?
 				0.0, //ocean
@@ -149,6 +145,7 @@ this.legend_legion_centurion_background <- this.inherit("scripts/skills/backgrou
 			],
 			Magic = []
 		}
+		this.getFlags().add("legion_can_command"); //justfies if this background is subject to the legion command skill
 	}
 
 	//Default Male

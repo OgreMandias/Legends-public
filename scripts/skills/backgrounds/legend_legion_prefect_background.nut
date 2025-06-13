@@ -143,6 +143,7 @@ this.legend_legion_prefect_background <- this.inherit("scripts/skills/background
 			],
 			Magic = []
 		}
+		this.getFlags().add("legion_can_command"); //justfies if this background is subject to the legion command skill
 	}
 
 	//Default Male

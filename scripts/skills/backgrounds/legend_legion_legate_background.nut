@@ -144,6 +144,18 @@ this.legend_legion_legate_background <- this.inherit("scripts/skills/backgrounds
 		}
 	}
 
+	function getTooltip ()
+	{
+		local ret = this.character_background.getTooltip();
+		ret.push({
+			id = 12,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Can directly command a single unit that is not a Legate" //see function onadded below.
+		});
+		return ret;
+	}
+
 	//Default Male
 	function setGender(_gender = -1)
 	{
@@ -209,6 +221,8 @@ this.legend_legion_legate_background <- this.inherit("scripts/skills/backgrounds
 	{
 		if (this.m.IsNew)
 		{
+			this.character_background.onAdded();
+			::Legends.Perks.grant(this, ::Legends.Active.LegendCommandLegion);
 			::Legends.Traits.grant(this, ::Legends.Trait.LegendFleshless);
 		}
 

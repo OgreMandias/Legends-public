@@ -143,6 +143,7 @@ this.legend_legion_honour_guard_background <- this.inherit("scripts/skills/backg
 			],
 			Magic = []
 		}
+		this.getFlags().add("legion_can_command"); //justfies if this background is subject to the legion command skill
 	}
 
 	//Default Male

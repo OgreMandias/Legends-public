@@ -3126,4 +3126,12 @@ activesDefs.push({
 	Name = "Censer Strike",
 });
 
+::Legends.Active.legendCommandLegion <- null;
+activesDefs.push({
+	ID = "actives.legend_command_legion",
+	Script = "scripts/skills/actives/legend_command_legion",
+	Const = "CommandLegionary",
+	Name = "Command Legionary",
+});
+
 ::Legends.Actives.addActiveDefObjects(activesDefs);

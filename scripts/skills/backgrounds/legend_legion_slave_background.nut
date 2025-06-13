@@ -136,6 +136,7 @@ this.legend_legion_slave_background <- this.inherit("scripts/skills/backgrounds/
 			],
 			Magic = []
 		}
+		this.getFlags().add("legion_can_command"); //justfies if this background is subject to the legion command skill
 	}
 
 	//Default Male

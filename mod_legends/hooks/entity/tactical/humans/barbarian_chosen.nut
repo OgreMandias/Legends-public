@@ -18,7 +18,7 @@
 
 	o.getLootForTile <- function (_killer, _loot) {
 		if (!(_killer == null || _killer.getFaction() == this.Const.Faction.Player || _killer.getFaction() == this.Const.Faction.PlayerAnimals))
-			return getLootForTile(_killer, _loot);
+			return this.human.getLootForTile(_killer, _loot);
 		if (this.getSkills().hasSkill("injury_permanent.legend_ursathropy_injury"))
 			_loot.push(::new("scripts/items/misc/legend_werehand_item"));
 		return this.human.getLootForTile(_killer, _loot);

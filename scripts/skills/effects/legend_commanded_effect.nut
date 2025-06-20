@@ -6,10 +6,10 @@ this.legend_commanded_effect <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		::Legends.Effects.onCreate(this, ::Legends.Effect.LegendCommanded);
-		this.m.Description = "I can do this for the company! This character has been inspired by hearing just the right words, and is ready to go to their limits and beyond.";
-		this.m.Icon = "skills/status_effect_69.png"; //replace
-		this.m.IconMini = "status_effect_69_mini"; //replace
-		this.m.Overlay = "status_effect_69"; //replace
+		this.m.Description = "This character has been commanded by a superior, they will now push themselves to do it.";
+		this.m.Icon = "legend_status_effect_legion_command.png";
+		this.m.IconMini = "legend_status_effect_legion_command_mini";
+		this.m.Overlay = "legend_legion_command_square";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
 		this.m.IsStacking = false;

@@ -787,4 +787,6 @@
 	<sprite id="placeholder_circle" ic="2E343FFF" img="skills\placeholder_circle.png" />
 	<sprite id="placeholder_circle" ic="2E343FFF" img="skills\mini\mini_placeholder_circle.png" />
 	<sprite id="lightning_square" ic="2E343FFF" img="skills\lightning_square.png" />
+	<sprite id="legend_legion_command_square" ic="FF1B293C" img="skills\legend_legion_command_square.png" />
+	<sprite id="legend_status_effect_legion_command_mini" offsetY="35" ic="FF223041" img="skills\mini\legend_status_effect_legion_command_mini.png" />
 </brush>

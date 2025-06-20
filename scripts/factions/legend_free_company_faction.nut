@@ -47,16 +47,13 @@ this.legend_free_company_faction <- this.inherit("scripts/factions/faction", {
 		}
 	}
 
-	function getRandomCharacter (_faction = null) {
+	function getRandomCharacter(_faction = null) {
 		if (_faction == null)
 			return this.faction.getRandomCharacter();
 		local roster = ::World.getRoster(this.m.ID).getAll();
-		if (_faction == ::Legends.CampContracts.EmployerFaction.Barbarians)
-			return roster[::Math.rand(0, 3)];
-		if (_faction == ::Legends.CampContracts.EmployerFaction.Bandits)
-			return roster[::Math.rand(4, 7)];
-		if (_faction == ::Legends.CampContracts.EmployerFaction.Necromancers)
-			return roster[::Math.rand(8, 11)];
+		local idx = ::Math.rand(_faction * 4, _faction * 4 + 3);
+		if (idx < roster.len())
+			return roster[idx];
 		return this.faction.getRandomCharacter();
 	}
 

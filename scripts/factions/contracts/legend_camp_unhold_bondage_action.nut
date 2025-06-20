@@ -2,8 +2,8 @@ this.legend_camp_unhold_bondage_action <- this.inherit("scripts/factions/faction
 	m = {},
 	function create() {
 		this.m.ID = "legend_camp_unhold_bondage_action";
-		this.m.Cooldown = ::World.getTime().SecondsPerDay * 24;
-		this.m.IsStartingOnCooldown = true;
+		this.m.Cooldown = ::World.getTime().SecondsPerDay * 14;
+		this.m.IsStartingOnCooldown = false;
 		this.m.IsSettlementsRequired = false;
 		this.m.IsRunOnNewCampaign = true;
 		this.faction_action.create();

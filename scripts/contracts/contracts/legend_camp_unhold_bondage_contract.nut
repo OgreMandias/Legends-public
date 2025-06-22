@@ -18,6 +18,14 @@ this.legend_camp_unhold_bondage_contract <- this.inherit("scripts/contracts/lege
 		];
 	}
 
+	function isVisible() {
+		// exclude bottom half of the map, there's no unholds there anyway, nor barbs
+		local currentTile = ::World.State.getPlayer().getTile();
+		if (currentTile.SquareCoords.Y < ::World.getMapSize().Y * 0.5)
+			return false;
+		return true;
+	}
+
 	function start() {
 		this.m.Payment.Pool = 800 * this.getPaymentMult() * ::Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
 
@@ -300,7 +308,7 @@ this.legend_camp_unhold_bondage_contract <- this.inherit("scripts/contracts/lege
 		]);
 		local nearTile = this.getTileToSpawnLocation(playerTile, 1, 3);
 		local party;
-		party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "Unholds", false, ::Const.World.Spawn.Unhold, 100 * this.getDifficultyMult() * this.getScaledDifficultyMult(), this.getMinibossModifier());
+		party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "Unholds", false, ::Const.World.Spawn.Unhold, ::Math.rand(95, 115) * this.getDifficultyMult() * this.getScaledDifficultyMult(), this.getMinibossModifier());
 		party.setDescription("One or more lumbering giants.");
 		party.setAttackableByAI(false);
 		party.getFlags().set("IsUnholds", true);
@@ -335,7 +343,7 @@ this.legend_camp_unhold_bondage_contract <- this.inherit("scripts/contracts/lege
 		]);
 		local nearTile = this.getTileToSpawnLocation(playerTile, 4, 8);
 		local party;
-		party = ::World.FactionManager.getFactionOfType(::Const.FactionType.Barbarians).spawnEntity(tile, "Barbarians", false, ::Const.World.Spawn.BarbarianHunters, 120 * this.getDifficultyMult() * this.getScaledDifficultyMult(), this.getMinibossModifier());
+		party = ::World.FactionManager.getFactionOfType(::Const.FactionType.Barbarians).spawnEntity(tile, "Barbarians", false, ::Const.World.Spawn.BarbarianHunters, ::Math.rand(105, 135)  * this.getDifficultyMult() * this.getScaledDifficultyMult(), this.getMinibossModifier());
 		party.setDescription("A warband of your barbarian employer.");
 		party.setMovementSpeed(::Const.World.MovementSettings.Speed * 2.0);
 		party.setAttackableByAI(false);

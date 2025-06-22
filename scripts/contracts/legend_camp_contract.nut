@@ -34,6 +34,10 @@ this.legend_camp_contract <- ::inherit("scripts/contracts/contract", {
 		return this.onIsValid();
 	}
 
+	function isVisible() {
+		return true;
+	}
+
 	function onImportIntro() {
 		this.importCampIntro();
 	}

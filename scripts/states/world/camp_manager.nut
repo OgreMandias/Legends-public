@@ -405,14 +405,15 @@ this.camp_manager <- {
 	function getContracts() {
 		local contracts = [];
 		foreach(c in ::World.FactionManager.getFactionOfType(::Const.FactionType.FreeCompany).getContracts()) {
-			contracts.push(c);
+			if (c.isVisible())
+				contracts.push(c);
 		}
 		return contracts;
 	}
 
 	function hasContract( _id ) {
 		local contracts = this.getContracts();
-		foreach( c in contracts ) {
+		foreach(c in contracts) {
 			if (c.getType() == _id)
 				return true;
 		}
@@ -428,8 +429,7 @@ this.camp_manager <- {
 		};
 		local contracts = this.getContracts();
 
-		foreach( i, contract in contracts )
-		{
+		foreach( i, contract in contracts ) {
 			if (i > 9)
 				break;
 

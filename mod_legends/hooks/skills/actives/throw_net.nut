@@ -84,7 +84,7 @@
 	}
 
 	o.makeUnholdNet <- function () {
-		this.m.Description = "Throw a net on [color=" + ::Const.UI.Color.NegativeValue + "]dazed[/color] or [color=" + ::Const.UI.Color.NegativeValue + "]baffled[/color] unhold to disable them effectively.";
+		this.m.Description = "Throw a net on [color=" + ::Const.UI.Color.NegativeValue + "]dazed[/color], [color=" + ::Const.UI.Color.NegativeValue + "]baffled[/color] or with less than 25% Healthpoints Unhold to disable them effectively.";
 		this.m.IsUnholdNet = true;
 	}
 
@@ -95,7 +95,8 @@
 			// special case for contract unhold nets
 			local target = _targetTile.getEntity();
 			if (::isKindOf(target, "unhold") || ::isKindOf(target, "unhold_bog") || ::isKindOf(target, "unhold_frost")) {
-				return target.getSkills().hasEffect(::Legends.Effect.LegendBaffled)
+				return target.getHitpoints() <= target.getHitpointsMax() / 4
+					|| target.getSkills().hasEffect(::Legends.Effect.LegendBaffled)
 					|| target.getSkills().hasEffect(::Legends.Effect.LegendDazed)
 					|| target.getSkills().hasEffect(::Legends.Effect.Dazed);
 			}

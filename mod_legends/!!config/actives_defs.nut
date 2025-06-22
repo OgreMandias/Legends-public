@@ -3118,4 +3118,20 @@ activesDefs.push({
 	Name = "Censer Strike",
 });
 
+::Legends.Active.LegendDawgBite <- null;
+activesDefs.push({
+	ID = "actives.legend_dawg_bite",
+	Script = "scripts/skills/actives/legend_dawg_bite_skill",
+	Const = "LegendDawgBite",
+	Name = "Dawg Bite",
+});
+
+::Legends.Active.LegendUnleashDawg <- null;
+activesDefs.push({
+	ID = "actives.legend_unleash_dawg",
+	Script = "scripts/skills/actives/legend_unleash_dawg_skill",
+	Const = "LegendUnleashDawg",
+	Name = "Unleash Dawg",
+});
+
 ::Legends.Actives.addActiveDefObjects(activesDefs);

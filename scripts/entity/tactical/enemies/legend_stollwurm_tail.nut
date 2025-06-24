@@ -470,7 +470,7 @@ this.legend_stollwurm_tail <- this.inherit("scripts/entity/tactical/actor", {
 			this.spawnTerrainDropdownEffect(_tile);
 		}
 
-		local corpse = this.generateCorpse(_tile, _fatalityType);
+		local corpse = this.generateCorpse(_tile, _fatalityType, _killer);
 		if (_tile == null) {
 			this.Tactical.Entities.addUnplacedCorpse(corpse);
 		} else {
@@ -481,7 +481,7 @@ this.legend_stollwurm_tail <- this.inherit("scripts/entity/tactical/actor", {
 		this.actor.onDeath(_killer, _skill, _tile, _fatalityType);
 	}
 
-	function generateCorpse( _tile, _fatalityType )
+	function generateCorpse( _tile, _fatalityType, _killer )
 	{
 		local corpse = clone this.Const.Corpse;
 		corpse.CorpseName = "A Stollwurm";

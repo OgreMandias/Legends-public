@@ -249,6 +249,12 @@
 		if (_info.Skill == null) {
 			::logInfo("skill == null, wtf?");
 		}
+		if (_info.Actor == null) {
+			::logInfo("actor == null, wtf?");
+		}
+		if (this == null) {
+			::logInfo("this == null, wtf?");
+		}
 		// Animate and provide sound effects for the Parry, and apply the Vulnerable effect
 		::Tactical.spawnSpriteEffect("en_garde_square", this.createColor("#ffffff"), _info.Actor.getTile(),
 			::Const.Tactical.Settings.SkillOverlayOffsetX, ::Const.Tactical.Settings.SkillOverlayOffsetY,

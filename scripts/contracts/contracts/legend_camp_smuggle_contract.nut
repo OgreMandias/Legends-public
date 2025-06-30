@@ -123,10 +123,13 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 		this.m.States.push({
 			ID = "Delivery",
 			function start() {
-				if (this.Contract.m.Camp != null && !this.Contract.m.Camp.isNull())
+				if (this.Contract.m.Camp != null && !this.Contract.m.Camp.isNull()) {
 					this.Contract.m.Camp.getSprite("selection").Visible = true;
+					this.Contract.m.Camp.setOnCombatWithPlayerCallback(this.onLocationCombat.bindenv(this));
+				}
 				if (this.Flags.has("Pursuit")) {
-					this.Contract.m.PursuitParty = ::WeakTableRef(this.Contract.spawnPursuitParty());
+					if (this.Contract.m.PursuitParty == null)
+						this.Contract.m.PursuitParty = ::WeakTableRef(this.Contract.spawnPursuitParty());
 					this.Contract.m.PursuitParty.setOnCombatWithPlayerCallback(this.onPursuitCombat.bindenv(this));
 				}
 				this.Contract.m.BulletpointsObjectives = [
@@ -138,10 +141,6 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 					this.Contract.setScreen("FailedPursuit");
 					this.World.Contracts.showActiveContract();
 					return;
-				}
-				if (this.Contract.isPlayerAt(this.Contract.m.Camp)) {
-					this.Contract.setScreen("Success");
-					::World.Contracts.showActiveContract();
 				}
 			}
 
@@ -157,6 +156,56 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 					if (this.Contract.m.PursuitParty != null && !this.Contract.m.PursuitParty.isNull()) {
 						this.Contract.m.PursuitParty.die();
 					}
+				}
+			}
+
+			function onLocationCombat(_dest, _isPlayerInitiated) {
+				if(this.Flags.get("Ambush")) {
+					this.Contract.setScreen("Ambush");
+				} else {
+					this.Contract.setScreen("Success");
+				}
+				::World.Contracts.showActiveContract();
+			}
+		});
+
+		this.m.States.push({
+			ID = "Ambush",
+			function start() {
+				local p = ::World.State.getLocalCombatProperties(::World.State.getPlayer().getPos());
+				p.CombatID = "Ambush";
+				p.MapSeed = this.Flags.getAsInt("MapSeed");
+				p.PlayerDeploymentType = this.Const.Tactical.DeploymentType.Center;
+				p.EnemyDeploymentType = this.Const.Tactical.DeploymentType.Circle;
+				p.Entities = [];
+				this.Contract.spawnAmbushParty(p);
+				::World.Contracts.startScriptedCombat(p, false, true, true);
+			}
+
+			function update() {
+				if (this.Flags.get("IsFailure")) {
+					this.Contract.setScreen("FailedAmbush");
+					this.World.Contracts.showActiveContract();
+					if (this.Contract.m.Camp != null && !this.Contract.m.Camp.isNull()) {
+						this.Contract.m.Camp.die();
+					}
+					return;
+				}
+				if (this.Flags.get("IsFinalBattleWon")) {
+					this.Contract.setScreen("Success");
+					::World.Contracts.showActiveContract();
+				}
+			}
+
+			function onRetreatedFromCombat(_combatID) {
+				if (_combatID == "Ambush") {
+					this.Flags.set("IsFailure", true);
+				}
+			}
+
+			function onCombatVictory( _combatID ) {
+				if (_combatID == "Ambush") {
+					this.Flags.set("IsFinalBattleWon", true);
 				}
 			}
 		});
@@ -182,7 +231,7 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 			}, {
 				Text = "{This doesn\'t sound like our kind of work. | This won\'t be worth the risk.}",
 				function getResult() {
-					this.World.Contracts.removeContract(this.Contract);
+					::World.Contracts.removeContract(this.Contract);
 					return 0;
 				}
 			}]
@@ -191,7 +240,7 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 		this.m.Screens.push({
 			ID = "ItemPickedUp",
 			Title = "Inside town",
-			Text = "[img]gfx/ui/events/event_112.png[/img]{TODO}",
+			Text = "[img]gfx/ui/events/event_112.png[/img]{Item picked up TODO}",
 			Image = "",
 			List = [],
 			ShowEmployer = true,
@@ -215,9 +264,27 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 		});
 
 		this.m.Screens.push({
+			ID = "Ambush",
+			Title = "At bandit camp...",
+			Text = "[img]gfx/ui/events/event_05.png[/img]{Ambush TODO}",
+			Image = "",
+			Characters = [],
+			List = [],
+			ShowEmployer = true,
+			Options = [{
+				Text = "{Oh shit.}",
+				function getResult() {
+					this.Contract.setState("Ambush");
+					return 0;
+				}
+			}],
+			function start() {}
+		});
+
+		this.m.Screens.push({
 			ID = "Success",
 			Title = "At bandit camp...",
-			Text = "[img]gfx/ui/events/event_05.png[/img]{You hand over the package over to the %employer%.%speech_on%Give me that and now scram.%speech_off%You leave the camp, wondering if you really did right thing.}",
+			Text = "[img]gfx/ui/events/event_05.png[/img]{You hand over the package over to the %employer%.%SPEECH_ON%Give me that and scram.%SPEECH_OFF%You leave the camp, wondering if you really did the right thing.}",
 			Image = "",
 			Characters = [],
 			List = [],
@@ -225,7 +292,7 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 			Options = [{
 				Text = "{Perhaps, such is life.}",
 				function getResult() {
-					::World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractSuccess);
+					::World.Assets.addBusinessReputation(::Const.World.Assets.ReputationOnContractSuccess);
 					::World.Assets.addMoney(this.Contract.m.Payment.getOnCompletion());
 					::World.Contracts.finishActiveContract();
 					return 0;
@@ -235,9 +302,8 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 				this.List.push({
 					id = 10,
 					icon = "ui/icons/asset_money.png",
-					text = "You gain [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.Contract.m.Payment.getOnCompletion() + "[/color] Crowns"
+					text = "You gain [color=" + ::Const.UI.Color.PositiveEventValue + "]" + this.Contract.m.Payment.getOnCompletion() + "[/color] Crowns"
 				});
-				this.Contract.m.SituationID = this.Contract.resolveSituation(this.Contract.m.SituationID, this.Contract.m.Home, this.List);
 			}
 		});
 
@@ -245,6 +311,25 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 			ID = "FailedPursuit",
 			Title = "After the battle...",
 			Text = "[img]gfx/ui/events/event_05.png[/img]{Defeated, you run from the battlefield. Package is lost.}",
+			Image = "",
+			Characters = [],
+			List = [],
+			ShowEmployer = true,
+			Options = [{
+				Text = "{This is not worth losing the company over...}",
+				function getResult() {
+					this.World.Assets.addBusinessReputation(::Const.World.Assets.ReputationOnContractFail);
+					this.World.Contracts.finishActiveContract(true);
+					return 0;
+				}
+			}],
+			function start() {}
+		});
+
+		this.m.Screens.push({
+			ID = "FailedAmbush",
+			Title = "After the battle...",
+			Text = "[img]gfx/ui/events/event_05.png[/img]{Defeated, you run from the battlefield. Package is lost, your employer at mercy of local authorities. Let's hope there will be no further consequences.}",
 			Image = "",
 			Characters = [],
 			List = [],
@@ -330,6 +415,23 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 		return party;
 	}
 
+	function spawnAmbushParty(_properties) {
+		if (this.getDifficulty() <= 2) { // we want militia party for these
+			::Const.World.Common.addUnitsToCombat(_properties.Entities, ::Const.World.Spawn.Militia, 100 * this.getDifficultyMult() * this.getScaledDifficultyMult(), ::Const.Faction.Enemy);
+			_properties.EnemyBanners = [this.m.Town.getBanner()];
+		} else { // hardest should spawn nobles
+			::Const.World.Common.addUnitsToCombat(_properties.Entities, ::Const.World.Spawn.Noble, 100 * this.getDifficultyMult() * this.getScaledDifficultyMult(), ::Const.Faction.Enemy);
+			_properties.EnemyBanners = [::World.FactionManager.getFaction(this.m.Flags.get("EnemyNobleHouse")).getBanner()];
+		}
+		if (this.getDifficulty() >= 2) { // attach small unit of mercenaries
+			local oldMinR = ::Const.World.Spawn.Mercenaries.MinR;
+			::Const.World.Spawn.Mercenaries.MinR = 0;
+			::Const.World.Common.addUnitsToCombat(_properties.Entities, ::Const.World.Spawn.Mercenaries, 50 * this.getDifficultyMult() * this.getScaledDifficultyMult(), ::Const.Faction.Enemy);
+			::Const.World.Spawn.Mercenaries.MinR = oldMinR;
+		}
+		::Const.World.Common.addUnitsToCombat(_properties.Entities, ::Const.World.Spawn.BanditDefenders, 50 * this.getDifficultyMult() * this.getScaledDifficultyMult(), ::Const.Faction.PlayerAnimals);
+	}
+
 	function onPrepareVariables(_vars) {
 
 	}
@@ -344,52 +446,37 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 		if (this.m.Camp != null && !this.m.Camp.isNull()) {
 			this.m.Camp.getSprite("selection").Visible = false;
 			this.m.Camp.getFlags().remove("isContractLocation");
+			this.m.Camp.setOnCombatWithPlayerCallback(null);
 		}
-		if (this.Contract.m.PursuitParty != null && !this.Contract.m.PursuitParty.isNull()) {
-			this.Contract.m.PursuitParty.die();
+		if (this.m.PursuitParty != null && !this.m.PursuitParty.isNull()) {
+			this.m.PursuitParty.die();
 		}
 	}
 
 	function onSerialize(_out) {
-		if (this.m.Town != null && !this.m.Town.isNull()) {
-			_out.writeU32(this.m.Town.getID());
-		} else {
-			_out.writeU32(0);
-		}
-		if (this.m.Fortress != null && !this.m.Fortress.isNull()) {
-			_out.writeU32(this.m.Fortress.getID());
-		} else {
-			_out.writeU32(0);
-		}
-		if (this.m.Camp != null && !this.m.Camp.isNull()) {
-			_out.writeU32(this.m.Camp.getID());
-		} else {
-			_out.writeU32(0);
-		}
-		if (this.m.PursuitParty != null && !this.m.PursuitParty.isNull()) {
-			_out.writeU32(this.m.PursuitParty.getID());
-		} else {
-			_out.writeU32(0);
-		}
+		_out.writeU32((this.m.Town != null && !this.m.Town.isNull()) ? this.m.Town.getID() : 0);
+		_out.writeU32((this.m.Fortress != null && !this.m.Fortress.isNull()) ? this.m.Fortress.getID() : 0);
+		_out.writeU32((this.m.Camp != null && !this.m.Camp.isNull()) ? this.m.Camp.getID() : 0);
+		_out.writeU32((this.m.PursuitParty != null && !this.m.PursuitParty.isNull()) ? this.m.PursuitParty.getID() : 0);
 		this.contract.onSerialize(_out);
 	}
 
 	function onDeserialize(_in) {
 		local target = _in.readU32();
 		if (target != 0) {
-			this.m.Town = this.WeakTableRef(this.World.getEntityByID(target));
+			this.m.Town = ::WeakTableRef(::World.getEntityByID(target));
 		}
 		target = _in.readU32();
 		if (target != 0) {
-			this.m.Fortress = this.WeakTableRef(this.World.getEntityByID(target));
+			this.m.Fortress = ::WeakTableRef(::World.getEntityByID(target));
 		}
 		target = _in.readU32();
 		if (target != 0) {
-			this.m.Camp = this.WeakTableRef(this.World.getEntityByID(target));
+			this.m.Camp = ::WeakTableRef(::World.getEntityByID(target));
 		}
 		target = _in.readU32();
 		if (target != 0) {
-			this.m.PursuitParty = this.WeakTableRef(this.World.getEntityByID(target));
+			this.m.PursuitParty = ::WeakTableRef(::World.getEntityByID(target));
 		}
 		this.contract.onDeserialize(_in);
 	}

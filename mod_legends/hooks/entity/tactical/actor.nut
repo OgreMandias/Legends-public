@@ -601,7 +601,6 @@
 	o.onDamageReceived = function( _attacker, _skill, _hitInfo )
 	{
 		_hitInfo.BodyDamageMultBeforeSteelBrow = _hitInfo.BodyDamageMult;
-		_hitInfo.DamageFatigue += this.getFatigueMax() * _hitInfo.Properties.FatigueDealtAsPercentOfMaxFatigue;
 		local ret = onDamageReceived(_attacker, _skill, _hitInfo);
 		this.m.HitInfo = _hitInfo; // save hitInfo for later use
 		return ret;

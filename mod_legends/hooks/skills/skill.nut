@@ -1610,7 +1610,7 @@
 		hitInfo.DamageRegular = damageRegular * damageMult;
 		hitInfo.DamageArmor = damageArmor * damageMult;
 		hitInfo.DamageDirect = damageDirect;
-		hitInfo.DamageFatigue = this.Const.Combat.FatigueReceivedPerHit * _info.Properties.FatigueDealtPerHitMult;
+		hitInfo.DamageFatigue = this.Const.Combat.FatigueReceivedPerHit * _info.Properties.FatigueDealtPerHitMult + _info.Properties.FatigueDealtAsPercentOfMaxFatigue * _info.TargetEntity;
 		hitInfo.DamageMinimum = _info.Properties.DamageMinimum;
 		hitInfo.BodyPart = bodyPart;
 		hitInfo.BodyDamageMult = bodyPartDamageMult;

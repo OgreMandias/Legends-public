@@ -345,8 +345,8 @@
 <sprite id="bust_dawg_01_body_01" offsetY="25" ic="FF242B3A" width="104" height="142" img="entity\beasts\bust_dawg_01_body_01.png" left="-34" right="42" top="-37" bottom="21" />
 <sprite id="bust_dawg_01_body_01_dead" offsetY="8" ic="FF22293E" img="entity\beasts\bust_dawg_01_body_01_dead.png" left="-58" right="59" />
 <sprite id="bust_dawg_01_body_02_dead" offsetY="8" ic="FF262530" img="entity\beasts\bust_dawg_01_body_02_dead.png" left="-58" right="59" />
-<sprite id="bust_dawg_01_body_02_dead_arrows" offsetY="8" f="64FA" ic="FF434A4F" width="117" height="64" img="entity\beasts\bust_dawg_01_body_dead_arrows.png" left="26" right="58" />
-<sprite id="bust_dawg_01_body_02_dead_javelin" offsetY="8" f="64FA" ic="FF151C29" width="117" height="130" img="entity\beasts\bust_dawg_01_body_dead_javelin.png" left="-6" right="54" top="-21" bottom="63" />
+<sprite id="bust_dawg_01_body_02_dead_arrows" offsetY="8" f="64FA" ic="FF434A4F" width="117" height="64" img="entity\beasts\bust_dog_01_body_dead_arrows.png" left="26" right="58" />
+<sprite id="bust_dawg_01_body_02_dead_javelin" offsetY="8" f="64FA" ic="FF151C29" width="117" height="130" img="entity\beasts\bust_dog_01_body_dead_javelin.png" left="-6" right="54" top="-21" bottom="63" />
 <sprite id="bust_dawg_01_head_01" offsetY="25" ic="FF2B3144" width="104" height="142" img="entity\beasts\bust_dawg_01_head_01.png" left="-3" right="57" top="-2" bottom="46" />
 <sprite id="bust_dawg_01_head_01_dead" offsetY="8" f="64FE" f1="-10" f2="-15" ic="FF272C3F" width="117" height="64" img="entity\beasts\bust_dawg_01_head_01_dead.png" left="-37" right="19" top="-32" bottom="8" />
 <sprite id="bust_dawg_01_head_02_dead" offsetY="8" f="64FE" f1="-10" f2="-15" ic="FF2C2931" width="117" height="64" img="entity\beasts\bust_dawg_01_head_02_dead.png" left="-36" right="20" top="-32" bottom="8" />

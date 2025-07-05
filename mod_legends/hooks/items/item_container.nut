@@ -198,4 +198,14 @@
 
 		// }
 	}
+
+	local canDropItems = o.canDropItems;
+	o.canDropItems = function ( _killer ) {
+		if(this.m.Actor == null)
+			return false;
+		if(!("getFaction" in this.m.Actor))
+			return false;
+		return canDropItems(_killer);
+	}
+
 });

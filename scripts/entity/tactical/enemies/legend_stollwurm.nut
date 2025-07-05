@@ -190,7 +190,6 @@ this.legend_stollwurm <- this.inherit("scripts/entity/tactical/actor", {
 	{
 		local corpse = clone this.Const.Corpse;
 		corpse.CorpseName = "A Stollwurm";
-		corpse.Items = this.getItems();
 		corpse.IsHeadAttached = _fatalityType != this.Const.FatalityType.Decapitated;
 		corpse.Tile = _tile;
 		corpse.Items = this.getItems().prepareItemsForCorpse(_killer);

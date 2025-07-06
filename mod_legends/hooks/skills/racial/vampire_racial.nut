@@ -27,7 +27,7 @@
 		if (_targetEntity == null) {
 			return;
 		}
-		if (_targetEntity.isAlive() && !_targetEntity.isDying() && !_targetEntity.getCurrentProperties().IsImmuneToBleeding)
+		if (!_targetEntity.isAlive() || _targetEntity.isDying() || _targetEntity.getCurrentProperties().IsImmuneToBleeding)
 		{
 			return;
 		}

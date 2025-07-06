@@ -201,9 +201,7 @@
 
 	local canDropItems = o.canDropItems;
 	o.canDropItems = function ( _killer ) {
-		if(this.m.Actor == null)
-			return false;
-		if(!("getFaction" in this.m.Actor))
+		if(this.m.Actor == null || (this.m.Actor instanceof ::WeakTableRef && this.m.Actor.isNull()))
 			return false;
 		return canDropItems(_killer);
 	}

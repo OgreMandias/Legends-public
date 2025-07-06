@@ -254,8 +254,8 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 			ID = "ItemPickedUp",
 			Title = "Inside town",
 			Text = ::format("[img]gfx/ui/events/event_112.png[/img]{%s|%s}",
-				"A smuggler meets you behind the tavern, tossing a wrapped bundle into your hands. %SPEECH_ON%Road's clear - for now. And if it starts squeaking, you didn’t get it from me.%SPEECH_OFF%",
-				"A nervous clerk meets you by the well, handing off a bundle wrapped in rags. %SPEECH_ON%Here! Just take it and go. I never saw you, understood?%SPEECH_OFF%"
+				"A smuggler meets you behind the tavern, tossing a chest into your hands. %SPEECH_ON%Road's clear - for now. And if it starts squeaking, you didn’t get it from me.%SPEECH_OFF%",
+				"A nervous clerk meets you by the well, handing off a small chest. %SPEECH_ON%Here! Just take it and go. I never saw you, understood?%SPEECH_OFF%"
 			),
 			Image = "",
 			List = [],

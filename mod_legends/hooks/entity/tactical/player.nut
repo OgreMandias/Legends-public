@@ -624,12 +624,19 @@
 	o.onDeath = function ( _killer, _skill, _tile, _fatalityType )
 	{
 		local bro = this;
-		local originalAddFallen = ::World.Statistics.addFallen;
-		::World.Statistics.addFallen = function (_fallen) {
-			originalAddFallen(bro.finalizeFallen(_fallen));
+		local checks = !this.m.IsGuest && !this.Tactical.State.isScenarioMode() && _fatalityType != this.Const.FatalityType.Unconscious && (_skill != null && _killer != null || _fatalityType == this.Const.FatalityType.Devoured || _fatalityType == this.Const.FatalityType.Kraken);
+		if (checks)
+		{
+			local originalAddFallen = ::World.Statistics.addFallen;
+			::World.Statistics.addFallen = function (_fallen) {
+				originalAddFallen(bro.finalizeFallen(_fallen));
+			}
 		}
 		onDeath(_killer, _skill, _tile, _fatalityType);
-		::World.Statistics.addFallen = originalAddFallen;
+		if (checks)
+		{
+			::World.Statistics.addFallen = originalAddFallen;
+		}
 	}
 
 	local onActorKilled = o.onActorKilled;

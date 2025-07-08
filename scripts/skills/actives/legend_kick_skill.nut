@@ -158,6 +158,9 @@ this.legend_kick_skill <- this.inherit("scripts/skills/skill", {
 		{
 			_properties.MeleeSkill += 25;
 			_properties.FatigueDealtPerHitMult += 1.0;
+			_properties.DamageRegularMin = 0;
+			_properties.DamageRegularMax = 0;
+			_properties.DamageArmorMult = 0.0;
 
 			if (_properties.IsSpecializedInFists)
 			{

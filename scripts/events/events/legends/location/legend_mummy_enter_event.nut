@@ -54,7 +54,7 @@ this.legend_mummy_enter_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "B",
-			Text = "[img]gfx/ui/events/event_89.png[/img]{As you slowly pace inside the monolith the temperature dramatically drops to a more comfortable level. The shade makes your skin writhe with comfort from the heat outside. \n\n The room is mostly blank, the only distinguishing feature aside from the inscribed walls are stone caskets of varying quality — some depict great battles, a figure whipping servants and others who are partaking in a form of ritual that has been purposely defaced with a weapon or chisel. Others remain blank — either not important enough to be worth more time of the craftsmen or simply unfinished. }",
+			Text = "[img]gfx/ui/events/event_89.png[/img]{As you slowly make pace into the monolith, the temperature dramatically drops to a more comfortable level, the shade causing your skin writhe with comfort from the heat outside. \n\n The room is mostly blank, the only distinguishing feature aside from the inscribed walls are stone caskets of varying quality — some depict great battles, a figure whipping servants and others who are partaking in a form of ritual that has been purposely defaced. Others remain blank — either not important enough to be worth more time of the craftsmen or simply unfinished.}",
 			Image = "",
 			List = [],
 			Characters = [],

@@ -1,5 +1,5 @@
 <brush name="gfx/legend_world.png" version="17">
-	<sprite id="legend_mastaba" ic="FF3E525F" img="world_entity\location\legend_mastaba.png" />
+	<sprite id="legend_pyramid" ic="FF3E525F" img="world_entity\location\legend_pyramid.png" />
 	<sprite id="legend_berserker_cave" ic="FF3E525F" img="world_entity\location\berserker_cave.png" />
 	<sprite id="legend_necromancer_swamp" ic="FF3E525F" img="world_entity\location\necromancer_swamp.png" />
 	<sprite id="legend_ranger_tower" ic="FF3E525F" img="world_entity\location\ranger_tower.png" />

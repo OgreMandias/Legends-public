@@ -12,7 +12,7 @@
 	{
 		// Legends Steel Brow Stun -> Daze logic here
 		local skill = ::Legends.Perks.get(this, ::Legends.Perk.SteelBrow);
-		local otherSkill = ::Legends.Perks.get(this, ::Legends.Perk.LegendFullForce)
+		local otherSkill = ::Legends.Perks.get(this, ::Legends.Perk.LegendImmovableObject)
 		if (skill != null || (otherSkill != null && otherSkill.m.SteelBrow))
 		{
 			skill = skill != null ? skill : otherSkill;

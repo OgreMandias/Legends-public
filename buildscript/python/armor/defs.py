@@ -92,6 +92,21 @@ class Defs:
  "desc" :  "A rugged, large robe made of simple cloth usually worn by monks and similar individuals who don\'t care for fashion.",
  "adesc" :""
 },
+{"name": "legend_vala_dress",                                  "layer": "cloth", "min": 1, "max": 1, "value" : 0, "con" : 40, "stam" : 0, "impactSound" : "leather", "invSound" : "cloth",
+ "title" :  "Vala\'s Dress",
+ "desc" :  "A strong leather dress worn by a vala on her travels.",
+ "adesc" :""
+},
+{"name": "legend_vala_robe",                                  "layer": "cloth", "min": 1, "max": 1, "value" : 0, "con" : 60, "stam" : 0, "impactSound" : "leather", "invSound" : "cloth",
+ "title" :  "Vala\'s Cloak",
+ "desc" :  "A rugged cloak for a vala\'s journeys through the lands.",
+ "adesc" :""
+},
+{"name": "legend_armor_rabble_fur",                            "layer": "cloth", "min": 1, "max": 1, "value" : 100, "con" : 5, "stam" : 0, "impactSound" : "leather", "invSound" : "cloth", "brush" : "rabble_fur",
+ "title" :  "Fur Armor",
+ "desc" :  "Matted fur and torn cloth, barely clothes",
+ "adesc" :""
+},
 {"name": "legend_robes_magic",                            "layer": "cloth", "min": 1, "max": 7, "value" : 100, "con" : 5, "stam" : 0, "impactSound" : "leather", "invSound" : "cloth", "brush" : "magic_robe",
  "title" :  "Magician\'s Robe",
  "desc" :  "A soft shiny robe worn by practictioners of the arcane arts",

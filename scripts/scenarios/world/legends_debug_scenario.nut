@@ -286,15 +286,6 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"runes/legend_rune_resilience",
 			"runes/legend_rune_safety",
 
-			"armor/legend_armor_crusader",
-			"armor/legend_armor_rabble_fur",
-			"armor/legend_armor_ranger",
-			"armor/legend_armor_robes_cultist",
-			"armor/legend_armor_seer_robes",
-			"armor/legend_armor_vala_cloak",
-			"armor/legend_armor_vala_dress",
-			"armor/legend_armor_warlock_cloak",
-			"armor/legend_armor_werewolf_mail",
 
 			"legendary/legend_armor_mountain",
 			"legendary/legend_armor_of_davkul",

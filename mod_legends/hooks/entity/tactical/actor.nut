@@ -494,6 +494,21 @@
 	{
 	}
 
+	local makeMiniboss = o.makeMiniboss;
+	o.makeMiniboss = function ()
+	{
+		local ret = makeMiniboss();
+		if (ret)
+		{
+			this.m.OnDeathLootTable.extend([
+				[5, "scripts/items/misc/legend_masterwork_fabric"],
+				[5, "scripts/items/misc/legend_masterwork_metal"],
+				[5, "scripts/items/misc/legend_masterwork_tools"]
+			]);
+		}
+		return ret;
+	}
+
 	local isReallyKilled = o.isReallyKilled;
 	o.isReallyKilled = function( _fatalityType )
 	{

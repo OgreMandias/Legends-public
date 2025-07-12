@@ -425,6 +425,7 @@
   <sprite id="icon_named_greatsword_11" offsetY="35" ic="FF62656A" width="130" height="142" img="icons\icon_named_greatsword_11.png" left="-63" right="31" top="-61" bottom="47" />
   <sprite id="icon_named_hammer_04_bloodied" offsetY="35" ic="FF344259" width="130" height="142" img="icons\icon_named_hammer_04_bloodied.png" left="-65" right="19" top="-64" bottom="62" />
   <sprite id="icon_named_hammer_04" offsetY="35" ic="FF42515F" width="130" height="142" img="icons\icon_named_hammer_04.png" left="-65" right="19" top="-64" bottom="62" />
+  <sprite id="icon_named_javelins_heavy_01" offsetY="35" ic="FF2F3C4F" width="130" height="142" img="icons\icon_named_javelins_heavy_01.png" left="6" right="48" top="-59" bottom="17" />
   <sprite id="icon_named_longsword_01_bloodied" offsetY="35" ic="FF3B404A" width="128" height="172" img="icons\icon_named_longsword_01_bloodied.png" left="-68" right="30" top="-60" bottom="69" />
   <sprite id="icon_named_longsword_01" offsetY="35" ic="FF3B404A" width="128" height="172" img="icons\icon_named_longsword_01.png" left="-68" right="30" top="-60" bottom="69" />
   <sprite id="icon_named_mace_06_bloodied" offsetY="35" ic="FF303648" width="104" height="142" img="icons\icon_named_mace_06_bloodied.png" left="-1" right="49" top="-56" bottom="14" />
@@ -449,6 +450,7 @@
   <sprite id="icon_named_sword_07" offsetY="35" ic="FF3B404A" width="64" height="116" img="icons\icon_named_sword_07.png" left="1" right="48" top="-61" bottom="27" />
   <sprite id="icon_named_sword_08_bloodied" offsetY="35" ic="FF6A696D" width="104" height="142" img="icons\icon_named_sword_08_bloodied.png" left="-4" right="50" top="-64" bottom="16" />
   <sprite id="icon_named_sword_08" offsetY="35" ic="FF727172" width="104" height="142" img="icons\icon_named_sword_08.png" left="-4" right="50" top="-64" bottom="16" />
+  <sprite id="icon_named_throwing_axes_heavy_01" offsetY="35" ic="FF2D3C52" width="130" height="142" img="icons\icon_named_throwing_axes_heavy_01.png" left="-6" right="58" top="-55" bottom="-5" />
   <sprite id="icon_named_two_handed_axe_06_bloodied" offsetY="35" ic="FF34506D" width="130" height="142" img="icons\icon_named_two_handed_axe_06_bloodied.png" left="-63" right="3" top="-56" bottom="66" />
   <sprite id="icon_named_two_handed_axe_06" offsetY="35" ic="FF365471" width="130" height="142" img="icons\icon_named_two_handed_axe_06.png" left="-63" right="3" top="-56" bottom="66" />
   <sprite id="icon_named_two_handed_axe_07_bloodied" offsetY="35" ic="FF34506D" width="130" height="142" img="icons\icon_named_two_handed_axe_07_bloodied.png" left="-63" right="3" top="-56" bottom="66" />

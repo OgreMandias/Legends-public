@@ -119,6 +119,7 @@ this.legend_legion_prefect_background <- this.inherit("scripts/skills/background
 			];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
+				this.Const.Perks.DaggerTree,
 				this.Const.Perks.SpearTree,
 				this.Const.Perks.SlingTree,
 				this.Const.Perks.TwoHandedTree,

@@ -115,6 +115,7 @@ this.legend_legion_legate_background <- this.inherit("scripts/skills/backgrounds
 			];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
+				this.Const.Perks.DaggerTree,
 				this.Const.Perks.SpearTree,
 				this.Const.Perks.TwoHandedTree,
 				this.Const.Perks.ShieldTree,
@@ -151,7 +152,7 @@ this.legend_legion_legate_background <- this.inherit("scripts/skills/backgrounds
 			id = 12,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Can directly command a single unit that is not a Legate" //see function onadded below.
+			text = "Can directly command a single unit that is not another Legate" //see function onadded below.
 		});
 		return ret;
 	}

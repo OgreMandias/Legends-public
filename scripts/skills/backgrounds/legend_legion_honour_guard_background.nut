@@ -118,6 +118,7 @@ this.legend_legion_honour_guard_background <- this.inherit("scripts/skills/backg
 			];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
+				this.Const.Perks.DaggerTree,
 				this.Const.Perks.SpearTree,
 				this.Const.Perks.TwoHandedTree,
 				this.Const.Perks.ShieldTree,

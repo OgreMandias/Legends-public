@@ -148,11 +148,11 @@
 }
 
 ::Legends.S.skillEntityAliveCheck <- function (_entity, _otherEntity = null) {
-	if (::Legends.S.isNull(_entity) || !_entity.isAlive() || _entity.isDead())
+	if (::Legends.S.isNull(_entity) || !_entity.isAlive() || _entity.isDying())
 		return true;
 	if (_otherEntity == null)
 		return false;
-	if (::Legends.S.isNull(_otherEntity) || !_otherEntity.isAlive() || _otherEntity.isDead())
+	if (::Legends.S.isNull(_otherEntity) || !_otherEntity.isAlive() || _otherEntity.isDying())
 		return true;
 	return false;
 }

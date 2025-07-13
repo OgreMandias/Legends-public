@@ -32,7 +32,7 @@ this.legend_longsword <- this.inherit("scripts/items/weapons/weapon", {
 		}
 		this.m.Icon = "weapons/melee/longsword_01_" + this.m.Variant + "_70x70.png";
 		this.m.IconLarge = "weapons/melee/longsword_01_" + this.m.Variant + ".png";
-		this.m.ArmamentIcon = "longsword_01_" + this.m.Variant;
+		this.m.ArmamentIcon = "icon_longsword_01_" + this.m.Variant;
 	}
 
 	function onEquip()

@@ -13,7 +13,7 @@
 		}
 		this.m.Icon = "weapons/ranged/firelance_01_" + this.m.Variant + "_70x70.png";
 		this.m.IconLarge = "weapons/ranged/firelance_01_" + this.m.Variant + ".png";
-		this.m.ArmamentIcon = "icon_firelance_01_" + this.m.Variant + "_loaded";
+		this.m.ArmamentIcon = "icon_firelance_01_" + this.m.Variant;
 	}
 
 	local setAmmo = o.setAmmo;
@@ -29,7 +29,7 @@
 		} else {
 			this.m.Icon = "weapons/ranged/firelance_02_" + this.m.Variant + "_70x70.png";
 			this.m.IconLarge = "weapons/ranged/firelance_02_" + this.m.Variant + ".png";
-			this.m.ArmamentIcon = "icon_firelance_02_" + this.m.Variant;
+			this.m.ArmamentIcon = "icon_firelance_01_" + this.m.Variant + "_empty";
 		}
 		this.updateAppearance();
 	}

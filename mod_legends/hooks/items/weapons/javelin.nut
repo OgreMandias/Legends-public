@@ -15,7 +15,23 @@
 		}
 		this.m.Icon = "weapons/ranged/javelins_01_" + this.m.Variant + "_70x70.png";
 		this.m.IconLarge = "weapons/ranged/javelins_01_" + this.m.Variant + ".png";
-		this.m.ArmamentIcon = "icon_javelins_01_" + this.m.Variant;
+		this.m.ArmamentIcon = "icon_javelin_01_" + this.m.Variant;
+	}
+
+	local setAmmo = o.setAmmo;
+	o.setAmmo = function(_a) {
+		setAmmo(_a);
+		if (this.m.Variant == 0) {
+			return;
+		}
+		if (this.m.Ammo > 0) {
+			this.m.Icon = "weapons/ranged/javelins_01_" + this.m.Variant + "_70x70.png";
+			this.m.IconLarge = "weapons/ranged/javelins_01_" + this.m.Variant + ".png";
+		} else {
+			this.m.Icon = "weapons/ranged/javelins_01_bag.png";
+			this.m.IconLarge = "weapons/ranged/javelins_01_bag_70x70.png";
+		}
+		this.updateAppearance();
 	}
 
 });

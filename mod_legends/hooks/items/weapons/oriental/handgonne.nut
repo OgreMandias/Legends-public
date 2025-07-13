@@ -20,6 +20,9 @@
 	local setLoaded = o.setLoaded;
 	o.setLoaded = function (_l) {
 		setLoaded(_l);
+		if (this.m.Variant == 0) {
+			return;
+		}
 		if (_l) {
 			this.m.ArmamentIcon = "icon_handgonne_01_" + this.m.Variant + "_loaded";
 		} else {

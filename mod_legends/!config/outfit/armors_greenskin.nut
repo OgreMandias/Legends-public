@@ -186,7 +186,7 @@
 
 ::Legends.Armor.Greenskin.orc_berserker_medium_armor <- {
 	ID = "greenskins/orc_berserker_medium_armor", // 110
-	"scripts/items/armor/greenskins/orc_berserker_medium_armor",
+	Script = "scripts/items/armor/greenskins/orc_berserker_medium_armor",
 	Sets = [{
 		Cloth = [
 
@@ -209,7 +209,7 @@
 
 ::Legends.Armor.Greenskin.legend_orc_elite_heavy_armor <- {
 	ID = "greenskins/legend_orc_elite_heavy_armor", // 600
-	"scripts/items/armor/greenskins/legend_orc_elite_heavy_armor",
+	Script = "scripts/items/armor/greenskins/legend_orc_elite_heavy_armor",
 	Sets = [{
 		Cloth = [
 
@@ -232,7 +232,7 @@
 
 ::Legends.Armor.Greenskin.orc_warlord_armor <- {
 	ID = "greenskins/orc_warlord_armor", // 500
-	"scripts/items/armor/greenskins/orc_warlord_armor",
+	Script = "scripts/items/armor/greenskins/orc_warlord_armor",
 	Sets = [{
 		Cloth = [
 
@@ -255,7 +255,7 @@
 
 ::Legends.Armor.Greenskin.orc_warrior_heavy_armor <- {
 	ID = "greenskins/orc_warrior_heavy_armor", // 400
-	"scripts/items/armor/greenskins/orc_warrior_heavy_armor",
+	Script = "scripts/items/armor/greenskins/orc_warrior_heavy_armor",
 	Sets = [{
 		Cloth = [
 
@@ -278,7 +278,7 @@
 
 ::Legends.Armor.Greenskin.orc_warrior_light_armor <- {
 	ID = "greenskins/orc_warrior_light_armor", // 280
-	"scripts/items/armor/greenskins/orc_warrior_light_armor",
+	Script = "scripts/items/armor/greenskins/orc_warrior_light_armor",
 	Sets = [{
 		Cloth = [
 
@@ -301,7 +301,7 @@
 
 ::Legends.Armor.Greenskin.orc_warrior_medium_armor <- {
 	ID = "greenskins/orc_warrior_medium_armor", // 340
-	"scripts/items/armor/greenskins/orc_warrior_medium_armor",
+	Script = "scripts/items/armor/greenskins/orc_warrior_medium_armor",
 	Sets = [{
 		Cloth = [
 
@@ -324,7 +324,7 @@
 
 ::Legends.Armor.Greenskin.orc_young_heavy_armor <- {
 	ID = "greenskins/orc_young_heavy_armor", // 120
-	"scripts/items/armor/greenskins/orc_young_heavy_armor",
+	Script = "scripts/items/armor/greenskins/orc_young_heavy_armor",
 	Sets = [{
 		Cloth = [
 
@@ -347,7 +347,7 @@
 
 ::Legends.Armor.Greenskin.orc_young_light_armor <- {
 	ID = "greenskins/orc_young_light_armor", // 60
-	"scripts/items/armor/greenskins/orc_young_light_armor",
+	Script = "scripts/items/armor/greenskins/orc_young_light_armor",
 	Sets = [{
 		Cloth = [
 
@@ -370,7 +370,7 @@
 
 ::Legends.Armor.Greenskin.orc_young_medium_armor <- {
 	ID = "greenskins/orc_young_medium_armor", // 80
-	"scripts/items/armor/greenskins/orc_young_medium_armor",
+	Script = "scripts/items/armor/greenskins/orc_young_medium_armor",
 	Sets = [{
 		Cloth = [
 
@@ -393,7 +393,7 @@
 
 ::Legends.Armor.Greenskin.orc_young_very_light_armor <- {
 	ID = "greenskins/orc_young_very_light_armor", // 35
-	"scripts/items/armor/greenskins/orc_young_very_light_armor",
+	Script = "scripts/items/armor/greenskins/orc_young_very_light_armor",
 	Sets = [{
 		Cloth = [
 

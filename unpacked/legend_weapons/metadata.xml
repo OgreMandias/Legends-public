@@ -35,14 +35,14 @@
   <sprite id="icon_bardiche_01_1" offsetY="35" ic="FF4D545F" width="180" height="152" img="icons\icon_bardiche_01_1.png" left="-84" right="12" top="-60" bottom="52" />
   <sprite id="icon_bardiche_01_2_bloodied" offsetY="35" ic="FF404757" width="180" height="152" img="icons\icon_bardiche_01_2_bloodied.png" left="-84" right="12" top="-60" bottom="52" />
   <sprite id="icon_bardiche_01_2" offsetY="35" ic="FF4D545F" width="180" height="152" img="icons\icon_bardiche_01_2.png" left="-84" right="12" top="-60" bottom="52" />
+  <sprite id="icon_bardiche_01_3_bloodied" offsetY="35" ic="FF3C424F" width="150" height="160" img="icons\icon_bardiche_01_3_bloodied.png" left="-59" right="11" top="-61" bottom="53" />
+  <sprite id="icon_bardiche_01_3" offsetY="35" ic="FF424952" width="150" height="160" img="icons\icon_bardiche_01_3.png" left="-59" right="11" top="-61" bottom="53" />
   <sprite id="icon_bardiche_01_named_03_bloodied" offsetY="35" ic="FF3B404A" width="93" height="166" img="icons\icon_bardiche_01_named_03_bloodied.png" left="-60" right="10" top="-60" bottom="65" />
   <sprite id="icon_bardiche_01_named_03" offsetY="35" ic="FF3B404A" width="93" height="166" img="icons\icon_bardiche_01_named_03.png" left="-60" right="10" top="-60" bottom="65" />
   <sprite id="icon_bardiche_01_named_04_bloodied" offsetY="35" ic="FF3E424C" width="130" height="142" img="icons\icon_bardiche_01_named_04_bloodied.png" left="-65" right="15" top="-70" bottom="60" />
   <sprite id="icon_bardiche_01_named_04" offsetY="35" ic="FF484B50" width="130" height="142" img="icons\icon_bardiche_01_named_04.png" left="-65" right="15" top="-70" bottom="60" />
   <sprite id="icon_bardiche_01_named_05_bloodied" offsetY="35" ic="FF3E424C" width="130" height="142" img="icons\icon_bardiche_01_named_05_bloodied.png" left="-65" right="15" top="-70" bottom="60" />
   <sprite id="icon_bardiche_01_named_05" offsetY="35" ic="FF484B50" width="130" height="142" img="icons\icon_bardiche_01_named_05.png" left="-65" right="15" top="-70" bottom="60" />
-  <sprite id="icon_bardiche_02_bloodied" offsetY="35" ic="FF3C424F" width="150" height="160" img="icons\icon_bardiche_02_bloodied.png" left="-59" right="11" top="-61" bottom="53" />
-  <sprite id="icon_bardiche_02" offsetY="35" ic="FF424952" width="150" height="160" img="icons\icon_bardiche_02.png" left="-59" right="11" top="-61" bottom="53" />
   <sprite id="icon_bill_01_1_bloodied" offsetY="35" ic="FF3D4758" width="130" height="142" img="icons\icon_bill_01_1_bloodied.png" left="-52" right="12" top="-64" bottom="52" />
   <sprite id="icon_bill_01_1" offsetY="35" ic="FF4E5860" width="104" height="142" img="icons\icon_bill_01_1.png" left="-52" right="12" top="-64" bottom="54" />
   <sprite id="icon_bill_01_2_bloodied" offsetY="35" ic="FF3D4758" width="130" height="142" img="icons\icon_bill_01_2_bloodied.png" left="-52" right="12" top="-64" bottom="52" />

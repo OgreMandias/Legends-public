@@ -859,7 +859,7 @@
 
 ::Const.World.Spawn.Troops.LegendGoblinTribeDefender <- {
 	ID = ::Const.EntityType.LegendGoblinTribeDefender,
-	Variant = 35,
+	Variant = 100,
 	Strength = 40,
 	Cost = 40,
 	Row = 1,

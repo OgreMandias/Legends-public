@@ -20,7 +20,7 @@ this.legend_goblin_tribe_defender <- this.inherit("scripts/entity/tactical/gobli
 		this.m.CurrentProperties = clone b;
 		this.m.ActionPointCosts = this.Const.DefaultMovementAPCost;
 		this.m.FatigueCosts = this.Const.DefaultMovementFatigueCost;
-		this.getSprite("head").setBrush("bust_goblin_03_head_01");
+		this.getSprite("head").setBrush("bust_goblin_01_head_0" + this.Math.rand(1, 3));
 		this.addDefaultStatusSprites();
 		b.IsSpecializedInSwords = true;
 		b.IsSpecializedInCrossbows = true;

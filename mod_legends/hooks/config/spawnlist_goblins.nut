@@ -38,6 +38,26 @@
 			]
 		},
 		{
+			Weight = 20,
+			Types = [
+				{
+					Type = ::Const.World.Spawn.Troops.LegendGoblinTribeDefender,
+					MinR = 450,
+					Cost = 40
+				}
+			]
+		},
+		{
+			Weight = 5,
+			Types = [
+				{
+					Type = ::Const.World.Spawn.Troops.LegendGoblinBerserker,
+					MinR = 900,
+					Cost = 50
+				}
+			]
+		},
+		{
 			Weight = 49,
 			Types = [
 				{
@@ -95,6 +115,26 @@
 			]
 		},
 		{
+			Weight = 50,
+			Types = [
+				{
+					Type = ::Const.World.Spawn.Troops.LegendGoblinTribeDefender,
+					MinR = 500,
+					Cost = 40
+				}
+			]
+		},
+		{
+			Weight = 3,
+			Types = [
+				{
+					Type = ::Const.World.Spawn.Troops.LegendGoblinBerserker,
+					MinR = 900,
+					Cost = 50
+				}
+			]
+		},
+		{
 			Weight = 30,
 			Types = [
 				{
@@ -143,6 +183,26 @@
 					Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
 					MinR = 400,
 					Cost = 25
+				}
+			]
+		},
+		{
+			Weight = 25,
+			Types = [
+				{
+					Type = ::Const.World.Spawn.Troops.LegendGoblinTribeDefender,
+					MinR = 500,
+					Cost = 40
+				}
+			]
+		},
+		{
+			Weight = 25,
+			Types = [
+				{
+					Type = ::Const.World.Spawn.Troops.LegendGoblinBerserker,
+					MinR = 900,
+					Cost = 50
 				}
 			]
 		},
@@ -219,6 +279,26 @@
 			]
 		},
 		{
+			Weight = 40,
+			Types = [
+				{
+					Type = ::Const.World.Spawn.Troops.LegendGoblinTribeDefender,
+					MinR = 500,
+					Cost = 40
+				}
+			]
+		},
+		{
+			Weight = 10,
+			Types = [
+				{
+					Type = ::Const.World.Spawn.Troops.LegendGoblinBerserker,
+					MinR = 900,
+					Cost = 50
+				}
+			]
+		},
+		{
 			Weight = 15,
 			Types = [
 				{
@@ -284,6 +364,26 @@
 				{
 					Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
 					Cost = 20
+				}
+			]
+		},
+		{
+			Weight = 35,
+			Types = [
+				{
+					Type = ::Const.World.Spawn.Troops.LegendGoblinTribeDefender,
+					MinR = 500,
+					Cost = 40
+				}
+			]
+		},
+		{
+			Weight = 30,
+			Types = [
+				{
+					Type = ::Const.World.Spawn.Troops.LegendGoblinBerserker,
+					MinR = 900,
+					Cost = 50
 				}
 			]
 		},

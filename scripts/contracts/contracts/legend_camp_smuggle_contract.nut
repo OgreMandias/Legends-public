@@ -440,8 +440,11 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 		local tile = this.getTileToSpawnLocation(::World.State.getPlayer().getTile(), 6, 8);
 		if (this.m.Camp != null && !this.m.Camp.isNull())
 			tile = this.m.Camp.getTile();
+		local oldMaxR = ::Const.World.Spawn.BanditArmy.MaxR;
+		::Const.World.Spawn.BanditArmy.MaxR = 1200;
 		local party = ::World.FactionManager.getFaction(::Const.Faction.Bandits)
 			.spawnEntity(tile, "Your employer", false, ::Const.World.Spawn.BanditArmy, 130 * this.getDifficultyMult() * this.getScaledDifficultyMult(), this.getMinibossModifier());
+		::Const.World.Spawn.BanditArmy.MaxR = oldMaxR;
 		party.setDescription("Bandit army of your employer.");
 		party.setFootprintType(::Const.World.FootprintsType.Brigands);
 		party.getLoot().Money = this.Math.rand(50, 100);

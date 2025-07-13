@@ -371,8 +371,8 @@
   <sprite id="icon_longaxe_01_1" offsetY="35" ic="FF424B55" width="124" height="142" img="icons\icon_longaxe_01_1.png" left="-62" right="22" />
   <sprite id="icon_longaxe_01_2_bloodied" offsetY="35" ic="FF343B4F" width="124" height="142" img="icons\icon_longaxe_01_2_bloodied.png" left="-62" right="22" />
   <sprite id="icon_longaxe_01_2" offsetY="35" ic="FF424B55" width="124" height="142" img="icons\icon_longaxe_01_2.png" left="-62" right="22" />
-  <sprite id="icon_longsword_01_2_bloodied" offsetY="35" ic="FF474B5B" width="150" height="160" img="icons\icon_longsword_01_2_bloodied.png" left="-54" right="22" top="-54" bottom="34" />
-  <sprite id="icon_longsword_01_2" offsetY="35" ic="FF5B5F67" width="150" height="160" img="icons\icon_longsword_01_2.png" left="-54" right="22" top="-54" bottom="34" />
+  <sprite id="icon_longsword_01_1_bloodied" offsetY="35" ic="FF474B5B" width="150" height="160" img="icons\icon_longsword_01_1_bloodied.png" left="-54" right="22" top="-54" bottom="34" />
+  <sprite id="icon_longsword_01_1" offsetY="35" ic="FF5B5F67" width="150" height="160" img="icons\icon_longsword_01_1.png" left="-54" right="22" top="-54" bottom="34" />
   <sprite id="icon_lute_named_01_bloodied" offsetY="35" ic="FF3F5874" width="130" height="142" img="icons\icon_lute_named_01_bloodied.png" left="-15" right="65" top="-69" bottom="17" />
   <sprite id="icon_lute_named_01" offsetY="35" ic="FF3F5874" width="130" height="142" img="icons\icon_lute_named_01.png" left="-15" right="65" top="-69" bottom="17" />
   <sprite id="icon_mace_01_1_bloodied" offsetY="35" ic="FF3B4153" width="104" height="142" img="icons\icon_mace_01_1_bloodied.png" left="0" right="48" top="-56" bottom="8" />

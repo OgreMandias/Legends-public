@@ -14,7 +14,7 @@
 		}
 		this.m.Icon = "weapons/ranged/bow_05_" + this.m.Variant + "_70x70.png";
 		this.m.IconLarge = "weapons/ranged/bow_05_" + this.m.Variant + ".png";
-		this.m.ArmamentIcon = "icon_bow_05_" + this.m.Variant;
+		this.m.ArmamentIcon = "icon_war_bow_" + this.m.Variant;
 	}
 
 	local onEquip = o.onEquip;

@@ -15,7 +15,7 @@
 		}
 		this.m.Icon = "weapons/melee/two_handed_saif_01_" + this.m.Variant + "_70x70.png";
 		this.m.IconLarge = "weapons/melee/two_handed_saif_01_" + this.m.Variant + ".png";
-		this.m.ArmamentIcon = "two_handed_saif_01_" + this.m.Variant;
+		this.m.ArmamentIcon = "icon_two_handed_saif_01_" + this.m.Variant;
 	}
 
 });

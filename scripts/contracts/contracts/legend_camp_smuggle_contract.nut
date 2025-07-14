@@ -92,13 +92,13 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 
 			function end() {
 				this.Flags.set("StartTime", this.Time.getVirtualTimeF());
-//				if (::Math.rand(0, 2)) { // 66% chance for enemy spawn
-//					if(::Math.rand(0, 1)) {
-//						this.Flags.set("Ambush", true); // 50% for ambush
-//					} else {
+				if (::Math.rand(0, 2)) { // 66% chance for enemy spawn
+					if(::Math.rand(0, 1)) {
+						this.Flags.set("Ambush", true); // 50% for ambush
+					} else {
 						this.Flags.set("Pursuit", true); // 50% for pursuit
-//					}
-//				}
+					}
+				}
 
 				::World.Assets.addMoney(this.Contract.m.Payment.getInAdvance());
 				this.Contract.setScreen("Overview");

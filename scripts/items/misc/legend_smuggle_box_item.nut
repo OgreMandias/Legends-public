@@ -25,15 +25,23 @@ this.legend_smuggle_box_item <- ::inherit("scripts/items/item", {
 
 		contract.m.Flags.set("BoxOpened", true);
 
+		local itemTypeSeed = contract.m.Flags.getAsInt("ItemTypeSeed");
+		local itemSeed = contract.m.Flags.getAsInt("ItemSeed");
+
 		local item = null;
-		local idx = ::Math.rand(1, 3);
-		if (idx == 1) {
+		local idx = itemTypeSeed % 3;
+		if (idx == 0) {
 			local items = clone ::Const.Items.NamedWeapons;
-			item = ::new("scripts/items/" + items[::Math.rand(0, items.len() - 1)]);
+			::MSU.Log.printData(items);
+			item = ::new("scripts/items/" + items[itemSeed % items.len()]);
+		} else if (idx == 1) {
+			local helmets = ::Const.World.Common.convNameToList(::Const.Items.NamedHelmets);
+			::MSU.Log.printData(helmets);
+			item = ::Const.World.Common.pickHelmet([helmets[itemSeed % helmets.len()]]);
 		} else if (idx == 2) {
-			item = ::Const.World.Common.pickHelmet(::Const.World.Common.convNameToList(::Const.Items.NamedHelmets));
-		} else if (idx == 3) {
-			item = ::Const.World.Common.pickArmor(::Const.World.Common.convNameToList(::Const.Items.NamedArmors));
+			local armors = ::Const.World.Common.convNameToList(::Const.Items.NamedArmors);
+			::MSU.Log.printData(armors);
+			item = ::Const.World.Common.pickArmor([armors[itemSeed % armors.len()]]);
 		}
 		::World.Assets.getStash().makeEmptySlots(1);
 		::World.Assets.getStash().add(item);

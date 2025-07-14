@@ -10,8 +10,8 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 		this.m.Type = "contract.legend_camp_smuggle_contract";
 		this.m.Name = "Smuggle item";
 		this.m.EmployerFaction = ::Legends.CampContracts.EmployerFaction.Bandits;
-		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
-		this.m.DifficultyMult = ::Math.rand(80, 135) * 0.01;
+		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 10.0;
+		this.m.DifficultyMult = ::Math.rand(80, 139) * 0.01;
 		this.m.DescriptionTemplates = [
 			"Bandits want to procure an item, but as outlaws they cannot enter town.",
 			"Local criminal is in dire need of new equipment. You can help them smuggle goods.",
@@ -92,6 +92,8 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 
 			function end() {
 				this.Flags.set("StartTime", this.Time.getVirtualTimeF());
+				this.Flags.set("ItemTypeSeed", ::Math.rand(0, 32767));
+				this.Flags.set("ItemSeed", ::Math.rand(0, 32767));
 				if (::Math.rand(0, 2)) { // 66% chance for enemy spawn
 					if(::Math.rand(0, 1)) {
 						this.Flags.set("Ambush", true); // 50% for ambush

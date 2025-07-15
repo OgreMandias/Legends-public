@@ -14,7 +14,7 @@
 		}
 		this.m.Icon = "weapons/melee/southern_short_sword_01_" + this.m.Variant + "_70x70.png";
 		this.m.IconLarge = "weapons/melee/southern_short_sword_01_" + this.m.Variant + ".png";
-		this.m.ArmamentIcon = "southern_short_sword_01_" + this.m.Variant;
+		this.m.ArmamentIcon = "icon_southern_short_sword_01_" + this.m.Variant;
 	}
 
 });

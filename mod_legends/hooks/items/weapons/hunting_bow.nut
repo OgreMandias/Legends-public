@@ -12,9 +12,9 @@
 		if (this.m.Variant == 0) {
 			return;
 		}
-		this.m.Icon = "weapons/ranged/bow_01_" + this.m.Variant + "_70x70.png";
-		this.m.IconLarge = "weapons/ranged/bow_01_" + this.m.Variant + ".png";
-		this.m.ArmamentIcon = "icon_bow_01_" + this.m.Variant;
+		this.m.Icon = "weapons/ranged/hunting_bow_01_" + this.m.Variant + "_70x70.png";
+		this.m.IconLarge = "weapons/ranged/hunting_bow_01_" + this.m.Variant + ".png";
+		this.m.ArmamentIcon = "icon_hunting_bow_01_" + this.m.Variant;
 	}
 
 	local onEquip = o.onEquip;

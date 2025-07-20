@@ -1981,4 +1981,12 @@ effectsDefs.push({
 	Name = "Legend Commanded",
 });
 
+::Legends.Effect.LegendRamHammer <- null;
+effectsDefs.push({
+	ID = "effects.legend_ram_hammer",
+	Script = "scripts/skills/effects/legend_ram_hammer_effect",
+	Const = "LegendRamHammer",
+	Name = "Legend Ram Hammer",
+});
+
 ::Legends.Effects.addEffectDefObjects(effectsDefs);

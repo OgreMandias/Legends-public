@@ -2218,7 +2218,10 @@
 			[1, "chain/legend_armor_hauberk_full"], // 115
 		],
 		Plate = [
-			[1, "plate/legend_heavy_mail"], //
+			[1, "plate/legend_armor_leather_scale"],
+			[1, "plate/legend_armor_leather_riveted"],
+			[1, "plate/legend_armor_leather_riveted_light"],
+			[1, "plate/legend_armor_leather_brigandine_hardened"],
 		],
 		Cloak = [
 		],
@@ -2646,7 +2649,7 @@
 			[1, "chain/legend_armor_short_mail"],
 		],
 		Plate = [
-			[1, "plate/legend_wild_scale_named"],
+			[1, "plate/legend_lindwurm_scale_armor"],
 		],
 		Cloak = [
 			[10, ""],

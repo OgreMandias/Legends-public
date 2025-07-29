@@ -1,10 +1,10 @@
-this.legend_stollwurm_hauberk <- this.inherit("scripts/items/legend_armor/legend_named_armor_upgrade", {
+this.legend_stollwurm_hauberk_armor <- this.inherit("scripts/items/legend_armor/legend_named_armor_upgrade", {
 	m = {},
 	function create()
 	{
 		this.legend_named_armor_upgrade.create();
 		this.m.Type = this.Const.Items.ArmorUpgrades.Chain;
-		this.m.ID = "legend_armor.body.legend_stollwurm_hauberk";
+		this.m.ID = "legend_armor.body.legend_stollwurm_hauberk_armor";
 		this.m.Name = "";
         this.m.NameList = ["Heraldic Scale", "Splendor", "Grandiosity", "Pageantry", "Swank", "Full Scale", "Scale Hauberk", "Scalemail", "Surcoat", "Duty", "Honor", "Noble Scale"];
 		this.m.Description = "An exceptional hauberk made from the small, flexible scales of a Stollwurm. Incredibly sturdy, but still bendable enough to not impede movement more than a regular chain hauberk.";
@@ -19,6 +19,14 @@ this.legend_stollwurm_hauberk <- this.inherit("scripts/items/legend_armor/legend
 		this.m.StaminaModifier = -15;
         this.m.ItemType = this.m.ItemType;
         this.randomizeValues();
+        this.resetStats();
+	}
+
+	function resetStats()
+	{
+		this.m.Condition = 60;
+		this.m.ConditionMax = 60;
+		this.m.StaminaModifier = -6;
 	}
 
 	function getTooltip()

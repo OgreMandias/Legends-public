@@ -284,11 +284,6 @@ class Defs:
  "desc" :  "A basic mail shirt. Offers decent and affordable protection against slashing and piercing attacks.",
  "adesc" : "Includes a basic mail shirt that offers good protection against slashing and piercing attacks."
 },
-{"name": "wild_scale",                              "layer": "chain", "min": 1, "max": 1, "value" : 2000, "con" : 60, "stam" : -6, "impactSound" : "chain", "invSound" : "leather",
- "title" :  "Wild Scale",
- "desc" :  "A well crafted scale mail shirt",
- "adesc" : "Includes a basic mail shirt that offers good protection against slashing and piercing attacks."
-},
 {"name": "legend_armor_mail_shirt_simple",                "layer": "chain", "min": 1, "max": 1, "value" : 250, "con" : 25, "stam" : -3, "impactSound" : "chain", "invSound" : "leather",
  "title" :  "Simple Mail Shirt",
  "desc" :  "A simple mail shirt. Offers decent and affordable protection against slashing and piercing attacks.",
@@ -726,8 +721,12 @@ class Defs:
  "desc" :  "A heavy lamellar plated harness",
  "adesc" : "Has a heavy lamellar plated harness"
 },
-
-
+{"name": "legend_wild_scale_named",                              "layer": "plate", "min": 1, "max": 1, "value" : 2500, "con" : 60, "stam" : -6, "impactSound" : "chain", "invSound" : "leather",
+ "title" :  "Wild Scale",
+ "desc" :  "A masterwork leather armor made from overlapping lindwurm scales. Light to wear, but very sturdy.",
+ "adesc" : "Includes a masterwork leather armor made from overlapping lindwurm scales. Light to wear, but very sturdy.",
+    "named" : True, "rminStam" : 4, "rmaxStam": 6, "rminCond" : 60, "rmaxCond" : 90,  "names" : ["Wild Scale", "Wurm Skin", "Dragon Cloak", "Snakeskin", "Wyvern Scale", "Drakenguard"]
+},
 
 {"name": "legend_shoulder_cloth",           "layer": "cloak", "min": 1, "max": 12, "value" : 50, "con" : 5, "stam" : 0, "bravery" : 0, "impactSound" : "leather", "invSound" : "cloth", "brush" : "shoulder_cloth",
  "title" :  "Shoulder Cloth",

@@ -737,9 +737,6 @@
   <sprite id="mummy_towershield_04_damaged" offsetY="35" ic="FF494C52" width="130" height="142" img="icons\mummy_towershield_04_damaged.png" left="12" right="54" top="-70" bottom="18" />
   <sprite id="mummy_towershield_04_destroyed" offsetX="18" offsetY="-16" f="6402" ic="FF252634" width="97" height="61" img="icons\mummy_towershield_04_destroyed.png" top="-26" bottom="22" />
   <sprite id="mummy_towershield_04" offsetY="35" ic="FF595A5D" width="130" height="142" img="icons\mummy_towershield_04.png" left="12" right="54" top="-70" bottom="18" />
-  <sprite id="mummy_towershield_05_damaged" offsetY="35" ic="FF494C52" width="130" height="142" img="icons\mummy_towershield_05_damaged.png" left="12" right="54" top="-70" bottom="18" />
-  <sprite id="mummy_towershield_05_destroyed" offsetX="18" offsetY="-16" f="6402" ic="FF252634" width="97" height="61" img="icons\mummy_towershield_05_destroyed.png" top="-26" bottom="22" />
-  <sprite id="mummy_towershield_05" offsetY="35" ic="FF595A5D" width="130" height="142" img="icons\mummy_towershield_05.png" left="12" right="54" top="-70" bottom="18" />
   <sprite id="player_banner_101" offsetY="35" ic="FF5E5958" width="200" height="300" img="icons\player_banner\player_banner_101.png" left="-43" right="37" top="-33" bottom="107" />
   <sprite id="player_banner_101_shaft" offsetY="35" ic="FF464A53" width="200" height="300" img="icons\player_banner\player_banner_101_shaft.png" left="23" right="47" top="-60" bottom="16" />
   <sprite id="player_banner_102" offsetY="35" ic="FF2F5037" width="200" height="300" img="icons\player_banner\player_banner_102.png" left="-59" right="27" top="-35" bottom="107" />

@@ -248,7 +248,7 @@ this.legend_hexe_leader <- this.inherit("scripts/entity/tactical/actor", {
 		charm_armor.setBrush("bust_hexen_charmed_dress_0" + this.Math.rand(1, 3));
 		charm_armor.Visible = false;
 		local head = this.addSprite("head");
-		head.setBrush("bust_hexenleader_head_01");
+		head.setBrush("bust_hexenleader_head_0" + ::Math.rand(1, 3));
 		head.Color = body.Color;
 		head.Saturation = body.Saturation;
 		local charm_head = this.addSprite("charm_head");

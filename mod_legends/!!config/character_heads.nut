@@ -467,7 +467,6 @@
 ];
 
 ::Const.Bodies.AllFemale <- [
-	"bust_naked_body_03",
 	"bust_female_southern_body_00",
 	"bust_female_southern_body_01",
 	"bust_female_southern_body_02",
@@ -499,17 +498,19 @@
 	"bust_female_southern_body_04",
 	"bust_female_southern_body_05"
 ];
+
 ::Const.Bodies.BarberNorthernFemale <- [
-	"bust_naked_body_03",
 	"bust_female_northern_body_00",
 	"bust_female_northern_body_01",
 	"bust_female_northern_body_02"
 ];
+
 ::Const.Bodies.BarberSouthernMale <- [
 	"bust_naked_body_southern_00",
 	"bust_naked_body_southern_01",
 	"bust_naked_body_southern_02"
 ];
+
 ::Const.Bodies.BarberNorthernMale <- [
 	"bust_naked_body_00",
 	"bust_naked_body_01",

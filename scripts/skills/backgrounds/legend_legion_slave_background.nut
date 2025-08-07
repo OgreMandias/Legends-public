@@ -137,7 +137,6 @@ this.legend_legion_slave_background <- this.inherit("scripts/skills/backgrounds/
 			],
 			Magic = []
 		}
-		this.getFlags().add("legion_can_command"); //justfies if this background is subject to the legion command skill
 	}
 
 	//Default Male
@@ -159,7 +158,7 @@ this.legend_legion_slave_background <- this.inherit("scripts/skills/backgrounds/
 
 	function onBuildDescription() //to do
 	{
-		return "{ | }";
+		return "{ TODO | TODO }";
 	}
 
 	function onChangeAttributes() //uses Character_background.nut template (Skeleton)
@@ -235,6 +234,7 @@ this.legend_legion_slave_background <- this.inherit("scripts/skills/backgrounds/
 			"injury.pierced_lung",
 			"injury.pierced_side"
 		];
+		this.getContainer().getActor().getFlags().add("legion_can_command");  //justfies if this background is subject to the legion command skill
 	}
 
 	function adjustHiringCostBasedOnEquipment() //reduces cost for equipment worn on skeletons to zero for recruiting purposes.
@@ -251,27 +251,26 @@ this.legend_legion_slave_background <- this.inherit("scripts/skills/backgrounds/
 
 		if (r == 1)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/broken_ancient_sword"));
+			items.equip(this.new("scripts/items/weapons/ancient/broken_ancient_sword"));
 		}
 		else if (r == 2)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/falx"));
+			items.equip(this.new("scripts/items/weapons/ancient/falx"));
 		}
 		else if (r == 3)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/ancient_spear"));
+			items.equip(this.new("scripts/items/weapons/ancient/ancient_spear"));
 		}
 		else if (r == 4)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/legend_sling"));
+			items.equip(this.new("scripts/items/weapons/legend_sling"));
 		}
 
 		if (this.Math.rand(1, 100) <= 66)
 		{
-			this.m.Items.equip(this.new("scripts/items/shields/ancient/auxiliary_shield"));
+			items.equip(this.new("scripts/items/shields/ancient/auxiliary_shield"));
 		}
 
-		local items = this.getContainer().getActor().getItems();
 		items.equip(this.Const.World.Common.pickArmor([
 			[1, ::Legends.Armor.Standard.tattered_sackcloth],
 			[2, ::Legends.Armor.Standard.leather_wraps],
@@ -280,7 +279,6 @@ this.legend_legion_slave_background <- this.inherit("scripts/skills/backgrounds/
 			[3, ::Legends.Armor.None]
 		]));
 
-		local items = this.getContainer().getActor().getItems();
 		items.equip(this.Const.World.Common.pickHelmet([
 			[1, ::Legends.Helmet.Ancient.ancient_household_helmet],
 			[2, ::Legends.Helmet.None]

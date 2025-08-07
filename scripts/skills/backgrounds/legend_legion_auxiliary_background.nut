@@ -139,7 +139,6 @@ this.legend_legion_auxiliary_background <- this.inherit("scripts/skills/backgrou
 			],
 			Magic = []
 		}
-		this.getFlags().add("legion_can_command"); //justfies if this background is subject to the legion command skill
 	}
 
 	//Default Male
@@ -161,7 +160,7 @@ this.legend_legion_auxiliary_background <- this.inherit("scripts/skills/backgrou
 
 	function onBuildDescription() //to do
 	{
-		return "{ | }";
+		return "{ TODO | TODO }";
 	}
 
 	function onChangeAttributes() //uses Character_background.nut template (Skeleton)
@@ -237,6 +236,7 @@ this.legend_legion_auxiliary_background <- this.inherit("scripts/skills/backgrou
 			"injury.pierced_lung",
 			"injury.pierced_side"
 		];
+		this.getContainer().getActor().getFlags().add("legion_can_command");  //justfies if this background is subject to the legion command skill
 	}
 
 	function adjustHiringCostBasedOnEquipment() //reduces cost for equipment worn on skeletons to zero for recruiting purposes.
@@ -253,31 +253,30 @@ this.legend_legion_auxiliary_background <- this.inherit("scripts/skills/backgrou
 
 		if (r == 1)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/throwing_spear"));
+			items.equip(this.new("scripts/items/weapons/throwing_spear"));
 		}
 		else if (r == 2)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/falx"));
+			items.equip(this.new("scripts/items/weapons/ancient/falx"));
 		}
 		else if (r == 3)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/ancient_spear"));
+			items.equip(this.new("scripts/items/weapons/ancient/ancient_spear"));
 		}
 		else if (r == 4)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/ancient_sword"));
+			items.equip(this.new("scripts/items/weapons/ancient/ancient_sword"));
 		}
 		else if (r == 5)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/broken_ancient_sword"));
+			items.equip(this.new("scripts/items/weapons/ancient/broken_ancient_sword"));
 		}
 
 		if (this.Math.rand(1, 100) <= 50)
 		{
-			this.m.Items.equip(this.new("scripts/items/shields/ancient/auxiliary_shield"));
+			items.equip(this.new("scripts/items/shields/ancient/auxiliary_shield"));
 		}
 
-		local items = this.getContainer().getActor().getItems();
 		items.equip(this.Const.World.Common.pickArmor([
 			[1, ::Legends.Armor.Standard.tattered_sackcloth],
 			[2, ::Legends.Armor.Standard.leather_wraps],

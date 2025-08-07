@@ -96,19 +96,16 @@ this.legend_command_legion_skill <- this.inherit("scripts/skills/skill", {
 	function onVerifyTarget( _originTile, _targetTile )
 	{
 		if (!this.skill.onVerifyTarget(_originTile, _targetTile))
-		{
 			return false;
-		}
 
-		if (!target.getFlags().has("legion_can_command"))
-		{
+		if (_targetTile.getEntity() == null)
 			return false;
-		}
+
+		if (!_targetTile.getEntity().getFlags().has("legion_can_command"))
+			return false;
 
 		if (_targetTile.getEntity().getSkills().hasEffect(::Legends.Effect.LegendCommanded))
-		{
 			return false;
-		}
 
 		return true;
 	}

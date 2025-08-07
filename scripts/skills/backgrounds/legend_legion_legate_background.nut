@@ -176,7 +176,7 @@ this.legend_legion_legate_background <- this.inherit("scripts/skills/backgrounds
 
 	function onBuildDescription() //to do
 	{
-		return "{ | }";
+		return "{ TODO | TODO }";
 	}
 
 	function onChangeAttributes() //uses Character_background.nut template (Skeleton)
@@ -270,22 +270,21 @@ this.legend_legion_legate_background <- this.inherit("scripts/skills/backgrounds
 
 		if (r == 1)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/crypt_cleaver"));
+			items.equip(this.new("scripts/items/weapons/ancient/crypt_cleaver"));
 		}
 		else if (r == 2)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/warscythe"));
+			items.equip(this.new("scripts/items/weapons/ancient/warscythe"));
 		}
 		else if (r == 3)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/legend_gladius"));
+			items.equip(this.new("scripts/items/weapons/ancient/legend_gladius"));
 		}
 		else if (r == 4)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/legend_kopis"));
+			items.equip(this.new("scripts/items/weapons/ancient/legend_kopis"));
 		}
 
-		local items = this.getContainer().getActor().getItems();
 		items.equip(this.Const.World.Common.pickArmor([
 			[2, ::Legends.Armor.Ancient.ancient_plated_scale_hauberk],
 			[1, ::Legends.Armor.Ancient.ancient_scale_coat],
@@ -293,7 +292,6 @@ this.legend_legion_legate_background <- this.inherit("scripts/skills/backgrounds
 			[1, ::Legends.Armor.Ancient.ancient_plated_mail_hauberk]
 		]));
 
-		local items = this.getContainer().getActor().getItems();
 		items.equip(this.Const.World.Common.pickHelmet([
 			[2, ::Legends.Helmet.Ancient.ancient_honorguard_helmet],
 			[1, ::Legends.Helmet.Ancient.legend_ancient_legionary_helmet_restored]

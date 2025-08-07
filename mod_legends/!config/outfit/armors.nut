@@ -2649,7 +2649,7 @@
 			[1, "chain/legend_armor_short_mail"],
 		],
 		Plate = [
-			[1, "plate/legend_lindwurm_scale_armor"],
+			[1, "named/legend_lindwurm_scale_armor"],
 		],
 		Cloak = [
 			[10, ""],

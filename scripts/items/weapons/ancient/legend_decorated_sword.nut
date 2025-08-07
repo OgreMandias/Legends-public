@@ -24,7 +24,7 @@ this.legend_decorated_sword <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamageMax = 45;
 		this.m.ArmorDamageMult = 0.6;
 		this.m.DirectDamageMult = 0.1;
-        this.m.Bravery = 8;
+        // this.m.Bravery = 8;
 	}
 
 	function onEquip()

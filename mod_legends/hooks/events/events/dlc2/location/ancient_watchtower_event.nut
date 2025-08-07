@@ -1,4 +1,4 @@
-::mods_hookExactClass("events/events/dlc2/ancient_watchtower_event", function(o) {
+::mods_hookExactClass("events/events/dlc2/location/ancient_watchtower_event", function(o) {
 	local create = o.create;
 	o.create = function() {
 		create();

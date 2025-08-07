@@ -2,10 +2,10 @@ this.legend_command_legion_skill <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		::Legends.Actives.onCreate(this, ::Legends.Active.legendCommandLegion);
+		::Legends.Actives.onCreate(this, ::Legends.Active.LegendCommandLegion);
 		this.m.Description = "Command a fighter of Centurion rank or lower to do your bidding. Targets can only be inspired once per turn. Does not work on Legates.";
 		this.m.Icon = "skills/legend_legion_command_square.png";
-		this.m.IconDisabled = "skills/legend_legion_command_square_bw.png"; 
+		this.m.IconDisabled = "skills/legend_legion_command_square_bw.png";
 		this.m.IconMini = "legend_status_effect_legion_command_mini";
 		this.m.Overlay = "legend_legion_command_square";
 		this.m.SoundOnUse = [ //new sounds would be good

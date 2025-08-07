@@ -208,7 +208,7 @@ this.legend_legion_honour_guard_background <- this.inherit("scripts/skills/backg
 		return c;
 	}
 
-	function onAdded() 
+	function onAdded()
 	{
 		if (this.m.IsNew)
 		{
@@ -289,8 +289,6 @@ this.legend_legion_honour_guard_background <- this.inherit("scripts/skills/backg
 			}
 		}
 
-	o.onAddEquipment = function () //1 = least likely
-	{
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.Const.World.Common.pickArmor([
 			[2, ::Legends.Armor.Ancient.ancient_plated_scale_hauberk],

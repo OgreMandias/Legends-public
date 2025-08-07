@@ -120,7 +120,7 @@ this.legend_legion_auxiliary_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.ShieldTree,
 				this.Const.Perks.SwordTree,
 				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.CleaverTree				
+				this.Const.Perks.CleaverTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree,
@@ -203,7 +203,7 @@ this.legend_legion_auxiliary_background <- this.inherit("scripts/skills/backgrou
 		return c;
 	}
 
-	function onAdded() 
+	function onAdded()
 	{
 		if (this.m.IsNew)
 		{
@@ -277,8 +277,6 @@ this.legend_legion_auxiliary_background <- this.inherit("scripts/skills/backgrou
 			this.m.Items.equip(this.new("scripts/items/shields/ancient/auxiliary_shield"));
 		}
 
-	o.onAddEquipment = function () //1 = least likely
-	{
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.Const.World.Common.pickArmor([
 			[1, ::Legends.Armor.Standard.tattered_sackcloth],

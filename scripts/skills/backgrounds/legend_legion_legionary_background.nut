@@ -122,7 +122,7 @@ this.legend_legion_legionary_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PolearmTree,
 				this.Const.Perks.SwordTree,
 				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.CleaverTree			
+				this.Const.Perks.CleaverTree
 			],
 			Defense = [
 				this.Const.Perks.HeavyArmorTree,
@@ -205,7 +205,7 @@ this.legend_legion_legionary_background <- this.inherit("scripts/skills/backgrou
 		return c;
 	}
 
-	function onAdded() 
+	function onAdded()
 	{
 		if (this.m.IsNew)
 		{
@@ -286,8 +286,6 @@ this.legend_legion_legionary_background <- this.inherit("scripts/skills/backgrou
 			}
 		}
 
-	o.onAddEquipment = function () //1 = least likely
-	{
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.Const.World.Common.pickArmor([
 			[2, ::Legends.Armor.Ancient.ancient_scale_harness],

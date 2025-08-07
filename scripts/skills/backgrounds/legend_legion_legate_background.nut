@@ -53,7 +53,7 @@ this.legend_legion_legate_background <- this.inherit("scripts/skills/backgrounds
 			::Legends.Traits.getID(::Legends.Trait.Spartan),
 			::Legends.Traits.getID(::Legends.Trait.Superstitious),
 			::Legends.Traits.getID(::Legends.Trait.Weasel),
-			
+
 			//legend traits
 			// ::Legends.Traits.getID(::Legends.Trait.LegendAmbitious),
 			::Legends.Traits.getID(::Legends.Trait.LegendFearNobles),
@@ -218,7 +218,7 @@ this.legend_legion_legate_background <- this.inherit("scripts/skills/backgrounds
 		return c;
 	}
 
-	function onAdded() 
+	function onAdded()
 	{
 		if (this.m.IsNew)
 		{
@@ -285,8 +285,6 @@ this.legend_legion_legate_background <- this.inherit("scripts/skills/backgrounds
 			this.m.Items.equip(this.new("scripts/items/weapons/ancient/legend_kopis"));
 		}
 
-	o.onAddEquipment = function () //1 = least likely
-	{
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.Const.World.Common.pickArmor([
 			[2, ::Legends.Armor.Ancient.ancient_plated_scale_hauberk],

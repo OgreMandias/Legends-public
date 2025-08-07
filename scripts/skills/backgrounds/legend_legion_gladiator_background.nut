@@ -53,7 +53,7 @@ this.legend_legion_gladiator_background <- this.inherit("scripts/skills/backgrou
 			::Legends.Traits.getID(::Legends.Trait.Spartan),
 			::Legends.Traits.getID(::Legends.Trait.Superstitious),
 			::Legends.Traits.getID(::Legends.Trait.Weasel),
-			
+
 			//legend traits
 			// ::Legends.Traits.getID(::Legends.Trait.LegendAmbitious),
 			::Legends.Traits.getID(::Legends.Trait.LegendFearNobles),
@@ -207,7 +207,7 @@ this.legend_legion_gladiator_background <- this.inherit("scripts/skills/backgrou
 		return c;
 	}
 
-	function onAdded() 
+	function onAdded()
 	{
 		if (this.m.IsNew)
 		{
@@ -284,8 +284,6 @@ this.legend_legion_gladiator_background <- this.inherit("scripts/skills/backgrou
 			}
 		}
 
-	o.onAddEquipment = function () //1 = least likely
-	{
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.Const.World.Common.pickArmor([
 			[1, ::Legends.Armor.Ancient.ancient_ripped_cloth],

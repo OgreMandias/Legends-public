@@ -14,9 +14,9 @@
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendSmashingShields);
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendBackToBasics);
 			::Legends.Perks.grant(this, ::Legends.Perk.ShieldBash);
-			::Legends.Perks.grant(this, ::Legends.Perk.LegendFullForce);
+			::Legends.Perks.grant(this, ::Legends.Perk.LegendImmovableObject);
 			::Legends.Traits.grant(this, ::Legends.Trait.Fearless);
-			
+
 		}
 	}
 
@@ -71,17 +71,16 @@
 		}
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[1, "basic_mail_shirt"],
-			[1, "padded_leather"],
-			[1, "mail_shirt"]
+			[1, ::Legends.Armor.Standard.basic_mail_shirt],
+			[1, ::Legends.Armor.Standard.padded_leather],
+			[1, ::Legends.Armor.Standard.mail_shirt]
 		]));
 
-		local r = this.Math.rand(1, 4);
 		this.m.Items.equip(this.Const.World.Common.pickHelmet([
-				[1, "nasal_helmet_with_mail"],
-				[1, "mail_coif"],
-				[1, "feathered_hat"],
-				[1, "kettle_hat"]
+			[1, ::Legends.Helmet.Standard.nasal_helmet_with_mail],
+			[1, ::Legends.Helmet.Standard.mail_coif],
+			[1, ::Legends.Helmet.Standard.feathered_hat],
+			[1, ::Legends.Helmet.Standard.kettle_hat]
 		]))
 	}
 });

@@ -60,8 +60,10 @@ this.legend_blacksmith_background <- this.inherit("scripts/skills/backgrounds/ch
 			],
 			Enemy = [],
 			Class = [
-				this.Const.Perks.HammerClassTree,
-				this.Const.Perks.RepairClassTree
+				this.Const.Perks.HammerClassTree
+			],
+			Profession = [
+				this.Const.Perks.RepairProfessionTree
 			],
 			Magic = []
 		}
@@ -137,7 +139,7 @@ this.legend_blacksmith_background <- this.inherit("scripts/skills/backgrounds/ch
 		items.equip(this.new("scripts/items/weapons/legend_hammer"));
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "legend_blacksmith_apron"]
+			[1, ::Legends.Armor.Standard.legend_blacksmith_apron]
 		]));
 	}
 })

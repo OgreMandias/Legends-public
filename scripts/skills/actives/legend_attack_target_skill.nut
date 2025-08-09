@@ -163,7 +163,7 @@ this.legend_attack_target_skill <- this.inherit("scripts/skills/skill", {
 		{
 			return;
 		}
-		::Legends.Effects.grant(_t, ::Legends.Effect.LegendMarkedTarget);
+		::Legends.Effects.grant(_t, ::Legends.Effect.LegendMarked);
 		this.m.LastTarget = _t.getID();
 	}
 

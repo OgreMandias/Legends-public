@@ -4,6 +4,7 @@ this.legend_launch_holy_water_skill <- this.inherit("scripts/skills/actives/thro
 		},
 	function create()
 	{
+		this.throw_holy_water.create();
 		::Legends.Actives.onCreate(this, ::Legends.Active.LegendLaunchHolyWater);
 		this.m.Description = "Launch a flask of blessed water, with your slingstaff, towards a target, where it will shatter and spray its contents. The blessed water will burn the undead, but will not affect other targets.";
 		this.m.SoundOnUse = [
@@ -87,25 +88,14 @@ this.legend_launch_holy_water_skill <- this.inherit("scripts/skills/actives/thro
 
 	function isHidden()
 	{
-		if (!this.getContainer().hasPerk(::Legends.Perk.LegendSlingerSpins))
+		if (!::Legends.Perks.get(this, ::Legends.Perk.LegendSlingerSpins))
 			return true;
-		if (this.m.Item != null && !this.m.Item.isNull())
-			if (this.m.Item.getAmmo() != 0)
-				return false;
-
-		foreach (item in this.getContainer().getActor().getItems().getAllItemsAtSlot(this.Const.ItemSlot.Bag))
+		if (this.m.Item != null && !this.m.Item.isNull() && this.m.Item.getAmmo() != 0)
 		{
-			if (item.getID() == "weapon.holy_water")
-			{
-				if (item.getAmmo() != 0)
-				{
-					this.setItem(item);
-					return false;
-				}
-			}
+			return false;
 		}
-		this.m.Item = null;
-		return true;
+
+		return this.skill.isHidden();
 	}
 
 	function isUsable()
@@ -141,9 +131,14 @@ this.legend_launch_holy_water_skill <- this.inherit("scripts/skills/actives/thro
 		if (!_target.getFlags().has("undead"))
 			return;
 
-		::Legends.Effects.grant(_target, ::Legends.Effect.HolyWater, function(_effect) {
-			_effect.resetTime();
-		});
+		local effect = ::Legends.Effects.grant(_target, ::Legends.Effect.HolyWater);
+
+		// Prevents resetTime from trying to spawn an icon on an already dead entity.
+		if (_target.m.IsDying) {
+			return;
+		}
+
+		effect.resetTime();
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )
@@ -227,4 +222,3 @@ this.legend_launch_holy_water_skill <- this.inherit("scripts/skills/actives/thro
 		this.m.FatigueCostMult = _properties.IsSpecializedInSlings ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 	}
 });
-

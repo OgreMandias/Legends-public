@@ -69,11 +69,15 @@
 					this.Const.Perks.NoblesTree
 					],
 			Class = [],
+			Profession = [], 
 			Magic = []
 		}
 	}
 
-
+	o.getTooltip = function ()
+	{
+		return this.character_background.getTooltip();
+	}
 
 	o.onSetAppearance = function ()
 	{

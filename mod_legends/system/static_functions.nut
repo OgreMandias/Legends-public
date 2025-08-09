@@ -1,5 +1,7 @@
 ::Legends.S <- {};
 
+::Legends.S.isNull <- ::MSU.isNull;
+
 ::Legends.S.colorize <- function(_valueString, _value)
 {
     local color = (_value >= 0) ? this.Const.UI.Color.PositiveValue : this.Const.UI.Color.NegativeValue;
@@ -36,7 +38,10 @@
 			return _properties.IsSpecializedInAxes;
 		case _weapon.isWeaponType(::Const.Items.WeaponType.Bow):
 			return _properties.IsSpecializedInBows;
+		case _weapon.isWeaponType(::Const.Items.WeaponType.Cleaver):
+			return _properties.IsSpecializedInCleavers;
 		case _weapon.isWeaponType(::Const.Items.WeaponType.Crossbow):
+		case _weapon.isWeaponType(::Const.Items.WeaponType.Firearm): // handgonne
 			return _properties.IsSpecializedInCrossbows;
 		case _weapon.isWeaponType(::Const.Items.WeaponType.Dagger):
 			return _properties.IsSpecializedInDaggers;
@@ -56,6 +61,8 @@
 			return _properties.IsSpecializedInThrowing;
 		case _weapon.isWeaponType(::Const.Items.WeaponType.Polearm):
 			return _properties.IsSpecializedInPolearms;
+		case _weapon.isWeaponType(::Const.Items.WeaponType.Staff):
+			return _properties.IsSpecializedInStaves;
 		default:
 			return false;
 	}
@@ -98,7 +105,7 @@
 		if (firstActorEntities.find(entity) != null);
 		{
 			overlaps.push(entity);
-		}	
+		}
 	}
 
 	return overlaps;
@@ -107,7 +114,7 @@
 ::Legends.S.isInZocWithActor <- function (_actor, _secondActor)
 {
 	if (!_secondActor.isAlive() || !_secondActor.isDying())
-		return false
+		return false;
 
 	if (_secondActor.isNonCombatant())
 		return false;
@@ -122,4 +129,30 @@
 		return false;
 
 	return true;
+}
+
+::Legends.S.getClosestSettlement <- function () {
+	local towns = this.World.EntityManager.getSettlements();
+	local nearestTown;
+	local nearestDist = 9999;
+	foreach (t in towns)
+	{
+		local d = t.getTile().getDistanceTo(::World.State.getPlayer().getTile());
+		if (d < nearestDist && t.isAlliedWithPlayer() && ::World.FactionManager.getFaction(t.getFaction()).getContracts().len() != 0)
+		{
+			nearestTown = t;
+			nearestDist = d;
+		}
+	}
+	return nearestTown;
+}
+
+::Legends.S.skillEntityAliveCheck <- function (_entity, _otherEntity = null) {
+	if (::Legends.S.isNull(_entity) || !_entity.isAlive() || _entity.isDying())
+		return true;
+	if (_otherEntity == null)
+		return false;
+	if (::Legends.S.isNull(_otherEntity) || !_otherEntity.isAlive() || _otherEntity.isDying())
+		return true;
+	return false;
 }

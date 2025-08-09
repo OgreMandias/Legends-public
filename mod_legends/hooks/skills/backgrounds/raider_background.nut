@@ -74,9 +74,17 @@
 				this.Const.Perks.CaravanTree,
 				this.Const.Perks.MercenaryTree
 			],
-			Class = [],
+			Class = [
+				this.Const.Perks.RaiderClassTree
+			],
+			Profession = [], 
 			Magic = []
 		}
+	}
+
+	o.getTooltip = function ()
+	{
+		return this.character_background.getTooltip();
 	}
 
 	//Default Male
@@ -208,16 +216,16 @@
 		}
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "patched_mail_shirt"],
-			[1, "padded_leather"],
-			[1, "leather_lamellar"],
-			[1, "worn_mail_shirt"]
+			[1, ::Legends.Armor.Standard.patched_mail_shirt],
+			[1, ::Legends.Armor.Standard.padded_leather],
+			[1, ::Legends.Armor.Standard.leather_lamellar],
+			[1, ::Legends.Armor.Standard.worn_mail_shirt]
 		]));
 
 		items.equip(this.Const.World.Common.pickHelmet([
-			[1, ""],
-			[1, "dented_nasal_helmet"],
-			[1, "nasal_helmet_with_rusty_mail"]
+			[1, ::Legends.Helmet.None],
+			[1, ::Legends.Helmet.Standard.dented_nasal_helmet],
+			[1, ::Legends.Helmet.Standard.nasal_helmet_with_rusty_mail]
 		]));
 
 	}

@@ -143,70 +143,33 @@
 
 	o.assignRandomEquipment = function ()
 	{
-		local r;
 
-		if (this.Math.rand(1, 100) <= 50)
-		{
-			r = this.Math.rand(1, 12);
-
-			if (r == 1)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/knife"));
-			}
-			else if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/bludgeon"));
-			}
-			else if (r == 3)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/legend_scythe"));
-			}
-			else if (r == 4)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/militia_spear"));
-			}
-			else if (r == 5)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/pitchfork"));
-			}
-			else if (r == 6)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/pickaxe"));
-			}
-			else if (r == 7)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/butchers_cleaver"));
-			}
-			else if (r == 8)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/legend_hammer"));
-			}
-			else if (r == 9)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/legend_shovel"));
-			}
-			else if (r == 10)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/legend_tipstaff"));
-			}
-			else if (r == 11)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/legend_scythe"));
-			}
-
+		if (this.Math.rand(1, 100) <= 50) {
+			// Make sure not to include weapons that only have 6AP skills
+			// in this list, as zombies only have 5AP.
+			local weapons = [
+				"weapons/knife",
+				"weapons/bludgeon",
+				"weapons/militia_spear",
+				"weapons/pickaxe",
+				"weapons/butchers_cleaver",
+				"weapons/legend_hammer",
+				"weapons/legend_shovel",
+				"weapons/legend_tipstaff",
+			];
+			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		}
 
-
 		local aList = [
-			[1, "leather_tunic"],
-			[1, "linen_tunic"],
-			[1, "linen_tunic"],
-			[1, "sackcloth"],
-			[1, "tattered_sackcloth"],
-			[1, "leather_wraps"],
-			[1, "apron"],
-			[1, "butcher_apron"],
-			[1, "monk_robe"]
+			[1, ::Legends.Armor.Standard.leather_tunic],
+			[1, ::Legends.Armor.Standard.linen_tunic],
+			[1, ::Legends.Armor.Standard.linen_tunic],
+			[1, ::Legends.Armor.Standard.sackcloth],
+			[1, ::Legends.Armor.Standard.tattered_sackcloth],
+			[1, ::Legends.Armor.Standard.leather_wraps],
+			[1, ::Legends.Armor.Standard.apron],
+			[1, ::Legends.Armor.Standard.butcher_apron],
+			[1, ::Legends.Armor.Standard.monk_robe]
 		];
 		local armor = this.Const.World.Common.pickArmor(aList);
 
@@ -220,11 +183,11 @@
 		if (this.Math.rand(1, 100) <= 33)
 		{
 			local item = this.Const.World.Common.pickHelmet([
-				[1, "aketon_cap"],
-				[1, "full_aketon_cap"],
-				[1, "kettle_hat"],
-				[1, "padded_kettle_hat"],
-				[1, "full_leather_cap"]
+				[1, ::Legends.Helmet.Standard.aketon_cap],
+				[1, ::Legends.Helmet.Standard.full_aketon_cap],
+				[1, ::Legends.Helmet.Standard.kettle_hat],
+				[1, ::Legends.Helmet.Standard.padded_kettle_hat],
+				[1, ::Legends.Helmet.Standard.full_leather_cap]
 			]);
 			if (item != null)
 			{

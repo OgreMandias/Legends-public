@@ -8,6 +8,14 @@
 		this.m.Icon = "ui/backgrounds/background_54.png";
 		this.m.HiringCost = 200;
 		this.m.DailyCost = 23;
+		this.m.Titles = [
+			"the Exalted",
+			"the Crusader",
+			"the Argent",
+			"the Holy Champion",
+			"the Righteous",
+			"the Venerable"
+		];
 		this.m.Excluded = [
 			::Legends.Traits.getID(::Legends.Trait.Weasel),
 			::Legends.Traits.getID(::Legends.Trait.FearUndead),
@@ -62,6 +70,7 @@
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[2];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
+				this.Const.Perks.SwordTree,
 				this.Const.Perks.ShieldTree,
 				this.Const.Perks.TwoHandedTree,
 				this.Const.Perks.FlailTree,
@@ -86,8 +95,16 @@
 				this.Const.Perks.SkeletonTree
 			],
 			Class = [],
-			Magic = []
+			Profession = [], 
+			Magic = [
+				this.Const.Perks.FaithClassTree
+			]
 		}
+	}
+
+	o.getTooltip = function ()
+	{
+		return this.character_background.getTooltip();
 	}
 
 	o.onBuildDescription <- function ()
@@ -170,7 +187,6 @@
 	{
 		this.character_background.onAdded();
 		local actor = this.getContainer().getActor();
-		actor.setTitle("the Crusader");
 	}
 
 	o.onAddEquipment = function ()
@@ -179,10 +195,15 @@
 		local r;
 		items.equip(this.new("scripts/items/weapons/greatsword"));
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "mail_hauberk"]
+			[1, ::Legends.Armor.Standard.mail_hauberk],
+			[2, ::Legends.Armor.Standard.reinforced_mail_hauberk],
+			[1, ::Legends.Armor.Standard.scale_armor],
+			[1, ::Legends.Armor.Standard.worn_mail_shirt]
 		]));
 		items.equip(this.Const.World.Common.pickHelmet([
-			[1, "full_helm"]
+			[1, ::Legends.Helmet.Standard.nasal_helmet_with_mail],
+			[1, ::Legends.Helmet.Standard.full_helm],
+			[1, ::Legends.Helmet.Standard.closed_flat_top_helmet]
 		]));
 	}
 });

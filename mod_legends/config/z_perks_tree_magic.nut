@@ -3,6 +3,46 @@ if (!("Perks" in ::Const))
 	::Const.Perks <- {};
 }
 
+::Const.Perks.BardMagicTree <- {
+	ID = "BardMagicTree",
+	Name = "Bard",
+	Descriptions = [
+		"entertaining"
+	],
+	Tree = [
+		[
+		::Legends.Perk.LegendCheerOn,
+		::Legends.Perk.LegendSpecialistMusician
+		],
+		[::Legends.Perk.LegendDaze],
+		[],
+		[::Legends.Perk.LegendEntice],
+		[::Legends.Perk.LegendPush],
+		[::Legends.Perk.LegendMinnesanger],
+		[::Legends.Perk.LegendMeistersanger]
+	]
+};
+
+::Const.Perks.ImmortalMagicTree <- {
+	ID = "ImmortalMagicTree",
+	Name = "Immortal",
+	Descriptions = [
+		"combat"
+	],
+	Tree = [
+		[],
+		[],
+		[],
+		[],
+		[
+			::Legends.Perk.LegendLionheart,
+			::Legends.Perk.LegendBattleheart
+		],
+		[],
+		[]
+	]
+};
+
 ::Const.Perks.ValaChantMagicTree <- {
 	ID = "ValaChantMagicTree",
 	Name = "Vala Chant",
@@ -250,10 +290,13 @@ if (!("Perks" in ::Const))
 		[::Legends.Perk.LegendPush],
 		[::Legends.Perk.LegendMagicDaze],
 		[::Legends.Perk.LegendEntice],
-		[::Legends.Perk.LegendHorrify],
+		[
+			::Legends.Perk.LegendHorrify,
+			::Legends.Perk.LegendStun
+		],
 		[::Legends.Perk.LegendTerrifyingVisage],
 		[],
-		[::Legends.Perk.LegendStun]
+		[]
 	]
 };
 
@@ -303,7 +346,7 @@ if (!("Perks" in ::Const))
 		[::Legends.Perk.LegendPrayerOfLife],
 		[],
 		[::Legends.Perk.LegendSummonStorm],
-		[::Legends.Perk.LegendMeistersanger],
+		[],
 		[::Legends.Perk.LegendInsects]
 	]
 };
@@ -393,7 +436,8 @@ if (!("Perks" in ::Const))
 			::Legends.Perk.LegendMagicMissileFocus
 		],
 		[
-			::Legends.Perk.LegendChainLightning
+			::Legends.Perk.LegendChainLightning,
+			::Legends.Perk.LegendMagicSleep
 		],
 		[
 			::Legends.Perk.LegendLevitate,
@@ -401,8 +445,7 @@ if (!("Perks" in ::Const))
 		],
 		[
 			::Legends.Perk.LegendMagicMissileMastery,
-			::Legends.Perk.LegendFirefield,
-			::Legends.Perk.LegendMagicSleep
+			::Legends.Perk.LegendFirefield
 		]
 	]
 };
@@ -519,7 +562,8 @@ if (!("Perks" in ::Const))
 		// ::Const.Perks.AlchemyMagicTree,
 		// ::Const.Perks.TherianthropyMagicTree,
 		::Const.Perks.PhilosophyMagicTree,
-		::Const.Perks.AssassinMagicTree
+		::Const.Perks.AssassinMagicTree,
+		::Const.Perks.BardMagicTree
 
 	],
 	function getRandom(_exclude)

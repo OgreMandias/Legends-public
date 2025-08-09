@@ -24,8 +24,6 @@
 	"bust_head_19",
 	"bust_head_20",
 	"bust_head_34",
-	"bust_head_50",
-	"bust_head_51",
 	"bust_head_female_01",
 	"bust_head_female_02",
 	"bust_head_female_03",
@@ -88,8 +86,6 @@
 	"bust_head_19",
 	"bust_head_20",
 	"bust_head_34",
-	"bust_head_50",
-	"bust_head_51",
 	"bust_head_female_01",
 	"bust_head_female_02",
 	"bust_head_female_03",
@@ -130,9 +126,7 @@
 	"bust_head_18",
 	"bust_head_19",
 	"bust_head_20",
-	"bust_head_34",
-	"bust_head_50",
-	"bust_head_51"
+	"bust_head_34"
 ];
 
 ::Const.Faces.AllWhiteFemale <- [
@@ -151,7 +145,8 @@
 	"bust_head_female_13",
 	"bust_head_female_14",
 	"bust_head_female_15",
-	"bust_head_female_16"
+	"bust_head_female_16",
+	"bust_head_female_17",
 ];
 
 ::Const.Faces.AllFemale <- [
@@ -341,10 +336,6 @@
 	"26",
 	"27",
 	"28",
-	"29",
-	"30",
-	"31",
-	"32",
 	"southern_01",
 	"southern_02",
 	"southern_03",
@@ -374,11 +365,7 @@
 	"25",
 	"26",
 	"27",
-	"28",
-	"29",
-	"30",
-	"31",
-	"32"
+	"28"
 ];
 
 ::Const.Hair.Horse <- [
@@ -480,7 +467,6 @@
 ];
 
 ::Const.Bodies.AllFemale <- [
-	"bust_naked_body_03",
 	"bust_female_southern_body_00",
 	"bust_female_southern_body_01",
 	"bust_female_southern_body_02",
@@ -512,17 +498,19 @@
 	"bust_female_southern_body_04",
 	"bust_female_southern_body_05"
 ];
+
 ::Const.Bodies.BarberNorthernFemale <- [
-	"bust_naked_body_03",
 	"bust_female_northern_body_00",
 	"bust_female_northern_body_01",
 	"bust_female_northern_body_02"
 ];
+
 ::Const.Bodies.BarberSouthernMale <- [
 	"bust_naked_body_southern_00",
 	"bust_naked_body_southern_01",
 	"bust_naked_body_southern_02"
 ];
+
 ::Const.Bodies.BarberNorthernMale <- [
 	"bust_naked_body_00",
 	"bust_naked_body_01",
@@ -566,8 +554,7 @@
 	"25",
 	"26",
 	"27",
-	"28",
-	"30"
+	"28"
 ];
 
 ::Const.HairColors.African <- [

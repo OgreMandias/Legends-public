@@ -109,6 +109,7 @@
 			Class = [
 				this.Const.Perks.ClubClassTree
 			],
+			Profession = [], 
 			Magic = []
 		}
 	}
@@ -338,8 +339,8 @@
 		}
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "leather_wraps"],
-			[1, "legend_rabble_fur"]
+			[1, ::Legends.Armor.Standard.leather_wraps],
+			[1, ::Legends.Armor.Standard.legend_rabble_fur]
 		]))
 	}
 });

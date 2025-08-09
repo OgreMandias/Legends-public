@@ -89,6 +89,7 @@
 				this.Const.Perks.FaithClassTree,
 				this.Const.Perks.InquisitionClassTree
 			],
+			Profession = [], 
 			Magic = []
 		}
 	}
@@ -233,11 +234,11 @@
 		}
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "ragged_surcoat"]
+			[1, ::Legends.Armor.Standard.ragged_surcoat]
 		]));
 
 		items.equip(this.Const.World.Common.pickHelmet([
-			[1, "witchhunter_hat"]
+			[1, ::Legends.Helmet.Standard.witchhunter_hat]
 		]))
 
 	}

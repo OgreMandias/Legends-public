@@ -159,8 +159,16 @@
 					foreach( bro in roster )
 					{
 						local item = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Accessory);
-
-						if (item != null && item.getID() == "accessory.arena_collar") {
+						local hasInBag = false;
+						local itemsInBag = bro.getItems().getAllItemsAtSlot(this.Const.ItemSlot.Bag);
+						foreach (item in itemsInBag)
+						{
+							if (item != null && item.getID() == "accessory.arena_collar")
+							{
+								hasInBag = true;
+							}
+						}
+						if ((item != null && item.getID() == "accessory.arena_collar") || hasInBag) {
 							local skill;
 							bro.getFlags().increment("ArenaFightsWon", 1);
 							bro.getFlags().increment("ArenaFights", 1);
@@ -184,15 +192,15 @@
 								}.bindenv(this));
 							} else if (bro.getFlags().getAsInt("ArenaFightsWon") >= 12 && bro.getSkills().hasTrait(::Legends.Trait.ArenaFighter)) {
 								::Legends.Traits.remove(bro, ::Legends.Trait.ArenaFighter);
-								::Legends.Traits.grant(bro, ::Legends.Trait.LegendArenaVeteran, function(skill) {
+								::Legends.Traits.grant(bro, ::Legends.Trait.ArenaVeteran, function(skill) {
 									this.List.push({
 										id = 10,
 										icon = skill.getIcon(),
 										text = bro.getName() + " is now " + this.Const.Strings.getArticle(skill.getName()) + skill.getName()
 									});
 								}.bindenv(this));
-							} else if (bro.getFlags().getAsInt("ArenaFightsWon") >= 25 && bro.getSkills().hasTrait(::Legends.Trait.LegendArenaVeteran)) {
-								::Legends.Traits.remove(bro, ::Legends.Trait.LegendArenaVeteran);
+							} else if (bro.getFlags().getAsInt("ArenaFightsWon") >= 25 && bro.getSkills().hasTrait(::Legends.Trait.ArenaVeteran)) {
+								::Legends.Traits.remove(bro, ::Legends.Trait.ArenaVeteran);
 								::Legends.Traits.grant(bro, ::Legends.Trait.LegendArenaChampion, function(skill) {
 									this.List.push({
 										id = 10,
@@ -236,7 +244,7 @@
 						{
 						case 1:
 							a = this.Const.World.Common.pickArmor([
-									[1, "oriental/gladiator_harness"],
+									[1, ::Legends.Armor.Southern.gladiator_harness],
 							]);
 							a.setUpgrade(this.new("scripts/items/legend_armor/armor_upgrades/legend_light_gladiator_upgrade"));
 
@@ -249,7 +257,7 @@
 
 						case 2:
 							a = this.Const.World.Common.pickArmor([
-									[1, "oriental/gladiator_harness"],
+									[1, ::Legends.Armor.Southern.gladiator_harness],
 							]);
 							a.setUpgrade(this.new("scripts/items/legend_armor/armor_upgrades/legend_heavy_gladiator_upgrade"));
 							this.List.push({
@@ -278,6 +286,51 @@
 					}
 				}
 			}
+			if (s.ID == "Failure1")
+			{
+				s.Options[0].getResult <- function ()
+				{
+					local roster = this.World.getPlayerRoster().getAll();
+					local n = 0;
+
+					foreach( bro in roster )
+					{
+						local item = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Accessory);
+						local hasInBag = false;
+						foreach (item in itemsInBag)
+						{
+							if (item != null && item.getID() == "accessory.arena_collar")
+							{
+								hasInBag = true;
+							}
+						}
+						if (item != null && item.getID() == "accessory.arena_collar" || hasInBag)
+						{
+							bro.getFlags().increment("ArenaFights", 1);
+							n = ++n;
+						}
+
+						local itemsInBag = bro.getItems().getAllItemsAtSlot(this.Const.ItemSlot.Bag);
+						foreach (item in itemsInBag)
+						{
+							if (item != null && item.getID() == "accessory.arena_collar")
+							{
+								bro.getFlags().increment("ArenaFights", 1);
+								n = ++n;
+							}
+
+							if (n >= 3)
+							{
+								break;
+							}
+						}
+					}
+
+					this.Contract.getHome().getBuilding("building.arena").refreshCooldown();
+					this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractFail);
+					this.World.Contracts.finishActiveContract(true);
+				}
+			}
 		}
 	}
 
@@ -299,6 +352,19 @@
 					bro.setInReserves(false);
 				}
 				ret.push(bro);
+			}
+			local itemsInBag = bro.getItems().getAllItemsAtSlot(this.Const.ItemSlot.Bag);
+			foreach (item in itemsInBag)
+			{
+				if (item != null && item.getID() == "accessory.arena_collar")
+				{
+					if (bro.isInReserves())
+					{
+						this.m.WasInReserves.push(bro);
+						bro.setInReserves(false);
+					}
+					ret.push(bro);
+				}
 			}
 		}
 
@@ -324,6 +390,19 @@
 					"bro" + currentBro++ + "name",
 					" - " + bro.getName()
 				]);
+				continue;
+			}
+			local itemsInBag = bro.getItems().getAllItemsAtSlot(this.Const.ItemSlot.Bag);
+			foreach (item in itemsInBag)
+			{
+				if (item != null && item.getID() == "accessory.arena_collar")
+				{
+					_vars.push([
+						"bro" + currentBro++ + "name",
+						" - " + bro.getName()
+					]);
+					break;
+				}
 			}
 
 		}
@@ -347,13 +426,26 @@
 				bro.setInReserves(true);
 			}
 
-			this.m.WasInReserves.clear();
-			local building = this.m.Home.getBuilding("building.arena");
-			local original = building.refreshCooldown;
-			building.refreshCooldown = function () {};
-			onClear();
-			building.refreshCooldown = original;
-		}	
+		this.m.WasInReserves.clear();
+		local roster = this.World.getPlayerRoster().getAll();
+
+		foreach( bro in roster )
+		{
+			local itemsInBag = bro.getItems().getAllItemsAtSlot(this.Const.ItemSlot.Bag);
+			foreach (item in itemsInBag)
+			{
+				if (item != null && item.getID() == "accessory.arena_collar")
+				{
+					bro.getItems().removeFromBag(item);
+				}
+			}
+		}
+
+		local building = this.m.Home.getBuilding("building.arena");
+		local original = building.refreshCooldown;
+		building.refreshCooldown = function () {};
+		onClear();
+		building.refreshCooldown = original;
 	}
 
 	local onPrepareVariables = o.onPrepareVariables;

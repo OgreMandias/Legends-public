@@ -1,5 +1,6 @@
 this.legend_choke_skill <- this.inherit("scripts/skills/skill", {
 	m = {},
+
 	function create()
 	{
 		::Legends.Actives.onCreate(this, ::Legends.Active.LegendChoke);
@@ -29,7 +30,7 @@ this.legend_choke_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsWeaponSkill = true;
 		this.m.InjuriesOnBody = this.Const.Injury.BluntBody;
 		this.m.InjuriesOnHead = this.Const.Injury.BluntHead;
-		this.m.HitChanceBonus = -15;
+		this.m.HitChanceBonus = -65;
 		this.m.DirectDamageMult = 1.0;
 		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 20;
@@ -42,35 +43,32 @@ this.legend_choke_skill <- this.inherit("scripts/skills/skill", {
 		local actor = this.getContainer().getActor();
 		local tooltip = this.getDefaultTooltip();
 
-		if (this.m.Container.getActor().getCurrentProperties().IsSpecializedInFists)
-		{
-			tooltip.push({
+		tooltip.extend([
+			{
 				id = 6,
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] damage to choked or grappled enemies due to unarmed mastery"
-			});
-
-		}
-
-		tooltip.push({
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] damage to Choked, Tackled or Grappled enemies"
+			},
+			{
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
 				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to hit the head"
-			});
-		tooltip.push({
+			},
+			{
 				id = 8,
 				type = "text",
 				icon = "ui/icons/special.png",
 				text = "Completely ignores armor"
-			});
-		tooltip.push({
+			},
+			{
 				id = 9,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Adds the choked effect which reduces enemy fatigue recovery by [color=" + this.Const.UI.Color.NegativeValue + "]15[/color]"
-			});
+				text = "Adds the Choked effect which reduces enemy fatigue recovery by [color=" + this.Const.UI.Color.NegativeValue + "]15[/color]"
+			}
+		]);
 		return tooltip;
 	}
 
@@ -99,9 +97,9 @@ this.legend_choke_skill <- this.inherit("scripts/skills/skill", {
 				local bonus = this.Math.max(0, this.Math.floor((target.getFatiguePct() - actor.getFatiguePct())*100));
 				this.logInfo(bonus);
 				_tooltip.push({
-				icon = "ui/tooltips/positive.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bonus + "%[/color] damage due to the difference in fatigue"
-			});
+					icon = "ui/tooltips/positive.png",
+					text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bonus + "%[/color] damage due to the difference in fatigue"
+				});
 			}
 		}
 	}
@@ -113,52 +111,41 @@ this.legend_choke_skill <- this.inherit("scripts/skills/skill", {
 			return 0;
 		}
 		local mod = 0;
-
 		if (_targetEntity.getSkills().hasEffect(::Legends.Effect.LegendDazed))
 		{
-			mod = mod + 10;
+			mod += 10;
 		}
-
 		if (_targetEntity.getSkills().hasEffect(::Legends.Effect.LegendParried))
 		{
-			mod = mod + 10;
+			mod += 10;
 		}
-
 		if (_targetEntity.getSkills().hasEffect(::Legends.Effect.LegendGrappled))
 		{
-			mod = mod + 50;
+			mod += 50;
 		}
-
 		if (_targetEntity.getSkills().hasEffect(::Legends.Effect.Stunned))
 		{
-			mod = mod + 25;
+			mod += 25;
 		}
-
 		if (_targetEntity.getSkills().hasEffect(::Legends.Effect.Sleeping))
 		{
-			mod = mod + 50;
+			mod += 50;
 		}
-
 		if (_targetEntity.getSkills().hasEffect(::Legends.Effect.Net))
 		{
-			mod = mod + 25;
+			mod += 25;
 		}
-
 		if (_targetEntity.getMoraleState() == this.Const.MoraleState.Fleeing)
 		{
-			mod = mod + 50;
+			mod += 50;
 		}
-
-		local chance = (1.0 - _targetEntity.getFatiguePct()) * 50;
-		return mod - this.Math.round(chance);
+		local chance = _targetEntity.getFatiguePct() * 50;
+		return mod + this.Math.round(chance);
 	}
 
 	function onAfterUpdate( _properties )
 	{
-		if (_properties.IsSpecializedInFists)
-		{
-			this.m.FatigueCostMult = this.Const.Combat.WeaponSpecFatigueMult;
-		}
+			this.m.FatigueCostMult = _properties.IsSpecializedInFists ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 	}
 
 	function onUse( _user, _targetTile )
@@ -176,18 +163,16 @@ this.legend_choke_skill <- this.inherit("scripts/skills/skill", {
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
 		if (_skill != this)
-		{
 			return;
-		}
 
-		local chance = this.getHitChance(_targetEntity); // Calculates the hitchance bonus from other status effects
+		this.m.HitChanceBonus += this.getHitChance(_targetEntity); // Calculates the hitchance bonus from other status effects
 		local actor = this.getContainer().getActor();
 
-		_properties.DamageRegularMin += 10; // If you change these values, change them in the tooltip above too.
-		_properties.DamageRegularMax += 15;
+		_properties.DamageRegularMin = 10; // If you change these values, change them in the tooltip above too.
+		_properties.DamageRegularMax = 15;
 		_properties.IsIgnoringArmorOnAttack = true;
 		_properties.DamageArmorMult *= 0.0;
-		_properties.MeleeSkill += chance;
+		_properties.MeleeSkill += this.m.HitChanceBonus;
 
 		// Based on decapitate
 		if (_targetEntity != null && actor.getFatiguePct() < _targetEntity.getFatiguePct()) {
@@ -198,33 +183,15 @@ this.legend_choke_skill <- this.inherit("scripts/skills/skill", {
 		{
 			_properties.DamageRegularMult *= 1.5
 		}
-		_properties.HitChance[this.Const.BodyPart.Head] += 90.0; // copied what was used in lash for flails.
 
-		local items = actor.getItems().getAllItems();
-		local hasCestus = false;
-		local hasWraps = false;
-		local hasGauntlets = false;
-		foreach (item in items)
-		{
-			if (item.getID() == "accessory.legend_hand_wraps")
-				hasWraps = true;
-			if (item.getID() == "accessory.legend_cestus")
-				hasCestus = true;
-		}
+		_properties.HitChance[this.Const.BodyPart.Head] += 100.0;
 
-		if (_skill != this)
-			return;
-
-		else if (hasCestus)
+		local accessory = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Accessory);
+		if (accessory != null && accessory.isItemType(this.Const.Items.ItemType.Brawler))
 		{
-			_properties.DamageTotalMult *= 1.1;
-		}
-		else if (hasWraps)
-		{
-			_properties.DamageTotalMult *= 1.05;
+			_properties.DamageRegularMin += accessory.m.ChokeMin;
+			_properties.DamageRegularMax += accessory.m.ChokeMax;
 		}
 	}
-
-
 });
 

@@ -50,9 +50,15 @@
 			],
 			Enemy = [],
 			Class = [],
+			Profession = [], 
 			Magic = []
 		}
 		this.m.Bodies = this.Const.Bodies.Skinny;
+	}
+
+	o.getTooltip = function ()
+	{
+		return this.character_background.getTooltip();
 	}
 
 	o.getTooltip = function ()
@@ -128,7 +134,7 @@
 	{
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "linen_tunic"]
+			[1, ::Legends.Armor.Standard.linen_tunic]
 		]))
 	}
 

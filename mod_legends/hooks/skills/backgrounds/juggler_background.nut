@@ -61,14 +61,14 @@
 			],
 			Enemy = [],
 			Class = [
-				this.Const.Perks.JugglerClassTree
+				this.Const.Perks.JugglerClassTree,
+				this.Const.Perks.ConArtistTree
 			],
+			Profession = [], 
 			Magic = []
 		}
 		this.m.Bodies = this.Const.Bodies.Skinny;
 	}
-
-
 
 	o.getTooltip = function ()
 	{
@@ -163,12 +163,12 @@
 		}
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "linen_tunic"]
+			[1, ::Legends.Armor.Standard.linen_tunic]
 		]));
 
 		items.equip(this.Const.World.Common.pickHelmet([
-			[1, "jesters_hat"],
-			[1, ""]
+			[1, ::Legends.Helmet.Standard.jesters_hat],
+			[1, ::Legends.Helmet.None]
 		]));
 	}
 

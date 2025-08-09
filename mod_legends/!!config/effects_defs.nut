@@ -1113,7 +1113,7 @@ effectsDefs.push({
 effectsDefs.push({
 	ID = "effects.legend_demon_hound_bite_effect",
 	Script = "scripts/skills/effects/legend_demon_hound_bite_effect",
-	Name = "H÷llenhund Curse",
+	Name = "Höllenhund Curse",
 	Const = "LegendDemonHoundBiteEffect"
 });
 
@@ -1437,10 +1437,18 @@ effectsDefs.push({
 	Const = "LegendMagicCircleOfProtectionEffect"
 });
 
-::Legends.Effect.LegendMarkedTarget <- null;
+::Legends.Effect.LegendMarked <- null;
 effectsDefs.push({
 	ID = "effects.legend_marked_target",
 	Script = "scripts/skills/effects/legend_marked_effect",
+	Name = "Marked",
+	Const = "LegendMarked"
+});
+
+::Legends.Effect.LegendMarkedTarget <- null;
+effectsDefs.push({
+	ID = "effects.legend_marked_target",
+	Script = "scripts/skills/effects/legend_marked_target_effect",
 	Name = "Marked",
 	Const = "LegendMarkedTarget"
 });
@@ -1963,6 +1971,22 @@ effectsDefs.push({
 	Script = "scripts/skills/effects/legend_prepare_bullet_effect",
 	Const = "LegendPrepareBullet",
 	Name = "Prepare Bullet",
+});
+
+::Legends.Effect.LegendCommanded <- null;
+effectsDefs.push({
+	ID = "effects.legend_commanded",
+	Script = "scripts/skills/effects/legend_commanded_effect",
+	Const = "LegendCommanded",
+	Name = "Legend Commanded",
+});
+
+::Legends.Effect.LegendRamHammer <- null;
+effectsDefs.push({
+	ID = "effects.legend_ram_hammer",
+	Script = "scripts/skills/effects/legend_ram_hammer_effect",
+	Const = "LegendRamHammer",
+	Name = "Legend Ram Hammer",
 });
 
 ::Legends.Effects.addEffectDefObjects(effectsDefs);

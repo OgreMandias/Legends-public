@@ -61,6 +61,7 @@
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];
+		this.m.PerkTreeDynamicMins.ClassChance += 0.20;
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.StaffTree,
@@ -80,8 +81,14 @@
 			Class = [
 				this.Const.Perks.StaffClassTree
 			],
+			Profession = [], 
 			Magic = []
 		}
+	}
+
+	o.getTooltip = function ()
+	{
+		return this.character_background.getTooltip();
 	}
 
 	//Default Male
@@ -159,9 +166,9 @@
 		}
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "tattered_sackcloth"],
-			[1, "sackcloth"],
-			[1, "legend_rabble_tunic"]
+			[1, ::Legends.Armor.Standard.tattered_sackcloth],
+			[1, ::Legends.Armor.Standard.sackcloth],
+			[1, ::Legends.Armor.Standard.legend_rabble_tunic]
 		]))
 	}
 });

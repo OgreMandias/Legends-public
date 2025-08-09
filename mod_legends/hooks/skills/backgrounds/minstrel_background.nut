@@ -73,11 +73,18 @@
 				this.Const.Perks.NoblesTree
 			],
 			Class = [
-				this.Const.Perks.BardClassTree,
 				this.Const.Perks.JugglerClassTree
 			],
-			Magic = []
+			Profession = [], 
+			Magic = [
+				this.Const.Perks.BardMagicTree,
+			]
 		}
+	}
+
+	o.getTooltip = function ()
+	{
+		return this.character_background.getTooltip();
 	}
 
 	o.setGender <- function (_gender = -1)
@@ -161,7 +168,7 @@
 		local r;
 
 		items.equip(this.Const.World.Common.pickHelmet([
-			[1, "feathered_hat"]
+			[1, ::Legends.Helmet.Standard.feathered_hat]
 		]));
 
 		local r = this.Math.rand(0, 1);

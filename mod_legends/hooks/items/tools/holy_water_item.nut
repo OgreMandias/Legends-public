@@ -6,8 +6,7 @@
 	o.create = function()
 	{
 		create();
-		this.m.ID = "weapon.holy_water"; // vanilla error
-		this.m.Description = "A flask filled with water blessed by a man of the gods. Can be thrown at short ranges.";
+		this.m.Description = "A flask filled with water blessed by a man of the gods. Can be thrown at short ranges. If the company has Alchemy Tools, this item is refilled after each battle, consuming 30 ammunition per use.";
 		this.m.OriginalDescription = this.m.Description;
 		this.m.Value = 800;
 		this.m.OriginalValue = this.m.Value;
@@ -144,5 +143,25 @@
 		}
 
 		this.updateAppearance();
+	}
+
+	o.onPutIntoBag <- function ()
+	{
+		local skill = ::Legends.Actives.get(this, ::Legends.Active.LegendLaunchHolyWater);
+		if (skill != null)
+			skill.setItem(this);
+	}
+
+	o.onSlingUpdateProperties <- function ()
+	{
+		this.onPutIntoBag();
+	}
+
+	o.onRemovedFromBag <- function()
+	{
+		this.item.onRemovedFromBag();
+		local skill = ::Legends.Actives.get(this, ::Legends.Active.LegendLaunchHolyWater);
+		if (skill != null)
+			skill.setItem(null);
 	}
 });

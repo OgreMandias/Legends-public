@@ -38,7 +38,7 @@
 		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.Names = this.Const.Strings.KnightNames;
 		this.m.Level = this.Math.rand(1, 3);
-		this.m.BackgroundType = this.Const.BackgroundType.Combat | this.Const.BackgroundType.Noble | this.Const.BackgroundType.Crusader | this.Const.BackgroundType.Educated;
+		this.m.BackgroundType = this.Const.BackgroundType.Combat | this.Const.BackgroundType.Crusader | this.Const.BackgroundType.Educated;
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[2];
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[1];
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[1];
@@ -64,8 +64,14 @@
 				this.Const.Perks.NoblesTree
 			],
 			Class = [],
+			Profession = [],
 			Magic = []
 		}
+	}
+
+	o.getTooltip = function ()
+	{
+		return this.character_background.getTooltip();
 	}
 
 	o.setGender <- function (_gender = -1)
@@ -82,6 +88,7 @@
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.FemaleMuscular;
+		this.m.Names = this.Const.Strings.LadyNames;
 
 		this.m.PerkTreeDynamic = {
 			Weapon = [
@@ -215,21 +222,21 @@
 
 
 			items.equip(this.Const.World.Common.pickArmor([
-				[1, "mail_shirt"],
-				[1, "basic_mail_shirt"],
-				[1, "mail_hauberk"]
+				[1, ::Legends.Armor.Standard.mail_shirt],
+				[1, ::Legends.Armor.Standard.basic_mail_shirt],
+				[1, ::Legends.Armor.Standard.mail_hauberk]
 			]));
 
 			items.equip(this.Const.World.Common.pickHelmet([
-				[2, "nasal_helmet"],
-				[2, "padded_nasal_helmet"],
-				[1, "nasal_helmet_with_mail"],
-				[1, "legend_noble_floppy_hat"],
-				[1, "legend_noble_hat"],
-				[1, "legend_noble_hood"],
-				[1, "legend_noble_crown"],
-				[1, "mail_coif"],
-				[2, ""]
+				[2, ::Legends.Helmet.Standard.nasal_helmet],
+				[2, ::Legends.Helmet.Standard.padded_nasal_helmet],
+				[1, ::Legends.Helmet.Standard.nasal_helmet_with_mail],
+				[1, ::Legends.Helmet.Standard.legend_noble_floppy_hat],
+				[1, ::Legends.Helmet.Standard.legend_noble_hat],
+				[1, ::Legends.Helmet.Standard.legend_noble_hood],
+				[1, ::Legends.Helmet.Standard.legend_noble_crown],
+				[1, ::Legends.Helmet.Standard.mail_coif],
+				[2, ::Legends.Helmet.None]
 			]));
 		}
 		else
@@ -249,21 +256,21 @@
 			}
 
 			items.equip(this.Const.World.Common.pickArmor([
-				[1, "mail_shirt"],
-				[1, "basic_mail_shirt"],
-				[1, "mail_hauberk"]
+				[1, ::Legends.Armor.Standard.mail_shirt],
+				[1, ::Legends.Armor.Standard.basic_mail_shirt],
+				[1, ::Legends.Armor.Standard.mail_hauberk]
 			]));
 
 			items.equip(this.Const.World.Common.pickHelmet([
-				[1, "nasal_helmet"],
-				[1, "padded_nasal_helmet"],
-				[1, "nasal_helmet_with_mail"],
-				[1, "mail_coif"],
-				[1, "legend_noble_floppy_hat"],
-				[1, "legend_noble_hat"],
-				[1, "legend_noble_hood"],
-				[1, "legend_noble_crown"],
-				[2, ""]
+				[1, ::Legends.Helmet.Standard.nasal_helmet],
+				[1, ::Legends.Helmet.Standard.padded_nasal_helmet],
+				[1, ::Legends.Helmet.Standard.nasal_helmet_with_mail],
+				[1, ::Legends.Helmet.Standard.mail_coif],
+				[1, ::Legends.Helmet.Standard.legend_noble_floppy_hat],
+				[1, ::Legends.Helmet.Standard.legend_noble_hat],
+				[1, ::Legends.Helmet.Standard.legend_noble_hood],
+				[1, ::Legends.Helmet.Standard.legend_noble_crown],
+				[2, ::Legends.Helmet.None]
 			]));
 		}
 	}

@@ -73,7 +73,10 @@ this.legend_entrancer_background <- this.inherit("scripts/skills/backgrounds/cha
 			],
 			Enemy = [],
 			Class = [],
-			Magic = [this.Const.Perks.ValaTranceMagicTree]
+			Profession = [],
+			Magic = [
+				this.Const.Perks.ValaTranceMagicTree
+			]
 		}
 	}
 
@@ -88,11 +91,11 @@ this.legend_entrancer_background <- this.inherit("scripts/skills/backgrounds/cha
 	{
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "legend_herbalist_robe"]
+			[1, ::Legends.Armor.Standard.legend_herbalist_robe]
 		]));
 
 		items.equip(this.Const.World.Common.pickHelmet([
-			[1, "hood"]
+			[1, ::Legends.Helmet.Standard.hood]
 		]));
 
 	}

@@ -62,6 +62,7 @@
 			],
 			Enemy = [],
 			Class = [],
+			Profession = [], 
 			Magic = []
 		}
 	}
@@ -110,6 +111,18 @@
 		return c;
 	}
 
+	o.getTooltip = function ()
+	{
+		local ret = this.character_background.getTooltip();
+		ret.push({
+			id = 12,
+			type = "text",
+			icon = "ui/icons/regular_damage.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]5%[/color] bonus damage to [color=#400080]Hand to Hand[/color] and [color=#400080]Choke[/color]"
+		});
+		return ret;
+	}
+
 	o.onAdded <- function()
 	{
 		this.character_background.onAdded();
@@ -125,11 +138,18 @@
 	{
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "sackcloth"],
-			[1, "tattered_sackcloth"],
-			[1, "leather_wraps"]
+			[1, ::Legends.Armor.Standard.sackcloth],
+			[1, ::Legends.Armor.Standard.tattered_sackcloth],
+			[1, ::Legends.Armor.Standard.leather_wraps]
 		]));
-		items.equip(this.new("scripts/items/accessory/legend_hand_wraps_item"))
+		items.equip(this.new("scripts/items/accessory/gloves/legend_hand_wraps_item"))
 	}
 
+	o.onAnySkillUsed = function( _skill, _targetEntity, _properties )
+	{
+		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.LegendChoke) || _skill.getID() == ::Legends.Actives.getID(::Legends.Active.HandToHand))
+		{
+			_properties.DamageTotalMult *= 1.05;
+		}
+	}
 });

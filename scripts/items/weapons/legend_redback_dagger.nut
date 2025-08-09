@@ -42,7 +42,7 @@ this.legend_redback_dagger <- this.inherit("scripts/items/weapons/weapon", {
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Applies redback poison to the target on any successful attack, dealing 55 damage over 10 turns."
+			text = "Applies redback poison to the target on any successful attack, dealing [color=" + this.Const.UI.Color.DamageValue + "]55[/color] damage over [color=" + this.Const.UI.Color.DamageValue + "]10[/color] turns."
 		});
 		result.push({
 			id = 7,
@@ -59,6 +59,7 @@ this.legend_redback_dagger <- this.inherit("scripts/items/weapons/weapon", {
 		this.weapon.onEquip();
 		::Legends.Actives.grant(this, ::Legends.Active.Stab);
 		::Legends.Actives.grant(this, ::Legends.Active.Puncture);
+		::Legends.Actives.grant(this, ::Legends.Active.Deathblow);
 	}
 
 	function onUpdateProperties( _properties )

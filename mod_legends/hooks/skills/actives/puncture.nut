@@ -22,7 +22,7 @@
 				type = "text",
 				icon = "ui/icons/hitchance.png",
 				text = "Additionally if your target is dazed or parried hitchance is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color], if they are stunned or netted you gain [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color], if they are grappled, sleeping, or fleeing you gain [color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color]"
-			}
+			},
 			{
 				id = 8,
 				type = "text",
@@ -78,7 +78,7 @@
 			mod += 50;
 		}
 		local chance = _targetEntity.getFatiguePct() * 50;
-		return mod - this.Math.round(chance);
+		return mod + this.Math.round(chance);
 	}
 
 	o.onAnySkillUsed = function ( _skill, _targetEntity, _properties )

@@ -65,12 +65,20 @@
 			],
 			Enemy = [],
 			Class = [
-				this.Const.Perks.ButcherClassTree,
-				this.Const.Perks.ChefClassTree
+				this.Const.Perks.ButcherClassTree		
+			],
+			Profession = [
+				this.Const.Perks.ChefProfessionTree
 			],
 			Magic = []
 		}
 	}
+
+	o.getTooltip = function ()
+	{
+		return this.character_background.getTooltip();
+	}
+
 	//Default Male
 	o.setGender <- function (_gender = -1)
 	{
@@ -160,7 +168,7 @@
 		}
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "butcher_apron"]
+			[1, ::Legends.Armor.Standard.butcher_apron]
 		]));
 	}
 });

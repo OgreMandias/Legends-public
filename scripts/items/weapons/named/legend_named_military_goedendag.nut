@@ -15,16 +15,15 @@ this.legend_named_military_goedendag <- this.inherit("scripts/items/weapons/name
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;
-		this.m.IsAgainstShields = true;
-		this.m.IsAoE = true;
+		this.m.IsAoE = false;
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
 		this.m.Value = 5400;
 		this.m.ShieldDamage = 0;
+		this.m.StaminaModifier = -18;
 		this.m.Condition = 90.0;
 		this.m.ConditionMax = 90.0;
-		this.m.StaminaModifier = -18;
 		this.m.RegularDamage = 80;
 		this.m.RegularDamageMax = 110;
 		this.m.ArmorDamageMult = 1.25;
@@ -60,16 +59,7 @@ this.legend_named_military_goedendag <- this.inherit("scripts/items/weapons/name
 	{
 		this.named_weapon.onEquip();
 		::Legends.Actives.grant(this, ::Legends.Active.Thrust, function (_skill) {
-			_skill.m.Icon = "skills/active_128.png";
-			_skill.m.IconDisabled = "skills/active_128_sw.png";
-			_skill.m.Overlay = "active_128";
-			_skill.setFatigueCost(15);
-			_skill.m.ActionPointCost = 6;
-		}.bindenv(this));
-		::Legends.Actives.grant(this, ::Legends.Active.Cudgel, function (_skill) {
-			_skill.m.Icon = "skills/active_131.png";
-			_skill.m.IconDisabled = "skills/active_131_sw.png";
-			_skill.m.Overlay = "active_131";
+			_skill.m.IsGoedendagThrust = true;
 		}.bindenv(this));
 		::Legends.Actives.grant(this, ::Legends.Active.StrikeDown, function (_skill) {
 			_skill.m.Icon = "skills/active_132.png";

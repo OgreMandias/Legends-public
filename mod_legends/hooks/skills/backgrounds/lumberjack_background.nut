@@ -84,11 +84,15 @@
 			],
 			Enemy = [],
 			Class = [this.Const.Perks.WoodaxeClassTree],
+			Profession = [], 
 			Magic = []
 		}
 	}
 
-
+	o.getTooltip = function ()
+	{
+		return this.character_background.getTooltip();
+	}
 
 	o.onBuildDescription <- function ()
 	{
@@ -158,15 +162,14 @@
 		}
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[2, "padded_surcoat"],
-			[1, "leather_tunic"],
-			[1, "linen_tunic", 6]
+			[2, ::Legends.Armor.Standard.padded_surcoat],
+			[1, ::Legends.Armor.Standard.leather_tunic],
+			[1, ::Legends.Armor.Standard.linen_tunic, 6]
 		]));
 
 		items.equip(this.Const.World.Common.pickHelmet([
-			[1, ""],
-			[1, "hood"]
+			[1, ::Legends.Helmet.None],
+			[1, ::Legends.Helmet.Standard.hood]
 		]));
-
 	}
 });

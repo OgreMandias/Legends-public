@@ -176,8 +176,6 @@
 ::Const.CharacterProperties.IsAffectedByRain <- true;
 ::Const.CharacterProperties.SurvivesAsUndead <- false;
 ::Const.CharacterProperties.IsAffectedByMovementMorale <- true;
-::Const.CharacterProperties.IsSpecializedInOneHandedSwords <- false;
-::Const.CharacterProperties.IsSpecializedInSpearThrust <- false;
 ::Const.CharacterProperties.IsSpecializedInShieldPush <- false;
 ::Const.CharacterProperties.IsSpecializedInNets <- false;
 ::Const.CharacterProperties.IsSpecializedInNetCasting <- false;
@@ -191,6 +189,7 @@
 ::Const.CharacterProperties.DamageInitiativeCutoff <- 100;
 ::Const.CharacterProperties.FlatOnKillOtherActorModifier <- 0;
 ::Const.CharacterProperties.PercentOnKillOtherActorModifier <- 1.0;
+::Const.CharacterProperties.FatigueDealtAsPercentOfMaxFatigue <- 0.0;
 
 ::Const.CharacterProperties.getInitiativeMinDamage <- function ()
 {

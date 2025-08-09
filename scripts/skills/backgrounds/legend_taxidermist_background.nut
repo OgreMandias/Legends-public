@@ -63,6 +63,7 @@ this.legend_taxidermist_background <- this.inherit("scripts/skills/backgrounds/c
 				this.Const.Perks.UnholdTree,
 				this.Const.Perks.AlpTree
 			],
+			Profession = [],
 			Class = [],
 			Magic = []
 		}
@@ -130,11 +131,11 @@ this.legend_taxidermist_background <- this.inherit("scripts/skills/backgrounds/c
 		local items = this.getContainer().getActor().getItems();
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "legend_blacksmith_apron"]
+			[1, ::Legends.Armor.Standard.legend_blacksmith_apron]
 		]));
 		items.equip(this.Const.World.Common.pickHelmet([
-			[1, ""],
-			[1, "feathered_hat"]
+			[1, ::Legends.Helmet.None],
+			[1, ::Legends.Helmet.Standard.feathered_hat]
 		]));
 	}
 });

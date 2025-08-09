@@ -45,7 +45,7 @@
 			::Legends.Actives.grant(this, ::Legends.Active.RallyTheTroops);
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendFeint);
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendBackToBasics);
-			::Legends.Perks.grant(this, ::Legends.Perk.LegendFullForce);
+			::Legends.Perks.grant(this, ::Legends.Perk.LegendImmovableObject);
 			::Legends.Traits.grant(this, ::Legends.Trait.Fearless);
 		}
 	}
@@ -81,13 +81,14 @@
 			"weapons/legend_swordstaff",
 			"weapons/legend_infantry_axe",
 			"weapons/legend_military_goedendag",
+			"weapons/legend_military_warscythe",
 		];
 
 		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[2, "seedmaster_noble_armor"],
-			[2, "citreneking_noble_armor"]
+			[2, ::Legends.Armor.Standard.seedmaster_noble_armor],
+			[2, ::Legends.Armor.Standard.citreneking_noble_armor]
 		]));
 	}
 });

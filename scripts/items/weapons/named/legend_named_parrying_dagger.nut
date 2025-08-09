@@ -27,7 +27,7 @@ this.legend_named_parrying_dagger <- this.inherit("scripts/items/shields/named/n
 		this.m.ShowOnCharacter = true;
 		this.m.Variants = [2];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() -1)];
-		this.m.ItemType = this.Const.Items.ItemType.Defensive | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.Named;
+		this.m.ItemType = this.Const.Items.ItemType.Shield | this.Const.Items.ItemType.Defensive | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.Named;
 		this.updateVariant();
 		this.m.Value = 1000;
 		this.m.MeleeDefense = 5;
@@ -161,14 +161,14 @@ this.legend_named_parrying_dagger <- this.inherit("scripts/items/shields/named/n
 		named_shield.onEquip();
 		::Legends.Actives.grant(this, ::Legends.Active.Stab, function (_skill) {
 			this.m.OffHandWeaponSkills[_skill.m.ID] <- ::MSU.asWeakTableRef(_skill);
-			this.m.PrimaryOffhandAttack = m.OffHandWeaponSkills[_skill.m.ID];
-			_skill.m.Order = this.Const.SkillOrder.UtilityTargeted - 3;
-			_skill.m.ID = stab.m.ID + "_offhand";
+			this.m.PrimaryOffhandAttack = this.m.OffHandWeaponSkills[_skill.m.ID];
+			_skill.m.Order = ::Const.SkillOrder.UtilityTargeted - 3;
+			_skill.m.ID = _skill.m.ID + "_offhand";
 		}.bindenv(this));
 		::Legends.Actives.grant(this, ::Legends.Active.Puncture, function (_skill) {
 			this.m.OffHandWeaponSkills[_skill.m.ID] <- ::MSU.asWeakTableRef(_skill);
-			_skill.m.Order = this.Const.SkillOrder.UtilityTargeted - 2;
-			_skill.m.ID = puncture.m.ID + "_offhand";
+			_skill.m.Order = ::Const.SkillOrder.UtilityTargeted - 2;
+			_skill.m.ID = _skill.m.ID + "_offhand";
 		}.bindenv(this));
 		::Legends.Actives.grant(this, ::Legends.Active.LegendEnGarde);
 		::Legends.Effects.grant(this, ::Legends.Effect.LegendParryingDagger, function(_effect) {
@@ -193,6 +193,11 @@ this.legend_named_parrying_dagger <- this.inherit("scripts/items/shields/named/n
 
 		foreach (id, offhandSkill in m.OffHandWeaponSkills)
 		{
+
+			if (::MSU.isNull(offhandSkill)) {
+				continue;
+			}
+
 			local mainhandSkill = getContainer().getActor().getSkills().getSkillByID(id);
 
 			if (mainhandSkill != null)
@@ -220,11 +225,14 @@ this.legend_named_parrying_dagger <- this.inherit("scripts/items/shields/named/n
 			local mainhandSkill = getContainer().getActor().getSkills().getSkillByID(id);
 
 			if (mainhandSkill == null) {
-				offhandSkill.m.IsHidden = false;
+				if (offhandSkill != null && "m" in offhandSkill) {
+					offhandSkill.m.IsHidden = false;
+				}
 				continue;
-			}
-			else if (::MSU.isNull(offhandSkill)) {
-				mainhandSkill.m.IsHidden = false;
+			} else if (::MSU.isNull(offhandSkill)) {
+				if (mainhandSkill != null && "m" in mainhandSkill) {
+					mainhandSkill.m.IsHidden = false;
+				}
 				continue;
 			}
 

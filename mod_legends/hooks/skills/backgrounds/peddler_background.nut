@@ -62,9 +62,17 @@
 				this.Const.Perks.DeviousTree
 			],
 			Enemy = [this.Const.Perks.BanditTree],
-			Class = [this.Const.Perks.BarterClassTree],
+			Class = [],
+			Profession = [
+				this.Const.Perks.BarterProfessionTree
+			], 
 			Magic = []
 		}
+	}
+
+	o.getTooltip = function ()
+	{
+		return this.character_background.getTooltip();
 	}
 
 	//Default Male
@@ -165,12 +173,12 @@
 		}
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "linen_tunic"]
+			[1, ::Legends.Armor.Standard.linen_tunic]
 		]));
 
 		items.equip(this.Const.World.Common.pickHelmet([
-			[2, ""],
-			[1, "feathered_hat"]
+			[2, ::Legends.Helmet.None],
+			[1, ::Legends.Helmet.Standard.feathered_hat]
 		]));
 
 	}

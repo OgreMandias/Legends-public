@@ -61,10 +61,18 @@
 				this.Const.Perks.NoblesTree,
 				this.Const.Perks.BanditTree
 					],
-			Class = [this.Const.Perks.BarterClassTree],
+			Class = [],
+			Profession = [
+				this.Const.Perks.BarterProfessionTree
+			], 
 			Magic = []
 		}
 		this.m.Bodies = this.Const.Bodies.Thick;
+	}
+
+	o.getTooltip = function ()
+	{
+		return this.character_background.getTooltip();
 	}
 
 	o.onBuildDescription <- function ()
@@ -115,10 +123,10 @@
 	{
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "noble_tunic"]
+			[1, ::Legends.Armor.Standard.noble_tunic]
 		]));
 		items.equip(this.Const.World.Common.pickHelmet([
-			[1, "pimp_hat"]
+			[1, ::Legends.Helmet.Standard.pimp_hat]
 		]));
 	}
 

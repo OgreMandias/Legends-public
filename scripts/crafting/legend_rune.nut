@@ -41,6 +41,11 @@ this.legend_rune <- this.inherit("scripts/crafting/blueprint", {
 		return def.getRuneTooltip(this);
 	}
 
+	function isQualified()
+	{
+		return this.blueprint.isQualified();
+	}
+
 	function onEnchant( _stash, _bonus )
 	{
 		local def = ::Legends.Runes.get(this.m.Rune);
@@ -49,9 +54,7 @@ this.legend_rune <- this.inherit("scripts/crafting/blueprint", {
 		local rune = ::new(def.Script);
 		rune.setRuneVariant(this.m.Rune);
 		rune.setRuneBonus(_bonus);
-		if (def.ItemType == ::Const.Items.ItemType.Armor ||	def.ItemType == ::Const.Items.ItemType.Helmet) {
-			rune.setRuneVariant(0);
-		} else {
+		if (def.ItemType == ::Legends.Runes.Target.Weapon || def.ItemType == ::Legends.Runes.Target.Shield) {
 			rune.updateRuneSigilToken();
 		}
 		_stash.add(rune);

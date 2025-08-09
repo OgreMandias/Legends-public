@@ -84,8 +84,14 @@
 			],
 			Enemy = [this.Const.Perks.SwordmastersTree],
 			Class = [],
+			Profession = [], 
 			Magic = []
 		}
+	}
+
+	o.getTooltip = function ()
+	{
+		return this.character_background.getTooltip();
 	}
 
 	o.onBuildDescription <- function ()
@@ -179,14 +185,14 @@
 			}
 		}
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "padded_leather"],
-			[1, "leather_tunic"],
-			[1, "linen_tunic"],
-			[1, "padded_surcoat"]
+			[1, ::Legends.Armor.Standard.padded_leather],
+			[1, ::Legends.Armor.Standard.leather_tunic],
+			[1, ::Legends.Armor.Standard.linen_tunic],
+			[1, ::Legends.Armor.Standard.padded_surcoat]
 		]));
 		items.equip(this.Const.World.Common.pickHelmet([
-			[67, ""],
-			[33, "greatsword_hat"]
+			[67, ::Legends.Helmet.None],
+			[33, ::Legends.Helmet.Standard.greatsword_hat]
 		]));
 
 	}

@@ -71,6 +71,7 @@
 			],
 			Enemy = [],
 			Class = [],
+			Profession = [], 
 			Magic = [
 				// this.Const.Perks.CaptainMagicTree,
 				this.Const.Perks.PhilosophyMagicTree
@@ -141,12 +142,12 @@
 		local items = this.getContainer().getActor().getItems();
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "linen_tunic"]
+			[1, ::Legends.Armor.Standard.linen_tunic]
 		]));
 
 		items.equip(this.Const.World.Common.pickHelmet([
-				[1, "feathered_hat"],
-				[3, ""]
+			[1, ::Legends.Helmet.Standard.feathered_hat],
+			[3, ::Legends.Helmet.None]
 		]))
 	}
 

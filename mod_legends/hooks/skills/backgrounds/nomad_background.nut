@@ -92,9 +92,8 @@
 			Weapon = [
 				this.Const.Perks.SwordTree,
 				this.Const.Perks.MaceTree,
-				this.Const.Perks.BowTree,
 				this.Const.Perks.SpearTree,
-				this.Const.Perks.SlingTree
+				this.Const.Perks.CleaverTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree
@@ -110,9 +109,15 @@
 				this.Const.Perks.DirewolfTree,
 				this.Const.Perks.ArcherTree
 			],
-			Class = [this.Const.Perks.SlingClassTree],
+			Class = [],
+			Profession = [],
 			Magic = []
 		}
+	}
+
+	o.getTooltip = function ()
+	{
+		return this.character_background.getTooltip();
 	}
 
 	//Default Male
@@ -238,16 +243,16 @@
 		}
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "oriental/nomad_robe"],
-			[1, "oriental/thick_nomad_robe"],
-			[1, "oriental/stitched_nomad_armor"],
-			[1, "oriental/leather_nomad_robe"]
+			[1, ::Legends.Armor.Southern.nomad_robe],
+			[1, ::Legends.Armor.Southern.thick_nomad_robe],
+			[1, ::Legends.Armor.Southern.stitched_nomad_armor],
+			[1, ::Legends.Armor.Southern.leather_nomad_robe]
 		]));
 
 		local helm = this.Const.World.Common.pickHelmet([
-			[1, "oriental/nomad_head_wrap"],
-			[1, "oriental/nomad_leather_cap"],
-			[1, "oriental/nomad_light_helmet"]
+			[1, ::Legends.Helmet.Southern.nomad_head_wrap],
+			[1, ::Legends.Helmet.Southern.nomad_leather_cap],
+			[1, ::Legends.Helmet.Southern.nomad_light_helmet]
 		]);
 		items.equip(helm);
 	}

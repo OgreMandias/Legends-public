@@ -39,8 +39,14 @@
 				this.Const.Perks.SwordmastersTree
 			],
 			Class = [],
+			Profession = [], 
 			Magic = []
 		}
+	}
+
+	o.getTooltip = function ()
+	{
+		return this.character_background.getTooltip();
 	}
 
 	o.onAdded = function ()

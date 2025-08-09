@@ -55,9 +55,17 @@
 				this.Const.Perks.SturdyTree
 			],
 			Enemy = [],
-			Class = [this.Const.Perks.ChefClassTree],
+			Class = [],
+			Profession = [
+				this.Const.Perks.ChefProfessionTree
+			], 
 			Magic = []
 		}
+	}
+
+	o.getTooltip = function ()
+	{
+		return this.character_background.getTooltip();
 	}
 
 	//Default Male

@@ -107,8 +107,14 @@
 			Class = [
 				this.Const.Perks.BeastClassTree
 			],
+			Profession = [], 
 			Magic = []
 		}
+	}
+
+	o.getTooltip = function ()
+	{
+		return this.character_background.getTooltip();
 	}
 
 	//Default Male
@@ -266,7 +272,7 @@
 
 
 		local a = this.Const.World.Common.pickArmor([
-			[1, "oriental/gladiator_harness"]
+			[1, ::Legends.Armor.Southern.gladiator_harness]
 		]);
 
 		r = this.Math.rand(1, 2);
@@ -282,8 +288,8 @@
 		items.equip(a);
 
 		items.equip(this.Const.World.Common.pickHelmet([
-			[1, "oriental/gladiator_helmet", this.Math.rand(13, 15)],
-			[1, ""]
+			[1, ::Legends.Helmet.Southern.gladiator_helmet, this.Math.rand(13, 15)],
+			[1, ::Legends.Helmet.None]
 		]));
 
 	}

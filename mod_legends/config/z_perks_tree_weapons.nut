@@ -311,6 +311,57 @@ if (!("Perks" in ::Const))
 	]
 };
 
+::Const.Perks.OneHandedTree <- {
+	ID = "OneHanded",
+	Name = "One-Handed",
+	Descriptions = [
+		"one handed weapons"
+	],
+	Attributes = {
+		Hitpoints = [
+			0,
+			0
+		],
+		Bravery = [
+			0,
+			0
+		],
+		Stamina = [
+			0,
+			0
+		],
+		MeleeSkill = [
+			0,
+			0
+		],
+		RangedSkill = [
+			0,
+			0
+		],
+		MeleeDefense = [
+			0,
+			0
+		],
+		RangedDefense = [
+			0,
+			0
+		],
+		Initiative = [
+			0,
+			0
+		]
+	},
+	Tree = [
+		[],
+		[], //[::Legends.Perk.Versatility],
+		[],
+		[],
+		[::Legends.Perk.LegendPushTheAdvantage],
+		[::Legends.Perk.Duelist],
+		[]
+	]
+};
+
 ::Const.Perks.SwordTree <- {
 	ID = "Sword",
 	Name = "Sword",
@@ -353,11 +404,11 @@ if (!("Perks" in ::Const))
 	},
 	Tree = [
 		[],
-		[::Legends.Perk.LegendFeint],
+		[],
 		[],
 		[::Legends.Perk.SpecSword],
 		[],
-		[::Legends.Perk.Duelist],
+		[::Legends.Perk.LegendBackswing],
 		[]
 	]
 };
@@ -504,12 +555,12 @@ if (!("Perks" in ::Const))
 		]
 	},
 	Tree = [
-		[],
+		[::Legends.Perk.LegendStrengthInNumbers],
 		[::Legends.Perk.LegendSpecSpearWall],
 		[],
 		[::Legends.Perk.SpecSpear],
-		[::Legends.Perk.LegendSpecSpearThrust],
-		[],
+		[::Legends.Perk.LegendRunThemThrough],
+		[::Legends.Perk.LegendThrustMaster],
 		[]
 	]
 };
@@ -610,7 +661,7 @@ if (!("Perks" in ::Const))
 		[::Legends.Perk.Bullseye],
 		[],
 		[::Legends.Perk.SpecBow],
-		[::Legends.Perk.LegendWindReader],
+		[::Legends.Perk.LegendKeenEyesight],
 		[],
 		[]
 	]
@@ -765,7 +816,7 @@ if (!("Perks" in ::Const))
 		[::Legends.Perk.LegendMasteryStaves],
 		[::Legends.Perk.LegendSpecStaffStun],
 		[::Legends.Perk.LegendStaffBlock],
-		[::Legends.Perk.LegendPushTheAdvantage]
+		[]
 	]
 };
 
@@ -861,12 +912,21 @@ if (!("Perks" in ::Const))
 		]
 	},
 	Tree = [
-		[::Legends.Perk.LegendAmbidextrous],
-		[::Legends.Perk.LegendChoke],
-		[::Legends.Perk.LegendGrapple],
-		[::Legends.Perk.LegendSpecUnarmed],
+		[
+			::Legends.Perk.LegendAmbidextrous,
+			::Legends.Perk.LegendPugilist
+		],
+		[
+			::Legends.Perk.LegendGrappler
+		],
 		[],
-		[::Legends.Perk.LegendUnarmedTraining],
+		[
+			::Legends.Perk.LegendSpecUnarmed
+		],
+		[],
+		[
+			::Legends.Perk.LegendPummelIntoSubmission
+		],
 		[]
 	]
 };

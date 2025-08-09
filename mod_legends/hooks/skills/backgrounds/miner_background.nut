@@ -81,12 +81,20 @@
 				this.Const.Perks.OrcTree,
 				this.Const.Perks.UnholdTree
 			],
-			Class = [this.Const.Perks.PickaxeClassTree],
+			Class = [
+				this.Const.Perks.PickaxeClassTree
+			],
+			Profession = [
+				this.Const.Perks.MinerProfessionTree
+			], 
 			Magic = []
 		}
 	}
 
-
+	o.getTooltip = function ()
+	{
+		return this.character_background.getTooltip();
+	}
 
 	o.onBuildDescription <- function ()
 	{
@@ -146,12 +154,12 @@
 		items.equip(this.new("scripts/items/weapons/pickaxe"));
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "sackcloth"]
+			[1, ::Legends.Armor.Standard.sackcloth]
 		]));
 
 		items.equip(this.Const.World.Common.pickHelmet([
-			[1, ""],
-			[1, "mouth_piece"]
+			[1, ::Legends.Helmet.None],
+			[1, ::Legends.Helmet.Standard.mouth_piece]
 		]));
 	}
 

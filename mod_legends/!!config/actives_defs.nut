@@ -1459,7 +1459,7 @@ activesDefs.push({
 	ID = "actives.legend_demon_hound_bite",
 	Script = "scripts/skills/actives/legend_demon_hound_bite_skill",
 	Const = "LegendDemonHoundBite",
-	Name = "H÷llenhund Bite",
+	Name = "Höllenhund Bite",
 });
 
 ::Legends.Active.LegendRangedFlail <- null;
@@ -3108,6 +3108,38 @@ activesDefs.push({
 	Script = "scripts/skills/actives/legend_second_wind_skill",
 	Const = "LegendSecondWind",
 	Name = "Second Wind",
+});
+
+::Legends.Active.CenserCastigate <- null;
+activesDefs.push({
+	ID = "actives.censer_castigate",
+	Script = "scripts/skills/actives/censer_castigate_skill",
+	Const = "CenserCastigate",
+	Name = "Castigate",
+});
+
+::Legends.Active.CenserStrike <- null;
+activesDefs.push({
+	ID = "actives.censer_strike",
+	Script = "scripts/skills/actives/censer_strike",
+	Const = "CenserStrike",
+	Name = "Censer Strike",
+});
+
+::Legends.Active.LegendDawgBite <- null;
+activesDefs.push({
+	ID = "actives.legend_dawg_bite",
+	Script = "scripts/skills/actives/legend_dawg_bite_skill",
+	Const = "LegendDawgBite",
+	Name = "Dawg Bite",
+});
+
+::Legends.Active.LegendCommandLegion <- null;
+activesDefs.push({
+	ID = "actives.legend_command_legion",
+	Script = "scripts/skills/actives/legend_command_legion_skill",
+	Const = "CommandLegionary",
+	Name = "Command Legionary",
 });
 
 ::Legends.Actives.addActiveDefObjects(activesDefs);

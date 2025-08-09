@@ -59,6 +59,9 @@
 			Class = [
 				this.Const.Perks.HoundmasterClassTree
 			],
+			Profession = [
+				this.Const.Perks.DogBreederProfessionTree
+			], 
 			Magic = []
 		}
 	}
@@ -173,13 +176,14 @@
 		{
 			items.equip(this.new("scripts/items/accessory/legend_warhound_item"))
 		}
+
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "ragged_surcoat"]
+			[1, ::Legends.Armor.Standard.ragged_surcoat]
 		]));
 
 		items.equip(this.Const.World.Common.pickHelmet([
-			[1, "open_leather_cap"],
-			[1, ""]
+			[1, ::Legends.Helmet.Standard.open_leather_cap],
+			[1, ::Legends.Helmet.None]
 		]));
 	}
 

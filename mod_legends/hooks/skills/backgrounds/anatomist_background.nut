@@ -94,9 +94,9 @@
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.CleaverTree,
+				this.Const.Perks.SwordTree,
 				this.Const.Perks.SpearTree,
 				this.Const.Perks.CrossbowTree,
-				this.Const.Perks.SlingTree,
 				this.Const.Perks.StaffTree
 			],
 			Defense = [
@@ -111,9 +111,12 @@
 			],
 			Enemy = [],
 			Class = [
-				this.Const.Perks.HealerClassTree,
 				this.Const.Perks.SickleClassTree
 
+			],
+			Profession = [
+				this.Const.Perks.HealerProfessionTree,
+				this.Const.Perks.HerbalistProfessionTree,
 			],
 			Magic = [
 				this.Const.Perks.PhilosophyMagicTree
@@ -229,15 +232,15 @@
 		}
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[2, "undertaker_apron"],
-			[2, "wanderers_coat"],
-			[1, "reinforced_leather_tunic"]
+			[2, ::Legends.Armor.Standard.undertaker_apron],
+			[2, ::Legends.Armor.Standard.wanderers_coat],
+			[1, ::Legends.Armor.Standard.reinforced_leather_tunic]
 		]));
 
 		items.equip(this.Const.World.Common.pickHelmet([
-			[2, "undertaker_hat"],
-			[2, "physician_mask"],
-			[1, "masked_kettle_helmet"]
+			[2, ::Legends.Helmet.Standard.undertaker_hat],
+			[2, ::Legends.Helmet.Standard.physician_mask],
+			[1, ::Legends.Helmet.Standard.masked_kettle_helmet]
 		]));
 	}
 

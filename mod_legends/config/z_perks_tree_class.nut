@@ -20,26 +20,6 @@ if (!("Perks" in ::Const))
 	]
 };
 
-::Const.Perks.BardClassTree <- {
-	ID = "BardClassTree",
-	Name = "Bard",
-	Descriptions = [
-		"entertaining"
-	],
-	Tree = [
-		[
-		::Legends.Perk.LegendCheerOn,
-		::Legends.Perk.LegendSpecialistMusician
-		],
-		[::Legends.Perk.LegendDaze],
-		[],
-		[::Legends.Perk.LegendEntice],
-		[::Legends.Perk.LegendPush],
-		[::Legends.Perk.LegendMinnesanger],
-		[::Legends.Perk.LegendMeistersanger]
-	]
-};
-
 ::Const.Perks.HealerClassTree <- {
 	ID = "HealerClassTree",
 	Name = "Healing",
@@ -71,63 +51,6 @@ if (!("Perks" in ::Const))
 		[::Legends.Perk.LegendPrayerOfFaith],
 		[::Legends.Perk.LegendPrayerOfLife],
 		[::Legends.Perk.LegendHolyFlame]
-	]
-};
-
-::Const.Perks.ChefClassTree <- {
-	ID = "ChefClassTree",
-	Name = "Chef",
-	Descriptions = [
-		"cooking"
-	],
-	Tree = [
-		[::Legends.Perk.LegendMealPreperation],
-		[::Legends.Perk.LegendCampCook],
-		[::Legends.Perk.LegendAlcoholBrewing],
-		[],
-		[],
-		[::Legends.Perk.LegendQuartermaster],
-		[::Legends.Perk.LegendFieldTreats]
-	]
-};
-
-::Const.Perks.RepairClassTree <- {
-	ID = "RepairClassTree",
-	Name = "Repair",
-	Descriptions = [
-		"repairs"
-	],
-	Tree = [
-		[],
-		[::Legends.Perk.LegendToolsDrawers],
-		[::Legends.Perk.LegendToolsSpares],
-		[],
-		[],
-		[],
-		[::Legends.Perk.LegendFieldRepairs]
-	]
-};
-
-::Const.Perks.BarterClassTree <- {
-	ID = "BarterClassTree",
-	Name = "Barter",
-	Descriptions = [
-		"bartering"
-	],
-	Tree = [
-		[],
-		[],
-		[::Legends.Perk.LegendBarterConvincing],
-		[],
-		[::Legends.Perk.LegendBarterTrustworthy],
-		[
-			::Legends.Perk.LegendDangerPay,
-			::Legends.Perk.LegendPaymaster
-		],
-		[
-			::Legends.Perk.LegendOffBookDeal,
-			::Legends.Perk.LegendBarterGreed
-		]
 	]
 };
 
@@ -190,6 +113,23 @@ if (!("Perks" in ::Const))
 	],
 	Tree = [
 		[::Legends.Perk.LegendSpecialistMilitia],
+		[],
+		[],
+		[],
+		[],
+		[],
+		[]
+	]
+};
+
+::Const.Perks.ConArtistTree <- {
+	ID = "ConArtistTree",
+	Name = "Con Artist",
+	Descriptions = [
+		"sleight of hand"
+	],
+	Tree = [
+		[::Legends.Perk.LegendSleightOfHand],
 		[],
 		[],
 		[],
@@ -278,7 +218,7 @@ if (!("Perks" in ::Const))
 		[],
 		[],
 		[],
-		[::Legends.Perk.LegendWoodworking],
+		[],
 		[],
 		[]
 	]
@@ -295,9 +235,9 @@ if (!("Perks" in ::Const))
 		[],
 		[],
 		[],
-		[::Legends.Perk.LegendGatherer],
-		[::Legends.Perk.LegendHerbcraft],
-		[::Legends.Perk.LegendPotionBrewer]
+		[],
+		[],
+		[]
 	]
 };
 
@@ -447,7 +387,7 @@ if (!("Perks" in ::Const))
 		[],
 		[],
 		[::Legends.Perk.LegendDogWhisperer],
-		[::Legends.Perk.LegendDogBreeder],
+		[],
 		[::Legends.Perk.LegendDogHandling],
 		[::Legends.Perk.LegendPackleader],
 		[::Legends.Perk.LegendDogMaster]
@@ -471,15 +411,61 @@ if (!("Perks" in ::Const))
 	]
 };
 
+::Const.Perks.SharpshooterClassTree <- {
+	ID = "SharpshooterClassTree",
+	Name = "Sharpshooter",
+	Descriptions = [
+		"longbows"
+	],
+	Tree = [
+		[::Legends.Perk.LegendSpecialistSharpshooter],
+		[],
+		[],
+		[],
+		[],
+		[],
+		[]
+	]
+};
+
+::Const.Perks.RaiderClassTree <- {
+	ID = "RaiderClassTree",
+	Name = "Raider",
+	Descriptions = [
+		"handaxes and throwing axes"
+	],
+	Tree = [
+		[::Legends.Perk.LegendSpecialistRaider],
+		[],
+		[],
+		[],
+		[],
+		[],
+		[]
+	]
+};
+
+::Const.Perks.SpearfisherClassTree <- {
+	ID = "SpearfisherClassTree",
+	Name = "Spearfisher",
+	Descriptions = [
+		"javelins"
+	],
+	Tree = [
+		[::Legends.Perk.LegendSpecialistSpearfisher],
+		[],
+		[],
+		[],
+		[],
+		[],
+		[]
+	]
+};
+
 ::Const.Perks.ClassTrees <- {
 	Tree = [
 		::Const.Perks.BeastClassTree,
-		::Const.Perks.BardClassTree,
-		::Const.Perks.HealerClassTree,
 		::Const.Perks.FaithClassTree,
-		::Const.Perks.ChefClassTree,
-		::Const.Perks.RepairClassTree,
-		::Const.Perks.BarterClassTree,
 		::Const.Perks.KnifeClassTree,
 		::Const.Perks.ButcherClassTree,
 		::Const.Perks.HammerClassTree,
@@ -488,18 +474,21 @@ if (!("Perks" in ::Const))
 		::Const.Perks.PitchforkClassTree,
 		::Const.Perks.ShortbowClassTree,
 		::Const.Perks.WoodaxeClassTree,
-		::Const.Perks.SickleClassTree,
 		::Const.Perks.NinetailsClassTree,
 		::Const.Perks.JugglerClassTree,
 		::Const.Perks.HoundmasterClassTree,
-		::Const.Perks.ScytheClassTree,
 		::Const.Perks.ClubClassTree,
 		::Const.Perks.InquisitionClassTree,
 		::Const.Perks.LongswordClassTree,
 		::Const.Perks.InventorClassTree,
-		::Const.Perks.StaffClassTree,
+		::Const.Perks.SickleClassTree,
+		::Const.Perks.ScytheClassTree,
+		::Const.Perks.SharpshooterClassTree
+		::Const.Perks.ShovelClassTree,
 		::Const.Perks.SlingClassTree,
-		::Const.Perks.ShovelClassTree
+		::Const.Perks.SpearfisherClassTree
+		::Const.Perks.StaffClassTree,
+		::Const.Perks.RaiderClassTree
 	],
 	function getRandom(_exclude)
 	{

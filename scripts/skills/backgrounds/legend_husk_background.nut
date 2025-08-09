@@ -94,6 +94,7 @@ this.legend_husk_background <- this.inherit("scripts/skills/backgrounds/characte
 				this.Const.Perks.BeastClassTree,
 				this.Const.Perks.NinetailsClassTree
 			],
+			Profession = [],
 			Magic = []
 		}
 	}
@@ -136,7 +137,7 @@ this.legend_husk_background <- this.inherit("scripts/skills/backgrounds/characte
 
 	function onBuildDescription()
 	{
-		return "{With a mind torn in half and nowhere else to go, %name% is a mess of gibbering voices and flailing fists at unseen attackers. | They clutch and imaginary insects and brush at unseen horrors crawling over their skin. | Their face an ever shifting soup of expressions. | Clothed in rags and decayed metal they stamp and struggle as if the earth was trying to swallow them whole. | Words are carved into their hands, face and any other virgin flesh availible. | %name% spits and chitters at seemly mundane items as if every one of them were made from their own flesh. | The only constant in all this madness is a singluar phrase, as you approach them you recite the words ingrained into your mind...} \"Davkul awaits\" you announce. %name% recomposes themselves instantly. \"Davkul awaits us all\" they reply, with perfect cadence.";
+		return "{With a mind torn in half and nowhere else to go, %name% is a mess of gibbering voices and flailing fists at unseen attackers. | %They% clutch and imaginary insects and brush at unseen horrors crawling over %their% skin. | Their face an ever shifting soup of expressions. | Clothed in rags and decayed metal %they% stamp and struggle as if the earth was trying to swallow %them% whole. | Words are carved into %their% hands, face and any other virgin flesh available. | %name% spits and chitters at seemly mundane items as if every one of %them% were made from %their% own flesh. | The only constant in all this madness is a singular phrase, as you approach %them% you recite the words ingrained into your mind...} \"Davkul awaits\" you announce. %name% recomposes %themselves% instantly. \"Davkul awaits us all\" %they% reply, with perfect cadence.";
 	}
 
 	function onChangeAttributes()
@@ -244,15 +245,15 @@ this.legend_husk_background <- this.inherit("scripts/skills/backgrounds/characte
 		}
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "tattered_sackcloth"],
-			[1, "leather_wraps"],
-			[1, "decayed_reinforced_mail_hauberk"],
-			[1, "decayed_coat_of_plates"]
+			[1, ::Legends.Armor.Standard.tattered_sackcloth],
+			[1, ::Legends.Armor.Standard.leather_wraps],
+			[1, ::Legends.Armor.Standard.decayed_reinforced_mail_hauberk],
+			[1, ::Legends.Armor.Standard.decayed_coat_of_plates]
 		]));
 		items.equip(this.Const.World.Common.pickHelmet([
-			[1, "cultist_hood"],
-			[1, "hood"],
-			[1, "cultist_leather_hood"]
+			[1, ::Legends.Helmet.Standard.cultist_hood],
+			[1, ::Legends.Helmet.Standard.hood],
+			[1, ::Legends.Helmet.Standard.cultist_leather_hood]
 		]));
 	}
 

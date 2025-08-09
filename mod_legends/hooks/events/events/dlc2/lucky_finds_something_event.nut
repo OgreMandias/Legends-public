@@ -18,23 +18,23 @@
 			item = this.new("scripts/items/weapons/militia_spear");
 		else if (r == 2)
 			item = this.Const.World.Common.pickArmor([
-				[1, "patched_mail_shirt"],
+				[1, ::Legends.Armor.Standard.patched_mail_shirt],
 			]);
 		else if (r == 3)
-			item = this.Const.World.Common.pickHelmet([[1, "dented_nasal_helmet"]]);
+			item = this.Const.World.Common.pickHelmet([[1, ::Legends.Helmet.Standard.dented_nasal_helmet]]);
 		else if (r == 4)
-			item = this.Const.World.Common.pickHelmet([[1, "mail_coif"]]);
+			item = this.Const.World.Common.pickHelmet([[1, ::Legends.Helmet.Standard.mail_coif]]);
 		else if (r == 5)
-			item = this.Const.World.Common.pickHelmet([[1, "cultist_hood"]]);
+			item = this.Const.World.Common.pickHelmet([[1, ::Legends.Helmet.Standard.cultist_hood]]);
 		else if (r == 6)
-			item = this.Const.World.Common.pickHelmet([[1, "full_leather_cap"]]);
+			item = this.Const.World.Common.pickHelmet([[1, ::Legends.Helmet.Standard.full_leather_cap]]);
 		else if (r == 7)
 			item = this.Const.World.Common.pickArmor([
-				[1, "ragged_surcoat"],
+				[1, ::Legends.Armor.Standard.ragged_surcoat],
 			]);
 		else if (r == 8)
 			item = this.Const.World.Common.pickArmor([
-				[1, "noble_tunic"],
+				[1, ::Legends.Armor.Standard.noble_tunic],
 			]);
 		else if (r == 9)
 			item = this.new("scripts/items/misc/ghoul_horn_item");
@@ -54,7 +54,7 @@
 			item = this.new("scripts/items/weapons/lute");
 		else if (r == 17)
 			item = this.Const.World.Common.pickArmor([
-				[1, "thick_dark_tunic"],
+				[1, ::Legends.Armor.Standard.thick_dark_tunic],
 			]);
 		else if (r == 18)
 			item = this.new("scripts/items/legend_armor/armor_upgrades/legend_mail_patch_upgrade");

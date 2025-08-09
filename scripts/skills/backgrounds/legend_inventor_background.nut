@@ -60,8 +60,10 @@ this.legend_inventor_background <- this.inherit("scripts/skills/backgrounds/char
 			],
 			Enemy = [],
 			Class = [
-				this.Const.Perks.RepairClassTree,
 				this.Const.Perks.InventorClassTree
+			],
+			Profession = [
+				this.Const.Perks.RepairProfessionTree
 			],
 			Magic = [
 				this.Const.Perks.PhilosophyMagicTree,
@@ -141,12 +143,12 @@ this.legend_inventor_background <- this.inherit("scripts/skills/backgrounds/char
 		local r;
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "apron"]
+			[1, ::Legends.Armor.Standard.apron]
 		]));
 
 		items.equip(this.Const.World.Common.pickHelmet([
-			[1, "mouth_piece"],
-			[1, "headscarf"]
+			[1, ::Legends.Helmet.Standard.mouth_piece],
+			[1, ::Legends.Helmet.Standard.headscarf]
 		]));
 
 		r = this.Math.rand(0, 1);

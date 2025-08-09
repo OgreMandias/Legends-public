@@ -58,8 +58,13 @@ this.legend_runesmith_background <- this.inherit("scripts/skills/backgrounds/cha
 				this.Const.Perks.CalmTree
 			],
 			Enemy = [],
-			Class = [this.Const.Perks.RepairClassTree],
-			Magic = [this.Const.Perks.ValaRuneMagicTree]
+			Class = [],
+			Profession = [
+				this.Const.Perks.RepairProfessionTree
+			],
+			Magic = [
+				this.Const.Perks.ValaRuneMagicTree
+			]
 		}
 	}
 
@@ -77,11 +82,11 @@ this.legend_runesmith_background <- this.inherit("scripts/skills/backgrounds/cha
 
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "legend_blacksmith_apron"]
+			[1, ::Legends.Armor.Standard.legend_blacksmith_apron]
 		]));
 
 		items.equip(this.Const.World.Common.pickHelmet([
-			[1, "hood"]
+			[1, ::Legends.Helmet.Standard.hood]
 		]));
 	}
 });

@@ -108,6 +108,23 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 
 	function getStaminaModifier()
 	{
+		if (this.getContainer() == null)
+			return this.m.StaminaModifier;
+
+		if (this.getContainer().getActor() == null)
+			return this.m.StaminaModifier;
+
+		local skill = ::Legends.Perks.get(this, ::Legends.Perk.LegendFashionable);
+		if (skill)
+		{
+			foreach (slot in skill.m.FreeSlotTypes)
+			{
+				if (this.m.SlotType == slot)
+				{
+					return 0;
+				}
+			}
+		}
 		return this.m.StaminaModifier;
 	}
 
@@ -279,7 +296,12 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 			icon = "ui/icons/mouse_left_button_shift.png",
 			text = "Hold Shift and drag onto an armor in the stash to attach."
 		});
-
+		result.push({
+			id = 72,
+			type = "hint",
+			icon = "ui/icons/mouse_left_button_shift.png", //I wish I could vanish this easily
+			text = "Hold Left-Shift and Left-Click this layer square to toggle it hidden on this character (stats & other benefits will not be affected)."
+		});
 
 		return result;
 	}

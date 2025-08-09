@@ -1,32 +1,56 @@
 ::mods_hookExactClass("skills/actives/thrust", function(o)
 {
-	local getTooltip = o.getTooltip;
-	o.getTooltip = function ()
-	{
-		local tooltip = this.getDefaultTooltip();
-		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInSpearThrust)
-		{
-			tooltip.push({
-				id = 6,
-				type = "text",
-				icon = "ui/icons/damage_dealt.png",
-				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]15%[/color] damage bonus due to Thrust Master"
-			});
-		}
+	o.m.IsGoedendagThrust <- false;
+	o.m.DazeChance <- 25;
 
-		return tooltip;
+	o.setItem <- function (_item)
+	{
+		this.skill.setItem(_item);
+		if (this.m.IsGoedendagThrust)
+		{
+			this.m.Description = "A hefty swift slashing attack dealing average damage.";
+			this.m.Icon = "skills/active_128.png";
+			this.m.IconDisabled = "skills/active_128_sw.png";
+			this.m.Overlay = "active_128";
+			this.m.DirectDamageMult = 0.4;
+			this.m.FatigueCost = 15;
+		}
 	}
 
-	o.onAnySkillUsed = function ( _skill, _targetEntity, _properties )
+	local onAfterUpdate = o.onAfterUpdate;
+	o.onAfterUpdate = function (_properties)
 	{
-		if (_skill == this)
-		{
-			_properties.MeleeSkill += 20;
+		onAfterUpdate(_properties);
+		this.m.DazeChance = _properties.IsSpecializedInMaces ? 50 : 25;
+	}
 
-			if (_properties.IsSpecializedInSpearThrust )
+	local onUse = o.onUse;
+	o.onUse = function ( _user, _targetTile )
+	{
+		if (!this.m.IsGoedendagThrust)
+			onUse(_user, _targetTile);
+
+		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectBash);
+		local success = this.attackEntity(_user, _targetTile.getEntity());
+
+		if (!_user.isAlive() || _user.isDying())
+		{
+			return success;
+		}
+
+		if (success && _targetTile.IsOccupiedByActor)
+		{
+			local target = _targetTile.getEntity();
+
+			if (!target.getCurrentProperties().IsImmuneToDaze && this.Math.rand(1, 100) <= this.m.DazeChance)
+				::Legends.Effects.grant(target, ::Legends.Effect.Dazed);
+
+			if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
 			{
-				_properties.DamageTotalMult *= 1.15;
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " has dazed " + this.Const.UI.getColorizedEntityName(target) + " for one turn");
 			}
 		}
+
+		return success;
 	}
 });

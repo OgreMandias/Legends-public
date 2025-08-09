@@ -1973,4 +1973,20 @@ effectsDefs.push({
 	Name = "Prepare Bullet",
 });
 
+::Legends.Effect.LegendCommanded <- null;
+effectsDefs.push({
+	ID = "effects.legend_commanded",
+	Script = "scripts/skills/effects/legend_commanded_effect",
+	Const = "LegendCommanded",
+	Name = "Legend Commanded",
+});
+
+::Legends.Effect.LegendRamHammer <- null;
+effectsDefs.push({
+	ID = "effects.legend_ram_hammer",
+	Script = "scripts/skills/effects/legend_ram_hammer_effect",
+	Const = "LegendRamHammer",
+	Name = "Legend Ram Hammer",
+});
+
 ::Legends.Effects.addEffectDefObjects(effectsDefs);

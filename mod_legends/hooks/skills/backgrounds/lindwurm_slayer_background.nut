@@ -105,6 +105,7 @@
 			Class = [
 				this.Const.Perks.BeastClassTree
 			],
+			Profession = [], 
 			Magic = []
 		}
 	}
@@ -131,7 +132,7 @@
 
 	o.onBuildDescription <- function ()
 	{
-		return "{%name% is a supposedly famous monster hunter with a particular talent for slaying lindwurms. They says he is the son of Dirk the Dragonslayer, the monster hunter who ostensibly slew the last living dragon.}";
+		return "{%name% is a supposedly famous monster hunter with a particular talent for slaying lindwurms. They says %they% is the %offspring% of Dirk the Dragonslayer, the monster hunter who ostensibly slew the last living dragon.}";
 	}
 
 	o.onChangeAttributes = function ()
@@ -199,22 +200,15 @@
 		}
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "mail_hauberk"],
-			[1, "leather_scale_armor"],
-			[1, "noble_mail_armor"],
-			[1, "light_scale_armor"],
-			[1, "footman_armor"],
-			[1, "reinforced_mail_hauberk"]
+			[1, ::Legends.Armor.Standard.lindwurm_armor]
 		]));
 
-		local helm = [
-			[1, "feathered_hat"],
-			[1, "headscarf"],
-			[1, "mail_coif"],
-			[1, "greatsword_hat"]
-		];
-
-		items.equip(this.Const.World.Common.pickHelmet(helm));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, ::Legends.Helmet.Standard.feathered_hat],
+			[1, ::Legends.Helmet.Standard.headscarf],
+			[1, ::Legends.Helmet.Standard.mail_coif],
+			[1, ::Legends.Helmet.Standard.greatsword_hat]
+		]));
 	}
 
 });

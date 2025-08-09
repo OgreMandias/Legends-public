@@ -66,8 +66,9 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 				this.Const.Perks.InspirationalTree
 			],
 			Enemy = [],
-			Class = [
-				this.Const.Perks.HealerClassTree
+			Class = [],
+			Profession = [
+				this.Const.Perks.HealerProfessionTree
 			],
 			Magic = [
 				this.Const.Perks.PremonitionMagicTree,
@@ -160,11 +161,11 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "legend_seer_robes"]
+			[1, ::Legends.Armor.Standard.legend_seer_robes]
 		]));
 		items.equip(this.new("scripts/items/weapons/legend_mystic_staff"));
 		items.equip(this.Const.World.Common.pickHelmet([
-			[1, "legend_seer_hat"]
+			[1, ::Legends.Helmet.Standard.legend_seer_hat]
 		]));
 	}
 });

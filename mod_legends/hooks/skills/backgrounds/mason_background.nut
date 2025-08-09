@@ -50,6 +50,7 @@
 			],
 			Enemy = [],
 			Class = [],
+			Profession = [], 
 			Magic = []
 		}
 		this.m.Bodies = this.Const.Bodies.Skinny;
@@ -133,7 +134,7 @@
 	{
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "linen_tunic"]
+			[1, ::Legends.Armor.Standard.linen_tunic]
 		]))
 	}
 

@@ -103,6 +103,7 @@
 					this.Const.Perks.UnholdTree,
 					],
 			Class = [],
+			Profession = [], 
 			Magic = []
 		}
 	}
@@ -200,7 +201,7 @@
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/weapons/two_handed_hammer"));
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "mail_hauberk"]
+			[1, ::Legends.Armor.Standard.mail_hauberk]
 		]))
 	}
 

@@ -1,13 +1,23 @@
 this.legend_mummy_medium <- this.inherit("scripts/entity/tactical/legend_mummy", {
-	m = {},
+	m = {
+		IsRanged = false
+	},
 	function create()
 	{
+		this.m.IsRanged = this.Math.rand(1, 5) == 1 ? true : false;
 		this.m.Type = this.Const.EntityType.LegendMummyMedium;
 		this.m.XP = this.Const.Tactical.Actor.LegendMummyMedium.XP;
 		this.m.ResurrectionValue = 4.0;
 		this.m.ResurrectWithScript = "scripts/entity/tactical/enemies/legend_mummy_medium";
 		this.legend_mummy.create();
-		this.m.AIAgent = this.new("scripts/ai/tactical/agents/skeleton_melee_agent");
+		if (!this.m.IsRanged)
+			this.m.AIAgent = this.new("scripts/ai/tactical/agents/skeleton_melee_agent");
+		else
+		{
+			this.m.AIAgent = this.new("scripts/ai/tactical/agents/bandit_ranged_agent");
+			this.m.AIAgent.removeBehavior(this.Const.AI.Behavior.ID.Retreat);
+			this.m.AIAgent.removeBehavior(this.Const.AI.Behavior.ID.Flee);
+		}
 		this.m.AIAgent.setActor(this);
 	}
 
@@ -37,34 +47,43 @@ this.legend_mummy_medium <- this.inherit("scripts/entity/tactical/legend_mummy",
 
 	function assignRandomEquipment()
 	{
-
-		this.m.Items.equip(this.new("scripts/items/weapons/ancient/legend_kopis"));
-
-
-		if (this.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand) == null)
+		if (!this.m.IsRanged)
 		{
+			this.getItems().equip(::Const.World.Common.pickItem([
+				[1, "weapons/ancient/broken_ancient_sword"],
+				[1, "weapons/ancient/ancient_spear"],
+				[1, "weapons/ancient/ancient_sword"],
+				[1, "weapons/ancient/khopesh"]
+			], "scripts/items/"));
+		}
+		else
+		{
+			this.getItems().equip(::Const.World.Common.pickItem([
+				[1, "weapons/legend_sling"]
+			], "scripts/items/"));
 
-			this.m.Items.equip(this.new("scripts/items/shields/ancient/legend_mummy_tower_shield"));
-
+			this.getItems().addToBag(::Const.World.Common.pickItem([
+				[1, "weapons/ancient/broken_ancient_sword"],
+				[1, "weapons/ancient/ancient_spear"],
+				[1, "weapons/ancient/ancient_sword"],
+				[1, "weapons/ancient/khopesh"]
+			], "scripts/items/"));
 		}
 
-		local armor = [
-			[1, "ancient/legend_mummy_bandages"],
-			[1, "ancient/legend_mummy_plate"]
-			//[1, "legend_armor_plate_ancient_scale_coat_restored"],
-			//[1, "scripts/items/armor/ancient/legend_armor_plate_ancient_scale_harness_restored"],
-		];
-		local item = this.Const.World.Common.pickArmor(armor);
-		this.m.Items.equip(item);
+		this.getItems().equip(::Const.World.Common.pickItem([
+				[33, "shields/ancient/legend_mummy_shield"],
+				[66, "shields/ancient/legend_mummy_tower_shield"]
+			], "scripts/items/"));
 
-		local item = this.Const.World.Common.pickHelmet([
-			[3, "ancient/legend_mummy_bandages"],
-			[1, ""]
-		]);
-		if (item != null)
-		{
-			this.m.Items.equip(item);
-		}
+		this.getItems().equip(::Const.World.Common.pickArmor([
+			[1, ::Legends.Armor.Ancient.legend_mummy_bandages],
+			[1, ::Legends.Armor.Ancient.legend_mummy_plate]
+		]));
+
+		this.getItems().equip(::Const.World.Common.pickHelmet([
+			[3, ::Legends.Helmet.Ancient.legend_mummy_bandages],
+			[1, ::Legends.Helmet.None]
+		]));
 	}
 
 });

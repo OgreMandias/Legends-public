@@ -716,13 +716,7 @@
 		if (slot == this.Const.ItemSlot.Accessory) {
 			// Some items are not visible, like dogs.
 			if (item.m.ShowOnCharacter) {
-				local app = item.getContainer().getAppearance();
-				if (app.Accessory == "") {
-					app.Accessory = item.m.Sprite;
-				} else {
-					app.Accessory = "";
-				}
-				item.getContainer().updateAppearance();
+				item.toggleAccessoryVisible();
 			}
 		} else {
 			local upgrade = item.getUpgrade(_data[0]);

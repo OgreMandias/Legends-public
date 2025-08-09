@@ -10,6 +10,9 @@
 			::Legends.Perks.grant(this, ::Legends.Perk.Nimble);
 			::Legends.Traits.grant(this, ::Legends.Trait.Fearless);
 		}
+		local rolls = ::Legends.S.extraLootChance(1);
+		for(local i = 0; i < rolls; i++)
+			this.m.OnDeathLootTable.push([0.5, "scripts/items/misc/legend_ancient_scroll_item"]);
 	}
 
 	o.assignRandomEquipment = function ()
@@ -34,15 +37,15 @@
 		}
 
 		local item = this.Const.World.Common.pickArmor([
-			[1, "ragged_dark_surcoat"],
-			[1, "thick_dark_tunic"]
+			[1, ::Legends.Armor.Standard.ragged_dark_surcoat],
+			[1, ::Legends.Armor.Standard.thick_dark_tunic]
 		]);
 		this.m.Items.equip(item);
 
 		local item = this.Const.World.Common.pickHelmet([
-			[1, "witchhunter_hat"],
-			[1, "dark_cowl"],
-			[1, "hood", 63]
+			[1, ::Legends.Helmet.Standard.witchhunter_hat],
+			[1, ::Legends.Helmet.Standard.dark_cowl],
+			[1, ::Legends.Helmet.Standard.hood, 63]
 		]);
 		this.m.Items.equip(item);
 	}
@@ -60,7 +63,7 @@
 		];
 
 		local item = this.Const.World.Common.pickHelmet([
-			[1, "named/witchhunter_helm"],
+			[1, ::Legends.Helmet.Named.witchhunter_helm],
 		]);
 		this.m.Items.equip(item);
 
@@ -76,6 +79,10 @@
 		this.m.ActionPoints = 9;
 		this.m.BaseProperties.ActionPoints = 9;
 		this.m.Skills.update();
+
+		local rolls = ::Legends.S.extraLootChance(1);
+		for(local i = 0; i < rolls; i++)
+			this.m.OnDeathLootTable.push([3, "scripts/items/misc/legend_ancient_scroll_item"]);
 		return true;
 	}
 });

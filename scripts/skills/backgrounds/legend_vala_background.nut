@@ -33,7 +33,7 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Bodies = this.Const.Bodies.AllFemale;
+		this.m.Bodies = this.Const.Bodies.NorthernFemale;
 		this.m.BackgroundType = this.Const.BackgroundType.Female | this.Const.BackgroundType.Performing | this.Const.BackgroundType.Untalented | this.Const.BackgroundType.Druid;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Chivalrous;
@@ -59,9 +59,12 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 			],
 			Enemy = [],
 			Class = [
-				this.Const.Perks.HealerClassTree,
-				this.Const.Perks.ChefClassTree,
 				this.Const.Perks.StaffClassTree
+			],
+			Profession = [
+				this.Const.Perks.HealerProfessionTree,
+				this.Const.Perks.ChefProfessionTree,
+				this.Const.Perks.HerbalistProfessionTree
 			],
 			Magic = [
 				this.Const.Perks.ValaChantMagicTree,
@@ -155,7 +158,7 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 			],
 			RangedDefense = [
 				-2,
-				-4
+				4
 			],
 			Initiative = [
 				10,
@@ -176,8 +179,8 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 		items.equip(this.new("scripts/items/weapons/legend_staff_vala"));
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "legend_vala_cloak"],
-			[1, "legend_vala_dress"]
+			[1, ::Legends.Armor.Standard.legend_vala_cloak],
+			[1, ::Legends.Armor.Standard.legend_vala_dress]
 		]));
 	}
 

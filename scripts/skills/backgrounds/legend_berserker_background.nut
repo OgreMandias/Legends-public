@@ -110,7 +110,8 @@ this.legend_berserker_background <- this.inherit("scripts/skills/backgrounds/cha
 				this.Const.Perks.OrcTree,
 				this.Const.Perks.GoblinTree
 			],
-			Class = []
+			Class = [],
+			Profession = [],
 			Magic = [
 				this.Const.Perks.BerserkerMagicTree
 			]
@@ -253,10 +254,10 @@ this.legend_berserker_background <- this.inherit("scripts/skills/backgrounds/cha
 
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "barbarians/hide_and_bone_armor"]
+			[1, ::Legends.Armor.Barbarian.hide_and_bone_armor]
 		]));
 		local item = this.Const.World.Common.pickHelmet([
-			[1, "barbarians/leather_helmet"]
+			[1, ::Legends.Helmet.Barbarian.leather_helmet]
 		]);
 		local r = this.Math.rand(0, 4);
 

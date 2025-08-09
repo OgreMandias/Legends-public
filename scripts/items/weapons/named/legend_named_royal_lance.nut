@@ -8,8 +8,6 @@ this.legend_named_royal_lance <- this.inherit("scripts/items/weapons/named/named
 		this.m.PrefixList = this.Const.Strings.SouthernPrefix;
 		this.m.SuffixList = this.Const.Strings.SouthernSuffix;
 		this.m.Description = "This Spear is especially well-crafted, withstanding the tests of time, and its blade would be worthy of even a noble. Used for thrusting over some distance and keeping the enemy at bay.";
-		this.m.IconLarge = "weapons/melee/legend_royal_lance_01.png";
-		this.m.Icon = "weapons/melee/legend_royal_lance_01_70x70.png";
 		this.m.WeaponType = this.Const.Items.WeaponType.Spear;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
@@ -34,9 +32,9 @@ this.legend_named_royal_lance <- this.inherit("scripts/items/weapons/named/named
 
 	function updateVariant()
 	{
-		this.m.IconLarge = "weapons/melee/legend_royal_lance_0" + this.m.Variant + ".png";
-		this.m.Icon = "weapons/melee/legend_royal_lance_0" + this.m.Variant + "_70x70.png";
-		this.m.ArmamentIcon = "icon_legend_royal_lance_0" + this.m.Variant;
+		this.m.IconLarge = "weapons/melee/legend_mummy_lance_named_0" + this.m.Variant + ".png";
+		this.m.Icon = "weapons/melee/legend_mummy_lance_named_0" + this.m.Variant + "_70x70.png";
+		this.m.ArmamentIcon = "icon_mummy_lance_named_0" + this.m.Variant;
 	}
 
 	function createRandomName()

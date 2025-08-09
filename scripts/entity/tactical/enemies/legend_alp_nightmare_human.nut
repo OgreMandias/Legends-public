@@ -78,7 +78,7 @@ this.legend_alp_nightmare_human <- this.inherit("scripts/entity/tactical/enemies
 
 		if (::Legends.isLegendaryDifficulty())
 		{
-			::Legends.Perks.grant(this, ::Legends.Perk.LegendFullForce);
+			::Legends.Perks.grant(this, ::Legends.Perk.LegendImmovableObject);
 			::Legends.Perks.grant(this, ::Legends.Perk.SteelBrow);
 			::Legends.Perks.grant(this, ::Legends.Perk.Relentless);
 			::Legends.Perks.grant(this, ::Legends.Perk.Dodge);
@@ -255,7 +255,7 @@ this.legend_alp_nightmare_human <- this.inherit("scripts/entity/tactical/enemies
 				::Legends.Perks.grant(this, ::Legends.Perk.Overwhelm);
 
 				if (::Legends.isLegendaryDifficulty())
-					::Legends.Perks.grant(this, ::Legends.Perk.LegendSpecSpearThrust);
+					::Legends.Perks.grant(this, ::Legends.Perk.LegendThrustMaster);
 			}
 			else if (r == 5)
 			{

@@ -71,6 +71,7 @@
 			],
 			Enemy = [],
 			Class = [],
+			Profession = [], 
 			Magic = []
 		}
 	}
@@ -169,13 +170,13 @@
 
 		items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "apron"]
+			[1, ::Legends.Armor.Standard.apron]
 		]));
 
 
 		local item = this.Const.World.Common.pickHelmet([
-				[1, "feathered_hat"],
-				[2, ""]
+				[1, ::Legends.Helmet.Standard.feathered_hat],
+				[2, ::Legends.Helmet.None]
 		]);
 		items.equip(item);
 	}

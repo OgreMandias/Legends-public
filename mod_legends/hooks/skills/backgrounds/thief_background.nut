@@ -82,6 +82,7 @@
 				this.Const.Perks.MercenaryTree
 			],
 			Class = [this.Const.Perks.KnifeClassTree],
+			Profession = [], 
 			Magic = []
 		}
 	}
@@ -178,14 +179,14 @@
 		}
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "sackcloth"],
-			[1, "leather_tunic"],
-			[1, "linen_tunic"]
+			[1, ::Legends.Armor.Standard.sackcloth],
+			[1, ::Legends.Armor.Standard.leather_tunic],
+			[1, ::Legends.Armor.Standard.linen_tunic]
 		]));
 
 		items.equip(this.Const.World.Common.pickHelmet([
-			[1, "hood"],
-			[1, "headscarf"]
+			[1, ::Legends.Helmet.Standard.hood],
+			[1, ::Legends.Helmet.Standard.headscarf]
 		]));
 
 	}

@@ -16,14 +16,6 @@
 		}
 	}
 
-	o.getLootForTile <- function (_killer, _loot) {
-		if (!(_killer == null || _killer.getFaction() == this.Const.Faction.Player || _killer.getFaction() == this.Const.Faction.PlayerAnimals))
-			return getLootForTile(_killer, _loot);
-		if (this.getSkills().hasSkill("injury_permanent.legend_ursathropy_injury"))
-			_loot.push(::new("scripts/items/misc/legend_werehand_item"));
-		return this.human.getLootForTile(_killer, _loot);
-	}
-
 	o.assignRandomEquipment = function ()
 	{
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Mainhand))
@@ -38,21 +30,21 @@
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body) && this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head))
 		{
 			local armor = [
-				[1, "barbarians/thick_plated_barbarian_armor"],
-				[1, "barbarians/reinforced_heavy_iron_armor"],
+				[1, ::Legends.Armor.Barbarian.thick_plated_barbarian_armor],
+				[1, ::Legends.Armor.Barbarian.reinforced_heavy_iron_armor],
 			];
 
 			local helmet = [
-				[1, "barbarians/heavy_horned_plate_helmet"],
-				[1, "barbarian_chosen_helmet_00"],
-				[1, "barbarian_chosen_helmet_01"],
-				[1, "barbarian_chosen_helmet_02"],
+				[1, ::Legends.Helmet.Barbarian.heavy_horned_plate_helmet],
+				[1, ::Legends.Helmet.Standard.barbarian_chosen_helmet_00],
+				[1, ::Legends.Helmet.Standard.barbarian_chosen_helmet_01],
+				[1, ::Legends.Helmet.Standard.barbarian_chosen_helmet_02],
 			];
 
 			local outfits = [
-				[1, "barbarian_chosen_outfit_00"],
-				[1, "barbarian_chosen_outfit_01"],
-				[1, "barbarian_chosen_outfit_02"]
+				[1, ::Legends.Outfit.barbarian_chosen_outfit_00],
+				[1, ::Legends.Outfit.barbarian_chosen_outfit_01],
+				[1, ::Legends.Outfit.barbarian_chosen_outfit_02]
 			];
 
 			foreach( item in this.Const.World.Common.pickOutfit(outfits, armor, helmet) )
@@ -65,20 +57,20 @@
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body))
 		{
 			local armor = [
-				[1, "barbarians/thick_plated_barbarian_armor"],
-				[1, "barbarians/reinforced_heavy_iron_armor"],
-				[1, "barbarian_chosen_armor_00"],
-				[1, "barbarian_chosen_armor_01"]
+				[1, ::Legends.Armor.Barbarian.thick_plated_barbarian_armor],
+				[1, ::Legends.Armor.Barbarian.reinforced_heavy_iron_armor],
+				[1, ::Legends.Armor.Standard.barbarian_chosen_armor_00],
+				[1, ::Legends.Armor.Standard.barbarian_chosen_armor_01]
 			];
 			this.m.Items.equip(this.Const.World.Common.pickArmor(armor));
 		}
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head))
 		{
 			local helmet = [
-				[1, "barbarians/heavy_horned_plate_helmet"],
-				[1, "barbarian_chosen_helmet_00"],
-				[1, "barbarian_chosen_helmet_01"],
-				[1, "barbarian_chosen_helmet_02"],
+				[1, ::Legends.Helmet.Barbarian.heavy_horned_plate_helmet],
+				[1, ::Legends.Helmet.Standard.barbarian_chosen_helmet_00],
+				[1, ::Legends.Helmet.Standard.barbarian_chosen_helmet_01],
+				[1, ::Legends.Helmet.Standard.barbarian_chosen_helmet_02],
 			];
 			this.m.Items.equip(this.Const.World.Common.pickHelmet(helmet));
 		}

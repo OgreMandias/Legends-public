@@ -19,6 +19,23 @@
 		}
 	}
 
+	local makeMiniboss = o.makeMiniboss;
+	o.makeMiniboss = function ()
+	{
+		local ret = makeMiniboss();
+		if (ret)
+		{
+			local weapons = [
+				"weapons/named/named_goblin_falchion",
+				"weapons/named/named_goblin_pike",
+				"weapons/named/named_goblin_spear",
+				"weapons/named/legend_named_goblin_notched_blade"
+			];
+			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
+		}
+		return ret;
+	}
+
 	o.assignRandomEquipment = function ()
 	{
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand) == null)
@@ -28,8 +45,8 @@
 				"weapons/greenskins/goblin_spear",
 				"weapons/legend_chain",
 				"weapons/greenskins/goblin_notched_blade",
-				"weapons/greenskins/legend_goblin_longaxe",
-				"weapons/greenskins/goblin_pike"
+				"weapons/greenskins/legend_goblin_infantry_axe",
+				"weapons/greenskins/goblin_pike",
 			];
 
 			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
@@ -66,9 +83,8 @@
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body) == null)
 		{
 			local item = this.Const.World.Common.pickArmor([
-				[1, "greenskins/goblin_light_armor"],
-				[1, "greenskins/goblin_medium_armor"],
-				[1, "greenskins/goblin_heavy_armor"]
+				[1, ::Legends.Armor.Greenskin.goblin_light_armor],
+				[1, ::Legends.Armor.Greenskin.goblin_medium_armor],
 			]);
 			this.m.Items.equip(item);
 		}
@@ -76,8 +92,8 @@
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Head) == null)
 		{
 			local item = this.Const.World.Common.pickHelmet([
-				[75, "greenskins/goblin_light_helmet"],
-				[25, "greenskins/goblin_heavy_helmet"]
+				[75, ::Legends.Helmet.Greenskin.goblin_light_helmet],
+				[25, ::Legends.Helmet.Greenskin.goblin_heavy_helmet]
 			]);
 			if (item != null)
 			{

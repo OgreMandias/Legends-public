@@ -2,6 +2,7 @@ this.legend_recruitment_druid_camp_encounter <- this.inherit("scripts/encounters
     m = {
 		Druid = null
     },
+
     function create() {
         this.createScreens();
         this.m.Type = "encounter.legend_recruitment_druid_camp_encounter";

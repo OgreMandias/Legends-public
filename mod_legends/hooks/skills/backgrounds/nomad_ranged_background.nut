@@ -4,6 +4,33 @@
 	{
 		this.nomad_background.create();
 		this.m.HiringCost = 300;
+		this.m.PerkTreeDynamic = {
+			Weapon = [
+				this.Const.Perks.MaceTree,
+				this.Const.Perks.SpearTree,
+				this.Const.Perks.BowTree,
+				this.Const.Perks.SlingTree
+			],
+			Defense = [
+				this.Const.Perks.LightArmorTree
+			],
+			Traits = [
+				this.Const.Perks.ViciousTree,
+				this.Const.Perks.FastTree,
+				this.Const.Perks.AgileTree,
+				this.Const.Perks.DeviousTree
+			],
+			Enemy = [
+				this.Const.Perks.SouthernersTree,
+				this.Const.Perks.DirewolfTree,
+				this.Const.Perks.ArcherTree
+			],
+			Class = [
+				this.Const.Perks.SlingClassTree
+			],
+			Profession = [],
+			Magic = []
+		}
 	}
 
 	o.onChangeAttributes = function ()
@@ -68,16 +95,16 @@
 		}
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "oriental/nomad_robe"],
-			[1, "oriental/thick_nomad_robe"],
-			[1, "oriental/stitched_nomad_armor"],
-			[1, "oriental/leather_nomad_robe"]
+			[1, ::Legends.Armor.Southern.nomad_robe],
+			[1, ::Legends.Armor.Southern.thick_nomad_robe],
+			[1, ::Legends.Armor.Southern.stitched_nomad_armor],
+			[1, ::Legends.Armor.Southern.leather_nomad_robe]
 		]));
 
 		local helm = this.Const.World.Common.pickHelmet([
-			[1, "oriental/nomad_head_wrap"],
-			[1, "oriental/nomad_leather_cap"],
-			[1, "oriental/nomad_light_helmet"]
+			[1, ::Legends.Helmet.Southern.nomad_head_wrap],
+			[1, ::Legends.Helmet.Southern.nomad_leather_cap],
+			[1, ::Legends.Helmet.Southern.nomad_light_helmet]
 		]);
 		items.equip(helm);
 	}

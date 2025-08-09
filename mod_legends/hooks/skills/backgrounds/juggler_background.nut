@@ -61,7 +61,8 @@
 			],
 			Enemy = [],
 			Class = [
-				this.Const.Perks.JugglerClassTree
+				this.Const.Perks.JugglerClassTree,
+				this.Const.Perks.ConArtistTree
 			],
 			Profession = [], 
 			Magic = []

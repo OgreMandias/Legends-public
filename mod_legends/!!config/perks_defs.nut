@@ -4402,4 +4402,15 @@ perkDefObjects.push({
 	Const = "LegendKeenEyesight"
 });
 
+::Legends.Perk.LegendSleightOfHand <- null;
+perkDefObjects.push({
+	ID = "perk.legend_sleight_of_hand",
+	Script = "scripts/skills/perks/perk_legend_sleight_of_hand",
+	Name = ::Const.Strings.PerkName.LegendSleightOfHand,
+	Tooltip = ::Const.Strings.PerkDescription.LegendSleightOfHand,
+	Icon = "ui/perks/sleight_of_hand.png",
+	IconDisabled = "ui/perks/sleight_of_hand_bw.png",
+	Const = "LegendSleightOfHand"
+});
+
 ::Const.Perks.addPerkDefObjects(perkDefObjects);

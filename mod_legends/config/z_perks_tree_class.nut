@@ -122,6 +122,23 @@ if (!("Perks" in ::Const))
 	]
 };
 
+::Const.Perks.ConArtistTree <- {
+	ID = "ConArtistTree",
+	Name = "Con Artist",
+	Descriptions = [
+		"sleight of hand"
+	],
+	Tree = [
+		[::Legends.Perk.LegendSleightOfHand],
+		[],
+		[],
+		[],
+		[],
+		[],
+		[]
+	]
+};
+
 ::Const.Perks.PickaxeClassTree <- {
 	ID = "PickaxeClassTree",
 	Name = "Miner",

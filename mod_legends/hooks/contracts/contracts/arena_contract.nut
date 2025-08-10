@@ -425,6 +425,7 @@
 			{
 				bro.setInReserves(true);
 			}
+		}
 
 		this.m.WasInReserves.clear();
 		local roster = this.World.getPlayerRoster().getAll();

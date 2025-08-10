@@ -2,7 +2,7 @@ this.legend_fav_enemy_swordmaster_encounter <- this.inherit("scripts/encounters/
     m = {},
     function create() {
         this.m.Type = "encounter.legend_fav_enemy_swordmaster_encounter";
-        this.m.Name = "{While at %settlement... | Strolling through %settlement%. | Something\'s up at %settlement.}";
+        this.m.Name = "Swordmaster";
 		this.m.Event = "event.legend_swordmaster_fav_enemy";
     }
 })

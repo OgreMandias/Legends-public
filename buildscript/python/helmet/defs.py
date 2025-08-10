@@ -1055,23 +1055,14 @@ class Defs:
  "title" :  "Southern Veil",
  "desc" :  "A thin wispy southern veil."
  },
-
-{"name" : "southern_veil_coin"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 30, "con" : 3, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",
- "title" :  "Southern Coin Veil",
- "desc" :  "A southern veil made of coins threaded togther."
- },
 {"name" : "southern_earings"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 20, "con" : 2, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",
  "title" :  "Southern Earings",
  "desc" :  "Delicate southern metal earings."
  },
-
-
-
 {"name" : "southern_headress_coin"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 50, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",
  "title" :  "Southern Coin Headress",
  "desc" :  "A southern headress of coins strung together."
  },
-
 
 # {"name" : "lindwurm_helm"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
 #  "title" :  "Lindwurm Helm", \

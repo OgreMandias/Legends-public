@@ -1,11 +1,11 @@
-this.legend_recruitment_druid_camp_encounter <- this.inherit("scripts/encounters/encounter", {
+this.legend_recruitment_druid_encounter <- this.inherit("scripts/encounters/encounter", {
     m = {
 		Druid = null
     },
     function create() {
         this.createScreens();
-        this.m.Type = "encounter.legend_recruitment_druid_camp";
-        this.m.Name = "A burning forest";
+        this.m.Type = "encounter.legend_recruitment_druid_encounter";
+        this.m.Name = "The forest dies";
 		this.m.Cooldown = 60 * ::World.getTime().SecondsPerDay;
 	}
 
@@ -34,13 +34,6 @@ this.legend_recruitment_druid_camp_encounter <- this.inherit("scripts/encounters
 					}
 				}
 			]
-			function start(_event) {
-				local roster = ::World.getTemporaryRoster();
-				_event.m.Druid = roster.create("scripts/entity/tactical/player");
-				_event.m.Druid.setStartValuesEx(["legend_druid_background"]);
-				roster.add(_event.m.Druid);
-				this.Characters.push(_event.m.Druid.getImagePath());
-			}
 		});
 		this.m.Screens.push({
 			ID = "recruit",
@@ -65,8 +58,6 @@ this.legend_recruitment_druid_camp_encounter <- this.inherit("scripts/encounters
 					Text = "Forests can regrow. You will regain your stewardship in time.",
 					function getResult( _event )
 					{
-						this.World.getTemporaryRoster().clear();
-						_event.m.Druid = null;
 						return 0;
 					}
 
@@ -74,48 +65,20 @@ this.legend_recruitment_druid_camp_encounter <- this.inherit("scripts/encounters
 			],
 
 			function start(_event) {
+				local roster = ::World.getTemporaryRoster();
+				_event.m.Druid = roster.create("scripts/entity/tactical/player");
+				_event.m.Druid.setStartValuesEx(["legend_druid_background"]);
 				this.Characters.push(_event.m.Druid.getImagePath());
 			}
 		});
 	}
 
 	function onPrepareVariables (_vars) {
-		this.Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Druid.getGender(), "Druid");
+		this.Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Dude.getGender(), "Druid");
 	}
 
 	function isValid(_camp) {
-		if (::World.getPlayerRoster().getSize() >= ::World.Assets.getBrothersMax())
-			return false;
-
-		local currentTile = this.World.State.getPlayer().getTile();
-
-		if (currentTile.Type != this.Const.World.TerrainType.Forest
-			&& currentTile.Type != this.Const.World.TerrainType.SnowyForest
-			&& currentTile.Type != this.Const.World.TerrainType.LeaveForest
-			&& currentTile.Type != this.Const.World.TerrainType.AutumnForest)
-			return false;
-
-		local totalbrothers = 0;
-		local brotherlevels = 0;
-
-		local towns = this.World.EntityManager.getSettlements();
-		foreach(t in towns){
-			if (t.getTile().getDistanceTo(currentTile) <= 7)
-				return false //if too close to town, disable
-		}
-
-		foreach (bro in ::World.getPlayerRoster().getAll()) {
-			if ((bro.getBackground().getID() == "background.legend_druid") || (bro.getBackground().getID() == "background.legend_commander_druid"))
-				return false;
-
-			totalbrothers += 1;
-			brotherlevels += bro.getLevel();
-		}
-
-		if (totalbrothers < 1 || brotherlevels < 30)
-			return false;
-
-		return !isOnCooldown();
+		return false; // disabled in towns, removed on dev
 	}
 
 	function onClear() {

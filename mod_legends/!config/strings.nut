@@ -35,3 +35,5 @@
 	"The Bloodhound Gang"
 ]);
 ::Const.Strings.FreeCompanyNames <- clone ::Const.Strings.MercenaryCompanyNames;
+::Const.Strings.RandomCityEncounterNames <- "{While at %settlement... | Strolling through %settlement%. | Something\'s up at %settlement.}";
+::Const.Strings.RandomCampEncounterNames <- "{During camp...}";

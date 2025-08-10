@@ -188,11 +188,11 @@
 				P = 1.0,
 				S = "helmets/legend_southern_cloth_headress"
 			},
-			{
-				R = 40,
-				P = 1.0,
-				S = "helmets/legend_southern_veil"
-			},
+			// {
+			// 	R = 40,
+			// 	P = 1.0,
+			// 	S = "helmets/legend_southern_veil"
+			// },
 			{
 				R = 70,
 				P = 1.0,

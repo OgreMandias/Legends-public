@@ -771,7 +771,6 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"top/legend_helmet_bascinet_visor_named",
 			"top/legend_helmet_southern_faceplate_bearded",
 			"top/legend_helmet_mummy_mask",
-			"top/legend_helmet_mummy_beard",
 			"top/legend_helmet_faceplate_full_breaths",
 			"top/legend_helmet_unhold_head_chain",
 			"top/legend_helmet_unhold_head_spike",

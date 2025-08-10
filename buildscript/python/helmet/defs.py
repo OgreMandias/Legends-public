@@ -732,12 +732,6 @@ class Defs:
  "title" :  "Ancient Southern Facemask",
  "desc" :  "A facemask from a long dead civilisation."
  },
-
-{"name" : "mummy_beard"                     , "layer" : "top", "min" : 1, "max" : 3, "value" : 200, "con" : 15, "stam" : -1, "vis" : 0, "hair" : "false", "beard" : "true",
- "title" :  "Ancient Southern Beard",
- "desc" :  "A beard cover from a long dead civilisation."
- },
-
 {"name" : "faceplate_full_breaths"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 300, "con" : 35, "stam" : -2, "vis" : -1, "hair" : "false", "beard" : "true",
  "title" :  "Breathed Faceplate",
  "desc" :  "A faceplate filled with breathes for easy breathing and increased sight."

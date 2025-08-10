@@ -1,4 +1,4 @@
-::mods_hookExactClass("skills/actives/reload_handgonne", function(o)
+::mods_hookExactClass("skills/actives/reload_handgonne_skill", function(o)
 {
 	local onAfterUpdate = o.onAfterUpdate;
 	o.onAfterUpdate = function ( _properties )

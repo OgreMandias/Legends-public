@@ -146,9 +146,10 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 				}
 
 				if (this.Flags.get("BoxOpened")) {
-					::World.Assets.addBusinessReputation(::Const.World.Assets.ReputationOnContractFail);
-					::World.Contracts.finishActiveContract(true);
-					this.Contract.spawnRevengeParty();
+					if (this.Contract.m.PursuitParty != null && !this.Contract.m.PursuitParty.isNull()) {
+						this.Contract.m.PursuitParty.die();
+					}
+					this.Contract.setState("Revenge");
 				}
 			}
 
@@ -212,9 +213,7 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 				}
 
 				if (this.Flags.get("BoxOpened")) {
-					::World.Assets.addBusinessReputation(::Const.World.Assets.ReputationOnContractFail);
-					::World.Contracts.finishActiveContract(true);
-					this.Contract.spawnRevengeParty();
+					this.Contract.setState("Revenge");
 				}
 			}
 
@@ -227,6 +226,32 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 			function onCombatVictory( _combatID ) {
 				if (_combatID == "Ambush") {
 					this.Flags.set("IsFinalBattleWon", true);
+				}
+			}
+		});
+
+		this.m.States.push({
+			ID = "Revenge",
+			function start() {
+				this.Contract.m.BulletpointsPayment = [];
+				this.Contract.m.BulletpointsObjectives = [
+					"Wait for your employer to contact you"
+				];
+				if (this.Contract.m.PursuitParty == null)
+					this.Contract.m.PursuitParty = ::WeakTableRef(this.Contract.spawnRevengeParty());
+				this.Contract.m.PursuitParty.setOnCombatWithPlayerCallback(this.onRevengeCombat.bindenv(this));
+			}
+
+			function onRevengeCombat(_dest, _isPlayerInitiated) {
+				local p = ::World.State.getLocalCombatProperties(::World.State.getPlayer().getPos());
+				p.CombatID = "Revenge";
+				::World.Contracts.startScriptedCombat(p, _isPlayerInitiated, true, true);
+			}
+
+			function onCombatVictory( _combatID ) {
+				if (_combatID == "Revenge") {
+					::World.Assets.addBusinessReputation(::Const.World.Assets.ReputationOnContractFail);
+					::World.Contracts.finishActiveContract(true);
 				}
 			}
 		});

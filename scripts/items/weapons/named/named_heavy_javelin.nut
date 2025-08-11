@@ -22,8 +22,8 @@ this.named_heavy_javelin <- inherit("scripts/items/weapons/named/named_weapon", 
 
 		this.m.Value = 1400;
 
-		this.m.Ammo = 5;
-		this.m.AmmoMax = 5;
+		this.m.Ammo = 4;
+		this.m.AmmoMax = 4;
 
 		this.m.RangeMin = 1;
 		this.m.RangeMax = 4;

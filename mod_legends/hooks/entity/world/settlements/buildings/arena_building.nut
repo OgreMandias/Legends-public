@@ -13,11 +13,11 @@
 			this.m.DailyRefresh = true;
 		}
 	}
-	
+
 	local onClicked = o.onClicked;
 	o.onClicked = function (_townScreen)
 	{
-	
+
 		if(this.World.getTime().Days != this.World.Assets.m.LastArenaVictory)
 		{
 			this.m.NumArenaAttempts = 5;
@@ -30,7 +30,7 @@
 		}
 	onClicked(_townScreen);
 	}
-	
+
 	o.updateAttempts <- function ()
 	{
 		if(this.World.Assets.m.IsArenaTooled)
@@ -81,7 +81,7 @@
 		}
 	}
 
-	local onSerialize = o.onSerialize
+	local onSerialize = o.onSerialize;
 	o.onSerialize = function ( _out){
 		onSerialize(_out);
 		_out.writeBool(this.m.DailyRefresh);

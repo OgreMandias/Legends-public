@@ -4,7 +4,7 @@ this.legend_royal_lance <- this.inherit("scripts/items/weapons/weapon", {
 	{
 		this.weapon.create();
 		this.m.ID = "weapon.legend_royal_lance";
-		this.m.Name = "Royal Lance"
+		this.m.Name = "Royal Lance";
 		this.m.Description = "Well crafted and withstanding age this spear manages to impress craftsmen even today. Used for thrusting over some distance and keeping the enemy at bay.";
 		this.m.WeaponType = this.Const.Items.WeaponType.Spear;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;

@@ -483,10 +483,10 @@ if (!("Perks" in ::Const))
 		::Const.Perks.InventorClassTree,
 		::Const.Perks.SickleClassTree,
 		::Const.Perks.ScytheClassTree,
-		::Const.Perks.SharpshooterClassTree
+		::Const.Perks.SharpshooterClassTree,
 		::Const.Perks.ShovelClassTree,
 		::Const.Perks.SlingClassTree,
-		::Const.Perks.SpearfisherClassTree
+		::Const.Perks.SpearfisherClassTree,
 		::Const.Perks.StaffClassTree,
 		::Const.Perks.RaiderClassTree
 	],

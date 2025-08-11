@@ -69,7 +69,7 @@ this.legend_command_legion_skill <- this.inherit("scripts/skills/skill", {
 				type = "text",
 				icon = "ui/icons/melee_defense.png",
 				text = "Grants the target an additional [color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] Melee Defense for their next turn"
-			}
+			},
 			{
 				id = 7,
 				type = "text",

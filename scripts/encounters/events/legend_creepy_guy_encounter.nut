@@ -1,4 +1,4 @@
-this.legend_apprentice_learns_encounter <- this.inherit("scripts/encounters/encounter_event", {
+this.legend_creepy_guy_encounter <- this.inherit("scripts/encounters/encounter_event", {
     m = {},
     function create() {
         this.m.Type = "encounter.legend_creepy_guy";

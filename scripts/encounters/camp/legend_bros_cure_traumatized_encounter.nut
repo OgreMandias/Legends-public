@@ -190,7 +190,7 @@ this.legend_bros_cure_traumatized_encounter <- this.inherit("scripts/encounters/
 			"drunkard",
 			this.m.Monk.getName()
 		]);
-		local title = this.m.Monk.getGender() == 0 ? "the Monk" : "the Nun";  
+		local title = this.m.Monk.getGender() == 0 ? "the Monk" : "the Nun";
 		_vars.push([
 			"monktitle",
 			title
@@ -240,7 +240,7 @@ this.legend_bros_cure_traumatized_encounter <- this.inherit("scripts/encounters/
 	function onClear()
 	{
 		this.m.Monk = null;
-		this.m.Drunkard = null
+		this.m.Drunkard = null;
 		this.m.Traumatized = null;
 	}
 });

@@ -57,7 +57,7 @@
 	{
 		local item = _user.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
 		local hasStaff = item != null && item.getID() == "legend_named_goblin_staff";
-		local hasTraitCombo = ::Legends.Traits.has(this, ::Legends.Trait.RacialGoblinShaman) && ::Legends.Traits.has(this, ::Legends.Trait.RacialSchrat)
+		local hasTraitCombo = ::Legends.Traits.has(this, ::Legends.Trait.RacialGoblinShaman) && ::Legends.Traits.has(this, ::Legends.Trait.RacialSchrat);
 		if (!hasStaff && !hasTraitCombo)
 		{
 			local ret = onUse(_user, _targetTile);

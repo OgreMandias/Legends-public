@@ -3,6 +3,6 @@ this.legend_cat_on_tree_encounter <- this.inherit("scripts/encounters/encounter_
     function create() {
         this.m.Type = "encounter.legend_cat_on_tree";
         this.m.Name = ::Const.Strings.RandomCityEncounterNames;
-		this.m.Event = "event.apprentice_learns";
+		this.m.Event = "event.cat_on_tree";
     }
 })

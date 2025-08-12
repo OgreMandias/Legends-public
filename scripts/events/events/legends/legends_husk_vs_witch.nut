@@ -1,3 +1,56 @@
+this.legends_husk_vs_witch <- ::inherit("scripts/events/event", {
+	m = {
+	}
+	function create()
+	{
+		this.m.ID = "event.legends.husk_vs_witch";
+		this.m.Title = "During camp...";
+		this.m.Cooldown = 999999.0 * this.World.getTime().SecondsPerDay;
+		this.m.Screens.push({
+			ID = "A",
+			Text = "[img]gfx/ui/events/event_140.png[/img]%bowyer% the fletcher comes to you with a bit of request: %they_bowyer% wish to build a weapon for the ages. Apparently, %bowyer% has been attempting to build a quiver of legendary qualities for many years, but now that %they_bowyer%\'s been on the road %they_bowyer%\'s picked up a few things to fill in the gaps of knowledge. Truly, %bowyer% believes %they_bowyer% can get it right this time. All the mercenary needs is a few resources to help procure the elements needed to construct it. A sum of 500 crowns is humbly requested, and the unhold skin you carry.",
+			Image = "",
+			List = [],
+			Characters = [],
+			Options = [
+				{
+					Text = "Davkul awaits us all.",
+					function getResult( _event )
+					{
+						return 0;
+					}
+
+				}
+			],
+			function start( _event )
+			{
+			}
+		});
+	}
+
+	function onUpdateScore()
+	{
+		this.m.Score = 0;
+		return;
+		local activeContract = ::World.Contracts.getActiveContract();
+		if (activeContract == 0)
+			return;
+	}
+
+	function onPrepareVariables( _vars )
+	{
+//		_vars.push(["EldersSon", this.m.Bowyer.getNameOnly()]);
+//		_vars.push(["ElderName", this.m.Bowyer.getNameOnly()]);
+//		_vars.push(["ChosenHusk", this.m.Bowyer.getNameOnly()]);
+//		::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Bowyer.getGender(), "bowyer");
+	}
+
+	function onClear()
+	{
+
+	}
+});
+
 // --- Husk vs Witch --- //
 //  Event for Husk background for the Cultist origin.
 //  Happens during witch contract instead of combat with Witch.
@@ -8,11 +61,6 @@
 //  Husk bro in party: (lvl10+) + (Davkul Candles: 4+)
 //  Husk bro has 60%+ hp
 
-//Event Characters:
-//  %EldersSon% - Character from contract
-//  %ElderName% - Character from contract
-//  %ChosenHusk% - Party Member
-
 //Results:
 //  Contract completed.
 //  Reward: Witch battle loot
@@ -20,9 +68,6 @@
 //  Takes damage: 10%-59%
 //  If not having Resilient perk: random light wound
 //  Gains +3-5 Resolve permanently
-
-//Buttons:
-//  [Davkul awaits us all.] - Event exit button
 
 //Word Count: 265
 
@@ -37,5 +82,3 @@
 //
 // And suddenly, the end came.
 // %ChosenHusk% rises, bleeding from every visible orifice, and utters: “The witch is with Davkul now.”
-
-// [Davkul awaits us all.]

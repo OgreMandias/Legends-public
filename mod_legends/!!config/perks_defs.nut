@@ -4475,7 +4475,7 @@ perkDefObjects.push({
 	Name = ::Const.Strings.PerkName.LegendTacticalManeuvers,
 	Tooltip = ::Const.Strings.PerkDescription.LegendTacticalManeuvers,
 	Icon = "ui/perks/perk_11.png",
-	IconDisabled = "ui/perks/perk_11_bw.png",
+	IconDisabled = "ui/perks/perk_11_sw.png",
 	Const = "LegendTacticalManeuvers"
 });
 

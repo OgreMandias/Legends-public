@@ -1,0 +1,15 @@
+Assassin/Hasshashin scares noble/adventurous lady-lord.
+
+Requires:
+1x Bro of Level 5+, background: Assassin, Hashashin, Killer on the Run
+1x Bro, tag: Noble, background: Adventurous Lady/Lord, Disowned Noble, Bastard, Regent in Absentia, (Other noble backgrounds?)
+
+Noble bro receives “Afraid” for a few days, loses mood. 
+Assassin bro receives +1-3 resolve, +1-3 initiative, gains mood.
+
+Leaving your tent, you spy (NOBLE BACKGROUND) making a poor attempt of hiding by the wagon. You meet their gaze and are about to call out to them when they gasp, spin on their heels, and bolt. Amused at the sight, you hardly hear (ASSASSIN BACKGROUND) approach from behind until they’ve firmly clasped their hand on your shoulder.%SPEECH_ON%They’re an imaginative sort, that one.%SPEECH_OFF%, they gesture, the blue-blooded mercenary now a scrambling mess, slipping on a patch of mud to escape. %SPEECH_ON%Has it in their head I’m some dangerous fella’ out to get them [as revenge for some misdeed in their past] [as part of some long contract for one noble house or other.]%SPEECH_OFF% You detect the faintest smirk slipping through the facade before they continue. %SPEECH_ON%But I’m not, captain, don’t you worry. I kill on your word only, but it doesn’t hurt to keep up one’s professional reputation amongst the highborn, does it?%SPEECH_OFF% You shrug and tell them not to scare the noble too bad. %SPEECH_ON%Of course, captain.%SPEECH_OFF%, they pat your shoulder again as they follow the fresh and frantic footsteps of a man marked. %SPEECH_ON%Come here, little rabbit.%SPEECH_OFF%
+
+[I’m glad they’re getting along.] [Enjoy yourself, I guess.]
+
+//Negative mood modifier for noble bro – “Scared from being menaced by a dangerous bro!”
+//Positive mood modifier for assassin bro – “Enjoyed tormenting noble bro.”

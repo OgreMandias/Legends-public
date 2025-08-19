@@ -59,9 +59,6 @@
 	"bust_head_southern_female_08",
 	"bust_head_southern_female_09",
 	"bust_head_southern_female_10",
-	"bust_head_southern_female_11",
-	"bust_head_southern_female_12",
-	"bust_head_southern_female_13"
 ];
 
 ::Const.Faces.AllWhiteHuman <- [
@@ -95,14 +92,7 @@
 	"bust_head_female_07",
 	"bust_head_female_08",
 	"bust_head_female_09",
-	"bust_head_female_10",
-	"bust_head_female_11",
-	"bust_head_female_12",
-	"bust_head_female_13",
-	"bust_head_female_14",
-	"bust_head_female_15",
-	"bust_head_female_16",
-	"bust_head_female_17"
+	"bust_head_female_10"
 ];
 
 ::Const.Faces.AllWhiteMale <- [
@@ -139,14 +129,7 @@
 	"bust_head_female_07",
 	"bust_head_female_08",
 	"bust_head_female_09",
-	"bust_head_female_10",
-	"bust_head_female_11",
-	"bust_head_female_12",
-	"bust_head_female_13",
-	"bust_head_female_14",
-	"bust_head_female_15",
-	"bust_head_female_16",
-	"bust_head_female_17",
+	"bust_head_female_10"
 ];
 
 ::Const.Faces.AllFemale <- [
@@ -159,14 +142,7 @@
 	"bust_head_female_07",
 	"bust_head_female_08",
 	"bust_head_female_09",
-	"bust_head_female_10",
-	"bust_head_female_11",
-	"bust_head_female_12",
-	"bust_head_female_13",
-	"bust_head_female_14",
-	"bust_head_female_15",
-	"bust_head_female_16",
-	"bust_head_female_17"
+	"bust_head_female_10"
 ];
 
 ::Const.Faces.PrettyFemale <- [
@@ -179,14 +155,7 @@
 	"bust_head_female_07",
 	"bust_head_female_08",
 	"bust_head_female_09",
-	"bust_head_female_10",
-	"bust_head_female_11",
-	"bust_head_female_12",
-	"bust_head_female_13",
-	"bust_head_female_14",
-	"bust_head_female_15",
-	"bust_head_female_16",
-	"bust_head_female_17"
+	"bust_head_female_10"
 ];
 
 ::Const.Faces.SouthernMale <- [
@@ -210,10 +179,7 @@
 	"bust_head_southern_female_07",
 	"bust_head_southern_female_08",
 	"bust_head_southern_female_09",
-	"bust_head_southern_female_10",
-	"bust_head_southern_female_11",
-	"bust_head_southern_female_12",
-	"bust_head_southern_female_13"
+	"bust_head_southern_female_10"
 ];
 
 ::Const.Faces.Donkey <- [
@@ -233,8 +199,7 @@
 
 ::Const.Faces.OldFemale <- [
 	"bust_head_female_08",
-	"bust_head_female_11",
-	"bust_head_female_15"
+	"bust_head_female_10"
 ];
 
 ::Const.Faces.Berserker <- [
@@ -243,23 +208,9 @@
 ];
 
 ::Const.Faces.WildFemale <- [
-	"bust_head_female_01",
-	"bust_head_female_02",
-	"bust_head_female_03",
-	"bust_head_female_04",
-	"bust_head_female_05",
 	"bust_head_female_06",
-	"bust_head_female_07",
 	"bust_head_female_08",
-	"bust_head_female_09",
-	"bust_head_female_10",
-	"bust_head_female_11",
-	"bust_head_female_12",
-	"bust_head_female_13",
-	"bust_head_female_14",
-	"bust_head_female_15",
-	"bust_head_female_16",
-	"bust_head_female_17"
+	"bust_head_female_10"
 ];
 
 ::Const.Faces.SouthernFemale <- [
@@ -271,7 +222,8 @@
 	"bust_head_southern_female_06",
 	"bust_head_southern_female_07",
 	"bust_head_southern_female_08",
-	"bust_head_southern_female_09"
+	"bust_head_southern_female_09",
+	"bust_head_southern_female_10"
 ];
 
 ::Const.Faces.NecromancerMale <- [

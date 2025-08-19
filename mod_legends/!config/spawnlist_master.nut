@@ -71,6 +71,24 @@
 	Script = "scripts/entity/tactical/enemies/legend_white_goblin_direwolf_rider"
 };
 
+::Const.World.Spawn.Troops.LegendBarbarianPillager <- {
+	ID = this.Const.EntityType.LegendBarbarianPillager,
+	Variant = 0,
+	Strength = 25,
+	Cost = 25,
+	Row = 1,
+	Script = "scripts/entity/tactical/humans/legend_barbarian_pillager"
+};
+
+::Const.World.Spawn.Troops.LegendBarbarianMarauder <- {
+	ID = this.Const.EntityType.LegendBarbarianMarauder,
+	Variant = 0,
+	Strength = 35,
+	Cost = 35,
+	Row = 1,
+	Script = "scripts/entity/tactical/humans/legend_barbarian_marauder"
+};
+
 ::Const.World.Spawn.Troops.Wolf <- {
 	ID = this.Const.EntityType.Wolf,
 	Variant = 0,

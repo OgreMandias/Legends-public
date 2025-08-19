@@ -20,7 +20,7 @@
 	],
 	Troops = [
 		{
-			Weight = 80,
+			Weight = 60,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BarbarianThrall,
@@ -39,11 +39,31 @@
 			]
 		},
 		{
+			Weight = 20,
+			Types = [
+				{
+					MinR = 250,
+					Type = this.Const.World.Spawn.Troops.LegendBarbarianPillager,
+					Cost = 22
+				},
+				{
+					MinR = 500,
+					Type = this.Const.World.Spawn.Troops.LegendBarbarianMarauder,
+					Cost = 35
+				}
+			]
+		},
+		{
 			Weight = 10,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Warhound,
 					Cost = 10
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendBear,
+					MinR = 500,
+					Cost = 40
 				}
 			]
 		},

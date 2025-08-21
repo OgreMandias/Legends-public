@@ -177,6 +177,12 @@
 	<sprite id="mini_dawg_bite" ic="2E343FFF" img="skills\mini\mini_dawg_bite.png" />
 	<sprite id="legend_legion_command_square" ic="FF1B293C" img="skills\legend_legion_command_square.png" />
 	<sprite id="legend_status_effect_legion_command_mini" offsetY="35" ic="FF223041" img="skills\mini\legend_status_effect_legion_command_mini.png" />
+	<sprite id="skewer_spetum" ic="FF1B293C" img="skills\skewer_spetum.png" />
+	<sprite id="skewer_warfork" ic="FF1B293C" img="skills\skewer_warfork.png" />
+	<sprite id="skewer_general" ic="FF1B293C" img="skills\skewer_general.png" />
+	<!-- Orientation below -->
+
+
 	<sprite id="cat_orientation"  ic="FF22200A" img="orientation\cat_orientation.png" />
 	<sprite id="rabble_orientation"  ic="FF22200A" img="orientation\rabble_orientation.png" />
 	<sprite id="rabble_poacher_orientation"  ic="FF22200A" img="orientation\rabble_poacher_orientation.png" />

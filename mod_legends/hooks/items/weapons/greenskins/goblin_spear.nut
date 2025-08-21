@@ -28,6 +28,11 @@
 		::Legends.Actives.grant(this, ::Legends.Active.Slash, function (_skill) {
 			_skill.m.IsStaffSlash = true;
 		}.bindenv(this));
-		::Legends.Actives.grant(this, ::Legends.Active.LegendSkewer);
+		::Legends.Actives.grant(this.weapon, ::Legends.Active.LegendSkewer, function (_skill)
+		{
+			_skill.m.Icon = "skills/skewer_general.png";
+			_skill.m.IconDisabled = "skills/skewer_general_sw.png";
+			_skill.m.Overlay = "skewer_general";
+		}.bindenv(this));
 	}
 });

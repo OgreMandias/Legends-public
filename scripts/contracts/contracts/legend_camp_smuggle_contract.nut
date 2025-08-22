@@ -487,7 +487,6 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 		party.getLoot().ArmorParts = this.Math.rand(0, 10);
 		party.getLoot().Medicine = this.Math.rand(0, 2);
 		party.getLoot().Ammo = this.Math.rand(0, 20);
-		party.setFaction(::Const.Faction.Enemy);
 		party.setMovementSpeed(::Const.World.MovementSettings.Speed * 2.0);
 
 		local r = this.Math.rand(1, 6);
@@ -554,7 +553,9 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 			this.m.Camp.setOnCombatWithPlayerCallback(null);
 		}
 		if (this.m.PursuitParty != null && !this.m.PursuitParty.isNull() && this.m.PursuitParty.isAlive()) {
-			this.m.PursuitParty.die();
+			::logInfo("pursuit party faction " + this.m.PursuitParty.getFaction());
+			if (this.m.PursuitParty.getFaction() != ::Const.Faction.Bandits)
+				this.m.PursuitParty.die();
 		}
 		this.m.PursuitParty = null;
 		local stash = ::World.Assets.getStash().getItems();
@@ -591,25 +592,10 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 			local entity = ::World.getEntityByID(target);
 			if (entity != null) {
 				this.m.PursuitParty = ::WeakTableRef(entity);
-				this.m.PursuitParty.setFaction(::Const.Faction.Enemy);
+				if (this.m.PursuitParty.getFaction() != ::Const.Faction.Bandits)
+					this.m.PursuitParty.setFaction(::Const.Faction.Enemy);
 			}
 		}
 		this.contract.onDeserialize(_in);
-
-//		local skipPursuit = false;
-//		target = _in.readU32();
-//		if (target != 0) {
-//			local entity = ::World.getEntityByID(target);
-//			if (entity != null) {
-//				this.m.PursuitParty = ::WeakTableRef(entity);
-//				this.m.PursuitParty.setFaction(::Const.Faction.Enemy);
-//			} else {
-//				skipPursuit = true;
-//			}
-//		}
-//		this.contract.onDeserialize(_in);
-//		if (skipPursuit) {
-//			this.m.Flags.remove("Pursuit");
-//		}
 	}
 });

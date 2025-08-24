@@ -920,22 +920,6 @@
 };
 ::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Standard.legend_seer_hat);
 
-::Legends.Helmet.Standard.legend_vampire_lord_helmet <- {
-	ID = "legend_vampire_lord_helmet", //50
-	Script = "scripts/items/helmets/legend_vampire_lord_helmet",
-	Sets = [{
-		Hoods = [
-		],
-		Helms = [
-		],
-		Tops = [
-		],
-		Vanity = [
-		]
-	}]
-};
-::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Standard.legend_vampire_lord_helmet);
-
 ::Legends.Helmet.Standard.legend_warlock_hood <- {
 	ID = "legend_warlock_hood", //100
 	Script = "",

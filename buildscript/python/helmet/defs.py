@@ -596,10 +596,6 @@ class Defs:
  "title" :  "Ancient Mask",
  "desc" :  "A masked helm of an ancient honor guard."
  },
-{"name" : "vampire_crown"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 100, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",
- "title" :  "Ancient Crown",
- "desc" :  "A crown of ancient design, relic of a bygone era in a far away land."
- },
 {"name" : "ancient_crown"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 200, "con" : 20, "stam" : -2, "vis" : 0, "hair" : "false", "beard" : "false",
  "title" :  "Ancient Diadem",
  "desc" :  "An ancient crown from ages past."

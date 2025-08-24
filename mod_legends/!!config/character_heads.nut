@@ -326,6 +326,11 @@
 	"horse_hair_white"
 ];
 
+::Const.Hair.VampireLady <- [
+	"zombie_lady_01",
+	"zombie_lady_02"
+];
+
 ::Const.Beards.Berserker <- [
 	"legends_02",
 	"14"

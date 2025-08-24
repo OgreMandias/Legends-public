@@ -741,7 +741,6 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"top/legend_helmet_goblin_leather_helm",
 			"top/legend_helmet_goblin_chain_helm",
 			"top/legend_helmet_goblin_spiked_helm",
-			"top/legend_helmet_vampire_crown",
 			"top/legend_helmet_ancient_crown",
 			"top/legend_helmet_leather_hood_barb",
 			"top/legend_helmet_nose_plate",

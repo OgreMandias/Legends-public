@@ -18,7 +18,7 @@ this.legend_entrancer_background <- this.inherit("scripts/skills/backgrounds/cha
 			::Legends.Traits.getID(::Legends.Trait.Loyal),
 			::Legends.Traits.getID(::Legends.Trait.Hesistant),
 			::Legends.Traits.getID(::Legends.Trait.Craven),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed),
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted),
 			::Legends.Traits.getID(::Legends.Trait.Brute),
 			::Legends.Traits.getID(::Legends.Trait.Bloodthirsty)
 		];
@@ -101,4 +101,3 @@ this.legend_entrancer_background <- this.inherit("scripts/skills/backgrounds/cha
 
 	}
 });
-

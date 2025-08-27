@@ -19,7 +19,7 @@
 			::Legends.Traits.getID(::Legends.Trait.Bleeder),
 			::Legends.Traits.getID(::Legends.Trait.Bright),
 			::Legends.Traits.getID(::Legends.Trait.Asthmatic),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed),
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted),
 			::Legends.Traits.getID(::Legends.Trait.Tiny)
 		];
 		this.m.Titles = [
@@ -60,7 +60,7 @@
 			],
 			Profession = [
 				this.Const.Perks.DogBreederProfessionTree
-			], 
+			],
 			Magic = []
 		}
 	}

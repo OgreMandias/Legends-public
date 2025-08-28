@@ -3,6 +3,8 @@
 	o.create = function ()
 	{
 		create();
+		this.m.Variant = this.Math.rand(1, 2);
+		this.updateVariant();
 		this.m.Description = "A long shaft with a sharp metal blade at the top.";
 		this.m.WeaponType = this.Const.Items.WeaponType.Sword | this.Const.Items.WeaponType.Polearm;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
@@ -20,6 +22,13 @@
 		this.m.RangeIdeal = 1;
 		this.m.RegularDamage = 35;
 		this.m.RegularDamageMax = 60;
+	}
+
+	function updateVariant()
+	{
+		this.m.IconLarge = "weapons/melee/goblin_spear_0" + this.m.Variant + ".png";
+		this.m.Icon = "weapons/melee/goblin_spear_0" + this.m.Variant + "_70x70.png";
+		this.m.ArmamentIcon = "icon_goblin_spear_0" + this.m.Variant;
 	}
 
 	o.onEquip = function ()

@@ -135,7 +135,7 @@ foreach (i in garbage)
 
 ::Const.Items.NamedMeleeWeapons.extend([
 	"weapons/named/named_fencing_sword",
-	"weapons/named/legend_named_flamberge,
+	"weapons/named/legend_named_flamberge",
 	"weapons/named/legend_named_longsword",
 	"weapons/named/legend_named_estoc",
 	"weapons/named/legend_named_glaive",

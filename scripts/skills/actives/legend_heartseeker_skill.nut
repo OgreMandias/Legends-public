@@ -5,8 +5,7 @@ this.legend_heartseeker_skill <- this.inherit("scripts/skills/skill", {
 	},
 	function create()
 	{
-		this.m.ID = "actives.legend_heartseeker";
-		this.m.Name = "Heartseeker";
+		::Legends.Actives.onCreate(this, ::Legends.Active.LegendHeartseeker);
 		this.m.Description = "Put your full weight in a thrust, targetting the enemy\'s weakpoints and inflicting terrible injuries.";
 		this.m.KilledString = "Pierced";
 		this.m.Icon = "skills/active_legend_heartseeker.png";

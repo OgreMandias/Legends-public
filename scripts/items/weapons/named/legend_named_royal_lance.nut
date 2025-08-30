@@ -63,14 +63,14 @@ this.legend_named_royal_lance <- this.inherit("scripts/items/weapons/named/named
 	function onEquip()
 	{
 		this.named_weapon.onEquip();
-		::Legends.Actives.grant(this, ::Legends.Active.Prong, function (_skill) {
+		::Legends.Actives.grant(this.weapon, ::Legends.Active.Prong, function (_skill) {
 			_skill.m.Icon = "skills/active_54.png";
 			_skill.m.IconDisabled = "skills/active_54_sw.png";
 			_skill.m.Overlay = "active_54";
 		}.bindenv(this));
-		::Legends.Actives.grant(this, ::Legends.Active.LegendHeartseeker, function (_skill) {
+		::Legends.Actives.grant(this.weapon, ::Legends.Active.LegendHeartseeker, function (_skill) {
 			_skill.m.IsTwoHanded = true;
-		});
+		}.bindenv(this));
 		::Legends.Actives.grant(this.weapon, ::Legends.Active.LegendSkewer, function (_skill)
 		{
 			_skill.m.Icon = "skills/skewer_spetum.png";
@@ -84,7 +84,7 @@ this.legend_named_royal_lance <- this.inherit("scripts/items/weapons/named/named
 			_skill.m.BaseAttackName = "Prong";
 			_skill.setFatigueCost(spearwall.getFatigueCostRaw() + 5);
 			_skill.m.ActionPointCost = 6;
-		});
+		}.bindenv(this));
 	}
 
 });

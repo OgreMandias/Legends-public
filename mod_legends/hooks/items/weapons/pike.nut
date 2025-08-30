@@ -19,15 +19,15 @@
 	o.onEquip = function()
 	{
 		this.weapon.onEquip();
-		::Legends.Actives.grant(this, ::Legends.Active.Impale, function (_skill) {
+		::Legends.Actives.grant(this.weapon, ::Legends.Active.Impale, function (_skill) {
 			_skill.m.Icon = "skills/active_54.png";
 			_skill.m.IconDisabled = "skills/active_54_sw.png";
 			_skill.m.Overlay = "active_54";
-		});
-		::Legends.Actives.grant(this, ::Legends.Active.LegendHeartseeker, function (_skill) {
+		}.bindenv(this));
+		::Legends.Actives.grant(this.weapon, ::Legends.Active.LegendHeartseeker, function (_skill) {
 			_skill.m.IsPolearm = true;
-		});
-		::Legends.Actives.grant(this, ::Legends.Active.Repel);
+		}.bindenv(this));
+		::Legends.Actives.grant(this.weapon, ::Legends.Active.Repel);
 	}
 
 });

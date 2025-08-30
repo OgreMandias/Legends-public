@@ -41,7 +41,7 @@
 	return ::Legends.EventList.changeStat(_bro.getName(), _value, "ui/icons/ranged_defense.png", "Ranged Defense");
 }
 
-::Legends.EventList.changeMeleeDefense <- function (_bro, _value) {
+::Legends.EventList.changeInitiative <- function (_bro, _value) {
 	return ::Legends.EventList.changeStat(_bro.getName(), _value, "ui/icons/initiative.png", "Initiative");
 }
 

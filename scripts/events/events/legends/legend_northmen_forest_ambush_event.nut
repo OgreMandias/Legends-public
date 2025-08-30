@@ -169,11 +169,7 @@ this.legend_northmen_forest_ambush_event <- this.inherit("scripts/events/event",
 				_event.m.Barbarian.getBaseProperties().Bravery += bravery;
 				_event.m.Barbarian.improveMood(1.0, "prevented a bloodbath in the woods");
 				_event.m.Barbarian.getSkills().update();
-				this.List.push({
-					id = 16,
-					icon = "ui/icons/bravery.png",
-					text = _event.m.Barbarian.getName() + " gains [color=" + this.Const.UI.Color.PositiveEventValue + "]+" + bravery + "[/color] Resolve"
-				});
+				this.List.push(::Legends.EventList.changeResolve(_event.m.Barbarian, bravery));
 				this.World.Assets.getStash().add(item);
 				this.List.push({
 					id = 10,
@@ -229,21 +225,12 @@ this.legend_northmen_forest_ambush_event <- this.inherit("scripts/events/event",
 				local bravery = this.Math.rand(4, 6);
 				_event.m.Wildman.getBaseProperties().Bravery += bravery;
 				_event.m.Wildman.getSkills().update();
-				this.List.push({
-					id = 16,
-					icon = "ui/icons/bravery.png",
-					text = _event.m.Wildman.getName() + " gains [color=" + this.Const.UI.Color.PositiveEventValue + "]+" + bravery + "[/color] Resolve"
-				});
+				this.List.push(::Legends.EventList.changeResolve(_event.m.Wildman, bravery));
 				_event.m.Wildman.improveMood(2.0, "Had a good time");
 				_event.m.Wildman.addLightInjury();
 
-				if (_event.m.Wildman.getMoodState() >= this.Const.MoodState.Neutral)
-				{
-					this.List.push({
-						id = 10,
-						icon = this.Const.MoodStateIcon[_event.m.Wildman.getMoodState()],
-						text = _event.m.Wildman.getName() + this.Const.MoodStateEvent[_event.m.Wildman.getMoodState()]
-					});
+				if (_event.m.Wildman.getMoodState() >= this.Const.MoodState.Neutral) {
+					this.List.push(::Legends.EventList.changeMood(_event.m.Wildman));
 				}
 			}
 
@@ -272,25 +259,12 @@ this.legend_northmen_forest_ambush_event <- this.inherit("scripts/events/event",
 				_event.m.MasterArcher.getBaseProperties().Bravery += bravery;
 				_event.m.MasterArcher.getBaseProperties().Initiative += initiative;
 				_event.m.MasterArcher.getSkills().update();
-				this.List.push({
-					id = 16,
-					icon = "ui/icons/bravery.png",
-					text = _event.m.MasterArcher.getName() + " gains [color=" + this.Const.UI.Color.PositiveEventValue + "]+" + bravery + "[/color] Resolve"
-				});
-				this.List.push({
-					id = 16,
-					icon = "ui/icons/initiative.png",
-					text = _event.m.MasterArcher.getName() + " gains [color=" + this.Const.UI.Color.PositiveEventValue + "]+" + initiative + "[/color] Initiative"
-				});
+				this.List.push(::Legends.EventList.changeResolve(_event.m.MasterArcher, bravery));
+				this.List.push(::Legends.EventList.changeInitiative(_event.m.MasterArcher, initiative));
 				_event.m.MasterArcher.improveMood(1.0, "Evaded a patrol");
 
-				if (_event.m.MasterArcher.getMoodState() >= this.Const.MoodState.Neutral)
-				{
-					this.List.push({
-						id = 10,
-						icon = this.Const.MoodStateIcon[_event.m.MasterArcher.getMoodState()],
-						text = _event.m.MasterArcher.getName() + this.Const.MoodStateEvent[_event.m.MasterArcher.getMoodState()]
-					});
+				if (_event.m.MasterArcher.getMoodState() >= this.Const.MoodState.Neutral) {
+					this.List.push(::Legends.EventList.changeMood(_event.m.MasterArcher));
 				}
 			}
 
@@ -334,25 +308,12 @@ this.legend_northmen_forest_ambush_event <- this.inherit("scripts/events/event",
 				_event.m.Assassin.getBaseProperties().Bravery += bravery;
 				_event.m.Assassin.getBaseProperties().Initiative += initiative;
 				_event.m.Assassin.getSkills().update();
-				this.List.push({
-					id = 16,
-					icon = "ui/icons/bravery.png",
-					text = _event.m.Assassin.getName() + " gains [color=" + this.Const.UI.Color.PositiveEventValue + "]+" + bravery + "[/color] Resolve"
-				});
-				this.List.push({
-					id = 16,
-					icon = "ui/icons/initiative.png",
-					text = _event.m.Assassin.getName() + " gains [color=" + this.Const.UI.Color.PositiveEventValue + "]+" + initiative + "[/color] Initiative"
-				});
+				this.List.push(::Legends.EventList.changeResolve(_event.m.Assassin, bravery));
+				this.List.push(::Legends.EventList.changeInitiative(_event.m.Assassin, initiative));
 				_event.m.Assassin.improveMood(1.0, "Outsmarted a raiding party");
 
-				if (_event.m.Assassin.getMoodState() >= this.Const.MoodState.Neutral)
-				{
-					this.List.push({
-						id = 10,
-						icon = this.Const.MoodStateIcon[_event.m.Assassin.getMoodState()],
-						text = _event.m.Assassin.getName() + this.Const.MoodStateEvent[_event.m.Assassin.getMoodState()]
-					});
+				if (_event.m.Assassin.getMoodState() >= this.Const.MoodState.Neutral) {
+					this.List.push(::Legends.EventList.changeMood(_event.m.Assassin));
 				}
 			}
 

@@ -20,7 +20,9 @@
 	{
 		this.weapon.onEquip();
 		::Legends.Actives.grant(this, ::Legends.Active.Prong);
-		::Legends.Actives.grant(this, ::Legends.Active.LegendHeartseeker);
+		::Legends.Actives.grant(this, ::Legends.Active.LegendHeartseeker, function (_skill) {
+			_skill.m.IsTwoHanded = true;
+		});
 		::Legends.Actives.grant(this, ::Legends.Active.Spearwall, function (_skill) {
 			_skill.m.Icon = "skills/active_124.png";
 			_skill.m.IconDisabled = "skills/active_124_sw.png";

@@ -1,6 +1,7 @@
 this.legend_heartseeker_skill <- this.inherit("scripts/skills/skill", {
 	m = {
-		IsPolearm = false
+		IsPolearm = false,
+		IsTwoHanded = false
 	},
 	function create()
 	{
@@ -39,11 +40,14 @@ this.legend_heartseeker_skill <- this.inherit("scripts/skills/skill", {
 		this.m.MaxRange = 1;
 		if (this.m.IsPolearm)
 		{
-			this.m.MinRange = 1;
-			this.m.MaxRange = 2;
 			this.m.FatigueCost = 25;
 			this.m.ActionPointCost = 7;
 			this.m.DirectDamageMult = 0.5;
+		}
+		if (this.m.IsTwoHanded)
+		{
+			this.m.FatigueCost = 25;
+			this.m.ActionPointCost = 7;
 		}
 	}
 
@@ -67,6 +71,7 @@ this.legend_heartseeker_skill <- this.inherit("scripts/skills/skill", {
 		{
 			this.m.FatigueCostMult = _properties.IsSpecializedInPolearms ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 			this.m.ActionPointCost = _properties.IsSpecializedInPolearms ? 6 : 7;
+			return;
 		}
 		else
 		{
@@ -85,6 +90,10 @@ this.legend_heartseeker_skill <- this.inherit("scripts/skills/skill", {
 		if (_skill == this)
 		{
 			_properties.ThresholdToInflictInjuryMult *= 0.5;
+			if (!this.m.IsPolearm && _properties.IsSpecializedInSpears)
+			{
+				_properties.DirectDamageAdd += 0.05;
+			}
 		}
 	}
 

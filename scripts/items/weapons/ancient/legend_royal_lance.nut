@@ -23,7 +23,7 @@ this.legend_royal_lance <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamage = 65;
 		this.m.RegularDamageMax = 85;
 		this.m.ArmorDamageMult = 1.0;
-		this.m.DirectDamageMult = 0.35;
+		this.m.DirectDamageMult = 0.25;
 		this.m.ChanceToHitHead = 5;
 	}
 
@@ -42,7 +42,9 @@ this.legend_royal_lance <- this.inherit("scripts/items/weapons/weapon", {
 			_skill.m.IconDisabled = "skills/active_54_sw.png";
 			_skill.m.Overlay = "active_54";
 		}.bindenv(this));
-		::Legends.Actives.grant(this, ::Legends.Active.LegendHeartseeker);
+		::Legends.Actives.grant(this, ::Legends.Active.LegendHeartseeker, function (_skill) {
+			_skill.m.IsTwoHanded = true;
+		});
 		::Legends.Actives.grant(this.weapon, ::Legends.Active.LegendSkewer, function (_skill)
 		{
 			_skill.m.Icon = "skills/skewer_spetum.png";

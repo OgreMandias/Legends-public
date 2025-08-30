@@ -25,7 +25,7 @@ this.legend_military_crypt_cleaver <- this.inherit("scripts/items/weapons/weapon
 		this.m.RegularDamage = 70;
 		this.m.RegularDamageMax = 90;
 		this.m.ArmorDamageMult = 1.3;
-		this.m.DirectDamageMult = 0.05;
+		this.m.DirectDamageAdd = 0.05;
 	}
 
 	function onEquip()
@@ -35,6 +35,9 @@ this.legend_military_crypt_cleaver <- this.inherit("scripts/items/weapons/weapon
 			_skill.m.FatigueCost = 20;
 		}.bindenv(this));
 		::Legends.Actives.grant(this, ::Legends.Active.Decapitate);
-		::Legends.Actives.grant(this, ::Legends.Active.SplitShield);
+		// ::Legends.Actives.grant(this, ::Legends.Active.Swing);
+		::Legends.Actives.grant(this, ::Legends.Active.SplitShield, function (_skill) {
+			_skill.m.FatigueCost = 10;
+		}.bindenv(this));
 	}
 });

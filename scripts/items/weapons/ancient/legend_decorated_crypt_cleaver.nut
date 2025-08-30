@@ -25,7 +25,7 @@ this.legend_decorated_crypt_cleaver <- this.inherit("scripts/items/weapons/weapo
 		this.m.RegularDamage = 55;
 		this.m.RegularDamageMax = 75;
 		this.m.ArmorDamageMult = 1.1;
-		this.m.DirectDamageMult = 0.15;
+		this.m.DirectDamageAdd = 0.15;
 		this.m.Bravery = 10;
 	}
 
@@ -37,6 +37,8 @@ this.legend_decorated_crypt_cleaver <- this.inherit("scripts/items/weapons/weapo
 		}.bindenv(this));
 		::Legends.Actives.grant(this, ::Legends.Active.Decapitate);
 		// ::Legends.Actives.grant(this, ::Legends.Active.Swing);
-		::Legends.Actives.grant(this, ::Legends.Active.SplitShield);
+		::Legends.Actives.grant(this, ::Legends.Active.SplitShield, function (_skill) {
+			_skill.m.FatigueCost = 5;
+		}.bindenv(this));
 	}
 });

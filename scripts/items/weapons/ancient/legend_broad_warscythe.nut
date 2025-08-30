@@ -28,7 +28,7 @@ this.legend_broad_warscythe <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamage = 55;
 		this.m.RegularDamageMax = 105;
 		this.m.ArmorDamageMult = 1.0;
-		this.m.DirectDamageMult = 0.05;
+		this.m.DirectDamageAdd = 0.05;
 		this.m.ChanceToHitHead = 5;
 		this.m.FatigueOnSkillUse = 5;
 	}

@@ -28,7 +28,7 @@ this.legend_honed_warscythe <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamage = 40;
 		this.m.RegularDamageMax = 50;
 		this.m.ArmorDamageMult = 1.0;
-		this.m.DirectDamageMult = 0.05;
+		this.m.DirectDamageAdd = 0.05;
 		this.m.ChanceToHitHead = 15;
 	}
 

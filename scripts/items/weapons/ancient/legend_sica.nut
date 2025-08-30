@@ -24,7 +24,7 @@ this.legend_sica <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamage = 30;
 		this.m.RegularDamageMax = 40;
 		this.m.ArmorDamageMult = 0.85;
-		this.m.DirectDamageMult = 0.25;
+		this.m.DirectDamageAdd = 0.25;
 	}
 
 	function onEquip()

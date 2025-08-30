@@ -25,7 +25,7 @@ this.legend_military_rhomphaia <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamage = 60;
 		this.m.RegularDamageMax = 70;
 		this.m.ArmorDamageMult = 1.1;
-		this.m.DirectDamageMult = 0.1;
+		this.m.DirectDamageAdd = 0.1;
 		this.m.ChanceToHitHead = 10;
 	}
 

@@ -1,5 +1,7 @@
 this.legend_decorated_rhomphaia <- this.inherit("scripts/items/weapons/weapon", {
-	m = {},
+	m = {
+		Bravery = 5
+	},
 	function create()
 	{
 		this.weapon.create();
@@ -28,7 +30,13 @@ this.legend_decorated_rhomphaia <- this.inherit("scripts/items/weapons/weapon", 
 		this.m.DirectDamageMult = 0.2;
 		this.m.DirectDamageAdd = 0.15;
 		this.m.ChanceToHitHead = 5;
-		// this.m.Bravery = 10;
+	}
+
+	function onUpdateProperties ( _properties )
+	{
+		if (!this.isScenarioMode() && this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+		this.weapon.onUpdateProperties(_properties);
+		_properties.Bravery += this.m.Bravery;
 	}
 
 	function onEquip()

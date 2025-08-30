@@ -24,7 +24,6 @@ this.legend_broken_spatha <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamageMax = 45;
 		this.m.ArmorDamageMult = 0.7;
 		this.m.DirectDamageMult = 0.2;
-		this.m.ShieldDamage = 5;
 	}
 
 	function onEquip()

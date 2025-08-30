@@ -1,5 +1,7 @@
 this.legend_decorated_crypt_cleaver <- this.inherit("scripts/items/weapons/weapon", {
-	m = {},
+	m = {
+		Bravery = 10
+	},
 	function create()
 	{
 		this.weapon.create();
@@ -27,7 +29,13 @@ this.legend_decorated_crypt_cleaver <- this.inherit("scripts/items/weapons/weapo
 		this.m.ArmorDamageMult = 1.1;
 		this.m.DirectDamageMult = 0.2;
 		this.m.DirectDamageAdd = 0.15;
-		// this.m.Bravery = 10;
+	}
+
+	function onUpdateProperties ( _properties )
+	{
+		if (!this.isScenarioMode() && this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+		this.weapon.onUpdateProperties(_properties);
+		_properties.Bravery += this.m.Bravery;
 	}
 
 	function onEquip()

@@ -15,7 +15,7 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 		this.m.DescriptionTemplates = [
 			"Bandits want to procure an item, but as outlaws they cannot enter town.",
 			"Local criminal is in dire need of new equipment. You can help them smuggle goods.",
-			"Mysterious cargo, back alley handovers- honest pay for dishonest work."
+			"Mysterious cargo, back alley handovers - honest pay for dishonest work."
 		];
 	}
 
@@ -326,10 +326,9 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 		this.m.Screens.push({
 			ID = "Ambush",
 			Title = "At bandit camp...",
-			Text = ::format("[img]gfx/ui/events/event_05.png[/img]{%s | %s | %s}",
+			Text = ::format("[img]gfx/ui/events/event_05.png[/img]{%s | %s}",
 				"You arrive at the camp, package in hand — but you're not alone. Steel flashes from the treeline as enemies pour in. %SPEECH_ON%You bastards, lay down your arms and surrender the contraband!%SPEECH_OFF%",
-				"As you hand the package to %employer%'s hands, a rustling sounds come from nearby bushes. %SPEECH_ON%Thought you could smuggle goods into outlaw hands under our noses and get away with it? Get them all!%SPEECH_OFF%",
-				"As you near the camp, several figures approach with steel at the ready. (BROTHER NAME) reaches for their weapon, but stops as one of the bandits speak. %SPEECH_ON%You have it?%SPEECH_OFF% A nod and gesture to the package in your arms disarms any tension. They produce a purse, tossing it your way. You catch it as you set the package on the floor. %SPEECH_ON%As agreed, its (CONTRACT PAYMENT) crowns. Now, if you don’t mind.%SPEECH_OFF% They look away from the camp, then back to you. %SPEECH_ON%Piss off.%SPEECH_OFF%"
+				"As you hand the package to %employer%'s hands, a rustling sounds come from nearby bushes. %SPEECH_ON%Thought you could smuggle goods into outlaw hands under our noses and get away with it? Get them all!%SPEECH_OFF%"
 			),
 			Image = "",
 			Characters = [],
@@ -348,7 +347,10 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 		this.m.Screens.push({
 			ID = "Success",
 			Title = "At bandit camp...",
-			Text = "[img]gfx/ui/events/event_05.png[/img]{You hand over the package over to the %employer%.%SPEECH_ON%Give me that and scram.%SPEECH_OFF%You leave the camp, wondering if you really did the right thing.}",
+			Text = ::format("[img]gfx/ui/events/event_05.png[/img]{%s | %s}",
+				"You hand over the package over to the %employer%.%SPEECH_ON%Give me that and scram.%SPEECH_OFF%You leave the camp, wondering if you really did the right thing.",
+				"As you near the camp, several figures approach with steel at the ready. %randombrother% reaches for their weapon, but stops as one of the bandits speak. %SPEECH_ON%You have it?%SPEECH_OFF% A nod and gesture to the package in your arms disarms any tension. They produce a purse, tossing it your way. You catch it as you set the package on the floor. %SPEECH_ON%As agreed, it's %reward_count% crowns. Now, if you don’t mind.%SPEECH_OFF% They look away from the camp, then back to you. %SPEECH_ON%Piss off.%SPEECH_OFF%"
+			)
 			Image = "",
 			Characters = [],
 			List = [],

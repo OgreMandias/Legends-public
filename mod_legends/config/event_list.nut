@@ -1,6 +1,8 @@
 ::Legends.EventList <- {
 	StatGain = "%s gains [color=%s]+%d[/color] %s",
-	StatLose = "%s loses [color=%s]-%d[/color] %s"
+	StatLose = "%s loses [color=%s]-%d[/color] %s",
+	LightWound = "%s suffers light wounds",
+	Injury = "%s suffers %s",
 }
 
 ::Legends.EventList.changeStat <- function (_name, _value, _icon, _skill) {
@@ -51,4 +53,23 @@
 		icon = ::Const.MoodStateIcon[_bro.getMoodState()],
 		text = _bro.getName() + ::Const.MoodStateEvent[_bro.getMoodState()]
 	}
+}
+
+
+::Legends.EventList.addInjury <- function (_bro, _injuryConst) {
+	local injury = _bro.addInjury(_injuryConst);
+	return {
+		id = 10,
+		icon = injury.getIcon(),
+		text = ::format(::Legends.EventList.Injury, _bro.getName(), injury.getNameOnly())
+	};
+}
+
+::Legends.EventList.addLightInjury <- function (_bro) {
+	_bro.addLightInjury();
+	return {
+		id = 10,
+		icon = "ui/icons/days_wounded.png",
+		text = ::format(::Legends.EventList.LightWound, _bro.getName())
+	};
 }

@@ -226,12 +226,8 @@ this.legend_northmen_forest_ambush_event <- this.inherit("scripts/events/event",
 				_event.m.Wildman.getBaseProperties().Bravery += bravery;
 				_event.m.Wildman.getSkills().update();
 				this.List.push(::Legends.EventList.changeResolve(_event.m.Wildman, bravery));
-				_event.m.Wildman.improveMood(2.0, "Had a good time");
-				_event.m.Wildman.addLightInjury();
-
-				if (_event.m.Wildman.getMoodState() >= this.Const.MoodState.Neutral) {
-					this.List.push(::Legends.EventList.changeMood(_event.m.Wildman));
-				}
+				this.List.push(::Legends.EventList.addLightInjury(_event.m.Wildman));
+				this.List.push(::Legends.EventList.changeMood(_event.m.Wildman, 2.0, "Had a good time"));
 			}
 
 		});
@@ -261,11 +257,7 @@ this.legend_northmen_forest_ambush_event <- this.inherit("scripts/events/event",
 				_event.m.MasterArcher.getSkills().update();
 				this.List.push(::Legends.EventList.changeResolve(_event.m.MasterArcher, bravery));
 				this.List.push(::Legends.EventList.changeInitiative(_event.m.MasterArcher, initiative));
-				_event.m.MasterArcher.improveMood(1.0, "Evaded a patrol");
-
-				if (_event.m.MasterArcher.getMoodState() >= this.Const.MoodState.Neutral) {
-					this.List.push(::Legends.EventList.changeMood(_event.m.MasterArcher));
-				}
+				this.List.push(::Legends.EventList.changeMood(_event.m.MasterArcher, 1.0, "Evaded a patrol"));
 			}
 
 		});
@@ -310,11 +302,7 @@ this.legend_northmen_forest_ambush_event <- this.inherit("scripts/events/event",
 				_event.m.Assassin.getSkills().update();
 				this.List.push(::Legends.EventList.changeResolve(_event.m.Assassin, bravery));
 				this.List.push(::Legends.EventList.changeInitiative(_event.m.Assassin, initiative));
-				_event.m.Assassin.improveMood(1.0, "Outsmarted a raiding party");
-
-				if (_event.m.Assassin.getMoodState() >= this.Const.MoodState.Neutral) {
-					this.List.push(::Legends.EventList.changeMood(_event.m.Assassin));
-				}
+				this.List.push(::Legends.EventList.changeMood(_event.m.Assassin, 1.0, "Outsmarted a raiding party"));
 			}
 
 		});

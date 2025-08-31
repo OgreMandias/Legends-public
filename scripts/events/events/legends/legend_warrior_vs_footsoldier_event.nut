@@ -36,14 +36,10 @@ this.legend_warrior_vs_footsoldier_event <- this.inherit("scripts/events/event",
 				_event.m.noble1h.getSkills().update();
 				_event.m.noble2h.getSkills().update();
 
-					//1 hander
-				_event.m.noble1h.improveMood(1.0, "Bonded with " + _event.m.noble2h.getName());
-				this.List.push(::Legends.EventList.changeMood(_event.m.noble1h));
+				this.List.push(::Legends.EventList.changeMood(_event.m.noble1h, 1.0, "Bonded with " + _event.m.noble2h.getName()));
 				this.List.push(::Legends.EventList.changeMeleeSkill(_event.m.noble1h, meleeSkill));
 
-					//2 hander
-				_event.m.noble2h.improveMood(1.0, "Bonded with " + _event.m.noble1h.getName());
-				this.List.push(::Legends.EventList.changeMood(_event.m.noble2h));
+				this.List.push(::Legends.EventList.changeMood(_event.m.noble2h, 1.0, "Bonded with " + _event.m.noble1h.getName()));
 				this.List.push(::Legends.EventList.changeMeleeDefense(_event.m.noble2h, meleeDefense));
 			}
 

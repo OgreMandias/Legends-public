@@ -55,15 +55,12 @@ this.legend_ironmonger_offends_blacksmith_event <- this.inherit("scripts/events/
 				local statRoll = ::Math.rand(1, 2);
 				_event.m.Blacksmith.getBaseProperties().MeleeSkill += statRoll;
 				this.List.push(::Legends.EventList.changeMeleeSkill(_event.m.Blacksmith, statRoll));
-
 				this.List.push(::Legends.EventList.addLightInjury(_event.m.Blacksmith));
-				_event.m.Blacksmith.improveMood(1.5, "Was supported in their fight with the ironmonger.");
-				this.List.push(::Legends.EventList.changeMood(_event.m.Blacksmith));
+				this.List.push(::Legends.EventList.changeMood(_event.m.Blacksmith, 1.5, "Was supported in their fight with the ironmonger."));
 
 				this.List.push(::Legends.EventList.addInjury(_event.m.Ironmonger, ::Const.Injury.Brawl));
 				this.List.push(::Legends.EventList.addLightInjury(_event.m.Ironmonger));
-				_event.m.Ironmonger.worsenMood(1.5, "Was beaten and humiliated in front of the company.");
-				this.List.push(::Legends.EventList.changeMood(_event.m.Ironmonger));
+				this.List.push(::Legends.EventList.changeMood(_event.m.Ironmonger, -1.5, "Was beaten and humiliated in front of the company."));
 				repairItems(this);
 			}
 		});
@@ -87,8 +84,7 @@ this.legend_ironmonger_offends_blacksmith_event <- this.inherit("scripts/events/
 				this.Characters.push(_event.m.Ironmonger.getImagePath());
 
 				this.List.push(::Legends.EventList.addLightInjury(_event.m.Blacksmith));
-				_event.m.Blacksmith.worsenMood(1.0, "Was humiliated in their fight with the ironmonger.");
-				this.List.push(::Legends.EventList.changeMood(_event.m.Blacksmith));
+				this.List.push(::Legends.EventList.changeMood(_event.m.Blacksmith, -1.0, "Was humiliated in their fight with the ironmonger."));
 
 				local statRoll = ::Math.rand(1, 2);
 				_event.m.Ironmonger.getBaseProperties().MeleeDefense += statRoll;
@@ -96,8 +92,7 @@ this.legend_ironmonger_offends_blacksmith_event <- this.inherit("scripts/events/
 
 				this.List.push(::Legends.EventList.addInjury(_event.m.Ironmonger, ::Const.Injury.Brawl));
 				this.List.push(::Legends.EventList.addLightInjury(_event.m.Ironmonger));
-				_event.m.Ironmonger.improveMood(1.0, "Was supported in their fight against the blacksmith.");
-				this.List.push(::Legends.EventList.changeMood(_event.m.Ironmonger));
+				this.List.push(::Legends.EventList.changeMood(_event.m.Ironmonger, 1.0, "Was supported in their fight against the blacksmith."));
 
 				repairItems(this);
 			}
@@ -121,12 +116,10 @@ this.legend_ironmonger_offends_blacksmith_event <- this.inherit("scripts/events/
 				this.Characters.push(_event.m.Ironmonger.getImagePath());
 
 				this.List.push(::Legends.EventList.addLightInjury(_event.m.Blacksmith));
-				_event.m.Blacksmith.worsenMood(0.5, "Unsatisfied with the captain\'s decision.");
-				this.List.push(::Legends.EventList.changeMood(_event.m.Blacksmith));
+				this.List.push(::Legends.EventList.changeMood(_event.m.Blacksmith, -0.5, "Unsatisfied with the captain\'s decision."));
 
 				this.List.push(::Legends.EventList.addLightInjury(_event.m.Ironmonger));
-				_event.m.Ironmonger.worsenMood(0.5, "Unsatisfied with the captain\'s decision.");
-				this.List.push(::Legends.EventList.changeMood(_event.m.Ironmonger));
+				this.List.push(::Legends.EventList.changeMood(_event.m.Ironmonger, -0.5, "Unsatisfied with the captain\'s decision."));
 
 				repairItems(this);
 			}

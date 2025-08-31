@@ -47,7 +47,11 @@
 	return ::Legends.EventList.changeStat(_bro.getName(), _value, "ui/icons/initiative.png", "Initiative");
 }
 
-::Legends.EventList.changeMood <- function (_bro) {
+::Legends.EventList.changeMood <- function (_bro, _value = 0, _cause = "") {
+	if (_value > 0)
+		_bro.improveMood(_value, _cause);
+	else if (value < 0)
+		_bro.worsenMood(_value * -1.0, _cause);
 	return {
 		id = 10,
 		icon = ::Const.MoodStateIcon[_bro.getMoodState()],

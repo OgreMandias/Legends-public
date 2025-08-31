@@ -44,11 +44,8 @@ this.legend_butcher_vs_donkey <- this.inherit("scripts/events/event", {
 						text = _event.m.Butcher.getName() + " suffers light wounds"
 					});
 				}
-
-				_event.m.Butcher.worsenMood(0.5, "Kicked by the " + _event.m.Donkey.getName());
-				this.List.push(::Legends.EventList.changeMood(_event.m.Butcher));
-				_event.m.Donkey.worsenMood(1.0, "Frighten for his death");
-				this.List.push(::Legends.EventList.changeMood(_event.m.Donkey));
+				this.List.push(::Legends.EventList.changeMood(_event.m.Butcher, -0.5, "Kicked by the " + _event.m.Donkey.getName()));
+				this.List.push(::Legends.EventList.changeMood(_event.m.Donkey, -1.0, "Frighten for his death"));
 			}
 
 		});

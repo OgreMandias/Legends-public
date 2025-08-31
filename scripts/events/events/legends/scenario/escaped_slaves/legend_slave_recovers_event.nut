@@ -68,8 +68,7 @@ this.legend_slave_recovers_event <- this.inherit("scripts/events/event", {
 				this.List.push(::Legends.EventList.changeFatigue(dude, fatigueRoll));
 				this.List.push(::Legends.EventList.changeResolve(dude, resolveRoll));
 				this.List.push(::Legends.EventList.changeInitiative(dude, initiativeRoll));
-				dude.improveMood(1.0, "Has found a sense of purpose in life");
-				this.List.push(::Legends.EventList.changeMood(dude));
+				this.List.push(::Legends.EventList.changeMood(dude, 1.0, "Has found a sense of purpose in life"));
 			}
 		});
 	}

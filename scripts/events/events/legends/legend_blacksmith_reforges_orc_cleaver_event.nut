@@ -81,10 +81,7 @@ this.legend_blacksmith_reforges_orc_cleaver_event <- this.inherit("scripts/event
 					icon = "ui/items/" + itemnamed.getIcon(),
 					text = "You gain " + this.Const.Strings.getArticle(itemnamed.getName()) + itemnamed.getName()
 				});
-
-				_event.m.Blacksmith.improveMood(1.5, "Reforged a primitive weapon");
-				this.List.push(::Legends.EventList.changeMood(_event.m.Blacksmith));
-
+				this.List.push(::Legends.EventList.changeMood(_event.m.Blacksmith, 1.5, "Reforged a primitive weapon"));
 			}
 
 		});
@@ -121,8 +118,7 @@ this.legend_blacksmith_reforges_orc_cleaver_event <- this.inherit("scripts/event
 					icon = "ui/items/" + item.getIcon(),
 					text = "You lose " + this.Const.Strings.getArticle(item.getName()) + item.getName()
 				});
-				_event.m.Blacksmith.worsenMood(1.0, "Failed to reforge a weapon");
-				this.List.push(::Legends.EventList.changeMood(_event.m.Blacksmith));
+				this.List.push(::Legends.EventList.changeMood(_event.m.Blacksmith, -1.0, "Failed to reforge a weapon"));
 			}
 		});
 	}

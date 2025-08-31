@@ -96,11 +96,7 @@ this.legend_blacksmith_craft_armor <- this.inherit("scripts/events/event", {
 					icon = "ui/items/" + item.getIcon(),
 					text = "You gain " + item.getName()
 				});
-				_event.m.Blacksmith.improveMood(2.0, "Created a masterwork Armor");
-
-				if (_event.m.Blacksmith.getMoodState() >= this.Const.MoodState.Neutral) {
-					this.List.push(::Legends.EventList.changeMood(_event.m.Blacksmith));
-				}
+				this.List.push(::Legends.EventList.changeMood(_event.m.Blacksmith, 2.0, "Created a masterwork Armor"));
 			}
 
 		});
@@ -197,11 +193,7 @@ this.legend_blacksmith_craft_armor <- this.inherit("scripts/events/event", {
 					icon = "ui/items/" + item.getIcon(),
 					text = "You gain " + item.getName()
 				});
-				_event.m.Blacksmith.improveMood(2.0, "Created a masterwork Armor");
-
-				if (_event.m.Blacksmith.getMoodState() >= this.Const.MoodState.Neutral) {
-					this.List.push(::Legends.EventList.changeMood(_event.m.Blacksmith));
-				}
+				this.List.push(::Legends.EventList.changeMood(_event.m.Blacksmith, 2.0, "Created a masterwork Armor"));
 			}
 
 		});

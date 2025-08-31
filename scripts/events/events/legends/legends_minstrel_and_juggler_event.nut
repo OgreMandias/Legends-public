@@ -36,9 +36,8 @@ this.legends_minstrel_and_juggler_event <- this.inherit("scripts/events/event", 
 					r = this.Math.rand(1, 2);
 					if (r == 1)
 					{
-						_event.m.Minstrel.getBaseProperties().RangedDefense += 1;
-						_event.m.Minstrel.getSkills().update();
 						this.List.push(::Legends.EventList.changeRangedDefense(_event.m.Minstrel, 1));
+						_event.m.Minstrel.getSkills().update();
 					}
 					else
 					{
@@ -56,9 +55,8 @@ this.legends_minstrel_and_juggler_event <- this.inherit("scripts/events/event", 
 					r = this.Math.rand(1, 3);
 					if (r == 1)
 					{
-						_event.m.Juggler.getBaseProperties().RangedSkill += 1;
-						_event.m.Juggler.getSkills().update();
 						this.List.push(::Legends.EventList.changeRangedSkill(_event.m.Juggler, 1));
+						_event.m.Juggler.getSkills().update();
 					}
 
 					local brothers = this.World.getPlayerRoster().getAll();
@@ -72,8 +70,8 @@ this.legends_minstrel_and_juggler_event <- this.inherit("scripts/events/event", 
 						r = this.Math.rand(1, 20);
 						if (r == 1)
 						{
-							bro.getBaseProperties().RangedDefense += 1;
 							this.List.push(::Legends.EventList.changeRangedDefense(bro, 1));
+							bro.getSkills().update();
 						}
 						if (r == 2)
 						{

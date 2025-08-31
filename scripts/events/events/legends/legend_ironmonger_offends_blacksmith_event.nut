@@ -52,11 +52,10 @@ this.legend_ironmonger_offends_blacksmith_event <- this.inherit("scripts/events/
 				this.Characters.push(_event.m.Blacksmith.getImagePath());
 				this.Characters.push(_event.m.Ironmonger.getImagePath());
 
-				local statRoll = ::Math.rand(1, 2);
-				_event.m.Blacksmith.getBaseProperties().MeleeSkill += statRoll;
-				this.List.push(::Legends.EventList.changeMeleeSkill(_event.m.Blacksmith, statRoll));
+				this.List.push(::Legends.EventList.changeMeleeSkill(_event.m.Blacksmith, ::Math.rand(1, 2)));
 				this.List.push(::Legends.EventList.addLightInjury(_event.m.Blacksmith));
 				this.List.push(::Legends.EventList.changeMood(_event.m.Blacksmith, 1.5, "Was supported in their fight with the ironmonger."));
+				_event.m.Blacksmith.getSkills().update();
 
 				this.List.push(::Legends.EventList.addInjury(_event.m.Ironmonger, ::Const.Injury.Brawl));
 				this.List.push(::Legends.EventList.addLightInjury(_event.m.Ironmonger));
@@ -86,13 +85,11 @@ this.legend_ironmonger_offends_blacksmith_event <- this.inherit("scripts/events/
 				this.List.push(::Legends.EventList.addLightInjury(_event.m.Blacksmith));
 				this.List.push(::Legends.EventList.changeMood(_event.m.Blacksmith, -1.0, "Was humiliated in their fight with the ironmonger."));
 
-				local statRoll = ::Math.rand(1, 2);
-				_event.m.Ironmonger.getBaseProperties().MeleeDefense += statRoll;
-				this.List.push(::Legends.EventList.changeMeleeDefense(_event.m.Ironmonger, statRoll));
-
+				this.List.push(::Legends.EventList.changeMeleeDefense(_event.m.Ironmonger, ::Math.rand(1, 2)));
 				this.List.push(::Legends.EventList.addInjury(_event.m.Ironmonger, ::Const.Injury.Brawl));
 				this.List.push(::Legends.EventList.addLightInjury(_event.m.Ironmonger));
 				this.List.push(::Legends.EventList.changeMood(_event.m.Ironmonger, 1.0, "Was supported in their fight against the blacksmith."));
+				_event.m.Ironmonger.getSkills().update();
 
 				repairItems(this);
 			}

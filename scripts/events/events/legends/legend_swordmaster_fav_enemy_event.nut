@@ -341,19 +341,14 @@ this.legend_swordmaster_fav_enemy_event <- this.inherit("scripts/events/event", 
 
 				if (_event.m.Champion.getBaseProperties().MeleeSkill < 100)
 				{
-					local meleeSkill = this.Math.rand(1, 3);
-					_event.m.Champion.getBaseProperties().MeleeSkill += meleeSkill;
 					_event.m.Champion.improveMood(0.5, "Improved his skills though duel");
-					this.List.push(::Legends.EventList.changeMeleeSkill(_event.m.Houndmaster));
-					::Legends.EventList.changeMeleeSkill(_event.m.Champion, meleeSkill);
+					this.List.push(::Legends.EventList.changeMeleeSkill(_event.m.Champion, ::Math.rand(1, 3)));
 				}
 
 				if (_event.m.Champion.getBaseProperties().MeleeDefense < 50)
 				{
-					local meleeDefense = this.Math.rand(1, 3);
-					_event.m.Champion.getBaseProperties().MeleeDefense += meleeDefense;
 					_event.m.Champion.improveMood(0.5, "Improved his skills though duel");
-					::Legends.EventList.changeMeleeDefense(_event.m.Champion, meleeDefense);
+					::Legends.EventList.changeMeleeDefense(_event.m.Champion, ::Math.rand(1, 3));
 				}
 
 				if (_event.m.Champion.getMoodState() >= this.Const.MoodState.Neutral) {

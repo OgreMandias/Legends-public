@@ -28,21 +28,16 @@ this.legend_warrior_vs_footsoldier_event <- this.inherit("scripts/events/event",
 			{
 				this.Characters.push(_event.m.noble1h.getImagePath());
 				this.Characters.push(_event.m.noble2h.getImagePath());
-				local meleeSkill = this.Math.rand(3, 5);
-				local meleeDefense = this.Math.rand(3, 5);
-				_event.m.noble1h.getBaseProperties().MeleeSkill += meleeSkill;
-				_event.m.noble2h.getBaseProperties().MeleeDefense += meleeDefense;
+
+				this.List.push(::Legends.EventList.changeMood(_event.m.noble1h, 1.0, "Bonded with " + _event.m.noble2h.getName()));
+				this.List.push(::Legends.EventList.changeMeleeSkill(_event.m.noble1h, ::Math.rand(3, 5)));
+
+				this.List.push(::Legends.EventList.changeMood(_event.m.noble2h, 1.0, "Bonded with " + _event.m.noble1h.getName()));
+				this.List.push(::Legends.EventList.changeMeleeDefense(_event.m.noble2h, ::Math.rand(3, 5)));
 
 				_event.m.noble1h.getSkills().update();
 				_event.m.noble2h.getSkills().update();
-
-				this.List.push(::Legends.EventList.changeMood(_event.m.noble1h, 1.0, "Bonded with " + _event.m.noble2h.getName()));
-				this.List.push(::Legends.EventList.changeMeleeSkill(_event.m.noble1h, meleeSkill));
-
-				this.List.push(::Legends.EventList.changeMood(_event.m.noble2h, 1.0, "Bonded with " + _event.m.noble1h.getName()));
-				this.List.push(::Legends.EventList.changeMeleeDefense(_event.m.noble2h, meleeDefense));
 			}
-
 		});
 	}
 

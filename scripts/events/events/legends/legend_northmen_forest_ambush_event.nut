@@ -165,11 +165,10 @@ this.legend_northmen_forest_ambush_event <- this.inherit("scripts/events/event",
 			{
 				this.Characters.push(_event.m.Barbarian.getImagePath());
 				local item = this.new("scripts/items/loot/looted_valuables_item");
-				local bravery = this.Math.rand(2, 4);
-				_event.m.Barbarian.getBaseProperties().Bravery += bravery;
-				_event.m.Barbarian.improveMood(1.0, "prevented a bloodbath in the woods");
+				this.List.push(::Legends.EventList.changeResolve(_event.m.Barbarian, ::Math.rand(2, 4)));
+				this.List.push(::Legends.EventList.changeMood(_event.m.Barbarian, 1.0, "prevented a bloodbath in the woods"));
 				_event.m.Barbarian.getSkills().update();
-				this.List.push(::Legends.EventList.changeResolve(_event.m.Barbarian, bravery));
+
 				this.World.Assets.getStash().add(item);
 				this.List.push({
 					id = 10,
@@ -222,12 +221,10 @@ this.legend_northmen_forest_ambush_event <- this.inherit("scripts/events/event",
 			function start( _event )
 			{
 				this.Characters.push(_event.m.Wildman.getImagePath());
-				local bravery = this.Math.rand(4, 6);
-				_event.m.Wildman.getBaseProperties().Bravery += bravery;
-				_event.m.Wildman.getSkills().update();
-				this.List.push(::Legends.EventList.changeResolve(_event.m.Wildman, bravery));
+				this.List.push(::Legends.EventList.changeResolve(_event.m.Wildman, ::Math.rand(4, 6)));
 				this.List.push(::Legends.EventList.addLightInjury(_event.m.Wildman));
 				this.List.push(::Legends.EventList.changeMood(_event.m.Wildman, 2.0, "Had a good time"));
+				_event.m.Wildman.getSkills().update();
 			}
 
 		});
@@ -250,14 +247,10 @@ this.legend_northmen_forest_ambush_event <- this.inherit("scripts/events/event",
 			function start( _event )
 			{
 				this.Characters.push(_event.m.MasterArcher.getImagePath());
-				local bravery = this.Math.rand(2, 5);
-				local initiative = this.Math.rand(3, 6);
-				_event.m.MasterArcher.getBaseProperties().Bravery += bravery;
-				_event.m.MasterArcher.getBaseProperties().Initiative += initiative;
-				_event.m.MasterArcher.getSkills().update();
-				this.List.push(::Legends.EventList.changeResolve(_event.m.MasterArcher, bravery));
-				this.List.push(::Legends.EventList.changeInitiative(_event.m.MasterArcher, initiative));
+				this.List.push(::Legends.EventList.changeResolve(_event.m.MasterArcher, ::Math.rand(2, 5)));
+				this.List.push(::Legends.EventList.changeInitiative(_event.m.MasterArcher, ::Math.rand(3, 6)));
 				this.List.push(::Legends.EventList.changeMood(_event.m.MasterArcher, 1.0, "Evaded a patrol"));
+				_event.m.MasterArcher.getSkills().update();
 			}
 
 		});
@@ -295,14 +288,10 @@ this.legend_northmen_forest_ambush_event <- this.inherit("scripts/events/event",
 			function start( _event )
 			{
 				this.Characters.push(_event.m.Assassin.getImagePath());
-				local bravery = this.Math.rand(4, 7);
-				local initiative = this.Math.rand(3, 6);
-				_event.m.Assassin.getBaseProperties().Bravery += bravery;
-				_event.m.Assassin.getBaseProperties().Initiative += initiative;
-				_event.m.Assassin.getSkills().update();
-				this.List.push(::Legends.EventList.changeResolve(_event.m.Assassin, bravery));
-				this.List.push(::Legends.EventList.changeInitiative(_event.m.Assassin, initiative));
+				this.List.push(::Legends.EventList.changeResolve(_event.m.Assassin, ::Math.rand(4, 7)));
+				this.List.push(::Legends.EventList.changeInitiative(_event.m.Assassin, ::Math.rand(3, 6)));
 				this.List.push(::Legends.EventList.changeMood(_event.m.Assassin, 1.0, "Outsmarted a raiding party"));
+				_event.m.Assassin.getSkills().update();
 			}
 
 		});

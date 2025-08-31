@@ -16,34 +16,42 @@
 }
 
 ::Legends.EventList.changeHitpoints <- function (_bro, _value) {
+	_bro.getBaseProperties().Hitpoints += value;
 	return ::Legends.EventList.changeStat(_bro.getName(), _value, "ui/icons/health.png", "Hitpoints");
 }
 
 ::Legends.EventList.changeResolve <- function (_bro, _value) {
+	_bro.getBaseProperties().Bravery += value;
 	return ::Legends.EventList.changeStat(_bro.getName(), _value, "ui/icons/bravery.png", "Resolve");
 }
 
 ::Legends.EventList.changeFatigue <- function (_bro, _value) {
+	_bro.getBaseProperties().Stamina += _value;
 	return ::Legends.EventList.changeStat(_bro.getName(), _value, "ui/icons/fatigue.png", "Max Fatigue");
 }
 
 ::Legends.EventList.changeMeleeSkill <- function (_bro, _value) {
+	_bro.getBaseProperties().MeleeSkill += _value;
 	return ::Legends.EventList.changeStat(_bro.getName(), _value, "ui/icons/melee_skill.png", "Melee Skill");
 }
 
 ::Legends.EventList.changeMeleeDefense <- function (_bro, _value) {
+	_bro.getBaseProperties().MeleeDefense += _value;
 	return ::Legends.EventList.changeStat(_bro.getName(), _value, "ui/icons/melee_defense.png", "Melee Defense");
 }
 
 ::Legends.EventList.changeRangedSkill <- function (_bro, _value) {
+	_bro.getBaseProperties().RangedSkill += _value;
 	return ::Legends.EventList.changeStat(_bro.getName(), _value, "ui/icons/ranged_skill.png", "Ranged Skill");
 }
 
 ::Legends.EventList.changeRangedDefense <- function (_bro, _value) {
+	_bro.getBaseProperties().RangedDefense += _value;
 	return ::Legends.EventList.changeStat(_bro.getName(), _value, "ui/icons/ranged_defense.png", "Ranged Defense");
 }
 
 ::Legends.EventList.changeInitiative <- function (_bro, _value) {
+	_bro.getBaseProperties().Initiative += _value;
 	return ::Legends.EventList.changeStat(_bro.getName(), _value, "ui/icons/initiative.png", "Initiative");
 }
 

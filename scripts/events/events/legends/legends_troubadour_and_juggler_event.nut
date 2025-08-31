@@ -37,16 +37,14 @@ this.legends_troubadour_and_juggler_event <- this.inherit("scripts/events/event"
 					r = this.Math.rand(1, 5);
 					if (r == 1)
 					{
-						_event.m.Troubadour.getBaseProperties().MeleeDefense += 1;
-						_event.m.Troubadour.getSkills().update();
 						this.List.push(::Legends.EventList.changeMeleeDefense(_event.m.Troubadour, 1));
+						_event.m.Troubadour.getSkills().update();
 					}
 
 					if (r == 2)
 					{
-						_event.m.Troubadour.getBaseProperties().MeleeSkill += 1;
-						_event.m.Troubadour.getSkills().update();
 						this.List.push(::Legends.EventList.changeMeleeSkill(_event.m.Troubadour, 1));
+						_event.m.Troubadour.getSkills().update();
 					}
 
 					if (r == 3)
@@ -76,16 +74,14 @@ this.legends_troubadour_and_juggler_event <- this.inherit("scripts/events/event"
 
 					if (r == 1)
 					{
-						_event.m.Juggler.getBaseProperties().RangedDefense += 1;
-						_event.m.Juggler.getSkills().update();
 						this.List.push(::Legends.EventList.changeRangedDefense(_event.m.Juggler, 1));
+						_event.m.Juggler.getSkills().update();
 					}
 
 					if (r == 2)
 					{
-						_event.m.Juggler.getBaseProperties().RangedSkill += 1;
-						_event.m.Juggler.getSkills().update();
 						this.List.push(::Legends.EventList.changeRangedSkill(_event.m.Juggler, 1));
+						_event.m.Juggler.getSkills().update();
 					}
 
 					if (r == 3)
@@ -120,8 +116,8 @@ this.legends_troubadour_and_juggler_event <- this.inherit("scripts/events/event"
 
 						if (r == 1)
 						{
-							bro.getBaseProperties().RangedDefense += 1;
 							this.List.push(::Legends.EventList.changeRangedDefense(bro, 1));
+							bro.getSkills().update();
 						}
 
 						if (r == 2)

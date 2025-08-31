@@ -16,12 +16,12 @@
 }
 
 ::Legends.EventList.changeHitpoints <- function (_bro, _value) {
-	_bro.getBaseProperties().Hitpoints += value;
+	_bro.getBaseProperties().Hitpoints += _value;
 	return ::Legends.EventList.changeStat(_bro.getName(), _value, "ui/icons/health.png", "Hitpoints");
 }
 
 ::Legends.EventList.changeResolve <- function (_bro, _value) {
-	_bro.getBaseProperties().Bravery += value;
+	_bro.getBaseProperties().Bravery += _value;
 	return ::Legends.EventList.changeStat(_bro.getName(), _value, "ui/icons/bravery.png", "Resolve");
 }
 
@@ -58,7 +58,7 @@
 ::Legends.EventList.changeMood <- function (_bro, _value = 0, _cause = "") {
 	if (_value > 0)
 		_bro.improveMood(_value, _cause);
-	else if (value < 0)
+	else if (_value < 0)
 		_bro.worsenMood(_value * -1.0, _cause);
 	return {
 		id = 10,

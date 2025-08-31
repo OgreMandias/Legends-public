@@ -18,14 +18,10 @@ this.legend_ironmonger_offends_blacksmith_event <- this.inherit("scripts/events/
 				getResult = @(_event) "1"
 			}, {
 				Text = "The ironmonger\'s method may be messy, but the results speak for themself.",
-				function getResult(_event) {
-					return "2";
-				}
+				getResult = @(_event) "2"
 			}, {
 				Text = "Clean up this mess, both of you! And let me hear no more of this nonsense!"
-				function getResult(_event) {
-					return "3";
-				}
+				getResult = @(_event) "3"
 			}],
 			function start(_event) {
 				this.Characters.push(_event.m.Blacksmith.getImagePath());
@@ -41,9 +37,7 @@ this.legend_ironmonger_offends_blacksmith_event <- this.inherit("scripts/events/
 			Characters = [],
 			Options = [{
 				Text = "{They really put the hammer to %ironmonger%\'s anvil...}",
-				function getResult(_event) {
-					return 0;
-				}
+				getResult = @(_event) 0
 			}],
 			function start(_event) {
 				this.Characters.push(_event.m.Blacksmith.getImagePath());
@@ -70,9 +64,7 @@ this.legend_ironmonger_offends_blacksmith_event <- this.inherit("scripts/events/
 			Characters = [],
 			Options = [{
 				Text = "The old make way for the new…",
-				function getResult(_event) {
-					return 0;
-				}
+				getResult = @(_event) 0
 			}],
 			function start(_event) {
 				this.Characters.push(_event.m.Blacksmith.getImagePath());
@@ -100,9 +92,7 @@ this.legend_ironmonger_offends_blacksmith_event <- this.inherit("scripts/events/
 			Characters = [],
 			Options = [{
 				Text = "Who would have thought smiths could have such animosity for their peers?",
-				function getResult(_event) {
-					return 0;
-				}
+				getResult = @(_event) 0
 			}],
 			function start(_event) {
 				this.Characters.push(_event.m.Blacksmith.getImagePath());
@@ -163,7 +153,7 @@ this.legend_ironmonger_offends_blacksmith_event <- this.inherit("scripts/events/
 		this.m.Blacksmith = candidates_blacksmith[::Math.rand(0, candidates_blacksmith.len() - 1)];
 		this.m.Ironmonger = candidates_ironmonger[::Math.rand(0, candidates_ironmonger.len() - 1)];
 
-		this.m.Score = 50000;
+		this.m.Score = 5;
 	}
 
 	function onPrepareVariables(_vars) {

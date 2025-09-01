@@ -30,7 +30,7 @@ this.legend_named_rusty_greatsword <- this.inherit("scripts/items/weapons/named/
 		this.m.RegularDamageMax = 110;
 		this.m.ArmorDamageMult = 1.1;
 		this.m.DirectDamageMult = 0.25;
-		this.m.DamageDirectAdd = 0.1;
+		this.m.DirectDamageAdd = 0.1;
 		this.m.ChanceToHitHead = 0;
 		this.randomizeValues();
 	}

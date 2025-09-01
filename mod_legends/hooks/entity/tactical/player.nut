@@ -15,8 +15,11 @@
 	o.m.CompanyID <- 0;
 
 	o.getTryoutCost = function ()
-	{
-		return this.Math.ceil(this.Math.max(10, this.Math.min(this.m.HiringCost - 25, 25 + this.m.HiringCost * this.Const.Tryouts.CostMult) * this.World.Assets.m.TryoutPriceMult));
+	{	
+		local cost = this.Math.ceil(this.Math.max(10, this.Math.min(this.m.HiringCost - 25, 25 + this.m.HiringCost * this.Const.Tryouts.CostMult) * this.World.Assets.m.TryoutPriceMult));
+		if (::World.Retinue.hasFollower("follower.recruiter"))
+			cost *= 0.5;
+		return cost;
 	}
 
 	o.getDailyCost = function ()

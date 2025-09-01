@@ -1,5 +1,15 @@
 ::mods_hookExactClass("ui/screens/world/modules/world_town_screen/town_hire_dialog_module", function(o) {
 
+	local onHireRosterEntry = o.onHireRosterEntry;
+	o.onHireRosterEntry = function ( _entityID )
+	{
+		local original = ::World.Assets.m.HiringCostMult;
+		if (::World.Retinue.hasFollower("follower.recruiter"))
+			::World.Assets.m.HiringCostMult *= 0.9;
+		onHireRosterEntry(_entityID);
+		::World.Assets.m.HiringCostMult = original;
+	}
+
 	o.onDismissRosterEntry <- function ( _entityID )
 	{
 		local entry = this.findEntityWithinRoster(_entityID);

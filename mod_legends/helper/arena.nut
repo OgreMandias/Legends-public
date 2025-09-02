@@ -1,0 +1,82 @@
+if (!("Arena" in ::Legends))
+	::Legends.Arena <- {};
+
+::Legends.Arena.getCollaredBros <- @() ::World.getPlayerRoster().getAll().filter(@(idx, bro)::Legends.Arena.hasCollar(bro));
+
+::Legends.Arena.hasCollar <- function (_bro) {
+	local item = _bro.getItems().getItemAtSlot(::Const.ItemSlot.Accessory);
+	if (item != null && item.getID() == "accessory.arena_collar")
+		return true;
+
+	local itemsInBag = _bro.getItems().getAllItemsAtSlot(::Const.ItemSlot.Bag);
+	foreach (item in itemsInBag) {
+		if (item != null && item.getID() == "accessory.arena_collar")
+			return true;
+	}
+	return false;
+}
+
+::Legends.Arena.removeCollar <- function(_bro) {
+	local item = _bro.getItems().getItemAtSlot(::Const.ItemSlot.Accessory);
+	if (item != null && item.getID() == "accessory.arena_collar") {
+		_bro.getItems().unequip(item);
+		return;
+	}
+
+	local itemsInBag = _bro.getItems().getAllItemsAtSlot(::Const.ItemSlot.Bag);
+	foreach (item in itemsInBag) {
+		if (item != null && item.getID() == "accessory.arena_collar") {
+			_bro.getItems().removeFromBag(item);
+			return;
+		}
+	}
+}
+
+::Legends.Arena.updateTraits <- function (_list, _bro) {
+	if (_bro.getFlags().getAsInt("ArenaFightsWon") == 1) {
+		::Legends.Traits.grant(_bro, ::Legends.Trait.PitFighter, function(skill) {
+			this.push({
+				id = 10,
+				icon = skill.getIcon(),
+				text = _bro.getName() + " is now " + this.Const.Strings.getArticle(skill.getName()) + skill.getName()
+			});
+		}.bindenv(_list));
+	} else if (_bro.getFlags().getAsInt("ArenaFightsWon") == 5 && _bro.getSkills().hasTrait(::Legends.Trait.PitFighter)) {
+		::Legends.Traits.remove(_bro, ::Legends.Trait.PitFighter);
+		::Legends.Traits.grant(_bro, ::Legends.Trait.ArenaFighter, function(skill) {
+			this.push({
+				id = 10,
+				icon = skill.getIcon(),
+				text = _bro.getName() + " is now " + this.Const.Strings.getArticle(skill.getName()) + skill.getName()
+			});
+		}.bindenv(_list));
+	} else if (_bro.getFlags().getAsInt("ArenaFightsWon") >= 12 && _bro.getSkills().hasTrait(::Legends.Trait.ArenaFighter)) {
+		::Legends.Traits.remove(_bro, ::Legends.Trait.ArenaFighter);
+		::Legends.Traits.grant(_bro, ::Legends.Trait.LegendArenaVeteran, function(skill) {
+			this.push({
+				id = 10,
+				icon = skill.getIcon(),
+				text = _bro.getName() + " is now " + this.Const.Strings.getArticle(skill.getName()) + skill.getName()
+			});
+		}.bindenv(_list));
+	} else if (_bro.getFlags().getAsInt("ArenaFightsWon") >= 25 && (_bro.getSkills().hasTrait(::Legends.Trait.LegendArenaVeteran) || _bro.getSkills().hasSkill("trait.arena_veteran"))) {
+		_bro.getSkills().removeByID("trait.arena_veteran"); // could be vanilla?
+		::Legends.Traits.remove(_bro, ::Legends.Trait.LegendArenaVeteran);
+		::Legends.Traits.grant(_bro, ::Legends.Trait.LegendArenaChampion, function(skill) {
+			this.push({
+				id = 10,
+				icon = skill.getIcon(),
+				text = _bro.getName() + " is now " + this.Const.Strings.getArticle(skill.getName()) + skill.getName()
+			});
+		}.bindenv(_list));
+	} else if (_bro.getFlags().getAsInt("ArenaFightsWon") >= 50 && _bro.getSkills().hasTrait(::Legends.Trait.LegendArenaChampion)) {
+		::Legends.Traits.remove(_bro, ::Legends.Trait.LegendArenaChampion);
+		::Legends.Traits.grant(_bro, ::Legends.Trait.LegendArenaInvictus, function(skill) {
+			this.push({
+				id = 10,
+				icon = skill.getIcon(),
+				text = _bro.getName() + " is now " + this.Const.Strings.getArticle(skill.getName()) + skill.getName()
+			});
+		}.bindenv(_list));
+	}
+}

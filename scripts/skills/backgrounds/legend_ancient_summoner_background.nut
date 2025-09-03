@@ -49,7 +49,7 @@ this.legend_ancient_summoner_background <- this.inherit("scripts/skills/backgrou
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.DaggerTree,
-				this.Const.Perks.StaffTree,
+				this.Const.Perks.PolearmTree,
 				this.Const.Perks.ThrowingTree,
 				this.Const.Perks.CleaverTree
 			],
@@ -63,8 +63,14 @@ this.legend_ancient_summoner_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.ViciousTree
 			],
 			Enemy = [],
-			Class = [this.Const.Perks.NinetailsClassTree],
-			Magic = [this.Const.Perks.SkeletonMagicTree]
+			Class = [
+				this.Const.Perks.NinetailsClassTree
+			],
+			Profession = [],
+			Magic = [
+				this.Const.Perks.SkeletonMagicTree,
+				this.Const.Perks.StavesMagicTree
+			]
 		}
 	}
 

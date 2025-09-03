@@ -29,7 +29,7 @@ this.legend_conscript_background <- this.inherit("scripts/skills/backgrounds/cha
 			::Legends.Traits.getID(::Legends.Trait.Disloyal),
 			::Legends.Traits.getID(::Legends.Trait.Tiny),
 			::Legends.Traits.getID(::Legends.Trait.Fragile),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed),
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted),
 			::Legends.Traits.getID(::Legends.Trait.Craven),
 			::Legends.Traits.getID(::Legends.Trait.Bleeder),
 			::Legends.Traits.getID(::Legends.Trait.Insecure)
@@ -104,6 +104,7 @@ this.legend_conscript_background <- this.inherit("scripts/skills/backgrounds/cha
 			],
 			Enemy = [],
 			Class = [],
+			Profession = [],
 			Magic = []
 		}
 	}
@@ -212,4 +213,3 @@ this.legend_conscript_background <- this.inherit("scripts/skills/backgrounds/cha
 	}
 
 });
-

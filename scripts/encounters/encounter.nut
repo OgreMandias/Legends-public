@@ -29,7 +29,7 @@ this.encounter <- {
 
     function getName()
     {
-        return this.m.Name;
+        return this.buildText(this.m.Name);
     }
 
     function getActiveScreen()
@@ -244,7 +244,7 @@ this.encounter <- {
         if (this.m.ActiveScreen && "Title" in this.m.ActiveScreen)
             return this.m.ActiveScreen.Title;
         else
-            return this.m.Name;
+            return this.buildText(this.m.Name);
     }
 
     function getUIButtons()
@@ -321,6 +321,11 @@ this.encounter <- {
     {
         return false;
     }
+
+	function isVisible()
+	{
+		return true;
+	}
 
     function isOnCooldown() {
         return this.m.CooldownUntil > this.Time.getVirtualTimeF()

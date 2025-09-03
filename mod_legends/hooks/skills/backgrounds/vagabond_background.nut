@@ -47,7 +47,7 @@
 			Weapon = [
 				this.Const.Perks.HammerTree,
 				this.Const.Perks.CleaverTree,
-				this.Const.Perks.StaffTree,
+				this.Const.Perks.PolearmTree,
 				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
@@ -63,6 +63,7 @@
 			Class = [
 				this.Const.Perks.StaffClassTree
 			],
+			Profession = [], 
 			Magic = []
 		}
 	}

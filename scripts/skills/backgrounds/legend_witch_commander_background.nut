@@ -52,7 +52,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.Modifiers.MedConsumption = this.Const.LegendMod.ResourceModifiers.MedConsumption[3];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				::Const.Perks.StaffTree
+				::Const.Perks.PolearmTree
 			],
 			Defense = [
 				::Const.Perks.LightArmorTree,
@@ -68,12 +68,14 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 			Enemy = [
 				::Const.Perks.HexenTree
 			],
-			Class = [
-				::Const.Perks.HealerClassTree,
+			Class = [],
+			Profession = [
+				::Const.Perks.HealerProfessionTree,
 			],
 			Magic = [
 				::Const.Perks.SeerMagicTree,
-				::Const.Perks.IllusionistMagicTree
+				::Const.Perks.IllusionistMagicTree,
+				::Const.Perks.StavesMagicTree
 			]
 		};
 

@@ -1459,7 +1459,7 @@ activesDefs.push({
 	ID = "actives.legend_demon_hound_bite",
 	Script = "scripts/skills/actives/legend_demon_hound_bite_skill",
 	Const = "LegendDemonHoundBite",
-	Name = "H÷llenhund Bite",
+	Name = "Höllenhund Bite",
 });
 
 ::Legends.Active.LegendRangedFlail <- null;
@@ -3124,6 +3124,46 @@ activesDefs.push({
 	Script = "scripts/skills/actives/censer_strike",
 	Const = "CenserStrike",
 	Name = "Censer Strike",
+});
+
+::Legends.Active.LegendDawgBite <- null;
+activesDefs.push({
+	ID = "actives.legend_dawg_bite",
+	Script = "scripts/skills/actives/legend_dawg_bite_skill",
+	Const = "LegendDawgBite",
+	Name = "Dawg Bite",
+});
+
+::Legends.Active.LegendCommandLegion <- null;
+activesDefs.push({
+	ID = "actives.legend_command_legion",
+	Script = "scripts/skills/actives/legend_command_legion_skill",
+	Const = "CommandLegionary",
+	Name = "Command Legionary",
+});
+
+::Legends.Active.LegendHeartseeker <- null;
+activesDefs.push({
+	ID = "actives.legend_heartseeker",
+	Script = "scripts/skills/actives/legend_heartseeker_skill",
+	Const = "LegendHeartseeker",
+	Name = "Heartseeker",
+});
+
+::Legends.Active.LegendWarforkDisarm <- null;
+activesDefs.push({
+	ID = "actives.legend_warfork_disarm",
+	Script = "scripts/skills/actives/legend_warfork_disarm_skill",
+	Const = "LegendWarforkDisarm",
+	Name = "Disarm",
+});
+
+::Legends.Active.LegendPryArmor <- null;
+activesDefs.push({
+	ID = "actives.legend_pry_armor",
+	Script = "scripts/skills/actives/legend_pry_armor_skill",
+	Const = "LegendPryArmor",
+	Name = "Pry Armor",
 });
 
 ::Legends.Actives.addActiveDefObjects(activesDefs);

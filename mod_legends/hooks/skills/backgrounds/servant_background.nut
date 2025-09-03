@@ -57,7 +57,7 @@
 			Weapon = [
 				this.Const.Perks.DaggerTree,
 				this.Const.Perks.MaceTree,
-				this.Const.Perks.StaffTree,
+				this.Const.Perks.PolearmTree,
 				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
@@ -70,10 +70,11 @@
 				this.Const.Perks.FastTree
 			],
 			Enemy = [],
-			Class = [
-				this.Const.Perks.BarterClassTree,
-				this.Const.Perks.ChefClassTree
-			],
+			Class = [],
+			Profession = [
+				this.Const.Perks.BarterProfessionTree,
+				this.Const.Perks.ChefProfessionTree
+			], 
 			Magic = []
 		}
 	}

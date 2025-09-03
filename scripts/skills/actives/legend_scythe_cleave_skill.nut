@@ -73,6 +73,15 @@ this.legend_scythe_cleave_skill <- this.inherit("scripts/skills/skill", {
 			icon = "ui/icons/special.png",
 			text = "Inflicts additional stacking [color=" + this.Const.UI.Color.DamageValue + "]" + dmg + "[/color] bleeding damage per turn, for 2 turns"
 		});
+		if (!this.getContainer().getActor().getCurrentProperties().IsSpecializedInPolearms)
+		{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/hitchance.png",
+				text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]-15%[/color] chance to hit targets directly adjacent because the weapon is too unwieldy"
+			});
+		}
 		return ret;
 	}
 
@@ -80,6 +89,18 @@ this.legend_scythe_cleave_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.FatigueCostMult = _properties.IsSpecializedInPolearms ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 		this.m.ActionPointCost = _properties.IsSpecializedInPolearms ? 5 : 6;
+	}
+
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	{
+		if (_skill == this)
+		{
+			if (_targetEntity != null && !this.getContainer().getActor().getCurrentProperties().IsSpecializedInPolearms && this.getContainer().getActor().getTile().getDistanceTo(_targetEntity.getTile()) == 1)
+			{
+				this.m.HitChanceBonus += -15;
+				_properties.MeleeSkill += -15;
+			}
+		}
 	}
 
 	function onUse( _user, _targetTile )
@@ -98,7 +119,7 @@ this.legend_scythe_cleave_skill <- this.inherit("scripts/skills/skill", {
 		{
 			if (!target.isAlive() || target.isDying())
 			{
-				if (this.isKindOf(target, "lindwurm_tail") || !target.getCurrentProperties().IsImmuneToBleeding)
+				if (target.getFlags().has("tail") || !target.getCurrentProperties().IsImmuneToBleeding)
 				{
 					this.Sound.play(this.m.SoundsA[this.Math.rand(0, this.m.SoundsA.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
 				}

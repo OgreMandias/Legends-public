@@ -25,7 +25,7 @@
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendSpecialistShieldSkill);
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendSmashingShields);
 			::Legends.Perks.grant(this, ::Legends.Perk.ShieldBash);
-			::Legends.Perks.grant(this, ::Legends.Perk.LegendFullForce);
+			::Legends.Perks.grant(this, ::Legends.Perk.LegendImmovableObject);
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendBackToBasics);
 			::Legends.Perks.grant(this, ::Legends.Perk.Underdog);
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendForcefulSwing);
@@ -124,6 +124,7 @@
 		local weapons = [
 			"weapons/named/named_axe",
 			"weapons/named/named_greatsword",
+			"weapons/named/legend_named_flamberge_sword",
 			"weapons/named/named_mace",
 			"weapons/named/named_sword",
 			"weapons/named/legend_named_longsword"

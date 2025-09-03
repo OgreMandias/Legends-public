@@ -1,5 +1,78 @@
 ::mods_hookExactClass("states/tactical_state", function(o)
 {
+	o.swapToItem <- function ( _activeEntity, _item )
+	{
+		if (this.m.CurrentActionState != null)
+		{
+			this.cancelEntitySkill(_activeEntity);
+		}
+
+		this.m.CharacterScreen.onEquipBagItem([
+			_activeEntity.getID(),
+			_item.getInstanceID()
+		]);
+	}
+
+	local _turnsequencebar_onEntitySkillClicked = o.turnsequencebar_onEntitySkillClicked;
+	o.turnsequencebar_onEntitySkillClicked = function ( _skillId )
+	{
+		local activeEntity = ::Tactical.TurnSequenceBar.getActiveEntity();
+
+		if (activeEntity == null || activeEntity.getSkills().hasSkill(_skillId))
+		{
+			_turnsequencebar_onEntitySkillClicked(_skillId);
+		}
+		else if (!this.isInputLocked())
+		{
+			local item = activeEntity.getItems().getItemByInstanceID(_skillId);
+
+			if (item != null)
+			{
+				this.swapToItem(activeEntity, item);
+			}
+		}
+	}
+
+	local _setActionStateBySkillIndex = o.setActionStateBySkillIndex;
+	o.setActionStateBySkillIndex = function ( _index )
+	{
+		if (this.m.CurrentActionState != null)
+		{
+			switch(this.m.CurrentActionState)
+			{
+			case ::Const.Tactical.ActionState.TravelPath:
+				::logInfo("entity is currently travelling!");
+				return;
+
+			case ::Const.Tactical.ActionState.ExecuteSkill:
+				::logInfo("entity is currently executing a skill!");
+				return;
+			}
+		}
+
+		local e = ::Tactical.TurnSequenceBar.getActiveEntity();
+		local itemIndex = -1;
+
+		if (e != null && !this.isInputLocked())
+		{
+			itemIndex = _index - e.getSkills().queryActives().len();
+		}
+
+		if (itemIndex >= 0)
+		{
+			local items = e.querySwitchableItems();
+
+			if (itemIndex < items.len())
+			{
+				this.swapToItem(e, items[itemIndex]);
+			}
+		}
+		else
+		{
+			_setActionStateBySkillIndex(_index);
+		}
+	};
+
 	o.onBattleEnded = function()
 	{
 		if (this.m.IsExitingToMenu)
@@ -250,7 +323,7 @@
 		foreach (id, tile in ::Tactical.Entities.m.NetTiles)
 		{
 			if (!tile.IsContainingItems) continue;
-			
+
 			for (local i = tile.Items.len() - 1; i >= 0; --i)
 			{
 				local item = tile.Items[i];
@@ -591,5 +664,49 @@
 	o.isEnemyRetreatDialogShown <- function ()
 	{
 		return this.m.IsEnemyRetreatDialogShown;
+	}
+
+	// todo same as vanilla, i've added it because vanilla line numbers are off, trying to catch turn_sequence_bar bug - chopeks
+	o.turnsequencebar_onNextRound = function ( _round )
+	{
+		this.logDebug("INFO: Next round issued: " + _round);
+		this.Time.setRound(_round);
+
+		if (this.m.StrategicProperties != null && this.m.StrategicProperties.IsArenaMode)
+		{
+			if (_round == 1) {
+				this.Sound.play(this.Const.Sound.ArenaStart[this.Math.rand(0, this.Const.Sound.ArenaStart.len() - 1)], this.Const.Sound.Volume.Tactical);
+			}
+			else {
+				this.Sound.play(this.Const.Sound.ArenaNewRound[this.Math.rand(0, this.Const.Sound.ArenaNewRound.len() - 1)], this.Const.Sound.Volume.Tactical * this.Const.Sound.Volume.Arena);
+			}
+		}
+		else {
+			this.Sound.play(this.Const.Sound.NewRound[this.Math.rand(0, this.Const.Sound.NewRound.len() - 1)], this.Const.Sound.Volume.Tactical);
+		}
+
+		this.Tactical.clearVisibility();
+
+		if (!this.m.IsFogOfWarVisible) {
+			this.Tactical.fillVisibility(this.Const.Faction.Player, true);
+			this.Tactical.fillVisibility(this.Const.Faction.PlayerAnimals, true);
+		}
+
+		local heroes = this.Tactical.Entities.getInstancesOfFaction(this.Const.Faction.Player);
+
+		foreach( hero in heroes ) {
+			hero.updateVisibilityForFaction();
+		}
+
+		this.m.MaxPlayers = this.Math.max(this.m.MaxPlayers, heroes.len());
+
+		local pets = this.Tactical.Entities.getInstancesOfFaction(this.Const.Faction.PlayerAnimals);
+		foreach( pet in pets ) {
+			pet.updateVisibilityForFaction();
+		}
+
+		this.Tactical.Entities.updateTileEffects();
+		this.Tactical.TopbarRoundInformation.update();
+		this.m.MaxHostiles = this.Math.max(this.m.MaxHostiles, this.Tactical.Entities.getHostilesNum());
 	}
 });

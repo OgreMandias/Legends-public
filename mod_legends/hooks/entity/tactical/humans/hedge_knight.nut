@@ -27,7 +27,7 @@
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendSmashingShields);
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendBackToBasics);
 			::Legends.Perks.grant(this, ::Legends.Perk.ShieldBash);
-			::Legends.Perks.grant(this, ::Legends.Perk.LegendFullForce);
+			::Legends.Perks.grant(this, ::Legends.Perk.LegendImmovableObject);
 			::Legends.Perks.grant(this, ::Legends.Perk.Underdog);
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendBloodyHarvest);
 			::Legends.Traits.grant(this, ::Legends.Trait.Fearless);
@@ -152,6 +152,7 @@
 		local weapons = [
 			"weapons/named/named_greataxe",
 			"weapons/named/named_greatsword",
+			"weapons/named/legend_named_flamberge_sword",
 			"weapons/named/named_bardiche",
 			"weapons/named/named_two_handed_hammer",
 			"weapons/named/named_two_handed_mace",

@@ -1,5 +1,7 @@
 ::Legends.S <- {};
 
+::Legends.S.isNull <- ::MSU.isNull;
+
 ::Legends.S.colorize <- function(_valueString, _value)
 {
     local color = (_value >= 0) ? this.Const.UI.Color.PositiveValue : this.Const.UI.Color.NegativeValue;
@@ -36,7 +38,10 @@
 			return _properties.IsSpecializedInAxes;
 		case _weapon.isWeaponType(::Const.Items.WeaponType.Bow):
 			return _properties.IsSpecializedInBows;
+		case _weapon.isWeaponType(::Const.Items.WeaponType.Cleaver):
+			return _properties.IsSpecializedInCleavers;
 		case _weapon.isWeaponType(::Const.Items.WeaponType.Crossbow):
+		case _weapon.isWeaponType(::Const.Items.WeaponType.Firearm): // handgonne
 			return _properties.IsSpecializedInCrossbows;
 		case _weapon.isWeaponType(::Const.Items.WeaponType.Dagger):
 			return _properties.IsSpecializedInDaggers;
@@ -54,10 +59,11 @@
 			return _properties.IsSpecializedInSwords;
 		case _weapon.isWeaponType(::Const.Items.WeaponType.Throwing):
 			return _properties.IsSpecializedInThrowing;
+		case _weapon.isWeaponType(::Const.Items.WeaponType.Staff):
 		case _weapon.isWeaponType(::Const.Items.WeaponType.Polearm):
 			return _properties.IsSpecializedInPolearms;
-		case _weapon.isWeaponType(::Const.Items.WeaponType.Staff):
-			return _properties.IsSpecializedInStaves;
+		case _weapon.isWeaponType(::Const.Items.WeaponType.Musical):
+			return _properties.IsSpecializedInMusic;
 		default:
 			return false;
 	}
@@ -140,4 +146,50 @@
 		}
 	}
 	return nearestTown;
+}
+
+::Legends.S.skillEntityAliveCheck <- function (_entity, _otherEntity = null) {
+	if (::Legends.S.isNull(_entity) || !_entity.isAlive() || _entity.isDying())
+		return true;
+	if (_otherEntity == null)
+		return false;
+	if (::Legends.S.isNull(_otherEntity) || !_otherEntity.isAlive() || _otherEntity.isDying())
+		return true;
+	return false;
+}
+
+::Legends.S.getDaysToScaleDifficulty <- function () {
+	switch (this.World.Assets.getCombatDifficulty()) {
+		case this.Const.Difficulty.Easy:
+			return 120;
+		case this.Const.Difficulty.Normal:
+			return 90;
+		case this.Const.Difficulty.Hard:
+			return 60;
+		case this.Const.Difficulty.Legendary:
+			return 30;
+		default:
+			::logError("Unknown combat difficulty: " + this.World.Assets.getCombatDifficulty());
+			return 0;
+	}
+}
+
+::Legends.S.scaleBaseProperties <- function (_properties) {
+	if (this.Tactical.State.isScenarioMode()) {
+		return;
+	}
+	local daysToScale = this.World.getTime().Days - this.getDaysToScaleDifficulty();
+	if (daysToScale > 0) {
+		local bonus = this.Math.floor(daysToScale / 20.0);
+		b.MeleeSkill += bonus;
+		b.RangedSkill += bonus;
+		b.MeleeDefense += this.Math.floor(bonus / 2);
+		b.RangedDefense += this.Math.floor(bonus / 2);
+		b.Hitpoints += this.Math.floor(bonus * 2);
+		b.Initiative += this.Math.floor(bonus / 2);
+		b.Stamina += bonus;
+		//	b.XP += this.Math.floor(bonus * 4);
+		b.Bravery += bonus;
+		b.FatigueRecoveryRate += this.Math.floor(bonus / 4);
+	}
 }

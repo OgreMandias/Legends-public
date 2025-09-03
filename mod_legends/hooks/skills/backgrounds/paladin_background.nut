@@ -33,7 +33,7 @@
 			::Legends.Traits.getID(::Legends.Trait.Disloyal),
 			::Legends.Traits.getID(::Legends.Trait.LegendDoubleTongued),
 			::Legends.Traits.getID(::Legends.Trait.Drunkard),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed),
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted),
 			::Legends.Traits.getID(::Legends.Trait.FearBeasts),
 			::Legends.Traits.getID(::Legends.Trait.FearGreenskins),
 			::Legends.Traits.getID(::Legends.Trait.FearUndead),
@@ -119,6 +119,7 @@
 				this.Const.Perks.SkeletonTree
 			],
 			Class = [],
+			Profession = [],
 			Magic = []
 		}
 	}
@@ -296,4 +297,3 @@
 	}
 
 });
-

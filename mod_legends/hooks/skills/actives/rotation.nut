@@ -1,5 +1,12 @@
 ::mods_hookExactClass("skills/actives/rotation", function(o)
-{
+{	
+	local create = o.create;
+	o.create = function ()
+	{
+		create();
+		this.m.FatigueCost = 20;
+	}
+
 	o.onVerifyTarget = function ( _originTile, _targetTile )
 	{
 		if (!_targetTile.IsOccupiedByActor)
@@ -7,6 +14,10 @@
 
 		local target = _targetTile.getEntity();
 		local actor = this.getContainer().getActor();
+		local setting = ::Legends.Mod.ModSettings.getSetting("AiRotation").getValue();
+
+		if (actor.getFaction() != this.Const.Faction.Player && setting == "Disabled")
+			return false;
 
 		if (!target.isAlive() && ::MSU.isNull(target))
 			return false;
@@ -30,7 +41,7 @@
 
 		if (actor.getFaction() != this.Const.Faction.Player && target.getFaction() == this.Const.Faction.Player)
 		{
-			if (setting == "Disabled" || (setting && !canRotate))
+			if (setting == "Limited" || (setting && !canRotate))
 			{
 				return false;
 			}

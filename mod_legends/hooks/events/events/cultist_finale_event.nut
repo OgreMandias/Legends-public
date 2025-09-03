@@ -116,12 +116,12 @@
 		local bestCultist;
 
 		foreach( bro in brothers ) {
-			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.ConvertedCultist)) {
+			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.ConvertedCultist) || bro.getBackground().isBackgroundType(this.Const.BackgroundType.Cultist)) {
 				cultist_candidates.push(bro);
 				if ((bestCultist == null || bro.getLevel() > bestCultist.getLevel()) && bro.getBackground().getID() == "background.cultist")
 					bestCultist = bro;
 			}
-			else if (bro.getLevel() >= 12 && !bro.getSkills().hasTrait(::Legends.Trait.Player) && !bro.getSkills().hasTrait(::Legends.Trait.Player) && !bro.getFlags().get("IsPlayerCharacter"))
+			else if (bro.getLevel() >= 12 && !bro.getSkills().hasTrait(::Legends.Trait.Player) && !bro.getFlags().get("IsPlayerCharacter"))
 				sacrifice_candidates.push(bro);
 		}
 

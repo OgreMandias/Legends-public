@@ -15,8 +15,11 @@
 	o.m.CompanyID <- 0;
 
 	o.getTryoutCost = function ()
-	{
-		return this.Math.ceil(this.Math.max(10, this.Math.min(this.m.HiringCost - 25, 25 + this.m.HiringCost * this.Const.Tryouts.CostMult) * this.World.Assets.m.TryoutPriceMult));
+	{	
+		local cost = this.Math.ceil(this.Math.max(10, this.Math.min(this.m.HiringCost - 25, 25 + this.m.HiringCost * this.Const.Tryouts.CostMult) * this.World.Assets.m.TryoutPriceMult));
+		if (::World.Retinue.hasFollower("follower.recruiter"))
+			cost *= 0.5;
+		return cost;
 	}
 
 	o.getDailyCost = function ()
@@ -495,6 +498,8 @@
 		::Legends.Effects.grant(this, ::Legends.Effect.LegendRealmOfNightmares);
 		::Legends.Effects.grant(this, ::Legends.Effect.LegendHorseriderSkill);
 		::Legends.Effects.grant(this, ::Legends.Effect.LegendVeteranLevels);
+		::Legends.Actives.grant(this, ::Legends.Active.LegendGrapple);
+		::Legends.Actives.grant(this, ::Legends.Active.LegendKick);
 	}
 
 	local onHired = o.onHired;
@@ -621,6 +626,8 @@
 	local onDeath = o.onDeath;
 	o.onDeath = function ( _killer, _skill, _tile, _fatalityType )
 	{
+		if (this.Tactical.State.isScenarioMode())
+			return onDeath(_killer, _skill, _tile, _fatalityType);
 		local bro = this;
 		local originalAddFallen = ::World.Statistics.addFallen;
 		::World.Statistics.addFallen = function (_fallen) {
@@ -644,6 +651,16 @@
 			if (bro.isInReserves() && bro.getSkills().hasPerk(::Legends.Perk.LegendPacifist))
 			{
 				bro.addXP(this.Math.max(1, this.Math.floor(XPgroup / brothers.len())));
+			}
+		}
+		if (::World.Statistics.getFlags().get("HasDrillSergeant") && this.getLevel() >= 12)
+		{
+			foreach( bro in brothers )
+			{
+				if (!bro.getCurrentProperties().IsAllyXPBlocked && bro.getLevel() < 12)
+				{
+					bro.addXP(this.Math.max(1, this.Math.floor(XPgroup / brothers.len())))
+				}
 			}
 		}
 	}
@@ -1527,12 +1544,18 @@
 
 	o.getStashModifier <- function ()
 	{
-		local broStash = this.getBackground().getModifiers().Stash;
+		local background = this.getBackground();
+		local broStash = background.getModifiers().Stash;
 		local item = this.getItems().getItemAtSlot(this.Const.ItemSlot.Accessory);
 
 		if (item != null)
 		{
 			broStash = broStash + item.getStashModifier();
+		}
+
+		if (background.getID() == "background.legend_donkey")
+		{
+			broStash += background.getModifier();
 		}
 
 		local skills = [
@@ -1708,6 +1731,23 @@
 		this.Sound.play(this.m.Sound[_type][this.Math.rand(0, this.m.Sound[_type].len() - 1)], volume, this.getPos(), _pitch);
 	}
 
+	o.getToggleAccessoryTooltip <- function (_slot, _layer) {
+		local accessory = this.getItems().getItemAtSlot(_slot);
+		local tt = [
+			{
+				id = 1,
+				type = "title",
+				text = "Accessory Layer"
+			},
+			{
+				id = 2,
+				type = "description",
+				text = "Click to toggle the visibility of the accessory layer."
+			}
+		];
+		return tt;
+	}
+
 	o.getRemoveLayerTooltip <- function (_slot, _layer)
 	{
 		local armor = this.getItems().getItemAtSlot(_slot);
@@ -1801,7 +1841,6 @@
 
 		return tt;
 	}
-
 
 	// todo delete it - chopeks
 	o.TherianthropeInfection <- function (_killer)

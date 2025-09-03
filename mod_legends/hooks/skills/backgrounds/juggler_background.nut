@@ -48,7 +48,7 @@
 				this.Const.Perks.MaceTree,
 				this.Const.Perks.FlailTree,
 				this.Const.Perks.DaggerTree,
-				this.Const.Perks.StaffTree
+				this.Const.Perks.PolearmTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree
@@ -61,8 +61,10 @@
 			],
 			Enemy = [],
 			Class = [
-				this.Const.Perks.JugglerClassTree
+				this.Const.Perks.JugglerClassTree,
+				this.Const.Perks.ConArtistTree
 			],
+			Profession = [], 
 			Magic = []
 		}
 		this.m.Bodies = this.Const.Bodies.Skinny;

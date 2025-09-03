@@ -48,6 +48,47 @@
 		}
 	}
 
+	local _onQuerySkillTooltipData = o.onQuerySkillTooltipData;
+	o.onQuerySkillTooltipData = function ( _entityId, _skillId )
+	{
+		local tooltip = _onQuerySkillTooltipData(_entityId, _skillId);
+
+		if (tooltip == null)
+		{
+			local entity = ::Tactical.getEntityByID(_entityId);
+			local item = entity.getItems().getItemByInstanceID(_skillId);
+
+			if (item != null)
+			{
+				local currentItem = entity.getItems().getItemAtSlot(item.getSlotType());
+				tooltip = [
+					{
+						id = 1,
+						type = "title",
+						text = "Switch to " + item.getName()
+					},
+					{
+						id = 2,
+						type = "description",
+						text = "Quickly switch to another item from your bag"
+					},
+					{
+						id = 3,
+						type = "text",
+						text = "Costs [b][color=" + ::Const.UI.Color.PositiveValue + "] " + entity.getItems().getActionCost(currentItem != null ? [
+							currentItem,
+							item
+						] : [
+							item
+						]) + "[/color][/b] AP to switch"
+					}
+				];
+			}
+		}
+
+		return tooltip;
+	}
+
 	o.tactical_queryUIItemTooltipData = function ( _entityId, _itemId, _itemOwner )
 	{
 		local entity = this.Tactical.getEntityByID(_entityId);
@@ -128,6 +169,12 @@
 			}
 
 			return entity.getRemoveLayerTooltip(this.Const.ItemSlot.Head, _itemId);
+
+		case "paperdoll.toggle-accessory-visibility":
+			if (entity == null) {
+				return null;
+			}
+			return entity.getToggleAccessoryTooltip(this.Const.ItemSlot.Accessory, _itemId);
 		}
 
 		return null;
@@ -631,6 +678,12 @@
 			}
 
 			return entity.getRemoveLayerTooltip(this.Const.ItemSlot.Head, _itemId);
+
+		case "paperdoll.toggle-accessory-visibility":
+			if (entity == null) {
+				return null;
+			}
+			return entity.getToggleAccessoryTooltip(this.Const.ItemSlot.Accessory, _itemId);
 		}
 
 		return null;
@@ -2125,7 +2178,7 @@
 				{
 					id = 2,
 					type = "description",
-					text = "Not recommended in Legends Beta. Ironman mode disables manual saving. Only a single save will exist for the company, and the game is automatically saved during the game and on exiting it. Losing the whole company means losing the save. Not recommended in while Legends is in Beta due to possible save corruptions.\n\nNote that on weaker computers autosaves may result in the game pausing for a few seconds."
+					text = "Not recommended in Legends. Ironman mode disables manual saving. Only a single save will exist for the company, and the game is automatically saved during the game and on exiting it. Losing the whole company means losing the save. Not recommended in while Legends is in Beta due to possible save corruptions.\n\nNote that on weaker computers autosaves may result in the game pausing for a few seconds."
 				}
 			];
 
@@ -3762,6 +3815,7 @@
 			];
 
 		case "world-town-screen.main-dialog-module.Arena":
+			local ttinfo = this.World.State.getCurrentTown().getBuilding("building.arena").getAttempts();
 			local ret = [
 				{
 					id = 1,
@@ -3772,6 +3826,12 @@
 					id = 2,
 					type = "description",
 					text = "The arena offers an opportunity to earn gold and fame in fights that are to the death, and in front of crowds that cheer for the most gruesome manner in which lives are dispatched."
+				},
+				{
+					id = 3,
+					type = "hint",
+					icon = "ui/icons/melee_skill.png",
+					text = "There are " + ttinfo[0] + " / " + ttinfo[1] + " fights available today."
 				}
 			];
 

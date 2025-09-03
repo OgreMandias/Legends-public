@@ -14,7 +14,7 @@
 				id = 8,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Inflicts additional [color=" + this.Const.UI.Color.DamageValue + "]" + this.getContainer().getActor().getCurrentProperties().IsSpecializedInPolearms ? 10 : 5 + "[/color] bleeding damage over time if not stopped by armor"
+				text = "Inflicts additional [color=" + this.Const.UI.Color.DamageValue + "]" + (this.getContainer().getActor().getCurrentProperties().IsSpecializedInPolearms ? 10 : 5) + "[/color] bleeding damage over time if not stopped by armor"
 			}
 		]);
 
@@ -68,7 +68,7 @@
 		{
 			if (!target.isAlive() || target.isDying())
 			{
-				if (this.isKindOf(target, "lindwurm_tail") || !target.getCurrentProperties().IsImmuneToBleeding)
+				if (target.getFlags().has("tail") || !target.getCurrentProperties().IsImmuneToBleeding)
 				{
 					this.Sound.play(this.m.BleedingSounds[this.Math.rand(0, this.m.BleedingSounds.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
 				}

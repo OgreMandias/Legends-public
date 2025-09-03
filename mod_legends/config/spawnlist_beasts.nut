@@ -51,6 +51,11 @@
 					Type = this.Const.World.Spawn.Troops.HyenaHIGH,
 					MinR = 400,
 					Cost = 20
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendEnragedHyena,
+					MinR = 500,
+					Cost = 25
 				}
 			]
 		},
@@ -81,6 +86,29 @@
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRaider,
 					Cost = 20
+				},
+				{
+					MinR = 600,
+					Type = this.Const.World.Spawn.Troops.Swordmaster,
+					Cost = 40,
+					Roll = true
+				},
+				{
+					MinR = 600,
+					Type = this.Const.World.Spawn.Troops.HedgeKnight,
+					Cost = 40,
+					Roll = true
+				},
+				{
+					MinR = 400,
+					Type = this.Const.World.Spawn.Troops.BanditVeteran,
+					Cost = 30
+				},
+				{
+					MinR = 600,
+					Type = this.Const.World.Spawn.Troops.BanditWarlord,
+					Cost = 125,
+					Roll = true
 				}
 			]
 		},

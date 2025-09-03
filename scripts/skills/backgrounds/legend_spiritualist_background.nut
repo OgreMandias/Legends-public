@@ -45,7 +45,7 @@ this.legend_spiritualist_background <- this.inherit("scripts/skills/backgrounds/
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.DaggerTree,
-				this.Const.Perks.StaffTree,
+				this.Const.Perks.PolearmTree,
 				this.Const.Perks.ThrowingTree,
 				this.Const.Perks.BowTree
 			],
@@ -60,7 +60,11 @@ this.legend_spiritualist_background <- this.inherit("scripts/skills/backgrounds/
 			],
 			Enemy = [],
 			Class = [],
-			Magic = [this.Const.Perks.ValaSpiritMagicTree]
+			Profession = [],
+			Magic = [
+				this.Const.Perks.ValaSpiritMagicTree,
+				this.Const.Perks.StavesMagicTree
+			]
 		}
 	}
 

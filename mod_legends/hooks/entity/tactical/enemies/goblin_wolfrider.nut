@@ -4,6 +4,8 @@
 	o.onInit = function ()
 	{
 		onInit();
+		::Legends.Perks.remove(this, ::Legends.Perk.Backstabber); // remove vanilla backstabber
+		::Legends.Perks.grant(this, ::Legends.Perk.LegendStrengthInNumbers);
 		if(::Legends.isLegendaryDifficulty())
 		{
 			::Legends.Perks.grant(this, ::Legends.Perk.FastAdaption);
@@ -17,7 +19,7 @@
 		local weapons = [
 			"weapons/greenskins/goblin_falchion",
 			"weapons/greenskins/goblin_spear",
-			"weapons/greenskins/legend_goblin_longaxe",
+			"weapons/greenskins/legend_goblin_infantry_axe",
 		];
 
 		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));

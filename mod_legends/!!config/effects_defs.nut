@@ -1113,7 +1113,7 @@ effectsDefs.push({
 effectsDefs.push({
 	ID = "effects.legend_demon_hound_bite_effect",
 	Script = "scripts/skills/effects/legend_demon_hound_bite_effect",
-	Name = "H÷llenhund Curse",
+	Name = "Höllenhund Curse",
 	Const = "LegendDemonHoundBiteEffect"
 });
 
@@ -1971,6 +1971,30 @@ effectsDefs.push({
 	Script = "scripts/skills/effects/legend_prepare_bullet_effect",
 	Const = "LegendPrepareBullet",
 	Name = "Prepare Bullet",
+});
+
+::Legends.Effect.LegendCommanded <- null;
+effectsDefs.push({
+	ID = "effects.legend_commanded",
+	Script = "scripts/skills/effects/legend_commanded_effect",
+	Const = "LegendCommanded",
+	Name = "Commanded",
+});
+
+::Legends.Effect.LegendRamHammer <- null;
+effectsDefs.push({
+	ID = "effects.legend_ram_hammer",
+	Script = "scripts/skills/effects/legend_ram_hammer_effect",
+	Const = "LegendRamHammer",
+	Name = "Ram Hammer",
+});
+
+::Legends.Effect.LegendCompromisedArmor <- null;
+effectsDefs.push({
+	ID = "effects.legend_compromised_armor",
+	Script = "scripts/skills/effects/legend_compromised_armor_effect",
+	Const = "LegendCompromisedArmor",
+	Name = "Compromised Armor",
 });
 
 ::Legends.Effects.addEffectDefObjects(effectsDefs);

@@ -55,7 +55,6 @@ this.legend_nightwatch_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.PolearmTree,
-				this.Const.Perks.StaffTree,
 				this.Const.Perks.CrossbowTree,
 				this.Const.Perks.SlingTree
 			],
@@ -71,6 +70,7 @@ this.legend_nightwatch_background <- this.inherit("scripts/skills/backgrounds/ch
 			Enemy = [
 				this.Const.Perks.AlpTree
 			],
+			Profession = [],
 			Class = [],
 			Magic = []
 		}

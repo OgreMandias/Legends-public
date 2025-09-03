@@ -64,10 +64,12 @@ this.legend_qiyan_background <- this.inherit("scripts/skills/backgrounds/charact
 			],
 			Enemy = [],
 			Class = [
-				this.Const.Perks.KnifeClassTree,
-				this.Const.Perks.BardClassTree
+				this.Const.Perks.KnifeClassTree
 			],
-			Magic = []
+			Profession = [],
+			Magic = [
+				this.Const.Perks.BardMagicTree
+			]
 		}
 	}
 
@@ -133,7 +135,6 @@ this.legend_qiyan_background <- this.inherit("scripts/skills/backgrounds/charact
 			[1, ::Legends.Helmet.Southern.legend_headress_coin],
 			[1, ::Legends.Helmet.Southern.legend_earings],
 			[5, ::Legends.Helmet.Southern.legend_southern_veil],
-			[1, ::Legends.Helmet.Southern.legend_southern_veil_coin],
 			[1, ::Legends.Helmet.Southern.legend_southern_cloth_headress]
 		]));
 	}

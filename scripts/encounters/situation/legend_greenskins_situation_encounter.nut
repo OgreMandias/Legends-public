@@ -4,8 +4,8 @@ this.legend_greenskins_situation_encounter <- this.inherit("scripts/encounters/e
     },
     function create() {
         this.createScreens();
-        this.m.Type = "encounter.legend_greenskins_situation_encounter";
-        this.m.Name = "Marauding greenskins";
+        this.m.Type = "encounter.legend_greenskins_situation";
+        this.m.Name = ::Const.Strings.randomCityEncounterName();
     }
 
     function createScreens() {
@@ -17,7 +17,7 @@ this.legend_greenskins_situation_encounter <- this.inherit("scripts/encounters/e
             List = [],
             Options = [
                 {
-                    Text = "Damn",
+                    Text = "Damn.",
                     function getResult(_event) {
                         return 0;
                     }
@@ -30,6 +30,6 @@ this.legend_greenskins_situation_encounter <- this.inherit("scripts/encounters/e
     function isValid(_settlement) {
         if (!_settlement.hasSituation("situation.greenskins"))
             return false;
-        return !isOnCooldown();
+        return !this.isOnCooldown();
     }
 })

@@ -66,7 +66,7 @@
 			Weapon = [
 				this.Const.Perks.DaggerTree,
 				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.StaffTree,
+				this.Const.Perks.PolearmTree,
 				this.Const.Perks.SpearTree
 			],
 			Defense = [
@@ -80,6 +80,7 @@
 			],
 			Enemy = [],
 			Class = [],
+			Profession = [], 
 			Magic = []
 		}
 		this.m.Bodies = this.Const.Bodies.Skinny;

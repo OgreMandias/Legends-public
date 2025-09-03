@@ -51,7 +51,7 @@
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.SlingTree,
-				this.Const.Perks.StaffTree,
+				this.Const.Perks.PolearmTree,
 				this.Const.Perks.ThrowingTree,
 				this.Const.Perks.CleaverTree
 			],
@@ -67,6 +67,7 @@
 			],
 			Enemy = [this.Const.Perks.DirewolfTree],
 			Class = [this.Const.Perks.SlingClassTree],
+			Profession = [], 
 			Magic = []
 		}
 	}

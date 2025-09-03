@@ -53,7 +53,7 @@ this.legend_transmuter_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.DaggerTree,
-				this.Const.Perks.StaffTree,
+				this.Const.Perks.PolearmTree,
 				this.Const.Perks.ThrowingTree,
 				this.Const.Perks.CrossbowTree
 			],
@@ -68,9 +68,11 @@ this.legend_transmuter_background <- this.inherit("scripts/skills/backgrounds/ch
 			],
 			Enemy = [],
 			Class = [],
+			Profession = [],
 			Magic = [
-			this.Const.Perks.TransmutationMagicTree,
-			this.Const.Perks.PremonitionMagicTree
+				this.Const.Perks.TransmutationMagicTree,
+				this.Const.Perks.PremonitionMagicTree,
+				this.Const.Perks.StavesMagicTree
 			]
 		}
 

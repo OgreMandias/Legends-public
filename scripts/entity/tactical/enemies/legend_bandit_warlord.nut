@@ -74,7 +74,7 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 		::Legends.Perks.grant(this, ::Legends.Perk.BattleForged);
 		::Legends.Perks.grant(this, ::Legends.Perk.InspiringPresence);
 		::Legends.Perks.grant(this, ::Legends.Perk.RallyTheTroops);
-		::Legends.Perks.grant(this, ::Legends.Perk.LegendFullForce);
+		::Legends.Perks.grant(this, ::Legends.Perk.LegendImmovableObject);
 		::Legends.Perks.grant(this, ::Legends.Perk.LoneWolf); // Am I unfair? No - it is the players who are wrong.
 		::Legends.Perks.grant(this, ::Legends.Perk.LegendComposure);
 		::Legends.Perks.grant(this, ::Legends.Perk.Underdog);
@@ -90,44 +90,7 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 			::Legends.Traits.grant(this, ::Legends.Trait.Fearless);
 		}
 
-		if (!this.Tactical.State.isScenarioMode())
-		{
-			local dateToSkip = 0;
-
-			switch(this.World.Assets.getCombatDifficulty())
-			{
-			case this.Const.Difficulty.Easy:
-				dateToSkip = 240;
-				break;
-
-			case this.Const.Difficulty.Normal:
-				dateToSkip = 180;
-				break;
-
-			case this.Const.Difficulty.Hard:
-				dateToSkip = 120;
-				break;
-
-			case this.Const.Difficulty.Legendary:
-				dateToSkip = 60;
-				break;
-			}
-
-			if (this.World.getTime().Days >= dateToSkip)
-			{
-				local bonus = this.Math.min(1, this.Math.floor((this.World.getTime().Days - dateToSkip) / 20.0));
-				local b = this.m.BaseProperties;
-				b.MeleeSkill += bonus;
-				b.RangedSkill += bonus;
-				b.MeleeDefense += this.Math.floor(bonus / 2);
-				b.RangedDefense += this.Math.floor(bonus / 2);
-				b.Hitpoints += this.Math.floor(bonus * 2);
-				b.Initiative += this.Math.floor(bonus / 2);
-				b.Stamina += bonus;
-				b.Bravery += bonus;
-				b.FatigueRecoveryRate += this.Math.floor(bonus / 4);
-			}
-		}
+		::Legends.S.scaleBaseProperties(b);
 	}
 
 	function assignRandomEquipment()
@@ -137,8 +100,8 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 			"shields/named/named_bandit_kite_shield",
 			"shields/named/named_bandit_heater_shield"
 		]);
-		local r = this.Math.rand(1,100);
-		if (r > 50)
+		local r = this.Math.rand(1, 100);
+		if (r > 25)
 		{
 			local namedWeaponArray = clone ::Const.Items.NamedMeleeWeapons;
 			::MSU.Array.remove(namedWeaponArray, "weapons/named/named_dagger");
@@ -242,4 +205,3 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 	}
 
 });
-

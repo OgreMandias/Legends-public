@@ -18,7 +18,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 			::Legends.Traits.getID(::Legends.Trait.Irrational),
 			::Legends.Traits.getID(::Legends.Trait.Hesistant),
 			::Legends.Traits.getID(::Legends.Trait.Drunkard),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed),
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted),
 			::Legends.Traits.getID(::Legends.Trait.Craven),
 			::Legends.Traits.getID(::Legends.Trait.Dastard),
 			::Legends.Traits.getID(::Legends.Trait.Fragile),
@@ -92,8 +92,9 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.OutlandersTree,
 				this.Const.Perks.CivilizationTree
 			],
-			Class = [
-				this.Const.Perks.BarterClassTree
+			Class = [],
+			Profession = [
+				this.Const.Perks.BarterProfessionTree
 			],
 			Magic = [
 				this.Const.Perks.CaptainMagicTree

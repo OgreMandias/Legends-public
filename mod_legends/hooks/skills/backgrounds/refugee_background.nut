@@ -61,9 +61,10 @@
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];
+		this.m.PerkTreeDynamicMins.ClassChance += 0.20;
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.StaffTree,
+				this.Const.Perks.PolearmTree,
 				this.Const.Perks.SlingTree,
 				this.Const.Perks.ThrowingTree
 			],
@@ -80,6 +81,7 @@
 			Class = [
 				this.Const.Perks.StaffClassTree
 			],
+			Profession = [], 
 			Magic = []
 		}
 	}

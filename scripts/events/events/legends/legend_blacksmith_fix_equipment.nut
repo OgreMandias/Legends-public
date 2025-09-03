@@ -9,7 +9,7 @@ this.legend_blacksmith_fix_equipment <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 45.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_82.png[/img]While setting for a camp %blacksmith% takes you aside, the staunch musclebound man looking unusually concerned.%SPEECH_ON%Sir, this equipment of ours is in really bad shape! It\'s a disgrace to be seen fighting in this. It is high time we bring it back to working condition!%SPEECH_OFF% The brute of a man rolls up his sleeves and swings around his hammer, seemingly eager to spend a whole night working his anvil.",
+			Text = "[img]gfx/ui/events/event_82.png[/img]While setting up for a camp %blacksmith% takes you aside, the staunch musclebound man looking unusually concerned.%SPEECH_ON%Sir, this equipment of ours is in really bad shape! It\'s a disgrace to be seen fighting in this. It is high time we bring it back to working condition!%SPEECH_OFF% The brute of a man rolls up his sleeves and swings around his hammer, seemingly eager to spend a whole night working his anvil.",
 			Image = "",
 			List = [],
 			Options = [
@@ -61,13 +61,10 @@ this.legend_blacksmith_fix_equipment <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-				_event.m.Blacksmith.worsenMood(0.5, "Stayed up all night working");
-				this.List.push({
-					id = 10,
-					icon = this.Const.MoodStateIcon[_event.m.Blacksmith.getMoodState()],
-					text = _event.m.Blacksmith.getName() + this.Const.MoodStateEvent[_event.m.Blacksmith.getMoodState()]
-				});
 				this.Characters.push(_event.m.Blacksmith.getImagePath());
+
+				this.List.push(::Legends.EventList.changeMood(_event.m.Blacksmith, -0.5, "Stayed up all night working"));
+
 				local stash = this.World.Assets.getStash().getItems();
 				local items = 0;
 
@@ -111,12 +108,7 @@ this.legend_blacksmith_fix_equipment <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.Characters.push(_event.m.Blacksmith.getImagePath());
-				_event.m.Blacksmith.worsenMood(1.0, "Accidentally injured himself");
-				this.List.push({
-					id = 10,
-					icon = this.Const.MoodStateIcon[_event.m.Blacksmith.getMoodState()],
-					text = _event.m.Blacksmith.getName() + this.Const.MoodStateEvent[_event.m.Blacksmith.getMoodState()]
-				});
+				this.List.push(::Legends.EventList.changeMood(_event.m.Blacksmith, -1.0, "Accidentally injured himself"));
 				local injury = _event.m.Blacksmith.addInjury(this.Const.Injury.Helping);
 				this.List.push({
 					id = 10,

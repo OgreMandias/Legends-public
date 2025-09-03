@@ -632,6 +632,9 @@
 		if (!this.isAlive())
 			return;
 
+		if (this.m.CurrentProperties == null)
+			::logInfo("wtf, this.m.CurrentProperties == null?");
+
 		this.updateVisibility(this.getTile(), this.m.CurrentProperties.getVision(), this.getFaction());
 
 		if (this.getFaction() == this.Const.Faction.PlayerAnimals) {

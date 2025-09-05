@@ -427,13 +427,13 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 
 		local party = null;
 		if (this.getDifficulty() <= 2) { // we want militia party for these
-			party = ::World.FactionManager.getFaction(this.m.Town.getFaction())
+			party = ::World.FactionManager.getFaction(::Const.Faction.Enemy)
 				.spawnEntity(tile, this.m.Town.getName() + " Militia", false, ::Const.World.Spawn.Militia, 80 * this.getDifficultyMult() * this.getScaledDifficultyMult(), this.getMinibossModifier());
 			party.getSprite("banner").setBrush(this.m.Town.getBanner());
 			party.setDescription("Brave men defending their homes with their lives. Farmers, craftsmen, artisans - but not one real soldier.");
 			party.setFootprintType(this.Const.World.FootprintsType.Militia);
 		} else { // hardest should spawn nobles
-			party = ::World.FactionManager.getFaction(this.m.Flags.get("EnemyNobleHouse"))
+			party = ::World.FactionManager.getFaction(::Const.Faction.Enemy)
 				.spawnEntity(tile, "Patrol", false, ::Const.World.Spawn.Noble, 80 * this.getDifficultyMult() * this.getScaledDifficultyMult(), this.getMinibossModifier());
 			party.getSprite("banner").setBrush(::World.FactionManager.getFaction(this.m.Flags.get("EnemyNobleHouse")).getBannerSmall());
 			party.setDescription("Professional soldiers in service to local lords.");
@@ -451,7 +451,6 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 		party.getLoot().ArmorParts = this.Math.rand(0, 10);
 		party.getLoot().Medicine = this.Math.rand(0, 2);
 		party.getLoot().Ammo = this.Math.rand(0, 20);
-		party.setFaction(::Const.Faction.Enemy);
 		party.setMovementSpeed(::Const.World.MovementSettings.Speed * 2.0);
 
 		local r = this.Math.rand(1, 6);
@@ -600,8 +599,6 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 			local entity = ::World.getEntityByID(target);
 			if (entity != null) {
 				this.m.PursuitParty = ::WeakTableRef(entity);
-				if (this.m.PursuitParty.getFaction() != ::Const.Faction.Bandits)
-					this.m.PursuitParty.setFaction(::Const.Faction.Enemy);
 			}
 		}
 		this.contract.onDeserialize(_in);

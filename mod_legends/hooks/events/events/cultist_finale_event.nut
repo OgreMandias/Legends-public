@@ -35,7 +35,7 @@
 
 					foreach( bro in brothers )
 					{
-						if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.ConvertedCultist))
+						if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.ConvertedCultist) || bro.getBackground().isBackgroundType(this.Const.BackgroundType.Cultist))
 						{
 							bro.improveMood(2.0, "Appeased Davkul");
 
@@ -70,7 +70,7 @@
 					local brothers = this.World.getPlayerRoster().getAll();
 
 					foreach( bro in brothers ) {
-						if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.ConvertedCultist)) {
+						if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.ConvertedCultist) || bro.getBackground().isBackgroundType(this.Const.BackgroundType.Cultist)) {
 							bro.worsenMood(2.0, "Was denied the chance to appease Davkul");
 							if (bro.getMoodState() < this.Const.MoodState.Neutral) {
 								this.List.push({

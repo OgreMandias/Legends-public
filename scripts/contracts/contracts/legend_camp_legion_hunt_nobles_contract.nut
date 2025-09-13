@@ -12,20 +12,22 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 		this.m.DifficultyMult = ::Math.rand(95, 125) * 0.01;
 		this.m.DescriptionTemplates = [
-			"Friendly barbarian tribe tries to expand their forces. They're looking for some unholds.",
-			"Local barbarian warlord is looking for new pet. You can only imagine what he wants.",
+			"A Noble house patrol is too close to discovering us.",
+			"Cause infighting between the Noble houses by murdering one of their patrols.",
 		];
 	}
 
-	function isVisible() {
-		// exclude bottom half of the map, there's no unholds there anyway, nor barbs
+	function isVisible() 
+	{
+		// exclude bottom half of the map
 		local currentTile = ::World.State.getPlayer().getTile();
 		if (currentTile.SquareCoords.Y < ::World.getMapSize().Y * 0.5)
 			return false;
 		return true;
 	}
 
-	function start() {
+	function start() 
+	{
 		this.m.Payment.Pool = 800 * this.getPaymentMult() * ::Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
 
 		if (::Math.rand(1, 100) <= 10) {
@@ -38,23 +40,29 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 		this.contract.start();
 	}
 
-	function createStates() {
+	function createStates() 
+	{
 		this.m.States.push({
 			ID = "Offer",
-			function start() {
+			function start() 
+			{
 				this.Contract.m.BulletpointsObjectives = [
-					"Equip provided nets",
-					"Hunt and capture at least one unhold"
+					"Destroy the Noble house patrol",
+					"Do not leave any survivors"
 				];
 
 				if (::Math.rand(1, 100) <= ::Const.Contracts.Settings.IntroChance) {
 					this.Contract.setScreen("Intro");
-				} else {
+				} 
+
+				else 
+				{
 					this.Contract.setScreen("Task");
 				}
 			}
 
-			function end() {
+			function end() 
+			{
 				this.World.Assets.addMoney(this.Contract.m.Payment.getInAdvance());
 				local r = ::Math.rand(1, 100);
 
@@ -62,25 +70,24 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 				this.Contract.spawnEnemies();
 				this.Contract.setScreen("Overview");
 				this.World.Contracts.setActiveContract(this.Contract);
-
-				local count = ::Math.rand(1, 3);
-				while (count--) {
-					::World.Assets.getStash().add(::new("scripts/items/tools/legend_unhold_throwing_net"));
-				}
 			}
 
 		});
 		this.m.States.push({
 			ID = "Running",
-			function start() {
-				if (this.Contract.m.Target != null && !this.Contract.m.Target.isNull()) {
+			function start() 
+			{
+				if (this.Contract.m.Target != null && !this.Contract.m.Target.isNull()) 
+				{
 					this.Contract.m.Target.getSprite("selection").Visible = true;
 					this.Contract.m.Target.setOnCombatWithPlayerCallback(this.onTargetAttacked.bindenv(this));
 				}
 			}
 
-			function update() {
-				if (this.Flags.getAsInt("CapturedUnholds") > 0) {
+			function update() 
+			{
+				if (this.Flags.getAsInt("NoSurvivors") > 0) 
+				{
 					local target = this.Contract.m.Target;
 					if (target != null) {
 						::World.EntityManager.onWorldEntityDestroyed(target, false);
@@ -88,30 +95,43 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 					}
 					this.Contract.m.Target = null;
 				}
-				if (this.Contract.m.Target == null || this.Contract.m.Target.isNull() || !this.Contract.m.Target.isAlive()) {
+				
+				if (this.Contract.m.Target == null || this.Contract.m.Target.isNull() || !this.Contract.m.Target.isAlive()) 
+				{
 					this.Contract.setScreen("AfterBattle");
 					this.World.Contracts.showActiveContract();
-					if (this.Flags.getAsInt("CapturedUnholds") > 0) {
+
+					if (this.Flags.getAsInt("NoSurvivors") > 0) 
+					{
 						this.Contract.setState("Return");
-					} else {
+					} 
+
+					else 
+					{
 						this.Contract.setState("Chase");
 					}
 				}
 			}
 
-			function onTargetAttacked(_dest, _isPlayerAttacking) {
-				if (!this.Flags.get("IsEncounterShown")) {
+			function onTargetAttacked(_dest, _isPlayerAttacking) 
+			{
+				if (!this.Flags.get("IsEncounterShown")) 
+				{
 					this.Flags.set("IsEncounterShown", true);
 					this.Contract.setScreen("Encounter");
 					this.World.Contracts.showActiveContract();
-				} else {
+				} 
+				
+				else 
+				{
 					this.World.Contracts.showCombatDialog(_isPlayerAttacking);
 				}
 			}
 		});
 		this.m.States.push({
 			ID = "Chase",
-			function start() {
+			function start() 
+			{
 				this.Contract.m.BulletpointsObjectives = [
 					"Wait for your employer to contact you."
 				];
@@ -122,32 +142,41 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 				}
 			}
 
-			function update() {
-				if (this.Contract.m.Target == null || this.Contract.m.Target.isNull() || !this.Contract.m.Target.isAlive()) {
+			function update() 
+			{
+				if (this.Contract.m.Target == null || this.Contract.m.Target.isNull() || !this.Contract.m.Target.isAlive()) 
+				{
 					this.Contract.setScreen("Failure");
 					this.World.Contracts.showActiveContract();
 				}
 			}
 
-			function onTargetAttacked(_dest, _isPlayerAttacking) {
-				if (!this.Flags.get("IsBarbEncounterShown")) {
-					this.Flags.set("IsBarbEncounterShown", true);
-					this.Contract.setScreen("BarbEncounter");
+			function onTargetAttacked(_dest, _isPlayerAttacking) 
+			{
+				if (!this.Flags.get("IsNobleResponseShown")) 
+				{
+					this.Flags.set("IsNobleResponseShown", true);
+					this.Contract.setScreen("NobleResponse");
 					this.World.Contracts.showActiveContract();
-				} else {
+				} 
+				
+				else 
+				{
 					this.World.Contracts.showCombatDialog(_isPlayerAttacking);
 				}
 			}
 		});
 		this.m.States.push({
 			ID = "Return",
-			function start() {
+			function start() 
+			{
 				this.Contract.m.BulletpointsObjectives = [
 					"Wait for your employer to contact you."
 				];
 			}
 
-			function update() {
+			function update() 
+			{
 				this.Contract.setScreen("Success");
 				this.World.Contracts.showActiveContract();
 			}
@@ -155,28 +184,29 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 		});
 	}
 
-	function createScreens() {
-		this.importScreens(this.Const.Contracts.NegotiationDefault);
+	function createScreens() 
+	{
+		this.importScreens(this.Const.Contracts.NegotiationDefault); //for legion, may be better to create new negotiation templates as a hook in 'intro templates'?
 		this.importScreens(this.Const.Contracts.Overview);
 
 		this.m.Screens.push({
 			ID = "Task",
 			Title = "Negotiations",
-			Text = "[img]gfx/ui/events/legend_camp_hunt.png[/img]{When %employer% enters your tent he runs out to greet you, he looks at you with gleaming eyes. %SPEECH_ON%I want you to capture an unhold I've been prying on. The pack is strong, our tribe is not enough.%SPEECH_OFF% }",
+			Text = "[img]gfx/ui/events/legend_camp_hunt.png[/img]{%employer% approaches you in camp. %SPEECH_ON%A patrol is nearby. It has been getting closer and closer to one of our larger camps. Destroy the patrol and place this shield at the battlefield to misdirect the enemy into fighting one another.%SPEECH_OFF% The messenger pauses as both of your hands at at the brim of the shield. An important message follows. %SPEECH_ON%Do not allow any to escape.%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			ShowEmployer = true,
 			ShowDifficulty = true,
 			Options = [
 				{
-					Text = "{The %companyname% can help for the right price. | Let\'s talk crowns.}",
+					Text = "{We need more pay.}",
 					function getResult() {
 						return "Negotiation";
 					}
 
 				},
 				{
-					Text = "{This doesn\'t sound like our kind of work. | This won\'t be worth the risk.}",
+					Text = "{We can\'t take this on right now.}",
 					function getResult() {
 						this.World.Contracts.removeContract(this.Contract);
 						return 0;
@@ -186,10 +216,10 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 			]
 		});
 
-		this.m.Screens.push({
+		this.m.Screens.push({ //noble patrol
 			ID = "Encounter",
 			Title = "As you approach...",
-			Text = "[img]gfx/ui/events/legend_rock_unhold.png[/img]{You found the unhold pack %employer% was talking about. You rally your men to charge at them.}",
+			Text = "[img]gfx/ui/events/event_55.png[/img]{You find the patrol %employer% was talking about. They sit completely unprepared for your arrival. The words ring through your hollow mind again... %SPEECH_ON%Do not allow any to escape.%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Options = [{
@@ -201,10 +231,10 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 			}]
 		});
 
-		this.m.Screens.push({
-			ID = "BarbEncounter",
-			Title = "As you approach...",
-			Text = "[img]gfx/ui/events/legend_rock_unhold.png[/img]{%employer% isn't pleased that you killed the unhold he wanted you to capture. You line up your men to face them.}",
+		this.m.Screens.push({ //if not everyone killed = noble response party
+			ID = "NobleResponse",
+			Title = "Closing in...",
+			Text = "[img]gfx/ui/events/event_90.png[/img]{The few survivors that escaped your attack have gotten word out. In the distance, a much larger, more prepared forces tightens the noose around you...}",
 			Image = "",
 			List = [],
 			Options = [{
@@ -216,26 +246,27 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 			}]
 		});
 
-		this.m.Screens.push({
+		this.m.Screens.push({ 
 			ID = "AfterBattle",
 			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_113.png[/img]{The giant barely breathing, laying on the ground, still weakened by the contraption. You order the men to load it to the cage.}",
+			Text = "[img]gfx/ui/events/event_60.png[/img]{The battlefield is lain astrew with gore and metal. You take what you can and leave a shield belonging to another Noble house in a treeline not far from the battle.}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "Time to get paid.",
+					Text = "Time to return.",
 					function getResult() {
 						return 0;
 					}
 				}
 			],
 			function start() {
-				if (this.Flags.getAsInt("CapturedUnholds") == 0) {
-					this.Text = "[img]gfx/ui/events/event_113.png[/img]{You failed to capture unhold. Your employer won't be satisfied.}";
+				if (this.Flags.getAsInt("NoSurvivors") == 0) 
+				{
+					this.Text = "[img]gfx/ui/events/event_22.png[/img]{You perform a brief headcount, first of your own fighters, then a slower, more methodical count of the patrol.\n\n Some are missing.}";
 					this.Options = [
 						{
-							Text = "Damn it.",
+							Text = "We need to leave.",
 							function getResult() {
 								return 0;
 							}
@@ -248,7 +279,7 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 		this.m.Screens.push({
 			ID = "Success",
 			Title = "On your return...",
-			Text = "[img]gfx/ui/events/event_31.png[/img]{You hand over the cage over to the %employer%. %SPEECH_ON%Impressive, fine specimen.%SPEECH_OFF%Tribe leaves with their new pet, while you wonder, what will happen to it.}",
+			Text = "[img]gfx/ui/events/event_36.png[/img]{You return to %employer%. Little is said, but a mutual understanding is held.\n\n They silently pass you the reward and depart.}",
 			Image = "",
 			Characters = [],
 			List = [],
@@ -272,14 +303,14 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 			}
 		});
 
-		this.m.Screens.push({
+		this.m.Screens.push({ //to do
 			ID = "Failure",
 			Title = "After battle...",
-			Text = "[img]gfx/ui/events/legend_rock_unhold.png[/img]{You failed to capture requested unhold. You worry there might be consequences of your sloppiness...}",
+			Text = "[img]gfx/ui/events/legend_rock_unhold.png[/img]{Some memmbers of the patrol escaped. You sense there will be repercussions for this.}",
 			Image = "",
 			List = [],
 			Options = [{
-				Text = "Such is life",
+				Text = "Unfortunate.",
 				function getResult() {
 					this.World.Assets.addBusinessReputation(::Const.World.Assets.ReputationOnContractFail);
 					this.World.Contracts.finishActiveContract();
@@ -299,17 +330,29 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 			::Const.World.TerrainType.Tundra
 		]);
 		local nearTile = this.getTileToSpawnLocation(playerTile, 1, 3);
+
 		local party;
-		party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "Unholds", false, ::Const.World.Spawn.Unhold, ::Math.rand(95, 115) * this.getDifficultyMult() * this.getScaledDifficultyMult(), this.getMinibossModifier());
-		party.setDescription("One or more lumbering giants.");
+		party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.NobleHouse).spawnEntity(tile, "Scouting Party", false, ::Const.Const.World.Spawn.NobleCaravan, ::Math.rand(100, 120) * this.getDifficultyMult() * this.getScaledDifficultyMult(), this.getMinibossModifier());
+
+
+		party.setDescription("A small scouting party of a Noble house.");
 		party.setAttackableByAI(false);
-		party.getFlags().set("IsUnholds", true);
-		::Const.World.Common.addFootprintsFromTo(nearTile, party.getTile(), this.Const.BeastFootprints, 0.85);
+		party.getFlags().set("IsRandomlySpawned", true);
+
+		party.getLoot().Money = this.Math.rand(21, 111);
+		party.getLoot().ArmorParts = this.Math.rand(0, 25);
+		// party.getLoot().Medicine = this.Math.rand(0, 3);
+		party.getLoot().Ammo = this.Math.rand(0, 30);
+
+		::Const.World.Common.addFootprintsFromTo(nearTile, party.getTile(), this.Const.FootprintsType.Nobles, 0.85);
+		// party.setFootprintType(this.Const.World.FootprintsType.Nobles);
 		this.m.Target = this.WeakTableRef(party);
-		party.getSprite("banner").setBrush("banner_beasts_01");
+		party.getSprite("body").setBrush(party.getSprite("body").getBrush().Name + "_" + _faction.getBannerString());
+
 		local c = party.getController();
 		c.getBehavior(this.Const.World.AI.Behavior.ID.Flee).setEnabled(false);
 		c.getBehavior(this.Const.World.AI.Behavior.ID.Attack).setEnabled(false);
+
 		local roam = this.new("scripts/ai/world/orders/roam_order");
 		roam.setPivot(this.m.Home);
 		roam.setMinRange(2);
@@ -325,7 +368,8 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 		return party;
 	}
 
-	function spawnRevengeEnemies() {
+	function spawnRevengeEnemies() 
+	{
 		local playerTile = ::World.State.getPlayer().getTile();
 		local tile = this.getTileToSpawnLocation(playerTile, 6, 12, [
 			::Const.World.TerrainType.Mountains,
@@ -334,10 +378,12 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 			::Const.World.TerrainType.Tundra
 		]);
 		local nearTile = this.getTileToSpawnLocation(playerTile, 4, 8);
+
 		local party;
-		party = ::World.FactionManager.getFactionOfType(::Const.FactionType.Barbarians).spawnEntity(tile, "Barbarians", false, ::Const.World.Spawn.BarbarianHunters, ::Math.rand(105, 135)  * this.getDifficultyMult() * this.getScaledDifficultyMult(), this.getMinibossModifier());
-		party.setDescription("A warband of your barbarian employer.");
-		party.setMovementSpeed(::Const.World.MovementSettings.Speed * 2.0);
+		party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.NobleHouse).spawnEntity(tile, "Patrol", false, ::Const.Const.World.Spawn.Noble, ::Math.rand(135, 150) * this.getDifficultyMult() * this.getScaledDifficultyMult(), this.getMinibossModifier());
+
+		party.setDescription("A large force hunting you down.");
+		party.setMovementSpeed(::Const.World.MovementSettings.Speed * 1.5);
 		party.setAttackableByAI(false);
 		party.setFootprintSizeOverride(0.85);
 
@@ -352,8 +398,8 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 		return party;
 	}
 
-	function onPrepareVariables(_vars) {
-
+	function onPrepareVariables(_vars) 
+	{
 	}
 
 	function onClear() {

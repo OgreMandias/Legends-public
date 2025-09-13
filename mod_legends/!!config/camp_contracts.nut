@@ -45,7 +45,7 @@
 	character.setName(::Const.World.Common.generateName(unit.NameList) + (unit.TitleList != null ? " " + unit.TitleList[::Math.rand(0, unit.TitleList.len() - 1)] : ""));
 });
 
-::Legends.CampContracts.EmployerFaction.Legion <- ::Legends.CampContracts.addFaction("ui/banners/factions/banner_legend_legion.png", function (_factionID, _roster) { //needs new banner art for legion ideally. this is a placeholder.
+::Legends.CampContracts.EmployerFaction.Legion <- ::Legends.CampContracts.addFaction("ui/banners/factions/banner_legend_legion_s.png", function (_factionID, _roster) { //needs new banner art for legion ideally. this is a placeholder.
 	local unit = ::this.Const.World.Spawn.Troops.SkeletonHeavy; //may change to priest later
 	local character = _roster.create("scripts/entity/tactical/employer/legend_legion_employer"); //need to refine this - clothes and style
 	character.setFaction(_factionID);

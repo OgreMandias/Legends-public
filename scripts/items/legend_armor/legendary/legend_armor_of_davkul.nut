@@ -23,6 +23,7 @@ this.legend_armor_of_davkul <- this.inherit("scripts/items/legend_armor/legend_n
 		this.m.ConditionMax = 270;
 		this.m.StaminaModifier = -11;
 		this.m.ItemType = this.m.ItemType | this.Const.Items.ItemType.Legendary;
+		this.updateVariant();
 	}
 
 	function updateVariant()

@@ -1,5 +1,6 @@
 ::mods_hookExactClass("entity/tactical/enemies/greater_flesh_golem", function(o)
 {
+	// todo, remove when vanilla fixes arror brush for this one
 	local onDeath = o.onDeath;
 	function onDeath( _killer, _skill, _tile, _fatalityType )
 	{

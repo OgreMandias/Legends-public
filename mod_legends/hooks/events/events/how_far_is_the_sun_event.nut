@@ -7,9 +7,9 @@
 		create();
 		foreach (s in this.m.Screens) {
 			if (s.ID == "A") {
-				local originalStart = s.start;
+				local start = s.start;
 				s.start <- function (_event) {
-					originalStart();
+					start(_event);
 					if (_event.m.Dervish != null && this.Options.len() < 6) {
 						this.Options.insert(this.Options.len() - 1, {
 							Text = "Our southern ascetic has lived their life under their Gilder\'s embrace, surely they have an idea",
@@ -270,6 +270,7 @@
 
 	local onPrepareVariables = o.onPrepareVariables;
 	o.onPrepareVariables = function (_vars) {
+		onPrepareVariables(_vars);
 		if (this.m.Dervish != null) {
 			_vars.push(["dervish", this.m.Dervish.getNameOnly()]);
 			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Dervish.getGender(), "dervish");
@@ -282,6 +283,7 @@
 
 	local onClear = o.onClear;
 	o.onClear = function () {
+		onClear();
 		this.m.Dervish = null;
 		this.m.Southerner = null;
 	}

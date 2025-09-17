@@ -100,8 +100,13 @@ this.legend_flourish_effect <- this.inherit("scripts/skills/skill", {
 		if (bonus == 0)
 			return
 
-		if (this.Math.rand(1, 100) <= this.Math.min(100, this.Math.floor(bonus * 0.5)))
+		local r = this.Math.rand(1, 100);
+		local chance = this.Math.min(100, this.Math.floor(bonus * 0.5));
+		if (r <= chance)
+		{
+			this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(_user) + "\'s " + this.getName() + " completely bypasseses " + this.Const.UI.getColorizedEntityName(_targetEntity) + "\'s defenses with great flourish (Chance: " + chance + ", Rolled: " + r + ")");
 			_hitInfo.DamageDirect = 1.0;
+		}
 	}
 
 	function getIniDifference( _attacker, _defender )

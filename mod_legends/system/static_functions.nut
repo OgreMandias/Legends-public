@@ -193,3 +193,21 @@
 		b.FatigueRecoveryRate += this.Math.floor(bonus / 4);
 	}
 }
+
+::Legends.S.getToolEfficiency <- function () {
+	// Sum combined tool efficiency modifier (eg +4 from Tool Drawers) from all brothers
+	local toolEfficiencyModifier = 0;
+	foreach (bro in this.World.getPlayerRoster().getAll()) {
+		toolEfficiencyModifier += bro.getToolEfficiencyModifier();
+	}
+	// Cap efficiency at 50%
+	return this.Math.maxf(0.5, (100.0 - toolEfficiencyModifier) / 100.0);
+}
+
+::Legends.S.oneOf <- function (_value, ...) {
+	foreach(val in vargv) {
+		if (_value == val)
+			return true;
+	}
+	return false;
+}

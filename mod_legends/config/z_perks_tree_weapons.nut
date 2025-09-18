@@ -559,7 +559,7 @@ if (!("Perks" in ::Const))
 		[::Legends.Perk.LegendSpecSpearWall],
 		[],
 		[::Legends.Perk.SpecSpear],
-		[::Legends.Perk.LegendRunThemThrough],
+		[],
 		[::Legends.Perk.LegendThrustMaster],
 		[]
 	]

@@ -1,4 +1,4 @@
-this.legend_dawg_armor <- this.inherit("scripts/items/armor/armor", {
+this.legend_sighthound_armor <- this.inherit("scripts/items/armor/armor", {
 
 	m = { }
 
@@ -7,8 +7,8 @@ this.legend_dawg_armor <- this.inherit("scripts/items/armor/armor", {
 
 		updateVariant();
 
-		m.ID = "armor.body.legend_dawg_armor";
-		m.Name = "Dawg Armor";
+		m.ID = "armor.body.legend_sighthound_armor";
+		m.Name = "Sighthound Armor";
 		m.Description = "";
 		m.IconLarge = "";
 		m.Icon = "";

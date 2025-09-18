@@ -1,8 +1,8 @@
-this.legend_dawg_bite_skill <- this.inherit("scripts/skills/skill", {
+this.legend_sighthound_bite_skill <- this.inherit("scripts/skills/skill", {
 	m = {},
 
 	function create() {
-		::Legends.Actives.onCreate(this, ::Legends.Active.LegendDawgBite);
+		::Legends.Actives.onCreate(this, ::Legends.Active.LegendSighthoundBite);
 		this.m.Description = "";
 		this.m.KilledString = "Mangled";
 		this.m.Icon = "skills/dawg_bite.png";

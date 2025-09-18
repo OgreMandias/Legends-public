@@ -1317,6 +1317,22 @@ effectsDefs.push({
 	Const = "LegendSummonedWolfEffect"
 });
 
+::Legends.Effect.LegendSummonedSighthoundEffect <- null;
+effectsDefs.push({
+	ID = "effects.legend_summoned_sighthound_effect",
+	Script = "scripts/skills/effects/legend_summoned_sighthound_effect",
+	Name = "Summoned a Sighthound",
+	Const = "LegendSummonedSighthoundEffect"
+});
+
+::Legends.Effect.LegendSummonedHoundEffect <- null;
+effectsDefs.push({
+	ID = "effects.legend_summoned_hound_effect",
+	Script = "scripts/skills/effects/legend_summoned_hound_effect",
+	Name = "Summoned a Hound",
+	Const = "LegendSummonedHoundEffect"
+});
+
 ::Legends.Effect.LegendBerserkerRage <- null;
 effectsDefs.push({
 	ID = "effects.legend_berserker_rage",

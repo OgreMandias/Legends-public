@@ -1,8 +1,8 @@
-this.legend_dawg <- this.inherit("scripts/entity/tactical/wardog", {
+this.legend_sighthound <- this.inherit("scripts/entity/tactical/wardog", {
 
 	m = {
 		Item = null
-		Name = "Dawg"
+		Name = "Sighthound"
 	}
 
 	function create() {
@@ -71,7 +71,7 @@ this.legend_dawg <- this.inherit("scripts/entity/tactical/wardog", {
 		setSpriteOffset("arrow", createVec(0, -25));
 
 		// skills
-		::Legends.Actives.grant(this, ::Legends.Active.LegendDawgBite);
+		::Legends.Actives.grant(this, ::Legends.Active.LegendSighthoundBite);
 		::Legends.Perks.grant(this, ::Legends.Perk.SteelBrow);
 		::Legends.Perks.grant(this, ::Legends.Perk.Pathfinder);
 		::Legends.Perks.grant(this, ::Legends.Perk.Overwhelm);

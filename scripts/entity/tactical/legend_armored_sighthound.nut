@@ -1,9 +1,9 @@
-this.legend_armored_dawg <- this.inherit("scripts/entity/tactical/legend_dawg", {
+this.legend_armored_sighthound <- this.inherit("scripts/entity/tactical/legend_sighthound", {
 
 	m = { }
 
 	function create() {
-		this.legend_dawg.create();
+		this.legend_sighthound.create();
 	}
 
 	function assignRandomEquipment() {

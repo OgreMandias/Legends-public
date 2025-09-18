@@ -1,8 +1,8 @@
-this.legend_unleash_dawg_skill <- this.inherit("scripts/skills/actives/legend_unleash_animal_skill", {
+this.legend_unleash_sighthound_skill <- this.inherit("scripts/skills/actives/legend_unleash_animal_skill", {
 	m = {
 		Entity = null,
-		EntityName = "Dawg",
-		Script = "scripts/entity/tactical/legend_dawg",
+		EntityName = "Sighthound",
+		Script = "scripts/entity/tactical/legend_sighthound",
 		Sounds0 = [
 			"sounds/enemies/wardog_hurt_00.wav",
 			"sounds/enemies/wardog_hurt_01.wav",
@@ -48,8 +48,8 @@ this.legend_unleash_dawg_skill <- this.inherit("scripts/skills/actives/legend_un
 	}
 
 	function create() {
-		::Legends.Actives.onCreate(this, ::Legends.Active.LegendUnleashDawg);
-		this.m.Description = "Summon a faithful dawg. Needs a free tile adjacent. Can only summon one per combat.";
+		::Legends.Actives.onCreate(this, ::Legends.Active.LegendUnleashSighthound);
+		this.m.Description = "Summon a faithful sighthound. Needs a free tile adjacent. Can only summon one per combat.";
 		this.m.Icon = "skills/unleash_dawg.png";
 		this.m.IconDisabled = "skills/unleash_dawg_sw.png";
 		this.m.Overlay = "unleash_dawg";
@@ -117,7 +117,7 @@ this.legend_unleash_dawg_skill <- this.inherit("scripts/skills/actives/legend_un
 	}
 
 	function isUsable() {
-		if (this.getContainer().hasEffect(::Legends.Effect.LegendSummonedDawgEffect)) {
+		if (this.getContainer().hasEffect(::Legends.Effect.LegendSummonedSighthoundEffect)) {
 			return false;
 		}
 
@@ -134,7 +134,7 @@ this.legend_unleash_dawg_skill <- this.inherit("scripts/skills/actives/legend_un
 	}
 
 	function onUse(_user, _targetTile) {
-		::Legends.Effects.grant(_user, ::Legends.Effect.LegendSummonedDawgEffect);
+		::Legends.Effects.grant(_user, ::Legends.Effect.LegendSummonedSighthoundEffect);
 		local entity = this.Tactical.spawnEntity(this.m.Script, _targetTile.Coords.X, _targetTile.Coords.Y);
 		entity.setFaction(this.Const.Faction.PlayerAnimals);
 		entity.setItem(this.m.Item);

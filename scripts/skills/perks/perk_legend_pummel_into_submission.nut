@@ -13,12 +13,10 @@ this.perk_legend_pummel_into_submission <- this.inherit("scripts/skills/skill", 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
 		_properties.FatigueDealtPerHitMult += 1.0;
-		if (_targetEntity.isNull())
+
+		if (::Legends.S.skillEntityAliveCheck(_targetEntity)) {
 			return;
-		if (!_targetEntity.isAlive())
-			return;
-		if (_targetEntity.isDying())
-			return;
+		}
 
 		local fatDamage = this.Const.Combat.FatigueReceivedPerHit * _properties.FatigueDealtPerHitMult + _targetEntity.getFatigueMax() * _properties.FatigueDealtAsPercentOfMaxFatigue;
 		local p = _targetEntity.getCurrentProperties();

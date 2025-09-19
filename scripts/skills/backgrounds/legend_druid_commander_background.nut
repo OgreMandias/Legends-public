@@ -127,7 +127,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				::Legends.Perk.LegendRoots,
 				::Legends.Perk.LegendHerbcraft,
 				::Legends.Perk.LegendPrayerOfLife,
-				::Legends.Perk.LegendGrapple,
+				::Legends.Perk.LegendGrappler,
 				::Legends.Perk.LegendSpecStaffStun,
 				::Legends.Perk.Rotation,
 				::Legends.Perk.Taunt,

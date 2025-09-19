@@ -170,7 +170,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				::Legends.Perk.LegendRebound
 			],
 			[
-				::Legends.Perk.LegendUnarmedTraining,
+				::Legends.Perk.LegendPummelIntoSubmission,
 				::Legends.Perk.LegendMiasma,
 				::Legends.Perk.LegendFieldTriage,
 				::Legends.Perk.LegendTumble,

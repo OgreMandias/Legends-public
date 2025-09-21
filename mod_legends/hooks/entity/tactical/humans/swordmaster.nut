@@ -23,8 +23,8 @@
 
 		if (::Legends.isLegendaryDifficulty())
 		{
-			::Legend.Effects.grant(this, ::Legends.Effect.LegendFreedomOfMovement);
-			::Legend.Effects.grant(this, ::Legends.Effect.LegendFlourish, function(_skill) {
+			::Legends.Effects.grant(this, ::Legends.Effect.LegendFreedomOfMovement);
+			::Legends.Effects.grant(this, ::Legends.Effect.LegendFlourish, function(_skill) {
 				_skill.IsRemoved = false;
 			});
 			::Legends.Perks.remove(this, ::Legends.Perk.Dodge); // balancing ig

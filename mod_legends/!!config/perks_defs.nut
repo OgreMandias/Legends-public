@@ -966,15 +966,15 @@ perkDefObjects.push({
 	Const = "LegendSpecPoison"
 });
 
-::Legends.Perk.LegendCloseCombatArcher <- null;
+::Legends.Perk.LegendPointBlank <- null;
 perkDefObjects.push({
 	ID = "perk.legend_close_combat_archer",
-	Script = "scripts/skills/perks/perk_legend_close_combat_archer",
-	Name = ::Const.Strings.PerkName.LegendCloseCombatArcher,
-	Tooltip = ::Const.Strings.PerkDescription.LegendCloseCombatArcher,
+	Script = "scripts/skills/perks/perk_legend_point_blank",
+	Name = ::Const.Strings.PerkName.LegendPointBlank,
+	Tooltip = ::Const.Strings.PerkDescription.LegendPointBlank,
 	Icon = "ui/perks/closecombat56.png",
 	IconDisabled = "ui/perks/closecombat56_bw.png",
-	Const = "LegendCloseCombatArcher"
+	Const = "LegendPointBlank"
 });
 
 ::Legends.Perk.LegendCascade <- null;

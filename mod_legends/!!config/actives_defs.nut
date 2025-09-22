@@ -3182,4 +3182,12 @@ activesDefs.push({
 	Name = "Flourish",
 });
 
+::Legends.Active.LegendEnragedHyenaBite <- null;
+activesDefs.push({
+	ID = "actives.legend_enraged_hyena_bite",
+	Script = "scripts/skills/actives/legend_enraged_hyena_bite_skill",
+	Const = "LegendEnragedHyenaBite",
+	Name = "Enraged Hyena Bite",
+});
+
 ::Legends.Actives.addActiveDefObjects(activesDefs);

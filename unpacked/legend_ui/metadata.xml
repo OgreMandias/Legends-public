@@ -187,6 +187,8 @@
 	<sprite id="active_legend_heartseeker" ic="FF1B293C" img="skills\active_legend_heartseeker.png" />
 	<sprite id="active_legend_pry_armor_warhammer" ic="FF1B293C" img="skills\legend_active_pry_armor_warhammer.png" />
 	<sprite id="active_legend_pry_armor_polehammer" ic="FF1B293C" img="skills\legend_active_pry_armor_polehammer.png" />
+	<sprite id="legend_enraged_hyena_bite_effect" ic="FF1B293C" img="skills\legend_enraged_hyena_bite_effect.png" />
+	<sprite id="legend_enraged_hyena_bite_effect_mini" ic="FF1B293C" img="skills\mini\legend_enraged_hyena_bite_effect_mini.png" />
 	<!-- Orientation below -->
 
 

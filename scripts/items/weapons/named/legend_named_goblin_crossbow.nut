@@ -81,6 +81,9 @@ this.legend_named_goblin_crossbow <- this.inherit("scripts/items/weapons/named/n
 			::Legends.Actives.grant(this, ::Legends.Active.ReloadBolt);
 		}
 		::Legends.Actives.grant(this, ::Legends.Active.LegendPiercingBolt);
+		::Legends.Actives.grant(this, ::Legends.Active.KnockOut, function (_skill) {
+			_skill.m.IsRangedKnockOut = true;
+		}.bindenv(this));
 	}
 
 	function onCombatFinished()

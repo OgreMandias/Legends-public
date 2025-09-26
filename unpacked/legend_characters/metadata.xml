@@ -4,13 +4,16 @@
 	<sprite id="permanent_injury_scarred_dead" offsetX="6" offsetY="10" f="64F1" f1="-15" f2="-15" ic="FF4F6B9B" width="131" height="125" img="entity\injury\injury_scarred_dead.png" left="-44" right="16" top="-58" bottom="0" />
 	<sprite id="permanent_injury_scarred_southern" offsetY="35" ic="FF59AA9" width="104" height="142" img="entity\injury\injury_scarred_southern.png" left="-21" right="29" top="-20" bottom="48" />
 	<sprite id="permanent_injury_scarred_southern_dead" offsetX="6" offsetY="10" f="64F1" f1="-15" f2="-15" ic="FF4F6B9C" width="131" height="125" img="entity\injury\injury_scarred_southern_dead.png" left="-44" right="16" top="-58" bottom="0" />
-
+	<sprite id="permanent_injury_scarred_african" offsetY="35" ic="FF59AA9" width="104" height="142" img="entity\injury\injury_scarred_african.png" left="-21" right="29" top="-20" bottom="48" />
+	<sprite id="permanent_injury_scarred_african_dead" offsetX="6" offsetY="10" f="64F1" f1="-15" f2="-15" ic="FF4F6B9C" width="131" height="125" img="entity\injury\injury_scarred_african_dead.png" left="-44" right="16" top="-58" bottom="0" />
 	<sprite id="permanent_injury_burned" offsetY="35" ic="FF597AAA" width="104" height="142" img="entity\injury\injury_burned.png" left="-21" right="29" top="-20" bottom="48" />
 	<sprite id="permanent_injury_burned_dead" offsetX="6" offsetY="10" f="64F1" f1="-15" f2="-15" ic="FF4F6B9C" width="131" height="125" img="entity\injury\injury_burned_dead.png" left="-44" right="16" top="-58" bottom="0" />
 	<sprite id="permanent_injury_burned_southern" offsetY="35" ic="FF598AA9" width="104" height="142" img="entity\injury\injury_burned_southern.png" left="-21" right="29" top="-20" bottom="48" />
 	<sprite id="permanent_injury_burned_southern_dead" offsetX="6" offsetY="10" f="64F1" f1="-15" f2="-15" ic="FF4F6B9A" width="131" height="125" img="entity\injury\injury_burned_southern_dead.png" left="-44" right="16" top="-58" bottom="0" />
-	<sprite id="permanent_injury_burned_southern" offsetY="35" ic="FF598AA9" width="104" height="142" img="entity\injury\injury_burned_african.png" left="-21" right="29" top="-20" bottom="48" />
+	<sprite id="permanent_injury_burned_southern" offsetY="35" ic="FF598AA9" width="104" height="142" img="entity\injury\injury_burned_southern.png" left="-21" right="29" top="-20" bottom="48" />
 	<sprite id="permanent_injury_burned_southern_dead" offsetX="6" offsetY="10" f="64F1" f1="-15" f2="-15" ic="FF4F6B9A" width="131" height="125" img="entity\injury\injury_burned_southern_dead.png" left="-44" right="16" top="-58" bottom="0" />
+	<sprite id="permanent_injury_burned_african" offsetY="35" ic="FF598AA9" width="104" height="142" img="entity\injury\injury_burned_african.png" left="-21" right="29" top="-20" bottom="48" />
+	<sprite id="permanent_injury_burned_african_dead" offsetX="6" offsetY="10" f="64F1" f1="-15" f2="-15" ic="FF4F6B9A" width="131" height="125" img="entity\injury\injury_burned_african_dead.png" left="-44" right="16" top="-58" bottom="0" />
 
 	<sprite id="bust_head_berserker_01" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\bust_head_berserker_01.png" left="-22" right="30" top="-20" bottom="46" />
 	<sprite id="bust_head_berserker_02" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\bust_head_berserker_02.png" left="-22" right="30" top="-20" bottom="46" />

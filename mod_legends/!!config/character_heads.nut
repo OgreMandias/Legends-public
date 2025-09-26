@@ -550,10 +550,16 @@
 ];
 
 ::Const.Faces.AfricanFemale <- [
-	"bust_head_southern_female_10",
-	"bust_head_southern_female_11",
-	"bust_head_southern_female_12",
-	"bust_head_southern_female_13"
+	"bust_head_southern_female_01",
+	"bust_head_southern_female_02",
+	"bust_head_southern_female_03",
+	"bust_head_southern_female_04",
+	"bust_head_southern_female_05",
+	"bust_head_southern_female_06",
+	"bust_head_southern_female_07",
+	"bust_head_southern_female_08",
+	"bust_head_southern_female_09",
+	"bust_head_southern_female_10"
 ];
 
 ::Const.Faces.AfricanMale <- [

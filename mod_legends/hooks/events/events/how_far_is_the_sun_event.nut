@@ -216,15 +216,15 @@
 				"background.nomad",
 				"background.shepherd",
 				"background.manhunter",
-				"background.qiyan",
+				"background.legend_qiyan",
 				"background.gladiator",
 				"background.legend_muladi",
 				"background.belly_dancer",
-				"background.hashashin",
-				"background.conscript"
+				"background.assassin_southern",
+				"background.legend_conscript"
 			)) {
 				candidate_southerner.push(bro);
-			} else if (bro.getBackground().getID() == "background.dervish") {
+			} else if (bro.getBackground().getID() == "background.legend_dervish") {
 				candidate_dervish.push(bro);
 			} else if (bro.getEthnicity() != 1) {
 				candidate_other.push(bro);

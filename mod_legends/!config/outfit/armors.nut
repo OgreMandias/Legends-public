@@ -2820,15 +2820,29 @@
 
 ::Legends.Armor.Standard.grand_diviner_robes <- {
 	ID = "grand_diviner_robes",
-	Script = "scripts/items/legend_armor/armor/golems/legend_grand_diviner_robes",
-	Sets = []
+	Script = "",
+	Sets = [{
+		Cloth = [[1, "cloth/legend_fleshcultist_tunic", 1]],
+		Chain = [[1, ""]],
+		Plate = [[1, "plate/legend_diviner_jacket_named", 1]],
+		Cloak = [[1, ""]],
+		Tabard = [[1, "tabard/legend_diviner_tabard"]],
+		Attachments = [[1, ""]],
+	}]
 };
 ::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Standard.grand_diviner_robes);
 
 ::Legends.Armor.Standard.fault_finder_robes <- {
 	ID = "fault_finder_robes",
-	Script = "scripts/items/legend_armor/armor/golems/legend_fault_finder_robes",
-	Sets = []
+	Script = "",
+	Sets = [{
+		Cloth = [[1, "cloth/legend_fleshcultist_tunic", 1]],
+		Chain = [[1, ""]],
+		Plate = [[1, "plate/legend_fleshcultist_jacket", 1]],
+		Cloak = [[1, ""]],
+		Tabard = [[1, "tabard/legend_fleshcultist_tabard"]],
+		Attachments = [[3, ""]],
+	}]
 };
 ::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Standard.fault_finder_robes);
 

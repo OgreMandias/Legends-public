@@ -174,8 +174,8 @@ class Defs:
  "adesc" :""
 },
 {"name": "legend_tunic_collar_deep",                                  "layer": "cloth", "min": 1, "max": 1, "value" : 25, "con" : 20, "stam" : -1, "impactSound" : "leather", "invSound" : "cloth",
- "title" :  "Deep Collar Linen Tunic",
- "desc" :  "A simple cloth tunic. Fashionable but offering little in protection.",
+ "title" : "Deep Collar Linen Tunic",
+ "desc" : "A simple cloth tunic. Fashionable but offering little in protection.",
  "adesc" :""
 },
 {"name": "legend_dark_tunic",                             "layer": "cloth", "min": 1, "max": 3, "value" : 50, "con" : 35, "stam" : -4, "impactSound" : "leather", "invSound" : "cloth",
@@ -192,7 +192,7 @@ class Defs:
  "title" :  "Noble Tunic",
  "desc" :  "A fine linen tunic of exquisite material, embroided with pleasing patterns. Fashionable but offering little in protection.",
  "adesc" :"",
-    "named" : True, "rminStam" : 0, "rmaxStam": 2, "rminCond" : 46, "rmaxCond" : 56,  "names" : ['Heraldic Tunic', "Splendor", "Grandiosity", "Pageantry", "Swank", "Duty", "Honor", "Noble"]
+ "named" : True, "rminStam" : 0, "rmaxStam": 2, "rminCond" : 46, "rmaxCond" : 56,  "names" : ['Heraldic Tunic', "Splendor", "Grandiosity", "Pageantry", "Swank", "Duty", "Honor", "Noble"]
 },
 
 {"name": "legend_southern_robe",                 "layer": "cloth", "min": 1, "max": 6, "value" : 35, "con" : 25, "stam" : -1, "impactSound" : "leather", "invSound" : "cloth", "brush" : "southern_robe",
@@ -225,9 +225,9 @@ class Defs:
  "desc" :  "A studded and heavy padded coat that offers decent protection.",
  "adesc" : ""
 },
-{"name": "fleshcultist_tunic",           "layer": "cloth", "min": 1, "max": 4, "value" : 350, "con" : 55, "stam" : -6, "impactSound" : "leather", "invSound" : "cloth", "brush" : "fleshcultist_tunic",
+{"name": "legend_fleshcultist_tunic",           "layer": "cloth", "min": 1, "max": 4, "value" : 350, "con" : 55, "stam" : -4, "impactSound" : "leather", "invSound" : "cloth", "brush" : "fleshcultist_tunic",
  "title" :  "Fleshcultist Tunic",
- "desc" :  "A studded jacket worn by Fleshcultist.",
+ "desc" :  "A leather tunic worn by Fleshcultist.",
  "adesc" : ""
 },
 
@@ -728,15 +728,16 @@ class Defs:
  "desc" :  "A heavy lamellar plated harness",
  "adesc" : "Has a heavy lamellar plated harness"
 },
-{"name": "diviner_jacket",           "layer": "plate", "min": 1, "max": 2, "value" : 350, "con" : 55, "stam" : -6, "impactSound" : "leather", "invSound" : "cloth", "brush" : "diviner_jacket",
+{"name": "legend_diviner_jacket_named",           "itemType" : "this.Const.Items.ItemType.Cultist", "layer": "plate", "min": 1, "max": 2, "value" : 3000, "con" : 40, "stam" : -3, "impactSound" : "leather", "invSound" : "cloth", "brush" : "diviner_jacket",
  "title" :  "Diviner Jacket",
  "desc" :  "A studded jacket worn by diviner.",
- "adesc" : ""
+ "adesc" : "A jacket similar to what diviner wears",
+ "named" : True, "rminStam" : 2, "rmaxStam": 4, "rminCond" : 35, "rmaxCond" : 60, "names" : ["Heretic\'s Wrap", "Beholder\'s vestments", "Jacket of the Augur", "Empyrian Coat", "Attestor\'s Skin", "Goreflesh Mantle"]
 },
-{"name": "fleshcultist_jacket",           "layer": "plate", "min": 1, "max": 2, "value" : 350, "con" : 55, "stam" : -6, "impactSound" : "leather", "invSound" : "cloth", "brush" : "fleshcultist_jacket",
+{"name": "legend_fleshcultist_jacket",           "itemType" : "this.Const.Items.ItemType.Cultist", "layer": "plate", "min": 1, "max": 2, "value" : 350, "con" : 30, "stam" : -3, "impactSound" : "leather", "invSound" : "cloth", "brush" : "fleshcultist_jacket",
  "title" :  "Fleshcultist Jacket",
  "desc" :  "A studded jacket worn by fleshcultist.",
- "adesc" : ""
+ "adesc" : "Has a leather jacket that fleshcultist wear"
 },
 
 {"name": "legend_shoulder_cloth",           "layer": "cloak", "min": 1, "max": 12, "value" : 50, "con" : 5, "stam" : 0, "bravery" : 0, "impactSound" : "leather", "invSound" : "cloth", "brush" : "shoulder_cloth",
@@ -899,14 +900,14 @@ class Defs:
  "desc" :  "A flowing cloth covering for armor, to show your allegiance. Offers minimal protection and small boost to morale.",
  "adesc" : "Has a flowing cloth tabard"
 },
-{"name": "diviner_tabard",           "layer": "tabard", "min": 1, "max": 2, "value" : 200, "con" : 5, "stam" : 0, "bravery" : 2, "impactSound" : "leather", "invSound" : "cloth", "brush" : "diviner_tabard",
+{"name": "legend_diviner_tabard",           "layer": "tabard", "min": 1, "max": 2, "value" : 200, "con" : 10, "stam" : 0, "bravery" : 3, "impactSound" : "leather", "invSound" : "cloth", "brush" : "diviner_tabard",
  "title" :  "Diviner Tabard",
- "desc" :  "A diviner tabard.",
- "adesc" : "Has a flowing cloth tabard"
+ "desc" :  "A diviner tabard. You hope it's not human flesh",
+ "adesc" : "Has a flowing cloth tabard with belt"
 },
-{"name": "fleshcultist_tabard",           "layer": "tabard", "min": 1, "max": 2, "value" : 200, "con" : 5, "stam" : 0, "bravery" : 2, "impactSound" : "leather", "invSound" : "cloth", "brush" : "fleshcultist_tabard",
+{"name": "legend_fleshcultist_tabard",           "layer": "tabard", "min": 1, "max": 2, "value" : 200, "con" : 5, "stam" : 0, "bravery" : 2, "impactSound" : "leather", "invSound" : "cloth", "brush" : "fleshcultist_tabard",
   "title" :  "Fleshcultist Tabard",
   "desc" :  "A fleshcultist tabard.",
-  "adesc" : "Has a flowing cloth tabard"
+  "adesc" : "Has a flowing cloth tabard with belt"
  }
 ]

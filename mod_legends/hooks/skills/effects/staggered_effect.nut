@@ -11,18 +11,6 @@
 	o.onAdded = function ()
 	{
 		local actor = this.getContainer().getActor();
-		if (actor.getFlags().get("CanNotBeStaggered") || !actor.isPlacedOnMap() || ("State" in this.Tactical) && this.Tactical.State.isBattleEnded())
-		{
-			local anchor = ::Legends.Perks.get(this, ::Legends.Perk.LegendAnchor);
-			if (anchor != null)
-			{
-				anchor.m.Stacks -= 1;
-				actor.m.Skills.update();
-			}
-			this.removeSelf();
-			return;
-		}
-
 		this.m.Overlay = "status_effect_65";
 		this.spawnIcon(this.m.Overlay, actor.getTile());
 		onAdded();

@@ -12,6 +12,7 @@ this.legend_patient_hunter_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
 		this.m.IsHidden = false;
+		this.m.IsRemovedAfterBattle = true;
 	}
 
 	function getTooltip()

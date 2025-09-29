@@ -2254,17 +2254,6 @@ perkDefObjects.push({
 		Const = "LegendBarrage"
 });
 
-::Legends.Perk.LegendSlingerSpins <- null;
-perkDefObjects.push({
-		ID = "perk.legend_slinger_spins",
-		Script = "scripts/skills/perks/perk_legend_slinger_spins",
-		Name = this.Const.Strings.PerkName.LegendSlingerSpins,
-		Tooltip = this.Const.Strings.PerkDescription.LegendSlingerSpins,
-		Icon = "ui/perks/perk_slinger_spins.png",
-		IconDisabled = "ui/perks/perk_slinger_spins_bw.png",
-		Const = "LegendSlingerSpins"
-});
-
 ::Legends.Perk.LegendStaffBlock <- null;
 perkDefObjects.push({
 		ID = "perk.legend_staff_block",

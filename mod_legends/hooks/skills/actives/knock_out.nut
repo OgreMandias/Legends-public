@@ -90,7 +90,7 @@
 	}
 
 	o.onUse = function ( _user, _targetTile )
-	{	
+	{
 
 		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectBash);
 		local success = this.attackEntity(_user, _targetTile.getEntity());
@@ -109,7 +109,7 @@
 			local stun = (this.m.IsStaffKnockOut ? _user.getCurrentProperties().IsSpecializedInPolearms : _user.getCurrentProperties().IsSpecializedInMaces) || this.Math.rand(1, 100) <= this.m.StunChance;
 			local canStun = !target.getCurrentProperties().IsImmuneToStun && !target.getSkills().hasEffect(::Legends.Effect.Stunned);
 			if (this.m.IsStaffKnockOut && stun)
-			{	
+			{
 				if (!target.getCurrentProperties().IsImmuneToDaze)
 					::Legends.Effects.grant(target, ::Legends.Effect.Dazed);
 
@@ -150,7 +150,7 @@
 	local onAnySkillUsed = o.onAnySkillUsed;
 	o.onAnySkillUsed = function ( _skill, _targetEntity, _properties )
 	{
-		if (this.m.IsRangedBash && _skill == this)
+		if (this.m.IsRangedKnockOut && _skill == this)
 		{
 			_properties.DamageTotalMult *= 0.25;
 			_properties.FatigueDealtPerHitMult += 2.0;

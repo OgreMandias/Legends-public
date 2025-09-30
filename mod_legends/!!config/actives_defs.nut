@@ -2630,11 +2630,11 @@ activesDefs.push({
 	Name = "Prepare to Graze",
 });
 
-::Legends.Active.LegendPrepareKnockdown <- null;
+::Legends.Active.LegendWindUp <- null;
 activesDefs.push({
-	ID = "actives.legend_prepare_knockdown",
-	Script = "scripts/skills/actives/legend_prepare_knockback_skill",
-	Const = "LegendPrepareKnockdown",
+	ID = "actives.legend_wind_up",
+	Script = "scripts/skills/actives/legend_wind_up",
+	Const = "LegendWindUp",
 	Name = "Wind Up",
 });
 

@@ -1,4 +1,4 @@
-this.legend_prepare_knockback_skill <- this.inherit("scripts/skills/skill", {
+this.legend_wind_up_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		Item = null
 	},
@@ -9,7 +9,7 @@ this.legend_prepare_knockback_skill <- this.inherit("scripts/skills/skill", {
 
 	function create()
 	{
-		::Legends.Actives.onCreate(this, ::Legends.Active.LegendPrepareKnockdown);
+		::Legends.Actives.onCreate(this, ::Legends.Active.LegendWindUp);
 		this.m.Description = "Evaluate your enemy, preparing your next attack to push them back.";
 		this.m.Icon = "skills/active_10.png";
 		this.m.IconDisabled = "skills/active_10_sw.png";
@@ -80,13 +80,13 @@ this.legend_prepare_knockback_skill <- this.inherit("scripts/skills/skill", {
 				text = "The next attack will push the enemy back and baffle them if it connects, otherwise the effect is wasted."
 			});
 		}
-		else if (item.isItemType(this.Const.Items.ItemType.MeleeWeapon) && item.getID() == "weapon.legend_sling")
+		else if (item.isWeaponType(this.Const.Items.WeaponType.Sling) && item.isItemType(this.Const.Items.ItemType.OneHanded))
 		{
 			ret.push({
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "The next attack will push the enemy back and baffle them if it connects, otherwise the effect is wasted."
+				text = "The next attack will deal increased damage and armor penetration based on your current initiative."
 			});
 		}
 		else
@@ -112,7 +112,7 @@ this.legend_prepare_knockback_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-		if (this.m.Item != null && !this.m.Item.isNull() && this.m.Item.getID() == "weapon.legend_sling")
+		if (this.m.Item != null && !this.m.Item.isNull() && item.isWeaponType(this.Const.Items.WeaponType.Sling) && item.isItemType(this.Const.Items.ItemType.OneHanded))
 		{
 			::Legends.Effects.grant(this, ::Legends.Effect.LegendPrepareBullet);
 		}

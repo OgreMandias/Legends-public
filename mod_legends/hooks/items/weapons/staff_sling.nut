@@ -3,7 +3,7 @@
 	o.create = function ()
 	{
 		create();
-		this.m.Description = "A leather sling on a staff, used to hurl stones at the enemy. It is lighter than its northern cousin and with stones abundant everywhere, it will never run out of ammunition.";
+		this.m.Description = "A simple leather sling on a staff, used to hurl stones at the enemy. It features a bigger pouch for heavier rocks, but trades off precision for damage and range. With rocks being everywhere it will never run out of ammunition.";
 		this.m.Categories = "Sling, Two-Handed";
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Defensive | this.Const.Items.ItemType.TwoHanded;
 		this.m.StaminaModifier = -8;
@@ -22,7 +22,6 @@
 	{
 		this.weapon.onEquip();
 		::Legends.Actives.grant(this, ::Legends.Active.LegendSlingHeavyStone);
-		// ::Legends.Actives.grant(this, ::Legends.Active.LegendSlingCenterMass);
 		::Legends.Actives.grant(this, ::Legends.Active.LegendSlingstaffBash);
 		::Legends.Actives.grant(this, ::Legends.Active.LegendLaunchAcidFlask);
 		::Legends.Actives.grant(this, ::Legends.Active.LegendLaunchDazeBomb);

@@ -105,7 +105,7 @@
 		bros[4].setPlaceInFormation(6);
 		local items = bros[4].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
-		items.equip(this.new("scripts/items/weapons/legend_sling"));
+		items.equip(this.new("scripts/items/weapons/legend_dilapitated_sling"));
 
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));

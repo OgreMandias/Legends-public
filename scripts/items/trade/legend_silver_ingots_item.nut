@@ -4,7 +4,7 @@ this.legend_silver_ingots_item <- this.inherit("scripts/items/trade/trading_good
 	{
 		this.trading_good_item.create();
 		this.m.ID = "misc.legend_silver_ingots";
-		this.m.Name = "Gold Ingots";
+		this.m.Name = "Silver Ingots";
 		this.m.Description = "Silver smolten and cast into ingots for easy transportation. Traders will pay good coin for this.";
 		this.m.Icon = "trade/inventory_trade_silver_bars.png";
 		this.m.Culture = this.Const.World.Culture.Neutral;
@@ -17,4 +17,5 @@ this.legend_silver_ingots_item <- this.inherit("scripts/items/trade/trading_good
 	}
 
 });
+
 

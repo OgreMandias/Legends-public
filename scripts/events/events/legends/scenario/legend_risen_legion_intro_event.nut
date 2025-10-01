@@ -11,30 +11,21 @@ this.legend_risen_legion_intro_event <- this.inherit("scripts/events/event", {
 			Banner = "",
 			List = [],
 			Characters = [],
-			Options = [
-				{
-					Text = "Orders are orders...",
-					function getResult( _event )
-					{
-						this.World.uncoverFogOfWar(_event.m.Location.getTile().Pos, 700.0);
-						// _event.m.Location.getFlags().set("IsEventLocation", true);
-						_event.m.Location.setDiscovered(true);
-						// this.World.getCamera().moveTo(_event.m.Location);
-						return 0;
-					} //entity/world/locations/legendary/black_monolith_location
-
+			Options = [{
+				Text = "Orders are orders...",
+				function getResult( _event ) {
+					local locations = ::World.EntityManager.getLocations().filter(@(idx, loc) loc.getTypeID() == "location.black_monolith");
+					if (locations.len() > 0) {
+						local monolith = locations[0];
+						this.World.uncoverFogOfWar(monolith.getTile().Pos, 700.0);
+						monolith.getFlags().set("IsEventLocation", true);
+						monolith.setDiscovered(true);
+						this.World.getCamera().moveTo(monolith);
+					}
+					return 0;
 				}
-			],
-			function start( _event )
-			{
-				local locations = ::World.EntityManager.getLocations().filter(@(idx, loc) loc.getTypeID() == "location.black_monolith");
-				if (locations.len() > 0) {
-					local monolith = locations[0];
-					this.World.uncoverFogOfWar(monolith.getTile().Pos, 700.0);
-					monolith.getFlags().set("IsEventLocation", true);
-					monolith.setDiscovered(true);
-					this.World.getCamera().moveTo(monolith);
-				}
+			}],
+			function start( _event ) {
 				this.Banner = "ui/banners/" + ::World.Assets.getBanner() + "s.png";
 			}
 

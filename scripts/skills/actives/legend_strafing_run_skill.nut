@@ -59,7 +59,7 @@ this.legend_strafing_run_skill <- this.inherit("scripts/skills/skill", {
 
 		if (!this.getItem().isLoaded())
 		{
-			tooltip.push({
+			ret.push({
 				id = 9,
 				type = "text",
 				icon = "ui/tooltips/warning.png",

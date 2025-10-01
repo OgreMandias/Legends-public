@@ -26,7 +26,7 @@ this.legend_nomad_remembers_past_encounter <- ::inherit("scripts/encounters/enco
 				this.Characters.push(_event.m.Nomad.getImagePath());
 
 				this.List.push(::Legends.EventList.changeResolve(_event.m.Nomad, 2));
-				this.List.push(::Legends.EventList.changeMood(_event.m.Nomad, 1.0, this.buildText("{Reflected on %their_nomad% survival against the city states}")));
+				this.List.push(::Legends.EventList.changeMood(_event.m.Nomad, 1.0, _event.buildText("{Reflected on %their_nomad% survival against the city states}")));
 			}
 		});
 	}

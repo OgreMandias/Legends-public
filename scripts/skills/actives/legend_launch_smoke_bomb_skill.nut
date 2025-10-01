@@ -89,7 +89,7 @@ this.legend_launch_smoke_bomb_skill <- this.inherit("scripts/skills/actives/thro
 
 	function isHidden()
 	{
-		if (!_properties.IsSpecializedInSlings)
+		if (!this.getContainer().getActor().getCurrentProperties().IsSpecializedInSlings)
 			return true;
 		if (this.m.Item != null && !this.m.Item.isNull() && this.m.Item.getAmmo() != 0)
 		{

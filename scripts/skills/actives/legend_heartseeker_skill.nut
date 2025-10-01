@@ -53,20 +53,6 @@ this.legend_heartseeker_skill <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
-	function getTooltip()
-	{
-		local ret = this.getDefaultTooltip();
-		ret.extend([
-			{
-				id = 6,
-				type = "text",
-				icon = "ui/icons/hitchance.png",
-				text = "Has a [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] lower threshold to inflict injuries"
-			}
-		]);
-		return ret;
-	}
-
 	function onAfterUpdate( _properties )
 	{
 		if (this.m.IsPolearm)
@@ -93,7 +79,7 @@ this.legend_heartseeker_skill <- this.inherit("scripts/skills/skill", {
 			_properties.ThresholdToInflictInjuryMult *= 0.5;
 			if (!this.m.IsPolearm && _properties.IsSpecializedInSpears)
 			{
-				_properties.DirectDamageAdd += 0.05;
+				_properties.DirectDamageAdd += 0.2;
 			}
 		}
 	}

@@ -19,7 +19,7 @@ this.legend_risen_legion_scenario <- this.inherit("scripts/scenarios/world/start
 
 		for(local i = 0; i < 8; i++) {
 			local bro = roster.create("scripts/entity/tactical/player");
-			// ::Legends.Traits.grant(bro, ::Legends.Trait.LegendFleshless);
+			 ::Legends.Traits.grant(bro, ::Legends.Trait.LegendFleshless);
 			bro.setVeteranPerks(3);
 			bro.getSprite("socket").setBrush("bust_base_undead");
 			bro.m.HireTime = this.Time.getVirtualTimeF();
@@ -27,7 +27,6 @@ this.legend_risen_legion_scenario <- this.inherit("scripts/scenarios/world/start
 			while (names.find(bro.getNameOnly()) != null) {
 				bro.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
 			}
-
 			names.push(bro.getNameOnly());
 		}
 		local bros = roster.getAll(); //this will please the romeaboos

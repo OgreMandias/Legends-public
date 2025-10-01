@@ -161,8 +161,12 @@ this.legend_ironmonger_offends_blacksmith_encounter <- this.inherit("scripts/enc
 	}
 
 	function onPrepareVariables(_vars) {
-		_vars.push(["blacksmith", this.m.Blacksmith.getNameOnly()]);
-		_vars.push(["ironmonger", this.m.Ironmonger.getNameOnly()]);
+		if (this.m.Blacksmith == null || this.m.Ironmonger == null) {
+			::logError("legend_ironmonger_offends_blacksmith_encounter: onPrepareVariables called but members are null");
+			return;
+		}
+		_vars.push(["blacksmith", this.m.Blacksmith.getName()]);
+		_vars.push(["ironmonger", this.m.Ironmonger.getName()]);
 		::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Blacksmith.getGender(), "blacksmith");
 		::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Ironmonger.getGender(), "ironmonger");
 	}

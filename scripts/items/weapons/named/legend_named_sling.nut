@@ -27,7 +27,7 @@ this.legend_named_sling <- this.inherit("scripts/items/weapons/named/named_weapo
 		this.m.DirectDamageMult = 0.4;
 		this.m.RegularDamage = 30;
 		this.m.RegularDamageMax = 50;
-		this.m.DamageDirectAdd = 0.1;
+		this.m.DirectDamageAdd = 0.1;
 	}
 
 

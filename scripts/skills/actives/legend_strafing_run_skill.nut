@@ -163,7 +163,7 @@ this.legend_strafing_run_skill <- this.inherit("scripts/skills/skill", {
 			}
 		}
 
-		this.Tactical.getNavigator().teleport(_user, _targetTile, this.onTeleportDone, tag, false, 2.0);
+		this.Tactical.getNavigator().teleport(_user, _targetTile, this.onTeleportDone.bindenv(this), tag, false, 2.0);
 		return true;
 	}
 

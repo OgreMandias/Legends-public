@@ -221,9 +221,8 @@ this.legend_legion_legate_background <- this.inherit("scripts/skills/backgrounds
 
 	function onAdded()
 	{
-		if (this.m.IsNew)
-		{
-			this.character_background.onAdded();
+		this.character_background.onAdded();
+		if (this.m.IsNew) {
 			::Legends.Perks.grant(this, ::Legends.Active.LegendCommandLegion);
 			::Legends.Traits.grant(this, ::Legends.Trait.LegendFleshless);
 		}

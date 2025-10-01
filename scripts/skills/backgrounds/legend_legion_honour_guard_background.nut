@@ -210,8 +210,8 @@ this.legend_legion_honour_guard_background <- this.inherit("scripts/skills/backg
 
 	function onAdded()
 	{
-		if (this.m.IsNew)
-		{
+		this.character_background.onAdded();
+		if (this.m.IsNew) {
 			::Legends.Traits.grant(this, ::Legends.Trait.LegendFleshless);
 		}
 

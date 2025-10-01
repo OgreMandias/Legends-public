@@ -34,7 +34,7 @@ this.legend_dilapitated_sling <- this.inherit("scripts/items/weapons/weapon", {
 	{
 		this.weapon.onEquip();
 		::Legends.Actives.grant(this, ::Legends.Active.SlingStone);
-		::Legends.Actives.grant(this, ::Legends.Active.LegendWindUp);
+		// ::Legends.Actives.grant(this, ::Legends.Active.LegendWindUp);
 	}
 
 });

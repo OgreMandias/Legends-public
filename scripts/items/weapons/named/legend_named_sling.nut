@@ -35,7 +35,7 @@ this.legend_named_sling <- this.inherit("scripts/items/weapons/named/named_weapo
 	{
 		this.named_weapon.onEquip();
 		::Legends.Actives.grant(this, ::Legends.Active.SlingStone);
-		::Legends.Actives.grant(this, ::Legends.Active.LegendWindUp);
+		// ::Legends.Actives.grant(this, ::Legends.Active.LegendWindUp);
 	}
 
 });

@@ -15,7 +15,7 @@
 		} else {
 			this.m.Icon = "weapons/melee/qatal_dagger_01_" + this.getVariant() + "_70x70.png";
 			this.m.IconLarge = "weapons/melee/qatal_dagger_01_" + this.getVariant() + ".png";
-			this.m.ArmamentIcon = "icon_qatal_dagger_" + this.getVariant();
+			this.m.ArmamentIcon = "icon_qatal_dagger_01_" + this.getVariant();
 		}
 	}
 

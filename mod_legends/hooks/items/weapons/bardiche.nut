@@ -4,7 +4,7 @@
 	{
 		create();
 		this.m.IsAoE = true;
-		this.setVariant(this.Math.rand(0, 3));
+		this.setVariant(this.Math.rand(0, 2));
 	}
 
 	o.updateVariant <- function() {

@@ -206,6 +206,7 @@
 	<sprite id="greenwood_schrat_small_orientation"  ic="FF22200A" img="orientation\greenwood_schrat_small_orientation.png" />
 	<sprite id="hexen_leader_orientation"  ic="FF22200A" img="orientation\hexen_leader_orientation.png" />
 	<sprite id="redback_spider_orientation"  ic="FF22200A" img="orientation\redback_spider_orientation.png" />
+	<sprite id="spider_cluster_orientation"  ic="FF22200A" img="orientation\spider_cluster_orientation.png" />
 	<sprite id="rock_unhold_orientation"  ic="FF22200A" img="orientation\rock_unhold_orientation.png" />
 	<sprite id="skin_ghoul_orientation"  ic="FF22200A" img="orientation\skin_ghoul_orientation.png" />
 	<sprite id="stollwurm_orientation"  ic="FF22200A" img="orientation\stollwurm_orientation.png" />

@@ -15,7 +15,7 @@
 		} else {
 			this.m.Icon = "weapons/ranged/hunting_bow_01_" + this.getVariant() + "_70x70.png";
 			this.m.IconLarge = "weapons/ranged/hunting_bow_01_" + this.getVariant() + ".png";
-			this.m.ArmamentIcon = "icon_hunting_bow_" + this.getVariant();
+			this.m.ArmamentIcon = "icon_hunting_bow_01_" + this.getVariant();
 		}
 	}
 

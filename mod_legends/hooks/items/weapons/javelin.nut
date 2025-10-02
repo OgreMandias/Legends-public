@@ -12,20 +12,15 @@
 	}
 
 	o.updateVariant <- function() {
-		if (this.m.Variant == 0) {
-			return;
-		}
-		this.m.Icon = "weapons/ranged/javelins_01_" + this.m.Variant + "_70x70.png";
-		this.m.IconLarge = "weapons/ranged/javelins_01_" + this.m.Variant + ".png";
-		this.m.ArmamentIcon = "icon_javelin_01_" + this.m.Variant;
+		local v = this.getVariant() == 0 ? "" : "_" + this.getVariant();
+		this.m.Icon = "weapons/ranged/javelins_01" + v + "_70x70.png";
+		this.m.IconLarge = "weapons/ranged/javelins_01" + v + ".png";
+		this.m.ArmamentIcon = "icon_javelin_01" + v;
 	}
 
 	local setAmmo = o.setAmmo;
 	o.setAmmo = function(_a) {
 		setAmmo(_a);
-		if (this.m.Variant == 0) {
-			return;
-		}
 		if (this.m.Ammo > 0) {
 			this.updateVariant();
 			this.updateAppearance();

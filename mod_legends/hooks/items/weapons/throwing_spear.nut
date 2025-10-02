@@ -11,20 +11,14 @@
 		this.m.Ammo = 1;
 		this.m.AmmoMax = 1;
 		this.m.AmmoCost = 6;
-		this.m.Variant = this.Math.rand(0, 2);
-		this.updateVariant();
+		this.setVariant(this.Math.rand(0, 2));
 	}
 
 	o.updateVariant <- function() {
-		if (this.m.Variant == 0) {
-			this.m.Icon = "weapons/ranged/throwing_spear_01_70x70.png";
-			this.m.IconLarge = "weapons/ranged/throwing_spear_01.png";
-			this.m.ArmamentIcon = "icon_throwing_spear_01";
-		} else {
-			this.m.Icon = "weapons/ranged/throwing_spear_01_" + this.m.Variant + "_70x70.png";
-			this.m.IconLarge = "weapons/ranged/throwing_spear_01_" + this.m.Variant + ".png";
-			this.m.ArmamentIcon = "icon_throwing_spear_01_" + this.m.Variant;
-		}
+		local v = this.getVariant() == 0 ? "" : "_" + this.getVariant();
+		this.m.Icon = "weapons/ranged/throwing_spear_01" + v + "_70x70.png";
+		this.m.IconLarge = "weapons/ranged/throwing_spear_01" + v + ".png";
+		this.m.ArmamentIcon = "icon_throwing_spear_01" + v;
 	}
 
 	o.getTooltip = function ()

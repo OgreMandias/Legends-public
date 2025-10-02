@@ -79,7 +79,7 @@ this.legend_heartseeker_skill <- this.inherit("scripts/skills/skill", {
 			_properties.ThresholdToInflictInjuryMult *= 0.5;
 			if (!this.m.IsPolearm && _properties.IsSpecializedInSpears)
 			{
-				_properties.DirectDamageAdd += 0.2;
+				_properties.DamageDirectAdd += 0.2;
 			}
 		}
 	}

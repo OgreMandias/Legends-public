@@ -235,6 +235,7 @@ this.legend_spider_cluster <- this.inherit("scripts/entity/tactical/actor", {
 		::Legends.Traits.grant(this, ::Legends.Trait.RacialLegendClusterSpider);
 		if(::Legends.isLegendaryDifficulty())
 		{
+			b.MeleeSkill += 10;
 			::Legends.Perks.grant(this, ::Legends.Perk.Dodge);
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendMuscularity);
 			::Legends.Perks.grant(this, ::Legends.Perk.CripplingStrikes);

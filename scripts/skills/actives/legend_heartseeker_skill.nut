@@ -53,6 +53,12 @@ this.legend_heartseeker_skill <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
+	function getTooltip()
+	{
+		local ret = this.getDefaultTooltip();
+		return ret;
+	}
+	
 	function onAfterUpdate( _properties )
 	{
 		if (this.m.IsPolearm)

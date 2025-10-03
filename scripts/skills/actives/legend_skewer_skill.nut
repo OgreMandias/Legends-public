@@ -1,7 +1,6 @@
 this.legend_skewer_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		IsSpearSkewer = false,
-		IsSecondAttack = false
 	},
 	function create()
 	{

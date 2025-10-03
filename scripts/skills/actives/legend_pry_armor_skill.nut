@@ -1,5 +1,7 @@
 this.legend_pry_armor_skill <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		IsPolearm = false,
+	},
 	function create()
 	{
 		::Legends.Actives.onCreate(this, ::Legends.Active.LegendPryArmor);
@@ -80,6 +82,11 @@ this.legend_pry_armor_skill <- this.inherit("scripts/skills/skill", {
 		if (_skill == this)
 		{
 			_properties.DamageTotalMult *= 0.1;
+			if (_targetEntity != null && !this.getContainer().getActor().getCurrentProperties().IsSpecializedInHammers && this.getContainer().getActor().getTile().getDistanceTo(_targetEntity.getTile()) == 1)
+			{
+				_properties.MeleeSkill -= 15;
+				this.m.HitChanceBonus -= -15;
+			}
 		}
 	}
 

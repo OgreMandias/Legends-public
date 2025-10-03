@@ -12,8 +12,8 @@
 		this.m.RangeIdeal = 8;
 		this.m.RegularDamage = 45;
 		this.m.RegularDamageMax = 70;
-		this.m.ArmorDamageMult = 1.0;
-		this.m.DirectDamageMult = 1.5;
+		this.m.ArmorDamageMult = 1.5;
+		this.m.DirectDamageMult = 0.7;
 		this.m.StaminaModifier = -10;
 		this.m.Condition = 80.0;
 		this.m.ConditionMax = 80.0;

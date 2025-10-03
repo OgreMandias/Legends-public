@@ -225,6 +225,15 @@ this.legend_fleshless_trait <- this.inherit("scripts/skills/traits/character_tra
 		actor.getFlags().remove("undead");
 		actor.getFlags().remove("skeleton");
 		actor.getFlags().remove("PlayerSkeleton");
+		// Clear excluded injuries list
+		actor.m.ExcludedInjuries = [];
+		// Restore appearance
+		local background = actor.getBackground();
+		if (background != null) {
+			background.setAppearance();
+		}
+		actor.getItems().updateAppearance();
+		actor.setDirty(true);
 	}
 
 });

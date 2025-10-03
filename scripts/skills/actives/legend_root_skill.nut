@@ -115,7 +115,7 @@ this.legend_root_skill <- this.inherit("scripts/skills/skill", {
 			}.bindenv(this));
 			target.raiseRootsFromGround("bust_roots", "bust_roots_back");
 
-			this.Sound.play(this.m.SoundOnHitHitpoints[this.Math.rand(0, this.m.SoundOnHitHitpoints.len() - 1)], this.Const.Sound.Volume.Skill, this.target.getPos());
+			this.Sound.play(this.m.SoundOnHitHitpoints[this.Math.rand(0, this.m.SoundOnHitHitpoints.len() - 1)], this.Const.Sound.Volume.Skill, target.getPos());
 		}
 
 		return true;

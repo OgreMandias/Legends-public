@@ -12,7 +12,7 @@
 		local v = this.getVariant() == 0 ? "" : "_" + this.getVariant();
 		this.m.Icon = "weapons/melee/two_handed_scimitar_01" + v + "_70x70.png";
 		this.m.IconLarge = "weapons/melee/two_handed_scimitar_01" + v + ".png";
-		this.m.ArmamentIcon = "two_handed_scimitar_01" + v;
+		this.m.ArmamentIcon = "icon_two_handed_scimitar_01" + v;
 	}
 
 });

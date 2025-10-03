@@ -1,6 +1,6 @@
 ::Legends <- {
 	ID = "mod_legends",
-	Version = "19.2.0-alpha10",
+	Version = "19.2.0-alpha11",
 	Name = "Legends Mod",
 	BuildName = "Tales & Professions",
 	IsStartingNewCampaign = false

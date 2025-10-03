@@ -221,6 +221,7 @@ this.legend_fleshless_trait <- this.inherit("scripts/skills/traits/character_tra
 		local actor = this.getContainer().getActor();
 		actor.m.BloodType = this.Const.BloodType.Bones;
 		actor.m.MoraleState = this.Const.MoraleState.Steady;
+		::Legends.Traits.remove(actor, ::Legends.Trait.RacialSkeleton);
 		actor.getFlags().remove("undead");
 		actor.getFlags().remove("skeleton");
 		actor.getFlags().remove("PlayerSkeleton");

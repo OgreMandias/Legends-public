@@ -2053,4 +2053,12 @@ effectsDefs.push({
 	Name = "Patient Hunter",
 });
 
+::Legends.Effect.LegendArmorTracking <- null;
+effectsDefs.push({
+	ID = "effects.legend_armor_tracking",
+	Script = "scripts/skills/effects/legend_armor_tracking_effect",
+	Const = "LegendArmorTracking",
+	Name = "LegendArmorTracking",
+});
+
 ::Legends.Effects.addEffectDefObjects(effectsDefs);

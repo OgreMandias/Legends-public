@@ -31,31 +31,33 @@
 		_properties.DamageTotalMult *= mult;
 	}
 
-	o.onBeforeTargetHit = function ( _skill, _targetEntity, _hitInfo )
-	{
-		if ( _targetEntity != null && (this.isBonusEligible(_skill, _targetEntity) || this.isLowerBonusEligible(_skill, _targetEntity)))
-		{
-			this.spawnIcon("perk_16", this.getContainer().getActor().getTile());
-		}
-	}
-
 	o.calculateBonus <- function ( _skill, _targetEntity )
 	{
 
 		local bonus = 0;
 
-		foreach (effect in this.m.HighBonus)
+		if (_targetEntity.getSkills().hasSkillOfType(this.Const.SkillType.TemporaryInjury))
 		{
-			if (_targetEntity.getSkills().hasEffect(effect))
+			bonus += 0.2;
+		}
+		else
+		{
+			foreach (effect in this.m.HighBonus)
 			{
-				bonus += 0.2;
+				if (_targetEntity.getSkills().hasEffect(effect))
+				{
+					bonus += 0.2;
+					break;
+				}
 			}
 		}
+		
 		foreach (effect in this.m.LowBonus)
 		{
 			if (_targetEntity.getSkills().hasEffect(effect))
 			{
 				bonus += 0.1;
+				break;
 			}
 		}
 

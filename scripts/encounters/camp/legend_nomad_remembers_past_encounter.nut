@@ -32,6 +32,10 @@ this.legend_nomad_remembers_past_encounter <- ::inherit("scripts/encounters/enco
 	}
 
 	function onPrepareVariables (_vars) {
+		if (this.m.Nomad == null) {
+			::logError("legend_nomad_remembers_past_encounter: onPrepareVariables called but Nomad is null");
+			return;
+		}
 		_vars.push(["nomad", this.m.Nomad.getName()]);
 		::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Nomad.getGender(), "nomad");
 	}
@@ -51,18 +55,17 @@ this.legend_nomad_remembers_past_encounter <- ::inherit("scripts/encounters/enco
 
 	function isValid(_camp) {
 		local bros = ::World.getPlayerRoster().getAll();
-		local candidateNomad = [];
+		local candidates = [];
 		foreach (bro in bros) {
-			if (bro.getBackground().getID() != "background.nomad") {
-				candidateNomad.push(bro);
+			if (bro.getBackground().getID() == "background.nomad") {
+				candidates.push(bro);
 			}
 		}
-
-		this.m.Nomad = candidateNomad[::Math.rand(0, candidateNomad.len() - 1)];
-		if (this.m.Nomad == null)
+		if (candidates.len() == 0) {
 			return false;
-
-		return !this.isOnCooldown();
+		}
+		this.m.Nomad = candidates[::Math.rand(0, candidates.len() - 1)];
+		return this.m.Nomad != null && !this.isOnCooldown();
 	}
 
 	function onClear()

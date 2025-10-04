@@ -28,6 +28,7 @@ this.legend_named_sling <- this.inherit("scripts/items/weapons/named/named_weapo
 		this.m.RegularDamage = 30;
 		this.m.RegularDamageMax = 50;
 		this.m.DirectDamageAdd = 0.1;
+		this.randomizeValues();
 	}
 
 

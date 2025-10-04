@@ -1,6 +1,6 @@
 ::Legends <- {
 	ID = "mod_legends",
-	Version = "19.2.0-alpha16",
+	Version = "19.2.0-alpha17",
 	Name = "Legends Mod",
 	BuildName = "Tales & Professions",
 	IsStartingNewCampaign = false
@@ -8,7 +8,7 @@
 
 ::mods_registerMod(::Legends.ID, ::Legends.Version, ::Legends.Name);
 ::mods_queue(::Legends.ID, [
-	"mod_legends_assets(>=19.2.0-alpha10)",
+	"mod_legends_assets(>=19.2.0-alpha11)",
 	"mod_msu(>=1.7.0)",
 	"vanilla(>=1.5.1-5)",
 	"vanilla(<1.5.2)",

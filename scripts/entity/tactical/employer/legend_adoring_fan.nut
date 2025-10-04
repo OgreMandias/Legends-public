@@ -9,6 +9,7 @@ this.legend_adoring_fan <- ::inherit("scripts/entity/tactical/human", {
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.BeardChance = 0;
+		this.setGender(0);
 	}
 
 	function onInit() {
@@ -35,17 +36,10 @@ this.legend_adoring_fan <- ::inherit("scripts/entity/tactical/human", {
 	}
 
 	function assignRandomEquipment() {
-		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body) == null) {
-			local armor = [
-				[1, "reinforced_mail_hauberk"],
-				[2, "heavy_lamellar_armor"],
-				[2, "bandit_armor_heavy"],
-				[1, "footman_armor"],
-				[1, "leather_scale_armor"],
-				[1, "light_scale_armor"],
-				[1, "red_bandit_leader_armor"]
-			];
-			this.m.Items.equip(this.Const.World.Common.pickArmor(armor))
+		if (this.getItems().getItemAtSlot(this.Const.ItemSlot.Body) == null) {
+			this.getItems().equip(this.Const.World.Common.pickArmor([
+				[1, ::Legends.Armor.Standard.leather_wraps]
+			]));
 		}
 	}
 });

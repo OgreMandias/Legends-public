@@ -8,7 +8,6 @@ this.legend_killer_scares_noble_encounter <- ::inherit("scripts/encounters/encou
 		this.m.ID = "encounter.legend_killer_scares_noble";
 		this.m.Name = ::Const.Strings.randomCampEncounterName();
 		this.m.Cooldown = 60 * this.World.getTime().SecondsPerDay;
-		this.createScreens();
 	}
 
 	function createScreens() {

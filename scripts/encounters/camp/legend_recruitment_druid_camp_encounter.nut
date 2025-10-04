@@ -3,10 +3,10 @@ this.legend_recruitment_druid_camp_encounter <- this.inherit("scripts/encounters
 		Druid = null
     },
     function create() {
+	    this.encounter.create();
         this.m.Type = "encounter.legend_recruitment_druid_camp";
-        this.m.Name = "A burning forest";
+        this.m.Name = ::Const.Strings.randomCampEncounterName();
 		this.m.Cooldown = 60 * ::World.getTime().SecondsPerDay;
-	    this.createScreens();
 	}
 
     function createScreens() {

@@ -3,7 +3,7 @@ this.legend_recruitment_vala_encounter <- this.inherit("scripts/encounters/encou
 		Vala = null
     },
     function create() {
-        this.createScreens();
+	    this.encounter.create();
         this.m.Type = "encounter.legend_recruitment_vala_encounter";
         this.m.Name = "Mysterious woman";
 		this.m.Cooldown = 60 * ::World.getTime().SecondsPerDay;

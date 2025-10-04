@@ -1,9 +1,10 @@
 this.legend_undead_scourge_encounter <- this.inherit("scripts/encounters/encounter", {
     m = {},
     function create() {
-        this.createScreens();
+	    this.encounter.create();
         this.m.Type = "encounter.legend_undead_scourge_encounter";
         this.m.Name = ::Const.Strings.randomCityEncounterName();
+	    this.m.Cooldown = 30 * ::World.getTime().SecondsPerDay;
     }
 
     function createScreens() {

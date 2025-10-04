@@ -3,10 +3,10 @@ this.legend_qiyan_dances_encounter <- this.inherit("scripts/encounters/encounter
 		Qiyan = null
 	},
 	function create() {
+		this.encounter.create();
 		this.m.ID = "encounter.legend_qiyan_dances";
 		this.m.Name = ::Const.Strings.randomCampEncounterName();
 		this.m.Cooldown = 25.0 * ::World.getTime().SecondsPerDay;
-		this.createScreens();
 	}
 
 	function createScreens() {
@@ -55,10 +55,6 @@ this.legend_qiyan_dances_encounter <- this.inherit("scripts/encounters/encounter
 	}
 
 	function onPrepareVariables (_vars) {
-		if (this.m.Qiyan == null) {
-			::logError("legend_qiyan_dances_encounter: onPrepareVariables called but Qiyan is null");
-			return;
-		}
 		_vars.push(["qiyan", this.m.Qiyan.getName()]);
 		this.Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Qiyan.getGender(), "qiyan");
 	}

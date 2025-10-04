@@ -1,7 +1,7 @@
 this.legend_ambushed_trade_routes_situation_encounter <- this.inherit("scripts/encounters/encounter", {
     m = {},
     function create() {
-        this.createScreens();
+	    this.encounter.create();
         this.m.Type = "encounter.legend_ambushed_trade_routes_situation";
         this.m.Name = ::Const.Strings.randomCityEncounterName();
     }

@@ -4,10 +4,10 @@ this.legend_nomad_remembers_past_encounter <- ::inherit("scripts/encounters/enco
 	},
 
 	function create() {
+		this.encounter.create();
 		this.m.ID = "encounter.legend_nomad_remembers_past";
 		this.m.Name = ::Const.Strings.randomCampEncounterName();
 		this.m.Cooldown = 20 * this.World.getTime().SecondsPerDay;
-		this.createScreens();
 	}
 
 	function createScreens() {
@@ -32,10 +32,6 @@ this.legend_nomad_remembers_past_encounter <- ::inherit("scripts/encounters/enco
 	}
 
 	function onPrepareVariables (_vars) {
-		if (this.m.Nomad == null) {
-			::logError("legend_nomad_remembers_past_encounter: onPrepareVariables called but Nomad is null");
-			return;
-		}
 		_vars.push(["nomad", this.m.Nomad.getName()]);
 		::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Nomad.getGender(), "nomad");
 	}

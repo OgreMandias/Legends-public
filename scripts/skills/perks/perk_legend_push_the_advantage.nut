@@ -34,7 +34,7 @@ this.perk_legend_push_the_advantage <- this.inherit("scripts/skills/skill", {
 
 	function onBeforeTargetHit( _skill, _targetEntity, _hitInfo )
 	{
-		if ( _targetEntity != null && (this.isBonusEligible(_skill, _targetEntity) || this.isLowerBonusEligible(_skill, _targetEntity)))
+		if ( _targetEntity != null && this.calculateBonus(_skill, _targetEntity) != 0)
 		{
 			this.spawnIcon("perk_16", this.getContainer().getActor().getTile());
 		}
@@ -45,18 +45,28 @@ this.perk_legend_push_the_advantage <- this.inherit("scripts/skills/skill", {
 
 		local bonus = 0;
 
-		foreach (effect in this.m.HighBonus)
+		if (_targetEntity.getSkills().hasSkillOfType(this.Const.SkillType.TemporaryInjury))
 		{
-			if (_targetEntity.getSkills().hasEffect(effect))
+			bonus += 20;
+		}
+		else
+		{
+			foreach (effect in this.m.HighBonus)
 			{
-				bonus += 20;
+				if (_targetEntity.getSkills().hasEffect(effect))
+				{
+					bonus += 20;
+					break;
+				}
 			}
 		}
+		
 		foreach (effect in this.m.LowBonus)
 		{
 			if (_targetEntity.getSkills().hasEffect(effect))
 			{
 				bonus += 10;
+				break;
 			}
 		}
 

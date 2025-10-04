@@ -20,7 +20,7 @@ this.legend_light_padding_replacement_upgrade <- this.inherit("scripts/items/leg
 		this.m.Condition = 10;
 		this.m.ConditionMax = 10;
 		this.m.StaminaModifier = 0;
-		this.m.FatiguePenaltyMultiplier = -40.0;
+		this.m.FatiguePenaltyMultiplier = -20.0;
 	}
 });
 

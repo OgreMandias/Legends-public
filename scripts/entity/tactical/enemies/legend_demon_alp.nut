@@ -78,11 +78,11 @@ this.legend_demon_alp <- this.inherit("scripts/entity/tactical/actor", {
 
 		this.m.OnDeathLootTable.extend([
 			[50,  function () {
-				local token = this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
-				token.setRuneVariant(this.m.DroppableRunes[this.Math.rand(0, this.m.DroppableRunes.len() - 1)]);
-				token.setRuneBonus(true);
-				token.updateRuneSigilToken();
-				return token;
+				local selected = this.m.DroppableRunes[this.Math.rand(0, this.m.DroppableRunes.len() - 1)];
+				local rune = ::new(::Legends.Runes.get(selected).Script);
+				rune.setRuneVariant(selected);
+				rune.setRuneBonus(true);
+				return rune;
 			}.bindenv(this)]
 		]);
 
@@ -271,12 +271,10 @@ this.legend_demon_alp <- this.inherit("scripts/entity/tactical/actor", {
 		body.setBrush("bust_demonalp_body_01");
 		body.varySaturation(0.2);
 		local head = this.addSprite("head");
-		head.setBrush("demon_alp_head");
-		//head.setBrush("bust_demonalp_head_0" + this.Math.rand(1, 3));
+		head.setBrush("bust_demonalp_head_0" + this.Math.rand(1, 3));
 		head.Saturation = body.Saturation;
 		local injury = this.addSprite("injury");
-		injury.setBrush("demon_alp_wounds");
-		//injury.setBrush("bust_demonalp_01_injured");
+		injury.setBrush("bust_demonalp_01_injured");
 		injury.Visible = false;
 		this.addDefaultStatusSprites();
 		this.getSprite("status_rooted").Scale = 0.55;

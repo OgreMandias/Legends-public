@@ -125,6 +125,11 @@ foreach (i in garbage)
 	"weapons/named/legend_named_orc_flail_2h"
 ]);
 
+::Const.Items.NamedBarbarianWeapons.extend([
+	"weapons/named/legend_named_rusty_serrated_axe",
+	"weapons/named/legend_named_rusty_greatsword"
+]);
+
 ::Const.Items.NamedGoblinWeapons.extend([
 	"weapons/named/legend_named_goblin_axe_2h",
 	"weapons/named/legend_named_goblin_notched_blade",
@@ -156,6 +161,7 @@ foreach (i in garbage)
 ::Const.Items.NamedRangedWeapons.extend([
 	"weapons/named/legend_named_northern_sling",
 	"weapons/named/legend_named_nomad_sling",
+	"weapons/named/legend_named_sling",
 	"weapons/named/legend_named_heavy_javelin",
 	"weapons/named/legend_named_heavy_throwing_axe"
 ]);

@@ -674,6 +674,24 @@
 };
 ::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Standard.legend_helm_bearded);
 
+::Legends.Helmet.Standard.legend_helm_sharp <- {
+	ID = "legend_helm_sharp", //320, -21, -3, 3500
+	Script = "",
+	Sets = [{
+		Hoods = [
+			[1, "hood/legend_helmet_chain_hood"] //80, -5, 0, 310
+		],
+		Helms = [
+			[1, "helm/legend_helmet_great_helm"] //220, -15, -3, 3000
+		],
+		Tops = [
+			[1, "top/legend_helmet_faceplate_sharp"], //50, -1, -2
+		],
+		Vanity = []
+	}]
+};
+::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Standard.legend_helm_sharp);
+
 ::Legends.Helmet.Standard.full_leather_cap <- {
 	ID = "full_leather_cap", //45
 	Script = "",
@@ -2326,6 +2344,7 @@
 			[1, "top/legend_helmet_faceplate_short"], //20
 			[1, "top/legend_helmet_faceplate_full"], //20
 			[1, "top/legend_helmet_faceplate_curved"], //20
+			[1, "top/legend_helmet_faceplate_sharp"], //20
 			[1, "top/legend_helmet_faceplate_full_breaths"], //20
 		],
 		Vanity = [
@@ -2753,7 +2772,7 @@
 			[3, "top/legend_helmet_faceplate_full_breaths"],
 			[2, "top/legend_helmet_faceplate_flat"],
 			[2, "top/legend_helmet_faceplate_curved"],
-			[2, "top/legend_helmet_faceplate_curved"],
+			[1, "top/legend_helmet_faceplate_sharp"], //20
 			[1, "top/legend_helmet_faceplate_gold"],
 			[3, "top/legend_helmet_southern_faceplate"],
 			[1, "top/legend_helmet_facemask"],
@@ -3178,4 +3197,45 @@
 	}]
 };
 ::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Standard.mercury_royal_guard_01);
+
+::Legends.Helmet.Standard.fault_finder_mask_01 <- {
+	ID = "fault_finder_mask_01",
+	Script = "",
+	Sets = [{
+		Hoods = [
+			[1, "hood/legend_helmet_cloth_cap", 1]
+		],
+		Helms = [
+			[1, "helm/legend_helmet_flat_top_helm", 1]
+		],
+		Tops = [
+			[1, ""]
+		],
+		Vanity = [
+			[1, "vanity/legend_helmet_fleshcultist_book"],
+			[1, "vanity/legend_helmet_fleshcultist_straps"]
+		],
+	}]
+};
+::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Standard.fault_finder_mask_01);
+
+::Legends.Helmet.Standard.fault_finder_mask_02 <- {
+	ID = "fault_finder_mask_02",
+	Script = "",
+	Sets = [{
+		Hoods = [
+			[1, "hood/legend_helmet_cloth_scarf", 1]
+		],
+		Helms = [
+			[1, ""]
+		],
+		Tops = [
+			[1, "helm/legend_helmet_fleshcultist_mask"]
+		],
+		Vanity = [
+			[1, ""]
+		],
+	}]
+};
+::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Standard.fault_finder_mask_02);
 

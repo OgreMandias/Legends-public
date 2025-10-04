@@ -2630,11 +2630,11 @@ activesDefs.push({
 	Name = "Prepare to Graze",
 });
 
-::Legends.Active.LegendPrepareKnockdown <- null;
+::Legends.Active.LegendWindUp <- null;
 activesDefs.push({
-	ID = "actives.legend_prepare_knockdown",
-	Script = "scripts/skills/actives/legend_prepare_knockback_skill",
-	Const = "LegendPrepareKnockdown",
+	ID = "actives.legend_wind_up",
+	Script = "scripts/skills/actives/legend_wind_up_skill",
+	Const = "LegendWindUp",
 	Name = "Wind Up",
 });
 
@@ -2838,12 +2838,12 @@ activesDefs.push({
 	Name = "Summon Medium Xbow Zombie",
 });
 
-::Legends.Active.LegendSprint <- null;
+::Legends.Active.LegendStrafingRun <- null;
 activesDefs.push({
 	ID = "actives.legend_sprint",
-	Script = "scripts/skills/actives/legend_sprint_skill",
-	Const = "LegendSprint",
-	Name = "Sprint",
+	Script = "scripts/skills/actives/legend_strafing_run_skill",
+	Const = "LegendStrafingRun",
+	Name = "Strafing Run",
 });
 
 ::Legends.Active.LegendStaffwall <- null;
@@ -2932,14 +2932,6 @@ activesDefs.push({
 	Script = "scripts/skills/actives/legend_transform_into_wolf_skill",
 	Const = "LegendTransformIntoWolf",
 	Name = "Transform into Wolf",
-});
-
-::Legends.Active.LegendTumble <- null;
-activesDefs.push({
-	ID = "actives.legend_tumble",
-	Script = "scripts/skills/actives/legend_tumble_skill",
-	Const = "LegendTumble",
-	Name = "Tumble",
 });
 
 ::Legends.Active.LegendUnarmedLunge <- null;
@@ -3126,12 +3118,20 @@ activesDefs.push({
 	Name = "Censer Strike",
 });
 
-::Legends.Active.LegendDawgBite <- null;
+::Legends.Active.LegendSighthoundBite <- null;
 activesDefs.push({
-	ID = "actives.legend_dawg_bite",
-	Script = "scripts/skills/actives/legend_dawg_bite_skill",
-	Const = "LegendDawgBite",
-	Name = "Dawg Bite",
+	ID = "actives.legend_sighthound_bite",
+	Script = "scripts/skills/actives/legend_sighthound_bite_skill",
+	Const = "LegendSighthoundBite",
+	Name = "Sighthound Bite",
+});
+
+::Legends.Active.LegendUnleashSighthound <- null;
+activesDefs.push({
+	ID = "actives.legend_unleash_sighthound",
+	Script = "scripts/skills/actives/legend_unleash_sighthound_skill",
+	Const = "LegendUnleashSighthound",
+	Name = "Legend Unleash Sighthound",
 });
 
 ::Legends.Active.LegendCommandLegion <- null;
@@ -3140,6 +3140,46 @@ activesDefs.push({
 	Script = "scripts/skills/actives/legend_command_legion_skill",
 	Const = "CommandLegionary",
 	Name = "Command Legionary",
+});
+
+::Legends.Active.LegendHeartseeker <- null;
+activesDefs.push({
+	ID = "actives.legend_heartseeker",
+	Script = "scripts/skills/actives/legend_heartseeker_skill",
+	Const = "LegendHeartseeker",
+	Name = "Heartseeker",
+});
+
+::Legends.Active.LegendWarforkDisarm <- null;
+activesDefs.push({
+	ID = "actives.legend_warfork_disarm",
+	Script = "scripts/skills/actives/legend_warfork_disarm_skill",
+	Const = "LegendWarforkDisarm",
+	Name = "Disarm",
+});
+
+::Legends.Active.LegendPryArmor <- null;
+activesDefs.push({
+	ID = "actives.legend_pry_armor",
+	Script = "scripts/skills/actives/legend_pry_armor_skill",
+	Const = "LegendPryArmor",
+	Name = "Pry Armor",
+});
+
+::Legends.Active.LegendFlourish <- null;
+activesDefs.push({
+	ID = "actives.legend_flourish",
+	Script = "scripts/skills/actives/legend_flourish_skill",
+	Const = "LegendFlourish",
+	Name = "Flourish",
+});
+
+::Legends.Active.LegendEnragedHyenaBite <- null;
+activesDefs.push({
+	ID = "actives.legend_enraged_hyena_bite",
+	Script = "scripts/skills/actives/legend_enraged_hyena_bite_skill",
+	Const = "LegendEnragedHyenaBite",
+	Name = "Enraged Hyena Bite",
 });
 
 ::Legends.Actives.addActiveDefObjects(activesDefs);

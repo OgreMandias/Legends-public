@@ -353,8 +353,8 @@ if (!("Perks" in ::Const))
 	},
 	Tree = [
 		[],
-		[], //[::Legends.Perk.Versatility],
-		[],
+		[], 
+		[::Legends.Perk.LegendVersatile],
 		[],
 		[::Legends.Perk.LegendPushTheAdvantage],
 		[::Legends.Perk.Duelist],
@@ -404,7 +404,7 @@ if (!("Perks" in ::Const))
 	},
 	Tree = [
 		[],
-		[],
+		[::Legends.Perk.LegendFeint],
 		[],
 		[::Legends.Perk.SpecSword],
 		[],
@@ -559,7 +559,7 @@ if (!("Perks" in ::Const))
 		[::Legends.Perk.LegendSpecSpearWall],
 		[],
 		[::Legends.Perk.SpecSpear],
-		[::Legends.Perk.LegendRunThemThrough],
+		[],
 		[::Legends.Perk.LegendThrustMaster],
 		[]
 	]
@@ -657,11 +657,11 @@ if (!("Perks" in ::Const))
 		]
 	},
 	Tree = [
-		[::Legends.Perk.LegendLookout],//::Legends.Perk.BowRange
-		[::Legends.Perk.Bullseye],
+		[],
+		[::Legends.Perk.Bullseye, ::Legends.Perk.LegendAnchor],
 		[],
 		[::Legends.Perk.SpecBow],
-		[::Legends.Perk.LegendKeenEyesight],
+		[::Legends.Perk.LegendKeenEyesight, ::Legends.Perk.LegendPatientHunter],
 		[],
 		[]
 	]
@@ -712,9 +712,9 @@ if (!("Perks" in ::Const))
 		[::Legends.Perk.QuickHands],
 		[],
 		[::Legends.Perk.SpecThrowing],
+		[::Legends.Perk.LegendFirstBlood],
 		[],
-		[],
-		[::Legends.Perk.LegendCloseCombatArcher]
+		[::Legends.Perk.LegendPointBlank]
 	]
 };
 
@@ -760,11 +760,11 @@ if (!("Perks" in ::Const))
 	},
 	Tree = [
 		[],
-		[::Legends.Perk.LegendSlingerSpins],
+		[::Legends.Perk.LegendLookout],
 		[],
 		[::Legends.Perk.LegendMasterySlings],
 		[],
-		[::Legends.Perk.LegendBarrage],
+		[::Legends.Perk.LegendBarrage, ::Legends.Perk.LegendWindReader],
 		[]
 	]
 };
@@ -888,6 +888,7 @@ if (!("Perks" in ::Const))
 		::Const.Perks.HammerTree,
 		::Const.Perks.AxeTree,
 		::Const.Perks.CleaverTree,
+		::Const.Perks.OneHandedTree,
 		::Const.Perks.TwoHandedTree,
 		::Const.Perks.SwordTree,
 		::Const.Perks.DaggerTree,

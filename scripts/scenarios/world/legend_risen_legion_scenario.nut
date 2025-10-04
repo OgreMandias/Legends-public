@@ -17,25 +17,18 @@ this.legend_risen_legion_scenario <- this.inherit("scripts/scenarios/world/start
 		local roster = this.World.getPlayerRoster();
 		local names = [];
 
-		for( local i = 0; i < 8; i = ++i )
-		{
-			local bro;
-			bro = roster.create("scripts/entity/tactical/player");
-			// ::Legends.Traits.grant(bro, ::Legends.Trait.LegendFleshless);
+		for(local i = 0; i < 8; i++) {
+			local bro = roster.create("scripts/entity/tactical/player");
+			 ::Legends.Traits.grant(bro, ::Legends.Trait.LegendFleshless);
 			bro.setVeteranPerks(3);
-			///---
 			bro.getSprite("socket").setBrush("bust_base_undead");
-			///---
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 
-			while (names.find(bro.getNameOnly()) != null)
-			{
+			while (names.find(bro.getNameOnly()) != null) {
 				bro.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
 			}
-
 			names.push(bro.getNameOnly());
 		}
-
 		local bros = roster.getAll(); //this will please the romeaboos
 		//8 to start - 4 slaves, 2 aux, 2 legionaries
 
@@ -168,15 +161,15 @@ this.legend_risen_legion_scenario <- this.inherit("scripts/scenarios/world/start
 		}
 		while (1);
 
-		local attachedLocations = randomVillage.getAttachedLocations();
+		local attachedLocations = nearestVillage.getAttachedLocations();
 		local closest;
 		local dist = 99999;
 
 		foreach( a in attachedLocations )
 		{
-			if (a.getTile().getDistanceTo(randomVillageTile) < dist)
+			if (a.getTile().getDistanceTo(nearestVillage.getTile()) < dist)
 			{
-				dist = a.getTile().getDistanceTo(randomVillageTile);
+				dist = a.getTile().getDistanceTo(nearestVillage.getTile());
 				closest = a;
 			}
 		}
@@ -219,7 +212,7 @@ this.legend_risen_legion_scenario <- this.inherit("scripts/scenarios/world/start
 		this.m.StaticRelationsToFaction[this.Const.FactionType.NobleHouse] = true;
 		this.m.StaticRelationsToFaction[this.Const.FactionType.OrientalCityState] = true;
 		this.m.StaticRelationsToFaction[this.Const.FactionType.Undead] = true;
-		this.World.State.m.Player = this.World.spawnEntity("scripts/entity/world/player_party", randomVillageTile.Coords.X, randomVillageTile.Coords.Y);
+		this.World.State.m.Player = this.World.spawnEntity("scripts/entity/world/player_party", nearestVillage.getTile().Coords.X, nearestVillage.getTile().Coords.Y);
 		this.World.Assets.updateLook(112);
 		this.World.getCamera().setPos(this.World.State.m.Player.getPos());
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )

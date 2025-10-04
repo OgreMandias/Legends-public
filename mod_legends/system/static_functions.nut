@@ -157,3 +157,57 @@
 		return true;
 	return false;
 }
+
+::Legends.S.getDaysToScaleDifficulty <- function () {
+	switch (this.World.Assets.getCombatDifficulty()) {
+		case this.Const.Difficulty.Easy:
+			return 120;
+		case this.Const.Difficulty.Normal:
+			return 90;
+		case this.Const.Difficulty.Hard:
+			return 60;
+		case this.Const.Difficulty.Legendary:
+			return 30;
+		default:
+			::logError("Unknown combat difficulty: " + this.World.Assets.getCombatDifficulty());
+			return 0;
+	}
+}
+
+::Legends.S.scaleBaseProperties <- function (_properties) {
+	if (this.Tactical.State.isScenarioMode()) {
+		return;
+	}
+	local daysToScale = this.World.getTime().Days - this.getDaysToScaleDifficulty();
+	if (daysToScale > 0) {
+		local bonus = this.Math.floor(daysToScale / 20.0);
+		_properties.MeleeSkill += bonus;
+		_properties.RangedSkill += bonus;
+		_properties.MeleeDefense += this.Math.floor(bonus / 2);
+		_properties.RangedDefense += this.Math.floor(bonus / 2);
+		_properties.Hitpoints += this.Math.floor(bonus * 2);
+		_properties.Initiative += this.Math.floor(bonus / 2);
+		_properties.Stamina += bonus;
+		//	b.XP += this.Math.floor(bonus * 4);
+		_properties.Bravery += bonus;
+		_properties.FatigueRecoveryRate += this.Math.floor(bonus / 4);
+	}
+}
+
+::Legends.S.getToolEfficiency <- function () {
+	// Sum combined tool efficiency modifier (eg +4 from Tool Drawers) from all brothers
+	local toolEfficiencyModifier = 0;
+	foreach (bro in this.World.getPlayerRoster().getAll()) {
+		toolEfficiencyModifier += bro.getToolEfficiencyModifier();
+	}
+	// Cap efficiency at 50%
+	return this.Math.maxf(0.5, (100.0 - toolEfficiencyModifier) / 100.0);
+}
+
+::Legends.S.oneOf <- function (_value, ...) {
+	foreach(val in vargv) {
+		if (_value == val)
+			return true;
+	}
+	return false;
+}

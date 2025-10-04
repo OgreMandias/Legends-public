@@ -6,9 +6,9 @@ this.legend_vala_crafts_staff_encounter <- this.inherit("scripts/encounters/enco
     },
 
     function create() {
-        this.createScreens();
+	    this.encounter.create();
         this.m.Type = "encounter.legend_vala_crafts_staff";
-        this.m.Name = "Vala crafts staff";
+        this.m.Name = ::Const.Strings.randomCampEncounterName();
 		this.m.Cooldown = 60 * ::World.getTime().SecondsPerDay;
 	}
 
@@ -111,9 +111,8 @@ this.legend_vala_crafts_staff_encounter <- this.inherit("scripts/encounters/enco
 	}
 
 	function isValid(_camp) {
-		if (::World.getPlayerRoster().getSize() >= 3)
+		if (::World.getPlayerRoster().getSize() < 3)
 			return false;
-
 
 		local bros = this.World.getPlayerRoster().getAll();
 		local randomBros = [];
@@ -123,7 +122,7 @@ this.legend_vala_crafts_staff_encounter <- this.inherit("scripts/encounters/enco
 			{
 				randomBros.push(bro);
 			}
-			else if (bro.getBackground().getID() == "background.legend_vala" && bro.getLevel >= 12)
+			else if (bro.getBackground().getID() == "background.legend_vala" && bro.getLevel() >= 12)
 			{
 				this.m.Vala = bro;
 			}
@@ -134,8 +133,7 @@ this.legend_vala_crafts_staff_encounter <- this.inherit("scripts/encounters/enco
 		this.m.RandomBrother = randomBros[this.Math.rand(0, randomBros.len() - 1)];
 		this.m.RandomBrother2 = randomBros[this.Math.rand(0, randomBros.len() - 1)];
 
-
-		return !isOnCooldown();
+		return !this.isOnCooldown();
 	}
 
 	function onClear()

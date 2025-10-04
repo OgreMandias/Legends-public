@@ -11,15 +11,27 @@ if (!("Perks" in ::Const))
 	],
 	Tree = [
 		[
-		::Legends.Perk.LegendCheerOn,
-		::Legends.Perk.LegendSpecialistMusician
+			::Legends.Perk.LegendCheerOn,
+			::Legends.Perk.LegendSpecialistMusician
 		],
-		[::Legends.Perk.LegendDaze],
-		[],
-		[::Legends.Perk.LegendEntice],
-		[::Legends.Perk.LegendPush],
-		[::Legends.Perk.LegendMinnesanger],
-		[::Legends.Perk.LegendMeistersanger]
+		[
+			::Legends.Perk.LegendDaze
+		],
+		[
+			::Legends.Perk.LegendEntice
+		],
+		[
+			::Legends.Perk.LegendMasteryMusic
+		],
+		[
+			::Legends.Perk.LegendPush
+		],
+		[
+			::Legends.Perk.LegendMinnesanger
+		],
+		[
+			::Legends.Perk.LegendMeistersanger
+		]
 	]
 };
 
@@ -104,13 +116,13 @@ if (!("Perks" in ::Const))
 		"runes"
 	],
 	Tree = [
-		[], // [::Legends.Perk.LegendValaInscribeShield], todo, removed ? - chopeks
 		[],
-		[], // [::Legends.Perk.LegendValaInscribeHelmet], todo, removed ? - chopeks
-	[], // [::Legends.Perk.LegendValaInscriptionMastery], todo, removed ? - chopeks
-		[], // [::Legends.Perk.LegendValaInscribeArmor],  todo, removed ? - chopeks
 		[],
-		[], // [::Legends.Perk.LegendValaInscribeWeapon]  todo, removed ? - chopeks
+		[],
+		[],
+		[],
+		[],
+		[],
 	]
 };
 

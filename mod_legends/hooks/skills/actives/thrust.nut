@@ -17,6 +17,11 @@
 		}
 	}
 
+	o.getTooltip = function ()
+	{
+		return this.getDefaultTooltip();
+	}
+
 	local onAfterUpdate = o.onAfterUpdate;
 	o.onAfterUpdate = function (_properties)
 	{
@@ -28,7 +33,7 @@
 	o.onUse = function ( _user, _targetTile )
 	{
 		if (!this.m.IsGoedendagThrust)
-			onUse(_user, _targetTile);
+			return onUse(_user, _targetTile);
 
 		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectBash);
 		local success = this.attackEntity(_user, _targetTile.getEntity());

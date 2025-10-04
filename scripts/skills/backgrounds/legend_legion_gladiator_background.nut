@@ -139,7 +139,7 @@ this.legend_legion_gladiator_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.ButcherClassTree,
 				this.Const.Perks.BeastClassTree,
 				this.Const.Perks.JugglerClassTree,
-				this.Const.Perks.LegendSpecialistSpearfisher
+				this.Const.Perks.SpearfisherClassTree
 			],
 			Profession = [],
 			Magic = []
@@ -209,8 +209,8 @@ this.legend_legion_gladiator_background <- this.inherit("scripts/skills/backgrou
 
 	function onAdded()
 	{
-		if (this.m.IsNew)
-		{
+		this.character_background.onAdded();
+		if (this.m.IsNew) {
 			::Legends.Traits.grant(this, ::Legends.Trait.LegendFleshless);
 		}
 

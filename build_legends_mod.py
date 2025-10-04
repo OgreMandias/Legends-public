@@ -10,6 +10,7 @@ import shutil
 import argparse
 from pathlib import Path
 import platform
+from buildscript.lib import VersionExtractor, BuildError
 
 
 def load_config():
@@ -34,11 +35,6 @@ def load_config():
 
     return config
 
-
-class LegendsModBuildError(Exception):
-    """Custom exception for legends mod build errors"""
-
-    pass
 
 
 class LegendsModBuilder:
@@ -67,53 +63,55 @@ class LegendsModBuilder:
         self.repo_dir = repo_dir
         self.build_dir = Path(build_dir)
         self.current_dir = Path.cwd()
+        self.version_extractor = VersionExtractor(self.current_dir)
 
         print(f"Battle Brothers directory: {self.bb_dir}")
         print(f"Repository directory: {self.repo_dir}")
         print(f"Build directory: {self.build_dir}")
         print(f"Current directory: {self.current_dir}")
 
-    def extract_version(self):
-        """Extract current version from register_legends.nut"""
-        register_file = self.current_dir / "scripts" / "!mods_preload" / "register_legends.nut"
-        if not register_file.exists():
-            raise LegendsModBuildError("Could not find register_legends.nut to extract version")
+    def prebuild_cleanup(self):
+        """Clean up generated folders and PNGs before building"""
+        try:
+            # Remove generated directories
+            for rel in [
+                "brushes",
+                "build",
+                "helmet_scripts",
+                "legend_armor_scripts",
+            ]:
+                p = self.current_dir / rel
+                if p.exists():
+                    print(f"Deleting {p} ...")
+                    shutil.rmtree(p, ignore_errors=True)
 
-        with open(register_file, "r") as f:
-            content = f.read()
-            # Look for Version = "X.Y.Z" pattern
-            import re
+            # Remove top-level gfx PNGs
+            gfx_dir = self.current_dir / "gfx"
+            if gfx_dir.exists():
+                for png in gfx_dir.glob("*.png"):
+                    try:
+                        print(f"Deleting {png}")
+                        png.unlink()
+                    except Exception:
+                        pass
 
-            match = re.search(r'Version = "([0-9]+\.[0-9]+\.[0-9]+)"', content)
-            if match:
-                return match.group(1)
-            else:
-                raise LegendsModBuildError("Could not extract version from register_legends.nut")
+            # Remove gfx/ui PNGs
+            gfx_ui_dir = gfx_dir / "ui"
+            if gfx_ui_dir.exists():
+                for png in gfx_ui_dir.glob("*.png"):
+                    try:
+                        print(f"Deleting {png} ...")
+                        png.unlink()
+                    except Exception:
+                        pass
 
-    def get_legends_assets_version(self):
-        """Extract legends assets version from register_legends.nut"""
-        register_file = self.current_dir / "scripts" / "!mods_preload" / "register_legends.nut"
-        if not register_file.exists():
-            raise LegendsModBuildError(
-                "Could not find register_legends.nut to extract assets version"
-            )
+        except Exception as e:
+            print(f"Warning: cleanup error {e}")
 
-        with open(register_file, "r") as f:
-            content = f.read()
-            # Look for mod_legends_assets(>=X.Y.Z) pattern
-            import re
-
-            match = re.search(r"mod_legends_assets\(>=([0-9]+\.[0-9]+\.[0-9]+)\)", content)
-            if match:
-                return match.group(1)
-            else:
-                raise LegendsModBuildError(
-                    "Could not extract assets version from register_legends.nut"
-                )
 
     def build_assets_script(self):
         """Build asset mod script dynamically"""
-        assets_version = self.get_legends_assets_version()
+        assets_version = self.version_extractor.get_legends_assets_version()
         script_content = f"""::LegendsAssets <- {{
     ID = "mod_legends_assets",
     Version = "{assets_version}",
@@ -124,12 +122,12 @@ class LegendsModBuilder:
 
     def artifact_name_mod(self):
         """Generate mod artifact name"""
-        version = self.extract_version()
+        version = self.version_extractor.extract_version()
         return f"mod_legends-{version}.zip"
 
     def artifact_name_assets(self):
         """Generate assets artifact name"""
-        assets_version = self.get_legends_assets_version()
+        assets_version = self.version_extractor.get_legends_assets_version()
         return f"mod_legends-assets-{assets_version}.zip"
 
     def copy_dead_assets(self):
@@ -261,6 +259,9 @@ class LegendsModBuilder:
         try:
             print("Starting Legends mod build process...")
 
+            # Build cleanup to ensure a fresh state
+            self.prebuild_cleanup()
+
             # Remove and recreate build directory
             if self.build_dir.exists():
                 shutil.rmtree(self.build_dir)
@@ -280,7 +281,7 @@ class LegendsModBuilder:
 
             print("Legends mod build completed successfully!")
 
-        except LegendsModBuildError as e:
+        except BuildError as e:
             print(f"Legends mod build failed: {e}")
             sys.exit(1)
         except Exception as e:

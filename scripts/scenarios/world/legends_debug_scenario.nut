@@ -288,7 +288,6 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 
 			"legendary/legend_armor_mountain",
-			"legendary/legend_armor_of_davkul",
 			"legendary/legend_skin_armor",
 			"legendary/legend_emperors_armor",
 			"legendary/legend_emperors_armor_fake",
@@ -435,7 +434,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"legend_shiv",
 			"legend_shovel",
 			"legend_sickle",
-			"legend_sling",
+			"legend_dilapitated_sling",
 			"legend_northern_sling",
 			"legend_staff",
 			"legend_staff_gnarled",
@@ -636,7 +635,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"hood/legend_helmet_cloth_cap",
 			"hood/legend_helmet_barb_leather_cap",
 			"hood/legend_helmet_southern_headband_coin",
-			"hood/legend_helmet_mummy_bandage",
+			"hood/legend_mummy_bandage",
 			"hood/legend_helmet_full_mask",
 			"hood/legend_helmet_beak_hood",
 			"hood/legend_helmet_enclave_bevor",

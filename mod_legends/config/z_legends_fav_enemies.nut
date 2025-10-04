@@ -82,10 +82,11 @@ if (!("LegendMod" in ::Const))
 	::Const.EntityType.FlyingSkull
 ];
 ::Const.LegendMod.FavoriteSpider <- [
-	::Const.EntityType.Spider,
-	//::Const.EntityType.SpiderBodyguard,
-	::Const.EntityType.SpiderEggs,
-	::Const.EntityType.LegendRedbackSpider
+	this.Const.EntityType.Spider,
+	this.Const.EntityType.LegendSpiderCluster,
+	//this.Const.EntityType.SpiderBodyguard,
+	this.Const.EntityType.SpiderEggs,
+	this.Const.EntityType.LegendRedbackSpider
 ];
 ::Const.LegendMod.FavoriteUnhold <- [
 	::Const.EntityType.Unhold,
@@ -296,6 +297,9 @@ if (!("LegendMod" in ::Const))
 		return 0.5;
 
 	case ::Const.EntityType.Spider :
+		return 8;
+
+	case ::Const.EntityType.LegendSpiderCluster :
 		return 8;
 
 	// case ::Const.EntityType.SpiderBodyguard :

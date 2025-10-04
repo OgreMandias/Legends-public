@@ -1,4 +1,4 @@
-::mods_hookExactClass("states/main_menu_state", function(o) 
+::mods_hookExactClass("states/main_menu_state", function(o)
 {
 
 	o.onSiblingAdded = function ( _stateName )
@@ -134,6 +134,10 @@
 					tacticalState.setScenario(this.new("scripts/scenarios/tactical/legend_scenario_basilisks"));
 					break;
 
+				case 42:
+					tacticalState.setScenario(this.new("scripts/scenarios/tactical/legend_scenario_enraged_hyena"));
+					break;
+
 				default:
 					tacticalState.setScenario(this.new("scripts/scenarios/tactical/legend_scenario_combat_basics"));
 					break;
@@ -164,6 +168,11 @@
 	{
 
 		local result = [
+			{
+				id = 42,
+				name = "Enraged Hyenas (Legendary)",
+				description = "[p=c][img]gfx/ui/events/legend_enraged_hyena.png[/img][/p]\n[p=c]Face a dozen raging hyenas.[/p]"
+			},
 			{
 				id = 41,
 				name = "Basilisks",

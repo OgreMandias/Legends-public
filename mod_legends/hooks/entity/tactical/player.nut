@@ -16,7 +16,10 @@
 
 	o.getTryoutCost = function ()
 	{
-		return this.Math.ceil(this.Math.max(10, this.Math.min(this.m.HiringCost - 25, 25 + this.m.HiringCost * this.Const.Tryouts.CostMult) * this.World.Assets.m.TryoutPriceMult));
+		local cost = this.Math.ceil(this.Math.max(10, this.Math.min(this.m.HiringCost - 25, 25 + this.m.HiringCost * this.Const.Tryouts.CostMult) * this.World.Assets.m.TryoutPriceMult));
+		if (::World.Retinue.hasFollower("follower.recruiter"))
+			cost *= 0.5;
+		return cost;
 	}
 
 	o.getDailyCost = function ()
@@ -626,6 +629,11 @@
 		if (this.Tactical.State.isScenarioMode())
 			return onDeath(_killer, _skill, _tile, _fatalityType);
 		local bro = this;
+		if (::Tactical.State.isScenarioMode()) {
+			onDeath(_killer, _skill, _tile, _fatalityType);
+			return; // scenario mode has no obituary and crashes with our changes
+		}
+
 		local originalAddFallen = ::World.Statistics.addFallen;
 		::World.Statistics.addFallen = function (_fallen) {
 			originalAddFallen(bro.finalizeFallen(_fallen));
@@ -1067,7 +1075,7 @@
 		}
 
 
-		local r = this.Math.rand(1, 4);
+		local r = this.Math.rand(1, 6);
 
 		if (r == 1)
 		{
@@ -1088,6 +1096,14 @@
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/light_crossbow"));
 			this.m.Items.equip(this.new("scripts/items/ammo/quiver_of_bolts"));
+		}
+		else if (r == 5)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/legend_sturdy_sling"));
+		}
+		else if (r == 6)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/staff_sling"));
 		}
 	}
 
@@ -1265,7 +1281,7 @@
 				}
 			}
 
-			pickTraits( traits, maxTraits );
+			this.pickTraits( traits, maxTraits );
 
 			for( local i = 1; i < traits.len(); i = ++i )
 			{
@@ -1591,20 +1607,23 @@
 		return mod;
 	}
 
-	o.getArmorPartsModifier <- function ()
-	{
-		local mod = this.getBackground().getModifiers().ArmorParts;
+	// Means repair speed, most backgrounds have 5 or 8
+	o.getArmorPartsModifier <- function () {
+		return this.getBackground().getModifiers().ArmorParts;
+	}
+
+	// Means repair efficiency
+	o.getToolEfficiencyModifier <- function () {
+		local mod = 0;
 		local skills = [
 			::Legends.Perk.LegendToolsSpares,
 			::Legends.Perk.LegendToolsDrawers
 		];
 
-		foreach( s in skills )
-		{
+		foreach (s in skills) {
 			local skill = ::Legends.Perks.get(this, s);
-			if (skill != null)
-			{
-				mod += skill.getModifier();
+			if (skill != null) {
+				mod += skill.getToolEfficiencyModifier();
 			}
 		}
 

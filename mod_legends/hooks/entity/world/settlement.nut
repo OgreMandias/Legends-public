@@ -355,7 +355,7 @@
 
 		result.Encounters <- [];
 		foreach(encounter in this.m.SettlementEncounters) {
-			if (encounter != null) {
+			if (encounter != null && encounter.isVisible()) {
 				result.Encounters.push({
 					Icon = encounter.m.Icon,
 					Type = encounter.getType(),
@@ -556,6 +556,8 @@
 	local updateRoster = o.updateRoster;
 	o.updateRoster = function ( _force = false )
 	{
+		local originalRosterMin = ::World.Assets.m.RosterSizeAdditionalMin;
+		local originalRosterMax = ::World.Assets.m.RosterSizeAdditionalMax;
 		if (_force || m.LastRosterUpdate == 0 || ((::Time.getVirtualTimeF() - m.LastRosterUpdate) / ::World.getTime().SecondsPerDay) >= 2) {
 			m.DraftList = getDraftList(); // apply the draftlist
 			::World.getTemporaryRoster().clear(); // using this to store the stabled
@@ -571,8 +573,16 @@
 
 				bro.getFlags().set("Legend_onGenerateBroPass", true);
 			}
+			if (::World.Retinue.hasFollower("follower.recruiter"))
+			{
+				::World.Assets.m.RosterSizeAdditionalMin += 2;
+				::World.Assets.m.RosterSizeAdditionalMax += 4;
+			}
 
 			updateRoster(_force); // run the original function
+
+			::World.Assets.m.RosterSizeAdditionalMin = originalRosterMin;
+			::World.Assets.m.RosterSizeAdditionalMax = originalRosterMax;
 
 			foreach (bro in roster.getAll())
 			{
@@ -1146,7 +1156,6 @@
 //				::logInfo("encounter became non valid " + e.getType());
 				::MSU.Array.removeByValue(this.m.SettlementEncounters, e);
 			}
-//			::logInfo("cooldown still on, skipping the creation");
 			return;
 		}
 
@@ -1157,7 +1166,7 @@
 			}
 		}
 
-		local count = this.Math.rand(3, 5);
+		local count = this.Math.rand(::Legends.Encounters.SettlementMin, ::Legends.Encounters.SettlementMax);
 		while(list.len() > count) {
 			local r = this.Math.rand(0, list.len() - 1);
 			list.remove(r);
@@ -1166,7 +1175,7 @@
 		foreach (e in list) {
 			this.m.SettlementEncounters.push(e);
 		}
-		this.m.SettlementEncountersCooldownUntil = this.Time.getVirtualTimeF() + (5 * this.World.getTime().SecondsPerDay);
+		this.m.SettlementEncountersCooldownUntil = this.Time.getVirtualTimeF() + (::Legends.Encounters.SettlementCooldown * this.World.getTime().SecondsPerDay);
 	}
 
 	local onSerialize = o.onSerialize;

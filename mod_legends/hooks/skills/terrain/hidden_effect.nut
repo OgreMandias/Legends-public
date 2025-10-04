@@ -37,7 +37,7 @@
 			]);
 		}
 
-		if (actor.getSkills().hasSkill("background.legend_assassin") || actor.getSkills().hasSkill("background.assassin") || actor.getSkills().hasSkill("background.assassin_southern"))
+		if (actor.getSkills().hasSkill("background.assassin") || actor.getSkills().hasSkill("background.assassin_southern"))
 		ret.extend([
 			{
 				id = 13,
@@ -199,6 +199,9 @@
 			}
 		}
 
+		if (actor.getSkills().hasPerk(::Legends.Perk.LegendPatientHunter) && !::Legends.Effects.has(actor, ::Legends.Effect.LegendPatientHunter))
+			::Legends.Effects.grant(_entity, ::Legends.Effect.LegendPatientHunter);
+
 		//actor.setBrushAlpha(10);
 		//actor.getSprite("hair").Visible = false;
 		//actor.getSprite("beard").Visible = false;
@@ -261,7 +264,7 @@
             _properties.DamageRegularMin *= 1.2;
             _properties.DamageRegularMax *= 1.2;
 
-            if (actor.getSkills().hasSkill("background.legend_assassin") || actor.getSkills().hasSkill("background.assassin") || actor.getSkills().hasSkill("background.assassin_southern"))
+            if (actor.getSkills().hasSkill("background.assassin") || actor.getSkills().hasSkill("background.assassin_southern"))
             {
                 _properties.DamageRegularMax *= 1.3;
             }

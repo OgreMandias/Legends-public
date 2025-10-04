@@ -1,16 +1,3 @@
-::Const.LegendMod.Armors <- {};
-::Const.LegendMod.Helmets <- {};
-
-foreach( i, v in ::Const.LegendMod.ArmorObjs)
-	::Const.LegendMod.Armors[v.ID] <- v;
-
-foreach (i, v in ::Const.LegendMod.HelmObjs)
-	::Const.LegendMod.Helmets[v.ID] <- v;
-
-foreach (i, v in ::Const.LegendMod.OutfitObjs)
-	::Const.LegendMod.Outfits[v.ID] <- v;
-
-
 /**
 * Picks one of legends armors
 * @param _list in form of weighted list [[1, "relative/patch/to/script"]]

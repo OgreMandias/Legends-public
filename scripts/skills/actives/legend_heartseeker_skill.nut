@@ -5,8 +5,7 @@ this.legend_heartseeker_skill <- this.inherit("scripts/skills/skill", {
 	},
 	function create()
 	{
-		this.m.ID = "actives.legend_heartseeker";
-		this.m.Name = "Heartseeker";
+		::Legends.Actives.onCreate(this, ::Legends.Active.LegendHeartseeker);
 		this.m.Description = "Put your full weight in a thrust, targetting the enemy\'s weakpoints and inflicting terrible injuries.";
 		this.m.KilledString = "Pierced";
 		this.m.Icon = "skills/active_legend_heartseeker.png";
@@ -38,6 +37,9 @@ this.legend_heartseeker_skill <- this.inherit("scripts/skills/skill", {
 		this.m.FatigueCost = 20;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
+		this.m.ChanceDecapitate = 0;
+		this.m.ChanceDisembowel = 75;
+		this.m.ChanceSmash = 0;
 		if (this.m.IsPolearm)
 		{
 			this.m.FatigueCost = 25;
@@ -54,24 +56,15 @@ this.legend_heartseeker_skill <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local ret = this.getDefaultTooltip();
-		ret.extend([
-			{
-				id = 6,
-				type = "text",
-				icon = "ui/icons/hitchance.png",
-				text = "Has a [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] lower threshold to inflict injuries"
-			}
-		]);
 		return ret;
 	}
-
+	
 	function onAfterUpdate( _properties )
 	{
 		if (this.m.IsPolearm)
 		{
 			this.m.FatigueCostMult = _properties.IsSpecializedInPolearms ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 			this.m.ActionPointCost = _properties.IsSpecializedInPolearms ? 6 : 7;
-			return;
 		}
 		else
 		{
@@ -92,7 +85,7 @@ this.legend_heartseeker_skill <- this.inherit("scripts/skills/skill", {
 			_properties.ThresholdToInflictInjuryMult *= 0.5;
 			if (!this.m.IsPolearm && _properties.IsSpecializedInSpears)
 			{
-				_properties.DirectDamageAdd += 0.05;
+				_properties.DamageDirectAdd += 0.2;
 			}
 		}
 	}

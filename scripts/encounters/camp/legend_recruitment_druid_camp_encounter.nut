@@ -3,9 +3,9 @@ this.legend_recruitment_druid_camp_encounter <- this.inherit("scripts/encounters
 		Druid = null
     },
     function create() {
-        this.createScreens();
+	    this.encounter.create();
         this.m.Type = "encounter.legend_recruitment_druid_camp";
-        this.m.Name = "A burning forest";
+        this.m.Name = ::Const.Strings.randomCampEncounterName();
 		this.m.Cooldown = 60 * ::World.getTime().SecondsPerDay;
 	}
 
@@ -83,6 +83,17 @@ this.legend_recruitment_druid_camp_encounter <- this.inherit("scripts/encounters
 
 	function onPrepareVariables (_vars) {
 		this.Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Druid.getGender(), "Druid");
+	}
+
+	function isVisible() {
+		local currentTile = this.World.State.getPlayer().getTile();
+		local towns = this.World.EntityManager.getSettlements();
+		foreach (t in towns) {
+			if (t.getTile().getDistanceTo(currentTile) <= 7) {
+				return false; //if too close to town, hide
+			}
+		}
+		return true;
 	}
 
 	function isValid(_camp) {

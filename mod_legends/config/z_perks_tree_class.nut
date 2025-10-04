@@ -27,7 +27,7 @@ if (!("Perks" in ::Const))
 		"healing"
 	],
 	Tree = [
-		[::Legends.Perk.LegendMedIngredients],
+		[],
 		[],
 		[],
 		[::Legends.Perk.LegendSpecBandage],

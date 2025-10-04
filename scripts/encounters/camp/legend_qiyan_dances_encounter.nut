@@ -30,7 +30,7 @@ this.legend_qiyan_dances_encounter <- this.inherit("scripts/encounters/encounter
 				]);
 
 				foreach (bro in ::World.getPlayerRoster().getAll()) {
-					if (_event.m.Quian.getID() == bro.getID())
+					if (_event.m.Qiyan.getID() == bro.getID())
 						continue;
 					if (::Math.rand(1, 100) <= 50) {
 						local entry = ::Legends.EventList.changeMood(bro, 1.0, "Amazed by the qiyan\'s mesmerising performance!");
@@ -55,6 +55,10 @@ this.legend_qiyan_dances_encounter <- this.inherit("scripts/encounters/encounter
 	}
 
 	function onPrepareVariables (_vars) {
+		if (this.m.Qiyan == null) {
+			::logError("legend_qiyan_dances_encounter: onPrepareVariables called but Qiyan is null");
+			return;
+		}
 		_vars.push(["qiyan", this.m.Qiyan.getName()]);
 		this.Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Qiyan.getGender(), "qiyan");
 	}

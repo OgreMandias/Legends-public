@@ -5,7 +5,7 @@ this.legend_minstrel_performs_at_tavern_encounter <- this.inherit("scripts/encou
     function create() {
 	    this.encounter.create();
         this.m.Type = "encounter.legend_minstrel_performs_at_tavern";
-        this.m.Name = "Minstrel wants to perform.";
+        this.m.Name = ::Const.Strings.randomCityEncounterName();
         this.m.Cooldown = 30 * ::World.getTime().SecondsPerDay;
     }
 

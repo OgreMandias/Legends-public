@@ -67,10 +67,11 @@ this.perk_legend_swagger <- this.inherit("scripts/skills/skill", {
 
 	function getBonus (_slot)
 	{
-		local slot = this.getContainer().getActor().getItems().getItemAtSlot(_slot);
+		local actor = this.getContainer().getActor();
+		local slot = actor.getItems().getItemAtSlot(_slot);
 		local slotValue = 0;
-		local body = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Body);
-		local head = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Head);
+		local body = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Body);
+		local head = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Head);
 		local bodyvalue = 0;
 		local headvalue = 0;
 
@@ -80,7 +81,7 @@ this.perk_legend_swagger <- this.inherit("scripts/skills/skill", {
 		if (head != null)
 			headvalue = headvalue + head.getValue();
 
-		local fat = this.getContainer.getActor().getItems().getStaminaModifier(
+		local fat = actor.getItems().getStaminaModifier(
 			[
 				::Const.ItemSlot.Body,
 				::Const.ItemSlot.Head,

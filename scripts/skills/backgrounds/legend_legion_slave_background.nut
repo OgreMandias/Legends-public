@@ -7,8 +7,8 @@ this.legend_legion_slave_background <- this.inherit("scripts/skills/backgrounds/
 		this.m.Name = "Servus";
 		this.m.Icon = "ui/backgrounds/background_puppet.png"; //to do
 		this.m.BackgroundDescription = "Taken from a distant land lost to time, this slave still fights for their household.";
-		// this.m.GoodEnding = ""; //to do
-		// this.m.BadEnding = ""; //to do
+		this.m.GoodEnding = ""; 
+		this.m.BadEnding = ""; 
 		this.m.HiringCost = 0;
 		this.m.DailyCost = 0;
 		this.m.Excluded = [ //can roll; brute, clubfooted, clumsy, fragile, huge, hesitant, strong, sure footing, survivor, tiny, tough, bright, lucky, shortsighted, aggressive, martial, predictable, lumbering, quick, swift, team player, hate nobles, frail, etc (see commented out below)
@@ -157,9 +157,9 @@ this.legend_legion_slave_background <- this.inherit("scripts/skills/backgrounds/
 		this.addBackgroundType(this.Const.BackgroundType.Female);
 	}
 
-	function onBuildDescription() //to do
+	function onBuildDescription() //—
 	{
-		return "{ TODO | TODO }";
+		return "{%slave% hunches and hobbles along as though their bone frame was still burdened by calloused flesh and aching muscles. | %slave% appears oblivious to their undeath, limping and lamenting their station, ever fearful of their superiors overhearing and adding to their misfortunes. | Wearing the scars of decades of servitude at the bottom of the Legion, %slave%\'s bony frame threatens to crumble under the weight of more orders. | March. Dig. Cook. Build. March. Kill. March. The endless labours of %slave% persist even in the face of their undeath. | With a bony frame that portrays weakness and years of backbreaking work even after death, %slave% shuffles with a stiffness that betrays their battered state.} {A slave in the legion, their station affords them an excessive regime of endless work. Digging trenches, stripping corpses, and making said corpses dominate the daily unlife of this walking cadaver. | Filling the disposable ranks of the legion's many slaves, their work is dominated with manual and violent tasks to ensure the unimpeded task of the machine-like legion. | As one of many faceless slaves within the legion, they fill the role of the disposable body to throw at problems — fighting, carrying of supplies, and their eventual destruction are vital parts of their role. | Providing comforts to the rest of the legion at the expense of their own, the work of a legion slave is one of never-ending toil and torment. | The often unseen labour behind the legion's frightening efficiency, the labouring slave shares no glory and wins no accolades for its success, but is first to suffer setbacks both on and off the battlefield.} {If %slave%'s face had any flesh or human features left, it would betray unspeakable sadness and desperation in the face of their endless torment. Instead, a cold and hollow skull hides such inconveniences, only presenting as ready for more orders. | Despite their station, %slave% wears a misplaced enthusiasm to serve and better their situation, tricked by their own delusion that eventually, their toils will end, and they will rise through the legion as a respected figure. | Fearing the ever-present judgement of their betters, %slave% toils with a fervour that threatens to break apart their fragile frame. | The resignation to their fate is clear in how %slave% carries themself. Aware of their nature within the legion's endless campaign, they seemingly await their destruction to return them to the earth, were they so lucky. | Having spent little time in their station, the almost eager demeanour of %slave% is likely to be short lived. With the weight of the legion's endless orders upon their hollow shoulders, one must wonder how long they'll last before crumbling into dust...}";
 	}
 
 	function onChangeAttributes() //uses Character_background.nut template (Skeleton)

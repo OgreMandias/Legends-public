@@ -94,6 +94,8 @@ this.legend_cannibal_eats_part_of_brother <- this.inherit("scripts/events/event"
 
 	function onUpdateScore()
 	{
+		if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+			return;
 		local brothers = this.World.getPlayerRoster().getAll();
 		local cannibal_candidates = [];
 		local dinner_candidates = [];

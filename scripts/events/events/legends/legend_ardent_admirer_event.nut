@@ -134,7 +134,7 @@ this.legend_ardent_admirer_event <- this.inherit("scripts/events/event", {
 			this.m.Gunner = candidates_gunner[::Math.rand(0, candidates_gunner.len() - 1)];
 		}
 
-		this.m.Score = 9999;
+		this.m.Score = 50;
 	}
 
 	function onPrepareVariables( _vars )

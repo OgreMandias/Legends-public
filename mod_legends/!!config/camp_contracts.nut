@@ -49,8 +49,6 @@
 	local unit = ::Const.World.Spawn.Troops.SkeletonHeavy; //may change to priest later
 	local character = _roster.create("scripts/entity/tactical/employer/legend_legion_employer"); //need to refine this - clothes and style
 	character.setFaction(_factionID);
-	character.m.HairColors = this.Const.HairColors.Old;
-	character.setAppearance();
 	character.assignRandomEquipment();
 	character.setName(::Const.World.Common.generateName(unit.NameList) + (unit.TitleList != null ? " " + unit.TitleList[::Math.rand(0, unit.TitleList.len() - 1)] : "")); //double check
 });

@@ -67,7 +67,7 @@
 	// Requires MSU; this will add tooltips to display bonuses when targeting an enemy
 	o.onGetHitFactors <- function ( _skill, _targetTile, _tooltip )
 	{
-		local bonus = this.calculateBonus(_skill, _targetTile.getEntity()) * 100;
+		local bonus = this.calculateBonus(_targetTile.getEntity()) * 100;
 
 		if (bonus > 0)
 		{
@@ -81,7 +81,7 @@
 
 	o.onBeforeTargetHit = function ( _skill, _targetEntity, _hitInfo )
 	{
-		if (_targetEntity != null && this.calculateBonus(_skill, _targetEntity) != 0) {
+		if (_targetEntity != null && this.calculateBonus(_targetEntity) != 0) {
 			this.spawnIcon("perk_16", this.getContainer().getActor().getTile());
 		}
 	}

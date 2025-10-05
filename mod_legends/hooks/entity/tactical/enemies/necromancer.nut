@@ -45,12 +45,12 @@
 		this.m.Items.equip(item);
 	}
 
-	o.setGender <- function (_gender = -1)
+	o.setGender <- function (_gender = -1, _reroll = true)
 	{
 		if ("LegendMod" in this.World && ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() == "Disabled")
-			_v = 0;
+			_gender = 0;
 
-		this.m.Gender = _v;
+		this.m.Gender = _gender;
 		if(this.m.Gender == 1)
 		{
 			this.m.Faces = this.Const.Faces.NecromancerFemale;

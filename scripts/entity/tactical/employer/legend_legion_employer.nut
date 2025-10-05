@@ -1,4 +1,4 @@
-this.legend_legion_employer <- ::inherit("scripts/entity/tactical/human", {
+this.legend_legion_employer <- ::inherit("scripts/entity/tactical/skeleton", {
 	m = {},
 	function create() {
 		this.m.Type = this.Const.EntityType.SkeletonLight;

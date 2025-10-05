@@ -77,7 +77,15 @@
 		text = _bro.getName() + ::Const.MoodStateEvent[_bro.getMoodState()]
 	}
 }
-
+::Legends.EventList.changeBroExperience <- function (_bro, _value) {
+	_bro.addXP(_value);
+	_bro.updateLevel();
+	return {
+		id = 10,
+		icon = "ui/icons/xp_received.png",
+		text = _bro.getName() + " gains [color=" + this.Const.UI.Color.PositiveEventValue + "]" + _value + "[/color] Experience"
+	};
+}
 
 ::Legends.EventList.addInjury <- function (_bro, _injuryConst) {
 	local injury = _bro.addInjury(_injuryConst);

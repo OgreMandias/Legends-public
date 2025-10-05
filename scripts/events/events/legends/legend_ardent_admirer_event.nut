@@ -1,9 +1,9 @@
 this.legend_ardent_admirer_event <- this.inherit("scripts/events/event", {
 	m = {
-		Fan = null
+		Fan = null,
+		Gunner = null
 	},
-	function create()
-	{
+	function create() {
 		this.m.ID = "event.legend_ardent_admirer";
 		this.m.Title = "On the Road...";
 		this.m.Cooldown = 9999 * this.World.getTime().SecondsPerDay;
@@ -15,19 +15,23 @@ this.legend_ardent_admirer_event <- this.inherit("scripts/events/event", {
 			Characters = [],
 			Options = [{
 				Text = "Yes, spread the word of our prowess. Far away from here.",
-				getResult = @( _event ) "B"
-			},{
+				getResult = @(_event) "B"
+			}, {
 				Text = "Can someone kill this fool already?",
-				getResult = @( _event ) "C"
-			},}
-				Text = "Our handgonner seems itching to introduce themself...",
-				getResult =@( _event ) "D"
+				getResult = @(_event) "C"
 			}],
-			function start( _event ) {
+			function start(_event) {
 				local roster = ::World.getTemporaryRoster();
 				_event.m.Fan = roster.create("scripts/entity/tactical/employer/legend_adoring_fan");
 				_event.m.Fan.assignRandomEquipment();
 				this.Characters.push(_event.m.Fan.getImagePath());
+
+				if (_event.m.Gunner != null) {
+					this.Options.push({
+						Text = "Our handgonner seems itching to introduce themself...",
+						getResult = @(_event) "D"
+					})
+				}
 			}
 
 		});
@@ -39,16 +43,15 @@ this.legend_ardent_admirer_event <- this.inherit("scripts/events/event", {
 			Characters = [],
 			Options = [{
 				Text = "I\'ve always wanted a fan club.",
-				getResult = @( _event ) 0
+				getResult = @(_event) 0
 			}],
-			function start( _event ) {
+			function start(_event) {
 				this.Characters.push(_event.m.Fan.getImagePath());
 				this.List.push(::Legends.EventList.changeRenown(50));
 				foreach (bro in ::World.getPlayerRoster().getAll()) {
 					if (::Math.rand(1, 100) <= 50) {
 						local entry = ::Legends.EventList.changeMood(bro, -0.5, "Had to suffer the blabbering of a starstruck fool");
-						if (bro.getMoodState() <= this.Const.MoodState.Neutral)
-							this.List.push(entry);
+						if (bro.getMoodState() <= this.Const.MoodState.Neutral) this.List.push(entry);
 					}
 				}
 			}
@@ -62,10 +65,9 @@ this.legend_ardent_admirer_event <- this.inherit("scripts/events/event", {
 			Characters = [],
 			Options = [{
 				Text = "Never meet your heroes, I guess...",
-				getResult = @( _event ) 0
+				getResult = @(_event) 0
 			}],
-			function start( _event )
-			{
+			function start(_event) {
 				this.Characters.push(_event.m.Fan.getImagePath());
 				this.List.extend(::Legends.EventList.addItems([
 					::new("scripts/items/weapons/dagger"),
@@ -81,38 +83,37 @@ this.legend_ardent_admirer_event <- this.inherit("scripts/events/event", {
 				}
 			}
 		});
-	}
 		this.m.Screens.push({
 			ID = "D",
-			Text = "[img]gfx/ui/events/event_24.png[/img]%Handgonner% the company gunner steps up, handgonne in tow. %They_handgonner%'s sizing up the irritating little man before %them_handgonner%, perhaps questioning how someone so offensively annoying has managed to survive to such an age, or perhaps just daydreaming about what their handgonne would do to them. With a menacing tone, they ask the pest.%SPEECH_ON%Have you ever wanted to fly, little man?%SPEECH_OFF%Just as the fool primed to assault your ears again with his answer, your gunner quickly swings his handgonne into firing position, primes, and... Oh fuck.  You wince as the thunder of the gun assaults your every sense- your ears ring, your eyes pulse, your bones rattle as though the earth itself was splitting beneath you. Between scrunched up eyes, you can just make out the vague image of the fool as they shatter and rip apart, the force of the hand cannon proving too much for their feeble form. Flesh and hair is shredded and made to resemble autumn leaves as they are ejected from the mass of what was once human. An eye and ear and arm succumb to the torrent of shrapnel and blasting powder, seemingly racing to escape the onslaught before them as they're launched in almost every direction. Nearby, leaves rustle as birds make flight at the sudden disturbance to their rest.\nThe handgonner has hardly moved from their firing stance, the primal thunder of their tool of war revealing itself a familiar sensation to them. Instead, they survey their handiwork, mapping the viscera that soaks the once-tranquil scene around them: limbs and chunks of bone are sprinkled in a cone from the gunner, sizzling flesh and boiling blood carpet the ground, a testament to the destructive power of their terrible weapon. What remains of the fool is a caricature of gore and barbarity, though between the shock, you can't help but feel a tad amused at the excessive display of cruel obliteration on display. Clearly, the handgonner agrees.%SPEECH_ON%Well, I'd say they flew pretty well, captain! It certainly beats their endless prattling, eh?%SPEECH_OFF%You suppose it does, as does much of the company as they whoop and clap at the gunner's impromptu execution of someone who's ultimate crime was being an annoying prat in the wrong place. A couple of the company approach a tree in the wake of the blast, claiming to spy brain matter and skull fragments amongst the branches, others make poor attempts at hiding their amusement by covering their smirks. Ultimately, you order the men back on the road, as you surely wouldn't want to be here to explain this… mess to any other passers by.",
+			Text = "[img]gfx/ui/events/event_24.png[/img]%handgonner% the company gunner steps up, handgonne in tow. %They_handgonner%\'s sizing up the irritating little man before %them_handgonner%, perhaps questioning how someone so offensively annoying has managed to survive to such an age, or perhaps just daydreaming about what their handgonne would do to them. With a menacing tone, %they_handgonner% ask the pest.%SPEECH_ON%Have you ever wanted to fly, little man?%SPEECH_OFF%Just as the fool primed to assault your ears again with his answer, your gunner quickly swings his handgonne into firing position, primes, and... Oh fuck.  You wince as the thunder of the gun assaults your every sense- your ears ring, your eyes pulse, your bones rattle as though the earth itself was splitting beneath you. Between scrunched up eyes, you can just make out the vague image of the fool as they shatter and rip apart, the force of the hand cannon proving too much for their feeble form. Flesh and hair is shredded and made to resemble autumn leaves as they are ejected from the mass of what was once human. An eye and ear and arm succumb to the torrent of shrapnel and blasting powder, seemingly racing to escape the onslaught before them as they\'re launched in almost every direction. Nearby, leaves rustle as birds make flight at the sudden disturbance to their rest.\nThe handgonner has hardly moved from their firing stance, the primal thunder of their tool of war revealing itself a familiar sensation to %them_handgonner%. Instead, %they_handgonner% surveys %their_handgonner% handiwork, mapping the viscera that soaks the once-tranquil scene around them: limbs and chunks of bone are sprinkled in a cone from the gunner, sizzling flesh and boiling blood carpet the ground, a testament to the destructive power of their terrible weapon. What remains of the fool is a caricature of gore and barbarity, though between the shock, you can\'t help but feel a tad amused at the excessive display of cruel obliteration. Clearly, the handgonner agrees.%SPEECH_ON%Well, I\'d say he flew pretty well, captain! It certainly beats his endless prattling, eh?%SPEECH_OFF%You suppose it does, as does much of the company as they whoop and clap at the gunner\'s impromptu execution of someone who\'s ultimate crime was being an annoying prat in the wrong place. A couple of the company approach a tree in the wake of the blast, claiming to spy brain matter and skull fragments amongst the branches, others make poor attempts at hiding their amusement by covering their smirks. Ultimately, you order the men back on the road, as you surely wouldn\'t want to be here to explain this... mess to any other passers by.",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [{
 				Text = "They had it coming... I think.",
-				getResult = @( _event ) 0
+				getResult = @(_event) 0
 			}],
-			function start( _event )
-			{
+			function start(_event) {
 				this.Characters.push(_event.m.Fan.getImagePath());
+				this.Characters.push(_event.m.Gunner.getImagePath());
+
+				this.List.push(::Legends.EventList.changeMood(_event.m.Gunner, 2.0, "Introduced an annoying whelp to my boomstick"));
+				this.List.push(::Legends.EventList.changeBroExperience(_event.m.Gunner, 100));
+
 				foreach (bro in ::World.getPlayerRoster().getAll()) {
+					if (_event.m.Gunner.getID() == bro.getID())
+						continue;
 					if (::Math.rand(1, 100) <= 75) {
-						local entry = ::Legends.EventList.changeMood(bro, 1.0, "Witnessed an annoying fool get blown up.");
+						local entry = ::Legends.EventList.changeMood(bro, 1.0, "Witnessed an annoying fool get blown up");
 						if (bro.getMoodState() >= this.Const.MoodState.Neutral)
 							this.List.push(entry);
-						
-				//Also a mood boost of 2.0 for the handgonner bro.
-				//Mood description: "Introduced an annoying whelp to my boomstick."
-				//Handgonner receives 100xp
-						
 					}
 				}
 			}
 		});
 	}
 
-	function onUpdateScore()
-	{
+	function onUpdateScore() {
 		if (!::World.getTime().IsDaytime)
 			return;
 
@@ -128,11 +129,17 @@ this.legend_ardent_admirer_event <- this.inherit("scripts/events/event", {
 		if (!(playerTile.HasRoad || settlement.getTile().getDistanceTo(playerTile) <= 3))
 			return;
 
-		this.m.Score = 99999;
+		local candidates_gunner = ::World.getPlayerRoster().getAll().filter(@(_idx, _bro) bro.getMainhandItem() != null && ::Legends.S.oneOf(bro.getMainhandItem(), "weapon.handgonne", "weapon.named_handgonne"));
+		if (candidates_gunner.len() > 0) {
+			this.m.Gunner = candidates_gunner[::Math.rand(0, candidates_gunner.len() - 1)];
+		}
+
+		this.m.Score = 9999;
 	}
 
 	function onClear() {
 		this.m.Fan = null;
+		this.m.Gunner = null;
 		::World.getTemporaryRoster().clear();
 	}
 

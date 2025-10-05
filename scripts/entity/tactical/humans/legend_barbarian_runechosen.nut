@@ -111,12 +111,12 @@ this.legend_barbarian_runechosen <- this.inherit("scripts/entity/tactical/human"
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Mainhand))
 		{
 			local weapons = [
-				"barbarians/skull_hammer",
-				"barbarians/two_handed_spiked_mace",
-				"barbarians/rusty_warblade",
-				"barbarians/heavy_rusty_axe"
+				"weapons/barbarians/skull_hammer",
+				"weapons/barbarians/two_handed_spiked_mace",
+				"weapons/barbarians/rusty_warblade",
+				"weapons/barbarians/heavy_rusty_axe"
 			];
-			this.m.Items.equip(this.new("scripts/items/weapons/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
+			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		}
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body) && this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head))
@@ -168,18 +168,17 @@ this.legend_barbarian_runechosen <- this.inherit("scripts/entity/tactical/human"
 		}
 		local selected = ::Legends.Runes[this.Math.rand(0, ::Legends.Runes.len() - 1)];
 
-		local weapons = 
-		[
-			"legend_named_rusty_serrated_axe",
-			"legend_named_rusty_greatsword"
-		]
+		local weapons = [
+			"weapons/named/legend_named_rusty_serrated_axe",
+			"weapons/named/legend_named_rusty_greatsword"
+		];
 		local armor = this.Const.Items.NamedBarbarianArmors;
 		local helmets = this.Const.Items.NamedBarbarianHelmets;
 		local r = this.Math.rand(1, 3);
 
 		if (r == 1)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/named/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
+			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		}
 		else if (r == 2)
 		{

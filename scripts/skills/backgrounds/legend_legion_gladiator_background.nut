@@ -7,8 +7,8 @@ this.legend_legion_gladiator_background <- this.inherit("scripts/skills/backgrou
 		this.m.Name = "Gladiator";
 		this.m.Icon = "ui/backgrounds/background_puppet.png"; //to do
 		this.m.BackgroundDescription = "A leader to few, a slave of many.";
-		// this.m.GoodEnding = ""; //to do
-		// this.m.BadEnding = ""; //to do
+		this.m.GoodEnding = ""; 
+		this.m.BadEnding = ""; 
 		this.m.HiringCost = 0;
 		this.m.DailyCost = 0;
 		this.m.Excluded = [ //can roll; brute, clubfooted, clumsy, fragile, huge, hesitant, strong, sure footing, survivor, tough, bright, lucky, shortsighted, aggressive, martial, predictable, lumbering, quick, swift, team player, hate nobles, frail, etc (see commented out below)
@@ -72,7 +72,6 @@ this.legend_legion_gladiator_background <- this.inherit("scripts/skills/backgrou
 		];
 
 		this.m.ExcludedTalents = [
-
 			this.Const.Attributes.Bravery
 		];
 
@@ -163,9 +162,9 @@ this.legend_legion_gladiator_background <- this.inherit("scripts/skills/backgrou
 		this.addBackgroundType(this.Const.BackgroundType.Female);
 	}
 
-	function onBuildDescription() //to do
+	function onBuildDescription() 
 	{
-		return "{ TODO | TODO }";
+		return "{Although scarred and worn, %name% frequently stands out of place in the wider display of the legion.| The experience of fighting both man and beast has given %name% unique talents on the battlefield — preferring to trap their targets rather than forming shieldwalls or pike lines. | Despite the unusual methods of %name%, they fit well into the legion. | While different from the rest of the legion, %name% provides a skillset that many of the other legionaries could not hold a candle to.} {They prefer to wear a lighter set of armour, still dodging with uncanny speed despite their appearance. | As the rest of the camp sharpens weapons, %they% fixes their nets for beasts and soldiers alike. | Often opting for unconventional weapons, %name% managed to fill a role within the legion that few can match, which is to say, working alone. | They have a habit of pacing around the camp\'s edge, watching for trespassers on two legs or more. | %name% has a supernatural amount in finesse about them, often outperforming their fellow fights in speed and precision.} {Years of training and hardship endure in what remains of them, even in death they are still little more than a slave. | On the whole, they are not far detached from the camp slaves or auxiliaries — often spending more time in quiet communion with them than the other groups. | Despite their clear strength, the years have taken a toll on them, showing confusion when claws of beasts do not draw blood, or jaws that would rip their skin merely clamp on their bones.}";
 	}
 
 	function onChangeAttributes() //uses Character_background.nut template (Skeleton)
@@ -239,7 +238,8 @@ this.legend_legion_gladiator_background <- this.inherit("scripts/skills/backgrou
 			"injury.inhaled_flames",
 			"injury.pierced_chest",
 			"injury.pierced_lung",
-			"injury.pierced_side"
+			"injury.pierced_side",
+			"injury.pierced_cheek"
 		];
 		this.getContainer().getActor().getFlags().add("legion_can_command");  //justfies if this background is subject to the legion command skill
 	}

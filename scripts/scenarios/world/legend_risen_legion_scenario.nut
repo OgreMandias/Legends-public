@@ -32,6 +32,10 @@ this.legend_risen_legion_scenario <- this.inherit("scripts/scenarios/world/start
 		local bros = roster.getAll(); //this will please the romeaboos
 		//8 to start - 4 slaves, 2 aux, 2 legionaries
 
+		//*** 1
+		//*** 2
+		//* * 3
+
 		bros[0].setStartValuesEx([
 			"legend_legion_slave_background"
 		]);
@@ -56,35 +60,35 @@ this.legend_risen_legion_scenario <- this.inherit("scripts/scenarios/world/start
 		bros[3].setStartValuesEx([
 			"legend_legion_slave_background"
 		]);
-		bros[3].setPlaceInFormation(10);
+		bros[3].setPlaceInFormation(12);
 		local items = bros[3].getItems();
 		items.addToBag(this.new("scripts/items/weapons/javelin"));
 
 		bros[4].setStartValuesEx([
 			"legend_legion_auxiliary_background"
 		]);
-		bros[4].setPlaceInFormation(11);
+		bros[4].setPlaceInFormation(13);
 		local items = bros[4].getItems();
 		items.addToBag(this.new("scripts/items/tools/throwing_net"));
 
 		bros[5].setStartValuesEx([
 			"legend_legion_auxiliary_background"
 		]);
-		bros[5].setPlaceInFormation(12);
+		bros[5].setPlaceInFormation(14);
 		local items = bros[5].getItems();
 		items.addToBag(this.new("scripts/items/tools/throwing_net"));
 
 		bros[6].setStartValuesEx([
 			"legend_legion_legionary_background"
 		]);
-		bros[6].setPlaceInFormation(17);
+		bros[6].setPlaceInFormation(21);
 		local items = bros[6].getItems();
 		items.addToBag(this.new("scripts/items/weapons/throwing_spear"));
 
 		bros[7].setStartValuesEx([
 			"legend_legion_legionary_background"
 		]);
-		bros[7].setPlaceInFormation(18);
+		bros[7].setPlaceInFormation(23);
 		local items = bros[7].getItems();
 		items.addToBag(this.new("scripts/items/weapons/throwing_spear"));
 

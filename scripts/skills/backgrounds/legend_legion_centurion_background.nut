@@ -3,12 +3,12 @@ this.legend_legion_centurion_background <- this.inherit("scripts/skills/backgrou
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = "background.legend_legion_centurion"; //I don't care who they send, im not spelling it 'honor'.
+		this.m.ID = "background.legend_legion_centurion";
 		this.m.Name = "Centurion";
 		this.m.Icon = "ui/backgrounds/background_puppet.png"; //to do
 		this.m.BackgroundDescription = "A leader of many, a slave to a few.";
-		// this.m.GoodEnding = ""; //to do
-		// this.m.BadEnding = ""; //to do
+		this.m.GoodEnding = ""; 
+		this.m.BadEnding = "";
 		this.m.HiringCost = 0;
 		this.m.DailyCost = 0;
 		this.m.Excluded = [ //can roll; brute, clubfooted, clumsy, fragile, huge, hesitant, strong, sure footing, survivor, tough, bright, lucky, shortsighted, aggressive, martial, predictable, lumbering, quick, swift, team player, hate nobles, frail, etc (see commented out below)
@@ -166,9 +166,9 @@ this.legend_legion_centurion_background <- this.inherit("scripts/skills/backgrou
 		this.addBackgroundType(this.Const.BackgroundType.Female);
 	}
 
-	function onBuildDescription() //to do
+	function onBuildDescription()
 	{
-		return "{ TODO | TODO }";
+		return "{%name%} {, even in undeath, wears numerous scars down to the bone. | wears their armour as if it were a second skin. | has an aura of authority about them. | has a commanding presence, even when not on the battlefield. | has witnessed many battles with the scars to prove it.} {They keep a keen view on who exists and enters camp, even in death where spies would be obvious, they still act as if any newcomer could be an infiltrator. | They always keeps several legionaries building fortifications. Many of which are pointless given the situation — from latrines to irrigation wells. | They are always pacing around camp, ordering legionaries in charge of logistics to buy more grain. The legonaries pile the grain in the tent, but none touch it thereafter.}";
 	}
 
 	function onChangeAttributes() //uses Character_background.nut template (Skeleton)
@@ -242,7 +242,8 @@ this.legend_legion_centurion_background <- this.inherit("scripts/skills/backgrou
 			"injury.inhaled_flames",
 			"injury.pierced_chest",
 			"injury.pierced_lung",
-			"injury.pierced_side"
+			"injury.pierced_side",
+			"injury.pierced_cheek"
 		];
 		this.getContainer().getActor().getFlags().add("legion_can_command");  //justfies if this background is subject to the legion command skill
 	}

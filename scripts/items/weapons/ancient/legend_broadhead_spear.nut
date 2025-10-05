@@ -23,7 +23,7 @@ this.legend_broadhead_spear <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamage = 35;
 		this.m.RegularDamageMax = 45;
 		this.m.ArmorDamageMult = 0.35;
-		this.m.DirectDamageAdd = 0.25;
+		this.m.DirectDamageAdd = 0.05;
 	}
 
 	function onEquip()

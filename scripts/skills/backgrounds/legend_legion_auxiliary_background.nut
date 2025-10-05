@@ -7,8 +7,8 @@ this.legend_legion_auxiliary_background <- this.inherit("scripts/skills/backgrou
 		this.m.Name = "Auxiliary";
 		this.m.Icon = "ui/backgrounds/background_puppet.png"; //to do
 		this.m.BackgroundDescription = "Pressed onto service by some means or another, the Auxiliary serves their masters in exchange of a promise for a better life.";
-		// this.m.GoodEnding = ""; //to do
-		// this.m.BadEnding = ""; //to do
+		this.m.GoodEnding = ""; 
+		this.m.BadEnding = ""; 
 		this.m.HiringCost = 0;
 		this.m.DailyCost = 0;
 		this.m.Excluded = [ //can roll; brute, clubfooted, clumsy, fragile, huge, hesitant, strong, sure footing, survivor, tiny, tough, bright, lucky, shortsighted, aggressive, martial, predictable, lumbering, quick, swift, team player, hate nobles, frail, etc (see commented out below)

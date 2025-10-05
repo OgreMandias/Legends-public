@@ -138,6 +138,15 @@ this.legend_ardent_admirer_event <- this.inherit("scripts/events/event", {
 		this.m.Score = 20 * candidates_gunner.len();
 	}
 
+	function onPrepareVariables( _vars )
+	{
+		if (this.m.Gunner != null) {
+			_vars.push(["handgonner", this.m.Gunner.getName()]);
+			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Gunner.getGender(), "handgonner");
+		}
+	}
+
+
 	function onClear() {
 		this.m.Fan = null;
 		this.m.Gunner = null;

@@ -48,7 +48,7 @@ this.legend_vala_crafts_staff_encounter <- this.inherit("scripts/encounters/enco
 					}
 				}
 
-				local item = this.new("scripts/items/weapons/legend_named_staff_vala");
+				local item = this.new("scripts/items/weapons/named/legend_named_staff_vala");
 				item.m.Name = _event.m.Vala.getNameOnly() + "\'s " + item.m.Name;
 				this.World.Assets.getStash().add(item);
 				this.List.push({

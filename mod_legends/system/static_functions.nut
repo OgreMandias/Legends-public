@@ -211,3 +211,9 @@
 	}
 	return false;
 }
+
+::Legends.S.hasItemFlag <- function (_item, _flag) {
+	if (_item == null)
+		return false;
+	return _item.getFlags().has(_flag);
+}

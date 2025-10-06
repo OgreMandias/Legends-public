@@ -15,9 +15,45 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 			"A Noble house patrol is too close to discovering a nearby camp of ours.",
 			"Cause infighting between the Noble houses by murdering one of their patrols.",
 		];
+		this.m.Payment.ItemPool = [ //quantity based on reward payout -> it will pick a reward, substract the value from the pool based on the rewardd's item value and roll another one until the reward pool is empty.
+			//100 = less rare
+			[80, "supplies/medicine_item"],
+			[80, "supplies/armor_parts_item"],
+			[70, "weapons/ancient/legend_broken_decorated_sword"],
+			[70, "weapons/ancient/legend_broken_spatha"],
+			[50, "weapons/ancient/legend_sica"],
+			[50, "weapons/ancient/legend_gladius"],
+			[50, "weapons/ancient/legend_spatha"],
+			[50, "weapons/ancient/legend_decorated_sword"],
+			[50, "weapons/ancient/legend_broadhead_spear"],
+			[50, "weapons/ancient/legend_oxtongue_spear"],
+			[30, "weapons/ancient/legend_decorated_rhomphaia"],
+			[30, "weapons/ancient/legend_kopis"],
+			[30, "tools/reinforced_throwing_net"],
+			[20, "weapons/legend_drum"],
+			[20, "weapons/ancient/legend_honed_warscythe"],
+			[20, "weapons/ancient/legend_broad_warscythe"],
+			[20, "weapons/ancient/legend_military_crypt_cleaver"],
+			[20, "weapons/ancient/legend_military_rhomphaia"],
+			[20, "ammo/large_quiver_of_bolts"],
+			[20, "ammo/legend_large_broad_head_bolts"],
+			[20, "ammo/legend_large_broad_head_arrows"],
+			[20, "ammo/legend_large_armor_piercing_bolts"],
+			[20, "ammo/legend_large_armor_piercing_arrows"],
+			[10, "tents/legend_tent_train"],
+			[10, "tents/legend_tent_repair"],
+			[10, "tents/legend_tent_scout"],
+			[10, "tents/legend_tent_heal"],
+			[10, "tents/legend_tent_scrap"],
+			[10, "tents/legend_tent_fletcher"],
+			[5, "misc/legend_map_named_item"],
+			[5, "misc/legend_ancient_scroll_item"],
+			[2, "misc/legend_map_legendary_item"],
+			[1, "tents/legend_tent_enchant"]
+		];
 	}
 
-	function isVisible() 
+	function isVisible()
 	{
 		// exclude bottom half of the map
 		local currentTile = ::World.State.getPlayer().getTile();
@@ -29,68 +65,32 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 	function start() //payment & rewards
 	{
 		this.m.Payment.Pool = 350 * this.getPaymentMult() * ::Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
-        this.m.Payment.ItemPool = [ //quantity based on reward payout -> it will pick a reward, substract the value from the pool based on the rewardd's item value and roll another one until the reward pool is empty.
-        	//100 = less rare
-        	[80, "supplies/medicine_item"], 
-        	[80, "supplies/armor_parts_item"], 
-			[70, "weapons/ancient/legend_broken_decorated_sword"], 
-			[70, "weapons/ancient/legend_broken_spatha"], 
-        	[50, "weapons/ancient/legend_sica"],
-        	[50, "weapons/ancient/legend_gladius"],
-        	[50, "weapons/ancient/legend_spatha"],
-        	[50, "weapons/ancient/legend_decorated_sword"],   
-			[50, "weapons/ancient/legend_broadhead_spear"],
-			[50, "weapons/ancient/legend_oxtongue_spear"],
-            [30, "weapons/ancient/legend_decorated_rhomphaia"],
-            [30, "weapons/ancient/legend_kopis"],
-            [30, "tools/reinforced_throwing_net"],
-            [20, "weapons/legend_drum"],
-            [20, "weapons/ancient/legend_honed_warscythe"],
-            [20, "weapons/ancient/legend_broad_warscythe"],
-            [20, "weapons/ancient/legend_military_crypt_cleaver"],
-            [20, "weapons/ancient/legend_military_rhomphaia"],
-            [20, "ammo/large_quiver_of_bolts"],
-            [20, "ammo/legend_large_broad_head_bolts"],
-            [20, "ammo/legend_large_broad_head_arrows"],
-            [20, "ammo/legend_large_armor_piercing_bolts"],
-            [20, "ammo/legend_large_armor_piercing_arrows"],
-            [10, "tents/legend_tent_train"],
-            [10, "tents/legend_tent_repair"],
-            [10, "tents/legend_tent_scout"],
-            [10, "tents/legend_tent_heal"],
-            [10, "tents/legend_tent_scrap"],
-            [10, "tents/legend_tent_fletcher"],
-            [5, "misc/legend_map_named_item"],
-            [5, "misc/legend_ancient_scroll_item"],
-            [2, "misc/legend_map_legendary_item"],
-            [1, "tents/legend_tent_enchant"]
-        ];
 		this.contract.start();
 	}
 
-	function createStates() 
+	function createStates()
 	{
 		this.m.States.push({
 			ID = "Offer",
-			function start() 
+			function start()
 			{
 				this.Contract.m.BulletpointsObjectives = [
 					"Destroy the Noble house patrol",
 					"Do not leave any survivors"
 				];
 
-				if (::Math.rand(1, 100) <= ::Const.Contracts.Settings.IntroChance) 
+				if (::Math.rand(1, 100) <= ::Const.Contracts.Settings.IntroChance)
 				{
 					this.Contract.setScreen("Intro");
-				} 
+				}
 
-				else 
+				else
 				{
 					this.Contract.setScreen("Task");
 				}
 			}
 
-			function end() 
+			function end()
 			{
 				local r = ::Math.rand(1, 100);
 				this.Flags.set("StartTime", this.Time.getVirtualTimeF());
@@ -102,18 +102,18 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 		});
 		this.m.States.push({
 			ID = "Running",
-			function start() 
+			function start()
 			{
-				if (this.Contract.m.Target != null && !this.Contract.m.Target.isNull()) 
+				if (this.Contract.m.Target != null && !this.Contract.m.Target.isNull())
 				{
 					this.Contract.m.Target.getSprite("selection").Visible = true;
 					this.Contract.m.Target.setOnCombatWithPlayerCallback(this.onTargetAttacked.bindenv(this));
 				}
 			}
 
-			function update() 
+			function update()
 			{
-				if (this.Flags.getAsInt("NoSurvivors") > 0) 
+				if (this.Flags.getAsInt("NoSurvivors") > 0)
 				{
 					local target = this.Contract.m.Target;
 					if (target != null) {
@@ -122,34 +122,34 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 					}
 					this.Contract.m.Target = null;
 				}
-				
-				if (this.Contract.m.Target == null || this.Contract.m.Target.isNull() || !this.Contract.m.Target.isAlive()) 
+
+				if (this.Contract.m.Target == null || this.Contract.m.Target.isNull() || !this.Contract.m.Target.isAlive())
 				{
 					this.Contract.setScreen("AfterBattle");
 					this.World.Contracts.showActiveContract();
 
-					if (this.Flags.getAsInt("NoSurvivors") > 0) 
+					if (this.Flags.getAsInt("NoSurvivors") > 0)
 					{
 						this.Contract.setState("Return");
-					} 
+					}
 
-					else 
+					else
 					{
 						this.Contract.setState("Chase");
 					}
 				}
 			}
 
-			function onTargetAttacked(_dest, _isPlayerAttacking) 
+			function onTargetAttacked(_dest, _isPlayerAttacking)
 			{
-				if (!this.Flags.get("IsEncounterShown")) 
+				if (!this.Flags.get("IsEncounterShown"))
 				{
 					this.Flags.set("IsEncounterShown", true);
 					this.Contract.setScreen("Encounter");
 					this.World.Contracts.showActiveContract();
-				} 
-				
-				else 
+				}
+
+				else
 				{
 					this.World.Contracts.showCombatDialog(_isPlayerAttacking);
 				}
@@ -157,7 +157,7 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 		});
 		this.m.States.push({
 			ID = "Chase",
-			function start() 
+			function start()
 			{
 				this.Contract.m.BulletpointsObjectives = [
 					"Wait for your employer to contact you."
@@ -169,25 +169,25 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 				}
 			}
 
-			function update() 
+			function update()
 			{
-				if (this.Contract.m.Target == null || this.Contract.m.Target.isNull() || !this.Contract.m.Target.isAlive()) 
+				if (this.Contract.m.Target == null || this.Contract.m.Target.isNull() || !this.Contract.m.Target.isAlive())
 				{
 					this.Contract.setScreen("Failure");
 					this.World.Contracts.showActiveContract();
 				}
 			}
 
-			function onTargetAttacked(_dest, _isPlayerAttacking) 
+			function onTargetAttacked(_dest, _isPlayerAttacking)
 			{
-				if (!this.Flags.get("IsNobleResponseShown")) 
+				if (!this.Flags.get("IsNobleResponseShown"))
 				{
 					this.Flags.set("IsNobleResponseShown", true);
 					this.Contract.setScreen("NobleResponse");
 					this.World.Contracts.showActiveContract();
-				} 
-				
-				else 
+				}
+
+				else
 				{
 					this.World.Contracts.showCombatDialog(_isPlayerAttacking);
 				}
@@ -195,14 +195,14 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 		});
 		this.m.States.push({
 			ID = "Return",
-			function start() 
+			function start()
 			{
 				this.Contract.m.BulletpointsObjectives = [
 					"Wait for your employer to contact you."
 				];
 			}
 
-			function update() 
+			function update()
 			{
 				this.Contract.setScreen("Success");
 				this.World.Contracts.showActiveContract();
@@ -211,7 +211,7 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 		});
 	}
 
-	function createScreens() 
+	function createScreens()
 	{
 		this.importScreens(::Const.Contracts.NegotiationItemsOnly); //for legion, may be better to create new negotiation templates as a hook in 'intro templates'?
 		this.importScreens(this.Const.Contracts.Overview);
@@ -273,7 +273,7 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 			}]
 		});
 
-		this.m.Screens.push({ 
+		this.m.Screens.push({
 			ID = "AfterBattle",
 			Title = "After the battle...",
 			Text = "[img]gfx/ui/events/event_60.png[/img]{The battlefield is lain astrew with gore and metal. You take what you can and leave a shield belonging to another Noble house in a treeline not far from the battle.}",
@@ -288,7 +288,7 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 				}
 			],
 			function start() {
-				if (this.Flags.getAsInt("NoSurvivors") == 0) 
+				if (this.Flags.getAsInt("NoSurvivors") == 0)
 				{
 					this.Text = "[img]gfx/ui/events/event_22.png[/img]{You perform a brief headcount, first of your own fighters, then a slower, more methodical count of the patrol.\n\n Some are missing.}";
 					this.Options = [
@@ -315,18 +315,12 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 				Text = "A successful hunt.",
 				function getResult() {
 					this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractSuccess);
-					this.List.extend(::Legends.EventList.addItems(this.Contract.m.Payment.Items, ::World.Assets.getStash()));
 					this.World.Contracts.finishActiveContract();
 					return 0;
 				}
 			}],
 			function start() { //to do
-				this.List.push({
-					id = 10,
-					icon = "ui/icons/asset_money.png",
-					text = "You gain [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.Contract.m.Payment.getOnCompletion() + "[/color] Crowns"
-				});
-				this.Contract.m.SituationID = this.Contract.resolveSituation(this.Contract.m.SituationID, this.Contract.m.Home, this.List);
+				this.List.extend(::Legends.EventList.addItems(this.Contract.m.Payment.Items, ::World.Assets.getStash()));
 			}
 		});
 
@@ -395,7 +389,7 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 		return party;
 	}
 
-	function spawnRevengeEnemies() 
+	function spawnRevengeEnemies()
 	{
 		local playerTile = ::World.State.getPlayer().getTile();
 		local tile = this.getTileToSpawnLocation(playerTile, 6, 12, [
@@ -425,7 +419,7 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 		return party;
 	}
 
-	function onPrepareVariables(_vars) 
+	function onPrepareVariables(_vars)
 	{
 	}
 

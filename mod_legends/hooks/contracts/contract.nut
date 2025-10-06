@@ -5,8 +5,10 @@
 	o.m.Category <- "";
 	o.m.Description <- "";
 	o.m.DescriptionTemplates <- [];
-	o.m.Payment.Items <- [];
-	o.m.Payment.ItemPool <- []; // weighted list
+	// Variables for item payment
+	o.m.Payment.Items <- []; // stores negotiated item payment based contracts
+	o.m.Payment.ItemPool <- []; // weighted list of available items
+	o.m.Payment.IsSingleItem <- false; // option used to roll just single item from the list, normally money pool is used to buy items
 
 	o.create = function()
 	{

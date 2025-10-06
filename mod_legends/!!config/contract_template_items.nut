@@ -36,36 +36,37 @@
 				return "Overview";
 			}
 		});
-		this.Options.push({
-			Text = "{We need to be paid more for this. | We need more loot if we're to do it.}",
-			function getResult() {
-				if (!::World.Retinue.hasFollower("follower.negotiator")) {
-					if (::Math.rand(1, 100) <= 66) {
-						::World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelationEx(-0.5);
+		if (!this.Contract.m.Payment.IsSingleItem) {
+			this.Options.push({
+				Text = "{We need to be paid more for this. | We need more loot if we're to do it.}",
+				function getResult() {
+					if (!::World.Retinue.hasFollower("follower.negotiator")) {
+						if (::Math.rand(1, 100) <= 66) {
+							::World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelationEx(-0.5);
+						}
+					} else {
+						if (::Math.rand(1, 100) <= 10) {
+							::World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelationEx(-0.5);
+						}
 					}
-				} else {
-					if (::Math.rand(1, 100) <= 10) {
-						::World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelationEx(-0.5);
+
+					this.Contract.m.Payment.Annoyance += this.Math.maxf(1.0, this.Math.rand(this.Const.Contracts.Settings.NegotiationAnnoyanceGainMin, this.Const.Contracts.Settings.NegotiationAnnoyanceGainMax) * this.World.Assets.m.NegotiationAnnoyanceMult);
+
+					if (this.Contract.m.Payment.Annoyance > this.Const.Contracts.Settings.NegotiationMaxAnnoyance) {
+						return "Negotiation.Fail";
 					}
+
+					if (this.Math.rand(1, 100) <= this.Const.Contracts.Settings.NegotiationRefuseChance * this.Contract.m.Payment.Annoyance) {
+						this.Contract.m.Payment.IsFinal = true;
+					} else {
+						this.Contract.m.Payment.IsFinal = false;
+						this.Contract.m.Payment.Pool += 200;
+					}
+
+					return "Negotiation";
 				}
-
-				this.Contract.m.Payment.Annoyance += this.Math.maxf(1.0, this.Math.rand(this.Const.Contracts.Settings.NegotiationAnnoyanceGainMin, this.Const.Contracts.Settings.NegotiationAnnoyanceGainMax) * this.World.Assets.m.NegotiationAnnoyanceMult);
-
-				if (this.Contract.m.Payment.Annoyance > this.Const.Contracts.Settings.NegotiationMaxAnnoyance) {
-					return "Negotiation.Fail";
-				}
-
-				if (this.Math.rand(1, 100) <= this.Const.Contracts.Settings.NegotiationRefuseChance * this.Contract.m.Payment.Annoyance) {
-					this.Contract.m.Payment.IsFinal = true;
-				} else {
-					this.Contract.m.Payment.IsFinal = false;
-					this.Contract.m.Payment.Pool += 200;
-				}
-
-				return "Negotiation";
-			}
-
-		});
+			});
+		}
 
 		this.Options.push({
 			Text = "{Forget it, this isn\'t worth it. | What a waste of time. }",

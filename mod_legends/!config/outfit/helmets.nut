@@ -3206,7 +3206,7 @@
 			[1, "hood/legend_helmet_cloth_cap", 1]
 		],
 		Helms = [
-			[1, "helm/legend_helmet_flat_top_helm", 1]
+			[1, ""]
 		],
 		Tops = [
 			[1, ""]
@@ -3230,7 +3230,7 @@
 			[1, ""]
 		],
 		Tops = [
-			[1, "helm/legend_helmet_fleshcultist_mask"]
+			[1, "top/legend_helmet_fleshcultist_mask"]
 		],
 		Vanity = [
 			[1, ""]

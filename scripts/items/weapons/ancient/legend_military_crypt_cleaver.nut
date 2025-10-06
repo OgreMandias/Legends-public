@@ -6,8 +6,8 @@ this.legend_military_crypt_cleaver <- this.inherit("scripts/items/weapons/weapon
 		this.m.ID = "weapon.legend_military_crypt_cleaver";
 		this.m.Name = "Military Crypt Cleaver";
 		this.m.Description = "A significantly hefty two-handed cleaver with a recurved end. Despite being worn and blunted, the titanic weight of this weapon makes up for it\'s age.";
-		this.m.IconLarge = "weapons/melee/legend_military_crypt_cleaver_01.png";
-		this.m.Icon = "weapons/melee/legend_military_crypt_cleaver_01_70x70.png";
+		this.m.IconLarge = "weapons/melee/legend_military_crypt_cleaver.png";
+		this.m.Icon = "weapons/melee/legend_military_crypt_cleaver_70x70.png";
 		this.m.WeaponType = this.Const.Items.WeaponType.Cleaver;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;

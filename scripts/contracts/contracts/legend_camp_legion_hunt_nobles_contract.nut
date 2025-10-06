@@ -15,42 +15,48 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 			"A Noble house patrol is too close to discovering a nearby camp of ours.",
 			"Cause infighting between the Noble houses by murdering one of their patrols.",
 		];
-		this.m.Payment.ItemPool = [ //quantity based on reward payout -> it will pick a reward, substract the value from the pool based on the rewardd's item value and roll another one until the reward pool is empty.
-			//100 = less rare
-			[80, "supplies/medicine_item"],
-			[80, "supplies/armor_parts_item"],
-			[70, "weapons/ancient/legend_broken_decorated_sword"],
-			[70, "weapons/ancient/legend_broken_spatha"],
-			[50, "weapons/ancient/legend_sica"],
-			[50, "weapons/ancient/legend_gladius"],
-			[50, "weapons/ancient/legend_spatha"],
-			[50, "weapons/ancient/legend_decorated_sword"],
-			[50, "weapons/ancient/legend_broadhead_spear"],
-			[50, "weapons/ancient/legend_oxtongue_spear"],
-			[30, "weapons/ancient/legend_decorated_rhomphaia"],
-			[30, "weapons/ancient/legend_kopis"],
-			[30, "tools/reinforced_throwing_net"],
-			[20, "weapons/legend_drum"],
-			[20, "weapons/ancient/legend_honed_warscythe"],
-			[20, "weapons/ancient/legend_broad_warscythe"],
-			[20, "weapons/ancient/legend_military_crypt_cleaver"],
-			[20, "weapons/ancient/legend_military_rhomphaia"],
-			[20, "ammo/large_quiver_of_bolts"],
-			[20, "ammo/legend_large_broad_head_bolts"],
-			[20, "ammo/legend_large_broad_head_arrows"],
-			[20, "ammo/legend_large_armor_piercing_bolts"],
-			[20, "ammo/legend_large_armor_piercing_arrows"],
-			[10, "tents/legend_tent_train"],
-			[10, "tents/legend_tent_repair"],
-			[10, "tents/legend_tent_scout"],
-			[10, "tents/legend_tent_heal"],
-			[10, "tents/legend_tent_scrap"],
-			[10, "tents/legend_tent_fletcher"],
+		this.m.Payment.ItemPool = [
+			[25, "supplies/medicine_item"],
+			[25, "supplies/armor_parts_item"],
+			[15, "tools/reinforced_throwing_net"],
+			[15, @() ::Const.World.Common.pickItem([
+				[70, "weapons/ancient/legend_broken_decorated_sword"],
+				[70, "weapons/ancient/legend_broken_spatha"],
+				[50, "weapons/ancient/legend_sica"],
+				[50, "weapons/ancient/legend_gladius"],
+				[50, "weapons/ancient/legend_spatha"],
+				[50, "weapons/ancient/legend_decorated_sword"],
+				[50, "weapons/ancient/legend_broadhead_spear"],
+				[50, "weapons/ancient/legend_oxtongue_spear"],
+				[30, "weapons/ancient/legend_decorated_rhomphaia"],
+				[30, "weapons/ancient/legend_kopis"],
+				[20, "weapons/ancient/legend_honed_warscythe"],
+				[20, "weapons/ancient/legend_broad_warscythe"],
+				[20, "weapons/ancient/legend_military_crypt_cleaver"],
+				[20, "weapons/ancient/legend_military_rhomphaia"],
+				[20, "weapons/legend_drum"]
+			], "/scripts/items/")],
+			[5, @() ::Const.World.Common.pickItem([
+				[20, "ammo/large_quiver_of_bolts"],
+				[20, "ammo/legend_large_broad_head_bolts"],
+				[20, "ammo/legend_large_broad_head_arrows"],
+				[20, "ammo/legend_large_armor_piercing_bolts"],
+				[20, "ammo/legend_large_armor_piercing_arrows"]
+			], "/scripts/items/")],
+			[5, @() ::Const.World.Common.pickItem([
+				[10, "tents/legend_tent_train"],
+				[10, "tents/legend_tent_repair"],
+				[10, "tents/legend_tent_scout"],
+				[10, "tents/legend_tent_heal"],
+				[10, "tents/legend_tent_scrap"],
+				[10, "tents/legend_tent_fletcher"],
+				[1, "tents/legend_tent_enchant"]
+			], "/scripts/items/")],
 			[5, "misc/legend_map_named_item"],
 			[5, "misc/legend_ancient_scroll_item"],
 			[2, "misc/legend_map_legendary_item"],
-			[1, "tents/legend_tent_enchant"]
 		];
+
 	}
 
 	function isVisible()
@@ -352,8 +358,9 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 		]);
 		local nearTile = this.getTileToSpawnLocation(playerTile, 1, 3);
 
-		local party;
-		party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.NobleHouse).spawnEntity(tile, "Scouting Party", false, ::Const.Const.World.Spawn.NobleCaravan, ::Math.rand(100, 120) * this.getDifficultyMult() * this.getScaledDifficultyMult(), this.getMinibossModifier());
+		local faction = ::World.FactionManager.getFactionOfType(this.Const.FactionType.NobleHouse);
+
+		local party = faction.spawnEntity(tile, "Scouting Party", false, ::Const.World.Spawn.NobleCaravan, ::Math.rand(100, 120) * this.getDifficultyMult() * this.getScaledDifficultyMult(), this.getMinibossModifier());
 
 
 		party.setDescription("A small scouting party of a Noble house.");
@@ -365,10 +372,9 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 		// party.getLoot().Medicine = this.Math.rand(0, 3);
 		party.getLoot().Ammo = this.Math.rand(0, 30);
 
-		::Const.World.Common.addFootprintsFromTo(nearTile, party.getTile(), this.Const.FootprintsType.Nobles, 0.85);
-		// party.setFootprintType(this.Const.World.FootprintsType.Nobles);
+		::Const.World.Common.addFootprintsFromTo(nearTile, party.getTile(), ::Const.GenericFootprints, 0.85);
 		this.m.Target = this.WeakTableRef(party);
-		party.getSprite("body").setBrush(party.getSprite("body").getBrush().Name + "_" + _faction.getBannerString());
+		party.getSprite("body").setBrush(party.getSprite("body").getBrush().Name + "_" + faction.getBannerString());
 
 		local c = party.getController();
 		c.getBehavior(this.Const.World.AI.Behavior.ID.Flee).setEnabled(false);

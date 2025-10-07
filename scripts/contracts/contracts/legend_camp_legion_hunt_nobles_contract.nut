@@ -117,7 +117,7 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 
 			function update()
 			{
-				if (this.Flags.getAsInt("NoSurvivors") > 0)
+				if (this.Flags.getAsInt("Survivors") > 0)
 				{
 					local target = this.Contract.m.Target;
 					if (target != null) {
@@ -132,7 +132,7 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 					this.Contract.setScreen("AfterBattle");
 					this.World.Contracts.showActiveContract();
 
-					if (this.Flags.getAsInt("NoSurvivors") > 0)
+					if (this.Flags.getAsInt("Survivors") == 0)
 					{
 						this.Contract.setState("Return");
 					}
@@ -146,16 +146,20 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 
 			function onTargetAttacked(_dest, _isPlayerAttacking)
 			{
-				if (!this.Flags.get("IsEncounterShown"))
-				{
+				this.Flags.set("Survivors", this.Contract.m.Target.getTroops().len());
+				if (!this.Flags.get("IsEncounterShown")) {
 					this.Flags.set("IsEncounterShown", true);
 					this.Contract.setScreen("Encounter");
 					this.World.Contracts.showActiveContract();
-				}
-
-				else
-				{
+				} else {
 					this.World.Contracts.showCombatDialog(_isPlayerAttacking);
+				}
+			}
+
+			function onActorKilled( _actor, _killer, _combatID )
+			{
+				if (!::Legends.S.oneOf(_actor.getFaction(), ::Const.Faction.Player, ::Const.Faction.PlayerAnimals)) {
+					this.Flags.increment("Survivors", -1);
 				}
 			}
 		});
@@ -292,7 +296,7 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 				}
 			],
 			function start() {
-				if (this.Flags.getAsInt("NoSurvivors") == 0)
+				if (this.Flags.getAsInt("Survivors") != 0)
 				{
 					this.Text = "[img]gfx/ui/events/event_22.png[/img]{You perform a brief headcount, first of your own fighters, then a slower, more methodical count of the patrol.\n\n Some are missing.}";
 					this.Options = [

@@ -35,7 +35,7 @@
 	selected = selected[0];
 
 	if (typeof(selected[1]) == "function")
-		return selected[1]();
+		return this.pickItem(selected[1](), _script);
 
 	if (_script == "")
 		return selected[1];

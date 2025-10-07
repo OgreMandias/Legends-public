@@ -19,7 +19,7 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 			[25, "supplies/medicine_item"],
 			[25, "supplies/armor_parts_item"],
 			[15, "tools/reinforced_throwing_net"],
-			[15, @() ::Const.World.Common.pickItem([
+			[15, @() [
 				[70, "weapons/ancient/legend_broken_decorated_sword"],
 				[70, "weapons/ancient/legend_broken_spatha"],
 				[50, "weapons/ancient/legend_sica"],
@@ -34,15 +34,15 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 				[20, "weapons/ancient/legend_broad_warscythe"],
 				[20, "weapons/ancient/legend_military_crypt_cleaver"],
 				[20, "weapons/ancient/legend_military_rhomphaia"],
-				[20, "weapons/legend_drum"]
-			], "/scripts/items/")],
-			[5, @() ::Const.World.Common.pickItem([
+				[20, "weapons/legend_drum"],
+			]],
+			[5, @() [
 				[20, "ammo/large_quiver_of_bolts"],
 				[20, "ammo/legend_large_broad_head_bolts"],
 				[20, "ammo/legend_large_broad_head_arrows"],
 				[20, "ammo/legend_large_armor_piercing_bolts"],
-				[20, "ammo/legend_large_armor_piercing_arrows"]
-			], "/scripts/items/")],
+				[20, "ammo/legend_large_armor_piercing_arrows"],
+			]],
 			[5, "misc/legend_map_named_item"],
 			[5, "misc/legend_ancient_scroll_item"],
 			[2, "misc/legend_map_legendary_item"],

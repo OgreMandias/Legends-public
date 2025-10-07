@@ -117,7 +117,7 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 
 			function update()
 			{
-				if (this.Flags.getAsInt("Survivors") > 0)
+				if (this.Flags.has("Survivors") && this.Flags.getAsInt("Survivors") > 0)
 				{
 					local target = this.Contract.m.Target;
 					if (target != null) {

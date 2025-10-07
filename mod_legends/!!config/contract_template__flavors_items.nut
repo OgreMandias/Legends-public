@@ -7,6 +7,7 @@ if (!("ContractTemplate" in ::Legends))
 	Title = "Negotiations",
 	AcceptButton = "{ I accept your offer. }",
 	MoreButton = "{ We need to be paid more for this. | We need more loot if we're to do it. }",
+	SomethingElseButton = "{ I don't like it, how about something else? }",
 	DeclineButton = "{ Forget it, this isn\'t worth it. | What a waste of time. }",
 	FailedButton = "{ We won\'t risk our lives for such meager pay... }",
 	IsNegotiatingText = "[img]gfx/ui/events/event_04.png[/img]{%They_employer% nods.%SPEECH_ON%Yes. Good. I was thinking about payment for your task earlier. | %They_employer% straightens up.%SPEECH_ON%So, payment. | %They_employer% smiles.%SPEECH_ON%This will make you rich, my friend. | %They_employer% takes a deep breath.%SPEECH_ON%Very well, this is what I\'m prepared to offer you. | %They_employer% puts %their_employer% hand on your shoulder, smiling reaffirmingly.%SPEECH_ON%I think I know an adequate compensation for your services. | %They_employer% gesticulates with %their_employer% hands, pointing at %their_employer% fingers as if counting something, but it means nothing to you.%SPEECH_ON%Judging from experience, this is good payment for the task. | %They_employer% nods. %SPEECH_ON%You look able, so I am willing to pay quite a bit. | %They_employer% opens the palm of %their_employer% hands.%SPEECH_ON%I\'m tight on crowns, so before you ask, this is all I have right now. | %SPEECH_ON%Rest assured that what I\'m offering you now is a fine prize for your work.} ",

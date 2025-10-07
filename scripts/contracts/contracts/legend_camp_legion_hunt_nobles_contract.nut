@@ -43,26 +43,18 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 				[20, "ammo/legend_large_armor_piercing_bolts"],
 				[20, "ammo/legend_large_armor_piercing_arrows"]
 			], "/scripts/items/")],
-			[5, @() ::Const.World.Common.pickItem([
-				[10, "tents/legend_tent_train"],
-				[10, "tents/legend_tent_repair"],
-				[10, "tents/legend_tent_scout"],
-				[10, "tents/legend_tent_heal"],
-				[10, "tents/legend_tent_scrap"],
-				[10, "tents/legend_tent_fletcher"],
-				[1, "tents/legend_tent_enchant"]
-			], "/scripts/items/")],
 			[5, "misc/legend_map_named_item"],
 			[5, "misc/legend_ancient_scroll_item"],
 			[2, "misc/legend_map_legendary_item"],
 		];
-		// optionally, offer just tent
-//		local stash = ::World.Assets.getStash();
-//		local missingTents = ::Legends.Camp.Tents.filter(@(_, _tent) !stash.hasItem(_tent.ID));
-//		if (missingTents.len() > 0 && ::Math.rand(0, 100) < 99) {
-//			this.m.Payment.IsSingleItem = true;
-//			this.m.Payment.ItemPool = missingTents.map(@(_def) [1, _def.Script]);
-//		}
+
+		// optionally, offer just tent, starts at 50% chance, lowers with each tent you have
+		local stash = ::World.Assets.getStash();
+		local missingTents = ::Legends.Camp.Tents.filter(@(_, _tent) !stash.hasItem(_tent.ID));
+		if (missingTents.len() > 0 && ::Math.rand(0, ::Legends.Camp.Tents.len() * 2) < missingTents.len()) {
+			this.m.Payment.IsSingleItem = true;
+			this.m.Payment.Items = [::Const.World.Common.pickItem(missingTents.map(@(_def) [_def.ID == ::Legends.Camp.Tent.Enchant ? 1 : 10, _def.Script]), "scripts/items/")];
+		}
 	}
 
 	function isVisible()

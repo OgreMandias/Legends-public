@@ -37,7 +37,7 @@
 		this.m.Faces = this.Const.Faces.SouthernFemale;
 		this.m.Hairs = this.Const.Hair.SouthernFemale;
 		this.m.HairColors = this.Const.HairColors.SouthernYoung;
-		this.m.BeardChance = 1;
+		this.m.BeardChance = 0;
 		this.m.Ethnicity = 1;
 		this.m.BackgroundType = this.Const.BackgroundType.Female | this.Const.BackgroundType.Performing;
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];

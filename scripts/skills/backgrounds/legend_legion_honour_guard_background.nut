@@ -104,7 +104,7 @@ this.legend_legion_honour_guard_background <- this.inherit("scripts/skills/backg
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.Beards = null;
-		this.m.BeardChance = 1;
+		this.m.BeardChance = 0;
 		this.addBackgroundType(this.Const.BackgroundType.Female);
 	}
 

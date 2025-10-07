@@ -100,7 +100,7 @@ this.legend_legion_gladiator_background <- this.inherit("scripts/skills/backgrou
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.Beards = null;
-		this.m.BeardChance = 1;
+		this.m.BeardChance = 0;
 		this.addBackgroundType(this.Const.BackgroundType.Female);
 	}
 

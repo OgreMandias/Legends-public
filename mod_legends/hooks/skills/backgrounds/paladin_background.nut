@@ -139,7 +139,7 @@
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
-		this.m.BeardChance = 1;
+		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.FemaleMuscular;
 		this.addBackgroundType(this.Const.BackgroundType.Female);
 		this.m.BackgroundDescription = "Oathtakers are brave warriors sworn to uphold a strict code, and are no strangers to combat.";

@@ -362,9 +362,7 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 
 		local faction = ::World.FactionManager.getFactionOfType(this.Const.FactionType.NobleHouse);
 
-		local party = faction.spawnEntity(tile, "Scouting Party", false, ::Const.World.Spawn.NobleCaravan, ::Math.rand(100, 120) * this.getDifficultyMult() * this.getScaledDifficultyMult(), this.getMinibossModifier());
-
-
+		local party = faction.spawnEntity(tile, "Scouting Party", false, ::Const.World.Spawn.NobleCaravan, ::Math.rand(90, 105) * this.getDifficultyMult() * this.getScaledDifficultyMult(), this.getMinibossModifier());
 		party.setDescription("A small scouting party of a Noble house.");
 		party.setAttackableByAI(false);
 		party.getFlags().set("IsRandomlySpawned", true);
@@ -409,7 +407,7 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 
 		local faction = ::World.FactionManager.getFactionOfType(this.Const.FactionType.NobleHouse);
 
-		local party = faction.spawnEntity(tile, "Patrol", false, ::Const.World.Spawn.Noble, ::Math.rand(135, 150) * this.getDifficultyMult() * this.getScaledDifficultyMult(), this.getMinibossModifier());
+		local party = faction.spawnEntity(tile, "Patrol", false, ::Const.World.Spawn.Noble, ::Math.rand(95, 115) * this.getDifficultyMult() * this.getScaledDifficultyMult(), this.getMinibossModifier());
 
 		party.setDescription("A large force hunting you down.");
 		party.setMovementSpeed(::Const.World.MovementSettings.Speed * 1.5);

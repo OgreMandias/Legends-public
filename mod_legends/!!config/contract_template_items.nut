@@ -14,15 +14,13 @@
 	ShowDifficulty = true,
 	Options = [],
 	function start() {
-		local payment = this.Contract.m.Payment;
-
-		if (!payment.IsSingleItem && payment.ItemPool.len() > 0) {
-			while (payment.Pool > 0) {
-				local item = ::Const.World.Common.pickItem(payment.ItemPool, "scripts/items/");
-				payment.Items.push(item);
-				payment.Pool -= item.getValue();
+		if (!this.Contract.m.Payment.IsSingleItem && this.Contract.m.Payment.ItemPool.len() > 0) {
+			while (this.Contract.m.Payment.Pool > 0) {
+				local item = ::Const.World.Common.pickItem(this.Contract.m.Payment.ItemPool, "scripts/items/");
+				this.Contract.m.Payment.Items.push(item);
+				this.Contract.m.Payment.Pool -= item.getValue();
 			}
-			payment.Pool = 0;
+			this.Contract.m.Payment.Pool = 0;
 		}
 
 		this.Options = [];
@@ -31,27 +29,27 @@
 			function getResult() {
 				this.Contract.m.BulletpointsPayment = [];
 
-				if (payment.Items.len() != 0) {
-					this.Contract.m.BulletpointsPayment.push("Get " + payment.Items.len() + " various items on completion");
+				if (this.Contract.m.Payment.Items.len() != 0) {
+					this.Contract.m.BulletpointsPayment.push("Get " + this.Contract.m.Payment.Items.len() + " various items on completion");
 				}
 
 				return "Overview";
 			}
 		});
-		if (payment.IsSingleItem) {
+		if (this.Contract.m.Payment.IsSingleItem) {
 			this.Options.push({
 				Text = _flavor.SomethingElseButton,
 				function getResult() {
-					if (payment.Annoyance > this.Const.Contracts.Settings.NegotiationMaxAnnoyance) {
+					if (this.Contract.m.Payment.Annoyance > this.Const.Contracts.Settings.NegotiationMaxAnnoyance) {
 						return "Negotiation.Fail";
 					}
 
-					if (this.Math.rand(1, 100) <= this.Const.Contracts.Settings.NegotiationRefuseChance * payment.Annoyance) {
-						payment.IsFinal = true;
+					if (this.Math.rand(1, 100) <= this.Const.Contracts.Settings.NegotiationRefuseChance * this.Contract.m.Payment.Annoyance) {
+						this.Contract.m.Payment.IsFinal = true;
 					} else {
-						payment.IsFinal = false;
-						payment.IsSingleItem = false;
-						payment.Items = [];
+						this.Contract.m.Payment.IsFinal = false;
+						this.Contract.m.Payment.IsSingleItem = false;
+						this.Contract.m.Payment.Items = [];
 					}
 					return "Negotiation";
 				}
@@ -70,17 +68,17 @@
 						}
 					}
 
-					payment.Annoyance += this.Math.maxf(1.0, this.Math.rand(this.Const.Contracts.Settings.NegotiationAnnoyanceGainMin, this.Const.Contracts.Settings.NegotiationAnnoyanceGainMax) * this.World.Assets.m.NegotiationAnnoyanceMult);
+					this.Contract.m.Payment.Annoyance += this.Math.maxf(1.0, this.Math.rand(this.Const.Contracts.Settings.NegotiationAnnoyanceGainMin, this.Const.Contracts.Settings.NegotiationAnnoyanceGainMax) * this.World.Assets.m.NegotiationAnnoyanceMult);
 
-					if (payment.Annoyance > this.Const.Contracts.Settings.NegotiationMaxAnnoyance) {
+					if (this.Contract.m.Payment.Annoyance > this.Const.Contracts.Settings.NegotiationMaxAnnoyance) {
 						return "Negotiation.Fail";
 					}
 
-					if (this.Math.rand(1, 100) <= this.Const.Contracts.Settings.NegotiationRefuseChance * payment.Annoyance) {
-						payment.IsFinal = true;
+					if (this.Math.rand(1, 100) <= this.Const.Contracts.Settings.NegotiationRefuseChance * this.Contract.m.Payment.Annoyance) {
+						this.Contract.m.Payment.IsFinal = true;
 					} else {
-						payment.IsFinal = false;
-						payment.Pool += 200;
+						this.Contract.m.Payment.IsFinal = false;
+						this.Contract.m.Payment.Pool += 200;
 					}
 
 					return "Negotiation";
@@ -97,17 +95,17 @@
 			}
 		});
 
-		if (!payment.IsNegotiating) {
+		if (!this.Contract.m.Payment.IsNegotiating) {
 			this.Text = _flavor.IsNegotiatingText;
-			payment.IsNegotiating = true;
-		} else if (payment.IsFinal) {
+			this.Contract.m.Payment.IsNegotiating = true;
+		} else if (this.Contract.m.Payment.IsFinal) {
 			this.Text = _flavor.FinalOfferText;
 		} else {
 			this.Text = _flavor.GiveMoreText;
 		}
 
-		if (payment.Items.len() != 0) {
-			if (payment.Items.len() == 1) {
+		if (this.Contract.m.Payment.Items.len() != 0) {
+			if (this.Contract.m.Payment.Items.len() == 1) {
 				this.Text += _flavor.SingleOfferAppendix;
 			} else {
 				this.Text += _flavor.MultipleOfferAppendix;

@@ -470,20 +470,30 @@
 	local getUIBulletpoints = o.getUIBulletpoints;
 	o.getUIBulletpoints = function (_objectives = true, _payment = true) {
 		local ret = getUIBulletpoints(_objectives, _payment);
-		foreach (entry in ret) {
-			if (!("title" in entry))
-				continue;
-			if (entry.title != "Payment")
-				continue;
-			if (this.m.Payment.Pool == 0)
-				entry.items = []; // this will fix dummy 100 coins minimum if there's no money in the pool
-			if (this.m.Payment.Items.len() > 0) {
-				foreach (item in ::Legends.EventList.addItems(this.m.Payment.Items)) {
-					entry.items.push({
-						icon = item.icon,
-						text = item.text + " on completion"
-					});
+		if (_payment) {
+			foreach (entry in ret) {
+				if (!("title" in entry))
+					continue;
+				if (entry.title != "Payment")
+					continue;
+				if (this.m.Payment.Pool == 0)
+					entry.items = []; // this will fix dummy 100 coins minimum if there's no money in the pool
+				if (this.m.Payment.Items.len() > 0) {
+					entry.items.extend(::Legends.EventList.addItems(this.m.Payment.Items).map(@(_item) {
+						icon = _item.icon,
+						text = _item.text + " on completion"
+					}));
 				}
+			}
+			if (ret.map(@(_e) _e.title).find("Payment") == null) {
+				ret.push({
+					title = "Payment",
+					items = ::Legends.EventList.addItems(this.m.Payment.Items).map(@(_item) {
+						icon = _item.icon,
+						text = _item.text + " on completion"
+					}),
+					fixed = true
+				});
 			}
 		}
 		return ret;

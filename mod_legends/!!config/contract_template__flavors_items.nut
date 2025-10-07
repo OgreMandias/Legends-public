@@ -3,7 +3,7 @@ if (!("ContractTemplate" in ::Legends))
 
 ::Legends.ContractTemplate.Items <- {};
 
-::Legends.ContractTemplate.Items.FlavorHuman <- {
+::Legends.ContractTemplate.Items.FlavorCampHuman <- {
 	Title = "Negotiations",
 	AcceptButton = "{ I accept your offer. }",
 	MoreButton = "{ We need to be paid more for this. | We need more loot if we're to do it. }",

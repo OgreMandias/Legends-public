@@ -4,7 +4,7 @@
 * Monetary compensation will be converted to items defined in that list.
 * It does not support both money and items at once.
 */
-::Const.Contracts.NegotiationItemsOnly <- @(_flavor = ::Legends.ContractTemplate.Items.FlavorHuman) [{
+::Const.Contracts.NegotiationItemsOnly <- @(_flavor = ::Legends.ContractTemplate.Items.FlavorCampHuman) [{
 	ID = "Negotiation",
 	Title = _flavor.Title,
 	Text = "",

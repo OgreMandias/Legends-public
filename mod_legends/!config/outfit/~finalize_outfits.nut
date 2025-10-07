@@ -39,6 +39,8 @@
 		local result = selected[1]();
 		if (typeof(result) == "array")
 			return this.pickItem(result, _script);
+		if (selected.len() == 3)
+			result.setVariant(selected[2]);
 		return result;
 	}
 

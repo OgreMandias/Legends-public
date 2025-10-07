@@ -56,7 +56,13 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 			[5, "misc/legend_ancient_scroll_item"],
 			[2, "misc/legend_map_legendary_item"],
 		];
-
+		// optionally, offer just tent
+//		local stash = ::World.Assets.getStash();
+//		local missingTents = ::Legends.Camp.Tents.filter(@(_, _tent) !stash.hasItem(_tent.ID));
+//		if (missingTents.len() > 0 && ::Math.rand(0, 100) < 99) {
+//			this.m.Payment.IsSingleItem = true;
+//			this.m.Payment.ItemPool = missingTents.map(@(_def) [1, _def.Script]);
+//		}
 	}
 
 	function isVisible()
@@ -219,8 +225,8 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 
 	function createScreens()
 	{
-		this.importScreens(::Const.Contracts.NegotiationItemsOnly); //for legion, may be better to create new negotiation templates as a hook in 'intro templates'?
-		this.importScreens(this.Const.Contracts.Overview);
+		this.importScreens(::Const.Contracts.NegotiationItemsOnly()); //for legion, may be better to create new negotiation templates as a hook in 'intro templates'?
+		this.importScreens(::Const.Contracts.Overview);
 
 		this.m.Screens.push({
 			ID = "Task",
@@ -232,7 +238,7 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 			ShowDifficulty = true,
 			Options = [
 				{
-					Text = "{We need more pay.}",
+					Text = "{Let's talk business.}",
 					function getResult() {
 						return "Negotiation";
 					}

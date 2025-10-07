@@ -162,7 +162,7 @@ this.legend_camp_unhold_bondage_contract <- this.inherit("scripts/contracts/lege
 	}
 
 	function createScreens() {
-		this.importScreens(::Const.Contracts.NegotiationItemsOnly);
+		this.importScreens(::Const.Contracts.NegotiationItemsOnly());
 		this.importScreens(::Const.Contracts.Overview);
 
 		this.m.Screens.push({

@@ -1,6 +1,7 @@
 this.perk_legend_freedom_of_movement <- this.inherit("scripts/skills/skill", {
 	m = {
 		Skills = [
+			::Legends.Actives.getID(::Legends.Active.LegendClimb),
 			::Legends.Actives.getID(::Legends.Active.Lunge),
 			::Legends.Actives.getID(::Legends.Active.Footwork),
 			::Legends.Actives.getID(::Legends.Active.Rotation),
@@ -29,11 +30,7 @@ this.perk_legend_freedom_of_movement <- this.inherit("scripts/skills/skill", {
 			{
 				skill.m.FatigueCostMult *= 0.5;
 
-				if (skill.getID() == ::Legends.Actives.getID(::Legends.Active.LegendLeap) || skill.getID() == ::Legends.Actives.getID(::Legends.Active.LegendEvasion))
-				{
-					skill.m.ActionPointCost /= 2;
-				}
-				else if (skill.getID() == ::Legends.Actives.getID(::Legends.Active.LegendQuickStep))
+				if (skill.getID() == ::Legends.Actives.getID(::Legends.Active.LegendLeap) || skill.getID() == ::Legends.Actives.getID(::Legends.Active.LegendEvasion) || skill.getID() == ::Legends.Actives.getID(::Legends.Active.LegendQuickStep))
 				{
 					skill.m.ActionPointCost /= 2;
 				}

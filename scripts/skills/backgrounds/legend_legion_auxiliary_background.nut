@@ -158,7 +158,7 @@ this.legend_legion_auxiliary_background <- this.inherit("scripts/skills/backgrou
 
 		local actor = this.getContainer().getActor();
 		actor.m.ExcludedInjuries = ::Legends.Legion.ExludedInjures;
-		actor.add("legion_can_command");  //justfies if this background is subject to the legion command skill
+		actor.getFlags().add("legion_can_command");  //justfies if this background is subject to the legion command skill
 	}
 
 	function adjustHiringCostBasedOnEquipment() //reduces cost for equipment worn on skeletons to zero for recruiting purposes.

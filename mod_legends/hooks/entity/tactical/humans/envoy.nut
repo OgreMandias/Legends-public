@@ -3,14 +3,10 @@
 	local getPlaceInFormation = o.getPlaceInFormation;
 	o.getPlaceInFormation = function()
 	{
-		return this.m.PlaceInFormation;
-	}
-
-	local onInit = o.onInit;
-	o.onInit = function ()
-	{
-		onInit();
-		// this.setPlaceInFormation(21);
+		if (this.m.PlaceInFormation != null)
+			return this.m.PlaceInFormation;
+		else
+			return getPlaceInFormation();
 	}
 
 	o.assignRandomEquipment = function ()

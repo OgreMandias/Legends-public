@@ -52,7 +52,7 @@ this.perk_legend_onslaught <- this.inherit("scripts/skills/skill", {
 		if ( this.Math.rand(1, 100) > 50)
 			return false;
 
-		if (!_targetEntity.getSkills().hasEffect(::Legends.Effect.Stunned)) {
+		if (!_targetEntity.getSkills().hasEffect(::Legends.Effect.LegendBaffled)) {
 			::Legends.Effects.grant(_targetEntity, ::Legends.Effect.LegendBaffled);
 
 			if (!user.isHiddenToPlayer() && _targetEntity.getTile().IsVisibleForPlayer) {

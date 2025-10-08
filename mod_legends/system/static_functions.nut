@@ -217,3 +217,14 @@
 		return false;
 	return _item.getFlags().has(_flag);
 }
+
+::Legends.S.getEmptySlotsInFormation <- function () {
+	local formation = ::World.Assets.getFormation().filter(@(_, _bro) !_bro.isInReserves()).map(@(_bro) _bro.getPlaceInFormation());
+	local ret = [];
+	for(local i = 0; i < 27; i++) {
+		if (formation.find(i) == null)
+			ret.push(i);
+	}
+	ret.reverse();
+	return ret;
+}

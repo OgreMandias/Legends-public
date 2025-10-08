@@ -1,14 +1,5 @@
 ::mods_hookExactClass("entity/tactical/humans/envoy", function(o)
 {
-	local getPlaceInFormation = o.getPlaceInFormation;
-	o.getPlaceInFormation = function()
-	{
-		if (this.m.PlaceInFormation != null)
-			return this.m.PlaceInFormation;
-		else
-			return getPlaceInFormation();
-	}
-
 	o.assignRandomEquipment = function ()
 	{
 		this.m.Items.equip(this.Const.World.Common.pickArmor([

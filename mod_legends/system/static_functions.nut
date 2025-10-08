@@ -218,13 +218,21 @@
 	return _item.getFlags().has(_flag);
 }
 
+// it's intended to use with .pop() when filling, so the sort is opposite of what it would normally be
 ::Legends.S.getEmptySlotsInFormation <- function () {
-	local formation = ::World.Assets.getFormation().filter(@(_, _bro) !_bro.isInReserves()).map(@(_bro) _bro.getPlaceInFormation());
+	local formation = ::World.getPlayerRoster().getAll().filter(@(_, _bro) !_bro.isInReserves()).map(@(_bro) _bro.getPlaceInFormation());
 	local ret = [];
 	for(local i = 0; i < 27; i++) {
 		if (formation.find(i) == null)
 			ret.push(i);
 	}
-	ret.reverse();
+	ret.sort(function (a, b) {
+		local rowA = a / 9, rowB = b / 9, colA = a % 9, colB = b % 9;
+		if (rowA != rowB) // prefer further rows
+			return rowA - rowB;
+		local distA = ::Math.abs(colA - 4);
+		local distB = ::Math.abs(colB - 4);
+		return distB - distA; // prefer closer to center of row
+	});
 	return ret;
 }

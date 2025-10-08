@@ -1,10 +1,5 @@
 ::mods_hookExactClass("entity/tactical/humans/firstborn", function(o)
 {
-	o.getPlaceInFormation = function ()
-	{
-		return 26;
-	}
-
 	o.assignRandomEquipment = function ()
 	{
 

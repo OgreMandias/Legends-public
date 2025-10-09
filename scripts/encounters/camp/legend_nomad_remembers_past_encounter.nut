@@ -5,7 +5,7 @@ this.legend_nomad_remembers_past_encounter <- ::inherit("scripts/encounters/enco
 
 	function create() {
 		this.encounter.create();
-		this.m.ID = "encounter.legend_nomad_remembers_past";
+		this.m.Type = "encounter.legend_nomad_remembers_past";
 		this.m.Name = ::Const.Strings.randomCampEncounterName();
 		this.m.Cooldown = 20 * this.World.getTime().SecondsPerDay;
 	}

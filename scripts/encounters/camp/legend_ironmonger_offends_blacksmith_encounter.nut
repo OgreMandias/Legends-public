@@ -5,7 +5,7 @@ this.legend_ironmonger_offends_blacksmith_encounter <- this.inherit("scripts/enc
 	},
 	function create() {
 		this.encounter.create();
-		this.m.ID = "event.legends.ironmonger_offends_blacksmith";
+		this.m.Type = "event.legends.ironmonger_offends_blacksmith";
 		this.m.Name = ::Const.Strings.randomCampEncounterName();
 		this.m.Cooldown = 60 * this.World.getTime().SecondsPerDay;
 	}

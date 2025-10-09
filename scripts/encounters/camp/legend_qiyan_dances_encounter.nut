@@ -4,7 +4,7 @@ this.legend_qiyan_dances_encounter <- this.inherit("scripts/encounters/encounter
 	},
 	function create() {
 		this.encounter.create();
-		this.m.ID = "encounter.legend_qiyan_dances";
+		this.m.Type = "encounter.legend_qiyan_dances";
 		this.m.Name = ::Const.Strings.randomCampEncounterName();
 		this.m.Cooldown = 25.0 * ::World.getTime().SecondsPerDay;
 	}

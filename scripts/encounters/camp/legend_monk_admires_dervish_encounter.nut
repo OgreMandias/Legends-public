@@ -5,7 +5,7 @@ this.legend_monk_admires_dervish_encounter <- ::inherit("scripts/encounters/enco
 	},
 	function create() {
 		this.encounter.create();
-		this.m.ID = "encounter.legend_monk_admires_dervish";
+		this.m.Type = "encounter.legend_monk_admires_dervish";
 		this.m.Name = ::Const.Strings.randomCampEncounterName();
 		this.m.Cooldown = 30 * this.World.getTime().SecondsPerDay;
 	}

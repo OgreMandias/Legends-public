@@ -5,7 +5,7 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 	},
 
 	function create() {
-		this.contract.create();
+		this.legend_camp_contract.create();
 		this.m.Type = "contract.legend_camp_legion_hunt_nobles_contract";
 		this.m.Name = "Hunt: Nobles";
 		this.m.EmployerFaction = ::Legends.CampContracts.EmployerFaction.Legion;

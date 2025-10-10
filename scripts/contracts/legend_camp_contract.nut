@@ -5,7 +5,6 @@ this.legend_camp_contract <- ::inherit("scripts/contracts/contract", {
 
 	function create() {
 		this.contract.create();
-		this.m.IsDone = false;
 	}
 
 	function start() {

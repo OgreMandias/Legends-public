@@ -5,7 +5,7 @@ this.legend_camp_unhold_bondage_contract <- this.inherit("scripts/contracts/lege
 	},
 
 	function create() {
-		this.contract.create();
+		this.legend_camp_contract.create();
 		this.m.Type = "contract.legend_camp_unhold_bondage_contract";
 		this.m.Name = "Capture Unhold";
 		this.m.EmployerFaction = ::Legends.CampContracts.EmployerFaction.Barbarians;

@@ -11,7 +11,11 @@
 		local v = this.getVariant() == 0 ? "" : "_" + this.getVariant();
 		this.m.Icon = "weapons/ranged/crossbow_goblin_01" + v + "_70x70.png";
 		this.m.IconLarge = "weapons/ranged/crossbow_goblin_01" + v + ".png";
-		this.m.ArmamentIcon = "icon_crossbow_goblin_01" + v;
+		if (this.getVariant() == 0) {
+			this.m.ArmamentIcon = "icon_goblin_crossbow_01";
+		} else {
+			this.m.ArmamentIcon = "icon_crossbow_goblin_01" + v;
+		}
 	}
 
 	local onEquip = o.onEquip;

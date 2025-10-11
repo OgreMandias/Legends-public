@@ -8,7 +8,7 @@
 		local fm = this.Math.round(this.Math.round(this.getChance() / 3) * 100);
 		local tooltip = getTooltip();
 
-		if (fm < 100 && this.getSkills().hasPerk(::Legends.Perk.LegendFashionable))
+		if (fm < 100 && this.getContainer().hasPerk(::Legends.Perk.Relentless))
 		{
 			tooltip.push({
 				id = 7,

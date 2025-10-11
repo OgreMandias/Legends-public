@@ -785,11 +785,6 @@ class Defs:
  "desc" :  "A dark hood for those who work with filth",
  "adesc" : "Has a dark hood for working with entrails"
 },
-{"name": "relic_hood",           "layer": "cloak", "min": 1, "max": 10, "value" : 800, "con" : 35, "stam" : -4, "bravery" : 2, "impactSound" : "leather", "invSound" : "cloth", "brush" : "relic_hood",
- "title" :  "Relic Hood",
- "desc" :  "A hood and belts adorned with a holy relic",
- "adesc" : "Has a hood and belts adorned with a holy relic"
-},
 {"name": "legend_armor_cloak_heavy",           "layer": "cloak", "min": 0, "max": 0, "value" : 500, "con" : 30, "stam" : -4, "bravery" : 2, "impactSound" : "leather", "invSound" : "cloth", "brush" : "cloak", "variants" : [3,8,15,16,17,18,19,20,24,26,27,28,29,30,31,35,37],
  "title" :  "Heavy Cloak",
  "desc" :  "A rustic cloak made of thick layered strong warm wool, provides protection from some blows but is quite hefty. ",

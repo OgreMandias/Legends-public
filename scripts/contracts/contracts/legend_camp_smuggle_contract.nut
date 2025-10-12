@@ -72,6 +72,7 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 		this.m.Town = ::WeakTableRef(sourceSettlements[::Math.rand(0, sourceSettlements.len() - 1)]);
 		this.m.Fortress = ::WeakTableRef(militarySettlements[::Math.rand(0, militarySettlements.len() - 1)]);
 		this.m.Flags.set("EnemyNobleHouse", this.m.Fortress.getOwner().getID());
+		this.m.Flags.set("EmulateNobleFaction", this.m.Fortress.getOwner().getID());
 
 		this.contract.start();
 	}

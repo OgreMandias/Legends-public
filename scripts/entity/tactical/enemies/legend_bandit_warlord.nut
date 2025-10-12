@@ -95,6 +95,7 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 
 	function assignRandomEquipment()
 	{
+		local weightName;
 		local shields = clone this.Const.Items.NamedShields;
 		shields.extend([
 			"shields/named/named_bandit_kite_shield",

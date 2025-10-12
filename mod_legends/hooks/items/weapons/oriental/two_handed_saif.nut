@@ -9,10 +9,14 @@
 	}
 
 	o.updateVariant <- function() {
-		local v = this.getVariant() == 0 ? "" : "_" + this.getVariant();
-		this.m.Icon = "weapons/melee/two_handed_saif_01" + v + "_70x70.png";
-		this.m.IconLarge = "weapons/melee/two_handed_saif_01" + v + ".png";
-		this.m.ArmamentIcon = "icon_two_handed_saif_01" + v;
+		if (this.getVariant() == 0) {
+			this.m.Icon = "weapons/melee/two_handed_saif_70x70.png";
+			this.m.IconLarge = "weapons/melee/two_handed_saif.png";
+			this.m.ArmamentIcon = "icon_two_handed_saif";
+		} else {
+			this.m.Icon = "weapons/melee/two_handed_saif_01_" + this.getVariant() + "_70x70.png";
+			this.m.IconLarge = "weapons/melee/two_handed_saif_01_" + this.getVariant() + ".png";
+			this.m.ArmamentIcon = "icon_two_handed_saif_01_" + this.getVariant();
+		}
 	}
-
 });

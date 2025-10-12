@@ -62,6 +62,9 @@
 	{
 		if (_skill == this)
 		{
+			if (::Legends.S.skillEntityAliveCheck(_targetEntity))
+				return;
+
 			_properties.RangedSkill += this.m.AdditionalAccuracy;
 			_properties.HitChanceAdditionalWithEachTile += this.m.AdditionalHitChance;
 

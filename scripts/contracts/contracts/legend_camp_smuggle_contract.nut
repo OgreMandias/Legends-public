@@ -427,7 +427,7 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 
 		local party = null;
 		if (this.getDifficulty() <= 2) { // we want militia party for these
-			party = ::World.FactionManager.getFaction(::Const.Faction.Enemy)
+			party = ::World.FactionManager.getFactionOfType(::Const.FactionType.Generic)
 				.spawnEntity(tile, this.m.Town.getName() + " Militia", false, ::Const.World.Spawn.Militia, 80 * this.getDifficultyMult() * this.getScaledDifficultyMult(), this.getMinibossModifier());
 			party.getSprite("banner").setBrush(this.m.Town.getBanner());
 			party.setDescription("Brave men defending their homes with their lives. Farmers, craftsmen, artisans - but not one real soldier.");
@@ -486,7 +486,7 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 			tile = this.m.Camp.getTile();
 		local oldMaxR = ::Const.World.Spawn.BanditArmy.MaxR;
 		::Const.World.Spawn.BanditArmy.MaxR = 1200;
-		local party = ::World.FactionManager.getFaction(::Const.Faction.Bandits)
+		local party = ::World.FactionManager.getFactionOfType(::Const.FactionType.Bandits)
 			.spawnEntity(tile, "Your employer", false, ::Const.World.Spawn.BanditArmy, 130 * this.getDifficultyMult() * this.getScaledDifficultyMult(), this.getMinibossModifier());
 		::Const.World.Spawn.BanditArmy.MaxR = oldMaxR;
 		party.setDescription("Bandit army of your employer.");

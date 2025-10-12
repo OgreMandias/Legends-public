@@ -18,9 +18,12 @@
 
 	o.addSkill <- function( _skill )
 	{
-		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.ShootBolt))
+		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.ShootStake))
 		{
-			::Legends.Actives.grant(this.weapon, ::Legends.Active.ShootStake);
+			::Legends.Actives.grant(this.weapon, ::Legends.Active.ShootStake, function (_skill)
+			{
+				_skill.m.Name = "Shoot Heavy Bolt";
+			}.bindenv(this));
 			return;
 		}
 

@@ -53,6 +53,22 @@ this.legend_heartseeker_skill <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
+	function setItem(_item)
+	{
+		this.skill.setItem(_item);
+		if (this.m.IsPolearm)
+		{
+			this.m.FatigueCost = 25;
+			this.m.ActionPointCost = 7;
+			this.m.DirectDamageMult = 0.5;
+		}
+		if (this.m.IsTwoHanded)
+		{
+			this.m.FatigueCost = 25;
+			this.m.ActionPointCost = 7;
+		}
+	}
+
 	function getTooltip()
 	{
 		local ret = this.getDefaultTooltip();
@@ -65,11 +81,13 @@ this.legend_heartseeker_skill <- this.inherit("scripts/skills/skill", {
 		{
 			this.m.FatigueCostMult = _properties.IsSpecializedInPolearms ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 			this.m.ActionPointCost = _properties.IsSpecializedInPolearms ? 6 : 7;
+			return;
 		}
-		else
+		else if (this.m.IsTwoHanded)
 		{
-			this.m.FatigueCostMult = _properties.IsSpecializedInSpears ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+			this.m.ActionPointCost = _properties.IsSpecializedInPolearms ? 6 : 7;
 		}
+		this.m.FatigueCostMult = _properties.IsSpecializedInSpears ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 	}
 
 	function onUse( _user, _targetTile )

@@ -427,13 +427,13 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 
 		local party = null;
 		if (this.getDifficulty() <= 2) { // we want militia party for these
-			party = ::World.FactionManager.getFactionOfType(::Const.FactionType.Generic)
+			party = ::World.FactionManager.getFactionOfType(::Const.FactionType.FreeCompany)
 				.spawnEntity(tile, this.m.Town.getName() + " Militia", false, ::Const.World.Spawn.Militia, 80 * this.getDifficultyMult() * this.getScaledDifficultyMult(), this.getMinibossModifier());
 			party.getSprite("banner").setBrush(this.m.Town.getBanner());
 			party.setDescription("Brave men defending their homes with their lives. Farmers, craftsmen, artisans - but not one real soldier.");
 			party.setFootprintType(this.Const.World.FootprintsType.Militia);
 		} else { // hardest should spawn nobles
-			party = ::World.FactionManager.getFaction(::Const.Faction.Enemy)
+			party = ::World.FactionManager.getFactionOfType(::Const.FactionType.FreeCompany)
 				.spawnEntity(tile, "Patrol", false, ::Const.World.Spawn.Noble, 80 * this.getDifficultyMult() * this.getScaledDifficultyMult(), this.getMinibossModifier());
 			party.getSprite("banner").setBrush(::World.FactionManager.getFaction(this.m.Flags.get("EnemyNobleHouse")).getBannerSmall());
 			party.setDescription("Professional soldiers in service to local lords.");

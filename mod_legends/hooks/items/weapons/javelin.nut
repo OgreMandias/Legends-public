@@ -15,7 +15,7 @@
 		if (this.getVariant() == 0) {
 			this.m.Icon = "weapons/ranged/javelins_01_70x70.png";
 			this.m.IconLarge = "weapons/ranged/javelins_01.png";
-			this.m.ArmamentIcon = "icon_javelin_01";
+			this.m.ArmamentIcon = "icon_javelin_02"; // this shit is so ass
 		} else {
 			this.m.Icon = "weapons/ranged/javelins_01_" + this.getVariant() + "_70x70.png";
 			this.m.IconLarge = "weapons/ranged/javelins_01_" + this.getVariant() + ".png";

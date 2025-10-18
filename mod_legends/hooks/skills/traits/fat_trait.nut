@@ -25,7 +25,7 @@
 	}
 
 	local onUpdate = o.onUpdate;
-	o.onUpdate = ( _properties )
+	o.onUpdate = function ( _properties )
 	{
 		onUpdate(_properties);
 		_properties.MovementFatigueCostAdditional += 2;

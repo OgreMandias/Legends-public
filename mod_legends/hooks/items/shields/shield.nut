@@ -87,7 +87,7 @@
 	}
 
 	local onUpdateProperties = o.onUpdateProperties;
-	o.onUpdateProperties(_properties)
+	o.onUpdateProperties = function (_properties)
 	{
 		onUpdateProperties(_properties);
 		_properties.RangedDamageMult *= 1 - (0.01 * _properties.RangedDefense);

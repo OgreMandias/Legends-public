@@ -1532,9 +1532,7 @@ Convince anyone into selling you their priciest possession. Even if that means p
 Carefully evaluate your enemies and bide your time.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Each time you use Wait Turn or become hidden gain [color=%positive%]10%[/color] Damage, [color=%positive%]+5[/color] Melee and Ranged skill and an additional [color=%positive%]5%[/color] of damage ignores armor for your first attack.
-
-• Your enemies are [color=%positive%]50%[/color] more likely to attack you while this effect is up.
+• When ending your turn, excess Action Points will be transfered to your next turn with a maximum of 3.
 ");
 
 ::Const.Strings.PerkDescription.LegendBarrage <- ::Legends.tooltip(@"
@@ -2771,7 +2769,7 @@ Don't slow down!
 
 • [color=%status%]Baffled[/color] enemies have [color=%negative%]-15%[/color] damage, Fatigue, and Initiative.
 
-• [color=%positive%]30%[/color] of your gear weight will be added to damage done with a maximum bonus of 30%.
+• [color=%positive%]30%[/color] of your gear weight will be added to melee damage done with a maximum bonus of 30%.
 ");
 
 ::Const.Strings.PerkDescription.LegendBackToBasics <- ::Legends.tooltip(@"

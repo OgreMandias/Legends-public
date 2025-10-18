@@ -340,7 +340,7 @@ All this exercise has you in great shape.
 [color=%passive%][u]Passive:[/u][/color]
 • The [color=%skill%]Knock Back[/color] skill now inflicts [color=%positive%]10-25[/color] Damage (50% effective against armor) and [color=%damage%]10[/color] Fatigue Damage.
 
-• Additionally damage will also scale by [color=%positive%]10%[/color] of your shield\'s maximum condition with a maximum bonus of 10.
+• Additionally damage will also scale by [color=%positive%]10%[/color] of your shield's maximum condition with a maximum bonus of 10.
 
 • [color=%skill%]Buckler Bash[/color] will do [color=%positive%]8-15[/color] damage.
 

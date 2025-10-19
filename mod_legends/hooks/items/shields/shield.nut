@@ -40,7 +40,7 @@
 				id = 11,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Reduces any ranged damage taken by [color=" + ::Const.UI.Color.NegativeValue + "]-" + this.m.RangedDefense + "%[/color]"
+				text = "Reduces any ranged damage taken by [color=" + ::Const.UI.Color.NegativeValue + "]-" + 2 * this.m.RangedDefense + "%[/color]"
 			});
 		}
 		if (this.isRuned())
@@ -90,7 +90,7 @@
 	o.onUpdateProperties = function (_properties)
 	{
 		onUpdateProperties(_properties);
-		_properties.RangedDamageMult *= 1 - (0.01 * _properties.RangedDefense);
+		_properties.RangedDamageMult *= 1 - (0.02 * _properties.RangedDefense);
 	}
 
 	o.onDeserialize = function ( _in )

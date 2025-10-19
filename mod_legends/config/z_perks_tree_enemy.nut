@@ -415,7 +415,7 @@ if (!("Perks" in ::Const))
 		[],
 		[],
 		[],
-		[::Legends.Perk.Footwork],
+		[],
 		[::Legends.Perk.LegendFavouredEnemyArcher],
 		[]
 	]

@@ -522,7 +522,9 @@ ID = "TailorClassTree",
 		::Const.Perks.SlingClassTree,
 		::Const.Perks.SpearfisherClassTree,
 		::Const.Perks.StaffClassTree,
-		::Const.Perks.RaiderClassTree
+		::Const.Perks.RaiderClassTree,
+		::Const.Perks.PoisonClassTree,
+		::Const.Perks.TailorClassTree
 	],
 	function getRandom(_exclude)
 	{

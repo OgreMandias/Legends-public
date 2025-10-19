@@ -168,9 +168,10 @@ if (!("Perks" in ::Const))
 		"hunting big game"
 	],
 	Tree = [
-		[],
 		[
-			::Legends.Perk.LegendSummonHound,
+			::Legends.Perk.LegendSummonHound
+		],
+		[
 			::Legends.Perk.LegendNightvision
 		],
 		[
@@ -217,7 +218,7 @@ if (!("Perks" in ::Const))
 
 ::Const.Perks.MasterArcherTree <- {
 	ID = "MasterArcherTree",
-	Name = "MasterArcher",
+	Name = "Deadeye",
 	Descriptions = [
 		"archery"
 	],

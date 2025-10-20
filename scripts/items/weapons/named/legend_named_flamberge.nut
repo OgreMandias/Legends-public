@@ -62,7 +62,7 @@ this.legend_named_flamberge <- this.inherit("scripts/items/weapons/named/named_w
 		if (!_target.isAlive() || _target.isDying())
 			return;
 
-		this.spawnAttackEffect(_target.getTile(), this.Const.Tactical.AttackEffectChop);
+		_skill.spawnAttackEffect(_target.getTile(), this.Const.Tactical.AttackEffectChop);
 		if (!actor.isAlive() || actor.isDying())
 			return;
 

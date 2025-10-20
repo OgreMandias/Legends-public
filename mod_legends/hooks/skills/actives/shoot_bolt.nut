@@ -38,7 +38,7 @@
 			});
 		}
 
-		if (!this.getItem().isLoaded())
+		if (this.getItem() != null && ("isLoaded" in this.getItem()) &&!this.getItem().isLoaded())
 		{
 			tooltip.push({
 				id = 9,

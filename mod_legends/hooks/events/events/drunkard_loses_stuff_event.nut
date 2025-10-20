@@ -202,7 +202,7 @@
 		if (candidates.len() == 0)
 			return;
 
-		if (this.getEligibleItems().list() == 0)
+		if (this.getEligibleItems().len() == 0)
 			return;
 
 		this.m.Drunkard = candidates[this.Math.rand(0, candidates.len() - 1)];

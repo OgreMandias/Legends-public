@@ -38,7 +38,7 @@
 			});
 		}
 
-		if (this.getItem() != null && ("isLoaded" in this.getItem()) && !this.getItem().isLoaded())
+		if (!this.getItem().isLoaded())
 		{
 			tooltip.push({
 				id = 9,
@@ -49,11 +49,6 @@
 		}
 
 		return tooltip;
-	}
-
-	o.isUsable = function ()
-	{
-		return this.skill.isUsable() && this.getItem() != null && ("isLoaded" in this.getItem()) && this.getItem().isLoaded();
 	}
 
 	o.onAfterUpdate = function ( _properties )

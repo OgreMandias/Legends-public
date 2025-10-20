@@ -11,11 +11,11 @@ this.perk_legend_patient_hunter <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
-	
+
 	function onTurnEnd()
 	{
 		::Legends.Effects.grant(this, ::Legends.Effect.LegendPatientHunter, function(_skill) {
 			_skill.m.ApBonus = this.Math.min(3, this.getContainer().getActor().getActionPoints());
-		});
+		}.bindenv(this));
 	}
 });

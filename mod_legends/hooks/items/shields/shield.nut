@@ -90,7 +90,7 @@
 	o.onUpdateProperties = function (_properties)
 	{
 		onUpdateProperties(_properties);
-		_properties.RangedDamageMult *= 1 - (0.02 * _properties.RangedDefense);
+		_properties.DamageReceivedRangedMult *= 1 - (0.02 * _properties.RangedDefense);
 	}
 
 	o.onDeserialize = function ( _in )

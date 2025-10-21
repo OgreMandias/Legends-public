@@ -10,15 +10,4 @@ this.perk_legend_meistersanger <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
-	function onAdded()
-	{
-		if (!this.m.Container.hasActive(::Legends.Active.LegendMartialMarch))
-		{
-			::Legends.Actives.grant(this, ::Legends.Active.LegendMartialMarch);
-		}
-	}
-		function onRemoved()
-	{
-		::Legends.Actives.remove(this, ::Legends.Active.LegendMartialMarch);
-	}
 });

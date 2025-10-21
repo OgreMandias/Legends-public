@@ -68,23 +68,22 @@ this.legend_drums_of_life_skill <- this.inherit("scripts/skills/skill", {
 		return ret;
 	}
 
-	function onAfterUpdate( _properties )
-	{
-		this.m.FatigueCostMult = 1.0;
-		if (_properties.IsSpecializedInMusic)
-		{
-			this.m.FatigueCostMult = this.Const.Combat.WeaponSpecFatigueMult;
-			this.m.ActionPointCost -= 1;
-		}
-	}
-
 	function getBonus()
 	{
 		local effect = 1;
+
+		// +3 from Music Mastery
+		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInMusic)
+			effect += 3;
+
+		// +3 from Entrancing Song
 		if (this.getContainer().hasPerk(::Legends.Perk.LegendSpecialistMusician))
 			effect += 3;
+
+		// +3 from Legend Minnesanger
 		if (this.getContainer().hasPerk(::Legends.Perk.LegendMinnesanger))
 			effect += 3;
+
 		return effect;
 	}
 

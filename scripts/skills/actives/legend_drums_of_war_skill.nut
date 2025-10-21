@@ -68,23 +68,22 @@ this.legend_drums_of_war_skill <- this.inherit("scripts/skills/skill", {
 		return ret;
 	}
 
-	function onAfterUpdate( _properties )
-	{
-		this.m.FatigueCostMult = 1.0;
-		if (_properties.IsSpecializedInMusic)
-		{
-			this.m.FatigueCostMult = this.Const.Combat.WeaponSpecFatigueMult;
-			this.m.ActionPointCost -= 1;
-		}
-	}
-
 	function getBonus()
 	{
 		local effect = 1;
+
+		// +2 from Music Mastery
+		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInMusic)
+			effect += 2;
+
+		// +2 from Legend Specialist Musician
 		if (this.getContainer().hasPerk(::Legends.Perk.LegendSpecialistMusician))
 			effect += 2;
+
+		// +2 from Legend Minnesanger
 		if (this.getContainer().hasPerk(::Legends.Perk.LegendMinnesanger))
 			effect += 2;
+
 		return effect;
 	}
 

@@ -2758,7 +2758,7 @@ A skilled mercenary has unimpeded movement regardless of armor.
 
 • The Action Point cost of [color=%skill%]Climb[/color], [color=%skill%]Footwork[/color] and [color=%skill%]Rotation[/color] is reduced by [color=%negative%]1[/color], [color=%skill%]Leap[/color] by [color=%negative%]3[/color] and [color=%skill%]Evasion[/color] by [color=%negative%]2[/color].
 
-• Picking this perk will also add [color=%skill%]Footwork[/color], [color=%skill%]Quick Step[/color] and [color=%skill%]Rotation[/color] to your perk tree.
+• Picking this perk will also add [color=%perk%]Tactical Maneuvers[/color] and [color=%perk%]Quick Step[/color] to your perk tree.
 ");
 
 ::Const.Strings.PerkDescription.LegendOnslaught <- ::Legends.tooltip(@"

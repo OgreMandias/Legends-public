@@ -2860,17 +2860,6 @@ perkDefObjects.push({
 	Const = "LegendPushTheAdvantage"
 });
 
-::Legends.Perk.LegendTrophyHunter <- null;
-perkDefObjects.push({
-	ID = "perk.legend_trophy_hunter",
-	Script = "scripts/skills/perks/perk_legend_trophy_hunter",
-	Name = ::Const.Strings.PerkName.LegendTrophyHunter,
-	Tooltip = ::Const.Strings.PerkDescription.LegendTrophyHunter,
-	Icon = "ui/perks/slaughterer_circle.png",
-	IconDisabled = "ui/perks/slaughterer_circle_bw.png",
-	Const = "LegendTrophyHunter"
-});
-
 ::Legends.Perk.LegendBruiser <- null;
 perkDefObjects.push({
 	ID = "perk.legend_bruiser",

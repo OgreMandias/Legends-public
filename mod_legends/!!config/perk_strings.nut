@@ -371,7 +371,6 @@ local colors = [
 ::Const.Strings.PerkName.LegendRoster5 <- "The Section"; //REMOVE
 ::Const.Strings.PerkName.LegendRoster6 <- "The Platoon"; //REMOVE
 ::Const.Strings.PerkName.LegendRoster7 <- "The Company"; //REMOVE
-::Const.Strings.PerkName.LegendTrophyHunter <- "Trophy Hunter"; //AI skill, currently unused.
 ::Const.Strings.PerkName.LegendCrusher <- "Crusher"; //exists but has no data to provide any affect
 ::Const.Strings.PerkName.LegendDeflect <- "Deflect"; //exists but has no data to provide any affect
 ::Const.Strings.PerkName.LegendIronside <- "Ironside"; //gives damage reduction based on number of adj. enemies
@@ -489,17 +488,6 @@ Master the art of following up for devastating effects.
 • If the attack misses the effect is wasted. Does not work from friendly fire or any self inflicted damage.
 
 • Additionally a party member or pet dying will trigger the effect.
-");
-
-::Const.Strings.PerkDescription.LegendTrophyHunter <- ::Legends.tooltip(@"
-Each fight tells a story, with your glory and strength growing in their end.
-
-[color=%passive%][u]Passive:[/u][/color]
-• The gruesome trophies this character has collected will increase their Hitpoints, Fatigue, Resolve and Initiative by 1.
-
-• Will also allow them to terrify their opponents when enganged in melee and increase total Damage Done.
-
-• Total kills over 5 for a given faction will not count.
 ");
 
 ::Const.Strings.PerkDescription.LegendBruiser <- ::Legends.tooltip(@"

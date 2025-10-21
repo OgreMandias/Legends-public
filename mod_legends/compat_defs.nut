@@ -232,7 +232,7 @@
 ::Legends.Compat.SoftIncompat.add("mod_camps_and_artifacts", "3.4");
 ::Legends.Compat.SoftIncompat.add("mod_cultists", "1.04"); // Davkul Rising
 ::Legends.Compat.SoftIncompat.add("mod_fantasybro", "1.0"); // Yorik's "Legends patches are poorly built, yes even into FB V5"
-::Legends.Compat.SoftIncompat.add("mod_find_legendary_locations", "1", "Use Chopek's Find Legendary Maps instead, at Nexus or Legends Discord (#submod_files/Find Legendary Maps)");
+::Legends.Compat.SoftIncompat.add("mod_find_legendary_locations", "1", "Legends has maps, that do the same");
 ::Legends.Compat.SoftIncompat.add("mod_necropolis", "1.0");
 ::Legends.Compat.SoftIncompat.add("mod_PLHO", "0.1.1"); // Darx's Player Hideout
 ::Legends.Compat.SoftIncompat.add("mod_retinue_ups", "1.2.1"); // Hackflow's Retinue Promotions
@@ -242,7 +242,7 @@
 //endregion
 
 //region IncompatButPatched
-::Legends.Compat.IncompatButPatched.add("mod_breditor", "on Legends Discord (pinned message in #battle_brothers_chat)");
+::Legends.Compat.IncompatButPatched.add("mod_breditor", "on Legends Discord (pinned message in #battle_brothers_chat), replace one from nexus. If you have it already, ignore this message.");
 //endregion
 
 //region OtherVersionCompat

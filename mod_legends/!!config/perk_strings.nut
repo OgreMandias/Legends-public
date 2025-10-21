@@ -647,7 +647,7 @@ Exert yourself to move one tile at an unusually quick speed.
 You're a well-rounded athlete!
 
 [color=%passive%][u]Passive:[/u][/color]
-• Reduce the Fatigue cost of all your skills by [color=%negative%]20%[/color] of your maximum usable Fatigue.
+• Reduce the Fatigue cost of all your skills by a scaling percentage based on [color=%negative%]20%[/color] of your maximum usable Fatigue. Maximum usable fatigue is your fatigue after gear weight is accounted for.
 ");
 
 ::Const.Strings.PerkDescription.LegendSpecPoison <- ::Legends.tooltip(@"

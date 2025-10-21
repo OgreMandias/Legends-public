@@ -79,7 +79,6 @@ this.legend_horserider <- this.inherit("scripts/skills/backgrounds/character_bac
 			],
 			[
 				::Legends.Perk.LoneWolf,
-				::Legends.Perk.Footwork,
 				::Legends.Perk.LegendBattleheart
 			],
 			[

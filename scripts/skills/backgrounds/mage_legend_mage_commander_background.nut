@@ -100,7 +100,6 @@ this.mage_legend_mage_commander_background <- this.inherit("scripts/skills/backg
 				::Legends.Perk.LegendMagicWebBolt,
 				::Legends.Perk.LoneWolf,
 				::Legends.Perk.Overwhelm,
-				::Legends.Perk.Footwork,
 				::Legends.Perk.LegendMedIngredients,
 				::Legends.Perk.LegendSpecStaffStun,
 			],

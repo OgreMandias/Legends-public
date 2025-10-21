@@ -95,7 +95,6 @@ this.legend_horse <- this.inherit("scripts/skills/backgrounds/character_backgrou
 			[
 				::Legends.Perk.LoneWolf,
 				::Legends.Perk.Underdog,
-				::Legends.Perk.Footwork,
 				::Legends.Perk.LegendHorseLegControl,
 				::Legends.Perk.LegendHorseLeadChange,
 				::Legends.Perk.LegendHorseParthianShot

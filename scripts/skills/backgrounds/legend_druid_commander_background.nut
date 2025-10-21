@@ -150,7 +150,6 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				::Legends.Perk.LegendReadOmensTrance,
 				::Legends.Perk.LegendInsects,
 				::Legends.Perk.LoneWolf,
-				::Legends.Perk.Footwork,
 				::Legends.Perk.LegendVengeance,
 				::Legends.Perk.LegendBattleheart,
 				::Legends.Perk.LegendFavouredEnemyOrk,

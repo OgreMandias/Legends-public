@@ -88,7 +88,6 @@ this.legend_trader_background <- this.inherit("scripts/skills/backgrounds/charac
 				::Legends.Perk.Overwhelm,
 				::Legends.Perk.ReachAdvantage,
 				::Legends.Perk.LoneWolf,
-				::Legends.Perk.Footwork,
 				::Legends.Perk.Underdog,
 				::Legends.Perk.LegendBarterTrustworthy
 			],

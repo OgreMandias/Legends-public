@@ -68,7 +68,6 @@ this.legend_horse_destrier <- this.inherit("scripts/skills/backgrounds/legend_ho
 			[
 				::Legends.Perk.LoneWolf,
 				::Legends.Perk.Underdog,
-				::Legends.Perk.Footwork,
 				::Legends.Perk.LegendHorseLegControl,
 				::Legends.Perk.LegendHorseLeadChange,
 				::Legends.Perk.LegendHorseParthianShot

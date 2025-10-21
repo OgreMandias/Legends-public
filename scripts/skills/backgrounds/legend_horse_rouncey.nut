@@ -61,7 +61,6 @@ this.legend_horse_rouncey <- this.inherit("scripts/skills/backgrounds/legend_hor
 			[
 				::Legends.Perk.LoneWolf,
 				::Legends.Perk.Underdog,
-				::Legends.Perk.Footwork,
 				::Legends.Perk.LegendHorseLegControl,
 				::Legends.Perk.LegendHorseLeadChange,
 				::Legends.Perk.LegendHorseParthianShot

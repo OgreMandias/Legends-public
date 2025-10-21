@@ -104,7 +104,7 @@ this.legend_horse <- this.inherit("scripts/skills/backgrounds/character_backgrou
 				::Legends.Perk.Nimble,
 				::Legends.Perk.LegendLastStand,
 				::Legends.Perk.LegendRebound,
-				::Legends.Perk.Rotation,
+				::Legends.Perk.LegendTacticalManeuvers,
 				::Legends.Perk.LegendMuscularity,
 				::Legends.Perk.LegendHorsePiaffe,
 				::Legends.Perk.LegendHorseTempiChange,

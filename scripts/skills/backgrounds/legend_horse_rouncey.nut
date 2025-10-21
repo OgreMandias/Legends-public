@@ -70,7 +70,7 @@ this.legend_horse_rouncey <- this.inherit("scripts/skills/backgrounds/legend_hor
 				::Legends.Perk.Nimble,
 				::Legends.Perk.LegendLastStand,
 				::Legends.Perk.LegendRebound,
-				::Legends.Perk.Rotation,
+				::Legends.Perk.LegendTacticalManeuvers,
 				::Legends.Perk.LegendMuscularity,
 				::Legends.Perk.LegendHorsePiaffe,
 				::Legends.Perk.LegendHorseTempiChange,

@@ -73,7 +73,7 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 			[
 				::Legends.Perk.Brawny,
 				::Legends.Perk.Anticipation,
-				::Legends.Perk.Rotation,
+				::Legends.Perk.LegendTacticalManeuvers,
 				::Legends.Perk.Taunt,
 				::Legends.Perk.LegendFeint,
 				::Legends.Perk.RallyTheTroops,

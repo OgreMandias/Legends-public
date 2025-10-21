@@ -73,7 +73,7 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 			],
 			[
 				::Legends.Perk.Anticipation,
-				::Legends.Perk.Rotation,
+				::Legends.Perk.LegendTacticalManeuvers,
 				::Legends.Perk.Taunt
 			],
 			[

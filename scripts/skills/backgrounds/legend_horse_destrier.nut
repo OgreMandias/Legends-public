@@ -77,7 +77,7 @@ this.legend_horse_destrier <- this.inherit("scripts/skills/backgrounds/legend_ho
 				::Legends.Perk.Nimble,
 				::Legends.Perk.LegendLastStand,
 				::Legends.Perk.LegendRebound,
-				::Legends.Perk.Rotation,
+				::Legends.Perk.LegendTacticalManeuvers,
 				::Legends.Perk.LegendMuscularity,
 				::Legends.Perk.LegendHorsePiaffe,
 				::Legends.Perk.LegendHorseTempiChange,

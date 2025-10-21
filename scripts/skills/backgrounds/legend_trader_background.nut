@@ -68,7 +68,7 @@ this.legend_trader_background <- this.inherit("scripts/skills/backgrounds/charac
 			[
 				::Legends.Perk.Backstabber,
 				::Legends.Perk.Anticipation,
-				::Legends.Perk.Rotation,
+				::Legends.Perk.LegendTacticalManeuvers,
 				::Legends.Perk.Taunt,
 				::Legends.Perk.LegendAthlete,
 				::Legends.Perk.LegendBarterConvincing

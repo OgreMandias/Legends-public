@@ -45,7 +45,7 @@
 		if (this.m.Container != null && this.m.IsWeaponSkill && item != null)
 		{
 			local containerProperties = this.m.Container.getActor().getCurrentProperties();
-			this.m.FatigueCostMult = (item.isItemType(::Const.Items.ItemType.Weapon) && ::Legends.S.isCharacterWeaponSpecialized(containerProperties, this.getItem())) ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+			this.m.FatigueCostMult = ::Math.minf(this.m.FatigueCostMult, (item.isItemType(::Const.Items.ItemType.Weapon) && ::Legends.S.isCharacterWeaponSpecialized(containerProperties, this.getItem())) ? this.Const.Combat.WeaponSpecFatigueMult : 1.0);
 		}
 		return getFatigueCost();
 	}

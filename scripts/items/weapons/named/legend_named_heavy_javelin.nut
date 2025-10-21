@@ -39,6 +39,7 @@ this.legend_named_heavy_javelin <- inherit("scripts/items/weapons/named/named_we
 		this.m.ShieldDamage = 0;
 		this.m.IsDroppedAsLoot = true;
 		this.m.AdditionalAccuracy = -5;
+		this.m.DirectDamageAdd = 0.1;
 		this.setVariant(this.m.Variants[::Math.rand(0, this.m.Variants.len() - 1)]);
 		this.randomizeValues();
 	}

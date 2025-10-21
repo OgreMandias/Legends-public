@@ -9,6 +9,7 @@
 		this.m.Ammo = 4;
 		this.m.AmmoMax = 4;
 		this.setVariant(this.Math.rand(0, 1));
+		this.m.DirectDamageAdd = 0.1;
 	}
 
 	o.updateVariant <- function() {

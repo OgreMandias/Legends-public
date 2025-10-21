@@ -116,7 +116,6 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				::Legends.Perk.LegendGatherer,
 				::Legends.Perk.FortifiedMind,
 				::Legends.Perk.CoupDeGrace,
-				::Legends.Perk.LegendChoke,
 				::Legends.Perk.Dodge,
 				::Legends.Perk.HoldOut,
 				// ::Legends.Perk.LegendComposure,

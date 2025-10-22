@@ -47,7 +47,6 @@ this.legend_killer_scares_noble_encounter <- ::inherit("scripts/encounters/encou
 	}
 
 	function isValid(_camp) {
-		return false;
 		if (::World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
 			return false;
 

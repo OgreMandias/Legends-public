@@ -465,7 +465,7 @@ There's wolves, bears, nachzehrers, and you. All beings of vicious slaughter.
 Heavy armor, a trusty shield and your heels dug into the ground and you can weather any storm.
 
 [color=%passive%][u]Passive:[/u][/color]
-• For every 10 points of gear weight from all slot gain [color=%positive%]1[/color] Melee Defense and [color=%negative%]1%[/color] less damage ignoring armor.
+• For every 10 points of gear weight from all slot gain [color=%positive%]1[/color] Resolve and [color=%negative%]1%[/color] less damage ignoring armor.
 
 • If you have at least 50 gear weight become immune to stuns.
 

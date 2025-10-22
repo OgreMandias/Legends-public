@@ -211,8 +211,8 @@ this.legend_white_warwolf <- this.inherit("scripts/entity/tactical/actor", {
 			this.m.Hitpoints = this.getHitpointsMax() * _hp;
 			this.m.BaseProperties.Armor[this.Const.BodyPart.Body] * _hp;
 			this.m.BaseProperties.Armor[this.Const.BodyPart.Head] * _hp;
-			this.m.Properties.Armor[this.Const.BodyPart.Body] * _hp;
-			this.m.Properties.Armor[this.Const.BodyPart.Head] * _hp;
+			// this.m.Properties.Armor[this.Const.BodyPart.Body] * _hp;
+			// this.m.Properties.Armor[this.Const.BodyPart.Head] * _hp;
 			this.onUpdateInjuryLayer();
 		}
 		else

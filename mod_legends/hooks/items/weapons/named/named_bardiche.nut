@@ -24,4 +24,5 @@
 		}
 
 		weapon.addSkill(_skill);
+	}
 });

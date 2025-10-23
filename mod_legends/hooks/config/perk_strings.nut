@@ -412,6 +412,8 @@ I'm used to it.
 • The defense malus due to being surrounded by opponents is reduced by [color=%negative%]5[/color].
 
 • If an attacker has the [color=%perk%]Strength In Numbers[/color] perk, the effect of that perk is negated, and the normal defense malus due to being surrounded is applied instead.
+
+• Gain an additional stacking [color=%positive%]+5%[/color] chance to hit each time you dodge an attack.
 ");
 ::Const.Perks.PerkDefObjects[::Legends.Perk.Underdog].Tooltip = ::Const.Strings.PerkDescription.Underdog;
 ::Const.Strings.PerkDescription.Berserk <- ::Legends.tooltip(@"

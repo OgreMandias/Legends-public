@@ -12,30 +12,33 @@ this.perk_legend_bloodbath <- this.inherit("scripts/skills/skill", {
 
 	function isHidden()
 	{
-		local bleeders = this.getBleeders();
-		return bleeders == 0;
+		return this.getBleeders() == 0;
 	}
 
 	function getTooltip()
 	{
-		local bleeders = this.getBleeders();
-		local resolveBonus = bleeders * 100;
-		local fatigueRegen = this.getFatigueRegen();
+		local count = this.getBleeders();
 		local tooltip = this.skill.getTooltip();
-		if (bleeders > 0)
+		if (count > 0)
 		{
 			tooltip.extend([
 			{
 				id = 6,
 				type = "text",
-				icon = "ui/icons/bravery.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + resolveBonus + "%[/color] to resolve"
+				icon = "ui/icons/melee_skill.png",
+				text = "Gain an additional [color=" + this.Const.UI.Color.PositiveValue + "]+" + count + "%[/color] Melee Skill"
 			},
 			{
 				id = 7,
 				type = "text",
+				icon = "ui/icons/ranged_skill.png",
+				text = "Gain an additional [color=" + this.Const.UI.Color.PositiveValue + "]+" + count + "%[/color] Ranged Skill"
+			},
+			{
+				id = 8,
+				type = "text",
 				icon = "ui/icons/fatigue.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + fatigueRegen + "%[/color] Fatigue Recovery per turn"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.Math.min(count, 5) + "%[/color] Fatigue Recovery per turn"
 			}]);
 		}
 
@@ -57,33 +60,38 @@ this.perk_legend_bloodbath <- this.inherit("scripts/skills/skill", {
 		{
 			return 0;
 		}
-		local count = 0.0;
-		local bleeders = 0.0;
+		local count = 0;
 
+		local actor = this.getContainer().getActor();
+		local myTile = actor.getTile();
 		local actors = this.Tactical.Entities.getAllInstancesAsArray();
-
 		foreach( a in actors )
 		{
+			if (a.isAlliedWith(actor))
+				continue;
 			if (a.getSkills().hasEffect(::Legends.Effect.Bleeding) || a.getSkills().hasEffect(::Legends.Effect.LegendGrazedEffect)  || a.getSkills().hasSkillOfType(this.Const.SkillType.TemporaryInjury))
 			{
-				bleeders += 1.0;
-
+				if (myTile.getDistanceTo(a.getTile()) > 2)
+				{
+					count += 1;
+				}
+				else
+				{
+					count += 2;
+				}
 			}
-			count += 1.0;
 		}
 
-		return (count == 0) ? 0 : bleeders / count;
-	}
-
-	function getFatigueRegen()
-	{
-		return this.Math.max(5, this.Math.floor(this.getBleeders() * 20));
+		return count;
 	}
 
 	function onUpdate( _properties )
-	{
-		_properties.BraveryMult += this.getBleeders();
-		_properties.FatigueRecoveryRate += this.getFatigueRegen(); // up to 5 extra fatigue regen, can be achieved if at least 1/4 of all characters on the map are bleeding or have temp injuries
+	{	
+		local count = this.getBleeders();
+		_properties.Bravery += count;
+		_properties.FatigueRecoveryRate += this.Math.min(5, count);
+		_properties.MeleeSkill += count;
+		_properties.RangedSkill += count;
 	}
 
 });

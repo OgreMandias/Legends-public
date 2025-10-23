@@ -2740,9 +2740,9 @@ Pay close attention at all times, surveying the surroundings and assessing every
 Take joy in the suffering of others.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Gain Fatigue recovery and Resolve for each character that is [color=%status%]Bleeding[/color] or has a temporary [color=%status%]Injury[/color] on the field.
+• Gain Melee Skill, Ranged Skill, Fatigue Recovery and Resolve for each character that is [color=%status%]Bleeding[/color] or has a temporary [color=%status%]Injury[/color] on the field. Double the bonus if you're adjacent to bleeding enemies.
 
-• Resolve can double if every character on the battlefield is bleeding or wounded and Fatigue Recovery every turn can reach up to [color=%positive%]5[/color] if a quarter of them are.
+• The fatigue recovery bonus cannot exceed 5.
 ");
 
 ::Const.Strings.PerkDescription.LegendTerrifyingVisage <- ::Legends.tooltip(@"

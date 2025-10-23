@@ -32,7 +32,7 @@ this.perk_legend_specialist_spearfisher <- this.inherit("scripts/skills/legend_s
 		}
 		local item = _skill.getItem();
 
-		if (item == null)
+		if (::Legends.S.isNull(item))
 			return;
 		if (!item.isItemType(this.Const.Items.ItemType.Weapon))
 			return;

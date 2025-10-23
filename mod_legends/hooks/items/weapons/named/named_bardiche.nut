@@ -18,7 +18,7 @@
 			}.bindenv(this));
 			::Legends.Actives.grant(this.weapon, ::Legends.Active.SplitShield, function (_skill) {
 				_skill.setApplyAxeMastery(true);
-				_skill.setFatigueCost(skillToAdd.getFatigueCostRaw() + 5);
+				_skill.setFatigueCost(_skill.getFatigueCostRaw() + 5);
 			}.bindenv(this));
 			return;
 		}

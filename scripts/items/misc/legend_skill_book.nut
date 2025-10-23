@@ -107,7 +107,7 @@ this.legend_skill_book <- ::inherit("scripts/items/item", {
 		if (effect != null)
 			return "Failed to use this item as the user will be recovering from the last reading for another [color=" + ::Const.UI.Color.NegativeValue + "]" + effect.m.HealingTime + "-" + effect.m.HealingTime +"[/color] days.";
 
-		if (_actor.getFlags().getAsInt("LegendsSkillBookCount") <= 1)
+		if (!_actor.getFlags().has("LegendsSkillBookCount"))
 			return true;
 
 		return true;

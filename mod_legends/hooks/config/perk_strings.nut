@@ -403,8 +403,6 @@ Take a deep breath, rest for a turn.
 
 [color=%passive%][u]Active:[/u][/color]
 • Unlocks the [color=%skill%]Recover[/color] skill which allows you to reduce accumulated Fatigue by [color=%negative%]8%[/color] of your maximum Fatigue per Action Point.
-
-[color=%passive%][u]Passive:[/u][/color].
 ");
 ::Const.Perks.PerkDefObjects[::Legends.Perk.Recover].Tooltip = ::Const.Strings.PerkDescription.Recover;
 ::Const.Strings.PerkDescription.Underdog <- ::Legends.tooltip(@"

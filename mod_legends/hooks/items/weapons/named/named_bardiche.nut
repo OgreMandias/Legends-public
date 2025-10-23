@@ -23,5 +23,5 @@
 			return;
 		}
 
-		we
+		weapon.addSkill(_skill);
 });

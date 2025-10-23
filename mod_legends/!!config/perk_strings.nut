@@ -2882,7 +2882,7 @@ Long, slow, deep rending scratches that leave many bleeding grazes.
 If it bleeds, we can kill it.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Gain [color=%positive%]+10%[/color] damage when attacking a [color=%status%]Bleeding[/color] enemy.
+• Gain [color=%positive%]20%[/color] damage when attacking a [color=%status%]Bleeding[/color] enemy.
 
 [color=%active%][u]Active:[/u][/color]
 • Unlocks the [color=%skill%]Prepare to Bleed[/color] skill which primes your next strike to inflict [color=%damage%]5[/color] [color=%status%]Bleed[/color] damage for the next two turns.

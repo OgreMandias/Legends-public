@@ -17,8 +17,8 @@ this.perk_legend_carnage <- this.inherit("scripts/skills/skill", {
 
 		if (_targetEntity.getSkills().hasEffect(::Legends.Effect.Bleeding) || _targetEntity.getSkills().hasEffect(::Legends.Effect.LegendGrazedEffect) && !_targetEntity.isAlliedWith(this.getContainer().getActor()))
 		{
-			_properties.DamageRegularMin *= 1.1;
-			_properties.DamageRegularMax *= 1.1;
+			_properties.DamageRegularMin *= 1.2;
+			_properties.DamageRegularMax *= 1.2;
 		}
 	}
 

@@ -27,9 +27,9 @@ if (!("Perks" in ::Const))
 
 ::Const.Perks.GhoulTree <- {
 	ID = "GhoulTree",
-	Name = "Nachzehrer",
+	Name = "Nachzehrers",
 	Descriptions = [
-		"ghouls"
+		"nachzehrers"
 	],
 	Tree = [
 		[],

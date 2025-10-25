@@ -30,12 +30,6 @@
 				text = "[color=" + this.Const.UI.Color.PositiveValue + "]5%[/color] Experience Gain"
 			},
 			{
-				id = 68,
-				type = "text",
-				icon = "ui/icons/vision.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] Vision"
-			},
-			{
 				id = 69,
 				type = "text",
 				icon = "ui/icons/special.png",
@@ -48,7 +42,6 @@
 	{
 		this.accessory.onUpdateProperties(_properties);
 		_properties.XPGainMult *= 1.05;
-		_properties.Vision += 1;
 	}
 
 	o.onAfterUpdateProperties <- function ( _properties )

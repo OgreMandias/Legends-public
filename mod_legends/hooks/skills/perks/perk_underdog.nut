@@ -7,6 +7,7 @@
 	o.create = function()
 	{
 		create();
+		this.m.Icon = "ui/perks/perk_60.png";
 		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
 		this.m.Order = this.Const.SkillOrder.Perk | this.Const.SkillType.StatusEffect;
 	}

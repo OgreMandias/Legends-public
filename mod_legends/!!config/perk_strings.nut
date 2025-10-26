@@ -2036,7 +2036,7 @@ Master the difficult angles and timings of slinging rocks from afar.
 
 • Accuracy with slings and slingshots is increased by [color=%positive%]+10%[/color], accuracy with Staff Slings is increased by [color=%positive%]+5%[/color] and maximum firing range with slings and slingshots is increased by [color=%positive%]+1[/color].
 
-• Waiting during your turn or using [color=%skill%]Wind Up[/color] will add the [color=%skill%]Prepare Bullet[/color] effect, which will increase damage by [color=%positive%]10%[/color] of your Initiative and the Range of attacks by [color=%positive%]+1[/color]
+• When using One Handed slings, waiting during your turn or using [color=%skill%]Wind Up[/color] will add the [color=%skill%]Prepare Bullet[/color] effect, which will increase damage by [color=%positive%]10%[/color] of your Initiative and the Range of attacks by [color=%positive%]+1[/color]
 
 • Additionally allows you to launch bombs and flasks with a Staff Sling.
 ");

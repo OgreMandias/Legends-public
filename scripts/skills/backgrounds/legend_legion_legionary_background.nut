@@ -156,7 +156,7 @@ this.legend_legion_legionary_background <- this.inherit("scripts/skills/backgrou
 		}
 
 		local actor = this.getContainer().getActor();
-		actor.m.ExcludedInjuries = ::Legends.Legion.ExludedInjures;
+		actor.m.ExcludedInjuries = ::Legends.Legion.ExcludedInjures;
 		actor.getFlags().add("legion_can_command");  //justfies if this background is subject to the legion command skill
 	}
 

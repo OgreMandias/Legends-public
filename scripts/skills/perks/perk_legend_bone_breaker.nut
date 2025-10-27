@@ -2,12 +2,7 @@ this.perk_legend_bone_breaker <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		::Const.Perks.setup(this.m, ::Legends.Perk.LegendBoneBreaker);
-		this.m.Type = this.Const.SkillType.Perk;
-		this.m.Order = this.Const.SkillOrder.Last;
-		this.m.IsActive = false;
-		this.m.IsStacking = false;
-		this.m.IsHidden = false;
+		::Legends.Perks.onCreate(this, ::Legends.Perk.LegendBoneBreaker);
 	}
 
 	function onBeforeTargetHit( _skill, _targetEntity, _hitInfo )

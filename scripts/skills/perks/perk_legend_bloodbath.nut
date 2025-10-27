@@ -2,12 +2,8 @@ this.perk_legend_bloodbath <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		::Const.Perks.setup(this.m, ::Legends.Perk.LegendBloodbath);
+		::Legends.Perks.onCreate(this, ::Legends.Perk.LegendBloodbath);
 		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
-		this.m.Order = this.Const.SkillOrder.Perk;
-		this.m.IsActive = false;
-		this.m.IsStacking = false;
-		this.m.IsHidden = false;
 	}
 
 	function isHidden()
@@ -86,7 +82,7 @@ this.perk_legend_bloodbath <- this.inherit("scripts/skills/skill", {
 	}
 
 	function onUpdate( _properties )
-	{	
+	{
 		local count = this.getBleeders();
 		_properties.Bravery += count;
 		_properties.FatigueRecoveryRate += this.Math.min(5, count);

@@ -3,7 +3,7 @@ this.perk_legend_favoured_enemy_lindwurm <- this.inherit("scripts/skills/legend_
 	function create()
 	{
 		this.legend_favoured_enemy_skill.create();
-		::Const.Perks.setup(this.m, ::Legends.Perk.LegendFavouredEnemyLindwurm);
+		::Legends.Perks.onCreate(this, ::Legends.Perk.LegendFavouredEnemyLindwurm);
 		this.m.ValidTypes = this.Const.LegendMod.FavoriteLindwurm;
 	}
 

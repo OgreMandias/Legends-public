@@ -48,12 +48,7 @@ this.perk_legend_keen_eyesight <- this.inherit("scripts/skills/skill", {
 
 	function create()
 	{
-		::Const.Perks.setup(this.m, ::Legends.Perk.LegendKeenEyesight);
-		this.m.Type = ::Const.SkillType.Perk;
-		this.m.Order = ::Const.SkillOrder.Perk;
-		this.m.IsActive = false;
-		this.m.IsStacking = false;
-		this.m.IsHidden = false;
+		::Legends.Perks.onCreate(this, ::Legends.Perk.LegendKeenEyesight);
 	}
 
 	function onAfterUpdate( _properties )

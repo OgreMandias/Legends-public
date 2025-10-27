@@ -3,7 +3,7 @@ this.perk_legend_favoured_enemy_ork <- this.inherit("scripts/skills/legend_favou
 	function create()
 	{
 		this.legend_favoured_enemy_skill.create();
-		::Const.Perks.setup(this.m, ::Legends.Perk.LegendFavouredEnemyOrk);
+		::Legends.Perks.onCreate(this, ::Legends.Perk.LegendFavouredEnemyOrk);
 		this.m.ValidTypes = this.Const.LegendMod.FavoriteOrc;
 	}
 

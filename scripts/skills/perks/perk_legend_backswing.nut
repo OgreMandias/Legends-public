@@ -11,19 +11,16 @@ this.perk_legend_backswing <- this.inherit("scripts/skills/skill", {
 	},
 	function create()
 	{
-		::Const.Perks.setup(this.m, ::Legends.Perk.LegendBackswing);
+		::Legends.Perks.onCreate(this, ::Legends.Perk.LegendBackswing);
 		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
 		this.m.Order = this.Const.SkillOrder.Perk | this.Const.SkillOrder.Any;
-		this.m.IsActive = false;
-		this.m.IsStacking = false;
-		this.m.IsHidden = false;
 	}
-	
+
 	function isHidden()
 	{
 		return !this.m.IsEffectActive;
 	}
-	
+
 	function getDescription()
 	{
 		return "Use your built up inertia to wreak havoc on the next swing.";
@@ -33,7 +30,7 @@ this.perk_legend_backswing <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.IsEffectActive)
 			return;
-			
+
 		local skills = this.getContainer().getAllSkillsOfType(::Const.SkillType.Active);
 		foreach (skill in skills)
 		{
@@ -44,20 +41,20 @@ this.perk_legend_backswing <- this.inherit("scripts/skills/skill", {
 			}
 		}
 	}
-	
+
 	function onAnySkillExecuted( _skill, _targetTile, _targetEntity, _forFree )
 	{
 		if (_skill == null || this.m.Skills.find(_skill.getID()) == null)
 				return;
-		
+
 		this.m.IsEffectActive = !this.m.IsEffectActive;
 	}
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
-	{			
+	{
 		if (_skill == null || this.m.Skills.find(_skill.getID()) == null || !this.m.IsEffectActive)
 			return;
-		
+
 		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.Swing))
 			_properties.DamageTotalMult *= 0.75;
 		else

@@ -3,7 +3,7 @@ this.perk_legend_favoured_enemy_noble <- this.inherit("scripts/skills/legend_fav
 	function create()
 	{
 		this.legend_favoured_enemy_skill.create();
-		::Const.Perks.setup(this.m, ::Legends.Perk.LegendFavouredEnemyNoble);
+		::Legends.Perks.onCreate(this, ::Legends.Perk.LegendFavouredEnemyNoble);
 		this.m.ValidTypes = this.Const.LegendMod.FavoriteNoble;
 	}
 

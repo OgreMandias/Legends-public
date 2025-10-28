@@ -4,7 +4,7 @@
 		create();
 		// as spider bite is buffed, and ai expects really big dmg with it now, this lowers the attack priority to around 66% chance
 		// which is similar to vanilla numbers
-		this.m.Properties.TargetPriorityDamageMult = 0.1;
+		this.m.Properties.TargetPriorityDamageMult = 0.065;
 	}
 });
 

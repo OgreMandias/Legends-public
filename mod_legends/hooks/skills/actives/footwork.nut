@@ -14,4 +14,13 @@
 			this.m.ActionPointCost = 2;
 		}
 	}
+
+	o.onAfterUpdate = function (_properties)
+	{ // fix vanilla bullshit with hard setting fat cost in onAfterUpdate
+		_properties.SkillCostAdjustments.push({
+			ID = this.m.ID,
+			APAdjust = this.getContainer().getActor().getSkills().hasSkill("effects.goblin_grunt_potion") ? -1 : 0,
+			FatigueMultAdjust = _properties.IsFleetfooted ? 0.5 : 1.0
+		});
+	}
 });

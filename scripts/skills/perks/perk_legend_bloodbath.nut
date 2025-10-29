@@ -44,41 +44,21 @@ this.perk_legend_bloodbath <- this.inherit("scripts/skills/skill", {
 	function getBleeders()
 	{
 		if (!("Entities" in this.Tactical))
-		{
 			return 0;
-		}
+
 		if (this.Tactical.Entities == null)
-		{
 			return 0;
-		}
 
 		if (!this.Tactical.isActive())
-		{
 			return 0;
-		}
-		local count = 0;
 
-		local actor = this.getContainer().getActor();
+		local myself = this.getContainer().getActor();
 		local myTile = actor.getTile();
-		local actors = this.Tactical.Entities.getAllInstancesAsArray();
-		foreach( a in actors )
-		{
-			if (a.isAlliedWith(actor))
-				continue;
-			if (a.getSkills().hasEffect(::Legends.Effect.Bleeding) || a.getSkills().hasEffect(::Legends.Effect.LegendGrazedEffect)  || a.getSkills().hasSkillOfType(this.Const.SkillType.TemporaryInjury))
-			{
-				if (myTile.getDistanceTo(a.getTile()) > 2)
-				{
-					count += 1;
-				}
-				else
-				{
-					count += 2;
-				}
-			}
-		}
 
-		return count;
+		return ::Tactical.Entities.getAllInstancesAsArray()
+			.filter(@(_, _actor) !::Legends.S.skillEntityAliveCheck(_actor) && !_actor.isAlliedWith(myself))
+			.map(@(_actor) myTile.getDistanceTo(_actor.getTile()) > 1 ? 1 : 2)
+			.reduce(@(a, b) a + b);
 	}
 
 	function onUpdate( _properties )

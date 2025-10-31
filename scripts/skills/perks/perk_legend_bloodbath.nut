@@ -56,7 +56,7 @@ this.perk_legend_bloodbath <- this.inherit("scripts/skills/skill", {
 		local myTile = myself.getTile();
 
 		local bonus = ::Tactical.Entities.getAllInstancesAsArray()
-			.filter(@(_, _actor) !::Legends.S.skillEntityAliveCheck(_actor) && !_actor.isAlliedWith(myself))
+			.filter(@(_, _actor) !::Legends.S.skillEntityAliveCheck(_actor) && !_actor.isAlliedWith(myself) && _actor.getTile() != null && _actor.getSkills() != null)
 			.filter(@(_, _actor) _actor.getSkills().hasEffect(::Legends.Effect.Bleeding) || _actor.getSkills().hasEffect(::Legends.Effect.LegendGrazedEffect)  || _actor.getSkills().hasSkillOfType(::Const.SkillType.TemporaryInjury))
 			.map(@(_actor) myTile.getDistanceTo(_actor.getTile()) > 1 ? 1 : 2)
 			.reduce(@(a, b) a + b);

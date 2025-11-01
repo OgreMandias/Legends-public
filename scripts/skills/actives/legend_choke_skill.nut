@@ -51,18 +51,6 @@ this.legend_choke_skill <- this.inherit("scripts/skills/skill", {
 				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] damage to Choked, Tackled or Grappled enemies"
 			},
 			{
-				id = 7,
-				type = "text",
-				icon = "ui/icons/special.png",
-				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to hit the head"
-			},
-			{
-				id = 8,
-				type = "text",
-				icon = "ui/icons/special.png",
-				text = "Completely ignores armor"
-			},
-			{
 				id = 9,
 				type = "text",
 				icon = "ui/icons/special.png",

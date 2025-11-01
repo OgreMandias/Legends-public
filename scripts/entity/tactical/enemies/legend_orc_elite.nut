@@ -297,6 +297,7 @@ this.legend_orc_elite <- this.inherit("scripts/entity/tactical/actor", {
 		if(::Legends.isLegendaryDifficulty())
 		{
 			this.m.Hitpoints = 1.5 * b.Hitpoints;
+			::Legends.Perks.grant(this, ::Legends.Perk.Brawny);
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendLastStand);
 			::Legends.Perks.grant(this, ::Legends.Perk.Underdog);
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendImmovableObject);

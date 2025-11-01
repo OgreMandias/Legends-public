@@ -1591,7 +1591,7 @@ Your skill on the butcher's block seems to be easily translated to chopping limb
 Diligent practice with the hammer each day has proven to be equally good at crafting armor and finding it's weak points.
 
 [color=%passive%][u]Passive:[/u][/color]
-• While using a One Handed Hammer gain [color=%positive%]+12[/color] chance to hit and [color=%positive%]+30%[/color] effectiveness vs armor.
+• While using a Blacksmith's Hammer gain [color=%positive%]+12[/color] chance to hit and [color=%positive%]+30%[/color] effectiveness vs armor.
 
 • When taking [color=%perk%]Hammer Mastery[/color] you will also gain [color=%positive%]10%[/color] bonus damage.
 

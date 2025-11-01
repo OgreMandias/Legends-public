@@ -108,8 +108,6 @@
 
 	o.assignRandomEquipment = function ()
 	{
-		local r = this.Math.rand(1, 8);
-
 		local weapons = [
 			"orc_axe",
 			"orc_cleaver",
@@ -120,7 +118,7 @@
 			"legend_bough",
 			"legend_skullbreaker"
 		];
-		this.m.Items.equip(this.new("scripts/items/greenskins/" + shields[this.Math.rand(0, shields.len() - 1)]));
+		this.m.Items.equip(this.new("scripts/items/greenskins/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 
 		local item = this.Const.World.Common.pickArmor([
 			[1, ::Legends.Armor.Greenskin.orc_berserker_light_armor],
@@ -154,7 +152,7 @@
 			"weapons/named/legend_named_orc_flail_2h",
 			"weapons/named/named_orc_axe"
 		];
-		this.m.Items.equip(this.new("scripts/items/" + shields[this.Math.rand(0, shields.len() - 1)]));
+		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 
 		::Legends.Perks.grant(this, ::Legends.Perk.CripplingStrikes);
 		if (::Legends.isLegendaryDifficulty())

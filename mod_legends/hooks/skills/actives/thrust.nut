@@ -15,6 +15,8 @@
 			this.m.ActionPointCost = 6;
 			this.m.DirectDamageMult = 0.4;
 			this.m.FatigueCost = 15;
+			this.m.InjuriesOnBody = this.Const.Injury.BluntAndPiercingBody;
+			this.m.InjuriesOnHead = this.Const.Injury.BluntAndPiercingHead;
 		}
 	}
 

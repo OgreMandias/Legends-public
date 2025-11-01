@@ -562,6 +562,7 @@ this.legend_stollwurm_tail <- this.inherit("scripts/entity/tactical/actor", {
 		::Legends.Actives.grant(this, ::Legends.Active.TailSlam);
 		::Legends.Actives.grant(this, ::Legends.Active.TailSlamBig);
 		::Legends.Actives.grant(this, ::Legends.Active.TailSlamSplit);
+		::Legends.Actives.grant(this, ::Legends.Active.TailSlamZoc);
 		::Legends.Perks.grant(this, ::Legends.Perk.HoldOut);
 		::Legends.Perks.grant(this, ::Legends.Perk.ReachAdvantage);
 		::Legends.Perks.grant(this, ::Legends.Perk.Fearsome);

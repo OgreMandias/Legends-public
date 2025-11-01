@@ -108,6 +108,7 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 					return;
 
 				// i need to somehow do this more dynamically
+				this.Const.SkillCounter++
 				::Time.scheduleEvent(::TimeUnit.Virtual, ::Const.Combat.RiposteDelay, this.executeFollowUpAttack.bindenv(this), {
 					TargetTile = _targetTile,
 					Skill = !::MSU.isNull(m.offHandSkill) ? m.offHandSkill : m.HandToHand
@@ -117,11 +118,14 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 	}
 
 	function executeFollowUpAttack( _info )
-	{
-		if (::Legends.S.skillEntityAliveCheck(_info.TargetTile.getEntity()))
+	{	
+		local entity = _info.TargetTile.getEntity();
+		if (::Legends.S.skillEntityAliveCheck(entity))
 			return;
-		if (!::MSU.isNull(_info.Skill))
-			_info.Skill.useForFree(_info.TargetTile);
+		if (::MSU.isNull(_info.Skill))
+			return;
+
+		_info.Skill.useForFree(_info.TargetTile);
 	}
 
 	function onUpdate( _properties )

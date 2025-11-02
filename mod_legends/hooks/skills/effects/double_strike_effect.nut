@@ -10,7 +10,7 @@
 
 	o.getDescription = function()
 	{
-		return "Having just landed a hit, this character is ready to perform a powerful follow-up strike! The next attack will inflict [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] damage to a single target. If the attack misses, the effect is wasted.";
+		return "Having just landed a hit, this character is ready to perform a powerful follow-up strike! The next attack will inflict [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color] damage to a single target decrease fatigue cost by [color=" + this.Const.UI.Color.NegativeValue + "]20%[/color]. If the attack misses, the effect is wasted.";
 	}
 
 	o.onAdded = function()
@@ -23,7 +23,8 @@
 
 	o.onUpdate <- function( _properties )
 	{
-		_properties.DamageTotalMult *= 1.2;
+		_properties.DamageTotalMult *= 1.25;
+		_properties.FatigueEffectMult *= 0.8;
 	}
 	
 	o.onTurnEnd <- function()

@@ -476,7 +476,7 @@ Heavy armor, a trusty shield and your heels dug into the ground and you can weat
 Master the art of following up for devastating effects.
 
 [color=%passive%][u]Passive:[/u][/color]
-• After landing a hit, the next attack this turn does [color=%positive%]+25%[/color] overall damage and it costs [color=%negative%]-20%[/color] less Fatigue than normal.
+• After landing a hit, the next attack this turn does [color=%positive%]25%[/color] overall damage and it costs [color=%negative%]20%[/color] less Fatigue than normal.
 
 • If the attack misses, the effect is lost.
 ");

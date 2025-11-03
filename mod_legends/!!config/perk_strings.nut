@@ -3826,8 +3826,10 @@ My sword is my best friend. It is my life. I must master it as I must master my 
 'You maggots may yet earn my respect'.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Kills made by veteran mercenaries earn [color=%positive%]+100%[/color] shared XP for mercenaries who are level 11 or under.
+• Kills made by veteran mercenaries in the company earn [color=%positive%]+100%[/color] shared XP for mercenaries who are not yet veteran.
 ");
+
+• Veterans are level 12 and over. This character does not need to be in combat for the effect to work. 												   • 
 
 ::Const.Strings.PerkDescription.LegendTacticalManeuvers <- ::Legends.tooltip(@"
 Every fight is like a dance, and you have just the right moves.

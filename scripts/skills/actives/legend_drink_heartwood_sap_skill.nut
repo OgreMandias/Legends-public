@@ -9,7 +9,7 @@ this.legend_drink_heartwood_sap_skill <- this.inherit("scripts/skills/actives/ba
 		this.m.IconDisabled = "skills/blood_potion_square_bw.png";
 		this.m.Overlay = "active_144";
 		this.m.StatusEffect = "status_effect_93";
-		this.m.Effects = ["legend_heartwood_sap_effect"];
+		this.m.Effects = ["legend_greenwood_sap_effect"];
 	}
 
 	function getTooltip()

@@ -13,13 +13,13 @@ this.perk_legend_onslaught <- this.inherit("scripts/skills/skill", {
 			"sounds/combat/bash_hit_02.wav",
 			"sounds/combat/bash_hit_03.wav"
 		];
-		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect
+		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
 	}
 
 	function getTooltip()
 	{
 		local tooltip = this.skill.getTooltip();
-		local fat = getBonus()
+		local fat = getBonus();
 
 		tooltip.push({
 			id = 10,

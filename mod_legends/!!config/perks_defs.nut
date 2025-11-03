@@ -4304,8 +4304,8 @@ perkDefObjects.push({
 	Script = "scripts/skills/perks/perk_battering_ram",
 	Name = ::Const.Strings.PerkName.BatteringRam,
 	Tooltip = ::Const.Strings.PerkDescription.BatteringRam,
-	Icon = "ui/perks/passive_03.png",
-	IconDisabled = "ui/perks/passive_03_sw.png",
+	Icon = "skills/passive_03.png",
+	IconDisabled = "skills/passive_03_sw.png",
 	Const = "BatteringRam"
 });
 

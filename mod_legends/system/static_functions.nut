@@ -202,7 +202,14 @@
 }
 
 ::Legends.S.oneOf <- function (_value, ...) {
-	foreach(val in vargv) {
+	if (vargv.len() == 0) {
+		::logError("::Legends.S.oneOf used with empty args, returning false");
+		return false;
+	}
+	local arr = vargv;
+	if (typeof vargv[0] == "array")
+		arr = vargv[0];
+	foreach(val in arr) {
 		if (_value == val)
 			return true;
 	}

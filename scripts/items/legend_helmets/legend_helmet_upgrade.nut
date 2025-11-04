@@ -123,17 +123,10 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 		if (this.getContainer().getActor() == null)
 			return this.m.StaminaModifier;
 
-		local skill = ::Legends.Perks.get(this, ::Legends.Perk.LegendFashionable);
-		if (skill)
-		{
-			foreach (slot in skill.m.FreeSlotTypes)
-			{
-				if (this.m.SlotType == slot)
-				{
-					return 0;
-				}
-			}
-		}
+		local perk = ::Legends.Perks.get(this, ::Legends.Perk.LegendFashionable);
+		if (perk != null && ::Legends.S.oneOf(this.m.Type, perk.m.FreeSlotTypes))
+			return 0;
+
 		return this.m.StaminaModifier;
 	}
 

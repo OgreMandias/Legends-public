@@ -30,7 +30,7 @@
 
 			if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
 			{
-				this.Tactical.EventLog.log(stagger.getLogEntryOnAdded(this.Const.UI.getColorizedEntityName(_user), this.Const.UI.getColorizedEntityName(target)));
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " struck a blow that leaves " + this.Const.UI.getColorizedEntityName(_targetEntity) + " staggered");
 			}
 		}
 

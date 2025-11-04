@@ -22,7 +22,7 @@
 			return success;
 
 		if (::Legends.S.skillEntityAliveCheck(target))
-			return ret;
+			return success;
 
 		if (success && target.isAlive())
 		{

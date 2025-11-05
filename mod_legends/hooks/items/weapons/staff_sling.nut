@@ -4,8 +4,9 @@
 	{
 		create();
 		this.m.Description = "A simple leather sling on a staff, used to hurl stones at the enemy. It features a bigger pouch for heavier rocks, but trades off precision for damage and range. With rocks being everywhere it will never run out of ammunition.";
-		this.m.Categories = "Sling, Two-Handed";
+		this.m.Categories = "Sling/Staff, Two-Handed";
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Defensive | this.Const.Items.ItemType.TwoHanded;
+		this.m.WeaponType = this.Const.Items.WeaponType.Sling | this.Const.Items.WeaponType.Staff;
 		this.m.StaminaModifier = -8;
 		this.m.RangeMin = 2;
 		this.m.RangeMax = 8;

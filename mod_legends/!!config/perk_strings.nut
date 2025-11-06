@@ -1229,7 +1229,7 @@ Learn to inscribe rune sigils for weapons.
 Learn to inscribe rune sigils for helmets.
 
 [color=%passive%][u]Passive:[/u][/color]
- • Allows the Vala to inscribe rocks with helmet specific rune sigils while encamped to create powerful rune stones.
+• Allows the Vala to inscribe rocks with helmet specific rune sigils while encamped to create powerful rune stones.
 
 • Possibilities: bravery, clarity, luck.
 ");
@@ -2813,7 +2813,7 @@ Others see it as magic, but your deft hands know better.
 [color=%passive%][u]Passive:[/u][/color]
 • Grants a baseline 99% chance to [color=%skill%]Break Free[/color] from rooting effects, such as nets and webs.
 
- • Reduces the Action Point cost of [color=%skill%]Break Free[/color] by [color=%negative%]1[/color].
+• Reduces the Action Point cost of [color=%skill%]Break Free[/color] by [color=%negative%]1[/color].
 ");
 
 ::Const.Strings.PerkDescription.LegendGatherer <- ::Legends.tooltip(@"
@@ -3093,7 +3093,7 @@ Put to use your skill in the creation and maintenance of siege weapons.
 Many years spent repairing and packing nets allows you to create nets and wield them more effectively.
 
 [color=%passive%][u]Passive:[/u][/color]
- • Allows your company to repair a broken net (refill ammo charges) for a cost of 15 ammo.
+• Allows your company to repair a broken net (refill ammo charges) for a cost of 15 ammo.
 
 • Grants[color=%positive%]+10[/color] Melee Defense while holding a net.
 
@@ -3515,7 +3515,7 @@ The ability to cut and shape wood is a craft few master.
 
 ::Const.Strings.PerkDescription.LegendMagicHailstone <- ::Legends.tooltip(@"
 [color=%active%][u]Active:[/u][/color]
- • Conjure a heavy ball of ice to crush your enemies.
+• Conjure a heavy ball of ice to crush your enemies.
 ");
 
 ::Const.Strings.PerkDescription.LegendMagicHealingWind <- ::Legends.tooltip(@"

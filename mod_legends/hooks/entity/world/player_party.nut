@@ -351,7 +351,7 @@
 
 	o.calculateModifiers <- function ()
 	{
-		if (this.World.State.m.AppropriateTimeToRecalc == 1)	//Leonion's fix
+		if (this.World.State.m.AppropriateTimeToRecalc == 1) //Leonion's fix
 		{
 			this.calculateBarterMult();
 			this.calculateWageModifier();
@@ -451,29 +451,12 @@
 		this.m.MedsMultiplier = s;
 	}
 
-	o.calculateStashModifier <- function (resize = true)
+	o.calculateStashModifier <- function (_resize = true)
 	{
-		if (::World.State.m.AppropriateTimeToRecalc == 1)	////Leonion's fix
-		{
-			local s = ::World.Flags.getAsInt("LegendStartingStash");
-
-			foreach( bro in ::World.getPlayerRoster().getAll())
-			{
-				s += bro.getStashModifier();
-			}
-
-			if (this.World.Retinue.hasFollower("follower.quartermaster"))
-			{
-				s += 27;
-			}
-
-			if (resize && s != ::Stash.getCapacity())
-				::Stash.resize(s);
-
-			return s;
+		if (_resize || ::World.State.m.AppropriateTimeToRecalc == 1) {	//Leonion's fix
+			::Legends.Stash.resize();
 		}
-
-		return ::Stash.getCapacity();
+		return ::Legends.Stash.getSize();
 	}
 
 	local onInit = o.onInit;

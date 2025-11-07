@@ -33,7 +33,7 @@
 		if (_elementId in obituaryTooltips)
 		{
 			local data = obituaryTooltips[_elementId];
-			
+
 			return [
 				{ id = 1, type = "title", text = data[0] },
 				{ id = 2, type = "description", text = data[1] }
@@ -42,7 +42,7 @@
 
 		return null;
 	}
-	
+
 	// Simple manual tooltip builder
 	function BuildTooltip(skill, description = null)
 	{
@@ -65,7 +65,7 @@
 		{
 			return statTooltip;
 		}
-		
+
 		if (!_elementId || _elementId == "" || _elementId.find("scripts/skills/") == null)
 		{
 			return original_onQueryUIElementTooltipData(_entityId, _elementId, _elementOwner);
@@ -79,7 +79,7 @@
 			desc = skill.m.BackgroundDescription;
 			return BuildTooltip(skill, desc);
 		}
-		
+
 		if (_elementId.find("trait") != null || _elementId.find("injury") != null)
 		{
 			// description overrides due to dynamic terms which we can't get due to a lack of an actor.
@@ -92,7 +92,7 @@
 
 			return BuildTooltip(skill, desc);
 		}
-		
+
 		// Legends has perks_def/perk_strings, which contains the full tooltip body, rather than a seperate Description.
 		if (_elementId.find("perk") != null)
 		{
@@ -105,7 +105,7 @@
 
 			return BuildTooltip(skill, desc);
 		}
-		
+
 		// Fallbacks that should be never be called, but just in case.
 		foreach (fn in ["getTooltip", "getGenericTooltip"])
 		{

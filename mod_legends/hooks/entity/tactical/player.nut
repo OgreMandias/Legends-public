@@ -1728,8 +1728,8 @@
 			if ((s.isType(Trait) || s.isType(Background)) && !s.isType(StatusEffect) && !s.isType(Special))
 			{
 				local trait_data = {
-					"id": ::IO.scriptFilenameByHash(s.ClassNameHash),
-					"icon": s.getIcon()
+					id = ::IO.scriptFilenameByHash(s.ClassNameHash),
+					icon = s.getIcon()
 				};
 				list_traits.append(trait_data);
 			}
@@ -1759,8 +1759,8 @@
 			{
 				local def = matches[0];  // first match (should only be one)
 				list_perks.append({
-					"id": scriptPath,
-					"icon": def.Icon
+					id = scriptPath,
+					icon = def.Icon
 				});
 			}
 		}
@@ -1779,8 +1779,8 @@
 			if(s.isType(this.Const.SkillType.PermanentInjury))
 			{
 				local injury_data = {
-					"id": ::IO.scriptFilenameByHash(s.ClassNameHash),
-					"icon": s.getIcon()
+					id = ::IO.scriptFilenameByHash(s.ClassNameHash),
+					icon = s.getIcon()
 				};
 				list_perminjuries.append(injury_data);
 			}

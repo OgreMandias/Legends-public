@@ -97,7 +97,7 @@ this.legend_kick_skill <- this.inherit("scripts/skills/skill", {
 			id = 9,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + this.Const.Combat.FatigueReceivedPerHit * 2 + "[/color] fatigue on hit"
+			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + this.m.FatigueDamage + "[/color] fatigue on hit"
 		});
 		return ret;
 	}
@@ -133,9 +133,12 @@ this.legend_kick_skill <- this.inherit("scripts/skills/skill", {
 
 		local success = this.attackEntity(_user, target);
 
-		if (!success || !_user.isAlive() || _user.isDying()) return false;
+		if (::Legends.S.skillEntityAliveCheck(_user, target))
+			return success;
 
-		if (!target.isAlive() || target.isDying()) return success;
+		if (!success)
+			return success;
+
 		this.applyFatigueDamage(target, this.m.FatigueDamage);
 
 		// Remove enemy stances

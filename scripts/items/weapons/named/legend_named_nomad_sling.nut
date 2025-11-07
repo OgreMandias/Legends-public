@@ -5,6 +5,7 @@ this.legend_named_nomad_sling <- this.inherit("scripts/items/weapons/named/named
 		this.named_weapon.create();
 		this.m.ID = "weapon.legend_named_nomad_sling";
 		this.m.NameList = this.Const.Strings.SlingNames;
+		this.m.Categories = "Sling/Staff, Two-Handed";
 		this.m.Description = "A reinforced sling on a metal staff of the highest craftsmanship. It features a bigger pouch for heavier rocks, but trades off precision for damage and range. With rocks being everywhere it will never run out of ammunition.";
 		this.m.IconLarge = "weapons/ranged/legend_named_slingstaff_02.png";
 		this.m.Icon = "weapons/ranged/legend_named_slingstaff_02_70x70.png";

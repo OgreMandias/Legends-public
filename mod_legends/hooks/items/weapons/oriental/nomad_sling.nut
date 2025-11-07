@@ -3,7 +3,7 @@
 	o.create = function ()
 	{
 		create();
-		this.m.Categories = "Sling, Two-Handed";
+		this.m.Categories = "Sling/Staff, Two-Handed";
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Defensive | this.Const.Items.ItemType.TwoHanded;
 		this.m.WeaponType = this.Const.Items.WeaponType.Sling | this.Const.Items.WeaponType.Staff;
 		this.m.Value = 800;

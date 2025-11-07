@@ -27,6 +27,8 @@
 			this.World.Assets.m.MedicineMaxAdditional  = 50;
 		if ("ArmorPartsMaxAdditional" in this.World.Assets.m)
 			this.World.Assets.m.ArmorPartsMaxAdditional = 50;
+
+		::Legends.Stash.resize();
 	}
 
 	o.onEvaluate = function () {

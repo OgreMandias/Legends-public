@@ -65,10 +65,9 @@
 	local upgradeInventory = o.upgradeInventory;
 	o.upgradeInventory = function()
 	{
-		local before = ::World.Assets.getStash().getCapacity();
 		upgradeInventory();
-		local diff = ::World.Assets.getStash().getCapacity() - before;
-		::World.Flags.increment("LegendStartingStash", diff);
+		::Legends.Stash.upgradeCart();
+		::Legends.Stash.resize();
 	}
 
 	o.hasFollowersToRemove <- function ()

@@ -797,6 +797,15 @@
   <sprite id="shield_heater_106" offsetY="35" ic="FF2D3A4A" width="130" height="142" img="icons\shield_heater_106.png" left="7" right="53" top="-71" bottom="3"/>
   <sprite id="shield_heater_106_damaged" offsetY="35" ic="FF273545" width="130" height="142" img="icons\shield_heater_106_damaged.png" left="7" right="53" top="-71" bottom="5"/>
   <sprite id="shield_heater_106_destroyed" offsetY="26" f="640A" ic="FF273545" width="102" height="54" img="icons\shield_heater_106_destroyed.png" left="-42" right="40" top="-28" bottom="25"/>
+  <sprite id="shield_kite_101_damaged" offsetY="35" ic="FF4F4B4B" width="130" height="142" img="icons\shield_kite_101_damaged.png"  left="7" right="55" top="-70" bottom="22" />
+  <sprite id="shield_kite_101_destroyed" offsetY="-18" f="6401" ic="FF45413E" img="icons\shield_kite_101_destroyed.png" left="-44" right="45" />
+  <sprite id="shield_kite_101" offsetY="35" ic="FF564E47" width="130" height="142" img="icons\shield_kite_101.png"  left="4" right="62" top="-70" bottom="22" />
+  <sprite id="shield_kite_102_damaged" offsetY="35" ic="FF4F4B4B" width="130" height="142" img="icons\shield_kite_102_damaged.png"  left="7" right="55" top="-70" bottom="22" />
+  <sprite id="shield_kite_102_destroyed" offsetY="-18" f="6401" ic="FF45413E" img="icons\shield_kite_102_destroyed.png" left="-44" right="45" />
+  <sprite id="shield_kite_102" offsetY="35" ic="FF564E47" width="130" height="142" img="icons\shield_kite_102.png"  left="4" right="62" top="-70" bottom="22" />
+  <sprite id="shield_kite_103_damaged" offsetY="35" ic="FF4F4B4B" width="130" height="142" img="icons\shield_kite_103_damaged.png"  left="7" right="55" top="-70" bottom="22" />
+  <sprite id="shield_kite_103_destroyed" offsetY="-18" f="6401" ic="FF45413E" img="icons\shield_kite_103_destroyed.png" left="-44" right="45" />
+  <sprite id="shield_kite_103" offsetY="35" ic="FF564E47" width="130" height="142" img="icons\shield_kite_103.png"  left="4" right="62" top="-70" bottom="22" />
   <sprite id="shield_kite_104_damaged" offsetY="35" ic="FF4F4B4B" width="130" height="142" img="icons\shield_kite_104_damaged.png"  left="7" right="55" top="-70" bottom="22" />
   <sprite id="shield_kite_104_destroyed" offsetY="-18" f="6401" ic="FF45413E" img="icons\shield_kite_104_destroyed.png" left="-44" right="45" />
   <sprite id="shield_kite_104" offsetY="35" ic="FF564E47" width="130" height="142" img="icons\shield_kite_104.png"  left="4" right="62" top="-70" bottom="22" />

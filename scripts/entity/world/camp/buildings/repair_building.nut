@@ -201,7 +201,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 	// Base: ArmorPartsPerArmor=0.067 (~1/15).
 	// If upgraded, reduce tools-per-condition by ~25% yielding ~20 per tool instead of 15.
 	function getConversionRate() {
-		local cons = this.World.Assets.m.ArmorPartsPerArmor * (this.getUpgraded() ? (3.0 / 4.0) : 1.0);
+		local cons = this.World.Assets.m.ArmorPartsPerArmor * ::Legends.S.getToolEfficiency();
 		return this.Math.floor(1.0 / cons + 0.5);
 	}
 
@@ -242,10 +242,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		// Align consumption with field repairs.
 		// Base: ArmorPartsPerArmor=0.067 (~1/15).
 		// If upgraded, reduce tools-per-condition by ~25% yielding ~20 per tool instead of 15.
-		ret.Consumption = this.World.Assets.m.ArmorPartsPerArmor;
-		if (this.getUpgraded()) {
-			ret.Consumption = ret.Consumption * (3.0 / 4.0);
-		}
+		ret.Consumption = this.World.Assets.m.ArmorPartsPerArmor * ::Legends.S.getToolEfficiency();
 
 		ret.Craft += this.m.BaseCraft;
 		ret.Craft = ret.Craft * this.World.Assets.m.RepairSpeedMult;
@@ -273,7 +270,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			points += r.Item.getRepairMax() - r.Item.getRepair()
 		}
 		local modifiers = this.getModifiers();
-		return this.Math.ceil(points * modifiers.Consumption * ::Legends.S.getToolEfficiency());
+		return this.Math.ceil(points * modifiers.Consumption);
 	}
 
 	function getRequiredTime()
@@ -351,7 +348,6 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		local modifiers = this.getModifiers();
 		modifiers.Craft = this.Math.round(modifiers.Craft); //important
 
-		local toolEfficiency = ::Legends.S.getToolEfficiency();
 		foreach (i, r in this.m.Repairs)
 		{
 			if (r == null)
@@ -371,7 +367,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
 			if (this.World.Assets.isConsumingAssets()) {
 				// Round to 3 decimal places for better determinism
-				local toolsUsed = this.Math.round(needed * modifiers.Consumption * toolEfficiency * 1000.0) / 1000.0;
+				local toolsUsed = this.Math.round(needed * modifiers.Consumption * 1000.0) / 1000.0;
 				this.m.ToolsUsed += toolsUsed;
 				this.World.Assets.addArmorPartsF(toolsUsed * -1.0);
 			}

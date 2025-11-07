@@ -22,12 +22,6 @@
 				type = "text",
 				icon = "ui/icons/hitchance.png",
 				text = "Additionally if your target is dazed or parried hitchance is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color], if they are stunned or rooted you gain [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color], if they are grappled, sleeping, or fleeing you gain [color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color]"
-			},
-			{
-				id = 8,
-				type = "text",
-				icon = "ui/icons/special.png",
-				text = "Completely ignores armor"
 			}
 		]);
 		return tooltip;

@@ -193,12 +193,23 @@
 	foreach (bro in this.World.getPlayerRoster().getAll()) {
 		toolEfficiencyModifier += bro.getToolEfficiencyModifier();
 	}
+	// Repair tent adds ~25% efficiency (yields ~20 dura per tool instead of 15 ie. 33% increase).
+	if (this.World.Assets.getStash().hasItem(::Legends.Camp.Tent.Repair)) {
+		toolEfficiencyModifier += 25;
+	}
 	// Cap efficiency at 50%
 	return this.Math.maxf(0.5, (100.0 - toolEfficiencyModifier) / 100.0);
 }
 
 ::Legends.S.oneOf <- function (_value, ...) {
-	foreach(val in vargv) {
+	if (vargv.len() == 0) {
+		::logError("::Legends.S.oneOf used with empty args, returning false");
+		return false;
+	}
+	local arr = vargv;
+	if (typeof vargv[0] == "array")
+		arr = vargv[0];
+	foreach(val in arr) {
 		if (_value == val)
 			return true;
 	}

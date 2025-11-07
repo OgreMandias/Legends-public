@@ -194,13 +194,13 @@
 	local setCampaignSettings = o.setCampaignSettings;
 	o.setCampaignSettings = function ( _settings )
 	{
-		getStash().setResizable(true); // to make sure all starting item to be added without issue
+		this.getStash().setResizable(true); // to make sure all starting item to be added without issue
 
 		if (!("IsExplorationMode" in _settings))
 			_settings.IsExplorationMode <- false;
 
 		setCampaignSettings(_settings);
-		calculateStartingStashSize(_settings);
+		this.calculateStartingStashSize(_settings);
 
 		/* probably don't need this as legendary economic makes all starting resources to be 0 afterall
 		if (_settings.BudgetDifficulty == this.Const.Difficulty.Legendary &&
@@ -221,10 +221,10 @@
 	o.calculateStartingStashSize <- function( _settings )
 	{
 		local size = ::Const.LegendMod.MaxResources[_settings.EconomicDifficulty].Stash + ::World.Assets.getOrigin().getStashModifier();
-		getStash().setResizable(false); // turn off the infinite stash size
-		getStash().sort();
-		getStash().resize(size);
-		::World.Flags.set("LegendStartingStash", size);
+		this.getStash().setResizable(false); // turn off the infinite stash size
+		this.getStash().sort();
+		this.getStash().resize(size);
+		::Legends.Stash.setStartingSize(size);
 	}
 
 	o.getHealingRequired = function ()
@@ -1226,15 +1226,7 @@
 		}
 		this.m.LastDayResourcesUpdated = _in.readU16();
 
-		local current = getStash().getCapacity();
-		local s = 0;
-
-		foreach( bro in ::World.getPlayerRoster().getAll())
-		{
-			s += bro.getStashModifier();
-		}
-
-		::World.Flags.set("LegendStartingStash", ::Math.max(0, current - s)); // switch to the new way to calculate stash modifier
+		::Legends.Stash.resize();
 	}
 
 });

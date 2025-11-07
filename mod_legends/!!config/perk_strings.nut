@@ -474,7 +474,7 @@ Heavy armor, a trusty shield and your heels dug into the ground and you can weat
 Master the art of following up for devastating effects.
 
 [color=%passive%][u]Passive:[/u][/color]
-• After landing a hit, the next attack this turn does [color=%positive%]+25%[/color] overall damage and it costs [color=%negative%]-20%[/color] less Fatigue than normal.
+• After landing a hit, the next attack this turn does [color=%positive%]25%[/color] overall damage and it costs [color=%negative%]20%[/color] less Fatigue than normal.
 
 • If the attack misses, the effect is lost.
 ");
@@ -1216,7 +1216,7 @@ Learn to inscribe rune sigils for weapons.
 Learn to inscribe rune sigils for helmets.
 
 [color=%passive%][u]Passive:[/u][/color]
- • Allows the Vala to inscribe rocks with helmet specific rune sigils while encamped to create powerful rune stones.
+• Allows the Vala to inscribe rocks with helmet specific rune sigils while encamped to create powerful rune stones.
 
 • Possibilities: bravery, clarity, luck.
 ");
@@ -2512,7 +2512,7 @@ Endless training in holding the line in a spear wall has made it a second nature
 [color=%passive%][u]Passive:[/u][/color]
 • [color=%skill%]Spearwall[/color] costs [color=%negative%]-50%[/color] less Fatigue.
 
-• [color=%skill%]Spearwall[/color] AP cost is reduced to [color=%negative%]3[/color].
+• [color=%skill%]Spearwall[/color] AP cost is reduced by [color=%negative%]1[/color].
 
 • [color=%skill%]Spearwall[/color] does [color=%positive%]+25%[/color] damage.
 ");
@@ -2800,7 +2800,7 @@ Others see it as magic, but your deft hands know better.
 [color=%passive%][u]Passive:[/u][/color]
 • Grants a baseline 99% chance to [color=%skill%]Break Free[/color] from rooting effects, such as nets and webs.
 
- • Reduces the Action Point cost of [color=%skill%]Break Free[/color] by [color=%negative%]1[/color].
+• Reduces the Action Point cost of [color=%skill%]Break Free[/color] by [color=%negative%]1[/color].
 ");
 
 ::Const.Strings.PerkDescription.LegendGatherer <- ::Legends.tooltip(@"
@@ -3080,7 +3080,7 @@ Put to use your skill in the creation and maintenance of siege weapons.
 Many years spent repairing and packing nets allows you to create nets and wield them more effectively.
 
 [color=%passive%][u]Passive:[/u][/color]
- • Allows your company to repair a broken net (refill ammo charges) for a cost of 15 ammo.
+• Allows your company to repair a broken net (refill ammo charges) for a cost of 15 ammo.
 
 • Grants[color=%positive%]+10[/color] Melee Defense while holding a net.
 
@@ -3485,7 +3485,7 @@ The ability to cut and shape wood is a craft few master.
 
 ::Const.Strings.PerkDescription.LegendMagicHailstone <- ::Legends.tooltip(@"
 [color=%active%][u]Active:[/u][/color]
- • Conjure a heavy ball of ice to crush your enemies.
+• Conjure a heavy ball of ice to crush your enemies.
 ");
 
 ::Const.Strings.PerkDescription.LegendMagicHealingWind <- ::Legends.tooltip(@"
@@ -3796,7 +3796,9 @@ My sword is my best friend. It is my life. I must master it as I must master my 
 'You maggots may yet earn my respect'.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Kills made by veteran mercenaries earn [color=%positive%]+100%[/color] shared XP for mercenaries who are level 11 or under.
+• Kills made by veteran mercenaries in the company earn [color=%positive%]+100%[/color] shared XP for mercenaries who are not yet veteran.
+
+• Veterans are level 12 and over. This character does not need to be in combat for the effect to work.
 ");
 
 ::Const.Strings.PerkDescription.LegendTacticalManeuvers <- ::Legends.tooltip(@"

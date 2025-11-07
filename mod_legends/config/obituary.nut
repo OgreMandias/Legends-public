@@ -12,15 +12,13 @@
 	::World.Statistics.addFallen(_bro.finalizeFallen(fallen));
 }
 
-
-
 ::Legends.Obituary <- {
 	getColoredKeybindText = function(_keybindId) {
 		local HexString = ::Legends.Mod.ModSettings.getSetting("obituary_hotkey_text_colour").getValueAsHexString();
 		return "[color=#" + HexString.slice(0, 6) + "]" + ::Legends.Mod.Keybinds.getKeybind(_keybindId).getKeyCombinationsCapitalized() + "[/color]";
-	}
+	},
+	Tooltip = {}
 };
-::Legends.Obituary.Tooltip <- {};
 
 ::Legends.Obituary.Tooltip["world-screen.obituary.Level"] <- [
 	"Level",

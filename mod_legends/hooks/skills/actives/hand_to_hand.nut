@@ -32,7 +32,7 @@
 				type = "text",
 				icon = "ui/icons/special.png",
 				text = "Each attack has a %chance%% chance to apply Grappled",
-				param = [["fat", grappler.m.GrappleChance]]
+				param = [["chance", grappler.m.GrappleChance]]
 			});
 		}
 

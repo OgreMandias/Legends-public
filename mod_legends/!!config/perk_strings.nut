@@ -518,7 +518,7 @@ Put full force in your every blow!
 ");
 
 ::Const.Strings.PerkDescription.LegendPointBlank <- ::Legends.tooltip(@"
-If you can see the white in your enemy's eyes, aim for it!
+Don't fire until you see the whites of their eyes!
 
 [color=%passive%][u]Passive:[/u][/color]
 • When using a ranged weapon against a target 4 or less tiles away, inflict additional damage, scaling based on [color=%positive%]20%[/color] of Ranged Defense.
@@ -3846,6 +3846,8 @@ Every fight is like a dance, and you have just the right moves.
 Oftentimes better than a master of one.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Confers a [color=%negative%]50%[/color] damage bonus to Ranged Damage on next attack when attacking with a Melee Attack and a [color=%negative%]50%[/color] damage bonus to Melee Damage on next attack when attacking with a Ranged Attack.
+• Confers a [color=%positive%]25%[/color] damage bonus to Ranged Damage on next attack when attacking with a Melee Attack and a [color=%positive%]25%[/color] damage bonus to Melee Damage on next attack when attacking with a Ranged Attack. If the attack misses, the effect is lost.
+
+• Gain [color=%positive%]10%[/color] of your base Ranged Skill as Melee Skill and [color=%positive%]10%[/color] of your base Melee Skill as Ranged Skill.
 ");
 

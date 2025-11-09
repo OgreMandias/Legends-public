@@ -1,5 +1,5 @@
 ::mods_hookExactClass("skills/effects/smoke_effect", function(o) {
-
+	
 	o.getTooltip = function()
 	{
 		return [
@@ -14,19 +14,19 @@
 				text = this.getDescription()
 			},
 			{
-				id = 10,
+				id = 11,
 				type = "text",
-				icon = "ui/icons/ranged_skill.png",
-				text = "[color=%negative%]-50%[/color] Ranged Skill"
+				icon = "ui/icons/ranged_defense.png",
+				text = "[color=%negative%]50%[/color] Ranged Damage received decrease"
 			},
 			{
 				id = 12,
 				type = "text",
-				icon = "ui/icons/ranged_defense.png",
-				text = "[color=%positive%]+100%[/color] Ranged Defense"
+				icon = "ui/icons/vision.png",
+				text = "[color=%negative%]-10[/color] Vision"
 			},
 			{
-				id = 10,
+				id = 13,
 				type = "text",
 				icon = "ui/icons/special.png",
 				text = "Not affected by Zones of Control and will hide you"
@@ -46,10 +46,11 @@
 		}
 		else
 		{
-			actor.getSkills().add(::new("scripts/skills/terrain/hidden_effect"));
+			actor.getSkills().add(::new("scripts/skills/terrain/hidden_effect"));		
 			_properties.RangedSkillMult *= 0.5;
-			_properties.RangedDefenseMult *= 2.0;
-
+			_properties.RangedDamageMult *= 0.5;
+			_properties.Vision -= 10;
+			
 		}
 		return true;
 	}

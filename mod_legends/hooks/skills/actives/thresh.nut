@@ -26,7 +26,7 @@
 			{
 				if (tooltip.id == 8)
 				{
-					tooltip.text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.StunChance + "%[/color] chance to daze on a hit"
+					tooltip.text = "Has a [color=%positive%]" + this.m.StunChance + "%[/color] chance to daze on a hit"
 				}
 			}
 		}

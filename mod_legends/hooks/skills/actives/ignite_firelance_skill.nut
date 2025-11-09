@@ -21,7 +21,7 @@
 				id = 8,
 				type = "text",
 				icon = "ui/icons/ammo.png",
-				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]" + ammo + "[/color] charge left"
+				text = "Has [color=%positive%]" + ammo + "[/color] charge left"
 			});
 		}
 		else
@@ -30,7 +30,7 @@
 				id = 8,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]No charges left[/color]"
+				text = "[color=%negative%]No charges left[/color]"
 			});
 		}
 

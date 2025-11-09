@@ -32,7 +32,7 @@ this.legend_patient_hunter_effect <- this.inherit("scripts/skills/skill", {
 				id = 12,
 				type = "text",
 				icon = "ui/icons/action_points.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.ApBonus + "[/color] Action Points until the end of your turn"
+				text = "[color=%positive%]+" + this.m.ApBonus + "[/color] Action Points until the end of your turn"
 			}
 		];
 		return ret;

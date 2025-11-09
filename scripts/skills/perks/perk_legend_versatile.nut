@@ -36,7 +36,7 @@ this.perk_legend_versatile <- this.inherit("scripts/skills/skill", {
 				id = 10,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] Damage"
+				text = "[color=%positive%]+25%[/color] Damage"
 			});
 		}
 		else if (this.m.MeleeStacks > 0)
@@ -45,7 +45,7 @@ this.perk_legend_versatile <- this.inherit("scripts/skills/skill", {
 				id = 10,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] Damage"
+				text = "[color=%positive%]+25%[/color] Damage"
 			});
 		}
 	}

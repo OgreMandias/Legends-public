@@ -1,5 +1,5 @@
 ::mods_hookExactClass("skills/effects/double_strike_effect", function(o) {
-	
+
 	local create = o.create;
 	o.create = function()
 	{
@@ -10,7 +10,7 @@
 
 	o.getDescription = function()
 	{
-		return "Having just landed a hit, this character is ready to perform a powerful follow-up strike! The next attack will inflict [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color] damage to a single target and refund [color=" + this.Const.UI.Color.NegativeValue + "]20%[/color] of the fatigue cost. If the attack misses, the effect is wasted, but the fatigue cost will be refunded.";
+		return "Having just landed a hit, this character is ready to perform a powerful follow-up strike! The next attack will inflict [color=%positive%]20%[/color] damage to a single target and refund [color=%negative%]20%[/color] of the fatigue cost. If the attack misses, the effect is wasted, but the fatigue cost will be refunded.";
 	}
 
 	o.onAdded = function()
@@ -30,7 +30,7 @@
 			this.removeSelf();
 		}
 	}
-	
+
 	o.onTurnEnd <- function()
 	{
 		this.removeSelf();

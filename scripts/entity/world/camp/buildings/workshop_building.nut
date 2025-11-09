@@ -120,19 +120,19 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				id = 3,
 				type = "text",
 				icon = "ui/icons/plus.png",
-				text = "There are [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.Salvage.len() + "[/color] items in the salvage queue."
+				text = "There are [color=%positive%]" + this.m.Salvage.len() + "[/color] items in the salvage queue."
 			},
 			{
 				id = 4,
 				type = "text",
 				icon = "ui/buttons/icon_time.png",
-				text = "It will take [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getRequiredTime() + "[/color] hours to salvage all items in the queue."
+				text = "It will take [color=%positive%]" + this.getRequiredTime() + "[/color] hours to salvage all items in the queue."
 			},
 			{
 				id = 5,
 				type = "text",
 				icon = "ui/icons/asset_supplies.png",
-				text = "Total salvage modifier is [color=" + this.Const.UI.Color.PositiveValue + "]" + mod.Craft + "[/color] units per hour."
+				text = "Total salvage modifier is [color=%positive%]" + mod.Craft + "[/color] units per hour."
 			}
 		];
 		local id = 6;
@@ -143,7 +143,7 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				id = id,
 				type = "hint",
 				icon = "ui/icons/special.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bro[0] + "[/color] units/hour " + bro[1] + " (" + bro[2] + ")"
+				text = "[color=%positive%]" + bro[0] + "[/color] units/hour " + bro[1] + " (" + bro[2] + ")"
 			});
 			id = ++id;
 			id = id;

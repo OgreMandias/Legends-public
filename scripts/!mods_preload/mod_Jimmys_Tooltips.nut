@@ -38,7 +38,11 @@
 ::ModJimmysTooltips.ModHook.queue(">mod_legends", function() {
 	::ModJimmysTooltips.ModHook.hook("scripts/ui/screens/tooltip/tooltip_events", function (q) {
 		function patchTooltip (_tooltip) {
+			if (_tooltip == null)
+				return _tooltip;
 			foreach (entry in _tooltip) {
+				if (entry == null)
+					continue;
 				if ("text" in entry)
 					entry.text = ::Legends.tooltip(entry.text, "param" in entry ? entry.param : []);
 			}

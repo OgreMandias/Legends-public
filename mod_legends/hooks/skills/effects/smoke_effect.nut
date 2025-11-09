@@ -1,5 +1,5 @@
 ::mods_hookExactClass("skills/effects/smoke_effect", function(o) {
-	
+
 	o.getTooltip = function()
 	{
 		return [
@@ -17,13 +17,13 @@
 				id = 10,
 				type = "text",
 				icon = "ui/icons/ranged_skill.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-50%[/color] Ranged Skill"
+				text = "[color=%negative%]-50%[/color] Ranged Skill"
 			},
 			{
 				id = 12,
 				type = "text",
 				icon = "ui/icons/ranged_defense.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+100%[/color] Ranged Defense"
+				text = "[color=%positive%]+100%[/color] Ranged Defense"
 			},
 			{
 				id = 10,
@@ -46,10 +46,10 @@
 		}
 		else
 		{
-			actor.getSkills().add(::new("scripts/skills/terrain/hidden_effect"));		
+			actor.getSkills().add(::new("scripts/skills/terrain/hidden_effect"));
 			_properties.RangedSkillMult *= 0.5;
 			_properties.RangedDefenseMult *= 2.0;
-			
+
 		}
 		return true;
 	}

@@ -75,7 +75,7 @@ this.legend_goblin_witch_doctor <- this.inherit("scripts/entity/tactical/goblin"
 		}
 
 		this.getSprite("miniboss").setBrush("bust_miniboss");
-		this.m.Items.equip(this.new("scripts/items/weapons/greenskins/legend_named_goblin_staff"));
+		this.m.Items.equip(this.new("scripts/items/weapons/named/legend_named_goblin_staff"));
 		::Legends.Perks.grant(this, ::Legends.Perk.Dodge);
 		::Legends.Perks.grant(this, ::Legends.Perk.Relentless);
 		return true;

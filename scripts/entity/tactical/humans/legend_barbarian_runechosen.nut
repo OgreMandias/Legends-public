@@ -168,7 +168,6 @@ this.legend_barbarian_runechosen <- this.inherit("scripts/entity/tactical/human"
 			{
 				this.m.Items.equip(item);
 			}
-			return;
 		}
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body))
@@ -195,6 +194,7 @@ this.legend_barbarian_runechosen <- this.inherit("scripts/entity/tactical/human"
 		local rune = ::new(::Legends.Runes.get(selected).Script);
 		rune.setRuneVariant(selected);
 		rune.setRuneBonus(true);
+		rune.updateRuneSigilToken();
 		rune.onUse(this, null, false);
 	}
 

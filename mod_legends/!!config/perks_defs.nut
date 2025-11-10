@@ -53,20 +53,6 @@ if (!("Perk" in ::Legends))
 	}
 }
 
-::Const.Perks.updatePerkGroupTooltips <- function( _perkDef = null, _groups = [] ) {
-	::logError("Attention modders, `::Const.Perks.updatePerkGroupTooltips` has been deprecated in 19.2, remove this call, it's not needed. Will be removed in 19.3");
-}
-
-::Const.Perks.setup <- function (_m, _perkDef) {
-	::logError("Attention modders, `::Const.Perks.setup` has been deprecated in 19.2, use ::Legends.Perks.onCreate instead. Will be removed in 19.3");
-	local def = ::Const.Perks.PerkDefObjects[_perkDef];
-	_m.ID = def.ID;
-	_m.Name = ::Const.Strings.PerkName[def.Const];
-	_m.Description = ::Const.Strings.PerkDescription[def.Const];
-	_m.Icon = def.Icon;
-	_m.IconDisabled = def.IconDisabled;
-}
-
 local perkDefObjects = [];
 
 // Vanilla defined perks

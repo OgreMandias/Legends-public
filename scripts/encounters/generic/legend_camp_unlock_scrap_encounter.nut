@@ -33,7 +33,7 @@ this.legend_camp_unlock_scrap_encounter <- this.inherit("scripts/encounters/enco
 	}
 
 	function isValid(_settlement) {
-		if (::Legends.Mod.ModSettings.getSetting("SkipCamp").getValue())
+		if (::Legends.Settings.skipCamp())
 			return false;
 
 		if (::World.Flags.get("HasLegendCampScraping"))

@@ -33,7 +33,7 @@ this.legend_camp_unlock_heal_encounter <- this.inherit("scripts/encounters/encou
 	}
 
 	function isValid(_settlement) {
-		if (::Legends.Mod.ModSettings.getSetting("SkipCamp").getValue())
+		if (::Legends.Settings.skipCamp())
 			return false;
 
 		if (::World.Flags.get("HasLegendCampHealing"))

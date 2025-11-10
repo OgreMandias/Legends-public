@@ -153,7 +153,7 @@ this.legend_have_all_camp_activities_ambition <- this.inherit("scripts/ambitions
 	function onUpdateScore()
 	{
 
-		if (::Legends.Mod.ModSettings.getSetting("SkipCamp").getValue())
+		if (::Legends.Settings.skipCamp())
 		{
 			this.m.IsDone = true;
 			return;

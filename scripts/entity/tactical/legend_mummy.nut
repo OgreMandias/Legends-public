@@ -142,21 +142,21 @@ this.legend_mummy <- this.inherit("scripts/entity/tactical/actor", {
 					decap[idx].Saturation = sprite_head.Saturation;
 					decap[idx].Scale = 0.9;
 					decap[idx].setHorizontalFlipping(true);
-					idx = ++idx;
+					idx++;
 				}
 
 				if (!appearance.HideCorpseHead)
 				{
 					decap[idx].Scale = 0.9;
 					decap[idx].setHorizontalFlipping(true);
-					idx = ++idx;
+					idx++;
 				}
 
 				if (appearance.HelmetCorpse.len() != 0)
 				{
 					decap[idx].Scale = 0.9;
 					decap[idx].setHorizontalFlipping(true);
-					idx = ++idx;
+					idx++;
 				}
 			}
 

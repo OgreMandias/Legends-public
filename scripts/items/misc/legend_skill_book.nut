@@ -106,7 +106,7 @@ this.legend_skill_book <- ::inherit("scripts/items/item", {
 		if (injury != null)
 			return "Failed to use this item as the user will be recovering from the last reading for another [color=%negative%]" + injury.m.HealingTimeMin + "-" + injury.m.HealingTimeMax +"[/color] days.";
 		if (effect != null)
-			return "Failed to use this item as the user will be recovering from the last reading for another [color=%negative%]" + effect.m.HealingTime + "-" + effect.m.HealingTime +"[/color] days.";
+			return "Failed to use this item as the user will be recovering from the last reading for another [color=%negative%]" + effect.m.HealingTime + "[/color] days.";
 
 		if (!_actor.getFlags().has("LegendsSkillBookCount"))
 			return true;
@@ -116,10 +116,10 @@ this.legend_skill_book <- ::inherit("scripts/items/item", {
 
 	function onUse( _actor, _item = null )
 	{
-		local result = isAbleToUseScroll(_actor);
+		local result = this.isAbleToUseScroll(_actor);
 		if (typeof result == "string")
 		{
-			::World.State.m.CharacterScreen.m.JSHandle.asyncCall("openPopupDialog", result);
+			::World.State.m.CharacterScreen.m.JSHandle.asyncCall("openPopupDialog", ::Legends.tooltip(result));
 			return false;
 		}
 

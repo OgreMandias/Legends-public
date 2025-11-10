@@ -62,12 +62,10 @@ this.legend_scroll_item <- ::inherit("scripts/items/item", {
 	{
 		local effect = ::Legends.Effects.get(_actor, ::Legends.Effect.LegendIrritable);
 		local injury = ::Legends.Effects.get(_actor, ::Legends.Effect.LegendHeadache);
-		local effect = ::Legends.Effects.get(_actor, ::Legends.Effect.LegendIrritable);
-		local injury = ::Legends.Effects.get(_actor, ::Legends.Effect.LegendHeadache);
 		if (injury != null)
 			return "Failed to use this item as the user will be recovering from the last reading for another [color=%negative%]" + injury.m.HealingTimeMin + "-" + injury.m.HealingTimeMax +"[/color] days.";
 		if (effect != null)
-			return "Failed to use this item as the user will be recovering from the last reading for another [color=%negative%]" + effect.m.HealingTime + "-" + effect.m.HealingTime +"[/color] days.";
+			return "Failed to use this item as the user will be recovering from the last reading for another [color=%negative%]" + effect.m.HealingTime + "[/color] days.";
 
 		return true;
 	}
@@ -147,10 +145,10 @@ this.legend_scroll_item <- ::inherit("scripts/items/item", {
 
 	function onUse( _actor, _item = null )
 	{
-		local result = isAbleToUseScroll(_actor);
+		local result = this.isAbleToUseScroll(_actor);
 
 		if (typeof result == "string") {
-			::World.State.m.CharacterScreen.m.JSHandle.asyncCall("openPopupDialog", result);
+			::World.State.m.CharacterScreen.m.JSHandle.asyncCall("openPopupDialog", ::Legends.tooltip(result));
 			return false;
 		}
 

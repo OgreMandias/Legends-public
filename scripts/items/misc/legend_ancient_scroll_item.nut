@@ -27,7 +27,7 @@ this.legend_ancient_scroll_item <- ::inherit("scripts/items/misc/legend_skill_bo
 		if (injury != null)
 			return "Failed to use this item as the user will be recovering from the last reading for another [color=%negative%]" + injury.m.HealingTimeMin + "-" + injury.m.HealingTimeMax +"[/color] days.";
 		if (effect != null)
-			return "Failed to use this item as the user will be recovering from the last reading for another [color=%negative%]" + effect.m.HealingTime + "-" + effect.m.HealingTime +"[/color] days.";
+			return "Failed to use this item as the user will be recovering from the last reading for another [color=%negative%]" + effect.m.HealingTime + "[/color] days.";
 
 		if (_actor.getSkills().hasTrait(::Legends.Trait.Dumb))
 			return "Failed to use this item as the user has [color=%negative%]Dumb[/color] trait.";

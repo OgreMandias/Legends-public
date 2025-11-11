@@ -1,5 +1,5 @@
 ::mods_hookExactClass("ui/screens/character/character_screen", function(o) {
-	o.m.SelectedBrotherID = null;
+	o.m.SelectedBrotherID <- null;
 
 	o.onApplyArmorFilter <- function( _filter ) { // used by armor filter
 		m.InventoryFilter = ::Const.Items.ItemFilter.Armor;

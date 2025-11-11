@@ -19,13 +19,19 @@
 			local bonus = this.m.Stacks * 10;
 			_properties.MeleeSkill += bonus;
 			_properties.RangedSkill += bonus;
+			if (!_skill.IsUsingHitchance)
+				return;
 			if (!_skill.isRanged())
 			{
 				_skill.m.HitChanceBonus += bonus;
 			}
 			else if (_skill.isRanged())
 			{
-				_skill.m.AdditionalAccuracy += bonus;
+				if ("AdditionalAccuracy" in _skill.m) {
+					_skill.m.AdditionalAccuracy += bonus;
+				} else {
+					::logError("AdditionalAccuracy not found in skill")
+				}
 			}
 		}
 	}

@@ -80,6 +80,8 @@
 			local bonus = this.m.Stacks * 5;
 			_properties.MeleeSkill += bonus;
 			_properties.RangedSkill += bonus;
+			if (!_skill.IsUsingHitchance)
+				return;
 			if (!_skill.isRanged())
 			{
 				_skill.m.HitChanceBonus += bonus;

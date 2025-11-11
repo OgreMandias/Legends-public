@@ -221,10 +221,26 @@
 		this.setupBro(_bro);
 	}
 
+	o.onGenerateBro <- function (bro) //companions free everyone else normal.
+	{
+		if (bro.getBackground().getID() == "background.companion")
+		{
+			bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.0); //1.0 = default
+			bro.getBaseProperties().DailyWageMult *= 0.0; //1.0 = default
+			bro.getSkills().update();
+		}
+		else
+		{
+			bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.0);
+			bro.getBaseProperties().DailyWageMult *= 1.0;
+			bro.getSkills().update();
+		}
+	}
+
 	o.setupBro <- function ( _bro )
 	{
-		_bro.m.HiringCost = 0;
-		_bro.getBaseProperties().DailyWage = 0;
+		// _bro.m.HiringCost = 0;
+		// _bro.getBaseProperties().DailyWage = 0;
 		::Legends.Traits.grant(_bro, ::Legends.Trait.LegendLWRelationship);
 	}
 });

@@ -23,6 +23,8 @@
 ::mods_registerCSS("legends/hooks/screens/tactical/modules/tactical_screen_topbar/topbar_event_log_module.css");
 ::mods_registerJS("legends/hooks/screens/tactical/tactical_combat_result_screen.js");
 ::mods_registerCSS("legends/hooks/screens/tactical/tactical_combat_result_screen.css");
+// character
+::mods_registerJS("legends/hooks/screens/character/character_screen_datasource.js");
 
 // formations
 ::mods_registerJS("screens/character/modules/character_screen_right_panel/character_screen_formations_module.js");

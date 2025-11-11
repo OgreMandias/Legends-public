@@ -43,5 +43,9 @@ this.legend_ancient_scroll_item <- ::inherit("scripts/items/misc/legend_skill_bo
 
 		return true;
 	}
+
+	function addScrollCounter( _actor ) {
+		_actor.getFlags().set("LegendsScrollCount", 1);
+	}
 });
 

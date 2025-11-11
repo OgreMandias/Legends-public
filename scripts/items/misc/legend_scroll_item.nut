@@ -24,7 +24,7 @@ this.legend_scroll_item <- ::inherit("scripts/items/item", {
 
 	function getTooltip()
 	{
-		return [
+		local result = [
 			{
 				id = 1,
 				type = "title",
@@ -56,6 +56,31 @@ this.legend_scroll_item <- ::inherit("scripts/items/item", {
 				text = "Will apply a 30 day cooldown until you can read again."
 			}
 		];
+
+		local actor = ::World.State.m.CharacterScreen.getSelectedActor();
+		if (::World.State.isInCharacterScreen() && actor != null) {
+			local injury = ::Legends.Effects.get(actor, ::Legends.Effect.LegendHeadache);
+			if (injury != null) {
+				result.push({
+					id = 10,
+					type = "text",
+					icon = "ui/icons/cancel.png",
+					text = "Cannot be used for next [color=%negative%]" + injury.m.HealingTimeMin + "-" + injury.m.HealingTimeMax + "[/color] days because of [color=%status%]" + injury.getName() + "[/color] status"
+				});
+				return result;
+			}
+			local effect = ::Legends.Effects.get(actor, ::Legends.Effect.LegendIrritable);
+			if (effect != null) {
+				result.push({
+					id = 10,
+					type = "text",
+					icon = "ui/icons/cancel.png",
+					text = "Cannot be used for next [color=%negative%]" + effect.m.HealingTime + "[/color] days because of [color=%status%]" + effect.getName() + "[/color] status"
+				});
+				return result;
+			}
+		}
+		return result;
 	}
 
 	function isAbleToUseScroll( _actor )
@@ -90,13 +115,6 @@ this.legend_scroll_item <- ::inherit("scripts/items/item", {
 			return gainTrainingEffect(_actor);
 		case 3:
 			return gainExperience(_actor);
-
-		// case 3:
-		// 	return addRandomPerk(_actor);
-
-		// case 4:
-		// 	return addRandomPerkTree(_actor);
-
 		default:
 			return "Nothing happens.";
 		}

@@ -791,7 +791,7 @@
 		this.m.SelectedBrotherID = _data;
 	}
 
-	o.getSelectedBrother <- function () {
+	o.getSelectedActor <- function () {
 		if (this.m.SelectedBrotherID == null)
 			return null;
 		local entity = ::Tactical.getEntityByID(_data);

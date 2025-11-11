@@ -45,7 +45,7 @@ this.legend_ancient_scroll_item <- ::inherit("scripts/items/misc/legend_skill_bo
 	}
 
 	function addScrollCounter( _actor ) {
-		_actor.getFlags().set("LegendsScrollCount", 1);
+		_actor.getFlags().increment("LegendsScrollCount");
 	}
 });
 

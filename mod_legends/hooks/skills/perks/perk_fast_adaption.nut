@@ -27,7 +27,7 @@
 			}
 			else if (_skill.isRanged())
 			{
-				if ("AdditionalAccuracy" in _skill.m) {
+				if (::MSU.isIn("AdditionalAccuracy", _skill.m, true)) {
 					_skill.m.AdditionalAccuracy += bonus;
 				} else {
 					::logError("AdditionalAccuracy not found in skill")

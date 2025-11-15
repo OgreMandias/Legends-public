@@ -52,7 +52,7 @@ this.legend_helmet_lindwurm_helm <- this.inherit("scripts/items/legend_helmets/l
 			id = 7,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Immunity from surrounded moral penalities"
+			text = "Being surrounded no longer affects this character's defences at all"
 		});
 		result.push({
 			id = 8,

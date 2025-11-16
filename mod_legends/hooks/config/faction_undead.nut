@@ -3,7 +3,7 @@
 ::Const.Tactical.Actor.Zombie.ActionPoints = 5;
 
 ::Const.Tactical.Actor.ZombieBetrayer.XP = 500;
-::Const.Tactical.Actor.ActionPoints = 10;
+::Const.Tactical.Actor.ZombieBetrayer.ActionPoints = 10;
 
 ::Const.Tactical.Actor.ZombieBoss.XP = 1000;
 ::Const.Tactical.Actor.ZombieBoss.ActionPoints = 12;

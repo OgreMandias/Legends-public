@@ -91,7 +91,7 @@ this.barber_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 	}
 
 	function isHidden() {
-		if (::Legends.Mod.ModSettings.getSetting("SkipCamp").getValue())
+		if (::Legends.Settings.skipCamp())
 			return false;
 		return !::World.Flags.get("HasLegendCampBarber");
 	}

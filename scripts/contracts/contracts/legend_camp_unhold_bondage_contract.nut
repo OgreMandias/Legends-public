@@ -365,6 +365,28 @@ this.legend_camp_unhold_bondage_contract <- this.inherit("scripts/contracts/lege
 			this.m.Target.setOnCombatWithPlayerCallback(null);
 		}
 
+		local id = "tool.legend_unhold_throwing_net";
+		local items = ::World.Assets.getStash().getItems();
+		foreach (i, item in items) {
+			if (item != null && item.getID() == id) {
+				items[i] = ::new("scripts/items/tools/throwing_net");
+			}
+		}
+		foreach (bro in ::World.getPlayerRoster().getAll()) {
+			local item = bro.getItems().getItemAtSlot(::Const.ItemSlot.Offhand);
+			if (item != null && item.getID() == id) {
+				bro.getItems().unequip(item);
+				bro.getItems().equip(::new("scripts/items/tools/throwing_net"))
+			}
+
+			local itemsInBag = bro.getItems().getAllItemsAtSlot(::Const.ItemSlot.Bag);
+			foreach (item in itemsInBag) {
+				if (item != null && item.getID() == id) {
+					bro.getItems().removeFromBag(item);
+					bro.getItems().addToBag(::new("scripts/items/tools/throwing_net"));
+				}
+			}
+		}
 	}
 
 	function onSerialize(_out) {

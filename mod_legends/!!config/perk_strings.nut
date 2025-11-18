@@ -1,23 +1,3 @@
-local colors = [
-	["rune",  ::Const.UI.Color.RuneColor],
-	["passive",  ::Const.UI.Color.Passive],
-	["active",  ::Const.UI.Color.Active],
-	["oneTimeEffect",  ::Const.UI.Color.OneTimeEffect],
-	["status",  ::Const.UI.Color.Status],
-	["skill",  ::Const.UI.Color.Skill],
-	["perk",  ::Const.UI.Color.Perk],
-	["positive", ::Const.UI.Color.PositiveValue],
-	["negative", ::Const.UI.Color.NegativeValue],
-	["positiveEvent", ::Const.UI.Color.PositiveEventValue],
-	["negativeEvent", ::Const.UI.Color.NegativeEventValue],
-	["damage", ::Const.UI.Color.DamageValue],
-];
-
-::Legends.tooltip <- function (_text, _vars = [])  {
-	_vars.extend(colors);
-	return ::buildTextFromTemplate(::strip(_text), _vars);
-}
-
 // perk names introduced in legends
 ::Const.Strings.PerkName.LegendAnchor <- "Anchor";
 ::Const.Strings.PerkName.LegendFirstBlood <- "First Blood";
@@ -1699,9 +1679,9 @@ Call an 'erbalist...But not for me!
 [color=%passive%][u]Passive:[/u][/color]
 • Gain [color=%positive%]+12[/color] chance to hit and [color=%positive%]30%[/color] of lowered threshold to inflict injuries as additional damage to hitpoints while using a Sickle.
 
-• When taking [color=%perk%]Sword Mastery[/color] you will also gain [color=%positive%]10%[/color] bonus damage.
+• When taking [color=%perk%]Sword Mastery[/color] you will also gain [color=%positive%]10%[/color] bonus damage. Additionally reduces the Action Point cost of [color=%skill%]Slash[/color] by [color=%negative%]1[/color] when using a Sickle.
 
-• For other weapons classified as One Handed Swords, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% according to your choice in campaign generation. Additionally reduces the Action Point cost of [color=%skill%]Slash[/color] by [color=%negative%]1[/color] when using a Sickle
+• For other weapons classified as One Handed Swords, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% according to your choice in campaign generation.
 ";
 
 ::Const.Strings.PerkDescription.LegendSpecialistReaper <- @"
@@ -1828,11 +1808,13 @@ Throwing a spear and throwing a net is just muscle memory at this point.
 Thread the needle from this distance? No sweat.
 
 [color=%passive%][u]Specialist Weapon Perk:[/u][/color]
-• Gain [color=%positive%]+12[/color] chance to hit and [color=%positive%]1[/color] additional range while using a Warbow.
+• Gain [color=%positive%]+12[/color] chance to hit and [color=%positive%]1[/color] additional range while using a Warbow. 
 
 • When taking [color=%perk%]Bow Mastery[/color] gain [color=%positive%]10%[/color] damage.
 
 • For other weapons classified as Longbows, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% according to your choice in campaign generation.
+
+• The additional range gained is still subject to vision penalties.
 ";
 
 ::Const.Strings.PerkDescription.LegendBigGameHunter <- @"

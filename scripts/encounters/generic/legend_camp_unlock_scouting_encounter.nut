@@ -33,7 +33,7 @@ this.legend_camp_unlock_scouting_encounter <- this.inherit("scripts/encounters/e
 	}
 
 	function isValid(_settlement) {
-		if (::Legends.Mod.ModSettings.getSetting("SkipCamp").getValue())
+		if (::Legends.Settings.skipCamp())
 			return false;
 
 		if (::World.Flags.get("HasLegendCampScouting"))

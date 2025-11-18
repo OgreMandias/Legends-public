@@ -1627,7 +1627,7 @@
 
 	// Means repair efficiency
 	o.getToolEfficiencyModifier <- function () {
-		local mod = 0;
+		local mod = this.getBackground().getModifiers().ToolConsumption * 100;
 		local skills = [
 			::Legends.Perk.LegendToolsSpares,
 			::Legends.Perk.LegendToolsDrawers
@@ -1639,7 +1639,6 @@
 				mod += skill.getToolEfficiencyModifier();
 			}
 		}
-
 		return mod;
 	}
 

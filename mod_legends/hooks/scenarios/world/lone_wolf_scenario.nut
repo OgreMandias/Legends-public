@@ -149,7 +149,7 @@
 			"brawler", "squire", "butcher", "cripple", "daytaler", "miner", "minstrel",
 			"poacher", "legend_ironmonger", "wildman", "lumberjack", "apprentice",
 			"farmhand", "thief", "fisherman", "flagellant", "gambler", "gravedigger",
-			"graverobber", "beggar", "ratcatcher", "refugee", "shepherd", "bowyer", "vagabond"
+			"graverobber", "beggar", "ratcatcher", "refugee", "shepherd", "bowyer", "vagabond", "monk"
 		];
 
 		local tier2 = [ // >2000
@@ -159,7 +159,7 @@
 
 		local tier3 = [ // >2650
 			"adventurous_noble", "disowned_noble", "beast_hunter", "witchhunter",
-			"legend_shieldmaiden", "raider"
+			"legend_shieldmaiden", "raider", "legend_conscript", "legend_inventor"
 		];
 
 		local tier4 = [ // >3500
@@ -169,8 +169,7 @@
 
 		local tier5 = [ // >4500
 			"legend_noble_2h", "legend_noble_shield", "legend_noble_ranged",
-			"assassin", "legend_man_at_arms", "legend_conscript", "paladin",
-			"legend_inventor", "legend_berserker"
+			"assassin", "legend_man_at_arms", "paladin", "legend_berserker"
 		];
 
 		// Combine tiers based on current renown
@@ -221,10 +220,26 @@
 		this.setupBro(_bro);
 	}
 
+	o.onGenerateBro <- function (bro) //companions free everyone else normal.
+	{
+		if (bro.getBackground().getID() == "background.companion")
+		{
+			bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.0); //1.0 = default
+			bro.getBaseProperties().DailyWageMult *= 0.0; //1.0 = default
+			bro.getSkills().update();
+		}
+		else
+		{
+			bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.0);
+			bro.getBaseProperties().DailyWageMult *= 1.0;
+			bro.getSkills().update();
+		}
+	}
+
 	o.setupBro <- function ( _bro )
 	{
-		_bro.m.HiringCost = 0;
-		_bro.getBaseProperties().DailyWage = 0;
+		// _bro.m.HiringCost = 0;
+		// _bro.getBaseProperties().DailyWage = 0;
 		::Legends.Traits.grant(_bro, ::Legends.Trait.LegendLWRelationship);
 	}
 });

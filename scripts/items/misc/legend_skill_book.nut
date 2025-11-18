@@ -26,28 +26,30 @@ this.legend_skill_book <- ::inherit("scripts/items/item", {
 		::Sound.play("sounds/scribble.wav", ::Const.Sound.Volume.Inventory);
 	}
 
+	function addScrollCounter (_actor) {}
+
 	function getTooltip()
 	{
 		local result = [
 			{
 				id = 1,
 				type = "title",
-				text = getName()
+				text = this.getName()
 			},
 			{
 				id = 2,
 				type = "description",
-				text = getDescription()
+				text = this.getDescription()
 			},
 			{
 				id = 66,
 				type = "text",
-				text = getValueString()
+				text = this.getValueString()
 			},
 			{
 				id = 3,
 				type = "image",
-				image = getIcon()
+				image = this.getIcon()
 			},
 			{
 				id = 65,
@@ -60,6 +62,7 @@ this.legend_skill_book <- ::inherit("scripts/items/item", {
 				text = "Will apply a " + this.m.Cooldown + " day cooldown until you can read again."
 			}
 		];
+
 		if (this.m.HasToBeIdentified && ::World.Assets.m.HasScholars > 0 || !this.m.HasToBeIdentified)
 		{
 			local selection = this.m.PerkGroupSelection;
@@ -75,7 +78,7 @@ this.legend_skill_book <- ::inherit("scripts/items/item", {
 				result.push({
 					id = 10,
 					type = "text",
-					text = ::Legends.tooltip("[leg_img](gfx/" + perk.Icon + ",height=20px,width=20px)[/leg_img] [color=%perk%]" + perk.Name + "[/color]"),
+					text = "[leg_img](gfx/" + perk.Icon + ",height=20px,width=20px)[/leg_img] [color=%perk%]" + perk.Name + "[/color]"
 				});
 			}
 		}
@@ -88,6 +91,31 @@ this.legend_skill_book <- ::inherit("scripts/items/item", {
 				text = "Reading this will allow the user to learn a perk group, but the company does not have a Scholar to know which exactly",
 			});
 		}
+
+		local actor = ::World.State.m.CharacterScreen.getSelectedActor();
+		if (::World.State.isInCharacterScreen() && actor != null) {
+			local injury = ::Legends.Effects.get(actor, ::Legends.Effect.LegendHeadache);
+			if (injury != null) {
+				result.push({
+					id = 10,
+					type = "text",
+					icon = "ui/icons/cancel.png",
+					text = "Cannot be used for next [color=%negative%]" + injury.m.HealingTimeMin + "-" + injury.m.HealingTimeMax + "[/color] days because of [color=%status%]" + injury.getName() + "[/color] status"
+				});
+				return result;
+			}
+			local effect = ::Legends.Effects.get(actor, ::Legends.Effect.LegendIrritable);
+			if (effect != null) {
+				result.push({
+					id = 10,
+					type = "text",
+					icon = "ui/icons/cancel.png",
+					text = "Cannot be used for next [color=%negative%]" + effect.m.HealingTime + "[/color] days because of [color=%status%]" + effect.getName() + "[/color] status"
+				});
+				return result;
+			}
+		}
+
 		return result;
 	}
 
@@ -104,22 +132,22 @@ this.legend_skill_book <- ::inherit("scripts/items/item", {
 		local effect = ::Legends.Effects.get(_actor, ::Legends.Effect.LegendIrritable);
 		local injury = ::Legends.Effects.get(_actor, ::Legends.Effect.LegendHeadache);
 		if (injury != null)
-			return "Failed to use this item as the user will be recovering from the last reading for another [color=%negative%]" + injury.m.HealingTimeMin + "-" + injury.m.HealingTimeMax +"[/color] days.";
+			return "Failed to use this item as the user will be recovering from the last reading for another [color=%negative%]" + injury.m.HealingTimeMin + "-" + injury.m.HealingTimeMax +"[/color] days because of [color=%status%]" + injury.getName() + "[/color].";
 		if (effect != null)
-			return "Failed to use this item as the user will be recovering from the last reading for another [color=%negative%]" + effect.m.HealingTime + "-" + effect.m.HealingTime +"[/color] days.";
+			return "Failed to use this item as the user will be recovering from the last reading for another [color=%negative%]" + effect.m.HealingTime + "[/color] days because of [color=%status%]" + effect.getName() + "[/color].";
 
 		if (!_actor.getFlags().has("LegendsSkillBookCount"))
 			return true;
 
-		return true;
+		return "This character cannot potentially learn anything from this.";
 	}
 
 	function onUse( _actor, _item = null )
 	{
-		local result = isAbleToUseScroll(_actor);
+		local result = this.isAbleToUseScroll(_actor);
 		if (typeof result == "string")
 		{
-			::World.State.m.CharacterScreen.m.JSHandle.asyncCall("openPopupDialog", result);
+			::World.State.m.CharacterScreen.m.JSHandle.asyncCall("openPopupDialog", ::Legends.tooltip(result));
 			return false;
 		}
 
@@ -133,16 +161,17 @@ this.legend_skill_book <- ::inherit("scripts/items/item", {
 		}
 
 		if (_actor.getBackground().hasPerkGroup(tree)) {
-			::World.State.m.CharacterScreen.m.JSHandle.asyncCall("openPopupDialog", format("[color=%s]No possible new perk group can be added to this character.[/color].", ::Const.UI.Color.NegativeValue));
+			::World.State.m.CharacterScreen.m.JSHandle.asyncCall("openPopupDialog", ::Legends.tooltip("[color=%negative%]No possible new perk group can be added to this character.[/color]"));
 			return false;
 		}
 
 		_actor.getBackground().addPerkGroup(tree.Tree);
 
-		::World.State.m.CharacterScreen.m.JSHandle.asyncCall("openPopupDialog", format("The [color=%s]%s[/color] perk group has been added to this character.", ::Const.UI.Color.NegativeValue, this.m.PerkGroupSelection));
+		::World.State.m.CharacterScreen.m.JSHandle.asyncCall("openPopupDialog", ::Legends.tooltip("The [color=%negative%]%group%[/color] perk group has been added to this character.", [["group", this.m.PerkGroupSelection]]));
 		::Sound.play("sounds/scribble.wav", ::Const.Sound.Volume.Inventory);
 
-		_actor.getFlags().increment("LegendsScrollCount");
+		this.addScrollCounter(_actor);
+
 		::Legends.Effects.grant(_actor, ::Legends.Effect.LegendHeadache, function (_effect) {
 			_effect.m.IrritableHealingTime = this.m.Cooldown;
 		}.bindenv(this));

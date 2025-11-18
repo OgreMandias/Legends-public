@@ -134,29 +134,19 @@ this.legend_mummy <- this.inherit("scripts/entity/tactical/actor", {
 				}
 
 				local decap = this.Tactical.spawnHeadEffect(this.getTile(), layers, this.createVec(-20, 15), -90.0, "");
-				local idx = 0;
 
 				if (!appearance.HideCorpseHead)
 				{
-					decap[idx].Color = sprite_head.Color;
-					decap[idx].Saturation = sprite_head.Saturation;
-					decap[idx].Scale = 0.9;
-					decap[idx].setHorizontalFlipping(true);
-					idx++;
-				}
-
-				if (!appearance.HideCorpseHead)
-				{
-					decap[idx].Scale = 0.9;
-					decap[idx].setHorizontalFlipping(true);
-					idx++;
+					decap[0].Color = sprite_head.Color;
+					decap[0].Saturation = sprite_head.Saturation;
+					decap[0].Scale = 0.9;
+					decap[0].setHorizontalFlipping(true);
 				}
 
 				if (appearance.HelmetCorpse.len() != 0)
 				{
-					decap[idx].Scale = 0.9;
-					decap[idx].setHorizontalFlipping(true);
-					idx++;
+					decap[1].Scale = 0.9;
+					decap[1].setHorizontalFlipping(true);
 				}
 			}
 

@@ -1,4 +1,5 @@
 ::mods_hookExactClass("ui/screens/character/character_screen", function(o) {
+	o.m.SelectedBrotherID <- null;
 
 	o.onApplyArmorFilter <- function( _filter ) { // used by armor filter
 		m.InventoryFilter = ::Const.Items.ItemFilter.Armor;
@@ -784,5 +785,21 @@
 		}
 
 		return this.onQueryBrothersList()
+	}
+
+	o.onBrotherSelected <- function (_data) {
+		this.m.SelectedBrotherID = _data;
+	}
+
+	o.getSelectedActor <- function () {
+		if (this.m.SelectedBrotherID == null)
+			return null;
+		local entity = ::Tactical.getEntityByID(this.m.SelectedBrotherID);
+		foreach (bro in ::World.getPlayerRoster().getAll()) {
+			if (bro.getID() == entity.getID())  {
+				return bro;
+			}
+		}
+		return null;
 	}
 });

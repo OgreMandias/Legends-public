@@ -1,3 +1,7 @@
+::Legends.Settings <- {
+	skipCamp = @() ::Legends.Mod.ModSettings.getSetting("SkipCamp").getValue() || ::Legends.S.oneOf(::World.Assets.getOrigin().getID(), "scenario.legend_risen_legion", "scenario.legends_solo_necro", "scenario.raiders")
+}
+
 local function addNCSetting( _page, _setting )
 {
 	_setting.getData().NewCampaign <- true;

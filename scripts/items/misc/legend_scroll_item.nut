@@ -24,7 +24,7 @@ this.legend_scroll_item <- ::inherit("scripts/items/item", {
 
 	function getTooltip()
 	{
-		return [
+		local result = [
 			{
 				id = 1,
 				type = "title",
@@ -56,18 +56,41 @@ this.legend_scroll_item <- ::inherit("scripts/items/item", {
 				text = "Will apply a 30 day cooldown until you can read again."
 			}
 		];
+
+		local actor = ::World.State.m.CharacterScreen.getSelectedActor();
+		if (::World.State.isInCharacterScreen() && actor != null) {
+			local injury = ::Legends.Effects.get(actor, ::Legends.Effect.LegendHeadache);
+			if (injury != null) {
+				result.push({
+					id = 10,
+					type = "text",
+					icon = "ui/icons/cancel.png",
+					text = "Cannot be used for next [color=%negative%]" + injury.m.HealingTimeMin + "-" + injury.m.HealingTimeMax + "[/color] days because of [color=%status%]" + injury.getName() + "[/color] status"
+				});
+				return result;
+			}
+			local effect = ::Legends.Effects.get(actor, ::Legends.Effect.LegendIrritable);
+			if (effect != null) {
+				result.push({
+					id = 10,
+					type = "text",
+					icon = "ui/icons/cancel.png",
+					text = "Cannot be used for next [color=%negative%]" + effect.m.HealingTime + "[/color] days because of [color=%status%]" + effect.getName() + "[/color] status"
+				});
+				return result;
+			}
+		}
+		return result;
 	}
 
 	function isAbleToUseScroll( _actor )
 	{
 		local effect = ::Legends.Effects.get(_actor, ::Legends.Effect.LegendIrritable);
 		local injury = ::Legends.Effects.get(_actor, ::Legends.Effect.LegendHeadache);
-		local effect = ::Legends.Effects.get(_actor, ::Legends.Effect.LegendIrritable);
-		local injury = ::Legends.Effects.get(_actor, ::Legends.Effect.LegendHeadache);
 		if (injury != null)
 			return "Failed to use this item as the user will be recovering from the last reading for another [color=%negative%]" + injury.m.HealingTimeMin + "-" + injury.m.HealingTimeMax +"[/color] days.";
 		if (effect != null)
-			return "Failed to use this item as the user will be recovering from the last reading for another [color=%negative%]" + effect.m.HealingTime + "-" + effect.m.HealingTime +"[/color] days.";
+			return "Failed to use this item as the user will be recovering from the last reading for another [color=%negative%]" + effect.m.HealingTime + "[/color] days.";
 
 		return true;
 	}
@@ -92,13 +115,6 @@ this.legend_scroll_item <- ::inherit("scripts/items/item", {
 			return gainTrainingEffect(_actor);
 		case 3:
 			return gainExperience(_actor);
-
-		// case 3:
-		// 	return addRandomPerk(_actor);
-
-		// case 4:
-		// 	return addRandomPerkTree(_actor);
-
 		default:
 			return "Nothing happens.";
 		}
@@ -147,10 +163,10 @@ this.legend_scroll_item <- ::inherit("scripts/items/item", {
 
 	function onUse( _actor, _item = null )
 	{
-		local result = isAbleToUseScroll(_actor);
+		local result = this.isAbleToUseScroll(_actor);
 
 		if (typeof result == "string") {
-			::World.State.m.CharacterScreen.m.JSHandle.asyncCall("openPopupDialog", result);
+			::World.State.m.CharacterScreen.m.JSHandle.asyncCall("openPopupDialog", ::Legends.tooltip(result));
 			return false;
 		}
 

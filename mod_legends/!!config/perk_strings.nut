@@ -1997,7 +1997,7 @@ Master the difficult angles and timings of slinging rocks from afar.
 • Additionally allows you to launch bombs and flasks with a Staff Sling.
 ";
 
-::Const.Strings.PerkDescription.LegendFavouredEnemyBeast <- ::Legends.tooltip(@"
+::Const.Strings.PerkDescription.LegendFavouredEnemyBeast <- @"
 Enforce your position as the top of the food chain.
 
 [color=%passive%][u]Passive:[/u][/color]
@@ -2082,7 +2082,7 @@ Big or small, greenskins lack strength of will.
  //No contract
 //Lich and Emporer not included
 //Treasure hunters and betrayers included as knights
-::Const.Strings.PerkDescription.LegendFavouredEnemyUndead <- ::Legends.tooltip(@"
+::Const.Strings.PerkDescription.LegendFavouredEnemyUndead <- @"
 Shambling corpses come wave on wave, rising sleepless from their graves.
 
 [color=%passive%][u]Passive:[/u][/color]
@@ -2147,7 +2147,7 @@ We live in a society.
 ";
 
 //Madman is registered as king
-::Const.Strings.PerkDescription.LegendFavouredEnemyOutlaw <- ::Legends.tooltip(@"
+::Const.Strings.PerkDescription.LegendFavouredEnemyOutlaw <- @"
 The uncivilized are a plague to be uprooted.
 
 [color=%passive%][u]Passive:[/u][/color]

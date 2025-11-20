@@ -113,7 +113,7 @@ this.legend_wind_up_skill <- this.inherit("scripts/skills/skill", {
 	function onUse( _user, _targetTile )
 	{
 		local item = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		if (item != null && !item.isNull() && item.isWeaponType(this.Const.Items.WeaponType.Sling) && item.isItemType(this.Const.Items.ItemType.OneHanded))
+		if (item != null && item.isWeaponType(this.Const.Items.WeaponType.Sling) && item.isItemType(this.Const.Items.ItemType.OneHanded))
 		{
 			::Legends.Effects.grant(this, ::Legends.Effect.LegendPrepareBullet);
 		}
@@ -121,9 +121,6 @@ this.legend_wind_up_skill <- this.inherit("scripts/skills/skill", {
 		{
 			::Legends.Effects.grant(this, ::Legends.Effect.LegendKnockbackPrepared);
 		}
-
-		if (this.m.Item != null && !this.m.Item.isNull())
-			this.m.Item.removeSelf();
 
 		return true;
 	}

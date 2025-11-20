@@ -142,8 +142,8 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				::Legends.Perk.SpecSword,
 				::Legends.Perk.SpecThrowing,
 				::Legends.Perk.LegendMasteryStaves,
-				::Legends.Perk.LegendFavouredEnemyGoblin,
-				::Legends.Perk.LegendFavouredEnemyBandit
+				::Legends.Perk.LegendFavouredEnemyGreenskin,
+				::Legends.Perk.LegendFavouredEnemyOutlaw
 			],
 			[
 				::Legends.Perk.LegendPotionBrewer,
@@ -152,8 +152,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				::Legends.Perk.LoneWolf,
 				::Legends.Perk.LegendVengeance,
 				::Legends.Perk.LegendBattleheart,
-				::Legends.Perk.LegendFavouredEnemyOrk,
-				::Legends.Perk.LegendFavouredEnemyNoble
+				::Legends.Perk.LegendFavouredEnemyCivilization
 			],
 			[
 				::Legends.Perk.LegendMinnesanger,

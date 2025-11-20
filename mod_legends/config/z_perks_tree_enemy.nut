@@ -3,164 +3,56 @@ if (!("Perks" in ::Const))
 	::Const.Perks <- {};
 }
 
-::Const.Perks.BeastsTree <- {
-	ID = "BeastsTree",
+::Const.Perks.BeastTree <- {
+	ID = "BeastTree",
 	Name = "Beasts",
 	Descriptions = [
 		"beasts"
 	],
-	
 	Tree = [
-		[],
 		[],
 		[],
 		[
-			::Legends.Perk.LegendFavouredEnemyGhoul,
-			::Legends.Perk.LegendFavouredEnemyDirewolf,
-			::Legends.Perk.LegendFavouredEnemySpider
+		::Legends.Perk.LegendFavouredEnemyBeast
 		],
 		[],
-		[::Legends.Perk.LegendFavouredEnemyLindwurm],
-		[]
-	]
-};
-
-::Const.Perks.GhoulTree <- {
-	ID = "GhoulTree",
-	Name = "Nachzehrers",
-	Descriptions = [
-		"nachzehrers"
-	],
-	Tree = [
-		[],
-		[],
-		[::Legends.Perk.LegendFavouredEnemyGhoul],
-		[],
 		[],
 		[],
 		[]
 	]
 };
 
-::Const.Perks.DirewolfTree <- {
-	ID = "DirewolfTree",
-	Name = "Direwolves",
-	Descriptions = [
-		"direwolves"
-	],
-	Tree = [
-		[],
-		[],
-		[::Legends.Perk.LegendFavouredEnemyDirewolf],
-		[],
-		[],
-		[],
-		[]
-	]
-};
-
-::Const.Perks.SpiderTree <- {
-	ID = "SpiderTree",
-	Name = "Webknechts",
-	Descriptions = [
-		"spiders"
-	],
-	Tree = [
-		[],
-		[],
-		[::Legends.Perk.LegendFavouredEnemySpider],
-		[],
-		[],
-		[],
-		[]
-	]
-};
-
-::Const.Perks.LindwurmTree <- {
-	ID = "LindwurmTree",
-	Name = "Lindwurms",
-	Descriptions = [
-		"lindwurms"
-	],
-	Tree = [
-		[],
-		[],
-		[],
-		[],
-		[],
-		[::Legends.Perk.LegendFavouredEnemyLindwurm],
-		[]
-	]
-};
-
-::Const.Perks.MysticTree <- {
+::Const.Perks.MysticTree <- { // this may no longer be needed
 	ID = "MysticTree",
+	Name = "Mystics",
 	Descriptions = [
 		"mystics"
 	],
-	Name = "Mystics",
 	Tree = [
 		[],
 		[],
 		[],
 		[],
 		[],
-		[::Legends.Perk.LegendFavouredEnemySchrat],
-		[
-		::Legends.Perk.LegendFavouredEnemyHexen,
-		::Legends.Perk.LegendFavouredEnemyAlps
-		]
-	]
-};
-
-::Const.Perks.SchratTree <- {
-	ID = "SchratTree",
-	Name = "Schrats",
-	Descriptions = [
-		"schrats"
-	],
-	Tree = [
-		[],
-		[],
-		[],
-		[],
-		[],
-		[::Legends.Perk.LegendFavouredEnemySchrat],
+		[::Legends.Perk.LegendFavouredEnemyOccult],
 		[]
 	]
 };
 
-::Const.Perks.HexenTree <- {
-	ID = "HexenTree",
-	Name = "Hexen",
+::Const.Perks.OccultTree <- {
+	ID = "OccultTree",
+	Name = "Occult",
 	Descriptions = [
-		"hexen"
+		"occult"
 	],
 	Tree = [
 		[],
 		[],
 		[],
 		[],
+		[::Legends.Perk.LegendFavouredEnemyOccult],
 		[],
-		[],
-		[::Legends.Perk.LegendFavouredEnemyHexen]
-	]
-};
-
-::Const.Perks.AlpTree <- {
-	ID = "AlpTree",
-	Name = "Alps",
-	Descriptions = [
-		"alps"
-	],
-	Tree = [
-		[],
-		[],
-		[],
-		[],
-		[],
-		[],
-		[::Legends.Perk.LegendFavouredEnemyAlps]
+		[]
 	]
 };
 
@@ -176,67 +68,15 @@ if (!("Perks" in ::Const))
 		[],
 		[],
 		[
-		::Legends.Perk.LegendFavouredEnemySkeleton,
-		::Legends.Perk.LegendFavouredEnemyZombie
+		::Legends.Perk.LegendFavouredEnemyUndead
 		],
 		[],
-		[::Legends.Perk.LegendFavouredEnemyVampire]
-	]
-};
-
-::Const.Perks.SkeletonTree <- {
-	ID = "SkeletonTree",
-	Name = "Ancient Empire",
-	Descriptions = [
-		"ancient empire"
-	],
-	Tree = [
-		[],
-		[],
-		[],
-		[],
-		[::Legends.Perk.LegendFavouredEnemySkeleton],
-		[],
 		[]
 	]
 };
 
-::Const.Perks.ZombieTree <- {
-	ID = "ZombieTree",
-	Name = "Wiedergangers",
-	Descriptions = [
-		"wiedergangers"
-	],
-	Tree = [
-		[],
-		[],
-		[],
-		[],
-		[::Legends.Perk.LegendFavouredEnemyZombie],
-		[],
-		[]
-	]
-};
-
-::Const.Perks.VampireTree <- {
-	ID = "VampireTree",
-	Name = "Necrosavants",
-	Descriptions = [
-		"necrosavants"
-	],
-	Tree = [
-		[],
-		[],
-		[],
-		[],
-		[],
-		[],
-		[::Legends.Perk.LegendFavouredEnemyVampire]
-	]
-};
-
-::Const.Perks.OrcsTree <- {
-	ID = "OrcsTree",
+::Const.Perks.GreenskinTree <- {
+	ID = "GreenskinTree",
 	Name = "Greenskins",
 	Descriptions = [
 		"greenskins"
@@ -246,141 +86,34 @@ if (!("Perks" in ::Const))
 		[],
 		[],
 		[],
-		[
-		::Legends.Perk.LegendFavouredEnemyOrk,
-		::Legends.Perk.LegendFavouredEnemyGoblin
-		],
-		[::Legends.Perk.LegendFavouredEnemyUnhold],
-		[]
-	]
-};
-
-::Const.Perks.OrcTree <- {
-	ID = "OrcTree",
-	Name = "Orcs",
-	Descriptions = [
-		"orcs"
-	],
-	Tree = [
+		[::Legends.Perk.LegendFavouredEnemyGreenskins],
 		[],
-		[],
-		[],
-		[],
-		[::Legends.Perk.LegendFavouredEnemyOrk],
-		[],
-		[]
-	]
-};
-
-::Const.Perks.GoblinTree <- {
-	ID = "GoblinTree",
-	Name = "Goblins",
-	Descriptions = [
-		"goblins"
-	],
-	Tree = [
-		[],
-		[],
-		[],
-		[],
-		[::Legends.Perk.LegendFavouredEnemyGoblin],
-		[],
-		[]
-	]
-};
-
-::Const.Perks.UnholdTree <- {
-	ID = "UnholdTree",
-	Name = "Unholds",
-	Descriptions = [
-		"unholds"
-	],
-	Tree = [
-		[],
-		[],
-		[],
-		[],
-		[],
-		[::Legends.Perk.LegendFavouredEnemyUnhold],
 		[]
 	]
 };
 
 ::Const.Perks.CivilizationTree <- {
 	ID = "CivilizationTree",
-	Name = "Civilians",
+	Name = "Civilization",
 	Descriptions = [
-		"civilians"
-	],
-	Tree = [
-		[],
-		[],
-		[::Legends.Perk.LegendFavouredEnemyCaravan],
-		[],
-		[::Legends.Perk.LegendFavouredEnemyMercenary],
-		[::Legends.Perk.LegendFavouredEnemyNoble,
-		 ::Legends.Perk.LegendFavouredEnemySoutherner
-		],
-		[]
-	]
-};
-
-::Const.Perks.CaravanTree <- {
-	ID = "CaravanTree",
-	Name = "Caravans",
-	Descriptions = [
-		"caravans"
-	],
-	Tree = [
-		[],
-		[],
-		[::Legends.Perk.LegendFavouredEnemyCaravan],
-		[],
-		[],
-		[],
-		[]
-	]
-};
-
-::Const.Perks.MercenaryTree <- {
-	ID = "MercenaryTree",
-	Name = "Mercenaries",
-	Descriptions = [
-		"mercenaries"
+		"law-abiding fools"
 	],
 	Tree = [
 		[],
 		[],
 		[],
 		[],
-		[::Legends.Perk.LegendFavouredEnemyMercenary],
+		[::Legends.Perk.LegendFavouredEnemyCivilization],
 		[],
 		[]
 	]
 };
 
-::Const.Perks.NoblesTree <- {
-	ID = "NoblesTree",
-	Name = "Nobles",
+::Const.Perks.OutlawTree <- {
+	ID = "OutlawTree",
+	Name = "Outlaws",
 	Descriptions = [
-		"nobles"
-	],
-	Tree = [
-		[],
-		[],
-		[],
-		[],
-		[],
-		[::Legends.Perk.LegendFavouredEnemyNoble],
-		[]
-	]
-};
-
-::Const.Perks.OutlandersTree <- {
-	ID = "OutlandersTree",
-	Name = "Outlanders",
-	Descriptions = [
-		"outlanders"
+		"outlaws"
 	],
 	Tree = [
 		[],
@@ -388,78 +121,9 @@ if (!("Perks" in ::Const))
 		[],
 		[],
 		[
-		 ::Legends.Perk.LegendFavouredEnemyBandit,
-		 ::Legends.Perk.LegendFavouredEnemyNomad
-		 ],
-		[::Legends.Perk.LegendFavouredEnemyBarbarian],
-		[]
-	]
-};
-
-::Const.Perks.BanditTree <- {
-	ID = "BanditTree",
-	Name = "Bandits",
-	Descriptions = [
-		"bandits"
-	],
-	Tree = [
+		 ::Legends.Perk.LegendFavouredEnemyOutlaw,
+		],
 		[],
-		[],
-		[],
-		[],
-		[::Legends.Perk.LegendFavouredEnemyBandit],
-		[],
-		[]
-	]
-};
-
-::Const.Perks.BarbarianTree <- {
-	ID = "BarbariansTree",
-	Name = "Barbarians",
-	Descriptions = [
-		"barbarians"
-	],
-	Tree = [
-		[],
-		[],
-		[],
-		[],
-		[],
-		[::Legends.Perk.LegendFavouredEnemyBarbarian],
-		[]
-	]
-};
-
-::Const.Perks.ArchersTree <- {
-	ID = "ArchersTree",
-	Name = "Sharpshooters",
-	Descriptions = [
-		"sharpshooter"
-	],
-	Tree = [
-		[::Legends.Perk.Pathfinder],
-		[],
-		[],
-		[],
-		[],
-		[::Legends.Perk.LegendFavouredEnemyArcher],
-		[]
-	]
-};
-
-::Const.Perks.ArcherTree <- {
-	ID = "ArcherTree",
-	Name = "Archers"
-	Descriptions = [
-		"archers"
-	],
-	Tree = [
-		[],
-		[],
-		[],
-		[],
-		[],
-		[::Legends.Perk.LegendFavouredEnemyArcher],
 		[]
 	]
 };
@@ -484,62 +148,15 @@ if (!("Perks" in ::Const))
 	]
 };
 
-::Const.Perks.SouthernersTree <- {
-	ID = "SouthernersTree",
-	Name = "Southerners",
-	Descriptions = [
-		"southerners"
-	],
-	Tree = [
-		[],
-		[::Legends.Perk.LegendTrueBeliever],
-		[],
-		[],
-		[],
-		[::Legends.Perk.LegendFavouredEnemySoutherner],
-		[]
-	]
-};
-
-::Const.Perks.NomadsTree <- {
-	ID = "NomadsTree",
-	Name = "Nomads",
-	Descriptions = [
-		"nomads"
-	],
-	Tree = [
-		[::Legends.Perk.Pathfinder],
-		[],
-		[],
-		[],
-		[::Legends.Perk.LegendFavouredEnemyNomad],
-		[],
-		[]
-	]
-};
-
 ::Const.Perks.EnemyTrees <- {
 	Tree = [
-		::Const.Perks.GhoulTree,
-		::Const.Perks.DirewolfTree,
-		::Const.Perks.SpiderTree,
-		::Const.Perks.SchratTree,
-		::Const.Perks.HexenTree,
-		::Const.Perks.AlpTree,
-		::Const.Perks.SkeletonTree,
-		::Const.Perks.ZombieTree,
-		::Const.Perks.VampireTree,
-		::Const.Perks.OrcTree,
-		::Const.Perks.GoblinTree,
-		::Const.Perks.UnholdTree,
-		::Const.Perks.CaravanTree,
-		::Const.Perks.MercenaryTree,
-		::Const.Perks.NoblesTree,
-		::Const.Perks.BanditTree,
-		::Const.Perks.BarbarianTree,
-		::Const.Perks.ArchersTree,
+		::Const.Perks.BeastTree,
+		::Const.Perks.OccultTree,
+		::Const.Perks.UndeadTree,
+		::Const.Perks.GreenskinTree,
+		::Const.Perks.CivilizationTree,
+		::Const.Perks.OutlawTree,
 		::Const.Perks.SwordmastersTree,
-		::Const.Perks.SouthernersTree
 	],
 	function getRandom(_exclude)
 	{

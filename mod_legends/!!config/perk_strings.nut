@@ -1526,6 +1526,8 @@ Lets hope your enemies like fighting in the shade.
 • [color=%skill%]Fire Handgonne[/color] will apply [color=%skill%]Shellshocked[/color] on headshots.
 
 • [color=%skill%]Sling Heavy Stone[/color] will stun on headshots.
+
+• [color=%skill%]Shoot Bolt[/color] and [color=%skill%]Shoot Bolt[/color] will automatically reload on headshots.
 ";
 
 ::Const.Strings.PerkDescription.LegendStaffBlock <- @"

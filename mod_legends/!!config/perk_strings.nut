@@ -323,14 +323,6 @@
 ::Const.Strings.PerkName.BatteringRam <- "Battering Ram"; //gives orcs stun immunity, similar to composure skill
 
 //UNUSED - skills otherwise defunct or missing files/functionality
-::Const.Strings.PerkName.LegendRoster <- "The Apprentice"; //REMOVE
-::Const.Strings.PerkName.LegendRoster1 <- "The Apprentice"; //REMOVE
-::Const.Strings.PerkName.LegendRoster2 <- "The Bodyguards"; //REMOVE
-::Const.Strings.PerkName.LegendRoster3 <- "The Team"; //REMOVE
-::Const.Strings.PerkName.LegendRoster4 <- "The Squad"; //REMOVE
-::Const.Strings.PerkName.LegendRoster5 <- "The Section"; //REMOVE
-::Const.Strings.PerkName.LegendRoster6 <- "The Platoon"; //REMOVE
-::Const.Strings.PerkName.LegendRoster7 <- "The Company"; //REMOVE
 ::Const.Strings.PerkName.LegendCrusher <- "Crusher"; //exists but has no data to provide any affect
 ::Const.Strings.PerkName.LegendDeflect <- "Deflect"; //exists but has no data to provide any affect
 ::Const.Strings.PerkName.LegendIronside <- "Ironside"; //gives damage reduction based on number of adj. enemies
@@ -785,11 +777,6 @@ Run as fast as you can!
 • For the remainder of this turn, the Action Point cost for movement is reduced by [color=%positive%]1[/color] for each tile, but the Fatigue cost is doubled.
 ";
 
-::Const.Strings.PerkDescription.LegendRoster <- @"
-[color=%passive%][u]Passive:[/u][/color]
-• Increase roster size.
-";
-
 ::Const.Strings.PerkDescription.LegendSpecBandage <- @"
 Master the art of bandaging mid battle using any cloth available.
 
@@ -826,55 +813,6 @@ Raise the dead, and turn them into your own personal army.
 • Unlocks [color=%skill%]Conduct Seance[/color] skill which allows you to summon zombies from dead enemies.
 
 • Costs [color=%negative%]4[/color] AP and [color=%negative%]20[/color] Fatigue.
-";
-
-::Const.Strings.PerkDescription.LegendRoster1 <- @"
-Direct your attention to guiding an apprentice into the mercenary world.
-
-[color=%passive%][u]Passive:[/u][/color]
-• Increase the company roster size by [color=%positive%]1[/color].
-";
-
-::Const.Strings.PerkDescription.LegendRoster2 <- @"
-Spend time training bodyguards to work together.
-
-[color=%passive%][u]Passive:[/u][/color]
-• increases company roster size by [color=%positive%]2[/color].
-";
-
-::Const.Strings.PerkDescription.LegendRoster3 <- @"
-Set up team planning, with task lists and prioritisation.
-
-[color=%passive%][u]Passive:[/u][/color]
-• Increases the company roster size by [color=%positive%]3[/color].
-";
-
-::Const.Strings.PerkDescription.LegendRoster4 <- @"
-Create a squad regime, with weekly schedules and drills.
-
-[color=%passive%][u]Passive:[/u][/color]
-• Increases the company roster size by [color=%positive%]4[/color].
-";
-
-::Const.Strings.PerkDescription.LegendRoster5 <- @"
-Oversee the section's financial administration processes, managing pay disputes, disbursements, withholdings and loans.
-
-[color=%passive%][u]Passive:[/u][/color]
-• Increases the company roster size by [color=%positive%]5[/color].
-";
-
-::Const.Strings.PerkDescription.LegendRoster6 <- @"
-Manage the company logistics. Supply rationing, camp structure and waste disposal.
-
-[color=%passive%][u]Passive:[/u][/color]
-• Increases the company roster size by [color=%positive%]6[/color].
-";
-
-::Const.Strings.PerkDescription.LegendRoster7 <- @"
-Implement platoon organisation techniques. Balancing interteam dynamics, clarifying role responsibilities, creating conflict resolution processes and creating strategic plans.
-
-[color=%passive%][u]Passive:[/u][/color]
-• Increases the company roster size by [color=%positive%]7[/color].
 ";
 
 ::Const.Strings.PerkDescription.LegendInsects <- @"

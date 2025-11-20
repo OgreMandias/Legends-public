@@ -203,7 +203,6 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 	function onAdded()
 	{
 		this.character_background.onAdded();
-		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_2"));
 		//this.m.Container.add(this.new("scripts/skills/perks/perk_pathfinder"));
 		::Legends.Traits.grant(this, ::Legends.Trait.Athletic);
 		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_guide_steps"));

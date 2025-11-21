@@ -109,9 +109,65 @@
 	}
 
 	local equip = o.equip;
-	o.equip = function (_item)
-	{
-		return _item == null ? false : equip(_item);
+	o.equip = function (_item) {
+		if (_item == null) {
+			return false;
+		}
+
+		// Allow equipping mainhand weapons in offhand slot if ambidextrous
+		if (_item.getSlotType() == ::Const.ItemSlot.Mainhand
+			&& _item.getBlockedSlotType() == null
+			&& ::Legends.Perks.has(this.m.Actor, ::Legends.Perk.LegendAmbidextrous))
+		{
+
+			local mh = this.getItemAtSlot(::Const.ItemSlot.Mainhand);
+			local oh = this.getItemAtSlot(::Const.ItemSlot.Offhand);
+			if (mh != null && oh == null) {
+
+				if (_item.getCurrentSlotType() != ::Const.ItemSlot.None) {
+					return false;
+				}
+
+				this.m.Items[::Const.ItemSlot.Offhand][0] = _item;
+				_item.setContainer(this);
+				_item.setCurrentSlotType(::Const.ItemSlot.Offhand);
+				_item.onEquip();
+				this.m.Actor.getSkills().update();
+
+				return true;
+			}
+		}
+
+		return equip(_item);
+	}
+
+	local unequip = o.unequip;
+	o.unequip = function (_item) {
+		if (_item == null || _item == -1) {
+			return;
+		}
+
+		// Unequip dual-wielded mainhand weapons in offhand slot
+		if (_item.getSlotType() == ::Const.ItemSlot.Mainhand
+			&& _item.getCurrentSlotType() == ::Const.ItemSlot.Offhand)
+		{
+			if (this.getItemAtSlot(::Const.ItemSlot.Offhand) == _item) {
+				_item.onUnequip();
+				_item.setContainer(null);
+				_item.setCurrentSlotType(::Const.ItemSlot.None);
+				this.m.Items[::Const.ItemSlot.Offhand][0] = null;
+
+				if (this.m.Actor != null && !this.m.Actor.isNull() && this.m.Actor.isAlive()) {
+					this.m.Actor.getSkills().update();
+				}
+
+				return true;
+			}
+
+			return false;
+		}
+
+		return unequip(_item);
 	}
 
 	o.unequipNoUpdate <- function (_item)

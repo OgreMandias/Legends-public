@@ -396,6 +396,14 @@ CharacterScreenPaperdollModule.prototype.createBagSlot = function (
 				ignoreSlotType = true;
 			}
 
+			if (
+				sourceSlotType === CharacterScreenIdentifier.ItemSlot.Mainhand &&
+				!sourceIsBlockingOffhand &&
+				targetSlotType === CharacterScreenIdentifier.ItemSlot.Offhand
+			) {
+				ignoreSlotType = true;
+			}
+
 			// Same Slot type ?
 			if (ignoreSlotType === false && targetSlotType !== null) {
 				if (sourceSlotType !== targetSlotType) {
@@ -418,6 +426,46 @@ CharacterScreenPaperdollModule.prototype.createBagSlot = function (
 				sourceItemId,
 				targetItemIdx
 			);
+			return;
+		}
+
+		// Paperdoll -> Paperdoll (swap equipped items)
+		if (
+			sourceOwner === CharacterScreenIdentifier.ItemOwner.Paperdoll &&
+			targetOwner === CharacterScreenIdentifier.ItemOwner.Paperdoll
+		) {
+			var ignoreSlotType = false;
+
+			// Allow 2-handed weapons to swap with shields/offhand items
+			if (
+				sourceSlotType === CharacterScreenIdentifier.ItemSlot.Mainhand &&
+				sourceIsBlockingOffhand &&
+				targetSlotType === CharacterScreenIdentifier.ItemSlot.Offhand
+			) {
+				ignoreSlotType = true;
+			}
+
+			if (
+				sourceSlotType === CharacterScreenIdentifier.ItemSlot.Mainhand &&
+				!sourceIsBlockingOffhand &&
+				targetSlotType === CharacterScreenIdentifier.ItemSlot.Offhand
+			) {
+				ignoreSlotType = true;
+			}
+
+			// Same slot type check
+			if (ignoreSlotType === false) {
+				if (sourceSlotType !== targetSlotType) {
+					return;
+				}
+			}
+
+			// allow drop animation
+			sourceData.isAllowedToDrop = true;
+			_proxy.data("item", sourceData);
+
+			self.mDataSource.equipBagItem(entityId, sourceItemId, null);
+			return;
 		}
 	};
 
@@ -481,6 +529,14 @@ CharacterScreenPaperdollModule.prototype.createBagSlot = function (
 					".ui-control.paperdoll-item.has-slot-frame.is-big:first"
 				);
 				mainhandContainer.addClass("is-equipable");
+
+				if (sourceData.isBlockingOffhand === false) {
+					var rightColumn = paperdollModule.find(".equipment-column:eq(2)");
+					var offhandContainer = rightColumn.find(
+						".ui-control.paperdoll-item.has-slot-frame.is-big:first"
+					);
+					offhandContainer.addClass("is-equipable");
+				}
 				break;
 			case CharacterScreenIdentifier.ItemSlot.Head:
 				var middleColumn = paperdollModule.find(".equipment-column:eq(1)");
@@ -717,6 +773,13 @@ CharacterScreenPaperdollModule.prototype.createEquipmentSlot = function (
 
 				ignoreSlotType = true;
 			}
+			if (
+				sourceSlotType === CharacterScreenIdentifier.ItemSlot.Mainhand &&
+				!sourceIsBlockingOffhand &&
+				targetSlotType === CharacterScreenIdentifier.ItemSlot.Offhand
+			) {
+				ignoreSlotType = true;
+			}
 
 			// Same Slot type ?
 			if (ignoreSlotType === false && targetSlotType !== null) {
@@ -775,6 +838,14 @@ CharacterScreenPaperdollModule.prototype.createEquipmentSlot = function (
 					return;
 				}
 
+				ignoreSlotType = true;
+			}
+
+			if (
+				sourceSlotType === CharacterScreenIdentifier.ItemSlot.Mainhand &&
+				!sourceIsBlockingOffhand &&
+				targetSlotType === CharacterScreenIdentifier.ItemSlot.Offhand
+			) {
 				ignoreSlotType = true;
 			}
 
@@ -975,6 +1046,14 @@ CharacterScreenPaperdollModule.prototype.createEquipmentSlot = function (
 					".ui-control.paperdoll-item.has-slot-frame.is-big:first"
 				);
 				mainhandContainer.addClass("is-equipable");
+
+				if (sourceData.isBlockingOffhand === false) {
+					var rightColumn = paperdollModule.find(".equipment-column:eq(2)");
+					var offhandContainer = rightColumn.find(
+						".ui-control.paperdoll-item.has-slot-frame.is-big:first"
+					);
+					offhandContainer.addClass("is-equipable");
+				}
 				break;
 			case CharacterScreenIdentifier.ItemSlot.Head:
 				var middleColumn = paperdollModule.find(".equipment-column:eq(1)");

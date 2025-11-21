@@ -1,5 +1,4 @@
-if (!("Perks" in ::Const))
-{
+if (!("Perks" in ::Const)) {
 	::Const.Perks <- {};
 }
 
@@ -53,7 +52,6 @@ if (!("Perks" in ::Const))
 		[]
 	]
 };
-
 
 ::Const.Perks.FlailTree <- {
 	ID = "Flail",
@@ -353,7 +351,7 @@ if (!("Perks" in ::Const))
 	},
 	Tree = [
 		[],
-		[], 
+		[],
 		[::Legends.Perk.LegendVersatile],
 		[],
 		[::Legends.Perk.LegendPushTheAdvantage],
@@ -720,8 +718,7 @@ if (!("Perks" in ::Const))
 
 ::Const.Perks.SlingTree <- {
 	ID = "Sling",
-	Name = "Sling"
-	Descriptions = [
+	Name = "Sling"Descriptions = [
 		"slings"
 	],
 	Attributes = {
@@ -880,6 +877,57 @@ if (!("Perks" in ::Const))
 	]
 };
 
+::Const.Perks.DualWieldTree <- {
+	ID = "DualWield",
+	Name = "Dual Wield",
+	Descriptions = [
+		"dual wielding"
+	],
+	Attributes = {
+		Hitpoints = [
+			0,
+			0
+		],
+		Bravery = [
+			0,
+			0
+		],
+		Stamina = [
+			0,
+			0
+		],
+		MeleeSkill = [
+			0,
+			0
+		],
+		RangedSkill = [
+			0,
+			0
+		],
+		MeleeDefense = [
+			0,
+			0
+		],
+		RangedDefense = [
+			0,
+			0
+		],
+		Initiative = [
+			0,
+			0
+		]
+	},
+	Tree = [
+		[::Legends.Perk.LegendAmbidextrous],
+		[],
+		[],
+		[],
+		[],
+		[],
+		[]
+	]
+};
+
 ::Const.Perks.WeaponTrees <- {
 	Tree = [
 		::Const.Perks.FistsTree,
@@ -898,15 +946,14 @@ if (!("Perks" in ::Const))
 		::Const.Perks.BowTree,
 		::Const.Perks.ThrowingTree,
 		::Const.Perks.SlingTree,
-		::Const.Perks.ShieldTree
+		::Const.Perks.ShieldTree,
+		::Const.Perks.DualWieldTree
 	],
-	function getRandom(_exclude)
-	{
+
+	function getRandom(_exclude) {
 		local L = [];
-		foreach (i, t in this.Tree)
-		{
-			if (_exclude.find(t.ID) != null)
-			{
+		foreach (i, t in this.Tree) {
+			if (_exclude.find(t.ID) != null) {
 				//this.logInfo("Excluding " + t.ID)
 				continue;
 			}
@@ -931,15 +978,14 @@ if (!("Perks" in ::Const))
 		::Const.Perks.DaggerTree,
 		::Const.Perks.PolearmTree,
 		::Const.Perks.SpearTree,
-		::Const.Perks.ShieldTree
+		::Const.Perks.ShieldTree,
+		::Const.Perks.DualWieldTree
 	],
-	function getRandom(_exclude)
-	{
+
+	function getRandom(_exclude) {
 		local L = [];
-		foreach (i, t in this.Tree)
-		{
-			if (_exclude.find(t.ID))
-			{
+		foreach (i, t in this.Tree) {
+			if (_exclude.find(t.ID)) {
 				continue;
 			}
 			L.push(i);
@@ -957,13 +1003,11 @@ if (!("Perks" in ::Const))
 		::Const.Perks.ThrowingTree,
 		::Const.Perks.SlingTree
 	],
-	function getRandom(_exclude)
-	{
+
+	function getRandom(_exclude) {
 		local L = [];
-		foreach (i, t in this.Tree)
-		{
-			if (_exclude != null && _exclude.find(t.ID))
-			{
+		foreach (i, t in this.Tree) {
+			if (_exclude != null && _exclude.find(t.ID)) {
 				continue;
 			}
 			L.push(i);
@@ -973,14 +1017,11 @@ if (!("Perks" in ::Const))
 		return this.Tree[L[r]];
 	}
 
-	function getRandomPerk()
-	{
+	function getRandomPerk() {
 		local tree = this.getRandom(null);
 		local L = [];
-		foreach (row in tree.Tree)
-		{
-			foreach (p in row)
-			{
+		foreach (row in tree.Tree) {
+			foreach (p in row) {
 				L.push(p);
 			}
 		}

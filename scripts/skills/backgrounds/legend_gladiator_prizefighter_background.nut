@@ -25,7 +25,7 @@ this.legend_gladiator_prizefighter_background <- this.inherit("scripts/skills/ba
 				this.Const.Perks.AgileTree,
 				this.Const.Perks.LargeTree,
 				this.Const.Perks.FitTree,
-				this.Const.Perks.SturdyTree
+				this.Const.Perks.MartyrTree
 			],
 			Enemy = [],
 			Class = [
@@ -97,7 +97,9 @@ this.legend_gladiator_prizefighter_background <- this.inherit("scripts/skills/ba
 
 	function onAddEquipment()
 	{
-		local items = this.getContainer().getActor().getItems();
+		local actor = this.getContainer().getActor();
+		actor.setVeteranPerks(3);
+		local items = actor.getItems();
 		local r;
 
 		local a = this.Const.World.Common.pickArmor([

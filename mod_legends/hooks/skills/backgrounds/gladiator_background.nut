@@ -1,5 +1,6 @@
 ::mods_hookExactClass("skills/backgrounds/gladiator_background", function(o)
 {
+	o.m.LoneWolfHidden <- true;
 	o.create = function ()
 	{
 		this.character_background.create();
@@ -101,7 +102,8 @@
 				this.Const.Perks.IndestructibleTree,
 				this.Const.Perks.AgileTree,
 				this.Const.Perks.LargeTree,
-				this.Const.Perks.FitTree
+				this.Const.Perks.FitTree,
+				this.Const.Perks.MartyrTree
 			],
 			Enemy = [],
 			Class = [
@@ -114,7 +116,19 @@
 
 	o.getTooltip = function ()
 	{
-		return this.character_background.getTooltip();
+		local ret =  this.character_background.getTooltip();
+		if (!this.m.LoneWolfHidden)
+		{
+			ret.push(
+				{
+					id = 13,
+					type = "text",
+					icon = "ui/icons/regular_damage.png",
+					text = "[color=%positive%]10%[/color] damage increase"
+				}
+			);
+		}
+		return ret;
 	}
 
 	//Default Male
@@ -180,6 +194,46 @@
 		}
 	}
 
+	o.onUpdate <- function ( _properties )
+	{
+		this.character_background.onUpdate(_properties);
+		if (!this.getContainer().getActor().isPlacedOnMap())
+		{
+			this.m.LoneWolfHidden = true;
+			return;
+		}
+
+		local actor = this.getContainer().getActor();
+		local myTile = actor.getTile();
+		local allies = this.Tactical.Entities.getInstancesOfFaction(actor.getFaction());
+		local isAlone = true;
+
+		foreach( ally in allies )
+		{
+			if (ally.getID() == actor.getID() || !ally.isPlacedOnMap())
+			{
+				continue;
+			}
+
+			if (ally.getTile().getDistanceTo(myTile) <= 2)
+			{
+				isAlone = false;
+				break;
+			}
+		}
+
+		if (isAlone)
+		{
+			this.m.LoneWolfHidden = false;
+			_properties.DamageTotalMult *= 1.10;
+		}
+		else
+		{
+			this.m.LoneWolfHidden = true;
+		}
+	}
+
+
 	o.onChangeAttributes = function ()
 	{
 		local c = {
@@ -232,7 +286,9 @@
 
 	o.onAddEquipment = function ()
 	{
-		local items = this.getContainer().getActor().getItems();
+		local actor = this.getContainer().getActor();
+		actor.setVeteranPerks(3);
+		local items = actor.getItems();
 		local r;
 
 		if (items.hasEmptySlot(this.Const.ItemSlot.Mainhand))

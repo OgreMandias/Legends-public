@@ -264,6 +264,7 @@ CharacterScreenPaperdollModule.prototype.createBagSlot = function (
 
 		// Use the container's permanent slot type, not the item's slot type
 		// (a mainhand weapon in offhand slot should report Offhand as the container type)
+		// For bag slots, containerSlotType is NOT set, so targetSlotType will be undefined
 		var targetSlotType = _target.data("containerSlotType");
 		if (targetSlotType === undefined || targetSlotType === null) {
 			if (targetData !== null && "containerSlotType" in targetData) {
@@ -411,7 +412,9 @@ CharacterScreenPaperdollModule.prototype.createBagSlot = function (
 			}
 
 			// Same Slot type ?
-			if (ignoreSlotType === false && targetSlotType !== null) {
+			// Only validate slot type if targetSlotType is actually set (not null/undefined)
+			// Bags don't have containerSlotType set, so targetSlotType will be undefined
+			if (ignoreSlotType === false && targetSlotType) {
 				if (sourceSlotType !== targetSlotType) {
 					console.info(
 						"Backpack::dropHandler: Item must be the same slot type!"
@@ -802,7 +805,8 @@ CharacterScreenPaperdollModule.prototype.createEquipmentSlot = function (
 			}
 
 			// Same Slot type ?
-			if (ignoreSlotType === false && targetSlotType !== null) {
+			// Only validate slot type if targetSlotType is actually set (not null/undefined)
+			if (ignoreSlotType === false && targetSlotType) {
 				if (sourceSlotType !== targetSlotType) {
 					console.info(
 						"Paperdoll::dropHandler: Item must be the same slot type!"
@@ -872,7 +876,8 @@ CharacterScreenPaperdollModule.prototype.createEquipmentSlot = function (
 			}
 
 			// Same Slot type ?
-			if (ignoreSlotType === false && targetSlotType !== null) {
+			// Only validate slot type if targetSlotType is actually set (not null/undefined)
+			if (ignoreSlotType === false && targetSlotType) {
 				if (sourceSlotType !== targetSlotType && !isUsable) {
 					console.info("isUsable = " + isUsable);
 					console.info(

@@ -808,43 +808,43 @@
 
 		local data = this.helper_queryStashItemData(_data);
 		if ("error" in data) {
-			::logError("character_screen::general_onEquipStashItem: Error in data");
-			return data;
+			return general_onEquipStashItem(_data);
 		}
 
-		if (data.sourceItem.getSlotType() == this.Const.ItemSlot.Mainhand
-			&& data.sourceItem.getBlockedSlotType() == null
-			&& ::Legends.Perks.has(data.entity, ::Legends.Perk.LegendAmbidextrous))
+		if (data.sourceItem.getSlotType() != this.Const.ItemSlot.Mainhand
+			|| data.sourceItem.getBlockedSlotType() != null
+			|| !::Legends.Perks.has(data.entity, ::Legends.Perk.LegendAmbidextrous))
 		{
+			return general_onEquipStashItem(_data);
+		}
 
-			// Check if mainhand is occupied and offhand is free
-			local mh = data.inventory.getItemAtSlot(this.Const.ItemSlot.Mainhand);
-			local oh = data.inventory.getItemAtSlot(this.Const.ItemSlot.Offhand);
-			local ohBlocked = data.inventory.hasBlockedSlot(this.Const.ItemSlot.Offhand);
 
-			local targetSlot = (_data.len() >= 4
-				&& _data[3] != null && _data[3] == "offhand") ? this.Const.ItemSlot.Offhand : null;
-			if ((targetSlot == this.Const.ItemSlot.Offhand || (mh != null && oh == null))
-				&& !ohBlocked)
-			{
-				// Temporarily change SlotType to Offhand
-				local originalSlotType = data.sourceItem.m.SlotType;
-				data.sourceItem.m.SlotType = this.Const.ItemSlot.Offhand;
+		// Check if mainhand is occupied and offhand is free
+		local mh = data.inventory.getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		local oh = data.inventory.getItemAtSlot(this.Const.ItemSlot.Offhand);
+		local ohBlocked = data.inventory.hasBlockedSlot(this.Const.ItemSlot.Offhand);
 
-				local result = general_onEquipStashItem(_data);
+		local targetSlot = null;
+		if (typeof _data == "array" && _data.len() >= 4 && _data[3] == "offhand") {
+			targetSlot = this.Const.ItemSlot.Offhand;
+		}
 
-				// Restore SlotType
-				data.sourceItem.m.SlotType = originalSlotType;
+		if ((targetSlot == this.Const.ItemSlot.Offhand || (mh != null && oh == null))
+			&& !ohBlocked)
+		{
+			// Temporarily change SlotType to Offhand
+			local originalSlotType = data.sourceItem.m.SlotType;
+			data.sourceItem.m.SlotType = this.Const.ItemSlot.Offhand;
 
-				return result;
-			}
+			local result = general_onEquipStashItem(_data);
+
+			// Restore SlotType
+			data.sourceItem.m.SlotType = originalSlotType;
+
+			return result;
 		}
 
 		return general_onEquipStashItem(_data);
-	}
-
-	o.onEquipInventoryItem = function (_data) {
-		return this.general_onEquipStashItem(_data);
 	}
 
 	local general_onEquipBagItem = o.general_onEquipBagItem;
@@ -852,36 +852,39 @@
 
 		local data = this.helper_queryEntityItemData(_data);
 		if ("error" in data) {
-			::logError("character_screen::general_onEquipBagItem: Error in data");
-			return data;
+			return general_onEquipBagItem(_data);
 		}
 
-		if (data.sourceItem.getSlotType() == this.Const.ItemSlot.Mainhand
-			&& data.sourceItem.getBlockedSlotType() == null
-			&& ::Legends.Perks.has(data.entity, ::Legends.Perk.LegendAmbidextrous))
+		if (data.sourceItem.getSlotType() != this.Const.ItemSlot.Mainhand
+			|| data.sourceItem.getBlockedSlotType() != null
+			|| !::Legends.Perks.has(data.entity, ::Legends.Perk.LegendAmbidextrous))
 		{
+			return general_onEquipBagItem(_data);
+		}
 
-			// Check if mainhand is occupied and offhand is free
-			local mh = data.inventory.getItemAtSlot(this.Const.ItemSlot.Mainhand);
-			local oh = data.inventory.getItemAtSlot(this.Const.ItemSlot.Offhand);
-			local ohBlocked = data.inventory.hasBlockedSlot(this.Const.ItemSlot.Offhand);
+		// Check if mainhand is occupied and offhand is free
+		local mh = data.inventory.getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		local oh = data.inventory.getItemAtSlot(this.Const.ItemSlot.Offhand);
+		local ohBlocked = data.inventory.hasBlockedSlot(this.Const.ItemSlot.Offhand);
 
-			local targetSlot = (_data.len() >= 4
-				&& _data[3] != null && _data[3] == "offhand") ? this.Const.ItemSlot.Offhand : null;
-			if ((targetSlot == this.Const.ItemSlot.Offhand || (mh != null && oh == null))
-				&& !ohBlocked)
-			{
-				// Temporarily change SlotType to Offhand
-				local originalSlotType = data.sourceItem.m.SlotType;
-				data.sourceItem.m.SlotType = this.Const.ItemSlot.Offhand;
+		local targetSlot = null;
+		if (typeof _data == "array" && _data.len() >= 4 && _data[3] == "offhand") {
+			targetSlot = this.Const.ItemSlot.Offhand;
+		}
 
-				local result = general_onEquipBagItem(_data);
+		if ((targetSlot == this.Const.ItemSlot.Offhand || (mh != null && oh == null))
+			&& !ohBlocked)
+		{
+			// Temporarily change SlotType to Offhand
+			local originalSlotType = data.sourceItem.m.SlotType;
+			data.sourceItem.m.SlotType = this.Const.ItemSlot.Offhand;
 
-				// Restore SlotType
-				data.sourceItem.m.SlotType = originalSlotType;
+			local result = general_onEquipBagItem(_data);
 
-				return result;
-			}
+			// Restore SlotType
+			data.sourceItem.m.SlotType = originalSlotType;
+
+			return result;
 		}
 
 		return general_onEquipBagItem(_data);

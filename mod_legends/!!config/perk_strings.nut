@@ -2012,6 +2012,8 @@ Master the ability to ensnare others and to disentangle yourself.
 • When freeing yourself or allies gain a baseline [color=%positive%]99%[/color] chance to succeed in removing rooting effects, such as nets, vines, webs, and ensnarement by some beasts.
 
 • Reduces Fatigue cost of freeing yourself or allies by [color=%negative%]66%[/color] and AP cost to [color=%negative%]3[/color].
+
+• Can now double grip with a net in your offhand and unlocks Hand to Hand abilities that might be locked from holding a net in offhand.
 ";
 
 ::Const.Strings.PerkDescription.LegendMasterySlings <- @"
@@ -3079,7 +3081,7 @@ Put to use your skill in the creation and maintenance of siege weapons.
 Many years spent repairing and packing nets allows you to create nets and wield them more effectively.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Allows your company to repair a broken net (refill ammo charges) for a cost of 15 ammo.
+• Reduces the refill cost of nets to 10.
 
 • Grants[color=%positive%]+10[/color] Melee Defense while holding a net.
 
@@ -3090,15 +3092,9 @@ Many years spent repairing and packing nets allows you to create nets and wield 
 Perfect the art of casting nets.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Increases the throwing range of nets and reinforced nets by [color=%positive%]2[/color].
+• Increases the throwing range of nets and reinforced nets by [color=%positive%]2[/color] and the throwing range of bombs by [color=%positive%]1[/color].
 
-• Equipping a net when the offhand is free and always costs no Action Points.
-
-• Nets you throw have a chance to be reusable in battle.
-
-• Regular Nets have a [color=%positive%]25%[/color] chance to be reusable and Reinforced Nets have a [color=%positive%]50%[/color] chance to be reusable.
-
-• All nets have a [color=%positive%]100%[/color] chance to be reusable if the target is killed before breaking free.
+• Chance based on your Ranged Skill and Ranged Defense to trap additional adjacent targets when throwing a net. The chance decreases with each target you ensnare. 
 ";
 
 ::Const.Strings.PerkDescription.LegendPacifist <- @"

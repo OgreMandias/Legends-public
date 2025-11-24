@@ -53,21 +53,42 @@
 		local net = _user.getItems().getItemAtSlot(::Const.ItemSlot.Offhand);
 		local target = _targetTile.getEntity();
 
-		if (net != null && target != null && !target.getCurrentProperties().IsImmuneToRoot && isPlayer) { //prevent player from looting enemy nets
-			target.getFlags().set("DropNet", true);
-			target.getFlags().set("IsByNetCasting", false);
-			target.getFlags().set("IsReinforcedNet", false);
-
-			if(_user.getCurrentProperties().IsSpecializedInNetCasting) //Net casting flag
-				target.getFlags().set("IsByNetCasting", true);
-			if (net.getID().find("reinforced_throwing_net") != null) //Reinforced net flag
-				target.getFlags().set("IsReinforcedNet", true);
-		}
-
 		if (this.m.IsUnholdNet)
 			target.isAlliedWithPlayer = @() false;
 
 		local ret = onUse(_user, _targetTile); // this returns `null` or `false`, bruh
+
+		if (_user.getCurrentProperties().IsSpecializedInNetCasting && ret != false)
+		{
+			local tile = _targetEntity.getTile();
+			local targetTiles = [];
+			local chance = _user.getCurrentProperties().getRangedSkill() + _user.getCurrentProperties().getRangedDefense();
+			local successes = 1.0;
+			local newRet;
+			for( local i = 0; i != 6; i = ++i )
+			{
+				if (!_tile.hasNextTile(i))
+				{
+					continue;
+				}
+				else
+				{
+					local next = _tile.getNextTile(i);
+
+					if (next.IsOccupiedByActor && this.Math.abs(next.Level - _tile.Level) <= 1 && !next.getEntity().isAlliedWithPlayer())
+					{
+						if (this.Math.rand(1, 100) < this.Math.floor(chance / successes + 1.0))
+						{
+							newRet = onUse(_user, next);
+							if (newRet != false)
+							{
+								successes += 1.0;
+							}
+						}
+					}
+				}
+			}
+		}
 
 		if (this.m.IsUnholdNet && ret != false) {
 			::Legends.Effects.grant(target, ::Legends.Effect.Sleeping);

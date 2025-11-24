@@ -118,33 +118,35 @@
 		foreach( bro in ::World.getPlayerRoster().getAll() )
 		{
 			if (bro.getFlags().get("LegendsCanRepairNet")) {
-				repairNet = true;
+				::World.Statistics.getFlags().set("LegendsCanRepairNet", true);
 				break;
 			}
 		}
 
-		if (repairNet) { // repairing net in stash too
-			::World.Statistics.getFlags().set("LegendsCanRepairNet", true);
-			foreach (item in getStash().getItems())
+		foreach (item in getStash().getItems())
+		{
+			if (item == null)
+				continue;
+
+			if (!item.isItemType(::Const.Items.ItemType.Net) || !item.isItemType(::Const.Items.ItemType.Ammo) || item.getAmmo() >= item.getAmmoMax())
+				continue;
+
+			local ammoCost = item.getAmmoCost();
+			if (item.isItemType(::Const.Items.ItemType.Net) && ::World.Statistics.getFlags().get("LegendsCanRepairNet"))
 			{
-				if (item == null)
-					continue;
-
-				if (!item.isItemType(::Const.Items.ItemType.Net) || !item.isItemType(::Const.Items.ItemType.Ammo) || item.getAmmo() >= item.getAmmoMax())
-					continue;
-
-				local a = ::Math.min(this.m.Ammo, ::Math.ceil(item.getAmmoMax() - item.getAmmo()) * item.getAmmoCost());
-
-				if (this.m.Ammo >= a) {
-					item.setAmmo(item.getAmmo() + ::Math.ceil(a / item.getAmmoCost()));
-					this.m.Ammo -= a;
-				}
-
-				if (this.m.Ammo == 0)
-					break;
+				ammoCost -= 5;
 			}
+			local a = ::Math.min(this.m.Ammo, ::Math.ceil(item.getAmmoMax() - item.getAmmo()) * ammoCost);
+
+			if (this.m.Ammo >= a) {
+
+				item.setAmmo(item.getAmmo() + ::Math.ceil(a / ammoCost));
+				this.m.Ammo -= a;
+			}
+
+			if (this.m.Ammo == 0)
+				break;
 		}
-		else { ::World.Statistics.getFlags().remove("LegendsCanRepairNet"); }
 
 		refillAmmo();
 	}

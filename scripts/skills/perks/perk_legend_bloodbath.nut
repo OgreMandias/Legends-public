@@ -59,6 +59,9 @@ this.perk_legend_bloodbath <- this.inherit("scripts/skills/skill", {
 		if (::Legends.S.skillEntityAliveCheck(myself))
 			return 0;
 
+		if (!myself.isPlacedOnMap())
+			return 0;
+
 		local myTile = myself.getTile();
 		if (myTile == null)
 			return 0;
@@ -68,6 +71,8 @@ this.perk_legend_bloodbath <- this.inherit("scripts/skills/skill", {
 				if (!::MSU.isKindOf(_target, "actor"))
 					return false;
 				if (::Legends.S.skillEntityAliveCheck(_actor))
+					return false;
+				if (!_actor.isPlacedOnMap())
 					return false;
 				if (_actor.isAlliedWith(myself))
 					return false;

@@ -77,8 +77,8 @@
 	{
 		onPrepareVariables(_vars);
 		if (this.m.Lightweight != null)
-			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Lightweight.getGender(), "lightweight");
+			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Lightweight, "lightweight");
 		if (this.m.Other != null)
-			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Other.getGender(), "chosenbrother");
+			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Other, "chosenbrother");
 	}
 })

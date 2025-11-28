@@ -106,11 +106,11 @@
 		onPrepareVariables(_vars);
 		if (this.m.Shieldmaiden != null) {
 			_vars.push(["shieldmaiden", this.m.Shieldmaiden.getNameOnly()]);
-			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Shieldmaiden.getGender(), "shieldmaiden");
+			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Shieldmaiden, "shieldmaiden");
 		}
 		if (this.m.Militia != null) {
 			_vars.push(["militia", this.m.Militia.getNameOnly()]);
-			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Militia.getGender(), "militia");
+			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Militia, "militia");
 		}
 	}
 

@@ -82,7 +82,7 @@ this.legend_recruitment_druid_camp_encounter <- this.inherit("scripts/encounters
 	}
 
 	function onPrepareVariables (_vars) {
-		this.Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Druid.getGender(), "Druid");
+		this.Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Druid, "Druid");
 	}
 
 	function isVisible() {

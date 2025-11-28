@@ -273,11 +273,11 @@
 		onPrepareVariables(_vars);
 		if (this.m.Dervish != null) {
 			_vars.push(["dervish", this.m.Dervish.getNameOnly()]);
-			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Dervish.getGender(), "dervish");
+			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Dervish, "dervish");
 		}
 		if (this.m.Southerner != null) {
 			_vars.push(["southerner", this.m.Southerner.getNameOnly()]);
-			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Southerner.getGender(), "southerner");
+			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Southerner, "southerner");
 		}
 	}
 

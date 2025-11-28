@@ -121,6 +121,6 @@
 	{
 		onPrepareVariables(_vars);
 		if (this.m.Disowned != null)
-			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Disowned.getGender(), "disowned");
+			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Disowned, "disowned");
 	}
 })

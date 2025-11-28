@@ -57,6 +57,6 @@
 	local onPrepareVariables = o.onPrepareVariables;
 	o.onPrepareVariables = function ( _vars ) {
 		onPrepareVariables(_vars);
-		this.Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Dude.getGender());
+		this.Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Dude);
 	}
 })

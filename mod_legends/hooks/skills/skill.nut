@@ -8,7 +8,6 @@
 
 	o.getDescription = function()
 	{
-		local gender = -1;
 		local vars = [];
 		if (this.getContainer() == null || (typeof this.getContainer() == "instance" && this.getContainer().isNull()) || this.getContainer().getActor() == null)
 		{
@@ -18,7 +17,6 @@
 		else
 		{
 			local actor = this.getContainer().getActor();
-			gender = actor.getGender();
 			vars.extend([
 				[
 					"name",
@@ -33,8 +31,8 @@
 					actor.getTitle()
 				]
 			]);
+			::Const.LegendMod.extendVarsWithPronouns(vars, actor);
 		}
-		this.Const.LegendMod.extendVarsWithPronouns(vars, gender);
 		return this.buildTextFromTemplate(this.m.Description, vars);
 	}
 

@@ -23,12 +23,12 @@
 	{
 		onPrepareVariables(_vars);
 		if (this.m.Superstitious != null)
-			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Superstitious.getGender(), "superstitious");
+			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Superstitious, "superstitious");
 		if (this.m.Archer != null)
-			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Archer.getGender(), "archer");
+			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Archer, "archer");
 		if (this.m.Historian != null)
-			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Historian.getGender(), "historian");
+			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Historian, "historian");
 		if (this.m.Victim != null)
-			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Victim.getGender(), "birdbro");
+			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Victim, "birdbro");
 	}
 });

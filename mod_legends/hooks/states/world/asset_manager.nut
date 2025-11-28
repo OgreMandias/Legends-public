@@ -1099,7 +1099,7 @@
 			]
 		];
 
-		this.Const.LegendMod.extendVarsWithPronouns(vars, bro.Bro.getGender());
+		::Const.LegendMod.extendVarsWithPronouns(vars, bro.Bro);
 
 		if (_isPositive)
 		{

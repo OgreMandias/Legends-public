@@ -53,6 +53,6 @@
 	}
 
 	o.onPrepareVariables = function (_vars) {
-		this.Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Dude.getGender(), "slayer");
+		this.Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Dude, "slayer");
 	}
 })

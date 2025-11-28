@@ -1146,7 +1146,7 @@ this.legend_preemptive_beasts_contract <- this.inherit("scripts/contracts/contra
 				"peddler",
 				::Const.UI.getColorized(this.m.Peddler.getName(), ::Const.UI.Color.getHighlightDarkBackgroundValue()),
 			]);
-			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Peddler.getGender(), "peddler");
+			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Peddler, "peddler");
 		}
 
 		if (!::MSU.isNull(this.m.Poacher))
@@ -1155,7 +1155,7 @@ this.legend_preemptive_beasts_contract <- this.inherit("scripts/contracts/contra
 				"poacher",
 				::Const.UI.getColorized(this.m.Poacher.getName(), ::Const.UI.Color.getHighlightDarkBackgroundValue()),
 			]);
-			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Poacher.getGender(), "poacher");
+			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Poacher, "poacher");
 		}
 
 		if (!::MSU.isNull(this.m.ExpertHunter))
@@ -1164,7 +1164,7 @@ this.legend_preemptive_beasts_contract <- this.inherit("scripts/contracts/contra
 				"expert",
 				::Const.UI.getColorized(this.m.ExpertHunter.getName(), ::Const.UI.Color.getHighlightDarkBackgroundValue()),
 			]);
-			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.ExpertHunter.getGender(), "expert");
+			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.ExpertHunter, "expert");
 		}
 
 		local beasts;

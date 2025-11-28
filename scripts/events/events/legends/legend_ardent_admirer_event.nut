@@ -146,7 +146,7 @@ this.legend_ardent_admirer_event <- this.inherit("scripts/events/event", {
 	{
 		if (this.m.Gunner != null) {
 			_vars.push(["handgonner", this.m.Gunner.getName()]);
-			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Gunner.getGender(), "handgonner");
+			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Gunner, "handgonner");
 		}
 	}
 

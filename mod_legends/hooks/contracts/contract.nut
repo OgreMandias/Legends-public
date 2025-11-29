@@ -326,14 +326,6 @@
 			}
 		}
 
-		if (brothers.len() < 2) {
-			brother1 = "unknown";
-			brother2 = "unknown";
-		} else {
-			brother1 = brothers[brother1].getName();
-			brother2 = brothers[brother2].getName();
-		}
-
 		local villages = this.World.EntityManager.getSettlements();
 		local randomTown;
 
@@ -371,11 +363,11 @@
 			],
 			[
 				"randombrother",
-				brother1
+				brothers.len() < 2 ? "unknown" : brothers[brother1].getName()
 			],
 			[
 				"randombrother2",
-				brother2
+				brothers.len() < 2 ? "unknown" : brothers[brother2].getName()
 			],
 			[
 				"randomtown",

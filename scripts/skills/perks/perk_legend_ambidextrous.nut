@@ -102,6 +102,19 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 		local items = actor.getItems();
 		local off = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
 
+		// Don't trigger follow-up if the attack came from the offhand
+		if (_skill.m.Item != null && off != null && _skill.m.Item.getID() == off.getID()) {
+			return;
+		}
+
+		// Refresh offhand skill reference if it became invalid (e.g., after weapon switching)
+		if (off != null
+			&& ::MSU.isNull(m.offHandSkill)
+			&& m.ApplicableItems.find(off.getID()) != null)
+		{
+			setOffhandSkill(off.getPrimaryOffhandAttack());
+		}
+
 		if (_targetEntity != null
 			&& !items.hasBlockedSlot(this.Const.ItemSlot.Offhand)
 			&& (off == null || !::MSU.isNull(this.m.offHandSkill)))
@@ -114,6 +127,11 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 				local skillToUse = !::MSU.isNull(this.m.offHandSkill)
 					? this.m.offHandSkill
 					: this.m.HandToHand;
+
+				// Don't trigger follow-up if offhand attack costs more AP than the mainhand attack used
+				if (skillToUse.getActionPointCost() > _skill.getActionPointCost()) {
+					return;
+				}
 
 				// i need to somehow do this more dynamically
 				this.Const.SkillCounter++;

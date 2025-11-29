@@ -46,7 +46,7 @@ this.perk_legend_bloodbath <- this.inherit("scripts/skills/skill", {
 		if (!::Tactical.isActive())
 			return 0;
 
-		if (::Tactical.isBattleEnded())
+		if ("State" in ::Tactical && ::Tactical.State.isBattleEnded())
 			return 0;
 
 		if (!("Entities" in ::Tactical))

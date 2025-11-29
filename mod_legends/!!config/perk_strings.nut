@@ -3605,7 +3605,7 @@ Extensive training in circus maneuvers allows you to move out of harm's way with
 Practice in physical movement with a partner has given the ability to take the lead and move someone's body in a twirling movement.
 
 [color=%passive%][u]Passive:[/u][/color]
-• If you have taken the [color=%perk%]Rotation[/color] perk, it can now target enemies.
+• [color=%skill%]Rotation[/color] can now target enemies.
 ";
 
 ::Const.Strings.PerkDescription.LegendKnifeplay <- @"

@@ -9,6 +9,8 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 			"shield.legend_mummy_shield"
 		],
 		OffhandDamageMult = 0.5,
+		IsRefreshing = false,
+		NeedsRefresh = null,
 	},
 
 	// takes a weakTableRef
@@ -227,6 +229,7 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 
 		// Check if this is a dual-wielded weapon
 		local items = this.getContainer().getActor().getItems();
+		local mh = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
 		local oh = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
 		if (oh != null && oh.getID() == _item.getID()) {
 			local skill = this.findPrimaryAttackSkill(_item);
@@ -234,27 +237,70 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 				this.setOffhandSkill(skill);
 			}
 		}
+
+		// Mark which slot needs refresh
+		if (!this.m.IsRefreshing && mh != null && oh != null && mh.getID() != oh.getID()) {
+			if (mh == _item) {
+				this.m.NeedsRefresh = "oh";
+			} else if (oh == _item) {
+				this.m.NeedsRefresh = "mh";
+			}
+		}
 	}
+
+	// Works when equipping from bag
+	// When equipping from inventory, the weapon skills replace everything
 
 	function onUnequip(_item) {
 		resetOffhandSkill();
 
-		// Refresh weapon skills after unequip (deduped skills need to be re-granted)
+		// Mark which slot needs refresh
+		if (!this.m.IsRefreshing) {
+			local items = this.getContainer().getActor().getItems();
+			local mh = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
+			local oh = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
+
+			if (mh != null && oh != null && mh.getID() != oh.getID()) {
+				if (mh == _item) {
+					this.m.NeedsRefresh = "oh";
+				} else if (oh == _item) {
+					this.m.NeedsRefresh = "mh";
+				}
+			} else if (mh != null && mh != _item && oh == null) {
+				this.m.NeedsRefresh = "mh";
+			} else if (oh != null && oh != _item && mh == null) {
+				this.m.NeedsRefresh = "oh";
+			}
+		}
+	}
+
+	function onAfterUpdate(_properties) {
+		if (this.m.NeedsRefresh == null || this.m.IsRefreshing) {
+			return;
+		}
+
+		local refreshTarget = this.m.NeedsRefresh;
+		this.m.NeedsRefresh = null;
+		this.m.IsRefreshing = true;
+
 		local actor = this.getContainer().getActor();
 		local items = actor.getItems();
-		local mh = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		local oh = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
 
-		if (mh != null && mh != _item) {
-			mh.onUnequip();
-			mh.onEquip();
+		if (refreshTarget == "mh") {
+			local mh = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
+			if (mh != null) {
+				mh.onUnequip();
+				mh.onEquip();
+			}
+		} else if (refreshTarget == "oh") {
+			local oh = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
+			if (oh != null) {
+				oh.onUnequip();
+				oh.onEquip();
+			}
 		}
 
-		if (oh != null && oh != _item) {
-			oh.onUnequip();
-			oh.onEquip();
-		}
-
+		this.m.IsRefreshing = false;
 	}
 
 	// Returns true if dual wielding non ApplicableItems

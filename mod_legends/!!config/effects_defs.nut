@@ -1,21 +1,22 @@
-if (!("Effects" in ::Legends))
+if (!("Effects" in ::Legends)) {
 	::Legends.Effects <- {};
+}
 
-if (!("Effect" in ::Legends))
+if (!("Effect" in ::Legends)) {
 	::Legends.Effect <- {};
+}
 
 ::Legends.Effects.EffectDefObjects <- [];
 
-::Legends.Effects.addEffectDefObjects <- function( _effectDefObjects )
-{
+::Legends.Effects.addEffectDefObjects <- function (_effectDefObjects) {
 	local size = ::Legends.Effects.EffectDefObjects.len();
 	::Legends.Effects.EffectDefObjects.extend(_effectDefObjects);
-	foreach (i, effectDefObjects in _effectDefObjects)
-	{
-		if (effectDefObjects.Const in ::Legends.Effect)
+	foreach (i, effectDefObjects in _effectDefObjects) {
+		if (effectDefObjects.Const in ::Legends.Effect) {
 			::Legends.Effect[effectDefObjects.Const] = size + i;
-		else
+		} else {
 			::Legends.Effect[effectDefObjects.Const] <- size + i;
+		}
 	}
 }
 
@@ -2059,14 +2060,6 @@ effectsDefs.push({
 	Script = "scripts/skills/effects/legend_armor_tracking_effect",
 	Const = "LegendArmorTracking",
 	Name = "LegendArmorTracking",
-});
-
-::Legends.Effect.LegendDualWieldOffhand <- null;
-effectsDefs.push({
-	ID = "effects.legend_dual_wield_offhand",
-	Script = "scripts/skills/effects/legend_dual_wield_offhand_effect",
-	Const = "LegendDualWieldOffhand",
-	Name = "Dual Wield Offhand",
 });
 
 ::Legends.Effects.addEffectDefObjects(effectsDefs);

@@ -921,7 +921,7 @@ if (!("Perks" in ::Const)) {
 		[::Legends.Perk.LegendAmbidextrous],
 		[],
 		[],
-		[],
+		[::Legends.Perk.LegendSpecDualWield],
 		[],
 		[],
 		[]

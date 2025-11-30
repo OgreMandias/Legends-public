@@ -8,10 +8,18 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 			"shield.buckler",
 			"shield.legend_mummy_shield"
 		],
-		OffhandDamageMult = 0.5,
+		OffhandDamageMult = 0.33,
+		OffhandDamageMultMastery = 0.5,
 		IsRefreshing = false,
 		NeedsRefresh = null,
 	},
+
+	function getOffhandDamageMult() {
+		if (this.getContainer().hasPerk(::Legends.Perk.LegendSpecDualWield)) {
+			return this.m.OffhandDamageMultMastery;
+		}
+		return this.m.OffhandDamageMult;
+	}
 
 	// takes a weakTableRef
 	function setOffhandSkill(_a) {
@@ -36,11 +44,6 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 		return !(off == null && !items.hasBlockedSlot(this.Const.ItemSlot.Offhand));
 	}
 
-	function getDescription() {
-		local skill = !::MSU.isNull(this.m.offHandSkill) ? this.m.offHandSkill : this.m.HandToHand;
-		return format("Fluid like water!\n\nThis character will follow up main hand attacks with a [color=" + ::Const.UI.Color.Active + "]%s[/color] from their off hand.", skill.getName());
-	}
-
 	function getTooltip() {
 		local items = this.getContainer().getActor().getItems();
 		local off = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
@@ -55,30 +58,39 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 			{
 				id = 2,
 				type = "description",
-				text = this.getDescription() // Since the passive should have a different name than the perk in this case
+				text = "Fluid like water!\n\nThis character will follow up main hand attacks with an attack from their off hand, if possible."
 			}
 		];
 
-		local offhandSkill = !::MSU.isNull(this.m.offHandSkill)
-			? this.m.offHandSkill
-			: this.m.HandToHand;
+		local ohSkill = ::MSU.isNull(this.m.offHandSkill) ? this.m.HandToHand : this.m.offHandSkill;
 		local blockedOffhand = items.hasBlockedSlot(this.Const.ItemSlot.Offhand);
-		if (offhandSkill != null && !blockedOffhand) {
-			ret.push({
-				id = 10,
-				type = "text",
-				icon = "ui/icons/special.png",
-				text = "Follow-up attack: [color=" + this.Const.UI.Color.PositiveValue + "]" + offhandSkill.getName() + "[/color]"
-			});
-		}
+		if (ohSkill != null && !blockedOffhand) {
+			local ohDisabled = false;
+			if (main != null && off != null) {
+				local mhSkill = this.findPrimaryAttackSkill(main);
+				ohDisabled = mhSkill != null
+					&& ohSkill.getActionPointCost() > mhSkill.getActionPointCost();
+			}
 
-		if (this.isDualWielding()) {
-			ret.push({
-				id = 11,
-				type = "text",
-				icon = "ui/icons/damage_dealt.png",
-				text = "Follow-up attack deals [color=" + this.Const.UI.Color.NegativeValue + "]-" + this.Math.floor((1.0 - this.m.OffhandDamageMult) * 100) + "%[/color] damage"
-			});
+			if (ohDisabled) {
+				ret.push({
+					id = 3,
+					type = "text",
+					icon = "ui/icons/special.png",
+					text = "Follow-up attack: [color=%negative%]Disabled[/color]"
+				});
+			} else {
+				local text = "Follow-up attack: [color=%positive%]" + ohSkill.getName() + "[/color]";
+				if (this.isDualWielding()) {
+					text += " ([color=%negative%]-" + this.Math.floor((1.0 - this.getOffhandDamageMult()) * 100) + "%[/color] damage)";
+				}
+				ret.push({
+					id = 3,
+					type = "text",
+					icon = "ui/icons/special.png",
+					text = text
+				});
+			}
 		}
 
 		if ((main == null || this.getContainer().hasEffect(::Legends.Effect.Disarmed))
@@ -86,13 +98,13 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 			&& !blockedOffhand)
 		{
 			ret.push({
-				id = 3,
+				id = 4,
 				type = "text",
 				icon = "ui/icons/melee_skill.png",
 				text = "[color=%positive%]+5[/color] Melee Skill"
 			});
 			ret.push({
-				id = 4,
+				id = 5,
 				type = "text",
 				icon = "ui/icons/melee_defense.png",
 				text = "[color=%positive%]+10[/color] Melee Defense"
@@ -206,7 +218,7 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 		local items = this.getContainer().getActor().getItems();
 		local oh = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
 		if (_skill.m.Item != null && oh != null && _skill.m.Item.getID() == oh.getID()) {
-			_properties.DamageTotalMult *= this.m.OffhandDamageMult;
+			_properties.DamageTotalMult *= this.getOffhandDamageMult();
 		}
 	}
 

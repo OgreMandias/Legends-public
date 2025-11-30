@@ -169,6 +169,7 @@
 ::Const.Strings.PerkName.LegendMasteryNets <- "Net Mastery";
 ::Const.Strings.PerkName.LegendMasterySlings <- "Sling Mastery";
 ::Const.Strings.PerkName.LegendSpecUnarmed <- "Unarmed Mastery";
+::Const.Strings.PerkName.LegendSpecDualWield <- "Dual Wield Mastery";
 
 //VALA SKILLS - skills used only be the Vala
 //todo, had to uncomment it, otherwise it crashes - chopeks
@@ -2648,7 +2649,7 @@ Unlock the ability to follow up attacks with your off hand!
 
 • If using a Buckler, Mummy Shield or Parrying Dagger, follow up with [color=%skill%]Buckler Bash[/color] or [color=%skill%]Stab[/color] instead.
 
-• When dual wielding other weapons, follow up with the offhand weapon's attack. Offhand attacks deal [color=%negative%]-50%[/color] damage.
+• When dual wielding other weapons, follow up with the offhand weapon's attack. Offhand attacks deal [color=%negative%]-66%[/color] damage.
 
 [color=%negative%][u]Restrictions:[/u][/color]
 • Offhand follow-up only triggers when attacking with your main hand.
@@ -3839,3 +3840,9 @@ Oftentimes better than a master of one.
 • Gain [color=%positive%]10%[/color] of your base Ranged Skill as Melee Skill and [color=%positive%]10%[/color] of your base Melee Skill as Ranged Skill.
 ";
 
+::Const.Strings.PerkDescription.LegendSpecDualWield <- @"
+Master the art of fighting with a weapon in each hand.
+
+[color=%passive%][u]Passive:[/u][/color]
+• Reduces off-hand weapon damage malus from [color=%negative%]-66%[/color] to [color=%negative%]-50%[/color] when dual wielding.
+";

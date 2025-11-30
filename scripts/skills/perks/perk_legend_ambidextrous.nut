@@ -8,7 +8,7 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 			"shield.buckler",
 			"shield.legend_mummy_shield"
 		],
-		DualWieldEffect = null,
+		OffhandDamageMult = 0.5,
 	},
 
 	// takes a weakTableRef
@@ -36,7 +36,7 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 
 	function getDescription() {
 		local skill = !::MSU.isNull(this.m.offHandSkill) ? this.m.offHandSkill : this.m.HandToHand;
-		return format("Fluid like water!\n\nThis character will follow up any attack with a [color=" + ::Const.UI.Color.Active + "]%s[/color] from their off hand! If both hands are free, they also gain additional melee skill and melee defense.", skill.getName());
+		return format("Fluid like water!\n\nThis character will follow up main hand attacks with a [color=" + ::Const.UI.Color.Active + "]%s[/color] from their off hand.", skill.getName());
 	}
 
 	function getTooltip() {
@@ -57,21 +57,43 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 			}
 		];
 
+		local offhandSkill = !::MSU.isNull(this.m.offHandSkill)
+			? this.m.offHandSkill
+			: this.m.HandToHand;
+		local blockedOffhand = items.hasBlockedSlot(this.Const.ItemSlot.Offhand);
+		if (offhandSkill != null && !blockedOffhand) {
+			ret.push({
+				id = 10,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Follow-up attack: [color=" + this.Const.UI.Color.PositiveValue + "]" + offhandSkill.getName() + "[/color]"
+			});
+		}
+
+		if (this.isDualWielding()) {
+			ret.push({
+				id = 11,
+				type = "text",
+				icon = "ui/icons/damage_dealt.png",
+				text = "Follow-up attack deals [color=" + this.Const.UI.Color.NegativeValue + "]-" + this.Math.floor((1.0 - this.m.OffhandDamageMult) * 100) + "%[/color] damage"
+			});
+		}
+
 		if ((main == null || this.getContainer().hasEffect(::Legends.Effect.Disarmed))
 			&& off == null
-			&& !items.hasBlockedSlot(this.Const.ItemSlot.Offhand))
+			&& !blockedOffhand)
 		{
 			ret.push({
 				id = 3,
 				type = "text",
 				icon = "ui/icons/melee_skill.png",
-				text = "[color=%positive%]+5[/color] melee skill"
+				text = "[color=%positive%]+5[/color] Melee Skill"
 			});
 			ret.push({
 				id = 4,
 				type = "text",
 				icon = "ui/icons/melee_defense.png",
-				text = "[color=%positive%]+10[/color] melee defense"
+				text = "[color=%positive%]+10[/color] Melee Defense"
 			});
 		}
 
@@ -108,11 +130,15 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 		}
 
 		// Refresh offhand skill reference if it became invalid (e.g., after weapon switching)
-		if (off != null
-			&& ::MSU.isNull(m.offHandSkill)
-			&& m.ApplicableItems.find(off.getID()) != null)
-		{
-			setOffhandSkill(off.getPrimaryOffhandAttack());
+		if (off != null && ::MSU.isNull(m.offHandSkill)) {
+			if (m.ApplicableItems.find(off.getID()) != null) {
+				setOffhandSkill(off.getPrimaryOffhandAttack());
+			} else {
+				local skill = this.findPrimaryAttackSkill(off);
+				if (skill != null) {
+					this.setOffhandSkill(skill);
+				}
+			}
 		}
 
 		if (_targetEntity != null
@@ -170,6 +196,18 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
+	// Apply damage penalty for dual-wielded offhand attacks (not ApplicableItems)
+	function onAnySkillUsed(_skill, _targetEntity, _properties) {
+		if (!this.isDualWielding()) {
+			return;
+		}
+		local items = this.getContainer().getActor().getItems();
+		local oh = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
+		if (_skill.m.Item != null && oh != null && _skill.m.Item.getID() == oh.getID()) {
+			_properties.DamageTotalMult *= this.m.OffhandDamageMult;
+		}
+	}
+
 	function onAdded() {
 		this.m.HandToHand = ::MSU.asWeakTableRef(::Legends.Actives.get(this, ::Legends.Active.HandToHand));
 
@@ -194,33 +232,43 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 			local skill = this.findPrimaryAttackSkill(_item);
 			if (skill != null) {
 				this.setOffhandSkill(skill);
-				::Legends.Effects.grant(this, ::Legends.Effect.LegendDualWieldOffhand, function (_effect) {
-					_effect.setOffhandWeapon(_item);
-					this.m.DualWieldEffect = ::MSU.asWeakTableRef(_effect);
-				}
-				.bindenv(this));
 			}
 		}
 	}
 
 	function onUnequip(_item) {
+		resetOffhandSkill();
 
-		// Check if this is one of the hardcoded offhand weapons (parrying dagger, buckler, etc.)
-		if (this.m.ApplicableItems.find(_item.getID()) != null) {
-			resetOffhandSkill();
-			return;
+		// Refresh weapon skills after unequip (deduped skills need to be re-granted)
+		local actor = this.getContainer().getActor();
+		local items = actor.getItems();
+		local mh = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		local oh = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
+
+		if (mh != null && mh != _item) {
+			mh.onUnequip();
+			mh.onEquip();
 		}
 
-		// Check if this is a dual-wielded weapon
-		if (_item != null
-			&& (_item.m.SlotType == this.Const.ItemSlot.Mainhand || _item.m.SlotType == this.Const.ItemSlot.Offhand))
-		{
-			if (!::MSU.isNull(this.m.DualWieldEffect)) {
-				resetOffhandSkill();
-				::Legends.Effects.remove(this, ::Legends.Effect.LegendDualWieldOffhand);
-				this.m.DualWieldEffect = null;
-			}
+		if (oh != null && oh != _item) {
+			oh.onUnequip();
+			oh.onEquip();
 		}
+
+	}
+
+	// Returns true if dual wielding non ApplicableItems
+	function isDualWielding() {
+		local items = this.getContainer().getActor().getItems();
+		local mh = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		local oh = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
+		if (mh == null || oh == null) {
+			return false;
+		}
+		if (this.m.ApplicableItems.find(oh.getID()) != null) {
+			return false;
+		}
+		return true;
 	}
 
 	function findPrimaryAttackSkill(_weapon) {

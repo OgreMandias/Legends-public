@@ -8,6 +8,7 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 			"shield.buckler",
 			"shield.legend_mummy_shield"
 		],
+		OffhandHitBonus = -20,
 		OffhandDamageMult = 0.33,
 		OffhandDamageMultMastery = 0.5,
 		IsRefreshing = false,
@@ -19,6 +20,10 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 			return this.m.OffhandDamageMultMastery;
 		}
 		return this.m.OffhandDamageMult;
+	}
+
+	function getOffhandHitBonus() {
+		return this.m.OffhandHitBonus;
 	}
 
 	// takes a weakTableRef
@@ -45,7 +50,8 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 	}
 
 	function getTooltip() {
-		local items = this.getContainer().getActor().getItems();
+		local actor = this.getContainer().getActor();
+		local items = actor.getItems();
 		local off = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
 		local main = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
 
@@ -67,7 +73,7 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 		if (ohSkill != null && !blockedOffhand) {
 			local ohDisabled = false;
 			if (main != null && off != null) {
-				local mhSkill = this.findPrimaryAttackSkill(main);
+				local mhSkill = ::Legends.Weapons.findPrimaryAttackSkill(actor, main);
 				ohDisabled = mhSkill != null
 					&& ohSkill.getActionPointCost() > mhSkill.getActionPointCost();
 			}
@@ -82,7 +88,7 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 			} else {
 				local text = "Follow-up attack: [color=%positive%]" + ohSkill.getName() + "[/color]";
 				if (this.isDualWielding()) {
-					text += " ([color=%negative%]-" + this.Math.floor((1.0 - this.getOffhandDamageMult()) * 100) + "%[/color] damage)";
+					text += " ([color=%negative%]-" + this.Math.floor((1.0 - this.getOffhandDamageMult()) * 100) + "%[/color] damage, [color=%negative%]" + this.getOffhandHitBonus() + "[/color] hit chance)";
 				}
 				ret.push({
 					id = 3,
@@ -117,13 +123,17 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 	function onAnySkillExecuted(_skill, _targetTile, _targetEntity, _forFree) {
 
 		if (!_skill.m.IsAttack) {
-			return; // Don't execute a follow up attack if the first skill is not an attack
+			return;
+		}
+
+		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.LegendDoubleSwing)) {
+			return;
 		}
 
 		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.HandToHand)
 			&& this.getContainer().getActor().getItems().getItemAtSlot(::Const.ItemSlot.Mainhand) != null)
 		{
-			return; // or if you are using hand to hand while the mainhand is holding a weapon
+			return;
 		}
 
 		local actor = this.getContainer().getActor();
@@ -148,7 +158,7 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 			if (m.ApplicableItems.find(off.getID()) != null) {
 				setOffhandSkill(off.getPrimaryOffhandAttack());
 			} else {
-				local skill = this.findPrimaryAttackSkill(off);
+				local skill = ::Legends.Weapons.findPrimaryAttackSkill(actor, off);
 				if (skill != null) {
 					this.setOffhandSkill(skill);
 				}
@@ -210,7 +220,7 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
-	// Apply damage penalty for dual-wielded offhand attacks (not ApplicableItems)
+	// Apply damage and hit chance penalties for dual-wielded offhand attacks (not ApplicableItems)
 	function onAnySkillUsed(_skill, _targetEntity, _properties) {
 		if (!this.isDualWielding()) {
 			return;
@@ -218,6 +228,7 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 		local items = this.getContainer().getActor().getItems();
 		local oh = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
 		if (_skill.m.Item != null && oh != null && _skill.m.Item.getID() == oh.getID()) {
+			_properties.MeleeSkill -= this.getOffhandHitBonus();
 			_properties.DamageTotalMult *= this.getOffhandDamageMult();
 		}
 	}
@@ -229,6 +240,8 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 		if (off != null) {
 			this.onEquip(off);
 		}
+
+		this.updateDoubleSwing();
 	}
 
 	function onEquip(_item) {
@@ -240,11 +253,12 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 		}
 
 		// Check if this is a dual-wielded weapon
-		local items = this.getContainer().getActor().getItems();
+		local actor = this.getContainer().getActor();
+		local items = actor.getItems();
 		local mh = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
 		local oh = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
 		if (oh != null && oh.getID() == _item.getID()) {
-			local skill = this.findPrimaryAttackSkill(_item);
+			local skill = ::Legends.Weapons.findPrimaryAttackSkill(actor, _item);
 			if (skill != null) {
 				this.setOffhandSkill(skill);
 			}
@@ -258,6 +272,8 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 				this.m.NeedsRefresh = "mh";
 			}
 		}
+
+		this.updateDoubleSwing();
 	}
 
 	// Works when equipping from bag
@@ -265,6 +281,7 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 
 	function onUnequip(_item) {
 		resetOffhandSkill();
+		this.updateDoubleSwing();
 
 		// Mark which slot needs refresh
 		if (!this.m.IsRefreshing) {
@@ -283,6 +300,14 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 			} else if (oh != null && oh != _item && mh == null) {
 				this.m.NeedsRefresh = "oh";
 			}
+		}
+	}
+
+	function updateDoubleSwing() {
+		if (this.isDualWielding()) {
+			::Legends.Actives.grant(this, ::Legends.Active.LegendDoubleSwing)
+		} else {
+			::Legends.Actives.remove(this, ::Legends.Active.LegendDoubleSwing);
 		}
 	}
 
@@ -327,46 +352,6 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 		return true;
-	}
-
-	function findPrimaryAttackSkill(_weapon) {
-		if (_weapon == null) {
-			return null;
-		}
-
-		local skills = this.getContainer().getActor().getSkills();
-		local bestSkill = null;
-		local bestAPCost = 9999;
-
-		foreach (skill in skills.m.Skills) {
-			if (skill.m.Item != null && skill.m.Item.getID() == _weapon.getID()) {
-
-				// Use same validation code as Attack of Opportunity
-				if (!skill.isActive()
-					|| !skill.isAttack()
-					|| !skill.isTargeted()
-					|| skill.isIgnoredAsAOO()
-					|| skill.isDisabled()
-					|| !skill.isUsable()
-					|| skill.getMinRange() > 1
-					|| skill.isRanged())
-				{
-					continue;
-				}
-
-				local apCost = skill.getActionPointCost();
-				if (apCost < bestAPCost) {
-					bestSkill = skill;
-					bestAPCost = apCost;
-				}
-			}
-		}
-
-		if (bestSkill == null) {
-			::logWarning("perk_legend_ambidextrous: no valid primary attack skill found for weapon: " + _weapon.getID());
-		}
-
-		return bestSkill;
 	}
 
 });

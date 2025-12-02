@@ -2649,7 +2649,7 @@ Unlock the ability to follow up attacks with your off hand!
 
 • If using a Buckler, Mummy Shield or Parrying Dagger, follow up with [color=%skill%]Buckler Bash[/color] or [color=%skill%]Stab[/color] instead.
 
-• When dual wielding other weapons, follow up with the offhand weapon's attack. Offhand attacks deal [color=%negative%]-66%[/color] damage.
+• When dual wielding other weapons, follow up with the offhand weapon's attack. Offhand attacks deal [color=%negative%]-66%[/color] damage and have [color=%negative%]-20%[/color] chance to hit.
 
 [color=%negative%][u]Restrictions:[/u][/color]
 • Offhand follow-up only triggers when attacking with your main hand.

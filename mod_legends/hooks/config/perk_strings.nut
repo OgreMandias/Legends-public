@@ -319,6 +319,8 @@ Bring it on!
 [color=%passive%][u]Passive:[/u][/color]
 • Has a [color=%positive%]50%[/color] lower chance to inflict friendly fire. Stacks with the 'Team Player'.
 
+• [color=%skill%]Knock Back[/color] will now apply [color=%status%]Taunt effect[/color].
+
 [color=%passive%][u]Active:[/u][/color]
 • Unlocks the [color=%skill%]Taunt[/color] skill which forces a targeted opponent take offensive actions instead of defensive ones.
 
@@ -393,7 +395,7 @@ Learn to use the superior reach of large weapons to keep the enemy from getting 
 Honor doesn't win you fights, stabbing the enemy where it hurts does.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Increase damage to Hitpoints by [color=%positive%]5%[/color] for each ally surrounding and distracting your target.
+• Increase damage to Hitpoints by [color=%positive%]5%[/color] and armor penetration by [color=%positive%]3%[/color] for each ally surrounding and distracting your target. Works with any weapon and skill.
 ";
 ::Const.Perks.PerkDefObjects[::Legends.Perk.Backstabber].Tooltip = ::Const.Strings.PerkDescription.Backstabber;
 ::Const.Strings.PerkDescription.LoneWolf <- @"

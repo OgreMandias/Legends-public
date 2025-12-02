@@ -23,5 +23,6 @@
 		::Legends.Actives.getID(::Legends.Active.LegendBasiliskSentryFowleye),
 		::Legends.Actives.getID(::Legends.Active.LegendSighthoundBite),
 		::Legends.Actives.getID(::Legends.Active.LegendHeartseeker),
+		::Legends.Actives.getID(::Legends.Active.LegendBucklerBash),
 	]);
 });

@@ -41,3 +41,44 @@ if (!("Weapons" in ::Legends)) {
 
     return bestSkill;
 }
+
+// Returns true if the skill belongs to the item equipped in the mainhand.
+::Legends.Weapons.isMainHandSkill <- function (_actor, _skill) {
+    return ::Legends.Weapons.isSlotSkill(_actor, _skill, ::Const.ItemSlot.Mainhand);
+}
+
+// Returns true if the skill belongs to the item equipped in the offhand.
+::Legends.Weapons.isOffHandSkill <- function (_actor, _skill) {
+    return ::Legends.Weapons.isSlotSkill(_actor, _skill, ::Const.ItemSlot.Offhand);
+}
+
+// Returns true if the skill belongs to the item equipped in the given slot.
+::Legends.Weapons.isSlotSkill <- function (_actor, _skill, _slot) {
+    if (_actor == null || _skill == null || _slot == null) {
+        return false;
+    }
+    local items = _actor.getItems();
+    local item = items.getItemAtSlot(_slot);
+    if (item == null) {
+        return false;
+    }
+    return _skill.m.Item != null && item != null && _skill.m.Item.getID() == item.getID();
+}
+
+// Returns true if dual wielding weapons not covered by Ambidextrous.
+::Legends.Weapons.isDualWielding <- function (_actor) {
+    if (_actor == null) {
+        return false;
+    }
+    local ambidextrous = ::Legends.Perks.get(_actor, ::Legends.Perk.LegendAmbidextrous);
+    if (ambidextrous == null) {
+        return false;
+    }
+    local items = _actor.getItems();
+    local mh = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
+    local oh = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
+    if (mh == null || oh == null) {
+        return false;
+    }
+    return ambidextrous.m.ApplicableItems.find(oh.getID()) == null;
+}

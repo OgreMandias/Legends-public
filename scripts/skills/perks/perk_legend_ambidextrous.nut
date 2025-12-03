@@ -15,26 +15,6 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 		NeedsRefresh = null,
 	},
 
-	function getOffhandDamageMult() {
-		if (this.getContainer().hasPerk(::Legends.Perk.LegendSpecDualWield)) {
-			return this.m.OffhandDamageMultMastery;
-		}
-		return this.m.OffhandDamageMult;
-	}
-
-	function getOffhandHitBonus() {
-		return this.m.OffhandHitBonus;
-	}
-
-	// takes a weakTableRef
-	function setOffhandSkill(_a) {
-		this.m.offHandSkill = ::MSU.asWeakTableRef(_a);
-	}
-
-	function resetOffhandSkill() {
-		this.m.offHandSkill = null;
-	}
-
 	function create() {
 		::Legends.Perks.onCreate(this, ::Legends.Perk.LegendAmbidextrous);
 		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
@@ -87,7 +67,7 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 				});
 			} else {
 				local text = "Follow-up attack: [color=%positive%]" + ohSkill.getName() + "[/color]";
-				if (this.isDualWielding()) {
+				if (::Legends.Weapons.isDualWielding(actor)) {
 					text += " ([color=%negative%]-" + this.Math.floor((1.0 - this.getOffhandDamageMult()) * 100) + "%[/color] damage, [color=%negative%]" + this.getOffhandHitBonus() + "[/color] hit chance)";
 				}
 				ret.push({
@@ -118,6 +98,25 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 		}
 
 		return ret;
+	}
+
+	function getOffhandDamageMult() {
+		if (this.getContainer().hasPerk(::Legends.Perk.LegendSpecDualWield)) {
+			return this.m.OffhandDamageMultMastery;
+		}
+		return this.m.OffhandDamageMult;
+	}
+
+	function getOffhandHitBonus() {
+		return this.m.OffhandHitBonus;
+	}
+
+	function setOffhandSkill(_a) {
+		this.m.offHandSkill = ::MSU.asWeakTableRef(_a);
+	}
+
+	function resetOffhandSkill() {
+		this.m.offHandSkill = null;
 	}
 
 	function onAnySkillExecuted(_skill, _targetTile, _targetEntity, _forFree) {
@@ -222,10 +221,11 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 
 	// Apply damage and hit chance penalties for dual-wielded offhand attacks (not ApplicableItems)
 	function onAnySkillUsed(_skill, _targetEntity, _properties) {
-		if (!this.isDualWielding()) {
+		local actor = this.getContainer().getActor();
+		if (!::Legends.Weapons.isDualWielding(actor)) {
 			return;
 		}
-		local items = this.getContainer().getActor().getItems();
+		local items = actor.getItems();
 		local oh = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
 		if (_skill.m.Item != null && oh != null && _skill.m.Item.getID() == oh.getID()) {
 			_properties.MeleeSkill -= this.getOffhandHitBonus();
@@ -304,7 +304,8 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 	}
 
 	function updateDoubleSwing() {
-		if (this.isDualWielding()) {
+		local actor = this.getContainer().getActor();
+		if (::Legends.Weapons.isDualWielding(actor)) {
 			::Legends.Actives.grant(this, ::Legends.Active.LegendDoubleSwing)
 		} else {
 			::Legends.Actives.remove(this, ::Legends.Active.LegendDoubleSwing);
@@ -338,20 +339,6 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 		}
 
 		this.m.IsRefreshing = false;
-	}
-
-	// Returns true if dual wielding non ApplicableItems
-	function isDualWielding() {
-		local items = this.getContainer().getActor().getItems();
-		local mh = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		local oh = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
-		if (mh == null || oh == null) {
-			return false;
-		}
-		if (this.m.ApplicableItems.find(oh.getID()) != null) {
-			return false;
-		}
-		return true;
 	}
 
 });

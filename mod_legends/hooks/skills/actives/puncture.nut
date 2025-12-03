@@ -1,5 +1,20 @@
 ::mods_hookExactClass("skills/actives/puncture", function(o)
 {
+	o.m.IsHalfsword <- false;
+
+	o.setItem <- function(_item) {
+		this.skill.setItem(_item);
+		if (this.m.IsHalfsword) {
+			this.m.Name = "Halfsword";
+			this.m.Description = "A calculated attack with one hand firmly on the blade aiming in gaps of the armor. Ignores all armor but is harder to hit with and can not land critical hits for additional damage.";
+			this.m.Icon = "skills/active_halfsword.png";
+			this.m.IconDisabled = "skills/active_halfsword_bw.png";
+			this.m.Overlay = "active_halfsword";
+			this.m.ActionPointCost = 5;
+			this.m.FatigueCost = 25;
+		}
+	}
+
 	local create = o.create;
 	o.create = function()
 	{
@@ -74,13 +89,30 @@
 		local chance = _targetEntity.getFatiguePct() * 50;
 		return mod + this.Math.round(chance);
 	}
+	
+	local onAfterUpdate = o.onAfterUpdate;
+	o.onAfterUpdate = function ( _properties )
+	{
+		if (!this.m.IsHalfsword)
+		{
+			return onAfterUpdate(_properties);
+		}
+		else
+		{
+			this.m.FatigueCostMult = _properties.IsSpecializedInSwords ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+		}
+	}
 
 	o.onAnySkillUsed = function ( _skill, _targetEntity, _properties )
 	{
 		if (_skill == this)
 		{
 			this.m.HitChanceBonus += this.getHitChance(_targetEntity);
-			if (_properties.IsSpecializedInDaggers)
+			if (_properties.IsHalfsword && _properties.IsSpecializedInSwords)
+			{
+				this.m.HitChanceBonus += 15;
+			}
+			else if (_properties.IsSpecializedInDaggers)
 			{
 				this.m.HitChanceBonus += 15;
 			}

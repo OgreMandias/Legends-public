@@ -15,11 +15,19 @@ this.legend_pauldron_named_upgrade <- this.inherit("scripts/items/legend_armor/l
 		this.m.SpriteBack = "upgrade_pauldrons_named";
 		this.m.SpriteDamagedBack = "upgrade_pauldrons_named_damaged";
 		this.m.SpriteCorpseBack = "upgrade_pauldrons_named_dead";
-		this.m.Value = 3000;
-		this.m.Condition = 50;
-		this.m.ConditionMax = 45;
-		this.m.StaminaModifier = -4;
-		this.m.DirectDamageModifier = -30.0;
+		this.m.Value = 3600;
+		this.m.Condition = 55;
+		this.m.ConditionMax = 55;
+		this.m.StaminaModifier = -8;
+		this.m.DirectDamageModifier = -40.0;
+	}
+
+	function randomizeValues()
+	{
+		this.m.StaminaModifier = this.Math.rand(8, 4) * -1;
+		this.m.Condition = this.Math.floor(this.m.Condition * this.Math.rand(110, 125) * 0.01) * 1.0;
+		this.m.DirectDamageModifier = this.Math.rand(40, 45) * 1.0;
+		this.m.ConditionMax = this.m.Condition;
 	}
 });
 

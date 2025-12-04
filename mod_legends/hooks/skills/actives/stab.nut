@@ -15,6 +15,14 @@
 		}
 	}
 
+	local onUse = o.onUse;
+	o.onUse = function(_user, _targetTile)
+	{
+		if (this.m.IsEstocStab)
+			this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectThrust);
+		return onUse(_user, _targetTile);
+	}
+
 	o.onAfterUpdate = function ( _properties )
 	{
 		if (this.m.IsEstocStab)

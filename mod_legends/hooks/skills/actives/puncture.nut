@@ -108,7 +108,7 @@
 		if (_skill == this)
 		{
 			this.m.HitChanceBonus += this.getHitChance(_targetEntity);
-			if (_properties.IsHalfsword && _properties.IsSpecializedInSwords)
+			if (this.m.IsHalfsword && _properties.IsSpecializedInSwords)
 			{
 				this.m.HitChanceBonus += 15;
 			}

@@ -188,7 +188,7 @@ class Defs:
  "desc" :  "A fine linen tunic of exquisite material, embroided with pleasing patterns. Fashionable but offering little in protection.",
  "adesc" :""
 },
-{"name": "legend_tunic_noble_named",                      "layer": "cloth", "min": 1, "max": 1, "value" : 1500, "con" : 40, "stam" : -2, "impactSound" : "leather", "invSound" : "cloth", "brush" : "legend_tunic_collar_gold",
+{"name": "legend_tunic_noble_named",                      "layer": "cloth", "min": 1, "max": 3, "value" : 1500, "con" : 40, "stam" : -2, "impactSound" : "leather", "invSound" : "cloth", "brush" : "legend_tunic_collar_gold",
  "title" :  "Noble Tunic",
  "desc" :  "A fine linen tunic of exquisite material, embroided with pleasing patterns. Fashionable but offering little in protection.",
  "adesc" :"",

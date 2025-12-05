@@ -29,24 +29,6 @@
 	o.getTooltip = function ()
 	{
 		local ret = this.getContainer().hasPerk(::Legends.Perk.ShieldBash) ? this.getDefaultTooltip() : this.getDefaultUtilityTooltip();
-		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInShields)
-		{
-			ret.push({
-				id = 6,
-				type = "text",
-				icon = "ui/icons/hitchance.png",
-				text = "Has [color=%positive%]+40%[/color] chance to hit"
-			});
-		}
-		else
-		{
-			ret.push({
-				id = 6,
-				type = "text",
-				icon = "ui/icons/hitchance.png",
-				text = "Has [color=%positive%]+25%[/color] chance to hit"
-			});
-		}
 
 		if (this.getContainer().hasSkill("trait.oath_of_fortification"))
 		{

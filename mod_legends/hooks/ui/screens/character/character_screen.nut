@@ -820,10 +820,8 @@
 		}
 		sourceItem = sourceItem.item;
 
-		// Proceeed only if this is a 1h main hand weapon and actor has dw
-		local dwPerk = ::Legends.Perks.get(entity, ::Legends.Perk.LegendAmbidextrous);
-		if (dwPerk == null
-			|| sourceItem.getSlotType() != this.Const.ItemSlot.Mainhand
+		// Proceed only if this is a 1h main hand weapon
+		if (sourceItem.getSlotType() != this.Const.ItemSlot.Mainhand
 			|| sourceItem.getBlockedSlotType() != null)
 		{
 			return general_onEquipStashItem(_data);
@@ -847,12 +845,10 @@
 			local originalSlotType = sourceItem.m.SlotType;
 			sourceItem.m.SlotType = this.Const.ItemSlot.Offhand;
 
-			dwPerk.m.IsRefreshing = true;
-			// TODO Potentially need to check for errors here
-			local _result = general_onEquipStashItem(_data);
+			general_onEquipStashItem(_data);
 			sourceItem.m.SlotType = originalSlotType;
 
-			this.dualWieldRefresh(entity, dwPerk, this.Const.ItemSlot.Offhand);
+			this.dualWieldRefresh(entity, this.Const.ItemSlot.Offhand);
 
 			entity.getSkills().update();
 			return this.UIDataHelper.convertStashAndEntityToUIData(entity, null, false, this.m.InventoryFilter);
@@ -861,11 +857,9 @@
 		// Equipping to mainhand while offhand has a dw weapon
 		if (oh != null && oh.getSlotType() == this.Const.ItemSlot.Mainhand) {
 
-			dwPerk.m.IsRefreshing = true;
-			// TODO Potentially need to check for errors here
-			local _result = general_onEquipStashItem(_data);
+			general_onEquipStashItem(_data);
 
-			this.dualWieldRefresh(entity, dwPerk, this.Const.ItemSlot.Mainhand);
+			this.dualWieldRefresh(entity, this.Const.ItemSlot.Mainhand);
 
 			entity.getSkills().update();
 			return this.UIDataHelper.convertStashAndEntityToUIData(entity, null, false, this.m.InventoryFilter);
@@ -891,13 +885,11 @@
 			return general_onEquipBagItem(_data);
 		}
 
-		// Proceeed only if this is a 1h main hand weapon and actor has dw
-		local dwPerk = ::Legends.Perks.get(entity, ::Legends.Perk.LegendAmbidextrous);
-		if (dwPerk == null
-			|| sourceItem.getSlotType() != this.Const.ItemSlot.Mainhand
+		// Proceed only if this is a 1h main hand weapon
+		if (sourceItem.getSlotType() != this.Const.ItemSlot.Mainhand
 			|| sourceItem.getBlockedSlotType() != null)
 		{
-			return general_onEquipStashItem(_data);
+			return general_onEquipBagItem(_data);
 		}
 
 		local mh = inventory.getItemAtSlot(this.Const.ItemSlot.Mainhand);
@@ -917,11 +909,10 @@
 			local originalSlotType = sourceItem.m.SlotType;
 			sourceItem.m.SlotType = this.Const.ItemSlot.Offhand;
 
-			dwPerk.m.IsRefreshing = true;
-			local _result = general_onEquipBagItem(_data);
+			general_onEquipBagItem(_data);
 			sourceItem.m.SlotType = originalSlotType;
 
-			this.dualWieldRefresh(entity, dwPerk, this.Const.ItemSlot.Offhand);
+			this.dualWieldRefresh(entity, this.Const.ItemSlot.Offhand);
 
 			entity.getSkills().update();
 			return this.UIDataHelper.convertStashAndEntityToUIData(entity, null, false, this.m.InventoryFilter);
@@ -930,11 +921,9 @@
 		// Equipping to mainhand while offhand has a dw weapon
 		if (oh != null && oh.getSlotType() == this.Const.ItemSlot.Mainhand) {
 
-			dwPerk.m.IsRefreshing = true;
-			// TODO Potentially need to check for errors here
-			local _result = general_onEquipBagItem(_data);
+			general_onEquipBagItem(_data);
 
-			this.dualWieldRefresh(entity, dwPerk, this.Const.ItemSlot.Mainhand);
+			this.dualWieldRefresh(entity, this.Const.ItemSlot.Mainhand);
 
 			entity.getSkills().update();
 			return this.UIDataHelper.convertStashAndEntityToUIData(entity, null, false, this.m.InventoryFilter);
@@ -943,20 +932,17 @@
 		return general_onEquipBagItem(_data);
 	}
 
-	o.dualWieldRefresh <- function (_entity, _dwPerk, _slot) {
-		if (_dwPerk == null) {
+	o.dualWieldRefresh <- function (_entity, _slot) {
+		local effect = ::Legends.Effects.get(_entity, ::Legends.Effect.LegendDualWield);
+		if (effect == null) {
 			return;
 		}
-
-		_dwPerk.m.IsRefreshing = false;
-		_dwPerk.m.NeedsRefresh = null;
 
 		local items = _entity.getItems();
 		local mh = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
 		local oh = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
 
 		if (mh != null && oh != null && mh.getID() != oh.getID()) {
-			_dwPerk.m.IsRefreshing = true;
 
 			if (_slot == this.Const.ItemSlot.Offhand) {
 				mh.onUnequip();
@@ -966,7 +952,6 @@
 				oh.onEquip();
 			}
 
-			_dwPerk.m.IsRefreshing = false;
 		}
 	}
 });

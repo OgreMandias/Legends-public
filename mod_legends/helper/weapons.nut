@@ -12,7 +12,7 @@ if (!("Weapons" in ::Legends)) {
     local bestAPCost = 9999;
 
     foreach (skill in skills.m.Skills) {
-        if (skill.m.Item != null && skill.m.Item.getID() == _weapon.getID()) {
+        if (skill.m.Item != null && skill.m.Item.getInstanceID() == _weapon.getInstanceID()) {
 
             // Use same validation code as Attack of Opportunity
             if (!skill.isActive()
@@ -36,7 +36,7 @@ if (!("Weapons" in ::Legends)) {
     }
 
     if (bestSkill == null) {
-       ::logWarning("findPrimaryAttackSkill: no valid primary attack skill found for weapon: " + _weapon.getID());
+       ::logWarning("findPrimaryAttackSkill: no valid skill for weapon " + _weapon.getID());
     }
 
     return bestSkill;
@@ -54,15 +54,12 @@ if (!("Weapons" in ::Legends)) {
 
 // Returns true if the skill belongs to the item equipped in the given slot.
 ::Legends.Weapons.isSlotSkill <- function (_actor, _skill, _slot) {
-    if (_actor == null || _skill == null || _slot == null) {
+    if (_actor == null || _skill == null || _skill.m.Item == null || _slot == null) {
         return false;
     }
     local items = _actor.getItems();
     local item = items.getItemAtSlot(_slot);
-    if (item == null) {
-        return false;
-    }
-    return _skill.m.Item != null && item != null && _skill.m.Item.getID() == item.getID();
+    return item != null && _skill.m.Item.getInstanceID() == item.getInstanceID();
 }
 
 // Returns true if dual wielding weapons not covered by Ambidextrous.

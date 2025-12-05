@@ -2062,4 +2062,12 @@ effectsDefs.push({
 	Name = "LegendArmorTracking",
 });
 
+::Legends.Effect.LegendDualWield <- null;
+effectsDefs.push({
+	ID = "effects.legend_dual_wield",
+	Script = "scripts/skills/effects/legend_dual_wield_effect",
+	Name = "Dual Wielding",
+	Const = "LegendDualWield"
+});
+
 ::Legends.Effects.addEffectDefObjects(effectsDefs);

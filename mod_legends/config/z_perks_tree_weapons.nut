@@ -877,57 +877,6 @@ if (!("Perks" in ::Const)) {
 	]
 };
 
-::Const.Perks.DualWieldTree <- {
-	ID = "DualWield",
-	Name = "Dual Wield",
-	Descriptions = [
-		"dual wielding"
-	],
-	Attributes = {
-		Hitpoints = [
-			0,
-			0
-		],
-		Bravery = [
-			0,
-			0
-		],
-		Stamina = [
-			0,
-			0
-		],
-		MeleeSkill = [
-			0,
-			0
-		],
-		RangedSkill = [
-			0,
-			0
-		],
-		MeleeDefense = [
-			0,
-			0
-		],
-		RangedDefense = [
-			0,
-			0
-		],
-		Initiative = [
-			0,
-			0
-		]
-	},
-	Tree = [
-		[::Legends.Perk.LegendAmbidextrous],
-		[],
-		[],
-		[::Legends.Perk.LegendSpecDualWield],
-		[],
-		[],
-		[]
-	]
-};
-
 ::Const.Perks.WeaponTrees <- {
 	Tree = [
 		::Const.Perks.FistsTree,
@@ -946,8 +895,7 @@ if (!("Perks" in ::Const)) {
 		::Const.Perks.BowTree,
 		::Const.Perks.ThrowingTree,
 		::Const.Perks.SlingTree,
-		::Const.Perks.ShieldTree,
-		::Const.Perks.DualWieldTree
+		::Const.Perks.ShieldTree
 	],
 
 	function getRandom(_exclude) {
@@ -978,8 +926,7 @@ if (!("Perks" in ::Const)) {
 		::Const.Perks.DaggerTree,
 		::Const.Perks.PolearmTree,
 		::Const.Perks.SpearTree,
-		::Const.Perks.ShieldTree,
-		::Const.Perks.DualWieldTree
+		::Const.Perks.ShieldTree
 	],
 
 	function getRandom(_exclude) {

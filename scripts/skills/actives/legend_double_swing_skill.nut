@@ -101,9 +101,9 @@ this.legend_double_swing_skill <- this.inherit("scripts/skills/skill", {
 				&& this.Math.abs(cwTile.Level - tile.Level) <= 1)
 			{
 				ret = mhSkill.attackEntity(_user, cwTile.getEntity()) || ret;
-			}
-			if (::Legends.S.isEntityNullOrDead(_user, cwTile.getEntity())) {
-				return ret;
+				if (::Legends.S.isEntityNullOrDead(_user)) {
+					return ret;
+				}
 			}
 		}
 
@@ -115,9 +115,9 @@ this.legend_double_swing_skill <- this.inherit("scripts/skills/skill", {
 				&& this.Math.abs(ccwTile.Level - tile.Level) <= 1)
 			{
 				ret = ohSkill.attackEntity(_user, ccwTile.getEntity()) || ret;
-			}
-			if (::Legends.S.isEntityNullOrDead(_user, ccwTile.getEntity())) {
-				return ret;
+				if (::Legends.S.isEntityNullOrDead(_user)) {
+					return ret;
+				}
 			}
 		}
 

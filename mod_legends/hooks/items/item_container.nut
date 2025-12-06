@@ -132,11 +132,9 @@
 		}
 
 		local result = equip(_item);
-		if (!this.m.IsDeserializing) {
-			local slot = _item.getSlotType();
-			if (result && (slot == ::Const.ItemSlot.Mainhand || slot == ::Const.ItemSlot.Offhand)) {
-				this.updateDualWield();
-			}
+		local slot = _item.getSlotType();
+		if (result && (slot == ::Const.ItemSlot.Mainhand || slot == ::Const.ItemSlot.Offhand)) {
+			this.updateDualWield();
 		}
 
 		return result;

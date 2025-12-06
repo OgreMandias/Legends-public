@@ -2,6 +2,7 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 	m = {
 		OffhandWeight = 0,
 		OffHandSkill = null,
+		AmbidextrousBonus = 0.33,
 		IsRefreshing = false,
 		NeedsRefresh = null,
 	},
@@ -58,13 +59,12 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 		return ret;
 	}
 
-	function getOffhandWeight() {
-		local actor = this.getContainer().getActor();
-		local oh = actor.getItems().getItemAtSlot(::Const.ItemSlot.Offhand);
-		if (oh == null) {
-			return 0;
+	function getOffhandWeight(_actor, _oh) {
+		local weight = -_oh.getStaminaModifier();
+		if (::Legends.Perks.has(_actor, ::Legends.Perk.LegendAmbidextrous)) {
+			weight = ::Math.floor(weight * (1 - this.m.AmbidextrousBonus));
 		}
-		return -oh.getStaminaModifier();
+		return weight;
 	}
 
 	function onAdded() {
@@ -78,7 +78,7 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 			local skill = ::Legends.Weapons.findPrimaryAttackSkill(actor, oh);
 			if (skill != null) {
 				this.m.OffHandSkill = ::MSU.asWeakTableRef(skill);
-				this.m.OffhandWeight = -oh.getStaminaModifier();
+				this.m.OffhandWeight = getOffhandWeight(actor, oh);
 			}
 		} else {
 			this.m.OffHandSkill = null;
@@ -194,7 +194,7 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 			local skill = ::Legends.Weapons.findPrimaryAttackSkill(actor, _item);
 			if (skill != null) {
 				this.m.OffHandSkill = ::MSU.asWeakTableRef(skill);
-				this.m.OffhandWeight = -oh.getStaminaModifier();
+				this.m.OffhandWeight = getOffhandWeight(actor, oh);
 			}
 		}
 

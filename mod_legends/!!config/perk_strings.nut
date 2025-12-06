@@ -1824,7 +1824,7 @@ Throwing a spear and throwing a net is just muscle memory at this point.
 Thread the needle from this distance? No sweat.
 
 [color=%passive%][u]Specialist Weapon Perk:[/u][/color]
-• Gain [color=%positive%]+12[/color] chance to hit and [color=%positive%]1[/color] additional range while using a Warbow. 
+• Gain [color=%positive%]+12[/color] chance to hit and [color=%positive%]1[/color] additional range while using a Warbow.
 
 • When taking [color=%perk%]Bow Mastery[/color] gain [color=%positive%]10%[/color] damage.
 
@@ -2237,7 +2237,7 @@ The terrifying abilities of the Necrosavants, Apparitions and Embalmed have deve
 
 • Total bonus capped at 25%.
 ";
- //No contract
+//No contract
 //Lich and Emporer not included
 ::Const.Strings.PerkDescription.LegendFavouredEnemySkeleton <- @"
 The legions from the ancient empire still harass this world, yet their connection to the world of the living can be severed.
@@ -2640,20 +2640,14 @@ A time tested tradition of getting your opponent to the ground, disarmed and ree
 ";
 
 ::Const.Strings.PerkDescription.LegendAmbidextrous <- @"
-Unlock the ability to follow up attacks with your off hand!
+You're as capable with one hand as the other!
 
 [color=%passive%][u]Passive:[/u][/color]
-• After attacking with your main hand, automatically follow up with a free offhand attack.
+• When your offhand is free, follow up attacks with [color=%skill%]Hand to Hand[/color]. Gain [color=%positive%]+5[/color] Melee Skill and [color=%positive%]+10[/color] Melee Defense if both hands are free.
 
-• When your offhand is free, follow up with [color=%skill%]Hand to Hand[/color]. Gain [color=%positive%]+5[/color] Melee Skill and [color=%positive%]+10[/color] Melee Defense if both hands are free.
+• If using a Buckler, Mummy Shield or Parrying Dagger, follow up attacks with [color=%skill%]Buckler Bash[/color] or [color=%skill%]Stab[/color] instead.
 
-• If using a Buckler, Mummy Shield or Parrying Dagger, follow up with [color=%skill%]Buckler Bash[/color] or [color=%skill%]Stab[/color] instead.
-
-• When dual wielding other weapons, follow up with the offhand weapon's attack. Offhand attacks deal [color=%negative%]-66%[/color] damage and have [color=%negative%]-20%[/color] chance to hit.
-
-[color=%negative%][u]Restrictions:[/u][/color]
-• Offhand follow-up only triggers when attacking with your main hand.
-• The offhand attack must cost equal or less AP than the main hand attack used.
+• When dual wielding other weapons, the weight penalty is reduced by [color=%positive%]33%[/color].
 ";
 
 ::Const.Strings.PerkDescription.LegendPugilist <- @"
@@ -2819,7 +2813,7 @@ Knowledge of the landscape and vegetation provides a wealth of opportunities whe
 
 • When the total bonus from all characters with or without this perk is above 10% while assigned to gathering in camp, they can find mushrooms, poisons, antidotes and powders without crafting them.
 ";
- //Characters gain their level as a percentage reduction in hours required to find special items when gathering in camp. This perk doubles that.
+//Characters gain their level as a percentage reduction in hours required to find special items when gathering in camp. This perk doubles that.
 ::Const.Strings.PerkDescription.LegendPotionBrewer <- @"
 Expertise in potions and tinctures allows the creation of potions while gathering in camp.
 
@@ -3428,7 +3422,7 @@ Put your all into your studies.
 
 • Stacks with itself and effects of a similar nature. Does not need to be in combat for this perk to work.
 ";
- //Masons, Inventors and Historians and do not need this perk unless they have the dumb trait for scrolls.
+//Masons, Inventors and Historians and do not need this perk unless they have the dumb trait for scrolls.
 ::Const.Strings.PerkDescription.LegendCitrinitas <- @"
 [color=%active%][u]Active:[/u][/color]
 • A powerful cocktail of ingredients provides a trance like state, granting the banner effect, and drums of war effects to everyone in the company at the end of the user's turn.
@@ -3845,4 +3839,15 @@ Master the art of fighting with a weapon in each hand.
 
 [color=%passive%][u]Passive:[/u][/color]
 • Reduces off-hand weapon damage malus from [color=%negative%]-66%[/color] to [color=%negative%]-50%[/color] when dual wielding.
+";
+
+::Const.Strings.PerkDescription.LegendPrecisionStrikes <- @"
+When your offhand weapon is lighter than your main weapon, you can strike with deadly precision.
+
+[color=%passive%][u]Passive:[/u][/color]
+• Gain [color=%positive%]+10[/color] hit chance with offhand attacks.
+
+• Gain [color=%positive%]25%[/color] chance to deflect incoming melee damage up to offhand weapon's max damage.
+
+• Requires an offhand weapon with lower AP cost than mainhand.
 ";

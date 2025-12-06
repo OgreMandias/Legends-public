@@ -462,6 +462,9 @@ Master the art of following up for devastating effects.
 • After landing a hit, the next attack this turn does [color=%positive%]25%[/color] overall damage and it costs [color=%negative%]20%[/color] less Fatigue than normal.
 
 • If the attack misses, the effect is lost.
+
+[color=%passive%][u]Dual Wield Bonus:[/u][/color]
+• If the offhand attack successfully hits, the next mainhand attack costs [color=%positive%]-1[/color] AP and deals [color=%positive%]+10%[/color] damage.
 ";
 
 ::Const.Strings.PerkDescription.LegendVengeance <- @"

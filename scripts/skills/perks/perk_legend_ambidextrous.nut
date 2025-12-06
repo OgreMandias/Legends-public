@@ -54,15 +54,8 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 
 		local ohSkill = ::MSU.isNull(this.m.offHandSkill) ? this.m.HandToHand : this.m.offHandSkill;
 		local blockedOffhand = items.hasBlockedSlot(this.Const.ItemSlot.Offhand);
-		if (ohSkill != null && !blockedOffhand && !::Legends.Weapons.isDualWielding(actor)) {
-			local ohDisabled = false;
-			if (main != null && off != null) {
-				local mhSkill = ::Legends.Weapons.findPrimaryAttackSkill(actor, main);
-				ohDisabled = mhSkill != null
-					&& ohSkill.getActionPointCost() > mhSkill.getActionPointCost();
-			}
-
-			if (ohDisabled) {
+		if (ohSkill != null && !blockedOffhand) {
+			if (::Legends.Weapons.isDualWielding(actor)) {
 				ret.push({
 					id = 3,
 					type = "text",
@@ -129,18 +122,8 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 		local off = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
 
 		// Don't trigger follow-up if the attack came from the offhand
-		if (_skill.m.Item != null
-			&& off != null
-			&& _skill.m.Item.getInstanceID() == off.getInstanceID())
-		{
+		if (::Legends.Weapons.isOffHandSkill(_skill)) {
 			return;
-		}
-
-		// Refresh offhand skill reference if it became invalid (e.g., after weapon switching)
-		if (off != null && ::MSU.isNull(m.offHandSkill)) {
-			if (m.ApplicableItems.find(off.getID()) != null) {
-				setOffhandSkill(off.getPrimaryOffhandAttack());
-			}
 		}
 
 		if (_targetEntity != null

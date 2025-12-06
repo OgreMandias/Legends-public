@@ -5,6 +5,7 @@
 	o.setItem <- function(_item) {
 		this.skill.setItem(_item);
 		if (this.m.IsEstocStab) {
+			this.m.Name = "Thrust";
 			this.m.Description = "A swift stab aiming for the weak points between the armor.";
 			this.m.Icon = "skills/skewer_general.png";
 			this.m.IconDisabled = "skills/skewer_general_bw.png";

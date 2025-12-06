@@ -62,16 +62,20 @@ this.legend_choke_skill <- this.inherit("scripts/skills/skill", {
 
 	function isUsable()
 	{
-		local mainhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		local offhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
-		return ((offhand == null && mainhand == null) || this.getContainer().hasEffect(::Legends.Effect.Disarmed)) && this.skill.isUsable();
+		local actor = this.getContainer().getActor();
+		local mainhand = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		local offhand = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
+		local hasNet = offhand != null && ::MSU.String.endsWith(offhand.getID(), "_net") && actor.getCurrentProperties().IsSpecializedInNets;
+		return (((offhand == null || hasNet) && mainhand == null) || this.getContainer().hasEffect(::Legends.Effect.Disarmed)) && this.skill.isUsable();
 	}
 
 	function isHidden()
 	{
-		local mainhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		local offhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
-		return mainhand != null || offhand != null && !this.getContainer().hasEffect(::Legends.Effect.Disarmed) || this.skill.isHidden() || this.m.Container.getActor().isStabled();
+		local actor = this.getContainer().getActor();
+		local mainhand = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		local offhand = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
+		local hasNet = offhand != null && ::MSU.String.endsWith(offhand.getID(), "_net") && actor.getCurrentProperties().IsSpecializedInNets;
+		return mainhand != null || (offhand != null || hasNet) && !this.getContainer().hasEffect(::Legends.Effect.Disarmed) || this.skill.isHidden() || this.m.Container.getActor().isStabled();
 	}
 
 	function onGetHitFactors( _skill, _targetTile, _tooltip )

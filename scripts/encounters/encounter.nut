@@ -225,8 +225,8 @@ this.encounter <- {
         	["settlement", nearestTown == null ? "" : nearestTown.getName()]
         ];
 
-	    ::Const.LegendMod.extendVarsWithPronouns(vars, brother1.getGender(), "randombrother");
-	    ::Const.LegendMod.extendVarsWithPronouns(vars, brother2.getGender(), "randombrother2");
+	    ::Const.LegendMod.extendVarsWithPronouns(vars, brother1, "randombrother");
+	    ::Const.LegendMod.extendVarsWithPronouns(vars, brother2, "randombrother2");
 
 	    if (_full) {
 		    this.onPrepareVariables(vars);

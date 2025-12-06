@@ -235,7 +235,7 @@ this.legend_orc_elite <- this.inherit("scripts/entity/tactical/actor", {
 	{
 		this.actor.onInit();
 		local b = this.m.BaseProperties;
-		b.setValues(this.Const.Tactical.Actor.OrcWarrior);
+		b.setValues(this.Const.Tactical.Actor.LegendOrcElite);
 
 		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 200)
 		{

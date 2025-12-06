@@ -6,7 +6,7 @@ this.legend_qiyan_dances_encounter <- this.inherit("scripts/encounters/encounter
 		this.encounter.create();
 		this.m.Type = "encounter.legend_qiyan_dances";
 		this.m.Name = ::Const.Strings.randomCampEncounterName();
-		this.m.Cooldown = 25.0 * ::World.getTime().SecondsPerDay;
+		this.m.Cooldown = 60.0 * ::World.getTime().SecondsPerDay;
 	}
 
 	function createScreens() {
@@ -60,7 +60,7 @@ this.legend_qiyan_dances_encounter <- this.inherit("scripts/encounters/encounter
 
 	function onPrepareVariables (_vars) {
 		_vars.push(["qiyan", this.m.Qiyan.getName()]);
-		this.Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Qiyan.getGender(), "qiyan");
+		this.Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Qiyan, "qiyan");
 	}
 
 	function onClear() {

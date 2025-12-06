@@ -22,7 +22,7 @@
 					{
 						_event.m.Dude.setStartValuesEx([
 							"thief_background"
-						]);
+						], true, -1);
 					}
 
 					_event.m.Dude.setTitle("the Melon Mugger");

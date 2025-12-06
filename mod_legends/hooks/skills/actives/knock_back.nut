@@ -29,24 +29,6 @@
 	o.getTooltip = function ()
 	{
 		local ret = this.getContainer().hasPerk(::Legends.Perk.ShieldBash) ? this.getDefaultTooltip() : this.getDefaultUtilityTooltip();
-		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInShields)
-		{
-			ret.push({
-				id = 6,
-				type = "text",
-				icon = "ui/icons/hitchance.png",
-				text = "Has [color=%positive%]+40%[/color] chance to hit"
-			});
-		}
-		else
-		{
-			ret.push({
-				id = 6,
-				type = "text",
-				icon = "ui/icons/hitchance.png",
-				text = "Has [color=%positive%]+25%[/color] chance to hit"
-			});
-		}
 
 		if (this.getContainer().hasSkill("trait.oath_of_fortification"))
 		{
@@ -134,6 +116,23 @@
 			_properties.DamageArmorMult = 0.5;
 			_properties.FatigueDealtPerHitMult += 1.0;
 		}
+	}
+
+	o.onTargetHit <- function(_skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor)
+	{
+		if (_skill != this)
+			return;
+
+		if (::Legends.S.skillEntityAliveCheck(_targetEntity))
+			return;
+
+		local actor = this.getContainer().getActor();
+		if (actor.isAlliedWith(_targetEntity))
+			return false;
+
+		local skill = ::Legends.Actives.get(bro, ::Legends.Active.Taunt);
+		if (skill != null && ::Legends.Perks.has(actor, ::Legends.Perk.Taunt))
+			skill.onUse(actor, _targetEntity.getTile());
 	}
 
 	o.onTargetSelected <- function ( _targetTile )

@@ -197,6 +197,8 @@
 	<sprite id="legend_enraged_hyena_bite_effect" ic="FF1B293C" img="skills\legend_enraged_hyena_bite_effect.png" />
 	<sprite id="legend_enraged_hyena_bite_effect_mini" ic="FF1B293C" img="skills\mini\legend_enraged_hyena_bite_effect_mini.png" />
 	<sprite id="feint" ic="FF1B293C" img="skills\feint.png" />
+	<sprite id="active_halfsword" ic="FF1B293C" img="skills\active_halfsword.png" />
+	<sprite id="active_mordhau" ic="FF1B293C" img="skills\active_mordhau.png" />
 	<sprite id="feint_mini" ic="FF1B293C" img="skills\mini\feint_mini.png" />
 	<sprite id="freedom_of_movement_circle_mini" ic="FF1B293C" img="skills\mini\freedom_of_movement_circle_mini.png" />
 	<sprite id="legend_flourish_effect_mini" ic="FF1B293C" img="skills\mini\legend_flourish_effect_mini.png" />

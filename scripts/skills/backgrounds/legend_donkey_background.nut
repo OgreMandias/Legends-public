@@ -79,7 +79,8 @@ this.legend_donkey_background <- this.inherit("scripts/skills/backgrounds/charac
 				// this.Legends.Perk.LegendComposure,
 				this.Legends.Perk.LegendAlert,
 				this.Legends.Perk.LegendOnslaught,
-				this.Legends.Perk.SteelBrow
+				this.Legends.Perk.SteelBrow,
+				this.Legends.Perk.LegendRecuperation
 			],
 			[
 				this.Legends.Perk.Anticipation,

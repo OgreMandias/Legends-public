@@ -98,6 +98,8 @@
   <sprite id="icon_dagger_02_1" offsetY="35" ic="FF54575D" width="130" height="142" img="icons\icon_dagger_02_1.png" left="0" right="46" top="-54" bottom="-2" />
   <sprite id="icon_dagger_02_2_bloodied" offsetY="35" ic="FF444655" width="130" height="142" img="icons\icon_dagger_02_2_bloodied.png" left="0" right="46" top="-54" bottom="-2" />
   <sprite id="icon_dagger_02_2" offsetY="35" ic="FF54575D" width="130" height="142" img="icons\icon_dagger_02_2.png" left="0" right="46" top="-54" bottom="-2" />
+  <sprite id="icon_named_dagger_04" offsetY="35" ic="FF57677D" width="130" height="142" img="icons\icon_named_dagger_04.png" left="0" right="48" top="-55" bottom="3"/>
+  <sprite id="icon_named_dagger_04_bloodied" offsetY="35" ic="FF475776" width="130" height="142" img="icons\icon_named_dagger_04_bloodied.png" left="0" right="48" top="-55" bottom="3"/>
   <sprite id="icon_drum_bloodied" offsetY="35" ic="FF3F5874" width="130" height="142" img="icons\icon_drum_bloodied.png" left="-15" right="65" top="-69" bottom="17" />
   <sprite id="icon_drum" offsetY="35" ic="FF3F5874" width="130" height="142" img="icons\icon_drum.png" left="-15" right="65" top="-69" bottom="17" />
   <sprite id="icon_falx_01_1_bloodied" offsetY="35" ic="FF2C3449" width="130" height="142" img="icons\icon_falx_01_1_bloodied.png" left="5" right="55" top="-59" bottom="13" />
@@ -387,6 +389,10 @@
   <sprite id="icon_longaxe_01_1" offsetY="35" ic="FF424B55" width="124" height="142" img="icons\icon_longaxe_01_1.png" left="-62" right="22" />
   <sprite id="icon_longaxe_01_2_bloodied" offsetY="35" ic="FF343B4F" width="124" height="142" img="icons\icon_longaxe_01_2_bloodied.png" left="-62" right="22" />
   <sprite id="icon_longaxe_01_2" offsetY="35" ic="FF424B55" width="124" height="142" img="icons\icon_longaxe_01_2.png" left="-62" right="22" />
+  <sprite id="icon_named_longaxe_04" offsetY="35" ic="FF363844" width="130" height="142" img="icons\icon_named_longaxe_04.png" left="-65" right="19" top="-46" bottom="52"/>
+  <sprite id="icon_named_longaxe_04_bloodied" offsetY="35" ic="FF2A2C4F" width="130" height="142" img="icons\icon_named_longaxe_04_bloodied.png" left="-65" right="19" top="-46" bottom="52"/>
+  <sprite id="icon_named_longaxe_05" offsetY="35" ic="FF363843" width="130" height="142" img="icons\icon_named_longaxe_05.png" left="-65" right="19" top="-46" bottom="52"/>
+  <sprite id="icon_named_longaxe_05_bloodied" offsetY="35" ic="FF2A2C5F" width="130" height="142" img="icons\icon_named_longaxe_05_bloodied.png" left="-65" right="19" top="-46" bottom="52"/>
   <sprite id="icon_longsword_01_1_bloodied" offsetY="35" ic="FF474B5B" width="150" height="160" img="icons\icon_longsword_01_1_bloodied.png" left="-54" right="22" top="-54" bottom="34" />
   <sprite id="icon_longsword_01_1" offsetY="35" ic="FF5B5F67" width="150" height="160" img="icons\icon_longsword_01_1.png" left="-54" right="22" top="-54" bottom="34" />
   <sprite id="icon_lute_named_01_bloodied" offsetY="35" ic="FF3F5874" width="130" height="142" img="icons\icon_lute_named_01_bloodied.png" left="-15" right="65" top="-69" bottom="17" />
@@ -611,6 +617,8 @@
   <sprite id="icon_spetum_01_1" offsetY="35" f1="10" f2="-50" ic="FF33404C" width="150" height="160" img="icons\icon_spetum_01_1.png" left="-56" right="13" />
   <sprite id="icon_spetum_01_2_bloodied" offsetY="35" f1="10" f2="-50" ic="FF2F3C4A" width="150" height="160" img="icons\icon_spetum_01_2_bloodied.png" left="-56" right="13" />
   <sprite id="icon_spetum_01_2" offsetY="35" f1="10" f2="-50" ic="FF33404A" width="150" height="160" img="icons\icon_spetum_01_2.png" left="-56" right="13" />
+  <sprite id="icon_spetum_01_named_03" offsetY="35" f1="-10" f2="-50" ic="FF42515F" width="130" height="142" img="icons\icon_spetum_01_named_03.png" left="-56" right="13"/>
+  <sprite id="icon_spetum_01_named_03_bloodied" offsetY="35" f1="-10" f2="-50" ic="FF41515F" width="130" height="142" img="icons\icon_spetum_01_named_03_bloodied.png" left="-56" right="13"/>
   <sprite id="icon_sword_01_1_bloodied" offsetY="35" ic="FF666A74" width="104" height="142" img="icons\icon_sword_01_1_bloodied.png" left="-2" right="40" top="-57" bottom="-1" />
   <sprite id="icon_sword_01_1" offsetY="35" ic="FF75797B" width="104" height="142" img="icons\icon_sword_01_1.png" left="-2" right="40" top="-57" bottom="-1" />
   <sprite id="icon_sword_01_2_bloodied" offsetY="35" ic="FF666A74" width="104" height="142" img="icons\icon_sword_01_2_bloodied.png" left="-2" right="40" top="-57" bottom="-1" />
@@ -689,6 +697,8 @@
   <sprite id="icon_warscythe_named_05" offsetY="35" ic="FF363F49" width="130" height="142" img="icons\icon_warscythe_named_05.png" left="-55" right="5" top="-65" bottom="71" />
   <sprite id="icon_whip_01_1" offsetY="35" ic="FF222A3D" width="130" height="142" img="icons\icon_whip_01_1.png" left="-2" right="64" top="-60" bottom="10" />
   <sprite id="icon_whip_01_2" offsetY="35" ic="FF222A3D" width="130" height="142" img="icons\icon_whip_01_2.png" left="-2" right="64" top="-60" bottom="10" />
+  <sprite id="icon_whip_01_named_02" offsetY="35" ic="FF23263F" width="130" height="142" img="icons\icon_whip_01_named_02.png" left="-1" right="65" top="-68" bottom="14"/>
+  <sprite id="icon_whip_01_named_03" offsetY="35" ic="FF23263B" width="130" height="142" img="icons\icon_whip_01_named_03.png" left="-2" right="64" top="-60" bottom="10"/>
   <sprite id="icon_wildmen_01_1_bloodied" offsetY="35" ic="FF39587F" width="130" height="142" img="icons\icon_wildmen_01_1_bloodied.png" left="2" right="60" top="-62" bottom="20" />
   <sprite id="icon_wildmen_01_1" offsetY="35" ic="FF43678D" width="130" height="142" img="icons\icon_wildmen_01_1.png" left="2" right="60" top="-62" bottom="20" />
   <sprite id="icon_wildmen_01_2_bloodied" offsetY="35" ic="FF39587F" width="130" height="142" img="icons\icon_wildmen_01_2_bloodied.png" left="2" right="60" top="-62" bottom="20" />

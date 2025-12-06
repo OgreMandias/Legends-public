@@ -123,7 +123,7 @@ if (!("Perks" in ::Const))
 		[],
 		[],
 		[::Legends.Perk.LegendFavouredEnemySwordmaster],
-		[]
+		[::Legends.Perk.BattleFlow]
 	]
 };
 

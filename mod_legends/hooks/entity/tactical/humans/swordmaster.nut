@@ -95,7 +95,8 @@
 			"weapons/named/named_sword",
 			"weapons/named/legend_named_estoc",
 			"weapons/named/named_sword",
-			"weapons/named/named_shamshir"
+			"weapons/named/named_shamshir",
+			"weapons/named/named_fencing_sword"
 		];
 
 		local armor = [

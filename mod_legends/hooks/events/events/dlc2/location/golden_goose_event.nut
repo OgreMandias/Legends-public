@@ -20,7 +20,7 @@
 	{
 		onPrepareVariables(_vars);
 		if (this.m.Observer != null)
-			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Observer.getGender(), "observer");
+			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Observer, "observer");
 	}
 
 	o.onPrepare = function () {

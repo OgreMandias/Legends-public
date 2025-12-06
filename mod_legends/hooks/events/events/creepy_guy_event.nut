@@ -78,7 +78,7 @@
 					::Legends.EventList.changeMoney(500),
 					::Legends.EventList.changeFatigue(_event.m.Militia, ::Math.rand(1, 2)),
 					::Legends.EventList.changeResolve(_event.m.Militia, ::Math.rand(1, 2)),
-					::Legends.EventList.changeMood(_event.m.Shieldmaiden, 1.5, "Happy to restore order to a town.")
+					::Legends.EventList.changeMood(_event.m.Militia, 1.5, "Happy to restore order to a town.")
 				]);
 			}
 		});
@@ -106,11 +106,11 @@
 		onPrepareVariables(_vars);
 		if (this.m.Shieldmaiden != null) {
 			_vars.push(["shieldmaiden", this.m.Shieldmaiden.getNameOnly()]);
-			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Shieldmaiden.getGender(), "shieldmaiden");
+			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Shieldmaiden, "shieldmaiden");
 		}
 		if (this.m.Militia != null) {
 			_vars.push(["militia", this.m.Militia.getNameOnly()]);
-			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Militia.getGender(), "militia");
+			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Militia, "militia");
 		}
 	}
 

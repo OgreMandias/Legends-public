@@ -312,8 +312,14 @@ Bring it on!
 • Hitpoints are increased by [color=%positive%]25%[/color], which reduces the chance to sustain debilitating [color=%status%]Injuries[/color] on hit.
 ";
 ::Const.Perks.PerkDefObjects[::Legends.Perk.Colossus].Tooltip = ::Const.Strings.PerkDescription.Colossus;
+::Const.Strings.PerkName.Taunt <- "Battlefield Control"
 ::Const.Strings.PerkDescription.Taunt <- @"
-'What are you going to do about it?'
+'Being aware of your surroundings can make or break a fight.'
+
+[color=%passive%][u]Passive:[/u][/color]
+• Has a [color=%positive%]50%[/color] lower chance to inflict friendly fire. Stacks with the 'Team Player'.
+
+• [color=%skill%]Knock Back[/color] will now apply [color=%status%]Taunt effect[/color].
 
 [color=%passive%][u]Active:[/u][/color]
 • Unlocks the [color=%skill%]Taunt[/color] skill which forces a targeted opponent take offensive actions instead of defensive ones.
@@ -322,6 +328,7 @@ Bring it on!
 
 • Costs [color=%negative%]4[/color] AP and [color=%negative%]15[/color] Fatigue.
 ";
+::Const.Perks.PerkDefObjects[::Legends.Perk.Taunt].Name = ::Const.Strings.PerkName.Taunt;
 ::Const.Perks.PerkDefObjects[::Legends.Perk.Taunt].Tooltip = ::Const.Strings.PerkDescription.Taunt;
 ::Const.Strings.PerkDescription.Brawny <- @"
 All this exercise has you in great shape.
@@ -388,7 +395,7 @@ Learn to use the superior reach of large weapons to keep the enemy from getting 
 Honor doesn't win you fights, stabbing the enemy where it hurts does.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Increase damage to Hitpoints by [color=%positive%]5%[/color] for each ally surrounding and distracting your target.
+• Increase damage to Hitpoints by [color=%positive%]5%[/color] and armor penetration by [color=%positive%]3%[/color] for each ally surrounding and distracting your target. Works with any weapon and skill.
 ";
 ::Const.Perks.PerkDefObjects[::Legends.Perk.Backstabber].Tooltip = ::Const.Strings.PerkDescription.Backstabber;
 ::Const.Strings.PerkDescription.LoneWolf <- @"

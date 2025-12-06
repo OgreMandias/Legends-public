@@ -347,7 +347,7 @@ Hold your ground!
 Early bird gets the worm!
 
 [color=%passive%][u]Passive:[/u][/color]
-• Gain [color=%positive%]20%[/color] Damage and [color=%positive%]+50%[/color] Threshold to inflict injury on enemies with full hitpoints.
+• Gain [color=%positive%]20%[/color] Damage and Lowers the threshold to inflict [color=%status%]Injuries[/color] by [color=%negative%]50%[/color] for both melee and ranged attacks on enemies with full hitpoints.
 ";
 
 ::Const.Strings.PerkDescription.LegendBallistics <- @"
@@ -1382,6 +1382,8 @@ Lets hope your enemies like fighting in the shade.
 • [color=%skill%]Fire Handgonne[/color] will apply [color=%skill%]Shellshocked[/color] on headshots.
 
 • [color=%skill%]Sling Heavy Stone[/color] will stun on headshots.
+
+• [color=%skill%]Shoot Bolt[/color] and [color=%skill%]Shoot Bolt[/color] will automatically reload on headshots.
 ";
 
 ::Const.Strings.PerkDescription.LegendStaffBlock <- @"
@@ -1866,6 +1868,8 @@ Master the ability to ensnare others and to disentangle yourself.
 • When freeing yourself or allies gain a baseline [color=%positive%]99%[/color] chance to succeed in removing rooting effects, such as nets, vines, webs, and ensnarement by some beasts.
 
 • Reduces Fatigue cost of freeing yourself or allies by [color=%negative%]66%[/color] and AP cost to [color=%negative%]3[/color].
+
+• Can now double grip with a net in your offhand and unlocks Hand to Hand abilities that might be locked from holding a net in offhand.
 ";
 
 ::Const.Strings.PerkDescription.LegendMasterySlings <- @"
@@ -2684,7 +2688,7 @@ Put to use your skill in the creation and maintenance of siege weapons.
 Many years spent repairing and packing nets allows you to create nets and wield them more effectively.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Allows your company to repair a broken net (refill ammo charges) for a cost of 15 ammo.
+• Reduces the refill cost of nets to 10.
 
 • Grants[color=%positive%]+10[/color] Melee Defense while holding a net.
 
@@ -2695,15 +2699,9 @@ Many years spent repairing and packing nets allows you to create nets and wield 
 Perfect the art of casting nets.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Increases the throwing range of nets and reinforced nets by [color=%positive%]2[/color].
+• Increases the throwing range of nets and reinforced nets by [color=%positive%]2[/color] and the throwing range of bombs by [color=%positive%]1[/color].
 
-• Equipping a net when the offhand is free and always costs no Action Points.
-
-• Nets you throw have a chance to be reusable in battle.
-
-• Regular Nets have a [color=%positive%]25%[/color] chance to be reusable and Reinforced Nets have a [color=%positive%]50%[/color] chance to be reusable.
-
-• All nets have a [color=%positive%]100%[/color] chance to be reusable if the target is killed before breaking free.
+• Chance based on your Ranged Skill and Ranged Defense to trap additional adjacent targets when throwing a net. The chance decreases with each target you ensnare. 
 ";
 
 ::Const.Strings.PerkDescription.LegendPacifist <- @"
@@ -3197,7 +3195,7 @@ Extensive training in circus maneuvers allows you to move out of harm's way with
 Practice in physical movement with a partner has given the ability to take the lead and move someone's body in a twirling movement.
 
 [color=%passive%][u]Passive:[/u][/color]
-• If you have taken the [color=%perk%]Rotation[/color] perk, it can now target enemies.
+• [color=%skill%]Rotation[/color] can now target enemies.
 ";
 
 ::Const.Strings.PerkDescription.LegendKnifeplay <- @"

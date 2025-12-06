@@ -15,6 +15,6 @@
 			"teamplayer",
 			this.m.Teamplayer.getName()
 		]);
-		::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Teamplayer.getGender(), "teamplayer")
+		::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Teamplayer, "teamplayer")
 	}
 });

@@ -326,17 +326,6 @@
 			}
 		}
 
-		local gender1 = brothers[brother1].getGender();
-		local gender2 = brothers[brother2].getGender();
-
-		if (brothers.len() < 2) {
-			brother1 = "unknown";
-			brother2 = "unknown";
-		} else {
-			brother1 = brothers[brother1].getName();
-			brother2 = brothers[brother2].getName();
-		}
-
 		local villages = this.World.EntityManager.getSettlements();
 		local randomTown;
 
@@ -374,11 +363,11 @@
 			],
 			[
 				"randombrother",
-				brother1
+				brothers.len() < 2 ? "unknown" : brothers[brother1].getName()
 			],
 			[
 				"randombrother2",
-				brother2
+				brothers.len() < 2 ? "unknown" : brothers[brother2].getName()
 			],
 			[
 				"randomtown",
@@ -439,10 +428,10 @@
 		]);
 		if (this.m.EmployerID != 0)
 		{
-			::Const.LegendMod.extendVarsWithPronouns(vars, this.getEmployer().getGender(), "employer");
+			::Const.LegendMod.extendVarsWithPronouns(vars, this.getEmployer(), "employer");
 		}
-		::Const.LegendMod.extendVarsWithPronouns(vars, gender1, "randombrother");
-		::Const.LegendMod.extendVarsWithPronouns(vars, gender2, "randombrother2");
+		::Const.LegendMod.extendVarsWithPronouns(vars, brothers[brother1], "randombrother");
+		::Const.LegendMod.extendVarsWithPronouns(vars, brothers[brother2], "randombrother2");
 		return this.buildTextFromTemplate(_text, vars);
 	}
 

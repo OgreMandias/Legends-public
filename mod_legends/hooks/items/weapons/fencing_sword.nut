@@ -15,4 +15,11 @@
 		this.m.ArmamentIcon = "icon_sword_fencing_01" + v;
 	}
 
+	local onEquip = o.onEquip;
+	o.onEquip = function()
+	{
+		onEquip();
+		::Legends.Actives.grant(this, ::Legends.Active.Riposte);
+	}
+
 });

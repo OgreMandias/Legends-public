@@ -40,7 +40,7 @@
 			food *= 2;
 		}
 		food -= this.World.State.getPlayer().getFoodModifier();
-		return food;
+		return this.Math.maxf(0.0, food);
 	}
 
 	o.setCommander <- function ( _f )
@@ -332,7 +332,7 @@
 				{
 					local vanquishedText = "{" + (" The most powerful opponent %they% vanquished was " + this.m.LifetimeStats.MostPowerfulVanquished + ".") + "}";
 					local vars = [];
-					this.Const.LegendMod.extendVarsWithPronouns(vars, this.getGender());
+					::Const.LegendMod.extendVarsWithPronouns(vars, this);
 					vanquishedText = this.buildTextFromTemplate(vanquishedText, vars);
 					text = text + vanquishedText;
 				}

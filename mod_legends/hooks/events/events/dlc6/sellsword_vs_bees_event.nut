@@ -19,8 +19,8 @@
 	o.onPrepareVariables = function ( _vars )
 	{
 		onPrepareVariables(_vars);
-		::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Dude.getGender(), "chosen");
+		::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Dude, "chosen");
 		if (this.m.Wildman != null)
-			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Wildman.getGender(), "wildman");
+			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Wildman, "wildman");
 	}
 })

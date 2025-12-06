@@ -2660,7 +2660,7 @@ The first rule of...
 Strike while they're down!
 
 [color=%passive%][u]Passive:[/u][/color]
-• Attacks deal an additional [color=%positive%]+5[/color] fatigue per hit.
+• Attacks deal an additional [color=%positive%]5%[/color] of the enemy's maximum fatigue per hit.
 
 • Each point of fatigue damage over the target's maximum fatigue will be translated to additional damage done.
 ";

@@ -8,7 +8,7 @@ this.perk_legend_pummel_into_submission <- this.inherit("scripts/skills/skill", 
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
-		_properties.FatigueDealtPerHitMult += 1.0;
+		_properties.FatigueDealtAsPercentOfMaxFatigue += 0.05;
 
 		if (::Legends.S.skillEntityAliveCheck(_targetEntity)) {
 			return;

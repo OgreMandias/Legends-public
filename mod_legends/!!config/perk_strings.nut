@@ -463,8 +463,7 @@ Master the art of following up for devastating effects.
 
 • If the attack misses, the effect is lost.
 
-[color=%passive%][u]Dual Wield Bonus:[/u][/color]
-• If the offhand attack successfully hits, the next mainhand attack costs [color=%positive%]-1[/color] AP and deals [color=%positive%]+10%[/color] damage.
+• When [color=%status%]Dual Wielding[/color] daggers, if the offhand attack successfully hits, the next mainhand attack costs [color=%positive%]-1[/color] AP and deals [color=%positive%]+10%[/color] damage.
 ";
 
 ::Const.Strings.PerkDescription.LegendVengeance <- @"
@@ -2857,6 +2856,8 @@ Time spent assessing an enemy, finding the arteries, will pay off in blood shed 
 • Unlocks the [color=%skill%]Prepare to Bleed[/color] skill which primes your next strike to inflict [color=%damage%]5[/color] [color=%status%]Bleed[/color] damage for the next two turns.
 
 • Costs [color=%negative%]2[/color] AP and [color=%negative%]15[/color] Fatigue.
+
+• When [color=%status%]Dual Wielding[/color] flails, both attacks apply [color=%status%]Bleed[/color].
 ";
 
 ::Const.Strings.PerkDescription.LegendPrepareGraze <- @"
@@ -3098,7 +3099,7 @@ Perfect the art of casting nets.
 [color=%passive%][u]Passive:[/u][/color]
 • Increases the throwing range of nets and reinforced nets by [color=%positive%]2[/color] and the throwing range of bombs by [color=%positive%]1[/color].
 
-• Chance based on your Ranged Skill and Ranged Defense to trap additional adjacent targets when throwing a net. The chance decreases with each target you ensnare. 
+• Chance based on your Ranged Skill and Ranged Defense to trap additional adjacent targets when throwing a net. The chance decreases with each target you ensnare.
 ";
 
 ::Const.Strings.PerkDescription.LegendPacifist <- @"

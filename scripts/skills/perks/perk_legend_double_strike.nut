@@ -36,7 +36,7 @@ this.perk_legend_double_strike <- this.inherit("scripts/skills/skill", {
 			::Legends.Effects.grant(actor, ::Legends.Effect.DoubleStrike);
 		}
 
-		if (::Legends.Weapons.isDualWielding(actor)
+		if (::Legends.Weapons.isDualWieldingWeaponType(actor, ::Const.Items.WeaponType.Dagger)
 			&& ::Legends.Weapons.isOffHandSkill(actor, _skill))
 		{
 			this.m.DualWieldBonusActive = true;
@@ -45,7 +45,7 @@ this.perk_legend_double_strike <- this.inherit("scripts/skills/skill", {
 
 	function onAnySkillUsed(_skill, _targetEntity, _properties) {
 		local actor = this.getContainer().getActor();
-		if (!this.m.DualWieldBonusActive || !::Legends.Weapons.isDualWielding(actor)) {
+		if (!this.m.DualWieldBonusActive || !::Legends.Weapons.isDualWieldingWeaponType(actor, ::Const.Items.WeaponType.Dagger)) {
 			return;
 		}
 		if (::Legends.Weapons.isMainHandSkill(actor, _skill)) {
@@ -56,7 +56,7 @@ this.perk_legend_double_strike <- this.inherit("scripts/skills/skill", {
 
 	function onAfterAnySkillExecuted(_skill, _targetTile, _targetEntity, _forFree) {
 		local actor = this.getContainer().getActor();
-		if (!this.m.DualWieldBonusActive || !::Legends.Weapons.isDualWielding(actor)) {
+		if (!this.m.DualWieldBonusActive || !::Legends.Weapons.isDualWieldingWeaponType(actor, ::Const.Items.WeaponType.Dagger)) {
 			return;
 		}
 		if (::Legends.Weapons.isMainHandSkill(actor, _skill)) {

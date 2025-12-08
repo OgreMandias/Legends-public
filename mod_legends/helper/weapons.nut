@@ -66,3 +66,14 @@ if (!("Weapons" in ::Legends)) {
 ::Legends.Weapons.isDualWielding <- function (_actor) {
     return _actor != null && _actor.getFlags().get(::Legends.Flags.DualWield) == true;
 }
+
+// Returns true if dual wielding weapons of the given type.
+function isDualWieldingWeaponType(_actor, _type) {
+    if (!::Legends.Weapons.isDualWielding(_actor)) {
+        return false;
+    }
+    local items = _actor.getItems();
+    local mh = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
+    local oh = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
+    return mh != null && oh != null && mh.m.WeaponType == _type && oh.m.WeaponType == _type;
+}

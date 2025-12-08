@@ -11,6 +11,10 @@ this.legend_orc_mad_berserker <- this.inherit("scripts/entity/tactical/enemies/o
 	function onInit()
 	{
 		this.orc_berserker.onInit();
+		local tattooBody = this.getSprite("tattoo_body");
+		tattooBody.setBrush("bust_orc_02_body_paint_0" + this.Math.rand(4, 6));
+		local tattooHead = this.getSprite("tattoo_head");
+		tattooHead.setBrush("bust_orc_02_head_paint_0" + this.Math.rand(4, 6));
 		::Legends.Perks.grant(this, ::Legends.Perk.CripplingStrikes);
 		::Legends.Perks.grant(this, ::Legends.Perk.Brawny);
 		::Legends.Perks.grant(this, ::Legends.Perk.Colossus);
@@ -42,7 +46,7 @@ this.legend_orc_mad_berserker <- this.inherit("scripts/entity/tactical/enemies/o
 		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 	}
 
-	o.makeMiniboss <- function ()
+	function makeMiniboss ()
 	{
 		if (!this.actor.makeMiniboss())
 		{

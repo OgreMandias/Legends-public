@@ -2,7 +2,7 @@
 {
 	o.m.IsUpgraded <- false;
 
-	о.onDelayedEffect = function ( _tag )
+	o.onDelayedEffect = function ( _tag )
 	{
 		local mytile = _tag.User.getTile();
 		local actors = this.Tactical.Entities.getAllInstances();

@@ -102,6 +102,7 @@ this.legend_heartseeker_skill <- this.inherit("scripts/skills/skill", {
 		if (_skill == this)
 		{
 			_properties.ThresholdToInflictInjuryMult *= 0.5;
+			_properties.DamageTotalMult *= 1.1;
 		}
 	}
 

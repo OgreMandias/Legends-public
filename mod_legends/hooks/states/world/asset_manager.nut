@@ -1227,8 +1227,6 @@
 			this.setFormationName(i, _in.readString())
 		}
 		this.m.LastDayResourcesUpdated = _in.readU16();
-
-		::Legends.Stash.resize();
 	}
 
 });

@@ -221,9 +221,9 @@ local VanillaTree = [
 		}
 	}
 	if ("Profession" in _map) {
-		foreach (p in _map.Class)
+		foreach (p in _map.Profession)
 		{
-			_localMap.Class.push(p);
+			_localMap.Profession.push(p);
 		}
 	}
 	if ("Magic" in _map) {

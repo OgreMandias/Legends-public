@@ -9,6 +9,13 @@ Favoured Enemy - Civilization
 Favoured Enemy - Outlaw
 Favoured Enemy - Sword Master
 
+## New enemies
+- Orc Tyrant - elite orc warlord, his warcry can cascade on other warlords
+- Orc Mad Berserker - elite version of the orc berserker, has nimble and nudist
+
+## Enemy Changes
+- Bandit Warlord is renamed to Robber Baron
+
 ## New Runes
 
 - Weapon Fire rune - sets tile on fire on hit

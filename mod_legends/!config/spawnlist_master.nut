@@ -208,13 +208,13 @@
 	Script = "scripts/entity/tactical/enemies/legend_bandit_veteran"
 };
 
-::Const.World.Spawn.Troops.BanditWarlord <- {
-	ID = this.Const.EntityType.BanditWarlord,
+::Const.World.Spawn.Troops.LegendRobberBaron <- {
+	ID = this.Const.EntityType.LegendRobberBaron,
 	Variant = 1,
 	Strength = 60,
 	Cost = 50,
 	Row = 2,
-	Script = "scripts/entity/tactical/enemies/legend_bandit_warlord",
+	Script = "scripts/entity/tactical/enemies/legend_robber_baron",
 	NameList = this.Const.Strings.BanditLeaderNames,
 	TitleList = null
 };

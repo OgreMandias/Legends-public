@@ -780,7 +780,6 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"top/legend_helmet_golden_mask",
 			"top/legend_helmet_warlock_skull",
 			"top/legend_helmet_fencer_hat",
-			"top/legend_helmet_fencer_hat",
 			"top/legend_helmet_southern_veil",
 			"top/legend_helmet_undertakers_scarf",
 			"top/legend_helmet_helm_adornment",

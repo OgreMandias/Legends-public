@@ -19,6 +19,11 @@ Favoured Enemy - Sword Master
 
 - Integrated Better Obituary v3, thanks to Allania
 
+## Item Changes
+
+### Helmets
+- merged the two fencer hats 
+
 ### For modders:
 
 Following trees were removed, refer to `z_perks_tree_enemy.nut` for replacements:

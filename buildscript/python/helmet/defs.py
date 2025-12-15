@@ -765,10 +765,6 @@ class Defs:
  "title" :  "Warlock Skill Helm",
  "desc" :  "Warlock Skill Helm."
  },
-{"name" : "fencer_hat"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 225, "con" : 15, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",
- "title" :  "Fencer Hat",
- "desc" :  "The floppy hat of a swordsman."
- },
 
 
 {"name" : "hood_cloth_round"                     , "layer" : "vanity", "min" : 1, "max" : 2, "value" : 5, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",
@@ -1092,7 +1088,7 @@ class Defs:
  "title" :  "Ancient Lich Crown",
  "desc" :  "Cermonial crown of an ancient Lich Priests."
  },
-{"name" : "fencerhat"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 50, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",
+{"name" : "fencer_hat"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 50, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",
  "title" :  "Fencer Hat",
  "desc" :  "The floppy hat of a swordsman."
  },

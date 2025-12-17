@@ -179,6 +179,8 @@ Master the art of swordfighting and using your opponent's mistakes to your advan
 • [color=%skill%]Swing[/color] has a [color=%positive%]+10%[/color] chance to hit if using a Sword.
 
 • [color=%skill%]Gash[/color] has a [color=%negative%]50%[/color] lower threshold to inflict [color=%status%]Injuries[/color].
+
+• When [color=%status%]Dual Wielding[/color] swords, [color=%skill%]Riposte[/color] can trigger from both weapons, allowing two counter-attacks per missed enemy attack.
 ";
 ::Const.Perks.PerkDefObjects[::Legends.Perk.SpecSword].Tooltip = ::Const.Strings.PerkDescription.SpecSword;
 ::Const.Strings.PerkDescription.SpecSpear <- @"

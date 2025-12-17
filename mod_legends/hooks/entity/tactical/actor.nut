@@ -285,14 +285,30 @@
 		{
 			local skill = this.m.Skills.getAttackOfOpportunity();
 
-			if (skill != null)
-			{
+			if (skill != null) {
 				local info = {
 					User = this,
 					Skill = skill,
 					TargetTile = _attacker.getTile()
 				};
 				this.Time.scheduleEvent(this.TimeUnit.Virtual, ::Const.Combat.RiposteDelay * _delayMultiplier, this.onRiposte.bindenv(this), info);
+
+				if (::Legends.Perks.has(this, ::Legends.Perk.SpecSword)
+					&& ::Legends.Weapons.isDualWieldingWeaponType(this, ::Const.Items.WeaponType.Sword))
+				{
+					local oh = this.getItems().getItemAtSlot(::Const.ItemSlot.Offhand);
+					if (oh != null) {
+						local ohSkill = ::Legends.Weapons.findPrimaryAttackSkill(this, oh);
+						if (ohSkill != null) {
+							local ohInfo = {
+								User = this,
+								Skill = ohSkill,
+								TargetTile = _attacker.getTile()
+							};
+							this.Time.scheduleEvent(this.TimeUnit.Virtual, ::Const.Combat.RiposteDelay * _delayMultiplier, this.onRiposte.bindenv(this), ohInfo);
+						}
+					}
+				}
 			}
 
 			this.getFlags().set("PerformedRiposte", true);

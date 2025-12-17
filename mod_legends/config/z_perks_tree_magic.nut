@@ -260,13 +260,12 @@ if (!("Perks" in ::Const))
 		[],
 		[
 			::Legends.Perk.HoldOut,
-			::Legends.Perk.LegendFavouredEnemyBandit
+			::Legends.Perk.LegendFavouredEnemyOutlaw
 		],
 		[],
 		[],
 		[
-			::Legends.Perk.LegendWindReader,
-			::Legends.Perk.LegendFavouredEnemyMercenary
+			::Legends.Perk.LegendWindReader
 		],
 		[
 			::Legends.Perk.KillingFrenzy,

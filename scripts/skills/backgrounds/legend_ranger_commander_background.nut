@@ -76,43 +76,42 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 		];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.CrossbowTree,
-				this.Const.Perks.BowTree,
-				this.Const.Perks.SlingTree,
-				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.DaggerTree,
-				this.Const.Perks.AxeTree,
-				this.Const.Perks.OneHandedTree
+				::Const.Perks.CrossbowTree,
+				::Const.Perks.BowTree,
+				::Const.Perks.SlingTree,
+				::Const.Perks.ThrowingTree,
+				::Const.Perks.DaggerTree,
+				::Const.Perks.AxeTree,
+				::Const.Perks.OneHandedTree
 			],
 			Defense = [
-				this.Const.Perks.ClothArmorTree,
-				this.Const.Perks.LightArmorTree,
-				this.Const.Perks.MediumArmorTree
+				::Const.Perks.ClothArmorTree,
+				::Const.Perks.LightArmorTree,
+				::Const.Perks.MediumArmorTree
 			],
 			Traits = [
-				this.Const.Perks.ViciousTree,
-				this.Const.Perks.FastTree,
-				this.Const.Perks.IntelligentTree,
-				this.Const.Perks.FitTree,
-				this.Const.Perks.AgileTree,
-				this.Const.Perks.LargeTree
+				::Const.Perks.ViciousTree,
+				::Const.Perks.FastTree,
+				::Const.Perks.IntelligentTree,
+				::Const.Perks.FitTree,
+				::Const.Perks.AgileTree,
+				::Const.Perks.LargeTree
 			],
 			Enemy = [
-				this.Const.Perks.BeastsTree,
-				this.Const.Perks.OrcsTree,
-				this.Const.Perks.SchratTree,
-				this.Const.Perks.ArchersTree
+				::Const.Perks.BeastTree,
+				::Const.Perks.GreenskinTree,
+				::Const.Perks.OccultTree,
 			],
 			Class = [
-				this.Const.Perks.BeastClassTree,
-				this.Const.Perks.HoundmasterClassTree,
-				this.Const.Perks.SharpshooterClassTree,
+				::Const.Perks.BeastClassTree,
+				::Const.Perks.HoundmasterClassTree,
+				::Const.Perks.SharpshooterClassTree,
 			],
 			Profession = [],
 			Magic = [
-				this.Const.Perks.RangerHuntMagicTree,
-				this.Const.Perks.MasterArcherTree,
-				this.Const.Perks.ArcherCommandTree
+				::Const.Perks.RangerHuntMagicTree,
+				::Const.Perks.MasterArcherTree,
+				::Const.Perks.ArcherCommandTree
 			]
 		};
 
@@ -204,7 +203,6 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 	function onAdded()
 	{
 		this.character_background.onAdded();
-		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_2"));
 		//this.m.Container.add(this.new("scripts/skills/perks/perk_pathfinder"));
 		::Legends.Traits.grant(this, ::Legends.Trait.Athletic);
 		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_guide_steps"));

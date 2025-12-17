@@ -183,9 +183,6 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 		::Legends.Traits.grant(this, ::Legends.Trait.Fat);
 		//this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
 		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_bribe"));
-		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_2"));
-		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_4"));
-
 	}
 
 	function onAddEquipment()

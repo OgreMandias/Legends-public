@@ -610,6 +610,8 @@
 	{
 		_fallen.level <- this.getLevel();
 		_fallen.traits <- this.getDeadTraits();
+		_fallen.perks <- this.getDeadPerks();
+		_fallen.perminjuries <- this.getDeadPermanentInjury();
 		_fallen.talents <- this.getTalents();
 		_fallen.stats <- [
 			this.getBaseProperties().Hitpoints,
@@ -659,7 +661,7 @@
 				bro.addXP(this.Math.max(1, this.Math.floor(XPgroup / brothers.len())));
 			}
 		}
-		if (::World.Assets.m.HasDrillSergeant > 0 && this.getLevel() >= 12)
+		if (::World.Assets.m.HasDrillSergeant && this.getLevel() >= 12)
 		{
 			foreach( bro in brothers )
 			{
@@ -900,7 +902,7 @@
 
 		}
 
-		if (numPerks < this.Const.Perks.UnlockRequirementsPerTier[_tier])
+		if (numPerks < ::Const.Perks.UnlockRequirementsPerTier[_tier])
 		{
 			return false;
 		}
@@ -1709,28 +1711,82 @@
 		this.m.LastCampTime = _t;
 	}
 
-	o.getDeadTraits <- function ()
+	o.getDeadTraits <- function()
 	{
 		local skills = this.getSkills().query(this.Const.SkillType.Trait, false, true);
-		local list = [];
 
-		foreach( i, s in skills )
+		local list_traits = [];
+
+		local Trait = this.Const.SkillType.Trait;
+		local Background = this.Const.SkillType.Background;
+		local StatusEffect = this.Const.SkillType.StatusEffect;
+		local Special = this.Const.SkillType.Special;
+
+		foreach (i, s in skills)
 		{
-			if (s.isType(this.Const.SkillType.StatusEffect) || s.isType(this.Const.SkillType.Active) || s.isType(this.Const.SkillType.Racial) || s.isType(this.Const.SkillType.Special) || s.isType(this.Const.SkillType.Perk) || s.isType(this.Const.SkillType.Terrain) || s.isType(this.Const.SkillType.Injury) || s.isType(this.Const.SkillType.PermanentInjury) || s.isType(this.Const.SkillType.SemiInjury) || s.isType(this.Const.SkillType.DrugEffect) || s.isType(this.Const.SkillType.DamageOverTime))
+			if ((s.isType(Trait) || s.isType(Background)) && !s.isType(StatusEffect) && !s.isType(Special))
 			{
-				continue;
+				local trait_data = {
+					id = ::IO.scriptFilenameByHash(s.ClassNameHash),
+					icon = s.getIcon()
+				};
+				list_traits.append(trait_data);
 			}
-
-			list.append(s.getIcon());
 		}
 
-		for( local i = list.len(); i < 4; i++ )
+		return list_traits;
+	};
+
+	o.getDeadPerks <- function()
+	{
+		local all_perks = ::Const.Perks.PerkDefObjects;
+
+		local list_perks = [];
+		local PerkType = this.Const.SkillType.Perk;
+
+		foreach (i, skill in this.getSkills().query(PerkType, true, true))
 		{
-			list.append("");
+			if (!skill.isType(PerkType))
+				continue;
+
+			local scriptPath = ::IO.scriptFilenameByHash(skill.ClassNameHash);
+
+			// Find matching perk definition
+			local matches = all_perks.filter(@(_, perk) perk.Script == scriptPath);
+
+			if (matches.len() > 0)
+			{
+				local def = matches[0];  // first match (should only be one)
+				list_perks.append({
+					id = scriptPath,
+					icon = def.Icon
+				});
+			}
 		}
 
-		return list;
-	}
+		return list_perks;
+	};
+
+	o.getDeadPermanentInjury <- function()
+	{
+		local PermanentInjury = this.Const.SkillType.PermanentInjury;
+		local skills = this.getSkills().query(PermanentInjury);
+		local list_perminjuries = [];
+
+		foreach (i, s in skills)
+		{
+			if(s.isType(this.Const.SkillType.PermanentInjury))
+			{
+				local injury_data = {
+					id = ::IO.scriptFilenameByHash(s.ClassNameHash),
+					icon = s.getIcon()
+				};
+				list_perminjuries.append(injury_data);
+			}
+		}
+
+		return list_perminjuries;
+	};
 
 	o.playSound <- function ( _type, _volume, _pitch = 1.0 )
 	{
@@ -1879,7 +1935,7 @@
 		if (_killer.getSkills().hasSkill("injury.legend_aperthropy") && !this.getSkills().hasSkill("injury.legend_aperthropy"))
 		{
 			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_aperthropy_injury"));
-			this.getBackground().addPerkGroup(this.Const.Perks.TherianthropyTree.Tree);
+			this.getBackground().addPerkGroup(::Const.Perks.TherianthropyTree.Tree);
 			this.logDebug(this.getName() + " gained aperthropy");
 			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(this) + " is infected with aperthropy ");
 		}
@@ -1887,7 +1943,7 @@
 		if (_killer.getSkills().hasSkill("injury.legend_arborthropy") && !this.getSkills().hasSkill("injury.legend_arborthropy"))
 		{
 			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_arborthropy_injury"));
-			this.getBackground().addPerkGroup(this.Const.Perks.TherianthropyTree.Tree);
+			this.getBackground().addPerkGroup(::Const.Perks.TherianthropyTree.Tree);
 			this.logDebug(this.getName() + " gained arborthropy");
 			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(this) + " is infected with arborthropy ");
 		}
@@ -1895,7 +1951,7 @@
 		if (_killer.getSkills().hasSkill("injury.legend_lycanthropy") && !this.getSkills().hasSkill("injury.legend_lycanthropy"))
 		{
 			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_lycanthropy_injury"));
-			this.getBackground().addPerkGroup(this.Const.Perks.TherianthropyTree.Tree);
+			this.getBackground().addPerkGroup(::Const.Perks.TherianthropyTree.Tree);
 			this.logDebug(this.getName() + " gained lycanthropy");
 			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(this) + " is infected with lycanthropy ");
 		}
@@ -1903,14 +1959,14 @@
 		if (_killer.getSkills().hasSkill("injury.legend_ursathropy") && !this.getSkills().hasSkill("injury.legend_ursathropy"))
 		{
 			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_ursathropy_injury"));
-			this.getBackground().addPerkGroup(this.Const.Perks.TherianthropyTree.Tree);
+			this.getBackground().addPerkGroup(::Const.Perks.TherianthropyTree.Tree);
 			this.logDebug(this.getName() + " gained ursathropy");
 			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(this) + " is infected with ursathropy ");
 		}
 		if (_killer.getSkills().hasSkill("injury.legend_vermesthropy") && !this.getSkills().hasSkill("injury.legend_vermesthropy"))
 		{
 			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_vermesthropy_injury"));
-			this.getBackground().addPerkGroup(this.Const.Perks.TherianthropyTree.Tree);
+			this.getBackground().addPerkGroup(::Const.Perks.TherianthropyTree.Tree);
 			this.logDebug(this.getName() + " gained vermesthropy");
 			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(this) + " is infected with vermesthropy ");
 		}
@@ -1930,28 +1986,28 @@
 		if (r <= 60 && !this.getSkills().hasSkill("injury.legend_lycanthropy"))
 		{
 			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_lycanthropy_injury"));
-			this.getBackground().addPerkGroup(this.Const.Perks.TherianthropyTree.Tree);
+			this.getBackground().addPerkGroup(::Const.Perks.TherianthropyTree.Tree);
 			this.logDebug(this.getName() + " gained lycanthropy");
 		}
 
 		if (r > 50 && r <= 80 && !this.getSkills().hasSkill("injury.legend_aperthropy"))
 		{
 			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_aperthropy_injury"));
-			this.getBackground().addPerkGroup(this.Const.Perks.TherianthropyTree.Tree);
+			this.getBackground().addPerkGroup(::Const.Perks.TherianthropyTree.Tree);
 			this.logDebug(this.getName() + " gained aperthropy");
 		}
 
 		if (r > 80 && r <= 95 && !this.getSkills().hasSkill("injury.legend_ursathropy"))
 		{
 			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_ursathropy_injury"));
-			this.getBackground().addPerkGroup(this.Const.Perks.TherianthropyTree.Tree);
+			this.getBackground().addPerkGroup(::Const.Perks.TherianthropyTree.Tree);
 			this.logDebug(this.getName() + " gained ursathropy");
 		}
 
 		if (r == 95 && !this.getSkills().hasSkill("injury.legend_vermesthropy"))
 		{
 			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_vermesthropy_injury"));
-			this.getBackground().addPerkGroup(this.Const.Perks.TherianthropyTree.Tree);
+			this.getBackground().addPerkGroup(::Const.Perks.TherianthropyTree.Tree);
 			this.logDebug(this.getName() + " gained vermesthropy");
 		}
 	}

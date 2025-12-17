@@ -725,7 +725,7 @@
 		Tops = [
 		],
 		Vanity = [
-			[1, "vanity/legend_helmet_fencerhat"] //20, -1, 0
+			[1, "vanity/legend_helmet_fencer_hat"] //20, -1, 0
 		]
 	}]
 };
@@ -2196,7 +2196,7 @@
 		Tops = [
 		],
 		Vanity = [
-			[1, "vanity/legend_helmet_fencerhat"]
+			[1, "vanity/legend_helmet_fencer_hat"]
 		]
 	}]
 };

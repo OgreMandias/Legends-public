@@ -59,25 +59,24 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.CrossbowTree,
-				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.DaggerTree,
-				this.Const.Perks.BowTree
+				::Const.Perks.CrossbowTree,
+				::Const.Perks.ThrowingTree,
+				::Const.Perks.DaggerTree,
+				::Const.Perks.BowTree
 			],
 			Defense = [
-				this.Const.Perks.HeavyArmorTree,
-				this.Const.Perks.MediumArmorTree
+				::Const.Perks.HeavyArmorTree,
+				::Const.Perks.MediumArmorTree
 			],
 			Traits = [
-				this.Const.Perks.FastTree,
-				this.Const.Perks.AgileTree,
-				this.Const.Perks.FitTree,
-				this.Const.Perks.ViciousTree
+				::Const.Perks.FastTree,
+				::Const.Perks.AgileTree,
+				::Const.Perks.FitTree,
+				::Const.Perks.ViciousTree
 			],
 			Enemy = [
-				this.Const.Perks.ArcherTree,
-				this.Const.Perks.OutlandersTree,
-				this.Const.Perks.NoblesTree
+				::Const.Perks.OutlawTree,
+				::Const.Perks.CivilizationTree
 			],
 			Profession = [],
 			Class = [],
@@ -111,8 +110,7 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 		{
 			return "%name% is one of the more talented markswoman you\'ve encountered in your travels. {After she saved your life with an arrow into the heart of a would-be assassin, you hired the woman on the spot. | Learning of the woman was easy - you just had to find the winner of a local shooting competition. | She once won an archery contest that had over a hundred participants from all the lands. | It is said that she can split an arrow - mid-flight. | You found the woman on a farm where, obviously, you thought her shooting talents were going to waste. | A poacher, a bowyer, an archer, the woman\'s skills have gotten plenty of use. You suspect she readily accepted your offer for mercenary work just to say \'she\'s done it all\'. | You once saw her shoot the moon, but that may have been some sort of trick. | A clever bowman, she once loosed two arrows simultaneously to kill a charging set of brigands.} While she has a fondness for killing from afar, %name%\'s no slouch in close-quarters combat.";
 		}
-		else
-		{
+		else {
 			return "%name% is one of the more talented marksman you\'ve encountered in your travels. {After he saved your life with an arrow into the heart of a would-be assassin, you hired the man on the spot. | Learning of the man was easy - you just had to find the winner of a local shooting competition. | He once won an archery contest that had over a hundred participants from all the lands. | It is said that he can split an arrow - mid-flight. | You found the man on a farm where, obviously, you thought his shooting talents were going to waste. | A poacher, a bowyer, an archer, the man\'s skills have gotten plenty of use. You suspect he readily accepted your offer for mercenary work just to say \'he\'s done it all\'. | You once saw him shoot the moon, but that may have been some sort of trick. | A clever bowman, he once loosed two arrows simultaneously to kill a charging set of brigands.} While he has a fondness for killing from afar, %name%\'s no slouch in close-quarters combat.";
 		}
 

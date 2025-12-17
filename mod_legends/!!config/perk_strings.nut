@@ -108,7 +108,6 @@
 ::Const.Strings.PerkName.LegendDogMaster <- "Dog Master";
 ::Const.Strings.PerkName.LegendHeightenedReflexes <- "Heightened Reflexes";
 ::Const.Strings.PerkName.LegendWindReader <- "Wind Reader";
-::Const.Strings.PerkName.LegendChoke <- "Choke";
 ::Const.Strings.PerkName.LegendPaymaster <- "Paymaster";
 ::Const.Strings.PerkName.LegendQuartermaster <- "Quartermaster";
 ::Const.Strings.PerkName.LegendBarterGreed <- "Greed";
@@ -172,13 +171,6 @@
 ::Const.Strings.PerkName.LegendSpecDualWield <- "Dual Wield Mastery";
 
 //VALA SKILLS - skills used only be the Vala
-//todo, had to uncomment it, otherwise it crashes - chopeks
-::Const.Strings.PerkName.LegendValaInscriptionMastery <- "Inscription Mastery";
-::Const.Strings.PerkName.LegendValaInscribeWeapon <- "Rune Sigils: Weapons";
-::Const.Strings.PerkName.LegendValaInscribeHelmet <- "Rune Sigils: Helmets";
-::Const.Strings.PerkName.LegendValaInscribeArmor <- "Rune Sigils: Armors";
-::Const.Strings.PerkName.LegendValaInscribeShield <- "Rune Sigils: Shields";
-//todo end
 ::Const.Strings.PerkName.LegendValaChantMastery <- "Chanting Mastery";
 ::Const.Strings.PerkName.LegendValaChantDisharmony <- "Disharmony (Chant)";
 ::Const.Strings.PerkName.LegendValaChantFury <- "Fury (Chant)";
@@ -220,28 +212,13 @@
 ::Const.Strings.PerkName.LegendSpecCultArmor <- "Penance";
 
 //FAVOURED ENEMY - skills that grant bonuses to specfic enemy types
-::Const.Strings.PerkName.LegendFavouredEnemyGhoul <- "Favoured Enemy - Nachzehrer";
-::Const.Strings.PerkName.LegendFavouredEnemyHexen <- "Favoured Enemy - Hexen";
-::Const.Strings.PerkName.LegendFavouredEnemyAlps <- "Favoured Enemy - Alp";
-::Const.Strings.PerkName.LegendFavouredEnemyUnhold <- "Favoured Enemy - Unhold";
-::Const.Strings.PerkName.LegendFavouredEnemyLindwurm <- "Favoured Enemy - Lindwurm";
-::Const.Strings.PerkName.LegendFavouredEnemyDirewolf <- "Favoured Enemy - Direwolf";
-::Const.Strings.PerkName.LegendFavouredEnemySpider <- "Favoured Enemy - Spider";
-::Const.Strings.PerkName.LegendFavouredEnemySchrat <- "Favoured Enemy - Schrat";
-::Const.Strings.PerkName.LegendFavouredEnemyOrk <- "Favoured Enemy - Orc";
-::Const.Strings.PerkName.LegendFavouredEnemyGoblin <- "Favoured Enemy - Goblin";
-::Const.Strings.PerkName.LegendFavouredEnemyVampire <- "Favoured Enemy - Greater Dead";
-::Const.Strings.PerkName.LegendFavouredEnemySkeleton <- "Favoured Enemy - Ancient Dead";
-::Const.Strings.PerkName.LegendFavouredEnemyZombie <- "Favoured Enemy - Wiedergänger";
-::Const.Strings.PerkName.LegendFavouredEnemyNoble <- "Favoured Enemy - Noble";
-::Const.Strings.PerkName.LegendFavouredEnemyBandit <- "Favoured Enemy - Brigand";
-::Const.Strings.PerkName.LegendFavouredEnemyBarbarian <- "Favoured Enemy - Barbarian";
-::Const.Strings.PerkName.LegendFavouredEnemyArcher <- "Favoured Enemy - Archer";
+::Const.Strings.PerkName.LegendFavouredEnemyBeast <- "Favoured Enemy - Beasts";
+::Const.Strings.PerkName.LegendFavouredEnemyOccult <- "Favoured Enemy - Occult";
+::Const.Strings.PerkName.LegendFavouredEnemyGreenskin <- "Favoured Enemy - Greenskin";
+::Const.Strings.PerkName.LegendFavouredEnemyUndead <- "Favoured Enemy - Undead";
+::Const.Strings.PerkName.LegendFavouredEnemyCivilization <- "Favoured Enemy - Civilization";
+::Const.Strings.PerkName.LegendFavouredEnemyOutlaw <- "Favoured Enemy - Outlaw";
 ::Const.Strings.PerkName.LegendFavouredEnemySwordmaster <- "Favoured Enemy - Sword Master";
-::Const.Strings.PerkName.LegendFavouredEnemyMercenary <- "Favoured Enemy - Mercenary";
-::Const.Strings.PerkName.LegendFavouredEnemyCaravan <- "Favoured Enemy - Peasantry";
-::Const.Strings.PerkName.LegendFavouredEnemySoutherner <- "Favoured Enemy - Southerner";
-::Const.Strings.PerkName.LegendFavouredEnemyNomad <- "Favoured Enemy - Nomad";
 
 //MAGIC - skills that have a magical or mystical element to them.
 ::Const.Strings.PerkName.LegendMagicBurningHands <- "Burning Hands";
@@ -347,15 +324,6 @@
 ::Const.Strings.PerkName.BatteringRam <- "Battering Ram"; //gives orcs stun immunity, similar to composure skill
 
 //UNUSED - skills otherwise defunct or missing files/functionality
-::Const.Strings.PerkName.LegendRoster <- "The Apprentice"; //REMOVE
-::Const.Strings.PerkName.LegendRoster1 <- "The Apprentice"; //REMOVE
-::Const.Strings.PerkName.LegendRoster2 <- "The Bodyguards"; //REMOVE
-::Const.Strings.PerkName.LegendRoster3 <- "The Team"; //REMOVE
-::Const.Strings.PerkName.LegendRoster4 <- "The Squad"; //REMOVE
-::Const.Strings.PerkName.LegendRoster5 <- "The Section"; //REMOVE
-::Const.Strings.PerkName.LegendRoster6 <- "The Platoon"; //REMOVE
-::Const.Strings.PerkName.LegendRoster7 <- "The Company"; //REMOVE
-::Const.Strings.PerkName.LegendTrophyHunter <- "Trophy Hunter"; //AI skill, currently unused.
 ::Const.Strings.PerkName.LegendCrusher <- "Crusher"; //exists but has no data to provide any affect
 ::Const.Strings.PerkName.LegendDeflect <- "Deflect"; //exists but has no data to provide any affect
 ::Const.Strings.PerkName.LegendIronside <- "Ironside"; //gives damage reduction based on number of adj. enemies
@@ -475,17 +443,6 @@ Master the art of following up for devastating effects.
 • If the attack misses the effect is wasted. Does not work from friendly fire or any self inflicted damage.
 
 • Additionally a party member or pet dying will trigger the effect.
-";
-
-::Const.Strings.PerkDescription.LegendTrophyHunter <- @"
-Each fight tells a story, with your glory and strength growing in their end.
-
-[color=%passive%][u]Passive:[/u][/color]
-• The gruesome trophies this character has collected will increase their Hitpoints, Fatigue, Resolve and Initiative by 1.
-
-• Will also allow them to terrify their opponents when enganged in melee and increase total Damage Done.
-
-• Total kills over 5 for a given faction will not count.
 ";
 
 ::Const.Strings.PerkDescription.LegendBruiser <- @"
@@ -823,11 +780,6 @@ Run as fast as you can!
 • For the remainder of this turn, the Action Point cost for movement is reduced by [color=%positive%]1[/color] for each tile, but the Fatigue cost is doubled.
 ";
 
-::Const.Strings.PerkDescription.LegendRoster <- @"
-[color=%passive%][u]Passive:[/u][/color]
-• Increase roster size.
-";
-
 ::Const.Strings.PerkDescription.LegendSpecBandage <- @"
 Master the art of bandaging mid battle using any cloth available.
 
@@ -864,55 +816,6 @@ Raise the dead, and turn them into your own personal army.
 • Unlocks [color=%skill%]Conduct Seance[/color] skill which allows you to summon zombies from dead enemies.
 
 • Costs [color=%negative%]4[/color] AP and [color=%negative%]20[/color] Fatigue.
-";
-
-::Const.Strings.PerkDescription.LegendRoster1 <- @"
-Direct your attention to guiding an apprentice into the mercenary world.
-
-[color=%passive%][u]Passive:[/u][/color]
-• Increase the company roster size by [color=%positive%]1[/color].
-";
-
-::Const.Strings.PerkDescription.LegendRoster2 <- @"
-Spend time training bodyguards to work together.
-
-[color=%passive%][u]Passive:[/u][/color]
-• increases company roster size by [color=%positive%]2[/color].
-";
-
-::Const.Strings.PerkDescription.LegendRoster3 <- @"
-Set up team planning, with task lists and prioritisation.
-
-[color=%passive%][u]Passive:[/u][/color]
-• Increases the company roster size by [color=%positive%]3[/color].
-";
-
-::Const.Strings.PerkDescription.LegendRoster4 <- @"
-Create a squad regime, with weekly schedules and drills.
-
-[color=%passive%][u]Passive:[/u][/color]
-• Increases the company roster size by [color=%positive%]4[/color].
-";
-
-::Const.Strings.PerkDescription.LegendRoster5 <- @"
-Oversee the section's financial administration processes, managing pay disputes, disbursements, withholdings and loans.
-
-[color=%passive%][u]Passive:[/u][/color]
-• Increases the company roster size by [color=%positive%]5[/color].
-";
-
-::Const.Strings.PerkDescription.LegendRoster6 <- @"
-Manage the company logistics. Supply rationing, camp structure and waste disposal.
-
-[color=%passive%][u]Passive:[/u][/color]
-• Increases the company roster size by [color=%positive%]6[/color].
-";
-
-::Const.Strings.PerkDescription.LegendRoster7 <- @"
-Implement platoon organisation techniques. Balancing interteam dynamics, clarifying role responsibilities, creating conflict resolution processes and creating strategic plans.
-
-[color=%passive%][u]Passive:[/u][/color]
-• Increases the company roster size by [color=%positive%]7[/color].
 ";
 
 ::Const.Strings.PerkDescription.LegendInsects <- @"
@@ -1188,53 +1091,6 @@ Siphon their lifeforce into yourself!
 • Chance to hit is based on Melee Attack.
 
 • Costs [color=%negative%]5[/color] AP and [color=%negative%]10[/color] Fatigue.
-";
-
-::Const.Strings.PerkDescription.LegendValaInscriptionMastery <- @"
-The Vala becomes is a master at the intricate and lost art of inscribing signs and sigils.
-
-[color=%passive%][u]Passive:[/u][/color]
-• When taking [color=%perk%]Staff Mastery[/color], the Vala will become able to inscribe shields and weapons.
-
-• When taking [color=%perk%]Nimble[/color] or [color=%perk%]Lithe[/color], the Vala will become able to inscribe Armor and Helmets.
-
-• When she achieves level 11, she will also increase the speed at which she can craft runes by [color=%positive%]30%[/color].
-";
-
-::Const.Strings.PerkDescription.LegendValaInscribeWeapon <- @"
-Learn to inscribe rune sigils for weapons.
-
-[color=%passive%][u]Passive:[/u][/color]
-• Allows the Vala to inscribe rocks with weapon specific rune sigils while encamped to create powerful rune stones.
-
-• Possibilities: accuracy, bleeding, feeding, poison, power.
-";
-
-::Const.Strings.PerkDescription.LegendValaInscribeHelmet <- @"
-Learn to inscribe rune sigils for helmets.
-
-[color=%passive%][u]Passive:[/u][/color]
-• Allows the Vala to inscribe rocks with helmet specific rune sigils while encamped to create powerful rune stones.
-
-• Possibilities: bravery, clarity, luck.
-";
-
-::Const.Strings.PerkDescription.LegendValaInscribeArmor <- @"
-Learn to inscribe rune sigils for armor.
-
-[color=%passive%][u]Passive:[/u][/color]
-• Allows the Vala to inscribe rocks with armor specific rune sigils while encamped to create powerful rune stones.
-
-• Possibilities: endurance, resilience, safety.
-";
-
-::Const.Strings.PerkDescription.LegendValaInscribeShield <- @"
-Learn to inscribe rune sigils for shields
-
-[color=%passive%][u]Passive:[/u][/color]
-• Allows the Vala to inscribe rocks with shield specific rune sigils while encamped to create powerful rune stones.
-
-• Possibilities: defense, radiance.
 ";
 
 ::Const.Strings.PerkDescription.LegendValaChantMastery <- @"
@@ -2032,155 +1888,69 @@ Master the difficult angles and timings of slinging rocks from afar.
 • Additionally allows you to launch bombs and flasks with a Staff Sling.
 ";
 
-::Const.Strings.PerkDescription.LegendFavouredEnemyGhoul <- @"
-Studying these monstrosities has given you insights into the strengths and weaknesses of the pallid necrophilic flesh devourers.
+::Const.Strings.PerkDescription.LegendFavouredEnemyBeast <- @"
+Enforce your position as the top of the food chain.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Grants [color=%positive%]+5%[/color] base bonus to Melee Skill, Ranged Skill and maximum damage while fighting Nachzehrers.
+• Grants [color=%positive%]+5%[/color] base bonus to Melee Skill, Ranged Skill and maximum damage while fighting Beasts.
 
-• Additionally, this bonus increases the more Nachzehrers you kill and counts all kills made previously with this character retroactively.
+• Additionally, this bonus increases the more Beasts you kill and counts all kills made previously with this character retroactively.
 
 • Increase per kill:
   - Nachzehrers | [color=%positive%]+0.16%[/color]
   - Skin Ghoul | [color=%positive%]+0.5%[/color]
-
-• At 15% or more (including the base 5% bonus), you will unlock an extremely difficult legendary contract to hunt elite nachzehrers, also known as Skin Ghouls.
-
-• Total bonus capped at 25%.
-";
-
-::Const.Strings.PerkDescription.LegendFavouredEnemyHexen <- @"
-Understanding the techniques of the malevolent crones gives you protection against their coven.
-
-[color=%passive%][u]Passive:[/u][/color]
-• Grants [color=%positive%]+5%[/color] base bonus to Melee Skill, Ranged Skill and Resolve while fighting hexe.
-
-• Additionally, this bonus increases the more Hexe you kill and counts all kills made previously with this character retroactively.
-
-• Increase per kill:
-  - Hexe | [color=%positive%]+0.5%[/color]
-  - Coven Leader | [color=%positive%]+2%[/color]
-
-• At 15% or more (including the base 5% bonus), you will unlock an extremely difficult legendary contract to hunt powerful hexe, also known as a Coven Leader.
-
-• Total bonus capped at 25%.
-";
-
-::Const.Strings.PerkDescription.LegendFavouredEnemyAlps <- @"
-Preparing for the nightmare creepers gives you techniques against their haggard curses.
-
-[color=%passive%][u]Passive:[/u][/color]
-• Grants [color=%positive%]+5%[/color] base bonus to Melee Skill, Ranged Skill and Resolve while fighting alps.
-
-• Additionally, this bonus increases the more alps you kill and counts all kills made previously with this character retroactively.
-
-• Increase per kill:
-  - Alp | [color=%positive%]+0.25%[/color]
-  - Demon Alp | [color=%positive%]+1%[/color]
-
-• At 15% or more (including the base 5% bonus), you will unlock an extremely difficult legendary contract to hunt a much stronger demon alp.
-
-• Total bonus capped at 25%.
-";
-
-::Const.Strings.PerkDescription.LegendFavouredEnemyUnhold <- @"
-These gigantic ravenous creatures are dangerous but stupid, that can be used to your advantage.
-
-[color=%passive%][u]Passive:[/u][/color]
-• Grants [color=%positive%]+5%[/color] base bonus to Melee Skill, Ranged Skill and maximum damage while fighting unholds.
-
-• Additionally, this bonus increases the more unholds you kill and counts all kills made previously with this character retroactively.
-
-• Increase per kill:
   - Unhold (all types) | [color=%positive%]+0.5%[/color]
   - Rock Unhold | [color=%positive%]+2%[/color]
-
-• At 15% or more (including the base 5% bonus), you will unlock an extremely difficult legendary to hunt armored Mountain Unholds.
-
-• Total bonus capped at 25%.
-";
-
-::Const.Strings.PerkDescription.LegendFavouredEnemyLindwurm <- @"
-Understanding the morphology of these noxious serpents opens up weak spots in their scales.
-
-[color=%passive%][u]Passive:[/u][/color]
-• Grants [color=%positive%]+5%[/color] base bonus to Melee Skill, Ranged Skill and maximum damage while fighting lindwurms or serpents.
-
-• Additionally, this bonus increases the more lindwurms or Serpents you kill and counts all kills made previously with this character retroactively.
-
-• Increase per kill:
   - Lindwurm | [color=%positive%]+1%[/color]
   - Serpent | [color=%positive%]+0.5%[/color]
   - Stollwurm | [color=%positive%]+2.5%[/color]
-
-• At 15% or more (including the base 5% bonus), you will unlock an extremely difficult legendary contract to hunt a burrowing Stollwurm.
-
-• Total bonus capped at 25%.
-";
-
-::Const.Strings.PerkDescription.LegendFavouredEnemyDirewolf <- @"
-The vicious jaws of a direwolf can tear limbs asunder. In the heat of their blood soaked frenzy, they leave themselves open for counter attack.
-
-[color=%passive%][u]Passive:[/u][/color]
-• Grants [color=%positive%]+5%[/color] base bonus to Melee Skill, Ranged Skill and maximum damage while fighting wolves or hyenas.
-
-• Additionally, this bonus increases the more wolves or hyenas you kill and counts all kills made previously with this character retroactively.
-
-• Increase per kill:
   - Direwolf | [color=%positive%]+0.2%[/color]
-  - Hyena | [color=%positive%]+0.2%[/color]
   - White Direwolf | [color=%positive%]+0.5%[/color]
-
-• At 15% or more (including the base 5% bonus), you will unlock an extremely difficult legendary contract to hunt white wolves.
-
-• Total bonus capped at 25%.
-";
-
-::Const.Strings.PerkDescription.LegendFavouredEnemySpider <- @"
-These skittering deadly arachnids are weak on their own but strong in numbers. However, they can be beaten.
-
-[color=%passive%][u]Passive:[/u][/color]
-• Grants [color=%positive%]+5%[/color] base bonus to Melee Skill, Ranged Skill and maximum damage while fighting webknechts.
-
-• Additionally, this bonus increases the more webknechts you kill and counts all kills made previously with this character retroactively.
-
-• Increase per kill:
+  - Hyena | [color=%positive%]+0.2%[/color]
+  - Enraged Hyena | [color=%positive%]+0.5%[/color]
   - Webknecht | [color=%positive%]+0.125%[/color]
   - Spider Eggs | [color=%positive%]+0.5%[/color]
   - Redback | [color=%positive%]+1%[/color]
 
-• At 15% or more (including the base 5% bonus), you will unlock an extremely difficult legendary contract to hunt redback spiders.
+• At 15% or more (including the base 5% bonus), you will unlock an extremely difficult legendary contract to hunt legendary beasts such as, Skin Ghouls, Rock Unholds, Stollwurms, Enraged Hyenas, White Direwolfs and Readback Spiders.
 
 • Total bonus capped at 25%.
 ";
 
-::Const.Strings.PerkDescription.LegendFavouredEnemySchrat <- @"
-The strong branches of a living tree and uncaring mantle of animated stones are deadly foes, but bark and boulder can be felled with the right knowledge.
+::Const.Strings.PerkDescription.LegendFavouredEnemyOccult <- @"
+A skeptical mindset cuts through the tricks of the occult, leaving only brittle shapes to steel.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Grants [color=%positive%]+5%[/color] base bonus to Melee Skill, Ranged Skill and maximum damage while fighting schrats or ifrits.
+• Grants [color=%positive%]+5%[/color] base bonus to Melee Skill, Ranged Skill and Resolve while fighting occult creatures.
 
-• Additionally, this bonus increases the more schrats or ifrits you kill and counts all kills made previously with this character retroactively.
+• Additionally, this bonus increases the more occult creatures you kill and counts all kills made previously with this character retroactively.
 
 • Increase per kill:
+  - Alp | [color=%positive%]+0.25%[/color]
+  - Demon Alp | [color=%positive%]+1%[/color]
+  - Hexe | [color=%positive%]+0.5%[/color]
+  - Coven Leader | [color=%positive%]+2%[/color]
+  - Geist | [color=%positive%]+0.125%[/color]
+  - Höllenhound | [color=%positive%]+0.125%[/color]
+  - Winselmutter | [color=%positive%]+0.25%[/color]
   - Schrat | [color=%positive%]+1%[/color]
   - Sapling | [color=%positive%]+0.2%[/color]
   - Ifrit | [color=%positive%]+0.125%[/color]
   - Greenwood Schrat | [color=%positive%]+1%[/color]
   - Greenwood Sapling | [color=%positive%]+0.4%[/color]
 
-• At 15% or more (including the base 5% bonus), you will unlock an extremely difficult legendary contract to hunt an endlessly multiplying Greenwood Schrat.
+• At 15% or more (including the base 5% bonus), you will unlock multiple difficult legendary contracts to hunt Demon Alps and Hexe Coven Leaders.
 
 • Total bonus capped at 25%.
 ";
 
-::Const.Strings.PerkDescription.LegendFavouredEnemyOrk <- @"
-These marauding brutes are a force to be reckoned with, though their fighting style lacks finesse and can be countered with the right techniques.
+::Const.Strings.PerkDescription.LegendFavouredEnemyGreenskin <- @"
+Big or small, greenskins lack strength of will.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Grants [color=%positive%]+5%[/color] base bonus to Melee Skill, Ranged Skill and maximum damage while fighting orcs.
+• Grants [color=%positive%]+5%[/color] base bonus to Melee Skill, Ranged Skill and maximum damage while fighting greenskins.
 
-• Additionally, this bonus increases the more orcs you kill and counts all kills made previously with this character retroactively.
+• Additionally, this bonus increases the more greenskins you kill and counts all kills made previously with this character retroactively.
 
 • Increase per kill:
   - Orc Young | [color=%positive%]+0.125%[/color]
@@ -2189,86 +1959,25 @@ These marauding brutes are a force to be reckoned with, though their fighting st
   - Orc Elite | [color=%positive%]+0.25%[/color]
   - Orc Behemoth | [color=%positive%]+0.5%[/color]
   - Orc Warlord | [color=%positive%]+1%[/color]
-
-• Also increases spawn rate of orc champions.
-
-• Total bonus capped at 25%.
-";
-
-::Const.Strings.PerkDescription.LegendFavouredEnemyGoblin <- @"
-Goblins are the most dangerous living thing under five foot tall, and while they prove hard to hit, they still bleed and die all the same.
-
-[color=%passive%][u]Passive:[/u][/color]
-• Grants [color=%positive%]+5%[/color] base bonus to Melee Skill, Ranged Skill and maximum damage while fighting goblins.
-
-• Additionally, this bonus increases the more goblins you kill and counts all kills made previously with this character retroactively.
-
-• Increase per kill:
   - Goblin Ambusher | [color=%positive%]+0.125%[/color]
   - Goblin Fighter | [color=%positive%]+0.125%[/color]
   - Goblin Wolfrider | [color=%positive%]+0.2%[/color]
   - Goblin Shaman | [color=%positive%]+0.25%[/color]
   - Goblin Overseer | [color=%positive%]+0.25%[/color]
 
-• Also increases spawn rate of goblin champions.
+• Also increases spawn rate of greenskin champions.
 
 • Total bonus capped at 25%.
 ";
 
-::Const.Strings.PerkDescription.LegendFavouredEnemyVampire <- @"
-The terrifying abilities of the Necrosavants, Apparitions and Embalmed have developed over time beyond memory. Their techniques are honed to perfection, but that also makes them predictable.
-
-[color=%passive%][u]Passive:[/u][/color]
-• Grants [color=%positive%]+5%[/color] base bonus to Melee Skill, Ranged Skill, maximum damage and Resolve while fighting necrosavants, höllenhounds, geists, winselmutters and embalmed.
-
-• Additionally, this bonus increases the more of these enemy types you kill and counts all kills made previously with this character retroactively.
-
-• Increase per kill:
-  - Necrosavant | [color=%positive%]+0.25%[/color]
-  - Necrosavant Lord | [color=%positive%]+0.5%[/color]
-  - Höllenhound | [color=%positive%]+0.125%[/color]
-  - Geist | [color=%positive%]+0.125%[/color]
-  - Winselmutter | [color=%positive%]+0.25%[/color]
-  - Embalmed Slave | [color=%positive%]+0.25%[/color]
-  - Embalmed Soldier | [color=%positive%]+0.5%[/color]
-  - Embalmed Noble | [color=%positive%]+1%[/color]
-  - Embalmed Priest | [color=%positive%]+1.25%[/color]
-  - Embalmed Queen | [color=%positive%]+2%[/color]
-
-• Also increases spawn rate of necrosavant champions.
-
-• Total bonus capped at 25%.
-";
 //No contract
 //Lich and Emporer not included
-::Const.Strings.PerkDescription.LegendFavouredEnemySkeleton <- @"
-The legions from the ancient empire still harass this world, yet their connection to the world of the living can be severed.
-
-[color=%passive%][u]Passive:[/u][/color]
-• Grants [color=%positive%]+5%[/color] base bonus to Melee Skill, Ranged Skill, and maximum damage while fighting ancient dead.
-
-• Additionally, this bonus increases the more of these enemy types you kill and counts all kills made previously with this character retroactively.
-
-• Increase per kill:
-  - Ancient Auxiliary | [color=%positive%]+0.01%[/color]
-  - Ancient Legionary | [color=%positive%]+0.2%[/color]
-  - Honor Guard | [color=%positive%]+0.5%[/color]
-  - Ancient Priest | [color=%positive%]+0.5%[/color]
-  - Phylactery | [color=%positive%]+1%[/color]
-  - Ancient Gladiator | [color=%positive%]+0.5%[/color]
-  - Flying Skull | [color=%positive%]+0.04%[/color]
-
-• Also increases spawn rate of ancient dead champions.
-
-• Total bonus capped at 25%.
-";
-
 //Treasure hunters and betrayers included as knights
-::Const.Strings.PerkDescription.LegendFavouredEnemyZombie <- @"
+::Const.Strings.PerkDescription.LegendFavouredEnemyUndead <- @"
 Shambling corpses come wave on wave, rising sleepless from their graves.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Grants [color=%positive%]+5%[/color] base bonus to Melee Skill, Ranged Skill, and maximum damage while fighting wiedergangers.
+• Grants [color=%positive%]+5%[/color] base bonus to Melee Skill, Ranged Skill, and maximum damage while fighting undead.
 
 • Additionally, this bonus increases the more of these enemy types you kill and counts all kills made previously with this character retroactively.
 
@@ -2277,17 +1986,32 @@ Shambling corpses come wave on wave, rising sleepless from their graves.
   - Wiederganger Yeoman | [color=%positive%]+0.1%[/color]
   - Fallen Hero | [color=%positive%]+0.2%[/color]
   - Necromancer | [color=%positive%]+0.25%[/color]
+  - Ancient Auxiliary | [color=%positive%]+0.01%[/color]
+  - Ancient Legionary | [color=%positive%]+0.2%[/color]
+  - Honor Guard | [color=%positive%]+0.5%[/color]
+  - Ancient Priest | [color=%positive%]+0.5%[/color]
+  - Phylactery | [color=%positive%]+1%[/color]
+  - Ancient Gladiator | [color=%positive%]+0.5%[/color]
+  - Flying Skull | [color=%positive%]+0.04%[/color]
+  - Necrosavant | [color=%positive%]+0.25%[/color]
+  - Necrosavant Lord | [color=%positive%]+0.5%[/color]
+  - Höllenhound | [color=%positive%]+0.125%[/color]
+  - Embalmed Slave | [color=%positive%]+0.25%[/color]
+  - Embalmed Soldier | [color=%positive%]+0.5%[/color]
+  - Embalmed Noble | [color=%positive%]+1%[/color]
+  - Embalmed Priest | [color=%positive%]+1.25%[/color]
+  - Embalmed Queen | [color=%positive%]+2%[/color]
 
-• Also increases spawn rate of fallen and necromancer champions.
+• Also increases spawn rate of undead champions.
 
 • Total bonus capped at 25%.
 ";
 
-::Const.Strings.PerkDescription.LegendFavouredEnemyNoble <- @"
-Soldiers in glittering armor and colourful pennants, they are merely sanctioned brigands. No gods, no masters.
+::Const.Strings.PerkDescription.LegendFavouredEnemyCivilization <- @"
+We live in a society.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Grants [color=%positive%]+5%[/color] base bonus to Melee Skill, Ranged Skill, and maximum damage while fighting noble soldiers.
+• Grants [color=%positive%]+5%[/color] base bonus to Melee Skill, Ranged Skill, and maximum damage while fighting law-abiding citizens.
 
 • Additionally, this bonus increases the more of these enemy types you kill and counts all kills made previously with this character retroactively.
 
@@ -2307,17 +2031,20 @@ Soldiers in glittering armor and colourful pennants, they are merely sanctioned 
   - Sureshot | [color=%positive%]+0.125%[/color]
 
 • Also increases spawn rate of knight and fencer champions.
+• [color=%positive%]5%[/color] chance to get any items from slain enemies, that might not otherwise be available to loot. Stacks with itself and effects of a similar nature.
+
 
 • Total bonus capped at 25%.
 ";
 
-::Const.Strings.PerkDescription.LegendFavouredEnemyBandit <- @"
-They hide in the bridleways and forests of this world and take what they can. The brigands must be purged to restore order in this world.
+//Madman is registered as king
+::Const.Strings.PerkDescription.LegendFavouredEnemyOutlaw <- @"
+The uncivilized are a plague to be uprooted.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Grants [color=%positive%]+5%[/color] base bonus to Melee Skill, Ranged Skill, and maximum damage while fighting brigands.
+• Grants [color=%positive%]+5%[/color] base bonus to Melee Skill, Ranged Skill, and maximum damage while fighting outlaws and criminals.
 
-• Additionally, this bonus increases the more brigands you kill and counts all kills made previously with this character retroactively.
+• Additionally, this bonus increases the more outlaws you kill and counts all kills made previously with this character retroactively.
 
 • Increase per kill:
   - Rabble | [color=%positive%]+0.025%[/color]
@@ -2328,24 +2055,6 @@ They hide in the bridleways and forests of this world and take what they can. Th
   - Veteran | [color=%positive%]+0.2%[/color]
   - Bandit Leader | [color=%positive%]+0.25%[/color]
   - Warlord | [color=%positive%]+1%[/color]
-
-• Also increases spawn rate of brigand warlord and brigand leader champions.
-
-• At 15% or more (including the base 5% bonus), you will unlock a difficult legendary contract to stop a brigand army from taking over a settlement.
-
-• Total bonus capped at 25%.
-";
-
-//Madman is registered as king
-::Const.Strings.PerkDescription.LegendFavouredEnemyBarbarian <- @"
-Civilization must be brought to those godless brutes. They may be strong, but they lack skill.
-
-[color=%passive%][u]Passive:[/u][/color]
-• Grants [color=%positive%]+5%[/color] base bonus to Melee Skill, Ranged Skill, and maximum damage while fighting barbarians.
-
-• Additionally, this bonus increases the more barbarians you kill and counts all kills made previously with this character retroactively.
-
-• Increase per kill:
   - Warhound | [color=%positive%]+0.0625%[/color]
   - Thrall | [color=%positive%]+0.1%[/color]
   - Reaver | [color=%positive%]+0.25%[/color]
@@ -2353,39 +2062,17 @@ Civilization must be brought to those godless brutes. They may be strong, but th
   - Drummer | [color=%positive%]+0.25%[/color]
   - Beastmaster | [color=%positive%]+0.125%[/color]
   - King | [color=%positive%]+1%[/color]
+  - Indebted | [color=%positive%]+0.04%[/color]
+  - Cutthroat | [color=%positive%]+0.0625%[/color]
+  - Outlaw | [color=%positive%]+0.125%[/color]
+  - Nomad Slinger | [color=%positive%]+0.1%[/color]
+  - Nomad Archer | [color=%positive%]+0.0625%[/color]
+  - Nomad Leader | [color=%positive%]+0.25%[/color]
 
-• Also increases spawn rate of barbarian king and barbarian chosen champions.
+• Also increases spawn rate of outlaw champions.
 
+• At 15% or more (including the base 5% bonus), you will unlock a multiple legendary contracts to stop a brigand army from taking over a settlement.
 • At 15% or more (including the base 5% bonus), you will unlock a very difficult legendary contract to escort an important barbarian prisoner.
-
-• Total bonus capped at 25%.
-";
-
-::Const.Strings.PerkDescription.LegendFavouredEnemyArcher <- @"
-Many claim to be the greatest shot in the land, but none have outshot you yet.
-
-[color=%passive%][u]Passive:[/u][/color]
-• Grants [color=%positive%]+5%[/color] base bonus to Melee Skill, Ranged Skill, and maximum damage while fighting archer archetypes.
-
-• Additionally, this bonus increases the more archer archetypes you kill and counts all kills made previously with this character retroactively.
-
-• Increase per kill:
-  - Master Archer | [color=%positive%]+0.5%[/color]
-  - Bandit Marksman | [color=%positive%]+0.125%[/color]
-  - Rabble Poacher | [color=%positive%]+0.025%[/color]
-  - Bandit Poacher | [color=%positive%]+0.0625%[/color]
-  - Militia Marksman | [color=%positive%]+0.05%[/color]
-  - Arbalist | [color=%positive%]+0.25%[/color]
-  - Slinger | [color=%positive%]+0.0125%[/color]
-  - Goblin Ambusher | [color=%positive%]+0.0125%[/color]
-  - Nomad Slinger | [color=%positive%]+0.0125%[/color]
-  - Nomad Marksman | [color=%positive%]+0.25%[/color]
-  - Gunner | [color=%positive%]+0.25%[/color]
-  - Desert Stalker | [color=%positive%]+0.5%[/color]
-
-• Also increases spawn rate of archer archetype champions.
-
-• Reduces the penalty for attacking targets behind cover by [color=%negative%]33%[/color].
 
 • Total bonus capped at 25%.
 ";
@@ -2418,87 +2105,6 @@ The path to martial prowess is beset by the fake and the weak. Only one can stan
 • Also increases spawn rate of swordmaster archetype champions.
 
 • Unlocks a very difficult repeating event to fight a champion in single combat for a reward.
-
-• Total bonus capped at 25%.
-";
-
-::Const.Strings.PerkDescription.LegendFavouredEnemyMercenary <- @"
-Moulded by greed, mercenaries have no cause, no principles and no honour. They seek only coin, so they shall find only death.
-
-[color=%passive%][u]Passive:[/u][/color]
-• Grants [color=%positive%]+5%[/color] base bonus to Melee Skill, Ranged Skill, and maximum damage while fighting mercenaries.
-
-• Additionally, this bonus increases the more mercenaries you kill and counts all kills made previously with this character retroactively.
-
-• Increase per kill:
-  - Wardog | [color=%positive%]+0.0625%[/color]
-  - Mercenary | [color=%positive%]+0.5%[/color]
-  - Bounty Hunter | [color=%positive%]+0.25%[/color]
-
-• Total bonus capped at 25%.
-";
-
-::Const.Strings.PerkDescription.LegendFavouredEnemyCaravan <- @"
-The commonfolk of the land are weak and powerless. Their pitiful lives are pathetic, they should be grateful to behold true might in their dying moments.
-
-[color=%passive%][u]Passive:[/u][/color]
-• Grants [color=%positive%]+5%[/color] base bonus to Melee Skill, Ranged Skill, and maximum damage while fighting militia, peasants, and caravans.
-
-• Additionally, this bonus increases the more of any militia, peasants, and caravans you kill and counts all kills made previously with this character retroactively.
-
-• Increase per kill:
-  - Peasant | [color=%positive%]+0.04%[/color]
-  - Caravan Hand | [color=%positive%]+0.1%[/color]
-  - Caravan Guard | [color=%positive%]+0.125%[/color]
-  - Militia | [color=%positive%]+0.05%[/color]
-  - Militia Veteran | [color=%positive%]+0.2%[/color]
-  - Militia Captain | [color=%positive%]+0.25%[/color]
-
-• [color=%positive%]5%[/color] chance to get any items from slain enemies, that might not otherwise be available to loot. Stacks with itself and effects of a similar nature.
-
-• Total bonus capped at 25%.
-";
-
-::Const.Strings.PerkDescription.LegendFavouredEnemySoutherner <- @"
-The southern city states are horrific, their slavery and conscription are affronts to human dignity.
-
-[color=%passive%][u]Passive:[/u][/color]
-• Grants [color=%positive%]+5%[/color] base bonus to Melee Skill, Ranged Skill, and maximum damage while fighting southern city states.
-
-• Additionally, this bonus increases the more southerners you kill and counts all kills made previously with this character retroactively.
-
-• Increase per kill:
-  - Indebted | [color=%positive%]+0.04%[/color]
-  - Conscript | [color=%positive%]+0.125%[/color]
-  - Gunner | [color=%positive%]+0.25%[/color]
-  - Officer | [color=%positive%]+0.5%[/color]
-  - Engineer | [color=%positive%]+1%[/color]
-  - Assassin | [color=%positive%]+0.5%[/color]
-  - Manhunter | [color=%positive%]+0.25%[/color]
-  - Manhunter Veteran | [color=%positive%]+0.5%[/color]
-
-• Also increases spawn rate of champion officers, assassins, and manhunters.
-
-• Total bonus capped at 25%.
-";
-
-::Const.Strings.PerkDescription.LegendFavouredEnemyNomad <- @"
-The nomads are uncivilised heathens, without even towns to their name, they must be brought to heel.
-
-[color=%passive%][u]Passive:[/u][/color]
-• Grants [color=%positive%]+5%[/color] base bonus to Melee Skill, Ranged Skill, and maximum damage while fighting nomads.
-
-• Additionally, this bonus increases the more nomads you kill and counts all kills made previously with this character retroactively.
-
-• Increase per kill:
-  - Indebted | [color=%positive%]+0.04%[/color]
-  - Cutthroat | [color=%positive%]+0.0625%[/color]
-  - Outlaw | [color=%positive%]+0.125%[/color]
-  - Nomad Slinger | [color=%positive%]+0.1%[/color]
-  - Nomad Archer | [color=%positive%]+0.0625%[/color]
-  - Nomad Leader | [color=%positive%]+0.25%[/color]
-
-• Also increases spawn rate of champion nomad leaders.
 
 • Total bonus capped at 25%.
 ";
@@ -3193,23 +2799,6 @@ You have learned to read the wind, estimating the path of arrows in uncertain co
 • Gain a third of your character's base Ranged Defense as Ranged Skill, with a minimum bonus of [color=%positive%]3[/color].
 
 • Gain [color=%positive%]+5%[/color] Ranged Damage for each level difference when you have the high ground.
-";
-
-::Const.Strings.PerkDescription.LegendChoke <- @"
-Once an opponent is Fatigued, it may be easier to choke them out than to fight through their armor.
-
-[color=%active%][u]Active:[/u][/color]
-• Unlocks the [color=%skill%]Choke[/color] skill when both hands are free.
-
-• [color=%status%]Choked[/color] enemies have their Fatigue Recovery reduced by [color=%negative%]15[/color].
-
-• Damage inflicted is determined by the difference in Fatigue between you and your target.
-
-• Hit chance determined by your target's Fatigue, [color=%negative%]0%[/color] if they are fresh and [color=%positive%]100%[/color] if they are exhausted.
-
-• Hit chance is increased by [color=%positive%]+10%[/color] if your target is [color=%status%]Dazed[/color] or [color=%status%]Parried[/color], [color=%positive%]+25%[/color] if they are [color=%status%]Stunned[/color] or [color=%status%]Netted[/color], and  [color=%positive%]+50%[/color] If they are [color=%status%]Grappled[/color] or [color=%status%]Sleeping[/color].
-
-• Costs [color=%negative%]4[/color] AP and [color=%negative%]20[/color] Fatigue.
 ";
 
 ::Const.Strings.PerkDescription.LegendPaymaster <- @"

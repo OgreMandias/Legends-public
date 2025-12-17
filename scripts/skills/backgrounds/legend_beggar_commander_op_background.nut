@@ -77,10 +77,7 @@ this.legend_beggar_commander_op_background <- this.inherit("scripts/skills/backg
 				::Legends.Perk.LegendTacticalManeuvers,
 				::Legends.Perk.RallyTheTroops,
 				::Legends.Perk.Taunt,
-				::Legends.Perk.LegendFavouredEnemyGhoul,
-				::Legends.Perk.LegendFavouredEnemyDirewolf,
-				::Legends.Perk.LegendFavouredEnemySpider,
-				::Legends.Perk.LegendFavouredEnemyCaravan
+				::Legends.Perk.LegendFavouredEnemyBeast,
 			],
 			[
 				::Legends.Perk.SpecMace,
@@ -101,36 +98,24 @@ this.legend_beggar_commander_op_background <- this.inherit("scripts/skills/backg
 				::Legends.Perk.LoneWolf,
 				::Legends.Perk.ReachAdvantage,
 				::Legends.Perk.Overwhelm,
-				::Legends.Perk.LegendFavouredEnemySkeleton,
-				::Legends.Perk.LegendFavouredEnemyZombie,
-				::Legends.Perk.LegendFavouredEnemyOrk,
-				::Legends.Perk.LegendFavouredEnemyGoblin,
-				::Legends.Perk.LegendFavouredEnemyMercenary,
-				::Legends.Perk.LegendFavouredEnemyBandit
+				::Legends.Perk.LegendFavouredEnemyUndead,
+				::Legends.Perk.LegendFavouredEnemyGreenskin
+				::Legends.Perk.LegendFavouredEnemyCivilization,
+				::Legends.Perk.LegendFavouredEnemyOutlaw
 			],
 			[
 				::Legends.Perk.HeadHunter,
 				::Legends.Perk.Berserk,
 				::Legends.Perk.Nimble,
 				::Legends.Perk.BattleForged,
-				::Legends.Perk.LegendFavouredEnemyLindwurm,
-				::Legends.Perk.LegendFavouredEnemySchrat,
-				::Legends.Perk.LegendFavouredEnemyUnhold,
-				::Legends.Perk.LegendFavouredEnemyNoble,
-				::Legends.Perk.LegendFavouredEnemyBarbarian,
-				::Legends.Perk.LegendFavouredEnemyArcher,
 				::Legends.Perk.LegendFavouredEnemySwordmaster,
-				::Legends.Perk.LegendFavouredEnemySoutherner
 			],
 			[
 				::Legends.Perk.Fearsome,
 				::Legends.Perk.Duelist,
 				::Legends.Perk.KillingFrenzy,
 				::Legends.Perk.Indomitable,
-				::Legends.Perk.LegendFavouredEnemyHexen,
-				::Legends.Perk.LegendFavouredEnemyAlps,
-				::Legends.Perk.LegendFavouredEnemyVampire,
-				::Legends.Perk.LegendFavouredEnemyNomad
+				::Legends.Perk.LegendFavouredEnemyOccult,
 			],
 			[],
 			[],

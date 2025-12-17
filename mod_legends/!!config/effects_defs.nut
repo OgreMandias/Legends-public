@@ -1878,6 +1878,14 @@ effectsDefs.push({
 	Name = "Rune Sigil: Luck",
 });
 
+::Legends.Effect.LegendRshPatience <- null;
+effectsDefs.push({
+	ID = "special.Legend_Rsh_patience",
+	Script = "scripts/skills/rune_sigils/legend_RSH_patience",
+	Const = "LegendRshPatience",
+	Name = "Rune Sigil: Patience",
+});
+
 ::Legends.Effect.LegendRssDefense <- null;
 effectsDefs.push({
 	ID = "special.legend_RSS_defense",
@@ -1892,6 +1900,14 @@ effectsDefs.push({
 	Script = "scripts/skills/rune_sigils/legend_RSS_radiance",
 	Const = "LegendRssRadiance",
 	Name = "Rune Sigil: Radiance",
+});
+
+::Legends.Effect.LegendRssDurability <- null;
+effectsDefs.push({
+	ID = "special.legend_RSS_durability",
+	Script = "scripts/skills/rune_sigils/legend_RSS_durability",
+	Const = "LegendRssDurability",
+	Name = "Rune Sigil: Durability",
 });
 
 ::Legends.Effect.LegendRswAccuracy <- null;
@@ -1916,6 +1932,14 @@ effectsDefs.push({
 	Script = "scripts/skills/rune_sigils/legend_RSW_feeding",
 	Const = "LegendRswFeeding",
 	Name = "Rune Sigil: Feeding",
+});
+
+::Legends.Effect.LegendRswBlazing <- null;
+effectsDefs.push({
+	ID = "special.legend_RSW_blazing",
+	Script = "scripts/skills/rune_sigils/legend_RSW_blazing",
+	Const = "LegendRswBlazing",
+	Name = "Rune Sigil: Blazing",
 });
 
 ::Legends.Effect.LegendRswPoison <- null;

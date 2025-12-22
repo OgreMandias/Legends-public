@@ -273,8 +273,8 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 			return;
 		}
 
-		this.m.Condition = this.m.ConditionMax;
 		local delta = _a - (this.m.ConditionMax - this.m.Condition);
+		this.m.Condition = this.m.ConditionMax;
 
 		foreach (u in this.m.Upgrades)
 		{

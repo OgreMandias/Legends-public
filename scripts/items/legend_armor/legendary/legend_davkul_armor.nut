@@ -81,7 +81,8 @@ this.legend_davkul_armor <- this.inherit("scripts/items/legend_armor/legend_armo
 	function onCombatFinished()
 	{
 		this.m.Condition = this.m.ConditionMax;
-		this.updateAppearance();
+		local app = this.m.Armor.getContainer().getAppearance();
+		this.updateAppearance(app);
 	}
 
 	function onSerialize( _out )

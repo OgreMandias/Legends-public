@@ -136,20 +136,20 @@
 
 		this.m.AlreadyUsed = true;
 		this.m.ExecutingAttack = true;
-		local tile = _targetEntity.getTile();
+		local tile = this.getContainer().getActor().getTile();
 		local targetTiles = [];
 
 		for( local i = 0; i != 6; i = ++i )
 		{
-			if (!_tile.hasNextTile(i))
+			if (!tile.hasNextTile(i))
 			{
 				continue;
 			}
 			else
 			{
-				local next = _tile.getNextTile(i);
+				local next = tile.getNextTile(i);
 
-				if (next.IsOccupiedByActor && this.Math.abs(next.Level - _tile.Level) <= 1 && !next.getEntity().isAlliedWithPlayer())
+				if (next.IsOccupiedByActor && this.Math.abs(next.Level - tile.Level) <= 1 && !next.getEntity().isAlliedWithPlayer())
 				{
 					targetTiles.push(next);
 				}

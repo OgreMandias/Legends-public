@@ -14,6 +14,20 @@
 		this.m.ArmamentIcon = "icon_wildmen_03" + v;
 	}
 
+	o.addSkill <- function( _skill )
+	{
+		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.SplitShield))
+		{
+			::Legends.Actives.grant(this.weapon, ::Legends.Active.SplitShield, function (_skill)
+			{
+				_skill.m.IsHammer = true;
+			}.bindenv(this));
+			return;
+		}
+
+		weapon.addSkill(_skill);
+	}
+
 	local onEquip = o.onEquip;
 	o.onEquip = function ()
 	{

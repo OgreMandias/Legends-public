@@ -2249,11 +2249,13 @@ A time tested tradition of getting your opponent to the ground, disarmed and ree
 Unlock the ability to punch with your off hand!
 
 [color=%passive%][u]Passive:[/u][/color]
-• When your offhand is free allows you to use [color=%skill%]Hand to Hand[/color] and attack with the ability on each attack.
+• When your offhand is free allows you to use [color=%skill%]Hand to Hand[/color] and attack with the ability on each attack. 
 
 • If you are using a Buckler, Mummy Shield or Parry Dagger you will attack with [color=%skill%]Buckler bash[/color] or [color=%skill%]Stab[/color] instead.
 
 • Additionally, gain [color=%positive%]+5[/color] Melee Skill and [color=%positive%]+10[/color] Melee Defense if both hands are free.
+
+• Reduces the Action Point cost of [color=%skill%]Throw Knife[/color] is reduced by [color=%positive%]1[/color].
 ";
 
 ::Const.Strings.PerkDescription.LegendPugilist <- @"

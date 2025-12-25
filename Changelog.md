@@ -22,9 +22,18 @@ Favoured Enemy - Sword Master
 ## Item Changes
 
 ### Helmets
-- merged the two fencer hats 
+- merged the two fencer hats
+
+### Weapons
+
+#### New Weapon Abilities
+- `Throw Backup Spear` - each one handed spear has 1 stack of a throwable ability
+- `Throw Backup Axe` - each one handed axe has 1 stack of a throwable ability
+- `Throw Backup Daggers` - each puncture dagger (daggers that don't have deathblow innately) has 8 stacks of a throwable ability
 
 ### For modders:
+
+- `Knifeplay` has been deleted
 
 Following trees were removed, refer to `z_perks_tree_enemy.nut` for replacements:
 ```

@@ -8,7 +8,7 @@
 		this.skill.setItem(_item);
 		if (this.m.IsGoedendagThrust)
 		{
-			this.m.Description = "A hefty swift slashing attack dealing average damage.";
+			this.m.Description = "A well placed thrust attack that is hard to avoid or block. The added weight of the mace head can daze and inflict crushing injuries.";
 			this.m.Icon = "skills/active_128.png";
 			this.m.IconDisabled = "skills/active_128_sw.png";
 			this.m.Overlay = "active_128";

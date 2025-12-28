@@ -41,6 +41,9 @@ Favoured Enemy - Sword Master
 * `Halfsword` - puncture - requires double grip to use
 * `Mordhau` - batter
 
+**Various**
+* `Haftstrike` - a weak but quick attack with the haft - added to 2h hammers, 2h axes and 2h maces
+
 ### For modders:
 
 - `Knifeplay` perk has been deleted

@@ -1,6 +1,7 @@
 ::mods_hookExactClass("skills/actives/thrust", function(o)
 {
 	o.m.IsGoedendagThrust <- false;
+	o.m.IsHaftStrike <- false;
 	o.m.DazeChance <- 25;
 
 	o.setItem <- function (_item)
@@ -15,6 +16,17 @@
 			this.m.ActionPointCost = 6;
 			this.m.DirectDamageMult = 0.4;
 			this.m.FatigueCost = 15;
+			this.m.InjuriesOnBody = this.Const.Injury.BluntAndPiercingBody;
+			this.m.InjuriesOnHead = this.Const.Injury.BluntAndPiercingHead;
+		}
+		if (this.m.IsHaftStrike)
+		{
+			this.m.Description = "A swift strike with the weapon\'s haft. Not particularly effective, but offers versatility on heavy weapons.";
+			this.m.Icon = "skills/active_hafstrike.png";
+			this.m.IconDisabled = "skills/active_hafstrike_bw.png";
+			this.m.Overlay = "active_hafstrike";
+			this.m.FatigueCost = 15;
+			this.m.HitChanceBonus = 0;
 			this.m.InjuriesOnBody = this.Const.Injury.BluntAndPiercingBody;
 			this.m.InjuriesOnHead = this.Const.Injury.BluntAndPiercingHead;
 		}
@@ -42,33 +54,42 @@
 		this.m.DazeChance = _properties.IsSpecializedInMaces ? 50 : 25;
 	}
 
+	o.onTargetHit <- function(_skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor)
+	{
+		if (_skill != this || !this.m.IsGoedendagThrust)
+			return;
+
+		if (::Legends.S.skillEntityAliveCheck(_targetEntity))
+			return;
+
+		local actor = this.getContainer().getActor();
+		if (!target.getCurrentProperties().IsImmuneToDaze && this.Math.rand(1, 100) <= this.m.DazeChance)
+		{
+			local dazed = ::Legends.Effects.grant(_targetEntity, ::Legends.Effect.Dazed);
+
+			if (!actor.isHiddenToPlayer() && _targetEntity.getTile().IsVisibleForPlayer) {
+				this.Tactical.EventLog.log(dazed.getLogEntryOnAdded(this.Const.UI.getColorizedEntityName(actor), this.Const.UI.getColorizedEntityName(_targetEntity)));
+			}
+		}
+	}
+
 	local onUse = o.onUse;
 	o.onUse = function ( _user, _targetTile )
 	{
-		if (!this.m.IsGoedendagThrust)
+		if (!this.m.IsGoedendagThrust || !this.m.IsHaftStrike)
 			return onUse(_user, _targetTile);
 
 		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectBash);
-		local success = this.attackEntity(_user, _targetTile.getEntity());
+		return this.attackEntity(_user, _targetTile.getEntity());
+	}
 
-		if (!_user.isAlive() || _user.isDying())
-		{
-			return success;
-		}
+	local onAnySkillUsed = o.onAnySkillUsed;
+	o.onAnySkillUsed = function( _skill, _targetEntity, _properties )
+	{
+		if (!this.m.IsHaftStrike)
+			return onAnySkillUsed( _skill, _targetEntity, _properties );
 
-		if (success && _targetTile.IsOccupiedByActor)
-		{
-			local target = _targetTile.getEntity();
-
-			if (!target.getCurrentProperties().IsImmuneToDaze && this.Math.rand(1, 100) <= this.m.DazeChance)
-				::Legends.Effects.grant(target, ::Legends.Effect.Dazed);
-
-			if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
-			{
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " has dazed " + this.Const.UI.getColorizedEntityName(target) + " for one turn");
-			}
-		}
-
-		return success;
+		if (_skill == this)
+			_properties.DamageTotalMult *= 0.6;
 	}
 });

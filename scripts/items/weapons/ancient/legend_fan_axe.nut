@@ -40,6 +40,9 @@ this.legend_fan_axe <- this.inherit("scripts/items/weapons/weapon", {
 		}.bindenv(this));
 		::Legends.Actives.grant(this, ::Legends.Active.RoundSwing);
 		::Legends.Actives.grant(this, ::Legends.Active.SplitMan);
+		::Legends.Actives.grant(this, ::Legends.Active.Thrust, function (_skill) {
+			_skill.m.IsHaftstrike = true;
+		}.bindenv(this));
 		//::Legends.Actives.grant(this, ::Legends.Active.LegendHarvestTree);
 	}
 

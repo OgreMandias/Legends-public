@@ -23,7 +23,7 @@ Favoured Enemy - Sword Master
 
 ### Helmets
 - merged the two fencer hats
-
+	
 ### Weapons
 
 #### New Weapon Abilities
@@ -36,9 +36,14 @@ Favoured Enemy - Sword Master
 **Warbrand and Rhompaias**
 - `Into The Fray` - 2 tile charge and attack
 
+**One Handed Straight Swords**
+* Ancient sword, Arming Sword, Gladius, Short Sword, Named Sword, Noble Sword - `Mordhau` while double gripping
+* `Halfsword` - puncture - requires double grip to use
+* `Mordhau` - batter
+
 ### For modders:
 
-- `Knifeplay` has been deleted
+- `Knifeplay` perk has been deleted
 
 Following trees were removed, refer to `z_perks_tree_enemy.nut` for replacements:
 ```

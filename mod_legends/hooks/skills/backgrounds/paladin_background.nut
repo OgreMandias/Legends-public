@@ -121,7 +121,7 @@
 
 	o.getTooltip = function ()
 	{
-		return this.character_background.getTooltip();
+		local ret = this.character_background.getTooltip();
 		local bonus = this.Math.round(this.getContainer().getActor().getBaseProperties().Bravery * 0.10);
 		ret.push({
 			id = 13,
@@ -130,6 +130,7 @@
 			text = "[color=%positive%]%bonus%[/color] Hitpoints, Fatigue and Initiative",
 			params = ["bonus", bonus]
 		});
+		return ret;
 	}
 
 	//Default Male

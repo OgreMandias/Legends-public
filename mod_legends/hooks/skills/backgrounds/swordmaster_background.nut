@@ -112,7 +112,7 @@
 
 	o.getTooltip = function ()
 	{
-		local ret =  this.character_background.getTooltip();
+		local ret = this.character_background.getTooltip();
 		ret.push({
 			id = 13,
 			type = "text",

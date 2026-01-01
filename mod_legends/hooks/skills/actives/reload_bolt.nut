@@ -46,6 +46,9 @@
 		if (_skill.getID() != ::Legends.Actives.getID(::Legends.Active.ShootBolt) && _skill.getID() != ::Legends.Actives.getID(::Legends.Active.ShootStake))
 			return;
 
+		if (!::Legends.Perks.has(this.getContainer(), ::Legends.Perk.LegendBarrage))
+			return;
+
 		if (_bodyPart != this.Const.BodyPart.Head)
 			return;
 

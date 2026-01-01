@@ -150,9 +150,12 @@
 					targetTiles.push(next);
 				}
 			}
-		} 
+		}
 		if (targetTiles.len() == 0)
+		{
+			this.m.ExecutingAttack = false;
 			return; 
+		}
 
 		this.getContainer().getAttackOfOpportunity().useForFree(targetTiles[this.Math.rand(0, targetTiles.len() - 1)]);
 		this.m.ExecutingAttack = false;

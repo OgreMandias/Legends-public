@@ -22,7 +22,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 			"legend_crusader_background"
 		]); //skills on start
 		::Legends.Traits.grant(bro, ::Legends.Trait.Player);
-		::Legends.Traits.remove(bro, ::Legends.Trait.Loyal);
+		::Legends.Traits.grant(bro, ::Legends.Trait.LegendUndeadKiller);
 		this.addScenarioPerk(bro.getBackground(), this.Const.Perks.PerkDefs.FortifiedMind);
 		this.addScenarioPerk(bro.getBackground(), this.Const.Perks.PerkDefs.LegendRebound);
 		this.addScenarioPerk(bro.getBackground(), this.Const.Perks.PerkDefs.LegendFavouredEnemyZombie);

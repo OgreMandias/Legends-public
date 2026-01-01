@@ -27,6 +27,7 @@
 						_event.m.Dude.getBackground().buildDescription(true);
 					}
 					::Legends.Traits.grant(_event.m.Dude, ::Legends.Trait.HateUndead);
+					::Legends.Traits.grant(_event.m.Dude, ::Legends.Trait.Loyal);
 					this.Characters.push(_event.m.Dude.getImagePath());
 				}
 			}

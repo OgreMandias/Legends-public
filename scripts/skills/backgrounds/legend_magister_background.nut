@@ -73,7 +73,7 @@ this.legend_magister_background <- this.inherit("scripts/skills/backgrounds/char
 				::Const.Perks.PolearmTree
 			],
 			Defense = [
-				this.Const.Perk.ClothArmorTree
+				::Const.Perks.ClothArmorTree
 			],
 			Traits = [
 				::Const.Perks.CalmTree,

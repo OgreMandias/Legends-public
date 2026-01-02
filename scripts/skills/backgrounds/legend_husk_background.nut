@@ -73,7 +73,7 @@ this.legend_husk_background <- this.inherit("scripts/skills/backgrounds/characte
 			Weapon = [
 				::Const.Perks.CleaverTree,
 				::Const.Perks.FlailTree,
-				this.Const.Perk.MaceTree,
+				::Const.Perks.MaceTree,
 				::Const.Perks.AxeTree
 			],
 			Defense = [

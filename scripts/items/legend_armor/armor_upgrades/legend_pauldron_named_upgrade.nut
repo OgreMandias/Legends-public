@@ -27,7 +27,7 @@ this.legend_pauldron_named_upgrade <- this.inherit("scripts/items/legend_armor/l
 	{
 		this.m.StaminaModifier = this.Math.rand(4, 8) * -1;
 		this.m.Condition = this.Math.floor(this.m.Condition * this.Math.rand(110, 125) * 0.01) * 1.0;
-		this.m.DirectDamageModifier = this.Math.rand(40, 45) * 1.0;
+		this.m.DirectDamageModifier = this.Math.rand(40, 45) * -1.0;
 		this.m.ConditionMax = this.m.Condition;
 	}
 });

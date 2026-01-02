@@ -127,8 +127,8 @@
 			id = 13,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "[color=%positive%]%bonus%[/color] Hitpoints, Fatigue and Initiative",
-			params = ["bonus", bonus]
+			text = "[color=%positive%]%_bonus%[/color] bonus to Hitpoints, Fatigue and Initiative from your base Resolve",
+			param = [["_bonus", bonus]]
 		});
 		return ret;
 	}

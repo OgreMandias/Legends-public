@@ -386,9 +386,9 @@ Early bird gets the worm!
 Through familiarity and training with your weapon, you know just how your projectiles will fly.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Up to [color=%positive%]+20%[/color] of any damage ignores armor depending on the distance to the target, with the highest bonus in melee and lowest at maximum range for [color=%skill%]Shoot Bolt[/color]. For [color=%skill%]Shoot Heavy Bolt[/color] and [color=%skill%]Shoot Stake[/color] the bonus goes up to [color=%positive%]+30%[/color] instead.
+• Crossbows gain a scaling bonus to armor penetration depending on the distance to the target with the highest bonus in melee and the lowest at maximum range for the relevant skill. [color=%skill%]Shoot Bolt[/color] gains up to 20%, while [color=%skill%]Shoot Heavy Bolt[/color] and [color=%skill%]Shoot Stake[/color] gain up to [color=%positive%]+30%[/color] instead.
 
-• The range penalty to hitchance is reduced by [color=%negative%]-2[/color] per tile.
+• The range penalty to hitchance is reduced by [color=%negative%]-2[/color] per tile for all ranged weapons.
 ";
 
 ::Const.Strings.PerkDescription.LegendBackswing <- @"

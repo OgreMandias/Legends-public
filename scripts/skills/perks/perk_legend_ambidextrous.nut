@@ -99,8 +99,8 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 
 		local items = actor.getItems();
 		local off = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
-
-		if (_targetEntity != null && !items.hasBlockedSlot(this.Const.ItemSlot.Offhand) && (off == null || !::MSU.isNull(m.offHandSkill)))
+		local hasNet = ::Legends.Perks.has(this, ::Legends.Perk.LegendMasteryNets) && off != null && !off.getID().find("throwing_net") != null;
+		if (_targetEntity != null && !items.hasBlockedSlot(this.Const.ItemSlot.Offhand) && (off == null || hasNet || !::MSU.isNull(m.offHandSkill)))
 		{
 			if (!_forFree)
 			{

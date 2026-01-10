@@ -146,7 +146,8 @@ this.legend_grapple_skill <- this.inherit("scripts/skills/skill", {
 		local actor = this.getContainer().getActor();
 		local mainhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
 		local offhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
-		return ((offhand == null || mainhand == null) || this.getContainer().hasEffect(::Legends.Effect.Disarmed)) && this.skill.isUsable();
+		local hasNet = ::Legends.Perks.has(this, ::Legends.Perk.LegendMasteryNets) && off != null && !off.getID().find("throwing_net") != null;
+		return ((offhand == null || mainhand == null || hasNet) || this.getContainer().hasEffect(::Legends.Effect.Disarmed)) && this.skill.isUsable();
 	}
 
 	function isHidden()
@@ -154,7 +155,8 @@ this.legend_grapple_skill <- this.inherit("scripts/skills/skill", {
 		local actor = this.getContainer().getActor();
 		local mainhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
 		local offhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
-		return mainhand != null && offhand != null && !this.getContainer().hasEffect(::Legends.Effect.Disarmed) || this.getContainer().getActor().getItems().hasBlockedSlot(this.Const.ItemSlot.Offhand) || this.skill.isHidden() || this.m.Container.getActor().isStabled();
+		local hasNet = ::Legends.Perks.has(this, ::Legends.Perk.LegendMasteryNets) && off != null && !off.getID().find("throwing_net") != null;
+		return mainhand != null && offhand != null && !hasNet && !this.getContainer().hasEffect(::Legends.Effect.Disarmed) || this.getContainer().getActor().getItems().hasBlockedSlot(this.Const.ItemSlot.Offhand) || this.skill.isHidden() || this.m.Container.getActor().isStabled();
 	}
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )

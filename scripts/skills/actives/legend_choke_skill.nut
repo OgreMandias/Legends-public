@@ -4,7 +4,7 @@ this.legend_choke_skill <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		::Legends.Actives.onCreate(this, ::Legends.Active.LegendChoke);
-		this.m.Description = "A well-placed attack at an opponent\'s neck. Ignores all armor but is harder to hit with. Hit chance is based on target's fatigue. Damage is based on the difference in fatigue. Deals 50% damage against grappled or choked enemies. Hit chance is increased against grappled, stunned, netted, dazed, parried or sleeping enemies.";
+		this.m.Description = "A well-placed attack at an opponent\'s neck. Ignores all armor but is harder to hit with. Hit chance is based on target's fatigue. Damage is based on the difference in fatigue. Deals 50% damage against grappled or choked enemies. Hit chance is increased against grappled, stunned, netted, dazed, parried or sleeping enemies. Requires both hands to be free.";
 		this.m.KilledString = "Choked";
 		this.m.Icon = "skills/choke_square.png";
 		this.m.IconDisabled = "skills/choke_square_bw.png";
@@ -75,7 +75,7 @@ this.legend_choke_skill <- this.inherit("scripts/skills/skill", {
 		local mainhand = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
 		local offhand = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
 		local hasNet = offhand != null && ::MSU.String.endsWith(offhand.getID(), "_net") && actor.getCurrentProperties().IsSpecializedInNets;
-		return mainhand != null || (offhand != null || hasNet) && !this.getContainer().hasEffect(::Legends.Effect.Disarmed) || this.skill.isHidden() || this.m.Container.getActor().isStabled();
+		return mainhand != null || (offhand != null && !hasNet) && !this.getContainer().hasEffect(::Legends.Effect.Disarmed) || this.skill.isHidden() || this.m.Container.getActor().isStabled();
 	}
 
 	function onGetHitFactors( _skill, _targetTile, _tooltip )

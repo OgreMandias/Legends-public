@@ -44,8 +44,8 @@
 		local items = this.getContainer().getActor().getItems();
 		local off = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
 		local main = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
-
-		if (::Legends.Perks.has(this, ::Legends.Perk.LegendAmbidextrous) && off == null && !items.hasBlockedSlot(this.Const.ItemSlot.Offhand) && this.skill.isUsable)
+		local hasNet = ::Legends.Perks.has(this, ::Legends.Perk.LegendMasteryNets) && off != null && !off.getID().find("throwing_net") != null;
+		if (::Legends.Perks.has(this, ::Legends.Perk.LegendAmbidextrous) && (off == null || hasNet) && !items.hasBlockedSlot(this.Const.ItemSlot.Offhand) && this.skill.isUsable)
 		{
 			return true;
 		}
@@ -58,7 +58,8 @@
 		local items = this.getContainer().getActor().getItems();
 		local off = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
 		local main = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		if (::Legends.Perks.has(this, ::Legends.Perk.LegendAmbidextrous) && off == null && !items.hasBlockedSlot(this.Const.ItemSlot.Offhand)) // if ambidextrous && offhand free, then NOT hidden
+		local hasNet = ::Legends.Perks.has(this, ::Legends.Perk.LegendMasteryNets) && off != null && !off.getID().find("throwing_net") != null;
+		if (::Legends.Perks.has(this, ::Legends.Perk.LegendAmbidextrous) && (off == null || hasNet) && !items.hasBlockedSlot(this.Const.ItemSlot.Offhand)) // if ambidextrous && offhand free or with net, then NOT hidden
 		{
 			return false;
 		}

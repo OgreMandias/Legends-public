@@ -31,9 +31,15 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 	{
 		if (!::MSU.isNull(m.offHandSkill))
 			return false;
+
+		local actor = this.getContainer().getActor();
 		local items = this.getContainer().getActor().getItems();
 		local off = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
 		local main = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		local hasNet = actor.getCurrentProperties().IsSpecializedInNets && off != null && off.getID().find("throwing_net") != null;
+		
+		if (hasNet)
+			return false;
 		return !(off == null && !items.hasBlockedSlot(this.Const.ItemSlot.Offhand));
 	}
 
@@ -99,8 +105,8 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 
 		local items = actor.getItems();
 		local off = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
-		local hasNet = ::Legends.Perks.has(this, ::Legends.Perk.LegendMasteryNets) && off != null && !off.getID().find("throwing_net") != null;
-		if (_targetEntity != null && !items.hasBlockedSlot(this.Const.ItemSlot.Offhand) && (off == null || hasNet || !::MSU.isNull(m.offHandSkill)))
+		local hasNet = actor.getCurrentProperties().IsSpecializedInNets && off != null && off.getID().find("throwing_net") != null;
+		if (_targetEntity != null && (!items.hasBlockedSlot(this.Const.ItemSlot.Offhand) || off == null || hasNet || !::MSU.isNull(m.offHandSkill)))
 		{
 			if (!_forFree)
 			{
@@ -130,11 +136,12 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		local items = this.getContainer().getActor().getItems();
+		local actor = this.getContainer().getActor();
+		local items = actor.getItems();
 		local off = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
 		local main = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
-
-		if ((main == null || this.getContainer().hasEffect(::Legends.Effect.Disarmed)) && off == null && !items.hasBlockedSlot(this.Const.ItemSlot.Offhand))
+		local hasNet = actor.getCurrentProperties && off != null && off.getID().find("throwing_net") != null;
+		if ((main == null || this.getContainer().hasEffect(::Legends.Effect.Disarmed)) && (off == null && !items.hasBlockedSlot(this.Const.ItemSlot.Offhand) || hasNet))
 		{
 			_properties.MeleeDefense += 10;
 			_properties.MeleeSkill += 5;

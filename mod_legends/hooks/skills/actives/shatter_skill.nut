@@ -1,5 +1,12 @@
 ::mods_hookExactClass("skills/actives/shatter_skill", function(o)
 {
+	local create = o.create;
+	o.create = function()
+	{
+		create();
+		this.m.HitChanceBonus = -10;
+	}
+
 	o.getTooltip = function ()
 	{
 		local ret = this.getDefaultTooltip();

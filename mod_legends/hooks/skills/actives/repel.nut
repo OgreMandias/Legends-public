@@ -1,5 +1,12 @@
 ::mods_hookExactClass("skills/actives/repel", function(o)
 {
+	local create = o.create;
+	o.create = function()
+	{
+		create();
+		this.m.HitChanceBonus = 10;
+	}
+
 	local onVerifyTarget = o.onVerifyTarget;
 	o.onVerifyTarget = function ( _originTile, _targetTile )
 	{

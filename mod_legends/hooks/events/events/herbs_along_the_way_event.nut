@@ -30,16 +30,14 @@
 			function start(_event) {
 				this.Characters.push(_event.m.Herbalist.getImagePath());
 
+				local amount = this.Math.rand(5, 12);
+				this.World.Assets.addMedicine(amount);
 				this.List.extend([
-					local amount = this.Math.rand(8, 16);
-					this.World.Assets.addMedicine(amount);
-					this.List = [
-						{
-							id = 10,
-							icon = "ui/icons/asset_medicine.png",
-							text = "You gain [color=" + this.Const.UI.Color.PositiveEventValue + "]+" + amount + "[/color] Medical Supplies"
-						}
-					];
+					{
+						id = 10,
+						icon = "ui/icons/asset_medicine.png",
+						text = "You gain [color=" + this.Const.UI.Color.PositiveEventValue + "]+" + amount + "[/color] Medical Supplies"
+					},
 					::Legends.EventList.changeResolve(_event.m.Herbalist, 2),
 					::Legends.EventList.changeMood(_event.m.Herbalist, 1.0, "Was useful in finding medicine")
 				]);

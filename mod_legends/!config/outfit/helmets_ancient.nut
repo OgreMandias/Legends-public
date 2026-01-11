@@ -219,3 +219,22 @@
 	Sets = []
 }
 ::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Ancient.ancient_lich_headpiece);
+
+::Legends.Helmet.Ancient.ancient_heavy_restored_helmet <- {
+	ID = "ancient/ancient_heavy_restored_helmet", // 175
+	Script = "",
+	Sets = [{
+		Hoods = [
+			[1, "hood/legend_helmet_leather_cap"] //35, -1, 0
+		],
+		Helms = [
+			[1, "helm/legend_ancient_legionaire_restored"] // 140
+		],
+		Tops = [
+		],
+		Vanity = [
+			[1, "vanity/legend_helmet_wreath"]
+		]
+	}]
+};
+::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Ancient.ancient_legionary_helmet);

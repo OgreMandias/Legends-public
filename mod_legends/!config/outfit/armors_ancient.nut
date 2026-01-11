@@ -402,3 +402,28 @@
 };
 ::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Ancient.legend_mummy_royal_plate);
 
+::Legends.Armor.Ancient.ancient_heavy_restored_armor <- {
+	ID = "ancient/ancient_heavy_restored_armor", // 225
+	Script = "",
+	Sets = [{
+		Cloth = [
+			[1, "cloth/legend_ancient_cloth"], // 30
+			[1, "cloth/legend_ancient_cloth_restored"], // 35
+		],
+		Chain = [
+			[1, "chain/legend_armor_ancient_double_mail"], // 80
+		],
+		Plate = [
+			[1, "plate/legend_armor_plate_ancient_chest_restored"], // 110
+			[1, "plate/legend_armor_plate_ancient_chest_restored"], // 130
+			[1, "plate/legend_armor_plate_ancient_scale_coat_restored"] // 170
+		],
+		Cloak = [
+		],
+		Tabard = [
+		],
+		Attachments =[
+		]
+	}]
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Ancient.ancient_heavy_restored_armor);

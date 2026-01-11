@@ -9,6 +9,18 @@
 ::Const.World.Spawn.Troops.OrcBerserker.NameList <- this.Const.Strings.OrcWarlordNames;
 ::Const.World.Spawn.Troops.OrcBerserker.Variant = 1;
 
+::Const.World.Spawn.Troops.Greatsword.TitleList <- this.Const.Strings.NobleGreatswordTitles;
+::Const.World.Spawn.Troops.Greatsword.NameList <- this.Const.Strings.KnightNames;
+::Const.World.Spawn.Troops.Greatsword.Variant = 1;
+
+::Const.World.Spawn.Troops.SkeletonHeavy.Variant = 1;
+
+::Const.World.Spawn.Troops.SkeletonHeavyPolearm.NameList <- this.Const.Strings.AncientDeadNames;
+::Const.World.Spawn.Troops.SkeletonHeavyPolearm.Variant = 1;
+
+::Const.World.Spawn.Troops.SkeletonHeavyBodyguard.NameList <- this.Const.Strings.AncientDeadNames;
+::Const.World.Spawn.Troops.SkeletonHeavyBodyguard.Variant = 1;
+
 ::Const.World.Spawn.Troops.ZombieBetrayer.NameList <- this.Const.Strings.KnightNames;
 ::Const.World.Spawn.Troops.ZombieBetrayer.TitleList <- this.Const.Strings.FallenHeroTitles;
 ::Const.World.Spawn.Troops.ZombieBetrayer.Strength = 50;

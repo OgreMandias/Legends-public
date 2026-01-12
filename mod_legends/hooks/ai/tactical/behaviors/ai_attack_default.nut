@@ -26,5 +26,6 @@
 		::Legends.Actives.getID(::Legends.Active.LegendHeartseeker),
 		::Legends.Actives.getID(::Legends.Active.LegendBucklerBash),
 		::Legends.Actives.getID(::Legends.Active.LegendThrowKnife),
+		::Legends.Actives.getID(::Legends.Active.LegendHaftstrike),
 	]);
 });

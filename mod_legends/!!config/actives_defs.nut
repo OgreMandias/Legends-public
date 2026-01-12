@@ -2942,6 +2942,14 @@ activesDefs.push({
 	Name = "Into The Fray",
 });
 
+::Legends.Active.LegendHaftstrike <- null;
+activesDefs.push({
+	ID = "actives.legend_haftstrike",
+	Script = "scripts/skills/actives/legend_haftstrike",
+	Const = "LegendHaftstrike",
+	Name = "Haftstrike",
+});
+
 ::Legends.Active.LegendUnleashBear <- null;
 activesDefs.push({
 	ID = "actives.legend_unleash_bear",

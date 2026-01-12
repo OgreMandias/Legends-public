@@ -1,7 +1,6 @@
 ::mods_hookExactClass("skills/actives/thrust", function(o)
 {
 	o.m.IsGoedendagThrust <- false;
-	o.m.IsHaftStrike <- false;
 	o.m.DazeChance <- 25;
 
 	o.setItem <- function (_item)
@@ -16,17 +15,6 @@
 			this.m.ActionPointCost = 6;
 			this.m.DirectDamageMult = 0.4;
 			this.m.FatigueCost = 15;
-			this.m.InjuriesOnBody = this.Const.Injury.BluntAndPiercingBody;
-			this.m.InjuriesOnHead = this.Const.Injury.BluntAndPiercingHead;
-		}
-		if (this.m.IsHaftStrike)
-		{
-			this.m.Description = "A swift strike with the weapon\'s haft. Not particularly effective, but offers versatility on heavy weapons.";
-			this.m.Icon = "skills/active_hafstrike.png";
-			this.m.IconDisabled = "skills/active_hafstrike_bw.png";
-			this.m.Overlay = "active_hafstrike";
-			this.m.FatigueCost = 15;
-			this.m.HitChanceBonus = 0;
 			this.m.InjuriesOnBody = this.Const.Injury.BluntAndPiercingBody;
 			this.m.InjuriesOnHead = this.Const.Injury.BluntAndPiercingHead;
 		}
@@ -76,20 +64,10 @@
 	local onUse = o.onUse;
 	o.onUse = function ( _user, _targetTile )
 	{
-		if (!this.m.IsGoedendagThrust || !this.m.IsHaftStrike)
+		if (!this.m.IsGoedendagThrust)
 			return onUse(_user, _targetTile);
 
 		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectBash);
 		return this.attackEntity(_user, _targetTile.getEntity());
-	}
-
-	local onAnySkillUsed = o.onAnySkillUsed;
-	o.onAnySkillUsed = function( _skill, _targetEntity, _properties )
-	{
-		if (!this.m.IsHaftStrike)
-			return onAnySkillUsed( _skill, _targetEntity, _properties );
-
-		if (_skill == this)
-			_properties.DamageTotalMult *= 0.6;
 	}
 });

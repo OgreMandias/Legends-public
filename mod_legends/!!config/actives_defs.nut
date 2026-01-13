@@ -358,6 +358,14 @@ activesDefs.push({
 	Name = "Smite",
 });
 
+::Legends.Active.LegendObliterate <- null;
+activesDefs.push({
+	ID = "actives.legend_obliterate",
+	Script = "scripts/skills/actives/legend_obliterate_skill",
+	Const = "Obliterate",
+	Name = "Obliterate",
+});
+
 ::Legends.Active.Cudgel <- null;
 activesDefs.push({
 	ID = "actives.cudgel",

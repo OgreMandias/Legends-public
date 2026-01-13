@@ -43,6 +43,7 @@ Favoured Enemy - Sword Master
 
 **Various**
 * `Haftstrike` - a weak but quick attack with the haft - added to 2h axes and 2h maces
+* `Obliterate` - exceptionally strong slow hammer attack - added to 2h hammer
 
 ### For modders:
 

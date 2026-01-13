@@ -38,6 +38,11 @@ this.legend_haftstrike <- this.inherit("scripts/skills/skill", {
 		this.m.MaxRange = 1;
 	}
 
+	function getTooltip()
+	{
+		return this.getDefaultTooltip();
+	}
+
 	function onTargetHit (_skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor)
 	{
 		if (_skill != this)

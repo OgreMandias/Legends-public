@@ -35,6 +35,6 @@
 	o.onEquip = function ()
 	{
 		onEquip();
-		::Legends.Actives.grant(this, ::Legends.Active.Haftstrike);
+		::Legends.Actives.grant(this, ::Legends.Active.LegendHaftstrike);
 	}
 });

@@ -217,6 +217,8 @@ Master hammers and fighting against heavily armored opponents.
 
 • [color=%skill%]Shatter[/color] gains [color=%positive%]+5%[/color] chance to hit.
 
+• [color=%skill%]Obliterate[/color] gains [color=%positive%]+25%[/color] chance to hit.
+
 • The Polehammer no longer has a penalty for attacking targets directly adjacent.
 ";
 ::Const.Perks.PerkDefObjects[::Legends.Perk.SpecHammer].Tooltip = ::Const.Strings.PerkDescription.SpecHammer;

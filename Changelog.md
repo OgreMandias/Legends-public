@@ -35,11 +35,16 @@ Favoured Enemy - Sword Master
 
 **Warbrand and Rhompaias**
 - `Into The Fray` - 2 tile charge and attack
+- `Breach` - `Slash` which will deal an additiona 15% damage vs enemies armed with polearms and melee weapons with range
 
 **One Handed Straight Swords**
 * Ancient sword, Arming Sword, Gladius, Short Sword, Named Sword, Noble Sword - `Mordhau` while double gripping
 * `Halfsword` - puncture - requires double grip to use
 * `Mordhau` - batter
+
+**Falchions
+- `Breach` - `Slash` which will deal an additiona 15% damage vs enemies armed with polearms and melee weapons with range
+
 
 **Various**
 * `Haftstrike` - a weak but quick attack with the haft - added to 2h axes and 2h maces

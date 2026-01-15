@@ -1,11 +1,19 @@
 ::mods_hookExactClass("skills/actives/split_shield", function (o) {
 	o.m.IsOrcWeapon <- false;
+	o.m.IsHammer <- false;
 	o.m.OverflowDamage <- 0;
 
 	local create = o.create;
 	o.create = function () {
 		create();
 		this.m.DirectDamageMult = 0.4;
+	}
+
+	o.setItem <- function (_item) {
+		this.skill.setItem(_item);
+		if (this.m.IsHammer) {
+			this.m.Name = "Shatter Shield";
+		}
 	}
 
 	local getTooltip = o.getTooltip;
@@ -21,18 +29,20 @@
 				text = "[color=%positive%]25%[/color] bonus damage to shields from Double Grip"
 			});
 		}
+
+		ret.push({
+			id = 10,
+			type = "text",
+			icon = "ui/icons/damage_dealt.png",
+			text = "Any positive damage difference between the skill\'s shield damage and the target\'s shield condition will be dealt as damage to the body"
+		});
+
 		if (this.getContainer().hasPerk(::Legends.Perk.LegendSmashingShields)) {
 			ret.push({
 				id = 9,
 				type = "text",
 				icon = "ui/icons/special.png",
 				text = "Destroying the shield will refund [color=%positive%]4[/color] Action Points"
-			});
-			ret.push({
-				id = 10,
-				type = "text",
-				icon = "ui/icons/damage_dealt.png",
-				text = "Any positive damage difference between the skill\'s shield damage and the target\'s shield condition will be dealt as damage to the body"
 			});
 
 			local actor = this.getContainer().getActor();
@@ -98,6 +108,22 @@
 					"shield_icon"
 				], 1.0);
 			}
+
+			if (this.m.IsHammer) {
+				this.m.OverflowDamage = damage;
+				attackEntity(_user, target);
+				this.m.OverflowDamage = 0;
+
+				if (::Legends.S.skillEntityAliveCheck(_user, target)) {
+					return true;
+				}
+
+				local stagger = ::Legends.Effects.grant(target, ::Legends.Effect.Staggered);
+				if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer) {
+					this.Tactical.EventLog.log(stagger.getLogEntryOnAdded(this.Const.UI.getColorizedEntityName(_user), this.Const.UI.getColorizedEntityName(target)));
+				}
+			}
+
 			local overflowDamage = this.Math.floor(damage - conditionBefore);
 
 			if (shield != null && shield.getCondition() == 0) {
@@ -123,6 +149,10 @@
 				if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer) {
 					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " uses Split Shield and hits " + this.Const.UI.getColorizedEntityName(target) + "\'s shield for [b]" + (conditionBefore - shield.getCondition()) + "[/b] damage");
 				}
+			}
+
+			if (::Legends.S.skillEntityAliveCheck(_user, target)) {
+				return true;
 			}
 
 			local overwhelm = ::Legends.Perks.get(this, ::Legends.Perk.Overwhelm);

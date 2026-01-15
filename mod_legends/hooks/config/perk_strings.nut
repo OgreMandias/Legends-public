@@ -314,7 +314,7 @@ Bring it on!
 • Hitpoints are increased by [color=%positive%]25%[/color], which reduces the chance to sustain debilitating [color=%status%]Injuries[/color] on hit.
 ";
 ::Const.Perks.PerkDefObjects[::Legends.Perk.Colossus].Tooltip = ::Const.Strings.PerkDescription.Colossus;
-::Const.Strings.PerkName.Taunt <- "Battlefield Control"
+::Const.Strings.PerkName.Taunt <- "Battlefield Control";
 ::Const.Strings.PerkDescription.Taunt <- @"
 'Being aware of your surroundings can make or break a fight.'
 
@@ -449,7 +449,7 @@ Become one with your weapon and go for the weak spots!
 [color=%passive%][u]Passive:[/u][/color]
 • When holding a Buckler, Mummy Shield or Parrying Dagger in your offhand an extra [color=%positive%]+25%[/color] of damage ignores armor on Melee Attacks.
 
-[color=%passive%][u]Active:[/u][/color] Unlocks the [color=%skill%]Flourish[/color] skill, which will increase fatigue cost by [color=%positive%]50%[/color] and as long as you are faster than your target grants a chance on each attack to ignore armor completely based on the initiative difference between you and your target. As long as you are faster than the target, any attack that inflicts at least [color=%positive%]1[/color] point of damage to Hitpoints triggers a morale check for the opponent with a penalty equal to [color=%negative%]20%[/color] of the Initiative difference between you and the target
+[color=%passive%][u]Active:[/u][/color] Unlocks the [color=%skill%]Flourish[/color] skill, which will increase fatigue cost by [color=%positive%]50%[/color] and as long as you are faster than your target grants a chance on each attack to ignore armor completely based on the initiative difference between you and your target. As long as you are faster than the target, any attack that inflicts at least [color=%positive%]1[/color] point of damage to Hitpoints triggers a morale check for the opponent with a penalty equal to [color=%negative%]20%[/color] of the Initiative difference between you and the target.
 ";
 ::Const.Perks.PerkDefObjects[::Legends.Perk.Duelist].Tooltip = ::Const.Strings.PerkDescription.Duelist;
 ::Const.Strings.PerkDescription.CripplingStrikes <- @"

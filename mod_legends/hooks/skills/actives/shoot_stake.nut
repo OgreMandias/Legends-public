@@ -81,6 +81,13 @@
 		return onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor );
 	}
 
+	o.onUse = function( _user, _targetTile )
+	{
+		local success = this.attackEntity(_user, _targetTile.getEntity());
+		this.getItem().setLoaded(false);
+		return success;
+	}
+
 	o.onAnySkillUsed = function ( _skill, _targetEntity, _properties )
 	{
 		if (_skill != this)

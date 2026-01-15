@@ -57,7 +57,7 @@ this.legend_lindwurm_scale_armor <- this.inherit("scripts/items/legend_armor/leg
 
 		if (c != null && c.getActor() != null && !c.getActor().isNull())
 		{
-			c.getActor().getFlags().add("head_immune_to_acid");
+			c.getActor().getFlags().add("body_immune_to_acid");
 		}
 	}
 
@@ -67,7 +67,7 @@ this.legend_lindwurm_scale_armor <- this.inherit("scripts/items/legend_armor/leg
 
 		if (c != null && c.getActor() != null && !c.getActor().isNull())
 		{
-			c.getActor().getFlags().remove("head_immune_to_acid");
+			c.getActor().getFlags().remove("body_immune_to_acid");
 		}
 		this.legend_named_armor_upgrade.onUnequip();
 	}

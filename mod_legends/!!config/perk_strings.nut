@@ -355,9 +355,9 @@ Early bird gets the worm!
 Through familiarity and training with your weapon, you know just how your projectiles will fly.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Up to [color=%positive%]+20%[/color] of any damage ignores armor depending on the distance to the target, with the highest bonus in melee and lowest at maximum range for [color=%skill%]Shoot Bolt[/color]. For [color=%skill%]Shoot Heavy Bolt[/color] and [color=%skill%]Shoot Stake[/color] the bonus goes up to [color=%positive%]+30%[/color] instead.
+• Crossbows gain a scaling bonus to armor penetration depending on the distance to the target with the highest bonus in melee and the lowest at maximum range for the relevant skill. [color=%skill%]Shoot Bolt[/color] gains up to 20%, while [color=%skill%]Shoot Heavy Bolt[/color] and [color=%skill%]Shoot Stake[/color] gain up to [color=%positive%]+30%[/color] instead.
 
-• The range penalty to hitchance is reduced by [color=%negative%]-2[/color] per tile.
+• The range penalty to hitchance is reduced by [color=%negative%]-2[/color] per tile for all ranged weapons.
 ";
 
 ::Const.Strings.PerkDescription.LegendBackswing <- @"
@@ -409,7 +409,7 @@ Take a deep breath, then get to work.
 There's wolves, bears, nachzehrers, and you. All beings of vicious slaughter.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Gain [color=%positive%]+10%[/color] chance to hit and damage for all Melee area of effect attacks.
+• [color=%positive%]50%[/color] of the skill's fatigue cost is translated to Damage and Chance to hit. This accounts for any fatigue reduction or increase.   
 ";
 
 ::Const.Strings.PerkDescription.LegendImmovableObject <- @"
@@ -2269,7 +2269,7 @@ The first rule of...
 Strike while they're down!
 
 [color=%passive%][u]Passive:[/u][/color]
-• Attacks deal an additional [color=%positive%]+5[/color] fatigue per hit.
+• Attacks deal an additional [color=%positive%]5%[/color] of the enemy's maximum fatigue per hit.
 
 • Each point of fatigue damage over the target's maximum fatigue will be translated to additional damage done.
 ";
@@ -2557,6 +2557,8 @@ Knowledge of an animal's physiology allows for better diet, exercise and care.
 
 [color=%passive%][u]Passive:[/u][/color]
 • Increases Hitpoints by [color=%positive%]25%[/color] for each donkey in the company and their carrying capacity by [color=%positive%]+12[/color].
+
+• Does not stack with the same perk on multiple mercenaries.
 ";
 
 ::Const.Strings.PerkDescription.LegendHorseImpulsion <- @"

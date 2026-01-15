@@ -252,7 +252,7 @@ if (!("Perks" in ::Const)) {
 		[],
 		[],
 		[::Legends.Perk.SpecCleaver],
-		[],
+		[::Legends.Perk.LegendCarnage],
 		[::Legends.Perk.LegendBloodbath],
 		[::Legends.Perk.Fearsome]
 	]

@@ -15,6 +15,7 @@
 
 	o.m.HasDrillSergeant <- 0;
 	o.m.HasScholars <- 0;
+	o.m.HasVeterinarian <- 0;
 
 	o.getArmorPartsF <- function()
 	{
@@ -1227,8 +1228,6 @@
 			this.setFormationName(i, _in.readString())
 		}
 		this.m.LastDayResourcesUpdated = _in.readU16();
-
-		::Legends.Stash.resize();
 	}
 
 });

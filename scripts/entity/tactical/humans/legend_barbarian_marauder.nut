@@ -65,6 +65,7 @@ this.legend_barbarian_marauder <- this.inherit("scripts/entity/tactical/human", 
 		::Legends.Perks.grant(this, ::Legends.Perk.Bullseye);
 		::Legends.Perks.grant(this, ::Legends.Perk.QuickHands);
 		::Legends.Perks.grant(this, ::Legends.Perk.Pathfinder);
+		::Legends.Perks.grant(this, ::Legends.Perk.BagsAndBelts);
 		::Legends.Actives.grant(this, ::Legends.Active.BarbarianFury);
 
 		if(::Legends.isLegendaryDifficulty())
@@ -106,6 +107,8 @@ this.legend_barbarian_marauder <- this.inherit("scripts/entity/tactical/human", 
 		];
 
 		this.m.Items.addToBag(this.new(items[this.Math.rand(0, items.len() - 1)]));
+		this.m.Items.addToBag(this.new("scripts/items/weapons/barbarians/heavy_throwing_axe"));
+		this.m.Items.addToBag(this.new("scripts/items/weapons/barbarians/heavy_javelin"));
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body) && this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head))
 		{
@@ -170,6 +173,7 @@ this.legend_barbarian_marauder <- this.inherit("scripts/entity/tactical/human", 
 			"weapons/named/legend_named_sling"
 		];
 		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
+
 		::Legends.Perks.grant(this, ::Legends.Perk.Fearsome);
 		return true;
 	}

@@ -74,9 +74,7 @@ this.legend_hand_crossbow <- this.inherit("scripts/items/weapons/weapon", {
 			::Legends.Actives.grant(this, ::Legends.Active.ReloadBolt);
 		}
 		::Legends.Actives.grant(this, ::Legends.Active.LegendPiercingBolt);
-		::Legends.Actives.grant(this, ::Legends.Active.KnockOut, function (_skill) {
-			_skill.m.IsRangedKnockOut = true;
-		}.bindenv(this));
+		::Legends.Actives.grant(this, ::Legends.Active.ReloadBolt);
 	}
 
 	function onCombatFinished()

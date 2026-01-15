@@ -60,7 +60,6 @@ this.perk_legend_specialist_cult_armor <- this.inherit("scripts/skills/skill", {
 			if (item.isItemType(this.Const.Items.ItemType.Cultist)) {
 				cultItems.push(item);
 			}
-
 			foreach (upgrade in item.m.Upgrades)
 			{
 				if (upgrade != null && upgrade.isItemType(this.Const.Items.ItemType.Cultist)) cultItems.push(upgrade);

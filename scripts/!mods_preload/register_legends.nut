@@ -19,7 +19,7 @@
 	"dlc_paladins",
 	"mod_events_delayed_fix_legends",
 	"!mod_tooltip_extension(<=1.01)"
-].reduce(@(p, n) ::format("%s, %s", p, n)), function() {
+].reduce(@(p, n) ::format("%s, %s", p, n)), function () {
 	::Legends.Mod <- ::MSU.Class.Mod(::Legends.ID, ::Legends.Version, ::Legends.Name);
 	::Legends.Mod.Registry.addModSource(::MSU.System.Registry.ModSourceDomain.GitHub, "https://github.com/Battle-Brothers-Legends/Legends-public");
 	::Legends.Mod.Registry.setUpdateSource(::MSU.System.Registry.ModSourceDomain.GitHub);
@@ -37,6 +37,6 @@
 // compat mod
 ::include("mod_legends/compat_defs.nut");
 ::mods_registerMod(::Legends.ID + "_compat_check", ::Legends.Version, ::Legends.Name + " - Compat");
-::mods_queue(::Legends.ID + "_compat_check", ">mod_legends", function() {
+::mods_queue(::Legends.ID + "_compat_check", ">mod_legends", function () {
 	::include("mod_legends/compat.nut");
 });

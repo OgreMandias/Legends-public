@@ -65,7 +65,7 @@ this.legend_minstrel_performs_at_tavern_encounter <- this.inherit("scripts/encou
 		{
 			ID = "Failed",
 			Title = "At the tavern",
-			Text = "%minstrel%\'s lighthearted tune fills the tavern, but is quickly interrupted by a drunken patron. %SPEECH_ON%Is this a tavern or a bloody opera?%SPEECH_OFF% Laughter erupts from his table, and soon insults start flying. The minstrel keeps playing, but the jeers escalate.\n Suddenly, one man stumbles up, shoving another. %SPEECH_ON%Shut it!%SPEECH_OFF% he bellows, and before you know it, a full-blown fistfight erupts. Chairs crash, mugs shatter, and the room is chaos. You draw your blade, ready to end it, while %minstrel% steps back, shaking head with a grin. %SPEECH_ON%Next time, I\'ll sing quieter.%SPEECH_OFF% You and your men move in to break it up.",
+			Text = "%minstrel%\'s lighthearted tune fills the tavern, but is quickly interrupted by a drunken patron. %SPEECH_ON%Is this a tavern or a bloody opera?%SPEECH_OFF% Laughter erupts from his table, and soon insults start flying. The minstrel keeps playing, but the jeers escalate.\n Suddenly, one man stumbles up, shoving another. %SPEECH_ON%Shut it!%SPEECH_OFF% He bellows, and before you know it, a full-blown fistfight erupts. Chairs crash, mugs shatter, and the room is chaos. You draw your blade, ready to end it, while %minstrel% steps back, shaking head with a grin. %SPEECH_ON%Next time, I\'ll sing quieter.%SPEECH_OFF% You and your men move in to break it up.",
 			Image = "",
 			List = [],
 			Options = [

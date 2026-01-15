@@ -40,13 +40,6 @@ this.perk_legend_barrage <- this.inherit("scripts/skills/skill", {
 		{
 			this.grantEffect(::Legends.Effect.Shellshocked, "shellshocked", _targetEntity, user)
 		}
-
-		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.ShootBolt) || _skill.getID() == ::Legends.Actives.getID(::Legends.Active.ShootStake))
-		{
-			local skill = ::Legends.Actives.get(this, ::Legends.Active.ReloadBolt);
-			if (skill.isUsable())
-				skill.onUse(user, _targetEntity.getTile());
-		}
 	}
 
 	function grantEffect(_effect, _string, _targetEntity, _user)

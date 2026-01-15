@@ -6,6 +6,7 @@
 		this.setCategories("Spear/Mace, Two-Handed");
 		this.m.Value = 750;
 		this.setVariant(this.Math.rand(0, 2));
+		this.m.DirectDamageMult = 0.4;
 	}
 
 	o.updateVariant <- function() {

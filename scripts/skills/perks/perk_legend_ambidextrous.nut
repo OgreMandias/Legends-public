@@ -131,7 +131,7 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 		local hasNet = actor.getCurrentProperties().IsSpecializedInNets
 			&& off != null && off.getID().find("throwing_net") != null;
 		// Don't trigger follow-up if the attack came from the offhand
-		if (::Legends.Weapons.isOffHandSkill(_skill)) {
+		if (::Legends.Weapons.isOffHandSkill(actor, _skill)) {
 			return;
 		}
 

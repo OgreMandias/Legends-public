@@ -31,7 +31,7 @@ this.legend_obliterate_skill <- this.inherit("scripts/skills/skill", {
 		this.m.InjuriesOnHead = this.Const.Injury.BluntHead;
 		this.m.HitChanceBonus = -75;
 		this.m.DirectDamageMult = 0.6;
-		this.m.ActionPointCost = 9;
+		this.m.ActionPointCost = 6;
 		this.m.FatigueCost = 30;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;

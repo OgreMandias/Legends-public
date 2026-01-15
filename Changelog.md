@@ -32,22 +32,29 @@ Favoured Enemy - Sword Master
 - `Throw Backup Spear` - each one handed spear has 1 stack of a throwable ability
 - `Throw Backup Axe` - each one handed axe has 1 stack of a throwable ability
 - `Throw Backup Daggers` - each puncture dagger (daggers that don't have deathblow innately) has 8 stacks of a throwable ability
+> attacks twice if you have a free offhand, 4 ap cost, 12 fatigue, 3 maximum range
+> headshots will apply Distracted
 
 **Warbrand and Rhompaias**
-- `Into The Fray` - 2 tile charge and attack
-- `Breach` - `Slash` which will deal an additiona 15% damage vs enemies armed with polearms and melee weapons with range
+- `Into The Fray` - 2 tile charge and attack with `Breach`
+- `Breach` - `Slash` which will deal an additional 15% damage vs enemies armed with polearms and melee weapons with range
 
 **One Handed Straight Swords**
 * Ancient sword, Arming Sword, Gladius, Short Sword, Named Sword, Noble Sword - `Mordhau` while double gripping
-* `Halfsword` - puncture - requires double grip to use
+* `Halfsword` - puncture
+> 5 ap cost and requires double grip to be usable
 * `Mordhau` - batter (hammer)
+> 5 ap cost, doubles your armor damage with this skill and always deals at least 10 hp
 
 **Falchions**
-- `Breach` - `Slash` which will deal an additiona 15% damage vs enemies armed with polearms and melee weapons with range
+- `Breach` - `Slash` which will deal an additional 15% damage vs enemies armed with polearms and melee weapons with range
 
 **Various**
-* `Haftstrike` - a weak but quick attack with the haft - added to 2h axes and 2h maces, the ap cost reduces by 1 with each successful attack this turn
+* `Haftstrike` - a weak but quick attack with the haft - added to 2h axes and 2h maces, 
+> costs 4 ap and 15 fatigue, the ap cost reduces by 1 with each successful attack this turn by **other** skills 
 * `Obliterate` - exceptionally strong slow hammer attack - added to 2h hammer
+> 6 ap, 30 fatigue, -75% chance to hit increased to -50% with mastery and further increased to normal hitchance when striking enemies that are stunned or rooted
+> staggers on hit and hitting already staggered enemies will stun them
 
 ### For modders:
 

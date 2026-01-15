@@ -12,26 +12,38 @@ if (!("Weapons" in ::Legends)) {
     local bestAPCost = 9999;
 
     foreach (skill in skills.m.Skills) {
-        if (skill.m.Item != null && skill.m.Item.getInstanceID() == _weapon.getInstanceID()) {
+        if (skill.m.Item == null) {
+            continue;
+        }
 
-            // Use same validation code as Attack of Opportunity
-            if (!skill.isActive()
-                || !skill.isAttack()
-                || !skill.isTargeted()
-                || skill.isIgnoredAsAOO()
-                || skill.isDisabled()
-                || !skill.isUsable()
-                || skill.getMinRange() > 1
-                || skill.isRanged())
-            {
-                continue;
-            }
+        // When dual wielding the same weapon type, the skill instance may point to the other
+        // weapon (due to skill container deduplication) so the instance id check will fail.
+        // We check if both weapons have the same ID in that case.
+        local skillMatchesWeapon = skill.m.Item.getInstanceID() == _weapon.getInstanceID();
+        if (!skillMatchesWeapon && skill.m.Item.getID() == _weapon.getID()) {
+            skillMatchesWeapon = true;
+        }
+        if (!skillMatchesWeapon) {
+            continue;
+        }
 
-            local apCost = skill.getActionPointCost();
-            if (apCost < bestAPCost) {
-                bestSkill = skill;
-                bestAPCost = apCost;
-            }
+        // Use same validation code as Attack of Opportunity
+        if (!skill.isActive()
+            || !skill.isAttack()
+            || !skill.isTargeted()
+            || skill.isIgnoredAsAOO()
+            || skill.isDisabled()
+            || !skill.isUsable()
+            || skill.getMinRange() > 1
+            || skill.isRanged())
+        {
+            continue;
+        }
+
+        local apCost = skill.getActionPointCost();
+        if (apCost < bestAPCost) {
+            bestSkill = skill;
+            bestAPCost = apCost;
         }
     }
 

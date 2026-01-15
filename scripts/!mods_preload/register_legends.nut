@@ -1,6 +1,6 @@
 ::Legends <- {
 	ID = "mod_legends",
-	Version = "19.2.32",
+	Version = "19.3.0-alpha",
 	Name = "Legends Mod",
 	BuildName = "Rock & Bone",
 	IsStartingNewCampaign = false
@@ -8,7 +8,7 @@
 
 ::mods_registerMod(::Legends.ID, ::Legends.Version, ::Legends.Name);
 ::mods_queue(::Legends.ID, [
-	"mod_legends_assets(>=19.2.23)",
+	"mod_legends_assets(>=19.3.0-alpha)",
 	"mod_msu(>=1.7.0)",
 	"vanilla(>=1.5.1-5)",
 	"vanilla(<1.5.2)",
@@ -22,9 +22,9 @@
 ].reduce(@(p, n) ::format("%s, %s", p, n)), function() {
 	::Legends.Mod <- ::MSU.Class.Mod(::Legends.ID, ::Legends.Version, ::Legends.Name);
 	::Legends.Mod.Registry.addModSource(::MSU.System.Registry.ModSourceDomain.GitHub, "https://github.com/Battle-Brothers-Legends/Legends-public");
-    ::Legends.Mod.Registry.setUpdateSource(::MSU.System.Registry.ModSourceDomain.GitHub);
-    // loading mod files
-    ::include("mod_legends/load.nut");
+	::Legends.Mod.Registry.setUpdateSource(::MSU.System.Registry.ModSourceDomain.GitHub);
+	// loading mod files
+	::include("mod_legends/load.nut");
 });
 
 // some mods can be easily 'fixed' by loadind after legends, that what it is for

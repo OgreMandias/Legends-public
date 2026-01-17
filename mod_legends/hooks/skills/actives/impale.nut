@@ -1,5 +1,12 @@
 ::mods_hookExactClass("skills/actives/impale", function(o)
-{
+{	
+	local create = o.create;
+	o.create = function()
+	{
+		create();
+		this.m.HitChanceBonus = 10;
+	}
+
 	o.getTooltip = function()
 	{
 		local ret = this.getDefaultTooltip();
@@ -23,8 +30,8 @@
 
 			if (_targetEntity != null && !this.getContainer().getActor().getCurrentProperties().IsSpecializedInPolearms && this.getContainer().getActor().getTile().getDistanceTo(_targetEntity.getTile()) == 1)
 			{
-				_properties.MeleeSkill += -15;
-				this.m.HitChanceBonus += -5;
+				_properties.MeleeSkill -= 15;
+				this.m.HitChanceBonus -= 5;
 			}
 		}
 	}

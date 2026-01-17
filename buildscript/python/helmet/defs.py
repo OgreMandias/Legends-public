@@ -62,11 +62,11 @@ class Defs:
  },
 {"name" : "leather_hood"                     , "itemType" : "this.Const.Items.ItemType.Cultist", "layer" : "hood", "min" : 1, "max" : 6, "base" : True, "value" : 110, "con" : 45, "stam" : -2, "vis" : 0, "hair" : "true", "beard" : "false",
  "title" :  "Leather Hood",
- "desc" :  "A closed leather cap that protects the head and neck. Padded for extra protection."
+ "desc" :  "A closed leather cap that protects the head and neck. Padded for extra protection. Counts as a cultist item."
  },
 {"name" : "beak_hood"                     , "itemType" : "this.Const.Items.ItemType.Cultist", "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 150, "con" : 65, "stam" : -3, "vis" : -1, "hair" : "true", "beard" : "true",
  "title" :  "Beaked Hood",
- "desc" :  "A thick leather hood with a distinctive, bird-like mask. The beak acts as a ventilator, containing sweet-smelling herbs to ward away sickness and disease."
+ "desc" :  "A thick leather hood with a distinctive, bird-like mask. The beak acts as a ventilator, containing sweet-smelling herbs to ward away sickness and disease. Counts as a cultist item."
  },
 {"name" : "padded_hood"                     , "layer" : "hood", "min" : 1, "max" : 3, "base" : True, "value" : 115, "con" : 50, "stam" : -2, "vis" : 0, "hair" : "true", "beard" : "false",
  "title" :  "Full Aketon Cap",
@@ -536,17 +536,17 @@ class Defs:
  "title" :  "Physicians Mask",
  "desc" :  "a distinctive, bird-like mask. The beak acts as a ventilator, containing sweet-smelling herbs to ward away sickness and disease"
  },
-{"name" : "orc_horn_mask"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 200, "con" : 60, "stam" : -8, "vis" : -2, "hair" : "true", "beard" : "false",
+{"name" : "orc_horn_mask"                     , "itemType" : "this.Const.Items.ItemType.Cultist", "layer" : "top", "min" : 1, "max" : 1, "value" : 200, "con" : 60, "stam" : -8, "vis" : -2, "hair" : "true", "beard" : "false",
  "title" :  "Orc Horn Mask",
- "desc" :  "A rough horned facemask worn by young orcs."
+ "desc" :  "A rough horned facemask worn by young orcs. Counts as a cultist item."
  },
 {"name" : "orc_metal_mask"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 400, "con" : 75, "stam" : -11, "vis" : -2, "hair" : "true", "beard" : "false",
  "title" :  "Orc Metal Plated Mask",
  "desc" :  "A simple construction of metal plates, worn by young orcs."
  },
-{"name" : "orc_leather_mask"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 50, "con" : 40, "stam" : -4, "vis" : -1, "hair" : "true", "beard" : "false",
+{"name" : "orc_leather_mask"                     , "itemType" : "this.Const.Items.ItemType.Cultist", "layer" : "top", "min" : 1, "max" : 1, "value" : 50, "con" : 40, "stam" : -4, "vis" : -1, "hair" : "true", "beard" : "false",
  "title" :  "Orc Leather Mask",
- "desc" :  "A simple construction of strange leather, worn by young orcs."
+ "desc" :  "A simple construction of strange leather, worn by young orcs. Counts as a cultist item."
  },
 {"name" : "goblin_leaves"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 5, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",
  "title" :  "Goblin Leaves",
@@ -564,9 +564,9 @@ class Defs:
  "title" :  "Goblin Gillie",
  "desc" :  "Helmet camouflague used by goblin ambushers."
  },
-{"name" : "goblin_leather_mask"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 50, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",
+{"name" : "goblin_leather_mask"                     , "itemType" : "this.Const.Items.ItemType.Cultist", "layer" : "top", "min" : 1, "max" : 1, "value" : 50, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",
  "title" :  "Leather Goblin Mask",
- "desc" :  "A simple goblin face covering."
+ "desc" :  "A simple goblin face covering. Counts as a cultist item."
  },
 {"name" : "goblin_leather_helm"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 105, "con" : 25, "stam" : -1, "vis" : -1, "hair" : "true", "beard" : "false",
  "title" :  "Leather Goblin Helm",
@@ -596,9 +596,9 @@ class Defs:
  "title" :  "Ancient Diadem",
  "desc" :  "An ancient crown from ages past."
  },
-{"name" : "leather_hood_barb"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 300, "con" : 45, "stam" : -4, "vis" : -2, "hair" : "true", "beard" : "false",
- "title" :  "Leather Hood Barb",
- "desc" :  "The crude padded leather hood of a barbarian, it is heavy and surprisingly protective."
+{"name" : "leather_hood_barb"                     ,"itemType" : "this.Const.Items.ItemType.Cultist", "layer" : "top", "min" : 1, "max" : 1, "value" : 300, "con" : 45, "stam" : -4, "vis" : -2, "hair" : "true", "beard" : "false",
+ "title" :  "Barbarian Leather Hood",
+ "desc" :  "The crude padded leather hood of a barbarian, it is heavy and surprisingly protective. Counts as a cultist item."
  },
 {"name" : "nose_plate"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 60, "con" : 15, "stam" : -1, "vis" : 0, "hair" : "false", "beard" : "false",
  "title" :  "Nose Plate",
@@ -646,7 +646,7 @@ class Defs:
  },
 {"name" : "cult_hood"                     , "itemType" : "this.Const.Items.ItemType.Cultist", "layer" : "top", "min" : 1, "max" : 7, "value" : 60, "con" : 15, "stam" : -1, "vis" : -1, "hair" : "true", "beard" : "false",
  "title" :  "Cult Leather Hood",
- "desc" :  "A leather hood used in cultist ceremonies."
+ "desc" :  "A leather hood used in cultist ceremonies. Counts as a cultist item."
  },
 {"name" : "faceplate_long"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 180, "con" : 35, "stam" : -3, "vis" : -1, "hair" : "false", "beard" : "true",
  "title" :  "Long Faceplate",
@@ -763,7 +763,7 @@ class Defs:
  },
 {"name" : "warlock_skull"                     , "itemType" : "this.Const.Items.ItemType.Cultist", "layer" : "top", "min" : 1, "max" : 3, "value" : 2000, "con" : 45, "stam" : -2, "vis" : 0, "hair" : "false", "beard" : "true", "named" : True, "rmaxViz" : 0, "rminViz" : 1, "rmaxStam" : 1, "rminStam" : 2, "rminCond" : 90, "rmaxCond" : 115, "names" : Names,
  "title" :  "Warlock Skill Helm",
- "desc" :  "Warlock Skill Helm."
+ "desc" :  "Warlock Skill Helm. Counts as a cultist item."
  },
 
 
@@ -785,7 +785,7 @@ class Defs:
  },
 {"name" : "executioner_hood"                     , "itemType" : "this.Const.Items.ItemType.Cultist", "layer" : "top", "min" : 1, "max" : 1, "value" : 100, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",
  "title" :  "Executioner Hood",
- "desc" :  "A red hood to hide the identity of the executioner."
+ "desc" :  "A red hood to hide the identity of the executioner. Counts as a cultist item."
  },
 {"name" : "noble_southern_crown"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 100, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",
  "title" :  "Vizier Peak",
@@ -813,7 +813,7 @@ class Defs:
  },
 {"name" : "sack"                     , "itemType" : "this.Const.Items.ItemType.Cultist", "layer" : "vanity", "min" : 1, "max" : 13, "value" : 5, "con" : 2, "stam" : 0, "vis" : -1, "hair" : "true", "beard" : "true",
  "title" :  "Sack",
- "desc" :  "A rough hewn hession sack with two holes in it."
+ "desc" :  "A rough hewn hession sack with two holes in it. Counts as a cultist item."
  },
 {"name" : "antler"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 20, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",
  "title" :  "Antlers",
@@ -1078,7 +1078,7 @@ class Defs:
 # },
 {"name" : "warlock_hood"                     ,"itemType" : "this.Const.Items.ItemType.Cultist", "layer" : "vanity", "min" : 1, "max" : 5, "value" : 100, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",
  "title" :  "Warlock Hood",
- "desc" :  "Warlock Hood."
+ "desc" :  "Warlock Hood. Counts as a cultist item."
  },
 {"name" : "goblin_bones"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 20, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",
  "title" :  "Goblin Bones",

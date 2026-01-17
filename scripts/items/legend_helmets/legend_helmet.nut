@@ -321,8 +321,8 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 			return;
 		}
 
-		this.m.Condition = this.m.ConditionMax;
 		local delta = _a - (this.m.ConditionMax - this.m.Condition);
+		this.m.Condition = this.m.ConditionMax;
 
 		for (local i = 0; i < this.m.Upgrades.len(); ++i)
 		{

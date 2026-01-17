@@ -81,6 +81,40 @@
 		return (this.m.AmmoMax == 0 || isPlayer || this.m.Ammo > 0 && this.getCurrentSlotType() != this.Const.ItemSlot.Bag || this.m.Ammo > 0 && this.m.Ammo < this.m.AmmoMax && this.getCurrentSlotType() == this.Const.ItemSlot.Bag) && (this.m.Condition >= 12 || this.m.ConditionMax <= 1 || isLucky || isBlacksmithed) && (isPlayer || isLucky || this.Math.rand(1, 100) <= 90);
 	}
 
+	o.updateAppearance = function () {
+		if (!this.isEquipped()) {
+			return;
+		}
+
+		local changed = false;
+
+		local currentSlot = this.getCurrentSlotType();
+		local appearance = this.getContainer().getAppearance();
+		if (this.m.ShowArmamentIcon) {
+			if (currentSlot == this.Const.ItemSlot.Offhand) {
+				changed = appearance.Shield != this.m.ArmamentIcon;
+				appearance.Shield = this.m.ArmamentIcon;
+			} else {
+				changed = appearance.Weapon != this.m.ArmamentIcon;
+				appearance.Weapon = this.m.ArmamentIcon;
+				appearance.TwoHanded = this.m.BlockedSlotType != null;
+			}
+		} else {
+			if (currentSlot == this.Const.ItemSlot.Offhand) {
+				changed = appearance.Shield != "";
+				appearance.Shield = "";
+			} else {
+				changed = appearance.Weapon != "";
+				appearance.Weapon = "";
+				appearance.TwoHanded = false;
+			}
+		}
+
+		if (changed) {
+			this.getContainer().updateAppearance();
+		}
+	}
+
 	o.onEquip = function ()
 	{
 		this.item.onEquip();

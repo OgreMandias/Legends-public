@@ -51,16 +51,40 @@
 		}
 	}
 
-	o.changeSupportedOrAbandonedAttachedLocations <- function ()
-	{
+	o.changeSupportedOrAbandonedAttachedLocations <- function () {
 		local attachedLocations = this.getAttachedLocations();
 		local limit = this.getAttachedLocationsMax();
 		// The settlement is shrinking and will have to abandon attached locations that exceed the Tier limit
-		while (this.getActiveAttachedLocations().len() > limit)
-			this.getActiveAttachedLocations().top().setAbandoned(true);
+		local active = this.getActiveAttachedLocations().len();
+		local activeNonAbandoned = this.getActiveNonAbandonedAttachedLocations().len();
+		while (activeNonAbandoned > limit) {
+			foreach (location in attachedLocations) {
+				if (!location.isAbandoned()) {
+					location.setAbandoned(true);
+					break;
+				}
+			}
+			local newActiveNonAbandoned = this.getActiveNonAbandonedAttachedLocations().len();
+			if (newActiveNonAbandoned == activeNonAbandoned) {
+				::logError("Failed to abandon an attached location for settlement " + this.getName() + " when reducing its size to " + limit);
+				break;
+			}
+			activeNonAbandoned = newActiveNonAbandoned;
+		}
 		// Check if we can repopulate attached locations that were previously abandoned
-		for (local i = 0; i < ::Math.min(attachedLocations.len(), limit); i++)
+		for (local i = 0; i < ::Math.min(attachedLocations.len(), limit); i++) {
 			attachedLocations[i].setAbandoned(false);
+		}
+	}
+
+	o.getActiveNonAbandonedAttachedLocations <- function () {
+		local ret = [];
+		foreach (loc in this.getAttachedLocations()) {
+			if (loc.isActive() && !loc.isAbandoned()) {
+				ret.push(loc);
+			}
+		}
+		return ret;
 	}
 
 	o.changeSize <- function ( _v )

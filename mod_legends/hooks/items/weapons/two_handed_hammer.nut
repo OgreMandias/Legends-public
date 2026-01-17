@@ -7,6 +7,21 @@
 		this.setVariant(this.Math.rand(0, 2));
 	}
 
+	o.addSkill <- function( _skill )
+	{
+		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.SplitShield))
+		{
+			::Legends.Actives.grant(this.weapon, ::Legends.Active.SplitShield, function (_skill)
+			{
+				_skill.setFatigueCost(_skill.getFatigueCostRaw() + 5);
+				_skill.m.IsHammer = true;
+			}.bindenv(this));
+			return;
+		}
+
+		weapon.addSkill(_skill);
+	}
+
 	o.updateVariant <- function() {
 		local v = this.getVariant() == 0 ? "" : "_" + this.getVariant();
 		this.m.Icon = "weapons/melee/hammer_two_handed_01" + v + "_70x70.png";

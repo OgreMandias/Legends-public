@@ -2,6 +2,13 @@
 {
 	o.m.IsChain <- false;
 
+	local create = o.create;
+	o.create = function()
+	{
+		create();
+		this.m.HitChanceBonus = 10;
+	}
+
 	o.setItem <- function (_item)
 	{
 		this.skill.setItem(_item);

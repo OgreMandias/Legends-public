@@ -73,7 +73,6 @@
 				::Const.Perks.FitTree
 			],
 			Enemy = [
-				this.Const.Perk.OutlawTree,
 				::Const.Perks.OutlawTree
 			],
 			Class = [

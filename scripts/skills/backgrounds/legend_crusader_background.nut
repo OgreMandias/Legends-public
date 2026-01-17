@@ -236,9 +236,6 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 		this.character_background.onAdded();
 		local actor = this.getContainer().getActor();
 		actor.setTitle("the Holy Avenger");
-		::Legends.Traits.grant(this, ::Legends.Trait.Loyal);
-		::Legends.Traits.grant(this, ::Legends.Trait.LegendUndeadKiller);
-
 	}
 
 function onAddEquipment()

@@ -1,5 +1,4 @@
-::mods_hookNewObject("skills/skill_container", function ( o )
-{
+::mods_hookNewObject("skills/skill_container", function (o) {
 	// o.buildPropertiesForUse = function( _caller, _targetEntity )
 	// {
 	// 	local superCurrent = this.m.Actor.getCurrentProperties().getClone();
@@ -45,33 +44,32 @@
 	// 	return superCurrent;
 	// }
 
-	o.getSkillsSortedByItems <- function ( _filter, _notFilter = 0 )
-	{
+	o.getSkillsSortedByItems <- function (_filter, _notFilter = 0) {
 		local ret = [];
 
-		for( local i = 0; i < this.Const.ItemSlot.COUNT; i = i )
-		{
+		for (local i = 0; i < this.Const.ItemSlot.COUNT; i = i) {
 			ret.push([]);
 			i = ++i;
 		}
 
-		foreach( skill in this.m.Skills )
-		{
-			if (!skill.isGarbage() && skill.isType(_filter) && !skill.isType(_notFilter) && !skill.isHidden())
+		foreach (skill in this.m.Skills) {
+			if (!skill.isGarbage()
+				&& skill.isType(_filter)
+				&& !skill.isType(_notFilter)
+				&& !skill.isHidden())
 			{
-				if (skill.getItem() != null)
-				{
-					ret[skill.getItem().getCurrentSlotType()].push(skill);
-				}
-				else
-				{
+				if (skill.getItem() != null) {
+					local slotType = skill.getItem().getCurrentSlotType();
+					if (slotType >= 0 && slotType < this.Const.ItemSlot.COUNT) {
+						ret[slotType].push(skill);
+					}
+				} else {
 					ret[this.Const.ItemSlot.Free].push(skill);
 				}
 			}
 		}
 
-		if (ret[this.Const.ItemSlot.Free].len() > 1)
-		{
+		if (ret[this.Const.ItemSlot.Free].len() > 1) {
 			ret[this.Const.ItemSlot.Free].sort(this.compareSkillsByOrder);
 		}
 
@@ -96,8 +94,9 @@
 
 	local onMovementFinished = o.onMovementFinished;
 	o.onMovementFinished = function () {
-		if (this.getActor() == null)
+		if (this.getActor() == null) {
 			return;
+		}
 		onMovementFinished();
 	}
 });

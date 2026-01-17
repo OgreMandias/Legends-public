@@ -48,12 +48,11 @@
 		return tooltip;
 	}
 
-	o.isHidden <- function()
-	{
-		local actor = this.getContainer().getActor();
-		local item = actor.getMainhandItem().getID();
-		if (this.m.DeathblowBonus || this.getContainer().hasPerk(::Legends.Perk.LegendSpecialistPrisoner))
+	o.isHidden <- function () {
+		if (this.m.DeathblowBonus
+			|| this.getContainer().hasPerk(::Legends.Perk.LegendSpecialistPrisoner)) {
 			return false;
+		}
 
 		return this.skill.isHidden();
 	}

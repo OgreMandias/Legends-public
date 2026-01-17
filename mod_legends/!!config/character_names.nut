@@ -23,6 +23,28 @@
 	"the Heartseeker"
 ];
 
+::Const.Strings.NobleGreatswordTitles <- [
+	"the Greatsword",
+	"the Zweihander",
+	"the Blade",
+	"the Longblade",
+	"the Slayer",
+	"the Vanquisher",
+	"the Beheader",
+	"the Executioner",
+	"the Defender",
+	"the Orcslayer",
+	"the Honor",
+	"the Claymore",
+	"the Thug\'s Bane",
+	"the Long Reach",
+	"the Splitter",
+	"the Warsword",
+	"the Bidenhander",
+	"the Gassenhauer",
+	"the Landsknecht"
+];
+
 ::Const.Strings.NoblewomanTitles <- [
 	"Dame",
 	"Lady",

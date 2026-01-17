@@ -148,7 +148,7 @@
 				icon = "ui/icons/hitchance.png",
 				text = this.m.HitChanceBonus > 0 ?
 					"Has [color=%positive%]+" + this.m.HitChanceBonus + "%[/color] chance to hit" :
-					"Has [color=%negative%]-" + this.m.HitChanceBonus + "%[/color] chance to hit"
+					"Has [color=%negative%]" + this.m.HitChanceBonus + "%[/color] chance to hit"
 			});
 		}
 

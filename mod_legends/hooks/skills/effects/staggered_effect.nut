@@ -10,12 +10,12 @@
 	local onAdded = o.onAdded;
 	o.onAdded = function ()
 	{
+		local actor = this.getContainer().getActor();
 		if (actor.getFlags().get("CanNotBeStaggered") || !actor.isPlacedOnMap() || ("State" in this.Tactical) && this.Tactical.State.isBattleEnded())
 		{
 			this.removeSelf();
 			return;
 		}
-		local actor = this.getContainer().getActor();
 		this.m.Overlay = "status_effect_65";
 		this.spawnIcon(this.m.Overlay, actor.getTile());
 		onAdded();

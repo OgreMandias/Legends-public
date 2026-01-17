@@ -1,5 +1,12 @@
 ::mods_hookExactClass("skills/actives/prong_skill", function(o)
 {
+	local create = o.create;
+	o.create = function()
+	{
+		create();
+		this.m.HitChanceBonus = 20;
+	}
+
 	o.getTooltip = function ()
 	{
 		local tooltip = this.getDefaultTooltip();
@@ -35,7 +42,7 @@
 	{
 		if (_skill == this)
 		{
-			_properties.MeleeSkill += 10;
+			_properties.MeleeSkill += 20;
 
 			if (_targetEntity != null && !this.getContainer().getActor().getCurrentProperties().IsSpecializedInSpears && this.getContainer().getActor().getTile().getDistanceTo(_targetEntity.getTile()) == 1)
 			{

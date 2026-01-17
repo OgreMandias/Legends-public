@@ -141,19 +141,20 @@
 
 		for( local i = 0; i != 6; i = ++i )
 		{
-			if (!_tile.hasNextTile(i))
+			if (tile.hasNextTile(i))
 			{
-				continue;
-			}
-			else
-			{
-				local next = _tile.getNextTile(i);
+				local next = tile.getNextTile(i);
 
-				if (next.IsOccupiedByActor && this.Math.abs(next.Level - _tile.Level) <= 1 && !next.getEntity().isAlliedWithPlayer())
+				if (next.IsOccupiedByActor && this.Math.abs(next.Level - tile.Level) <= 1 && !next.getEntity().isAlliedWithPlayer())
 				{
 					targetTiles.push(next);
 				}
 			}
+		}
+		if (targetTiles.len() == 0)
+		{
+			this.m.ExecutingAttack = false;
+			return; 
 		}
 
 		this.getContainer().getAttackOfOpportunity().useForFree(targetTiles[this.Math.rand(0, targetTiles.len() - 1)]);

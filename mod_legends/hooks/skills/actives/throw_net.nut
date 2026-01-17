@@ -56,33 +56,32 @@
 		if (this.m.IsUnholdNet)
 			target.isAlliedWithPlayer = @() false;
 
+		this.m.Item.consumeAmmo();
 		local ret = onUse(_user, _targetTile); // this returns `null` or `false`, bruh
-
+		this.m.Item.drop(_targetTile); // just drop the spent net there
 		if (_user.getCurrentProperties().IsSpecializedInNetCasting && ret != false)
 		{
-			local tile = _targetEntity.getTile();
 			local targetTiles = [];
 			local chance = _user.getCurrentProperties().getRangedSkill() + _user.getCurrentProperties().getRangedDefense();
 			local successes = 1.0;
 			local newRet;
 			for( local i = 0; i != 6; i = ++i )
 			{
-				if (!_tile.hasNextTile(i))
+				for( local i = 0; i != 6; i = ++i )
 				{
-					continue;
-				}
-				else
-				{
-					local next = _tile.getNextTile(i);
-
-					if (next.IsOccupiedByActor && this.Math.abs(next.Level - _tile.Level) <= 1 && !next.getEntity().isAlliedWithPlayer())
+					if (_targetTile.hasNextTile(i))
 					{
-						if (this.Math.rand(1, 100) < this.Math.floor(chance / successes + 1.0))
+						local next = _targetTile.getNextTile(i);
+
+						if (next.IsOccupiedByActor && this.Math.abs(next.Level - _targetTile.Level) <= 1 && !next.getEntity().isAlliedWithPlayer())
 						{
-							newRet = onUse(_user, next);
-							if (newRet != false)
+							if (this.Math.rand(1, 100) < this.Math.floor(chance / successes + 1.0))
 							{
-								successes += 1.0;
+								newRet = onUse(_user, next);
+								if (newRet != false)
+								{
+									successes += 1.0;
+								}
 							}
 						}
 					}

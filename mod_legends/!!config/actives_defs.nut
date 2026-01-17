@@ -1,26 +1,26 @@
-if (!("Actives" in ::Legends))
+if (!("Actives" in ::Legends)) {
 	::Legends.Actives <- {};
+}
 
-if (!("Active" in ::Legends))
+if (!("Active" in ::Legends)) {
 	::Legends.Active <- {};
+}
 
 ::Legends.Actives.ActiveDefObjects <- [];
 
-::Legends.Actives.addActiveDefObjects <- function( _activeDefObjects )
-{
+::Legends.Actives.addActiveDefObjects <- function (_activeDefObjects) {
 	local size = ::Legends.Actives.ActiveDefObjects.len();
 	::Legends.Actives.ActiveDefObjects.extend(_activeDefObjects);
-	foreach (i, activeDefObject in _activeDefObjects)
-	{
-		if (activeDefObject.Const in ::Legends.Active)
+	foreach (i, activeDefObject in _activeDefObjects) {
+		if (activeDefObject.Const in ::Legends.Active) {
 			::Legends.Active[activeDefObject.Const] = size + i;
-		else
+		} else {
 			::Legends.Active[activeDefObject.Const] <- size + i;
+		}
 	}
 }
 
 local activesDefs = [];
-
 
 ::Legends.Active.Split <- null;
 activesDefs.push({
@@ -3246,12 +3246,12 @@ activesDefs.push({
 	Name = "Corpse Explosion",
 });
 
-::Legends.Active.LEgen;
+::Legends.Active.LegendDoubleSwing <- null;
 activesDefs.push({
-	ID = "actives.legend_flourish",
-	Script = "scripts/skills/actives/legend_flourish_skill",
-	Const = "LegendFlourish",
-	Name = "Flourish",
+	ID = "actives.legend_double_swing",
+	Script = "scripts/skills/actives/legend_double_swing_skill",
+	Const = "LegendDoubleSwing",
+	Name = "Double Swing",
 });
 
 ::Legends.Actives.addActiveDefObjects(activesDefs);

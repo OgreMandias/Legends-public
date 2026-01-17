@@ -10,7 +10,7 @@ this.perk_legend_specialist_cult_hood <- this.inherit("scripts/skills/skill", {
 		local cultItems = [];
 		if (item != null)
 		{
-			if(item.isItemType(this.Const.Items.ItemType.Cultist)) {
+			if (item.isItemType(this.Const.Items.ItemType.Cultist)) {
 				cultItems.push(item)
 			}
 			foreach( upgrade in item.m.Upgrades )

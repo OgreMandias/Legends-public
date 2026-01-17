@@ -347,7 +347,7 @@
 		activePerks = removeDuplicates(activePerks);
 		pushSection(activePerks, "Usable perks", 200, 1);
 		local thresholdToCompact = 0;
-		local perks = _entity.getSkills().query(this.Const.SkillType.Perk, false, true);
+		local perks = _entity.getSkills().query(this.Const.SkillType.Perk, true, true);
 		perks = removeDuplicates(perks);
 		pushSectionName(perks, "Perks", 300);
 
@@ -359,7 +359,7 @@
 					id = 301 + i,
 					type = "text",
 					icon = getRealPerkIcon(perk),
-					text = perk.getName()
+					text = perk.m.Name
 				});
 			}
 		}
@@ -369,7 +369,7 @@
 
 			foreach( _, perk in perks )
 			{
-				local name = perk.getName();
+				local name = perk.m.Name;
 
 				if (name && name.len() > 1)
 				{

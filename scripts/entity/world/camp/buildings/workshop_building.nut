@@ -407,8 +407,10 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			if (r.Item.getRepair() <= 0)
 			{
 				this.m.ItemsDestroyed += 1;
-				local myItem = ::World.Assets.getStash().getItemByInstanceID(r.Item.getInstanceID()).item;
-
+				local myItem = ::World.Assets.getStash().getItemByInstanceID(r.Item.getInstanceID());
+				if (myItem == null)
+					continue;
+				myItem = myItem.item;
 				if (myItem.getRuneVariant() > 0) {
 					local def = ::Legends.Runes.get(myItem.getRuneVariant());
 					local rune = ::new(def.Script);

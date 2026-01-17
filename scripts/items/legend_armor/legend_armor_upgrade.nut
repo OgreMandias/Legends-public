@@ -364,8 +364,9 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 			return 0
 		}
 
+		local ret = _a - (this.m.ConditionMax - this.m.Condition);
 		this.m.Condition = this.m.ConditionMax;
-		return _a - (this.m.ConditionMax - this.m.Condition);
+		return ret;
 	}
 
 	function removeArmor( _a)

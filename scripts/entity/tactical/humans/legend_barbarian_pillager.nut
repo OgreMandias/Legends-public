@@ -65,6 +65,7 @@ this.legend_barbarian_pillager <- this.inherit("scripts/entity/tactical/human", 
 		::Legends.Perks.grant(this, ::Legends.Perk.Bullseye);
 		::Legends.Perks.grant(this, ::Legends.Perk.QuickHands);
 		::Legends.Perks.grant(this, ::Legends.Perk.Pathfinder);
+		::Legends.Perks.grant(this, ::Legends.Perk.BagsAndBelts);
 		::Legends.Actives.grant(this, ::Legends.Active.BarbarianFury);
 
 		if(::Legends.isLegendaryDifficulty())
@@ -111,6 +112,8 @@ this.legend_barbarian_pillager <- this.inherit("scripts/entity/tactical/human", 
 		];
 
 		this.m.Items.addToBag(this.new(items[this.Math.rand(0, items.len() - 1)]));
+		this.m.Items.addToBag(this.new("scripts/items/weapons/javelin"));
+		this.m.Items.addToBag(this.new("scripts/items/weapons/throwing_axe"));
 
 		local armor = [
 			[33, ::Legends.Armor.Barbarian.scrap_metal_armor],

@@ -36,25 +36,48 @@ Favoured Enemy - Sword Master
 > headshots will apply Distracted
 
 **Warbrand and Rhompaias**
+- `Breach` - `Slash`
+> will deal an additional 15% damage vs enemies armed with polearms and melee weapons with range
+- `Swing` - unchanged
+- `Split` - unchanged
 - `Into The Fray` - 2 tile charge and attack with `Breach`
-- `Breach` - `Slash` which will deal an additional 15% damage vs enemies armed with polearms and melee weapons with range
 
 **One Handed Straight Swords**
-* Ancient sword, Arming Sword, Gladius, Short Sword, Named Sword, Noble Sword - `Mordhau` while double gripping
+* Ancient sword, Arming Sword, Gladius, Short Sword, Named Sword, Noble Sword
+* `Slash` - unchanged
+* `Riposte` - unchanged
 * `Halfsword` - puncture
 > 5 ap cost and requires double grip to be usable
 * `Mordhau` - batter (hammer)
 > 5 ap cost, doubles your armor damage with this skill and always deals at least 10 hp
 
 **Falchions**
-- `Breach` - `Slash` which will deal an additional 15% damage vs enemies armed with polearms and melee weapons with range
+- `Breach` - `Slash`
+> will deal an additional 15% damage vs enemies armed with polearms and melee weapons with range
+- `Gash` - unchanged
+- `Riposte` - unchanged
 
-**Various**
-* `Haftstrike` - a weak but quick attack with the haft - added to 2h axes and 2h maces, 
+**2h Axes**
+* `Split Man` - unchanged
+* `Round Swing` - unchanged
+* `Split Shield` - unchanged
+* `Haftstrike` - a weak but quick attack with the haft 
 > costs 4 ap and 15 fatigue, the ap cost reduces by 1 with each successful attack this turn by **other** skills 
+
+**2h Hammers**
+* `Smite` - unchanged
+* `Shatter` - unchanged
+* `Split Shield` - unchanged
 * `Obliterate` - exceptionally strong slow hammer attack - added to 2h hammer
-> 6 ap, 30 fatigue, -75% chance to hit increased to -50% with mastery and further increased to normal hitchance when striking enemies that are stunned or rooted
+> 6 ap, 30 fatigue, 150% damage and 33% lower threshold to inflict injury
+> -75% chance to hit increased, +25% from mastery and +50% against targets being rooted
 > staggers on hit and hitting already staggered enemies will stun them
+
+**Handgonnes**
+* `Fire Handgonne` - unchanged
+* `Reload`
+* `Line Them Up`
+> 3 (4 with mastery) tile shot in a straight line, does 25% more damage
 
 ### For modders:
 

@@ -3254,4 +3254,12 @@ activesDefs.push({
 	Name = "Double Swing",
 });
 
+::Legends.Active.LegendLineThemUp <- null;
+activesDefs.push({
+	ID = "actives.legend_line_them_up",
+	Script = "scripts/skills/actives/legend_line_them_up_skill",
+	Const = "LegendLineThemUp",
+	Name = "Line Them Up",
+});
+
 ::Legends.Actives.addActiveDefObjects(activesDefs);

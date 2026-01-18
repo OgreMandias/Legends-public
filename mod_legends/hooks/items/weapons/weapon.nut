@@ -137,6 +137,50 @@
 		}
 	}
 
+	o.onUnequip = function () {
+		local currentSlot = this.getCurrentSlotType();
+		local appearance = this.getContainer().getAppearance();
+
+		this.m.IsBloodied = false;
+		this.item.onUnequip();
+
+		if (this.m.ShowArmamentIcon) {
+			if (currentSlot == this.Const.ItemSlot.Offhand) {
+				appearance.Shield = "";
+			} else {
+				appearance.Weapon = "";
+				appearance.TwoHanded = false;
+			}
+		}
+
+		this.getContainer().updateAppearance();
+	}
+
+	o.setBloodied = function (_isBloodied) {
+		if (_isBloodied == this.m.IsBloodied) {
+			return;
+		}
+
+		this.m.IsBloodied = _isBloodied;
+
+		if (this.m.ShowArmamentIcon) {
+			local currentSlot = this.getCurrentSlotType();
+			local brushName = _isBloodied
+				&& this.doesBrushExist(this.m.ArmamentIcon + "_bloodied")
+				? this.m.ArmamentIcon + "_bloodied"
+				: this.m.ArmamentIcon;
+
+			local appearance = this.getContainer().getAppearance();
+			if (currentSlot == this.Const.ItemSlot.Offhand) {
+				appearance.Shield = brushName;
+			} else {
+				appearance.Weapon = brushName;
+			}
+
+			this.getContainer().updateAppearance();
+		}
+	}
+
 	o.onUpdateProperties = function ( _properties )
 	{
 		_properties.Stamina += this.m.StaminaModifier;

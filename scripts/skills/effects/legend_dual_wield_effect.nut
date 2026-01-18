@@ -114,6 +114,7 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 		_properties.MeleeSkill -= this.m.OffhandWeight;
+		_skill.m.HitChanceBonus -= this.m.OffhandWeight;
 	}
 
 	function onAnySkillExecuted(_skill, _targetTile, _targetEntity, _forFree) {

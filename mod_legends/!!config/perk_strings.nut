@@ -409,7 +409,7 @@ Take a deep breath, then get to work.
 There's wolves, bears, nachzehrers, and you. All beings of vicious slaughter.
 
 [color=%passive%][u]Passive:[/u][/color]
-• [color=%positive%]50%[/color] of the skill's fatigue cost is translated to Damage and Chance to hit. This accounts for any fatigue reduction or increase.   
+• [color=%positive%]50%[/color] of the skill's fatigue cost is translated to Damage and Chance to hit. This accounts for any fatigue reduction or increase.
 ";
 
 ::Const.Strings.PerkDescription.LegendImmovableObject <- @"
@@ -3436,15 +3436,4 @@ Master the art of fighting with a weapon in each hand.
 
 [color=%passive%][u]Passive:[/u][/color]
 • Reduces off-hand weapon damage malus from [color=%negative%]-66%[/color] to [color=%negative%]-50%[/color] when dual wielding.
-";
-
-::Const.Strings.PerkDescription.LegendPrecisionStrikes <- @"
-When your offhand weapon is lighter than your main weapon, you can strike with deadly precision.
-
-[color=%passive%][u]Passive:[/u][/color]
-• Gain [color=%positive%]+10[/color] hit chance with offhand attacks.
-
-• Gain [color=%positive%]25%[/color] chance to deflect incoming melee damage up to offhand weapon's max damage.
-
-• Requires an offhand weapon with lower AP cost than mainhand.
 ";

@@ -1260,11 +1260,11 @@ A very disagreeable and cacophonous chant can makes it almost impossible for ene
 A chant that gets the blood boiling, making your allies eager to fight.
 
 [color=%active%][u]Active:[/u][/color]
-• Unlocks the [color=%skill%]Fury[/color] chant which grants all allies within three tiles of the Vala, including the Vala herself, [color=%positive%]+1%[/color] bonus damage for every [color=%positive%]30[/color] points of Resolve the Vala has, every [color=%positive%]30[/color] points of available Fatigue the Vala has, and every [color=%positive%]3[/color] Hitpoints the buff recipient has.
+• Unlocks the [color=%skill%]Fury[/color] chant which grants all allies within three tiles of the Vala, including the Vala herself, a scaling increase in damage based on [color=%positive%]5%[/color] of the Vala's resolve.
 
-• Also grants a chance for allies to retaliate against attackers that hit them in melee range that is equal to [color=%positive%]25%[/color] of the Vala's Resolve + [color=%positive%]33%[/color] of the recipient's base Hitpoints.
+• Also grants a chance for allies to retaliate against attackers that hit them in melee range that is equal to [color=%positive%]40%[/color] of the Vala's Resolve.
 
-• Retaliation damage is increased by [color=%positive%]+1[/color] for every [color=%positive%]4[/color] points of Resolve the Vala has and every [color=%positive%]3[/color] Hitpoints the buff recipient has.
+• Retaliation damage is scales by [color=%positive%]30%[/color] of the Vala's resolve.
 
 • This chants effectiveness is decreased by [color=%negative%]25%[/color] per one tile away from the Vala.
 

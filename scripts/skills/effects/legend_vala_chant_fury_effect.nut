@@ -11,24 +11,24 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/effects/legen
 	}
 	function getWardenDamage()
 	{
-		return (this.m.Vala.getBravery() / 30.0) + ((this.getContainer().getActor().getFatigueMax() - this.getContainer().getActor().getFatigue()) / 30.0);
+		return this.m.Vala.getBravery() * 0.05;
 	}
 
 	function getDamageBonus()
 	{
-		local bonus = (this.m.Vala.getBravery() / 30.0) + ((this.getContainer().getActor().getFatigueMax() - this.getContainer().getActor().getFatigue()) / 30.0);
+		local bonus = this.m.Vala.getBravery() * 0.05;
 		return this.Math.max(0, this.Math.floor(bonus * this.getMasteryMult() * this.getDistanceMult()));
 	}
 
 	function getPayBackChance()
 	{
-		local chance = (this.m.Vala.getBravery() / 4.0) + (this.getContainer().getActor().getHitpoints() / 3.0);
-		return this.Math.min(95, this.Math.max(5, chance * this.getMasteryMult() * this.getDistanceMult()));
+		local chance = this.m.Vala.getBravery() * 0.4;
+		return this.Math.min(100, this.Math.max(0, chance * this.getMasteryMult() * this.getDistanceMult()));
 	}
 
 	function getPayBackDamage()
 	{
-		local damage = (this.m.Vala.getBravery() / 3.0) + (this.getContainer().getActor().getCurrentProperties().getMeleeSkill() / 4.0);
+		local damage = this.m.Vala.getBravery() * 0.3;
 		return this.Math.min(100, damage * this.getMasteryMult() * this.getDistanceMult());
 	}
 
@@ -97,6 +97,11 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/effects/legen
 
 		if (::Legends.S.skillEntityAliveCheck(actor))
 			return;
+
+		if (::Legends.S.skillEntityAliveCheck(_attacker))
+			return;
+
+		if (_attacker.getType() == ::Const.EntityType.FlyingSkull)
 
 		if (!this.checkEntities() || !this.isInRange())
 			return;

@@ -40,7 +40,9 @@
 			],
 			Class = [],
 			Profession = [], 
-			Magic = []
+			Magic = [
+				this.Const.Perks.ImmortalMagicTree
+			]
 		}
 	}
 

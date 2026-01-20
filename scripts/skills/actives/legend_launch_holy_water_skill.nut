@@ -1,7 +1,5 @@
 this.legend_launch_holy_water_skill <- this.inherit("scripts/skills/actives/throw_holy_water", {
-	m = {
-		Item = null
-		},
+	m = {},
 	function create()
 	{
 		this.throw_holy_water.create();
@@ -81,11 +79,6 @@ this.legend_launch_holy_water_skill <- this.inherit("scripts/skills/actives/thro
 		return ret;
 	}
 
-	function setItem( _i )
-	{
-		this.m.Item = this.WeakTableRef(_i);
-	}
-
 	function isHidden()
 	{
 		local actor = this.getContainer().getActor();
@@ -98,26 +91,6 @@ this.legend_launch_holy_water_skill <- this.inherit("scripts/skills/actives/thro
 		if (this.m.Item != null && !this.m.Item.isNull() && this.m.Item.getAmmo() != 0)
 			return false;
 		return this.skill.isHidden();
-	}
-
-
-	function isUsable()
-	{
-		return !this.Tactical.isActive() || this.skill.isUsable() && this.getAmmo() > 0 && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());
-	}
-
-	function getAmmo()
-	{
-		if (this.m.Item != null && !this.m.Item.isNull())
-			return this.m.Item.getAmmo();
-
-		return 0;
-	}
-
-	function consumeAmmo()
-	{
-		if (this.m.Item != null && !this.m.Item.isNull())
-			this.m.Item.consumeAmmo();
 	}
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
@@ -157,28 +130,6 @@ this.legend_launch_holy_water_skill <- this.inherit("scripts/skills/actives/thro
 		}
 
 		return true;
-	}
-
-	function onUse( _user, _targetTile )
-	{
-		local targetEntity = _targetTile.getEntity();
-
-		if (this.m.IsShowingProjectile && this.m.ProjectileType != 0)
-		{
-			local flip = !this.m.IsProjectileRotated && targetEntity.getPos().X > _user.getPos().X;
-
-			if (_user.getTile().getDistanceTo(targetEntity.getTile()) >= this.Const.Combat.SpawnProjectileMinDist)
-			{
-				this.Tactical.spawnProjectileEffect(this.Const.ProjectileSprite[this.m.ProjectileType], _user.getTile(), targetEntity.getTile(), 1.0, this.m.ProjectileTimeScale, this.m.IsProjectileRotated, flip);
-			}
-		}
-
-		this.consumeAmmo();
-
-		this.Time.scheduleEvent(this.TimeUnit.Real, 200, this.onApplyEffect.bindenv(this), {
-			Skill = this,
-			TargetTile = _targetTile
-		});
 	}
 
 	function onApplyEffect( _data )

@@ -1,7 +1,5 @@
 this.legend_launch_fire_bomb_skill <- this.inherit("scripts/skills/actives/throw_fire_bomb_skill", {
-	m = {
-		Item = null
-		},
+	m = {},
 	function create()
 	{
 		this.throw_fire_bomb_skill.create();
@@ -82,11 +80,6 @@ this.legend_launch_fire_bomb_skill <- this.inherit("scripts/skills/actives/throw
 		return ret;
 	}
 
-	function setItem( _i )
-	{
-		this.m.Item = this.WeakTableRef(_i);
-	}
-
 	function isHidden()
 	{
 		local actor = this.getContainer().getActor();
@@ -105,20 +98,6 @@ this.legend_launch_fire_bomb_skill <- this.inherit("scripts/skills/actives/throw
 	function isUsable()
 	{
 		return !this.Tactical.isActive() || this.skill.isUsable() && this.getAmmo() > 0 && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());
-	}
-
-	function getAmmo()
-	{
-		if (this.m.Item != null && !this.m.Item.isNull())
-			return this.m.Item.getAmmo();
-
-		return 0;
-	}
-
-	function consumeAmmo()
-	{
-		if (this.m.Item != null && !this.m.Item.isNull())
-			this.m.Item.consumeAmmo();
 	}
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )

@@ -1,7 +1,5 @@
 this.legend_launch_acid_flask_skill <- this.inherit("scripts/skills/actives/throw_acid_flask", {
-	m = {
-		ammoCount = 0
-	},
+	m = {},
 	function create()
 	{
 		this.throw_acid_flask.create();
@@ -75,11 +73,6 @@ this.legend_launch_acid_flask_skill <- this.inherit("scripts/skills/actives/thro
 		return ret;
 	}
 
-	function setItem( _i )
-	{
-		this.m.Item = this.WeakTableRef(_i);
-	}
-
 	function isHidden()
 	{
 		local actor = this.getContainer().getActor();
@@ -92,20 +85,6 @@ this.legend_launch_acid_flask_skill <- this.inherit("scripts/skills/actives/thro
 		if (this.m.Item != null && !this.m.Item.isNull() && this.m.Item.getAmmo() != 0)
 			return false;
 		return this.skill.isHidden();
-	}
-
-	function getAmmo()
-	{
-		if (this.m.Item != null && !this.m.Item.isNull())
-			return this.m.Item.getAmmo();
-
-		return 0;
-	}
-
-	function consumeAmmo()
-	{
-		if (this.m.Item != null && !this.m.Item.isNull())
-			this.m.Item.consumeAmmo();
 	}
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )

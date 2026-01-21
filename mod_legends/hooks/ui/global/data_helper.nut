@@ -191,6 +191,7 @@
 	{
 		local result = convertEntityHireInformationToUIData(_entity);
 		result.Talents <- _entity.getHiringTalents();
+		result.perkTree <- _entity.getBackground().getPerkTree();
 		return result;
 	}
 

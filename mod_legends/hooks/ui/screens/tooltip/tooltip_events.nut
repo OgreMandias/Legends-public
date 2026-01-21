@@ -4067,6 +4067,11 @@
 				{
 					id = 2,
 					type = "description",
+					text = "[color=%negative%]Click to view perks[/color]"
+				},
+				{
+					id = 3,
+					type = "text",
 					text = entity.getBackground().getPerkTreeDescription()
 				}
 			];

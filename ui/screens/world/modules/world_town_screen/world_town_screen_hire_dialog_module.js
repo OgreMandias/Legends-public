@@ -46,6 +46,11 @@ var WorldTownScreenHireDialogModule = function(_parent)
 
 	// selected entry
 	this.mSelectedEntry = null;
+
+	// popup dialog to view known perks of a selected recruit
+    this.mKnownPerksPopupDialog = null;
+    this.mPerksModule = null;
+    // this.mDataSource = null;
 };
 
 
@@ -487,6 +492,11 @@ WorldTownScreenHireDialogModule.prototype.updateDetailsPanel = function(_element
 		{
 			var icon = $('<img src="' + Path.GFX + 'ui/icons/known_perks.png' + '"/>');
 			icon.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldTownScreen.HireDialogModule.KnownPerks, entityId: data.ID });
+			var self = this;
+			icon.on('click', function(event) {
+				// Open perks panel popup
+				self.notifyBackendKnownPerksIconClicked();
+			});
 			this.mDetailsPanel.CharacterTraitsContainer.append(icon);
 
 			for(var i = 0; i < data.Traits.length; ++i)
@@ -613,6 +623,7 @@ WorldTownScreenHireDialogModule.prototype.updateDetailsPanel = function(_element
 
 WorldTownScreenHireDialogModule.prototype.updateListEntryValues = function()
 {
+	var self = this;
 	var currentMoney = this.mAssets.getValues().Money;
 	var container = this.mListContainer.findListScrollContainer();
 	container.find('.list-entry').each(function(index, element)
@@ -637,6 +648,10 @@ WorldTownScreenHireDialogModule.prototype.updateListEntryValues = function()
 		{
 			var icon = $('<img src="' + Path.GFX + 'ui/icons/known_perks.png' + '"/>');
 			icon.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldTownScreen.HireDialogModule.KnownPerks, entityId: data.ID});
+			icon.on('click', function(event) {
+				// Open perks panel popup
+				self.notifyBackendKnownPerksIconClicked();
+			});
 			traitsContainer.append(icon);
 
 			for(var i = 0; i < data.Traits.length; ++i)
@@ -657,6 +672,67 @@ WorldTownScreenHireDialogModule.prototype.updateListEntryValues = function()
 			traitsContainer.append(icon);
 		}
 	});
+};
+
+
+// This will be called by backend after the frontend calls `notifyBackendKnownPerksIconClicked`
+WorldTownScreenHireDialogModule.prototype.showKnownPerksPopupDialog = function()
+{
+	var self = this;
+	var bro = null;
+	var perkTree = null;
+
+	if (self.mSelectedEntry !== null)
+	{
+		bro = self.mSelectedEntry.data('entry');
+		if(CharacterScreenIdentifier.Perk.Tree in bro && bro[CharacterScreenIdentifier.Perk.Tree] !== null)
+        {
+            perkTree = bro[CharacterScreenIdentifier.Perk.Tree];
+        }
+        else
+        {
+        	console.error("Unable to open Known Perks popup dialog: no perkTree in selected entry");
+        	return;
+        }
+	}
+	else
+	{
+		console.error("Unable to open Known Perks popup dialog: no selected entry");
+		return;
+	}
+
+	// console.error("Selected brother ID: " + bro['ID']);
+	this.notifyBackendPopupDialogIsVisible(true);
+    this.mKnownPerksPopupDialog = $('.world-town-screen').createPopupDialog('Perks', null, null, 'popup-800x720-dialog');
+
+    this.mKnownPerksPopupDialog.addPopupDialogCancelButton(function (_dialog) {
+    	self.mPerksModule.unregister();
+    	self.mPerksModule = null;
+    	self.mKnownPerksPopupDialog = null;
+    	_dialog.destroyPopupDialog();
+    	self.notifyBackendPopupDialogIsVisible(false);
+    }, false);
+
+    var cancelButton = this.mKnownPerksPopupDialog.findPopupDialogCancelButton();
+    cancelButton.changeButtonText('Close');
+
+    var perksDiv = $('<div class="popup-800x720-dialog-content-container"/>');
+    this.mKnownPerksPopupDialog.addPopupDialogContent(perksDiv);
+
+    // Populate Perks
+    this.mPerksModule = new HireDialogPerksModule(perksDiv, bro);
+    this.mPerksModule.register(perksDiv);
+    this.mPerksModule.loadPerkTreesWithBrotherData(bro);
+}
+
+WorldTownScreenHireDialogModule.prototype.notifyBackendKnownPerksIconClicked = function ()
+{
+	SQ.call(this.mSQHandle, 'onKnownPerksIconClicked');
+};
+
+WorldTownScreenHireDialogModule.prototype.notifyBackendPopupDialogIsVisible = function (_isVisible)
+{
+	SQ.call(this.mSQHandle, 'onPopupDialogIsVisible', _isVisible);
 };
 
 WorldTownScreenHireDialogModule.prototype.bindTooltips = function ()

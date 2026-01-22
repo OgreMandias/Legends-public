@@ -25,6 +25,10 @@
 ::mods_registerCSS("legends/hooks/screens/tactical/tactical_combat_result_screen.css");
 // character
 ::mods_registerJS("legends/hooks/screens/character/character_screen_datasource.js");
+::mods_registerJS("screens/character/modules/independent_perks_screen/independent_perks_screen_module.js");
+::mods_registerCSS("screens/character/modules/independent_perks_screen/independent_perks_screen_module.css");
+::mods_registerJS("screens/character/modules/independent_perks_screen/independent_perks_screen_popup.js");
+::mods_registerCSS("screens/character/modules/independent_perks_screen/independent_perks_screen_popup.css");
 
 // formations
 ::mods_registerJS("screens/character/modules/character_screen_right_panel/character_screen_formations_module.js");

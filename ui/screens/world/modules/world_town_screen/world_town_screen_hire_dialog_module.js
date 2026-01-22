@@ -48,9 +48,7 @@ var WorldTownScreenHireDialogModule = function(_parent)
 	this.mSelectedEntry = null;
 
 	// popup dialog to view known perks of a selected recruit
-    this.mKnownPerksPopupDialog = null;
-    this.mPerksModule = null;
-    // this.mDataSource = null;
+	this.mKnownPerksPopupModule = null;
 };
 
 
@@ -274,6 +272,7 @@ WorldTownScreenHireDialogModule.prototype.destroyDIV = function ()
 	this.mAssets.destroyDIV();
 
 	this.mSelectedEntry = null;
+	this.mKnownPerksPopupModule = null;
 
 	this.mDetailsPanel.HireButton.remove();
 	this.mDetailsPanel.HireButton = null;
@@ -678,6 +677,7 @@ WorldTownScreenHireDialogModule.prototype.updateListEntryValues = function()
 // This will be called by backend after the frontend calls `notifyBackendKnownPerksIconClicked`
 WorldTownScreenHireDialogModule.prototype.showKnownPerksPopupDialog = function()
 {
+	this.mKnownPerksPopupModule = null;
 	var self = this;
 	var bro = null;
 	var perkTree = null;
@@ -702,27 +702,15 @@ WorldTownScreenHireDialogModule.prototype.showKnownPerksPopupDialog = function()
 	}
 
 	// console.error("Selected brother ID: " + bro['ID']);
-	this.notifyBackendPopupDialogIsVisible(true);
-    this.mKnownPerksPopupDialog = $('.world-town-screen').createPopupDialog('Perks', null, null, 'popup-800x720-dialog');
-
-    this.mKnownPerksPopupDialog.addPopupDialogCancelButton(function (_dialog) {
-    	self.mPerksModule.unregister();
-    	self.mPerksModule = null;
-    	self.mKnownPerksPopupDialog = null;
-    	_dialog.destroyPopupDialog();
-    	self.notifyBackendPopupDialogIsVisible(false);
-    }, false);
-
-    var cancelButton = this.mKnownPerksPopupDialog.findPopupDialogCancelButton();
-    cancelButton.changeButtonText('Close');
-
-    var perksDiv = $('<div class="popup-800x720-dialog-content-container"/>');
-    this.mKnownPerksPopupDialog.addPopupDialogContent(perksDiv);
-
-    // Populate Perks
-    this.mPerksModule = new HireDialogPerksModule(perksDiv, bro);
-    this.mPerksModule.register(perksDiv);
-    this.mPerksModule.loadPerkTreesWithBrotherData(bro);
+	this.mKnownPerksPopupModule = new IndependentPerksScreenPopup($('.world-town-screen'), perkTree, bro['ID']);
+	this.mKnownPerksPopupModule.createPopupDialog($('.world-town-screen'),
+		function() {
+			self.notifyBackendPopupDialogIsVisible(true);
+		},
+		function() {
+			self.notifyBackendPopupDialogIsVisible(false);
+		}
+	);
 }
 
 WorldTownScreenHireDialogModule.prototype.notifyBackendKnownPerksIconClicked = function ()

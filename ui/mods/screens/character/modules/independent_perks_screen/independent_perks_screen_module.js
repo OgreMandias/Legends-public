@@ -1,14 +1,13 @@
 /*
  *  Adapted from character_screen_perks_module.js
- *	Used to display perks in the settlement hiring dialog
+ *	Used to display perks independently from the character screen
  */
 "use strict";
 
 
-var HireDialogPerksModule = function(_parent, _bro)
+var IndependentPerksScreenModule = function(_parent)
 {
     this.mParent = _parent;
-    this.mBro = _bro;
 
 	// container
 	this.mContainer = null;
@@ -23,11 +22,10 @@ var HireDialogPerksModule = function(_parent, _bro)
     // perks
     this.mPerkTree = null;
     this.mPerkRows = [];
-
 };
 
 
-HireDialogPerksModule.prototype.createDIV = function (_parentDiv)
+IndependentPerksScreenModule.prototype.createDIV = function (_parentDiv)
 {
 	this.mContainer = $('<div class="independent-perks-module opacity-full"/>');
 	_parentDiv.append(this.mContainer);
@@ -55,7 +53,7 @@ HireDialogPerksModule.prototype.createDIV = function (_parentDiv)
     this.mListScrollContainer.append(this.mLeftColumn);
 };
 
-HireDialogPerksModule.prototype.destroyDIV = function ()
+IndependentPerksScreenModule.prototype.destroyDIV = function ()
 {
     this.mLeftColumn.empty();
     this.mLeftColumn.remove();
@@ -70,12 +68,10 @@ HireDialogPerksModule.prototype.destroyDIV = function ()
     this.mContainer.empty();
     this.mContainer.remove();
     this.mContainer = null;
-
-    this.mBro = null;
 };
 
 
-HireDialogPerksModule.prototype.createPerkTreeDIV = function (_perkTree, _parentDiv)
+IndependentPerksScreenModule.prototype.createPerkTreeDIV = function (_perkTree, _parentDiv)
 {
 	var self = this;
 	var widetree = false;
@@ -142,7 +138,7 @@ HireDialogPerksModule.prototype.createPerkTreeDIV = function (_perkTree, _parent
 };
 
 
-HireDialogPerksModule.prototype.initPerkTree = function (_perkTree, _perksUnlocked)
+IndependentPerksScreenModule.prototype.initPerkTree = function (_perkTree, _perksUnlocked)
 {
 	for (var row = 0; row < _perkTree.length; ++row)
 	{
@@ -168,7 +164,7 @@ HireDialogPerksModule.prototype.initPerkTree = function (_perkTree, _perksUnlock
 	}
 };
 
-HireDialogPerksModule.prototype.setupPerkTreeTooltips = function(_perkTree, _brotherId)
+IndependentPerksScreenModule.prototype.setupPerkTreeTooltips = function(_perkTree, _brotherId)
 {
 	for (var row = 0; row < _perkTree.length; ++row)
 	{
@@ -181,14 +177,14 @@ HireDialogPerksModule.prototype.setupPerkTreeTooltips = function(_perkTree, _bro
 	}
 };
 
-HireDialogPerksModule.prototype.setupPerkTree = function (_perkTree)
+IndependentPerksScreenModule.prototype.setupPerkTree = function (_perkTree)
 {
 	this.mLeftColumn.empty();
 	this.mPerkTree = _perkTree;
     this.createPerkTreeDIV(this.mPerkTree, this.mLeftColumn);
 };
 
-HireDialogPerksModule.prototype.loadPerkTreesWithBrotherData = function (_brother)
+IndependentPerksScreenModule.prototype.loadPerkTreesWithBrotherData = function (_brother)
 {
     this.setupPerkTree(_brother[CharacterScreenIdentifier.Perk.Tree]);
 
@@ -197,26 +193,43 @@ HireDialogPerksModule.prototype.loadPerkTreesWithBrotherData = function (_brothe
         this.initPerkTree(this.mPerkTree, _brother[CharacterScreenIdentifier.Perk.Key]);
     }
 
+    // Note: brother data object in hiring screen uses "ID", whereas in character screen it uses "id"
     if ('ID' in _brother)
     {
         this.setupPerkTreeTooltips(this.mPerkTree, _brother['ID']);
     }
+    else if ('id' in _brother)
+    {
+    	this.setupPerkTreeTooltips(this.mPerkTree, _brother['id']);
+    }
 };
 
-HireDialogPerksModule.prototype.create = function(_parentDiv)
+/**
+ * Load perk tree with perk tree and brother ID only. Does not update to show active perks
+ * 
+ * @param {Object} _perkTree  - Perk Tree data of a character
+ * @param {number} _brotherId - ID of the character to display the perks of
+ */
+IndependentPerksScreenModule.prototype.loadPerkTreesWithPerkTreeAndBrotherID = function (_perkTree, _brotherId)
+{
+    this.setupPerkTree(_perkTree);
+    this.setupPerkTreeTooltips(_perkTree, _brotherId);
+};
+
+IndependentPerksScreenModule.prototype.create = function(_parentDiv)
 {
     this.createDIV(_parentDiv);
 };
 
-HireDialogPerksModule.prototype.destroy = function()
+IndependentPerksScreenModule.prototype.destroy = function()
 {
     this.destroyDIV();
 };
 
 
-HireDialogPerksModule.prototype.register = function (_parentDiv)
+IndependentPerksScreenModule.prototype.register = function (_parentDiv)
 {
-    console.log('HireDialogPerksModule::REGISTER');
+    console.log('IndependentPerksScreenModule::REGISTER');
 
     if (this.mContainer !== null)
     {
@@ -230,9 +243,9 @@ HireDialogPerksModule.prototype.register = function (_parentDiv)
     }
 };
 
-HireDialogPerksModule.prototype.unregister = function ()
+IndependentPerksScreenModule.prototype.unregister = function ()
 {
-    console.log('HireDialogPerksModule::UNREGISTER');
+    console.log('IndependentPerksScreenModule::UNREGISTER');
 
     if (this.mContainer === null)
     {
@@ -243,7 +256,7 @@ HireDialogPerksModule.prototype.unregister = function ()
     this.destroy();
 };
 
-HireDialogPerksModule.prototype.isRegistered = function ()
+IndependentPerksScreenModule.prototype.isRegistered = function ()
 {
 	if (this.mContainer !== null)
 	{
@@ -254,21 +267,21 @@ HireDialogPerksModule.prototype.isRegistered = function ()
 };
 
 
-HireDialogPerksModule.prototype.show = function ()
+IndependentPerksScreenModule.prototype.show = function ()
 {
     // NOTE: (js) HACK which prevents relayouting..
 	this.mContainer.removeClass('opacity-none').addClass('opacity-full');
 	//this.mContainer.removeClass('display-none').addClass('display-block');
 };
 
-HireDialogPerksModule.prototype.hide = function ()
+IndependentPerksScreenModule.prototype.hide = function ()
 {
     // NOTE: (js) HACK which prevents relayouting..
 	this.mContainer.removeClass('opacity-full is-top').addClass('opacity-none');
 	//this.mContainer.removeClass('display-block is-top').addClass('display-none');
 };
 
-HireDialogPerksModule.prototype.isVisible = function ()
+IndependentPerksScreenModule.prototype.isVisible = function ()
 {
 	return this.mContainer.hasClass('opacity-full');
 	//return this.mContainer.hasClass('display-block');

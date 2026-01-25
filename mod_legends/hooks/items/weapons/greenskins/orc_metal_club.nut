@@ -6,8 +6,16 @@
 		this.setVariant(this.Math.rand(0, 2));
 	}
 
+	// ofc the original is misnamed
 	o.updateVariant <- function() {
-		local v = this.getVariant() == 0 ? "" : "_" + this.getVariant();
+		if (this.getVariant() == 0)
+		{
+			this.m.IconLarge = "weapons/melee/orc_club_02_140x70.png";
+			this.m.Icon = "weapons/melee/orc_club_02_70x70.png";
+			this.m.ArmamentIcon = "icon_orc_weapon_07";
+			return;
+		}
+		local v = this.getVariant();
 		this.m.Icon = "weapons/melee/orc_club_02" + v + "_70x70.png";
 		this.m.IconLarge = "weapons/melee/orc_club_02" + v + ".png";
 		this.m.ArmamentIcon = "icon_orc_weapon_07" + v;

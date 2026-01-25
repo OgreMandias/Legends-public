@@ -96,11 +96,11 @@
 		else
 		{
 			this.m.Items.equip(this.Const.World.Common.pickArmor([
-				[2, ::Legends.Armor.Standard.black_and_gold_armor],
-				[2, ::Legends.Armor.Standard.blue_studded_mail_armor],
-				[2, ::Legends.Armor.Standard.golden_scale_armor],
-				[1, ::Legends.Armor.Standard.heraldic_mail_armor],
-				[1, ::Legends.Armor.Standard.brown_coat_of_plates_armor],
+				[2, ::Legends.Armor.Named.black_and_gold_armor],
+				[2, ::Legends.Armor.Named.blue_studded_mail_armor],
+				[2, ::Legends.Armor.Named.golden_scale_armor],
+				[1, ::Legends.Armor.Named.heraldic_mail_armor],
+				[1, ::Legends.Armor.Named.brown_coat_of_plates_armor],
 			]));
 		}
 

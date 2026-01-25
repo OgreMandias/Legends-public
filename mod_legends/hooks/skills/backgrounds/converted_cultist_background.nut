@@ -47,7 +47,9 @@
 				::Const.Perks.FastTree,
 				::Const.Perks.IndestructibleTree
 			],
-			Traits = [],
+			Traits = [
+				this.Const.Perks.DeviousTree
+			],
 			Enemy = [],
 			Class = [
 				::Const.Perks.NinetailsClassTree

@@ -780,12 +780,7 @@ class Defs:
  "title" :  "Warlock Skill Helm",
  "desc" :  "Warlock Skill Helm. Counts as a cultist item."
  },
-{"name" : "fencer_hat"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 225, "con" : 15, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",
- "title" :  "Fencer Hat",
- "desc" :  "The floppy hat of a swordsman."
- },
-
-
+ 
 {"name" : "hood_cloth_round"                     , "layer" : "vanity", "min" : 1, "max" : 2, "value" : 5, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",
  "title" :  "Round Hood Cloth",
  "desc" :  "A simple hood to protect against weather and scratches."

@@ -13,7 +13,6 @@ class Defs:
         {"name": "nach_helm", "min" : 1, "max" : 1, "layer": "vanity"},
         {"name": "mountain_helm", "min" : 1, "max" : 2, "layer": "vanity"},
         {"name": "demon_alp_helm", "min" : 1, "max" : 1, "layer": "vanity"},
-        {"name": "legend_jewelry", "min" : 1, "max" : 1, "layer": "vanity"},
         {"name": "wild_helmet", "min" : 1, "max" : 4, "layer": "helm"}
     ]
 
@@ -780,7 +779,7 @@ class Defs:
  "title" :  "Warlock Skill Helm",
  "desc" :  "Warlock Skill Helm. Counts as a cultist item."
  },
- 
+
 {"name" : "hood_cloth_round"                     , "layer" : "vanity", "min" : 1, "max" : 2, "value" : 5, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",
  "title" :  "Round Hood Cloth",
  "desc" :  "A simple hood to protect against weather and scratches."
@@ -1102,7 +1101,7 @@ class Defs:
  "title" :  "Ancient Lich Crown",
  "desc" :  "Cermonial crown of an ancient Lich Priests."
  },
-{"name" : "fencerhat"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 50, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",
+{"name" : "fencer_hat"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 50, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",
  "title" :  "Fencer Hat",
  "desc" :  "The floppy hat of a swordsman."
  },

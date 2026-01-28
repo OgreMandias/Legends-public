@@ -1191,7 +1191,7 @@ Siphon their lifeforce into yourself!
 The Vala becomes is a master at the intricate and lost art of inscribing signs and sigils.
 
 [color=%passive%][u]Passive:[/u][/color]
-• When taking [color=%perk%]Staff Mastery[/color], the Vala will become able to inscribe shields and weapons.
+• When taking [color=%perk%]Polearm Mastery[/color], the Vala will become able to inscribe shields and weapons.
 
 • When taking [color=%perk%]Nimble[/color] or [color=%perk%]Lithe[/color], the Vala will become able to inscribe Armor and Helmets.
 
@@ -1788,7 +1788,7 @@ Twist and thrust with your staff to deflect blows and intercept strikes.
 [color=%passive%][u]Passive:[/u][/color]
 • Gain [color=%positive%]+12[/color] chance to hit and [color=%positive%]+16[/color] Defense while wielding a pure staves or magic staves.
 
-• When taking [color=%perk%]Staff Mastery[/color] gain [color=%positive%]10%[/color] damage.
+• When taking [color=%perk%]Polearm Mastery[/color] gain [color=%positive%]10%[/color] damage.
 
 • For other weapons classified as a Staff, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% according to your choice in campaign generation.
 

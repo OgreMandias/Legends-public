@@ -11,6 +11,8 @@
 			this.m.Description = "A devastating blow that can be used from behind the frontline, aimed to decapitate the target on the spot. Does more damage to hitpoints, the more the target is already wounded. Killing the target will always decapitate it, if at all possible.";
 			this.m.MinRange = 1;
 			this.m.MaxRange = 2;
+			this.m.ActionPointCost = 6;
+			this.m.FatigueCost = 30;
 		}
 	}
 
@@ -58,6 +60,11 @@
 		if (this.m.ApplyAxeMastery)
 		{
 			this.m.FatigueCostMult = _properties.IsSpecializedInAxes ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+		}
+		else if (this.m.IsScytheDecapitate)
+		{
+			this.m.FatigueCostMult = _properties.IsSpecializedInPolearms ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+			this.m.ActionPointCost = _properties.IsSpecializedInPolearms ? 5 : 6;
 		}
 	}
 });

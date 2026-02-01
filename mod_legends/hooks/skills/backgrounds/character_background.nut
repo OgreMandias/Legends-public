@@ -1384,6 +1384,7 @@
 			local mins = this.getPerkTreeDynamicMins();
 
 			local result  = this.Const.Perks.GetDynamicPerkTree(mins, tree);
+			local result  = this.Const.Perks.GetDynamicPerkTree(mins, tree, false);
 			this.m.CustomPerkTree = result.Tree;
 			a = result.Attributes;
 		}

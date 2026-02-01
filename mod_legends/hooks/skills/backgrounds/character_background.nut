@@ -1383,7 +1383,7 @@
 			local tree = this.m.PerkTreeDynamic == null ? this.m.PerkTreeDynamicBase : this.m.PerkTreeDynamic;
 			local mins = this.getPerkTreeDynamicMins();
 
-			local result  = ::Const.Perks.GetDynamicPerkTree(mins, tree);
+			local result  = ::Const.Perks.GetDynamicPerkTree(mins, tree, false);
 			this.m.CustomPerkTree = result.Tree;
 			a = result.Attributes;
 		}

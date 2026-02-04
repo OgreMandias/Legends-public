@@ -69,7 +69,6 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 
 	function onAdded() {
 		local actor = this.getContainer().getActor();
-		actor.getFlags().set(::Legends.Flags.DualWield, true);
 		::Legends.Actives.grant(this, ::Legends.Active.LegendDoubleSwing);
 
 		// Find and store the offhand attack skill
@@ -88,7 +87,6 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 
 	function onRemoved() {
 		local actor = this.getContainer().getActor();
-		actor.getFlags().set(::Legends.Flags.DualWield, false);
 		::Legends.Actives.remove(actor, ::Legends.Active.LegendDoubleSwing);
 	}
 

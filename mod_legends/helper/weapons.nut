@@ -71,12 +71,18 @@ if (!("Weapons" in ::Legends)) {
 
 // Returns true if dual wielding weapons not covered by Ambidextrous.
 ::Legends.Weapons.isDualWielding <- function (_actor) {
-    return _actor != null && _actor.getFlags().get(::Legends.Flags.DualWield) == true;
+    if (_actor == null) {
+        return false;
+    }
+    local items = _actor.getItems();
+    local mh = items.getItemAtSlot(::Const.ItemSlot.Mainhand);
+    local oh = items.getItemAtSlot(::Const.ItemSlot.Offhand);
+    return mh != null && oh != null;
 }
 
 // Returns true if dual wielding weapons of the given type.
-::Legends.Weapons.isDualWieldingWeaponType <- function (_actor, _type) {
-    if (!::Legends.Weapons.isDualWielding(_actor)) {
+::Legends.Weapons.isDualWieldingWeaponType <- function (_actor, _weaponType) {
+    if (_actor == null) {
         return false;
     }
     local items = _actor.getItems();
@@ -86,6 +92,6 @@ if (!("Weapons" in ::Legends)) {
         && oh != null
         && ("isWeaponType" in mh)
         && ("isWeaponType" in oh)
-        && mh.isWeaponType(_type)
-        && oh.isWeaponType(_type);
+        && mh.isWeaponType(_weaponType)
+        && oh.isWeaponType(_weaponType);
 }

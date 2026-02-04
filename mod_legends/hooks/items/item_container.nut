@@ -197,7 +197,6 @@
 			local ambidextrous = ::Legends.Perks.get(actor, ::Legends.Perk.LegendAmbidextrous);
 			dw = ambidextrous == null || ambidextrous.m.ApplicableItems.find(oh.getID()) == null;
 		}
-		actor.getFlags().set(::Legends.Flags.DualWield, dw);
 		if (dw) {
 			::Legends.Effects.grant(actor, ::Legends.Effect.LegendDualWield);
 			::Legends.Actives.grant(actor, ::Legends.Active.LegendDoubleSwing)

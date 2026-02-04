@@ -3,6 +3,7 @@
 	local create = o.create;
 	o.create = function () {
 		create();
+		this.m.WeaponType = ::Const.Items.WeaponType.Sword;
 		this.m.Categories = "Sword/Cleaver, One-Handed";
 		this.setVariant(this.Math.rand(0, 2));
 	}

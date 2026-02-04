@@ -1,4 +1,10 @@
 ::mods_hookExactClass("items/weapons/legendary/lightbringer_sword", function(o) {
+	local create = o.create;
+	o.create = function() {
+		create();
+		this.m.WeaponType = ::Const.Items.WeaponType.Sword;
+	}
+
 	o.m.SoundOnLightning <- [
 		"sounds/combat/dlc2/legendary_lightning_01.wav",
 		"sounds/combat/dlc2/legendary_lightning_02.wav"

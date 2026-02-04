@@ -456,6 +456,17 @@
 		if (hasSprite("permanent_injury_burned"))
 			getSprite("permanent_injury_burned").Visible = !_appearance.HideHead;
 
+		// Flip the offhand weapon sprite when dual wielding
+		if (hasSprite("shield_icon") && _appearance.Shield.len() != 0) {
+			if (::Legends.Weapons.isDualWielding(this)) {
+				local flip = !this.isAlliedWithPlayer();
+				getSprite("shield_icon").setHorizontalFlipping(!flip);
+				setSpriteOffset("shield_icon", this.createVec(flip ? -40 : 40, 0));
+			} else {
+				setSpriteOffset("shield_icon", this.createVec(0, 0));
+			}
+		}
+
 		onAppearanceChanged(_appearance, _setDirty);
 	}
 

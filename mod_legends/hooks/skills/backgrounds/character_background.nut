@@ -1078,23 +1078,31 @@
 	 */
 	o.extendKnownPerksTooltip <- function(arr)
 	{
-		local text = "";
 		local data = this.getPerkGroups();
+		local last = arr[arr.len() - 1];
+		local iter = "id" in last ? last.id : 3;
 		foreach (category in ::Legends.Perks.PerkGroupCategoriesOrder)
 		{
+			iter++;
 			if (data.CompleteGroupsIDs[category].len() > 0)
 			{
 				arr.push({
-					id = 3,
+					id = iter,
 					type = "text",
 					text = "\n[u]" + category + "[/u]"
 				});
 			}
+
+			local counter = 0;
+
 			foreach (index, group in data.CompleteGroupsIDs[category])
 			{
+				counter++;
 				arr.push({
-					id = 3,
-					type = "text",
+					id = iter,
+					type = "textDualColumn",
+					listCount = counter,
+					listLength = data.CompleteGroupsIDs[category].len(),
 					icon = "Icon" in ::Const.Perks[group] ? ::Const.Perks[group].Icon : "ui/perks/legend_vala_days.png",
 					text = ::Const.Perks[group].Name
 				});

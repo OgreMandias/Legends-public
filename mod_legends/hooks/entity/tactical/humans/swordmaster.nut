@@ -54,6 +54,7 @@
 			{
 				this.m.Items.equip(this.new("scripts/items/" + weapon));
 				::Legends.Perks.grant(this, ::Legends.Perk.LegendAmbidextrous);
+				this.m.Items.updateDualWield();
 			}
 		}
 
@@ -109,6 +110,7 @@
 			{
 				this.m.Items.equip(this.new("scripts/items/" + weapon));
 				::Legends.Perks.grant(this, ::Legends.Perk.LegendAmbidextrous);
+				this.m.Items.updateDualWield();
 			}
 		} else {
 			this.m.Items.equip(this.Const.World.Common.pickArmor(

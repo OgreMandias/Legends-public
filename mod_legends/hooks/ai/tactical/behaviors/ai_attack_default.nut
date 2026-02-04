@@ -1,5 +1,4 @@
-::mods_hookExactClass("ai/tactical/behaviors/ai_attack_default", function(o)
-{
+::mods_hookExactClass("ai/tactical/behaviors/ai_attack_default", function (o) {
 	o.m.PossibleSkills.extend([
 		::Legends.Actives.getID(::Legends.Active.LegendCatBite),
 		::Legends.Actives.getID(::Legends.Active.LegendSkinGhoulClaws),
@@ -24,5 +23,6 @@
 		::Legends.Actives.getID(::Legends.Active.LegendSighthoundBite),
 		::Legends.Actives.getID(::Legends.Active.LegendHeartseeker),
 		::Legends.Actives.getID(::Legends.Active.LegendBucklerBash),
+		::Legends.Actives.getID(::Legends.Active.LegendDoubleSwing),
 	]);
 });

@@ -1529,10 +1529,6 @@
 		}
 		else
 		{
-			if(this.isBackgroundType(this.Const.BackgroundType.ConvertedCultist))
-			{
-				this.m.DailyCost = 4; // Converted cultists only cost 4, this is instead of saving the value for all bros.
-			}
 			local level = this.getContainer().getActor().getLevel();
 			local wage = this.Math.round(this.m.DailyCost * this.m.DailyCostMult);
 			_properties.DailyWage += wage * this.Math.pow(1.1, this.Math.min(10, level - 1));
@@ -1894,17 +1890,7 @@
 	o.Convert <- function()
 	{
 		this.addBackgroundType(this.Const.BackgroundType.ConvertedCultist);
-		local cultistGroup = [
-						[::Legends.Perk.LegendSpecialistCultist],
-						[::Legends.Perk.LegendSpecCultHood],
-						[],
-						[],
-						[::Legends.Perk.LegendPrepareGraze],
-						[::Legends.Perk.LegendSpecCultArmor],
-						[::Legends.Perk.LegendLacerate]
-					];
-
-		this.addPerkGroup(cultistGroup);
+		this.addPerkGroup(this.Const.Perks.NinetailsClassTree.Tree);
 		this.getContainer().getActor().getFlags().add("cultist");
 	}
 

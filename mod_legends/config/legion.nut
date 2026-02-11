@@ -86,5 +86,6 @@
 	"injury.pierced_chest",
 	"injury.pierced_lung",
 	"injury.pierced_side",
-	"injury.pierced_cheek"
+	"injury.pierced_cheek",
+	"injury.sickness_injury"
 ];

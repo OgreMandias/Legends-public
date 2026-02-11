@@ -225,8 +225,16 @@ this.encounter <- {
         	["settlement", nearestTown == null ? "" : nearestTown.getName()]
         ];
 
-	    ::Const.LegendMod.extendVarsWithPronouns(vars, brother1.getGender(), "randombrother");
-	    ::Const.LegendMod.extendVarsWithPronouns(vars, brother2.getGender(), "randombrother2");
+	    ::Const.LegendMod.extendVarsWithPronouns(vars, brother1, "randombrother");
+	    ::Const.LegendMod.extendVarsWithPronouns(vars, brother2, "randombrother2");
+        // Dynamically handle pronouns for any additional actors in an encounter
+        // For this to work, any encounter text using the placeholder pronoun must refer to the actor in the lowercase form of the actor's variable name
+        // For example, the placeholder "%they_somebody%" will get the pronoun for this.m.Somebody
+        foreach (key, value in this.m) {
+            if (::MSU.isKindOf(value, "actor")) {
+                ::Const.LegendMod.extendVarsWithPronouns(vars, value, key.tolower());
+            }
+        }
 
 	    if (_full) {
 		    this.onPrepareVariables(vars);

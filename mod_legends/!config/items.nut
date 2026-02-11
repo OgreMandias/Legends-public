@@ -44,6 +44,10 @@
 	"legend_armor/plate/legend_southern_named_plates"
 ];
 
+::Const.Items.LegendNamedArmorUpgrades <- [
+	"legend_armor/armor_upgrades/legend_pauldron_named_upgrade"
+];
+
 ::Const.Items.LegendNamedHoodLayers <- [
 ];
 

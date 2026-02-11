@@ -1,5 +1,12 @@
 ::mods_hookExactClass("skills/actives/rupture", function(o)
 {
+	local create = o.create;
+	o.create = function()
+	{
+		create();
+		this.m.HitChanceBonus = 5;
+	}
+
 	o.getTooltip = function ()
 	{
 		local tooltip = this.getDefaultTooltip();

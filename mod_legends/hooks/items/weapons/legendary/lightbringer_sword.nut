@@ -1,4 +1,10 @@
 ::mods_hookExactClass("items/weapons/legendary/lightbringer_sword", function(o) {
+	local create = o.create;
+	o.create = function() {
+		create();
+		this.m.WeaponType = ::Const.Items.WeaponType.Sword;
+	}
+
 	o.m.SoundOnLightning <- [
 		"sounds/combat/dlc2/legendary_lightning_01.wav",
 		"sounds/combat/dlc2/legendary_lightning_02.wav"
@@ -68,6 +74,13 @@
 	o.onDamageDealt <- function ( _target, _skill, _hitInfo )
 	{
 		this.weapon.onDamageDealt(_target, _skill, _hitInfo);
+		if (_skill == null || _skill.isGarbage())
+			return;
+		local item = _skill.getItem();
+		if (item == null)
+			return;
+		if (_skill.getItem().getID() != this.getID())
+			return;
 		local selectedTargets = [];
 		local potentialTargets = [];
 		local potentialTiles = [];

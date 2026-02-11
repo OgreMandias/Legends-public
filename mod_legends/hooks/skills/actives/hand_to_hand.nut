@@ -39,29 +39,34 @@
 		return tooltip;
 	}
 
-	o.isUsable = function () // If ambidextrous & offhand free, or mainhand free, or disarmed
+	o.isUsable = function () // If ambidextrous & offhand free, or mainhand free, or disarmed, or net offhand
 	{
+		local actor = this.getContainer().getActor();
 		local items = this.getContainer().getActor().getItems();
 		local off = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
 		local main = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
-
-		if (::Legends.Perks.has(this, ::Legends.Perk.LegendAmbidextrous) && off == null && !items.hasBlockedSlot(this.Const.ItemSlot.Offhand) && this.skill.isUsable)
-		{
+		local hasNet = actor.getCurrentProperties().IsSpecializedInNets && off != null && off.getID().find("throwing_net") != null;
+		if (::Legends.Perks.has(this, ::Legends.Perk.LegendAmbidextrous) && hasNet)
 			return true;
-		}
+		
+		if (::Legends.Perks.has(this, ::Legends.Perk.LegendAmbidextrous) && off == null && !items.hasBlockedSlot(this.Const.ItemSlot.Offhand) && this.skill.isUsable)
+			return true;
 
 		return (main == null || this.getContainer().hasEffect(::Legends.Effect.Disarmed)) && this.skill.isUsable();
 	}
 
 	o.isHidden = function ()
 	{
+		local actor = this.getContainer().getActor();
 		local items = this.getContainer().getActor().getItems();
 		local off = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
 		local main = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		if (::Legends.Perks.has(this, ::Legends.Perk.LegendAmbidextrous) && off == null && !items.hasBlockedSlot(this.Const.ItemSlot.Offhand)) // if ambidextrous && offhand free, then NOT hidden
-		{
+		local hasNet = actor.getCurrentProperties().IsSpecializedInNets && off != null && off.getID().find("throwing_net") != null;
+		if (::Legends.Perks.has(this, ::Legends.Perk.LegendAmbidextrous) && hasNet)
 			return false;
-		}
+
+		if (::Legends.Perks.has(this, ::Legends.Perk.LegendAmbidextrous) && off == null && !items.hasBlockedSlot(this.Const.ItemSlot.Offhand)) // if ambidextrous && offhand free or with net, then NOT hidden
+			return false;
 
 		return (main != null && !this.getContainer().hasEffect(::Legends.Effect.Disarmed)) || this.skill.isHidden() || this.m.Container.getActor().isStabled();
 	}

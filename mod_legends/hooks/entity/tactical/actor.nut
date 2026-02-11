@@ -285,14 +285,30 @@
 		{
 			local skill = this.m.Skills.getAttackOfOpportunity();
 
-			if (skill != null)
-			{
+			if (skill != null) {
 				local info = {
 					User = this,
 					Skill = skill,
 					TargetTile = _attacker.getTile()
 				};
 				this.Time.scheduleEvent(this.TimeUnit.Virtual, ::Const.Combat.RiposteDelay * _delayMultiplier, this.onRiposte.bindenv(this), info);
+
+				if (::Legends.Perks.has(this, ::Legends.Perk.SpecSword)
+					&& ::Legends.Weapons.isDualWieldingWeaponType(this, ::Const.Items.WeaponType.Sword))
+				{
+					local oh = this.getItems().getItemAtSlot(::Const.ItemSlot.Offhand);
+					if (oh != null) {
+						local ohSkill = ::Legends.Weapons.findPrimaryAttackSkill(this, oh);
+						if (ohSkill != null) {
+							local ohInfo = {
+								User = this,
+								Skill = ohSkill,
+								TargetTile = _attacker.getTile()
+							};
+							this.Time.scheduleEvent(this.TimeUnit.Virtual, ::Const.Combat.RiposteDelay * _delayMultiplier, this.onRiposte.bindenv(this), ohInfo);
+						}
+					}
+				}
 			}
 
 			this.getFlags().set("PerformedRiposte", true);
@@ -609,31 +625,5 @@
 			onDeath(null, _skill, _tile, _fatalityType);
 		else
 			onDeath(_killer, _skill, _tile, _fatalityType);
-
-
-		// Drops net if net flags are met. It should be used in dropLoot to free space here
-		if (this.getFlags().get("DropNet")){
-			local net;
-
-			if (this.getFlags().get("IsReinforcedNet"))
-				net = this.new("scripts/items/tools/reinforced_throwing_net");
-			else
-				net = this.new("scripts/items/tools/throwing_net");
-
-			if (!this.getFlags().get("IsByNetCasting")){
-				net.m.Ammo = 0;
-				net.updateAmmo();
-			}
-
-			if (net != null){
-				if (net.drop(this.getTile())) {// drops the net on the tile
-					::Tactical.Entities.addNetTiles(this.getTile());
-				}
-			}
-
-			this.getFlags().remove("DropNet");
-   			this.getFlags().remove("IsReinforcedNet");
-    		this.getFlags().remove("IsByNetCasting");
-		}
 	}
 });

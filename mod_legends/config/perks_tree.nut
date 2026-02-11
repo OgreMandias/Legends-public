@@ -159,7 +159,7 @@ local VanillaTree = [
 };
 
 
-::Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
+::Const.Perks.GetDynamicPerkTree <- function (_mins, _map, _allowRearrangement = true)
 {
 	// _mins = {
 	// 	WeaponTrees = 6,
@@ -221,9 +221,9 @@ local VanillaTree = [
 		}
 	}
 	if ("Profession" in _map) {
-		foreach (p in _map.Class)
+		foreach (p in _map.Profession)
 		{
-			_localMap.Class.push(p);
+			_localMap.Profession.push(p);
 		}
 	}
 	if ("Magic" in _map) {
@@ -395,7 +395,7 @@ local VanillaTree = [
 
 				foreach(j, p in row)
 				{
-					if (_totals[i] >= 13)
+					if (_totals[i] >= 13 && _allowRearrangement)
 					{
 						_overflows[i].push(p);
 						continue;

@@ -1084,7 +1084,7 @@
 			this.getContainer().getActor().getTitle()
 		]);
 
-		this.Const.LegendMod.extendVarsWithPronouns(vars, this.getContainer().getActor().getGender());
+		::Const.LegendMod.extendVarsWithPronouns(vars, this.getContainer().getActor());
 
 		this.m.Description = this.buildTextFromTemplate(this.m.RawDescription, vars);
 	}

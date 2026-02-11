@@ -78,12 +78,14 @@
 
 	o.canDoubleGrip = function ()
 	{
+		local actor = this.getContainer().getActor();
 		local missinghand = this.m.Container.getSkillByID("injury.missing_hand");
 		local newhand = ::Legends.Traits.get(this, ::Legends.Trait.LegendProstheticHand);
-		local main = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		local off = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
+		local main = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		local off = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
 		local hasXbow = off != null && ::MSU.String.endsWith(off.getID(), "_hand_crossbow");
-		return (missinghand == null || newhand != null) && main != null && (off == null || hasXbow) && main.isDoubleGrippable();
+		local hasNet = off != null && ::MSU.String.endsWith(off.getID(), "_net") && actor.getCurrentProperties().IsSpecializedInNets;
+		return (missinghand == null || newhand != null) && main != null && (off == null || hasXbow || hasNet) && main.isDoubleGrippable();
 	}
 
 	local onUpdate = o.onUpdate;

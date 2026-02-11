@@ -97,7 +97,7 @@ this.legend_bros_cure_traumatized_encounter <- this.inherit("scripts/encounters/
 		});
 		this.m.Screens.push({
 			ID = "Monk",
-			Text = "[img]gfx/ui/events/event_40.png[/img]You leave to tend to your tasks while the holy %person_monk% talks to %traumatized%. When you return to check on them the camp fire is already ablaze and the two are deep in conversation. Well more like a monologue because it\'s just %monk% listening with sympathy and fear. The crackle of the fire masks the whispered words while %person_monk%\'s tired eyes keep intently on the victim. You\'re curiosity almost gets the better of you and you want to listen in, but ultimately decide it\'s better to not interfere. Over the next few days %traumatized% is looking chipper, a spring to their step that was there before the incident. On the other hand the holy %person_monk% seems drained and devoid of life. It\'s almost as if the positions are exchanged.",
+			Text = "[img]gfx/ui/events/event_40.png[/img]You leave to tend to your tasks while the holy %person_monk% talks to %traumatized%. When you return to check on them the camp fire is already ablaze and the two are deep in conversation. Well more like a monologue because it\'s just %monk% listening with sympathy and fear. The crackle of the fire masks the whispered words while %person_monk%\'s tired eyes keep intently on the victim. Your curiosity almost gets the better of you and you want to listen in, but ultimately decide it\'s better to not interfere. Over the next few days %traumatized% is looking chipper, a spring to their step that was there before the incident. On the other hand the holy %person_monk% seems drained and devoid of life. It\'s almost as if the positions are exchanged.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -203,16 +203,6 @@ this.legend_bros_cure_traumatized_encounter <- this.inherit("scripts/encounters/
 			"traumatized",
 			this.m.Traumatized.getName()
 		]);
-		this.Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Traumatized.getGender(), "traumatized");
-		if (this.m.Monk != null) {
-			this.Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Monk.getGender(), "monk");
-		}
-		if (this.m.Dervish != null) {
-			this.Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Dervish.getGender(), "dervish");
-		}
-		if (this.m.Drunkard != null) {
-			this.Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Drunkard.getGender(), "drunkard");
-		}
 	}
 
 	function isValid(_camp) {

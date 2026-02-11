@@ -1003,6 +1003,8 @@ CampScreenCommanderDialogModule.prototype.onSelectButtonInThisArray = function(_
 	});
 }
 
+// Note: this function gets called generically from the backend via the `onConfigureButtonClicked` function in camp_commander_dialog_module.nut
+// (That's why searching for usages of "showHunterPopupDialog" returns no results)
 CampScreenCommanderDialogModule.prototype.showHunterPopupDialog = function( _data )
 {
     var self = this;

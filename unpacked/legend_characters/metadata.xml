@@ -37,14 +37,14 @@
 	<sprite id="bust_head_african_06_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F699A" width="131" height="125" img="entity\heads\bust_head_african_06_dead.png" left="-44" right="14" top="-56" bottom="0" />
 	<sprite id="bust_head_african_07" offsetY="35" ic="FF5877A6" width="104" height="142" img="entity\heads\bust_head_african_07.png" left="-21" right="36" top="-25" bottom="55" />
 	<sprite id="bust_head_african_07_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F699A" width="131" height="125" img="entity\heads\bust_head_african_07_dead.png" left="-44" right="14" top="-56" bottom="0" />
-	<!-- <sprite id="bust_head_african_08" offsetY="35" ic="FF5877A6" width="104" height="142" img="entity\heads\bust_head_african_08.png" left="-20" right="30" top="-21" bottom="47" />
-	<sprite id="bust_head_african_08_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F699A" width="131" height="125" img="entity\heads\bust_head_african_08_dead.png" left="-44" right="14" top="-56" bottom="0" />
-	<sprite id="bust_head_african_09" offsetY="35" ic="FF5877A6" width="104" height="142" img="entity\heads\bust_head_african_09.png" left="-20" right="30" top="-21" bottom="47" />
-	<sprite id="bust_head_african_09_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F699A" width="131" height="125" img="entity\heads\bust_head_african_09_dead.png" left="-44" right="14" top="-56" bottom="0" />
-	<sprite id="bust_head_african_10" offsetY="35" ic="FF5877A6" width="104" height="142" img="entity\heads\bust_head_african_10.png" left="-20" right="30" top="-21" bottom="47" />
-	<sprite id="bust_head_african_10_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F699A" width="131" height="125" img="entity\heads\bust_head_african_10_dead.png" left="-44" right="14" top="-56" bottom="0" />
-	<sprite id="bust_head_african_11" offsetY="35" ic="FF5877A6" width="104" height="142" img="entity\heads\bust_head_african_11.png" left="-20" right="30" top="-21" bottom="47" />
-	<sprite id="bust_head_african_11_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F699A" width="131" height="125" img="entity\heads\bust_head_african_11_dead.png" left="-44" right="14" top="-56" bottom="0" /> -->
+	<sprite id="bust_head_african_08" offsetY="35" ic="FF5877A6" width="104" height="142" img="entity\heads\bust_head_african_08.png" left="-22" right="37" top="-26" bottom="55" />
+	<sprite id="bust_head_african_08_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F699A" width="131" height="125" img="entity\heads\bust_head_african_08_dead.png" left="-54" right="20" top="-59" bottom="3" />
+	<sprite id="bust_head_african_09" offsetY="35" ic="FF5877A6" width="104" height="142" img="entity\heads\bust_head_african_09.png" left="-23" right="37" top="-25" bottom="56" />
+	<sprite id="bust_head_african_09_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F699A" width="131" height="125" img="entity\heads\bust_head_african_09_dead.png" left="-54" right="20" top="-59" bottom="3" />
+	<sprite id="bust_head_african_10" offsetY="35" ic="FF5877A6" width="104" height="142" img="entity\heads\bust_head_african_10.png" left="-24" right="37" top="-30" bottom="57" />
+	<sprite id="bust_head_african_10_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F699A" width="131" height="125" img="entity\heads\bust_head_african_10_dead.png" left="-54" right="20" top="-59" bottom="3" />
+	<sprite id="bust_head_african_11" offsetY="35" ic="FF5877A6" width="104" height="142" img="entity\heads\bust_head_african_11.png" left="-24" right="37" top="-29" bottom="56" />
+	<sprite id="bust_head_african_11_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F699A" width="131" height="125" img="entity\heads\bust_head_african_11_dead.png" left="-54" right="20" top="-59" bottom="3" />
 
 	<sprite id="bust_head_34_orc" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\bust_head_34_orc.png" left="-42" right="40" top="-25" bottom="39" />
 	<sprite id="bust_head_35_orc" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\bust_head_35_orc.png" left="-38" right="36" top="-20" bottom="40" />
@@ -146,11 +146,11 @@
 	<sprite id="hair_black_26_dead" offsetX="6" offsetY="10" f="64F2" f1="-15" f2="-15" ic="FF375C75" width="131" height="125" img="entity\heads\hair_black_26_dead.png"  left="-49" right="15" top="-61" bottom="-7" />
 	<sprite id="hair_grey_26_dead" offsetX="6" offsetY="10" f="64F2" f1="-15" f2="-15" ic="FF375C75" width="131" height="125" img="entity\heads\hair_grey_26_dead.png"  left="-49" right="15" top="-61" bottom="-7" />
 
-	<sprite id="hair_blonde_27" offsetY="35" ic="FF365A74" width="104" height="142" img="entity\heads\hair_blonde_27.png" left="-25" right="33" top="-23" bottom="45" />
-	<sprite id="hair_brown_27" offsetY="35" ic="FF365A74" width="104" height="142" img="entity\heads\hair_brown_27.png" left="-25" right="33" top="-23" bottom="45" />
-	<sprite id="hair_red_27" offsetY="35" ic="FF365A74" width="104" height="142" img="entity\heads\hair_red_27.png" left="-25" right="33" top="-23" bottom="45" />
-	<sprite id="hair_black_27" offsetY="35" ic="FF365A74" width="104" height="142" img="entity\heads\hair_black_27.png" left="-25" right="33" top="-23" bottom="45" />
-	<sprite id="hair_grey_27" offsetY="35" ic="FF365A74" width="104" height="142" img="entity\heads\hair_grey_27.png" left="-25" right="33" top="-23" bottom="45" />
+	<sprite id="hair_blonde_27" offsetY="35" ic="FF365A74" width="104" height="142" img="entity\heads\hair_blonde_27.png" left="-21" right="31" top="-20" bottom="48" />
+	<sprite id="hair_brown_27" offsetY="35" ic="FF365A74" width="104" height="142" img="entity\heads\hair_brown_27.png" left="-21" right="31" top="-20" bottom="48" />
+	<sprite id="hair_red_27" offsetY="35" ic="FF365A74" width="104" height="142" img="entity\heads\hair_red_27.png" left="-21" right="31" top="-20" bottom="48" />
+	<sprite id="hair_black_27" offsetY="35" ic="FF365A74" width="104" height="142" img="entity\heads\hair_black_27.png" left="-21" right="31" top="-20" bottom="48" />
+	<sprite id="hair_grey_27" offsetY="35" ic="FF365A74" width="104" height="142" img="entity\heads\hair_grey_27.png" left="-21" right="31" top="-20" bottom="48" />
 	<sprite id="hair_blonde_27_dead" offsetX="6" offsetY="10" f="64F2" f1="-15" f2="-15" ic="FF375C75" width="131" height="125" img="entity\heads\hair_blonde_27_dead.png" left="-49" right="23" top="-61" bottom="1" />
 	<sprite id="hair_brown_27_dead" offsetX="6" offsetY="10" f="64F2" f1="-15" f2="-15" ic="FF375C75" width="131" height="125" img="entity\heads\hair_brown_27_dead.png" left="-49" right="23" top="-61" bottom="1" />
 	<sprite id="hair_red_27_dead" offsetX="6" offsetY="10" f="64F2" f1="-15" f2="-15" ic="FF375C75" width="131" height="125" img="entity\heads\hair_red_27_dead.png" left="-49" right="23" top="-61" bottom="1" />

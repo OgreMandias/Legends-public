@@ -21,6 +21,7 @@
 	"Do the job. Survive. Get paid.",
 
 	//General - non specific helpful advice
+	"All of the tips can be viewed by clicking the question mark icon in your camp.",
 	"You can hide Armor and Helmet layers by shift-clicking on the relevant layer.",
 	"Shields can be destroyed using axes and some two-handed weapons.",
 	"Different types of shields can be better suited against melee or ranged attacks.",
@@ -146,15 +147,16 @@
 
 
 	//Perks - perk specific tips
+	"\'Duelist\' has been changed in Legends. Check the \'Double Grip\' tooltip.",
 	"The \'Scholar\' perk can allow characters to increase the amount of loot they find after battle.",
 	"Unarmed is good at tiring out enemies who have roughly similar or lower total stamina than you, and puts them at a disadvantage.",
 	"Perks are not exclusive to the group they came with.",
 	"Those with the \'Potion Brewer\' perk can craft potions while gathering, including potions of knowledge.",
 	"The \'Steel Brow\' perk can turn round-ending stuns into mere dazes.",
 	"The \'Perfect Focus\' perk is a good way to deal a lot of damage quickly, for a price.",
-	"The \'Nimble\' perk only protects hitpoints, not armour.",
-	"The \'Ballistics\' skill can greatly increase your chance to hit at far ranges",
-	"Learn the \'Rotation\' or \'Footwork\' perks for additional mobility in battle.",
+	"The \'Nimble\' perk only protects hitpoints, not armour. Unless you also pick up \'Relentless\'.",
+	"The \'Ballistics\' skill can greatly increase your chance to hit at far ranges.",
+	"Learn the \'Tactical Maneuvers\' perks for additional mobility in battle.",
 	"The \'Lone Wolf\' perk is not affected by nearby dogs or allies that are not part of your company.",
 	"The \'Fast Adaptation\' perk reduces variance of randomness.",
 	"A character dedicated to unarmed combat may lack damage, but they make up for it with utility.",

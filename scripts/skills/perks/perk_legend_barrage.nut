@@ -28,16 +28,18 @@ this.perk_legend_barrage <- this.inherit("scripts/skills/skill", {
 
 		}
 
-		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.LegendSlingHeavyStone) && headshot && !_targetEntity.getCurrentProperties().IsImmuneToStun)
+		if (!headshot)
+			return;
+
+		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.LegendSlingHeavyStone) && !_targetEntity.getCurrentProperties().IsImmuneToStun)
 		{
 			this.grantEffect(::Legends.Effect.Stunned, "stunned", _targetEntity, user)
 		}
 
-		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.FireHandgonne) && headshot)
+		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.FireHandgonne))
 		{
 			this.grantEffect(::Legends.Effect.Shellshocked, "shellshocked", _targetEntity, user)
 		}
-
 	}
 
 	function grantEffect(_effect, _string, _targetEntity, _user)

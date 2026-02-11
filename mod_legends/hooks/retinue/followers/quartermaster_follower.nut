@@ -34,5 +34,9 @@
 	o.onEvaluate = function () {
 		this.follower.onEvaluate();
 	}
+
+	o.onDismiss <- function () {
+		::Legends.Stash.resize();
+	}
 });
 

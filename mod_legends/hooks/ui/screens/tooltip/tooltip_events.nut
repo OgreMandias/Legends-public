@@ -708,7 +708,7 @@
 				player.getTitle()
 			]
 		];
-		this.Const.LegendMod.extendVarsWithPronouns(vars, player.getGender());
+		::Const.LegendMod.extendVarsWithPronouns(vars, player);
 		local tooltip = this.buildTextFromTemplate(perk.Tooltip, vars);
 
 		if (perk != null)

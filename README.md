@@ -69,7 +69,7 @@
 - *Overhype* - for allowing modding, answering our bugs, and for reviewing our design document and giving us the ok to go ahead with all planned features
 
 ## Legends Discord
-If you enjoy chatting about Battle Brothers and the Legends Mod, receive fast bug support and have access to our collection of submods - join the [Official Legends Mod Discord](https://discord.gg/a9MmzEDhE8).
+If you enjoy chatting about Battle Brothers and the Legends Mod, receive fast bug support and have access to our collection of submods - join the [Official Legends Mod Discord](https://discord.gg/yEQEUqsbVX).
 
 ## Contributions
 If you'd like to contribute to the project, make sure you read and comply with our [Contributor License Agreement](CLA.md).

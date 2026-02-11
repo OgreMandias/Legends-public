@@ -81,6 +81,48 @@
 		return (this.m.AmmoMax == 0 || isPlayer || this.m.Ammo > 0 && this.getCurrentSlotType() != this.Const.ItemSlot.Bag || this.m.Ammo > 0 && this.m.Ammo < this.m.AmmoMax && this.getCurrentSlotType() == this.Const.ItemSlot.Bag) && (this.m.Condition >= 12 || this.m.ConditionMax <= 1 || isLucky || isBlacksmithed) && (isPlayer || isLucky || this.Math.rand(1, 100) <= 90);
 	}
 
+	o.updateAppearance = function () {
+		if (!this.isEquipped()) {
+			return;
+		}
+
+		local changed = false;
+
+		local currentSlot = this.getCurrentSlotType();
+		local appearance = this.getContainer().getAppearance();
+		if (this.m.ShowArmamentIcon) {
+			if (currentSlot == this.Const.ItemSlot.Offhand) {
+				changed = appearance.Shield != this.m.ArmamentIcon;
+				appearance.Shield = this.m.ArmamentIcon;
+			} else {
+				changed = appearance.Weapon != this.m.ArmamentIcon;
+				appearance.Weapon = this.m.ArmamentIcon;
+				appearance.TwoHanded = this.m.BlockedSlotType != null;
+			}
+		} else {
+			if (currentSlot == this.Const.ItemSlot.Offhand) {
+				changed = appearance.Shield != "";
+				appearance.Shield = "";
+			} else {
+				changed = appearance.Weapon != "";
+				appearance.Weapon = "";
+				appearance.TwoHanded = false;
+			}
+		}
+
+		if (changed) {
+			this.getContainer().updateAppearance();
+		}
+
+		if (currentSlot == this.Const.ItemSlot.Offhand && this.isItemType(this.Const.Items.ItemType.Weapon)) {
+			local actor = this.getContainer().getActor();
+			if (actor != null && actor.hasSprite("shield_icon")) {
+				actor.getSprite("shield_icon").setHorizontalFlipping(true);
+				actor.setSpriteOffset("shield_icon", this.createVec(40, 0));
+			}
+		}
+	}
+
 	o.onEquip = function ()
 	{
 		this.item.onEquip();
@@ -100,6 +142,50 @@
 		if (this.m.Condition == this.m.ConditionMax && !this.isKindOf(this.getContainer().getActor().get(), "player"))
 		{
 			this.m.Condition = this.Math.rand(1, this.Math.max(1, this.m.ConditionMax - 2)) * 1.0;
+		}
+	}
+
+	o.onUnequip = function () {
+		local currentSlot = this.getCurrentSlotType();
+		local appearance = this.getContainer().getAppearance();
+
+		this.m.IsBloodied = false;
+		this.item.onUnequip();
+
+		if (this.m.ShowArmamentIcon) {
+			if (currentSlot == this.Const.ItemSlot.Offhand) {
+				appearance.Shield = "";
+			} else {
+				appearance.Weapon = "";
+				appearance.TwoHanded = false;
+			}
+		}
+
+		this.getContainer().updateAppearance();
+	}
+
+	o.setBloodied = function (_isBloodied) {
+		if (_isBloodied == this.m.IsBloodied) {
+			return;
+		}
+
+		this.m.IsBloodied = _isBloodied;
+
+		if (this.m.ShowArmamentIcon) {
+			local currentSlot = this.getCurrentSlotType();
+			local brushName = _isBloodied
+				&& this.doesBrushExist(this.m.ArmamentIcon + "_bloodied")
+				? this.m.ArmamentIcon + "_bloodied"
+				: this.m.ArmamentIcon;
+
+			local appearance = this.getContainer().getAppearance();
+			if (currentSlot == this.Const.ItemSlot.Offhand) {
+				appearance.Shield = brushName;
+			} else {
+				appearance.Weapon = brushName;
+			}
+
+			this.getContainer().updateAppearance();
 		}
 	}
 

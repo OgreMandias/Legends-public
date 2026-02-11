@@ -46,6 +46,9 @@ this.perk_legend_bloodbath <- this.inherit("scripts/skills/skill", {
 		if (!::Tactical.isActive())
 			return 0;
 
+		if ("State" in ::Tactical && ::Tactical.State.isBattleEnded())
+			return 0;
+
 		if (!("Entities" in ::Tactical))
 			return 0;
 
@@ -56,13 +59,20 @@ this.perk_legend_bloodbath <- this.inherit("scripts/skills/skill", {
 		if (::Legends.S.skillEntityAliveCheck(myself))
 			return 0;
 
+		if (!myself.isPlacedOnMap())
+			return 0;
+
 		local myTile = myself.getTile();
 		if (myTile == null)
 			return 0;
 
 		local bleedingEnemies = ::Tactical.Entities.getAllInstancesAsArray()
 			.filter(function (_, _actor) {
+				if (!::MSU.isKindOf(_actor, "actor"))
+					return false;
 				if (::Legends.S.skillEntityAliveCheck(_actor))
+					return false;
+				if (!_actor.isPlacedOnMap())
 					return false;
 				if (_actor.isAlliedWith(myself))
 					return false;
@@ -78,8 +88,6 @@ this.perk_legend_bloodbath <- this.inherit("scripts/skills/skill", {
 
 		local bonus = 0;
 		foreach (enemy in bleedingEnemies) {
-			if (::Legends.S.skillEntityAliveCheck(enemy))
-				continue;
 			bonus += enemy.getTile().getDistanceTo(myTile) > 1 ? 1 : 2;
 		}
 		return bonus;

@@ -109,7 +109,7 @@ if (!("LegendMod" in ::Const))
 	::Const.EntityType.LegendFencer
 ];
 
-::Const.LegenndMod.FavoriteOutlaw <- [
+::Const.LegendMod.FavoriteOutlaw <- [
 	::Const.EntityType.Warhound,
 	::Const.EntityType.BarbarianThrall,
 	::Const.EntityType.BarbarianMarauder,

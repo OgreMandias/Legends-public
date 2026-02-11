@@ -28,7 +28,7 @@ if (!("Perks" in ::Const))
 	],
 	Tree = [
 		[],
-		[::Legends.Perk.LegendNetRepair],
+		[::Legends.Perk.LegendNetRepair, ::Legends.Perk.QuickHands],
 		[::Legends.Perk.LegendNetCasting],
 		[::Legends.Perk.LegendMasteryNets],
 		[], // As of 18.2.0, LegendEscapeArtist is no longer a player perk; LegendMasteryNets achieves the same effects
@@ -116,7 +116,7 @@ ID = "TailorClassTree",
 		[],
 		[],
 		[],
-		[::Legends.Perk.LegendCarnage],
+		[],
 		[],
 		[]
 	]

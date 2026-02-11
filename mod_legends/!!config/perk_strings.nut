@@ -168,6 +168,7 @@
 ::Const.Strings.PerkName.LegendMasteryNets <- "Net Mastery";
 ::Const.Strings.PerkName.LegendMasterySlings <- "Sling Mastery";
 ::Const.Strings.PerkName.LegendSpecUnarmed <- "Unarmed Mastery";
+::Const.Strings.PerkName.LegendSpecDualWield <- "Dual Wield Mastery";
 
 //VALA SKILLS - skills used only be the Vala
 ::Const.Strings.PerkName.LegendValaChantMastery <- "Chanting Mastery";
@@ -347,23 +348,23 @@ Hold your ground!
 Early bird gets the worm!
 
 [color=%passive%][u]Passive:[/u][/color]
-• Gain [color=%positive%]20%[/color] Damage and [color=%positive%]+50%[/color] Threshold to inflict injury on enemies with full hitpoints.
+• Gain [color=%positive%]20%[/color] Damage and Lowers the threshold to inflict [color=%status%]Injuries[/color] by [color=%negative%]50%[/color] for both melee and ranged attacks on enemies with full hitpoints.
 ";
 
 ::Const.Strings.PerkDescription.LegendBallistics <- @"
 Through familiarity and training with your weapon, you know just how your projectiles will fly.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Up to [color=%positive%]+20%[/color] of any damage ignores armor depending on the distance to the target, with the highest bonus in melee and lowest at maximum range for [color=%skill%]Shoot Bolt[/color]. For [color=%skill%]Shoot Heavy Bolt[/color] and [color=%skill%]Shoot Stake[/color] the bonus goes up to [color=%positive%]+30%[/color] instead.
+• Crossbows gain a scaling bonus to armor penetration depending on the distance to the target with the highest bonus in melee and the lowest at maximum range for the relevant skill. [color=%skill%]Shoot Bolt[/color] gains up to 20%, while [color=%skill%]Shoot Heavy Bolt[/color] and [color=%skill%]Shoot Stake[/color] gain up to [color=%positive%]+30%[/color] instead.
 
-• The range penalty to hitchance is reduced by [color=%negative%]-2[/color] per tile.
+• The range penalty to hitchance is reduced by [color=%negative%]-2[/color] per tile for all ranged weapons.
 ";
 
 ::Const.Strings.PerkDescription.LegendBackswing <- @"
 Use your built up inertia to wreak havoc on the second swing.
 
 [color=%passive%][u]Passive:[/u][/color]
-• After performing [color=%skill%]Round Swing[/color], [color=%skill%]Swing[/color], [color=%skill%]Thresh[/color], [color=%skill%]Reap[/color], [color=%skill%]Castigate[/color] and [color=%skill%]Shatter[/color] you can perform a followup for [color=%negative%]-50%[/color] Fatigue and Action Points. [color=%skill%]Swing[/color] Damage is reduced by [color=%negative%]-25%[/color] and for the rest of the skills by [color=%negative%]-50%[/color].
+• After performing [color=%skill%]Round Swing[/color], [color=%skill%]Swing[/color], [color=%skill%]Thresh[/color], [color=%skill%]Reap[/color], [color=%skill%]Castigate[/color], [color=%skill%]Shatter[/color] and [color=%skill%]Double Swing[/color] you can perform a followup for [color=%negative%]-50%[/color] Fatigue and Action Points. [color=%skill%]Swing[/color] Damage is reduced by [color=%negative%]-25%[/color] and for the rest of the skills by [color=%negative%]-50%[/color].
 
 • Moving, ending your turn or waiting will all remove this effect.
 ";
@@ -408,7 +409,7 @@ Take a deep breath, then get to work.
 There's wolves, bears, nachzehrers, and you. All beings of vicious slaughter.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Gain [color=%positive%]+10%[/color] chance to hit and damage for all Melee area of effect attacks.
+• [color=%positive%]50%[/color] of the skill's fatigue cost is translated to Damage and Chance to hit. This accounts for any fatigue reduction or increase.
 ";
 
 ::Const.Strings.PerkDescription.LegendImmovableObject <- @"
@@ -429,6 +430,8 @@ Master the art of following up for devastating effects.
 • After landing a hit, the next attack this turn does [color=%positive%]25%[/color] overall damage and it costs [color=%negative%]20%[/color] less Fatigue than normal.
 
 • If the attack misses, the effect is lost.
+
+• When [color=%status%]Dual Wielding[/color] daggers, if the offhand attack successfully hits, the next mainhand attack costs [color=%positive%]-1[/color] AP and deals [color=%positive%]+10%[/color] damage.
 ";
 
 ::Const.Strings.PerkDescription.LegendVengeance <- @"
@@ -1382,6 +1385,8 @@ Lets hope your enemies like fighting in the shade.
 • [color=%skill%]Fire Handgonne[/color] will apply [color=%skill%]Shellshocked[/color] on headshots.
 
 • [color=%skill%]Sling Heavy Stone[/color] will stun on headshots.
+
+• [color=%skill%]Shoot Bolt[/color] and [color=%skill%]Shoot Bolt[/color] will automatically reload on headshots.
 ";
 
 ::Const.Strings.PerkDescription.LegendStaffBlock <- @"
@@ -1866,6 +1871,8 @@ Master the ability to ensnare others and to disentangle yourself.
 • When freeing yourself or allies gain a baseline [color=%positive%]99%[/color] chance to succeed in removing rooting effects, such as nets, vines, webs, and ensnarement by some beasts.
 
 • Reduces Fatigue cost of freeing yourself or allies by [color=%negative%]66%[/color] and AP cost to [color=%negative%]3[/color].
+
+• Can now double grip with a net in your offhand and unlocks Hand to Hand abilities that might be locked from holding a net in offhand.
 ";
 
 ::Const.Strings.PerkDescription.LegendMasterySlings <- @"
@@ -1963,7 +1970,7 @@ Big or small, greenskins lack strength of will.
 • Total bonus capped at 25%.
 ";
 
- //No contract
+//No contract
 //Lich and Emporer not included
 //Treasure hunters and betrayers included as knights
 ::Const.Strings.PerkDescription.LegendFavouredEnemyUndead <- @"
@@ -2069,7 +2076,6 @@ The uncivilized are a plague to be uprooted.
 
 • Total bonus capped at 25%.
 ";
-
 
 ::Const.Strings.PerkDescription.LegendFavouredEnemySwordmaster <- @"
 The path to martial prowess is beset by the fake and the weak. Only one can stand to be the greatest.
@@ -2242,14 +2248,14 @@ A time tested tradition of getting your opponent to the ground, disarmed and ree
 ";
 
 ::Const.Strings.PerkDescription.LegendAmbidextrous <- @"
-Unlock the ability to punch with your off hand!
+You're as capable with one hand as the other!
 
 [color=%passive%][u]Passive:[/u][/color]
-• When your offhand is free allows you to use [color=%skill%]Hand to Hand[/color] and attack with the ability on each attack.
+• When your offhand is free, follow up attacks with [color=%skill%]Hand to Hand[/color]. Gain [color=%positive%]+5[/color] Melee Skill and [color=%positive%]+10[/color] Melee Defense if both hands are free.
 
-• If you are using a Buckler, Mummy Shield or Parry Dagger you will attack with [color=%skill%]Buckler bash[/color] or [color=%skill%]Stab[/color] instead.
+• If using a Buckler, Mummy Shield or Parrying Dagger, follow up attacks with [color=%skill%]Buckler Bash[/color] or [color=%skill%]Stab[/color] instead.
 
-• Additionally, gain [color=%positive%]+5[/color] Melee Skill and [color=%positive%]+10[/color] Melee Defense if both hands are free.
+• When dual wielding other weapons, the weight penalty is reduced by [color=%positive%]33%[/color].
 ";
 
 ::Const.Strings.PerkDescription.LegendPugilist <- @"
@@ -2263,7 +2269,7 @@ The first rule of...
 Strike while they're down!
 
 [color=%passive%][u]Passive:[/u][/color]
-• Attacks deal an additional [color=%positive%]+5[/color] fatigue per hit.
+• Attacks deal an additional [color=%positive%]5%[/color] of the enemy's maximum fatigue per hit.
 
 • Each point of fatigue damage over the target's maximum fatigue will be translated to additional damage done.
 ";
@@ -2285,6 +2291,8 @@ Some folks take joy in the simple pleasures of destroying shields.
 [color=%passive%][u]Passive:[/u][/color]
 • Grants an additional [color=%positive%]+100%[/color] damage to shields when using [color=%skill%]Split Shield[/color] or a Throwing Spear.
 • If the shield is destroyed, gain [color=%positive%]4[/color] additional AP and any damage above the max durability of the target's shield will hit the target.
+
+• When [color=%status%]Dual Wielding[/color] axes, [color=%skill%]Split Shield[/color] uses the combined shield damage from both weapons.
 ";
 
 ::Const.Strings.PerkDescription.LegendSmackdown <- @"
@@ -2415,7 +2423,7 @@ Knowledge of the landscape and vegetation provides a wealth of opportunities whe
 
 • When the total bonus from all characters with or without this perk is above 10% while assigned to gathering in camp, they can find mushrooms, poisons, antidotes and powders without crafting them.
 ";
- //Characters gain their level as a percentage reduction in hours required to find special items when gathering in camp. This perk doubles that.
+//Characters gain their level as a percentage reduction in hours required to find special items when gathering in camp. This perk doubles that.
 ::Const.Strings.PerkDescription.LegendPotionBrewer <- @"
 Expertise in potions and tinctures allows the creation of potions while gathering in camp.
 
@@ -2456,6 +2464,8 @@ Time spent assessing an enemy, finding the arteries, will pay off in blood shed 
 • Unlocks the [color=%skill%]Prepare to Bleed[/color] skill which primes your next strike to inflict [color=%damage%]5[/color] [color=%status%]Bleed[/color] damage for the next two turns.
 
 • Costs [color=%negative%]2[/color] AP and [color=%negative%]15[/color] Fatigue.
+
+• When [color=%status%]Dual Wielding[/color] flails, both attacks apply [color=%status%]Bleed[/color].
 ";
 
 ::Const.Strings.PerkDescription.LegendPrepareGraze <- @"
@@ -2547,6 +2557,8 @@ Knowledge of an animal's physiology allows for better diet, exercise and care.
 
 [color=%passive%][u]Passive:[/u][/color]
 • Increases Hitpoints by [color=%positive%]25%[/color] for each donkey in the company and their carrying capacity by [color=%positive%]+12[/color].
+
+• Does not stack with the same perk on multiple mercenaries.
 ";
 
 ::Const.Strings.PerkDescription.LegendHorseImpulsion <- @"
@@ -2684,7 +2696,7 @@ Put to use your skill in the creation and maintenance of siege weapons.
 Many years spent repairing and packing nets allows you to create nets and wield them more effectively.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Allows your company to repair a broken net (refill ammo charges) for a cost of 15 ammo.
+• Reduces the refill cost of nets to 10.
 
 • Grants[color=%positive%]+10[/color] Melee Defense while holding a net.
 
@@ -2695,15 +2707,9 @@ Many years spent repairing and packing nets allows you to create nets and wield 
 Perfect the art of casting nets.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Increases the throwing range of nets and reinforced nets by [color=%positive%]2[/color].
+• Increases the throwing range of nets and reinforced nets by [color=%positive%]2[/color] and the throwing range of bombs by [color=%positive%]1[/color].
 
-• Equipping a net when the offhand is free and always costs no Action Points.
-
-• Nets you throw have a chance to be reusable in battle.
-
-• Regular Nets have a [color=%positive%]25%[/color] chance to be reusable and Reinforced Nets have a [color=%positive%]50%[/color] chance to be reusable.
-
-• All nets have a [color=%positive%]100%[/color] chance to be reusable if the target is killed before breaking free.
+• Chance based on your Ranged Skill and Ranged Defense to trap additional adjacent targets when throwing a net. The chance decreases with each target you ensnare.
 ";
 
 ::Const.Strings.PerkDescription.LegendPacifist <- @"
@@ -3013,7 +3019,7 @@ Put your all into your studies.
 
 • Stacks with itself and effects of a similar nature. Does not need to be in combat for this perk to work.
 ";
- //Masons, Inventors and Historians and do not need this perk unless they have the dumb trait for scrolls.
+//Masons, Inventors and Historians and do not need this perk unless they have the dumb trait for scrolls.
 ::Const.Strings.PerkDescription.LegendCitrinitas <- @"
 [color=%active%][u]Active:[/u][/color]
 • A powerful cocktail of ingredients provides a trance like state, granting the banner effect, and drums of war effects to everyone in the company at the end of the user's turn.
@@ -3197,7 +3203,7 @@ Extensive training in circus maneuvers allows you to move out of harm's way with
 Practice in physical movement with a partner has given the ability to take the lead and move someone's body in a twirling movement.
 
 [color=%passive%][u]Passive:[/u][/color]
-• If you have taken the [color=%perk%]Rotation[/color] perk, it can now target enemies.
+• [color=%skill%]Rotation[/color] can now target enemies.
 ";
 
 ::Const.Strings.PerkDescription.LegendKnifeplay <- @"
@@ -3425,3 +3431,9 @@ Oftentimes better than a master of one.
 • Gain [color=%positive%]10%[/color] of your base Ranged Skill as Melee Skill and [color=%positive%]10%[/color] of your base Melee Skill as Ranged Skill.
 ";
 
+::Const.Strings.PerkDescription.LegendSpecDualWield <- @"
+Master the art of fighting with a weapon in each hand.
+
+[color=%passive%][u]Passive:[/u][/color]
+• Reduces off-hand weapon damage malus from [color=%negative%]-66%[/color] to [color=%negative%]-50%[/color] when dual wielding.
+";

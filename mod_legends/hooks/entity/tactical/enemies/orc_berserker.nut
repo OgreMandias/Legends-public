@@ -158,7 +158,7 @@
 		::Legends.Perks.grant(this, ::Legends.Perk.CripplingStrikes);
 		if (::Legends.isLegendaryDifficulty())
 		{
-			::Legends.Perks.grant(this, ::Legends.Perk.LegendUberNimble);
+			::Legends.Perks.grant(this, ::Legends.Perk.Nimble);
 		}
 		return true;
 	}

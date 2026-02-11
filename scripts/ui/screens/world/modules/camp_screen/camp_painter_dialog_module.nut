@@ -289,6 +289,7 @@ this.camp_painter_dialog_module <- this.inherit("scripts/ui/screens/ui_module", 
 							}
 							shield.updateVariant();
 							shield.updateAppearance();
+							this.updateAchievement("AColorfulBand", 1, 1);
 						}
 					}
 				}

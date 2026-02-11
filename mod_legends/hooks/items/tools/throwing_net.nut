@@ -14,11 +14,6 @@
 		return m.Ammo + "/" + m.AmmoMax;
 	}
 
-	o.getAmmo <- function() // prevent net from being refilled without the perk
-	{
-		return m.Ammo == 0 && !::World.Statistics.getFlags().get("LegendsCanRepairNet") ? m.AmmoMax + 1 : m.Ammo;
-	}
-
 	o.isDroppedAsLoot <- function()
 	{
 		return item.isDroppedAsLoot();

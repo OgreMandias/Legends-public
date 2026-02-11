@@ -108,7 +108,7 @@ local originalOnApplyFire = ::Const.Tactical.Common.onApplyFire;
 
 	_entity.onDamageReceived = function ( _attacker, _skill, _hitInfo ) {
 		local damage = ::Math.rand(15, 30);
-		_hitInfo = damage * ::Const.Tactical.Common.getFireDamageMultiplier(this);
+		_hitInfo.DamageRegular = damage * ::Const.Tactical.Common.getFireDamageMultiplier(this);
 		_hitInfo.DamageArmor = damage;
 		return __original(_attacker, _skill, _hitInfo);
 	};

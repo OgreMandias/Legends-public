@@ -67,7 +67,7 @@ if (!("Perks" in ::Const))
 		[],
 		[],
 		[],
-		[::Legends.Perk.LegendFavouredEnemyGreenskins],
+		[::Legends.Perk.LegendFavouredEnemyGreenskin],
 		[],
 		[]
 	]
@@ -123,7 +123,7 @@ if (!("Perks" in ::Const))
 		[],
 		[],
 		[::Legends.Perk.LegendFavouredEnemySwordmaster],
-		[]
+		[::Legends.Perk.BattleFlow]
 	]
 };
 

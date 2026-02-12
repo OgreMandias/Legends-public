@@ -1,15 +1,14 @@
 this.legend_orc_mad_berserker <- this.inherit("scripts/entity/tactical/enemies/orc_berserker", {
 	m = {},
-	function create()
-	{
+
+	function create() {
 		this.orc_berserker.create();
 		this.m.Type = this.Const.EntityType.LegendOrcMadBerserker;
 		this.m.XP = this.Const.Tactical.Actor.LegendOrcMadBerserker.XP;
 		this.actor.create();
 	}
 
-	function onInit()
-	{
+	function onInit() {
 		this.orc_berserker.onInit();
 		local tattooBody = this.getSprite("tattoo_body");
 		tattooBody.setBrush("bust_orc_02_body_paint_0" + this.Math.rand(4, 6));
@@ -22,8 +21,7 @@ this.legend_orc_mad_berserker <- this.inherit("scripts/entity/tactical/enemies/o
 		::Legends.Perks.grant(this, ::Legends.Perk.Adrenaline);
 		::Legends.Perks.grant(this, ::Legends.Perk.Nimble);
 		::Legends.Traits.grant(this, ::Legends.Trait.Fearless);
-		if (::Legends.isLegendaryDifficulty())
-		{
+		if (::Legends.isLegendaryDifficulty()) {
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendUberNimble);
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendTasteThePain);
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendMuscularity);
@@ -31,8 +29,7 @@ this.legend_orc_mad_berserker <- this.inherit("scripts/entity/tactical/enemies/o
 		}
 	}
 
-	function assignRandomEquipment()
-	{
+	function assignRandomEquipment() {
 		local weapons = [
 			"weapons/greenskins/orc_axe",
 			"weapons/greenskins/orc_cleaver",
@@ -46,10 +43,8 @@ this.legend_orc_mad_berserker <- this.inherit("scripts/entity/tactical/enemies/o
 		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 	}
 
-	function makeMiniboss ()
-	{
-		if (!this.actor.makeMiniboss())
-		{
+	function makeMiniboss() {
+		if (!this.actor.makeMiniboss()) {
 			return false;
 		}
 
@@ -60,9 +55,16 @@ this.legend_orc_mad_berserker <- this.inherit("scripts/entity/tactical/enemies/o
 			"weapons/named/legend_named_orc_flail_2h",
 			"weapons/named/named_orc_axe"
 		];
-		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
+		local weapon = weapons[this.Math.rand(0, weapons.len() - 1)];
+		this.m.Items.equip(this.new("scripts/items/" + weapon));
+		if (!this.m.Items.hasBlockedSlot(::Const.ItemSlot.Offhand)
+			&& this.Math.rand(1, 100) <= 50)
+		{
+			this.m.Items.equip(this.new("scripts/items/" + weapon));
+			this.m.Items.updateDualWield();
+		}
+
 		return true;
 	}
 
 });
-

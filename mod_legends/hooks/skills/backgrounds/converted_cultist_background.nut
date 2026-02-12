@@ -39,18 +39,18 @@
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Merciless;
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.CleaverTree,
-				this.Const.Perks.FlailTree
+				::Const.Perks.CleaverTree,
+				::Const.Perks.FlailTree
 			],
 			Defense = [
-				this.Const.Perks.MediumArmorTree
+				::Const.Perks.MediumArmorTree
 			],
 			Traits = [
-				this.Const.Perks.MartyrTree,
-				this.Const.Perks.ViciousTree,
-				this.Const.Perks.FastTree,
-				this.Const.Perks.IndestructibleTree,
-				this.Const.Perks.DeviousTree
+				::Const.Perks.MartyrTree,
+				::Const.Perks.ViciousTree,
+				::Const.Perks.FastTree,
+				::Const.Perks.IndestructibleTree,
+				::Const.Perks.DeviousTree
 			],
 			Enemy = [],
 			Class = [

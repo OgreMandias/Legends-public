@@ -1,10 +1,10 @@
-this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
+this.legend_robber_baron <- this.inherit("scripts/entity/tactical/human", {
 	m = {},
 	function create()
 	{
-		this.m.Type = this.Const.EntityType.BanditWarlord;
+		this.m.Type = this.Const.EntityType.LegendRobberBaron;
 		this.m.BloodType = this.Const.BloodType.Red;
-		this.m.XP = this.Const.Tactical.Actor.BanditWarlord.XP;
+		this.m.XP = this.Const.Tactical.Actor.LegendRobberBaron.XP;
 		this.m.Name = this.generateName();
 		this.m.IsGeneratingKillName = false;
 		this.human.create();
@@ -41,7 +41,7 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 	{
 		this.human.onInit();
 		local b = this.m.BaseProperties;
-		b.setValues(this.Const.Tactical.Actor.BanditWarlord);
+		b.setValues(this.Const.Tactical.Actor.LegendRobberBaron);
 		b.IsImmuneToDisarm = true;
 		b.IsSpecializedInSwords = true;
 		b.IsSpecializedInAxes = true;

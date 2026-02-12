@@ -661,7 +661,7 @@
 				bro.addXP(this.Math.max(1, this.Math.floor(XPgroup / brothers.len())));
 			}
 		}
-		if (::World.Assets.m.HasDrillSergeant && this.getLevel() >= 12)
+		if (("State" in this.World) && this.World.State != null && ::World.Assets.m.HasDrillSergeant && this.getLevel() >= 12)
 		{
 			foreach( bro in brothers )
 			{

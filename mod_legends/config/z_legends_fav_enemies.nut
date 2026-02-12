@@ -20,7 +20,6 @@ if (!("LegendMod" in ::Const))
 	::Const.EntityType.SkeletonGladiator,
 	::Const.EntityType.FlyingSkull,
 	::Const.EntityType.Vampire,
-	::Const.EntityType.LegendDemonHound,
 	::Const.EntityType.LegendVampireLord,
 	::Const.EntityType.LegendMummyLight,
 	::Const.EntityType.LegendMummyMedium,
@@ -42,7 +41,9 @@ if (!("LegendMod" in ::Const))
 	::Const.EntityType.Schrat,
 	::Const.EntityType.SchratSmall,
 	::Const.EntityType.LegendGreenwoodSchrat,
-	::Const.EntityType.LegendGreenwoodSchratSmall
+	::Const.EntityType.LegendGreenwoodSchratSmall,
+	::Const.EntityType.LegendDemonHound,
+	::Const.EntityType.LegendWicht
 ];
 
 ::Const.LegendMod.FavoriteBeast <- [
@@ -84,7 +85,9 @@ if (!("LegendMod" in ::Const))
 	::Const.EntityType.OrcWarrior,
 	::Const.EntityType.OrcWarlord,
 	::Const.EntityType.LegendOrcBehemoth,
-	::Const.EntityType.LegendOrcElite
+	::Const.EntityType.LegendOrcElite,
+	::Const.EntityType.LegendMadBerserker,
+	::Const.EntityType.LegendOrcTyrant,
 	//	::Const.EntityType.KoboldWolfrider, //Not used currently
 	//	::Const.EntityType.KoboldFighter //Not used currently
 ];
@@ -96,7 +99,7 @@ if (!("LegendMod" in ::Const))
 	::Const.EntityType.Swordmaster,
 	::Const.EntityType.BanditLeader,
 	// ::Const.EntityType.BanditVeteran,
-	::Const.EntityType.BanditWarlord,
+	::Const.EntityType.LegendRobberBaron,
 	::Const.EntityType.BarbarianChampion,
 	::Const.EntityType.BarbarianChosen, //King
 	::Const.EntityType.Sergeant,
@@ -124,7 +127,7 @@ if (!("LegendMod" in ::Const))
 	::Const.EntityType.BanditMarksman,
 	::Const.EntityType.BanditRaider,
 	::Const.EntityType.BanditVeteran,
-	::Const.EntityType.BanditWarlord,
+	::Const.EntityType.LegendRobberBaron,
 	::Const.EntityType.BanditLeader,
 	::Const.EntityType.Slave,
 	::Const.EntityType.NomadCutthroat,
@@ -470,7 +473,7 @@ if (!("LegendMod" in ::Const))
 	case ::Const.EntityType.BanditLeader :
 		return 4;
 
-	case ::Const.EntityType.BanditWarlord :
+	case ::Const.EntityType.LegendRobberBaron :
 		return 1;
 
 	case ::Const.EntityType.Warhound :

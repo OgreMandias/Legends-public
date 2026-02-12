@@ -5,6 +5,7 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 		AmbidextrousBonus = 0.33,
 		IsRefreshing = false,
 		NeedsRefresh = null,
+		ExcludedSkills = [],
 	},
 
 	function create() {
@@ -17,6 +18,9 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 		this.m.IsActive = false;
 		this.m.IsStacking = false;
 		this.m.IsRemovedAfterBattle = false;
+		this.m.ExcludedSkills = [
+			::Legends.Actives.getID(::Legends.Active.LegendDoubleSwing)
+		];
 	}
 
 	function getTooltip() {
@@ -97,7 +101,7 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 
 		local actor = this.getContainer().getActor();
 		foreach (skill in actor.getSkills().m.Skills) {
-			if (skill.m.IsAttack) {
+			if (skill.m.IsAttack && this.m.ExcludedSkills.find(skill.getID()) == null) {
 				_properties.SkillCostAdjustments.push({
 					ID = skill.getID(),
 					FatigueAdjust = this.m.OffhandWeight
@@ -109,6 +113,9 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 	// Apply hit chance penalty to attack skills
 	function onAnySkillUsed(_skill, _targetEntity, _properties) {
 		if (!_skill.m.IsAttack) {
+			return;
+		}
+		if (this.m.ExcludedSkills.find(_skill.getID()) != null) {
 			return;
 		}
 		_properties.MeleeSkill -= this.m.OffhandWeight;
@@ -123,7 +130,7 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 		}
 
 		// Don't trigger for Double Swing (prevents infinite loop)
-		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.LegendDoubleSwing)) {
+		if (this.m.ExcludedSkills.find(_skill.getID()) != null) {
 			return;
 		}
 

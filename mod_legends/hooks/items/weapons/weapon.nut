@@ -117,6 +117,7 @@
 		if (currentSlot == this.Const.ItemSlot.Offhand && this.isItemType(this.Const.Items.ItemType.Weapon)) {
 			local actor = this.getContainer().getActor();
 			if (actor != null && actor.hasSprite("shield_icon")) {
+				actor.setAlwaysApplySpriteOffset(true);
 				actor.getSprite("shield_icon").setHorizontalFlipping(true);
 				actor.setSpriteOffset("shield_icon", this.createVec(40, 0));
 			}

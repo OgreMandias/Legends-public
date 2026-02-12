@@ -79,8 +79,6 @@ if (!("Weapons" in ::Legends)) {
     local oh = items.getItemAtSlot(::Const.ItemSlot.Offhand);
     return mh != null
         && oh != null
-        && ("isItemType" in mh)
-        && ("isItemType" in oh)
         && mh.isItemType(::Const.Items.ItemType.Weapon)
         && oh.isItemType(::Const.Items.ItemType.Weapon);
 }
@@ -93,10 +91,5 @@ if (!("Weapons" in ::Legends)) {
     local items = _actor.getItems();
     local mh = items.getItemAtSlot(::Const.ItemSlot.Mainhand);
     local oh = items.getItemAtSlot(::Const.ItemSlot.Offhand);
-    return mh != null
-        && oh != null
-        && ("isWeaponType" in mh)
-        && ("isWeaponType" in oh)
-        && mh.isWeaponType(_weaponType)
-        && oh.isWeaponType(_weaponType);
+    return mh != null && oh != null && mh.isWeaponType(_weaponType) && oh.isWeaponType(_weaponType);
 }

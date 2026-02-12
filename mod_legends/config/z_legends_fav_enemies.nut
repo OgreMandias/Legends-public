@@ -86,7 +86,7 @@ if (!("LegendMod" in ::Const))
 	::Const.EntityType.OrcWarlord,
 	::Const.EntityType.LegendOrcBehemoth,
 	::Const.EntityType.LegendOrcElite,
-	::Const.EntityType.LegendMadBerserker,
+	::Const.EntityType.LegendOrcMadBerserker,
 	::Const.EntityType.LegendOrcTyrant,
 	//	::Const.EntityType.KoboldWolfrider, //Not used currently
 	//	::Const.EntityType.KoboldFighter //Not used currently

@@ -555,7 +555,7 @@
 	Strength = 40,
 	Cost = 40,
 	Row = 0,
-	NameList = this.Const.World.Spawn.Troops.GhostArmorNames,
+	NameList = this.Const.Strings.GhostArmorNames,
 	Script = "scripts/entity/tactical/enemies/legend_wicht"
 };
 

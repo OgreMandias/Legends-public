@@ -58,6 +58,12 @@ Favoured Enemy - Sword Master
 
 ### For modders:
 
+Bandit Warlord renamed to Robber Baron
+```
+LegendBanditWarlord.nut -> LegendRobberBaron.nut
+this.Const.EntityType.LegendBanditWarlord -> this.Const.EntityType.LegendRobberBaron
+```
+
 Following trees were removed, refer to `z_perks_tree_enemy.nut` for replacements:
 
 ```

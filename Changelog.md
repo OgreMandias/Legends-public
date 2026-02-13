@@ -1,3 +1,5 @@
+# 19.3.0 - Title Pending
+
 ## Dual Wielding
 
 Any one-handed weapon can be equipped in the offhand slot when the mainhand already holds a one-handed weapon.
@@ -38,7 +40,7 @@ Favoured Enemy - Sword Master
 ## Integrated mods
 
 - Integrated Better Obituary v3, thanks to Allania
-- layer logger from Merc
+- layer logger from Merc - check mod options under misc
 
 ## Perk Changes
 

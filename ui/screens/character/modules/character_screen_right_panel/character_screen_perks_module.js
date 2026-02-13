@@ -92,8 +92,8 @@ CharacterScreenPerksModule.prototype.createPerkTreeDIV = function (_perkTree, _p
 
 	for (var row = 0; row < _perkTree.length; ++row)
 	{
-		lowestx = Math.min(lowestx, ((660 - (50.0 * _perkTree[row].length)) / 2));
-		if (_perkTree[row].length > 13)
+		lowestx = Math.min(lowestx, ((660 - (40.0 * _perkTree[row].length)) / 2));
+		if (_perkTree[row].length > 16)
 		{
 			widetree = true;
 		}
@@ -128,13 +128,9 @@ CharacterScreenPerksModule.prototype.createPerkTreeDIV = function (_perkTree, _p
 			perk.Container.append(perk.Image);
 		}
 		
-		centerDIV.css({ 'width': (5.0 * _perkTree[row].length) + 'rem' }); // css is retarded?
-		centerDIV.css({ 'left': (((660 - centerDIV.width()) / 2) - lowestx) + 'px' }); // css is retarded?
-
-		var centerDiv = $('.center').eq( row )
-        centerDiv.find(".l-perk-container").css({ 'width': '4.0rem' });
-        centerDiv.css({ 'width': (4.0 * _perkTree[row].length) + 'rem' });
-        centerDiv.css({ 'left': ((660 - centerDiv.width()) / 2) + 'px' });
+		centerDIV.find(".l-perk-container").css({ 'width': '4.0rem' });
+		centerDIV.css({ 'width': (4.0 * _perkTree[row].length) + 'rem' });
+		centerDIV.css({ 'left': (((660 - centerDIV.width()) / 2) - lowestx) + 'px' });
 	}
 	if (widetree == true)
 	{

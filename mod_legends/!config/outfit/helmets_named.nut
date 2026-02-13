@@ -26,7 +26,7 @@
 			[1, "hood/legend_helmet_southern_niqaab"], //100
 		],
 		Helms = [
-			[1, "helm/legend_helmet_southern_named_conic"] //130
+			[1, "helm/legend_helmet_southern_conic_named"] //130
 		],
 		Tops = [],
 		Vanity = []
@@ -112,11 +112,11 @@
 	Script = "",
 	Sets = [{
 		Hoods = [
-			[1, "hood/legend_helmet_chain_scarf"], //70
+			[1, "hood/legend_helmet_aventail"], //70
 			[1, "hood/legend_helmet_chain_hood"] //80
 		],
 		Helms = [
-			[1, "helm/legend_helmet_legend_frogmouth_close"] //265
+			[1, "helm/legend_helmet_frogmouth_named"] //265
 		],
 		Tops = [
 		],
@@ -137,10 +137,10 @@
 		Hoods = [
 			[4, "hood/legend_helmet_leather_hood"], //45
 			[5, "hood/legend_helmet_padded_hood"], //50
-			[1, "hood/legend_helmet_chain_scarf"] //70
+			[1, "hood/legend_helmet_aventail"] //70
 		],
 		Helms = [
-			[1, "helm/legend_helmet_legend_frogmouth_close"] //265
+			[1, "helm/legend_helmet_frogmouth_named"] //265
 		],
 		Tops = [],
 		Vanity = []
@@ -153,7 +153,7 @@
 	Script = "",
 	Sets = [{
 		Hoods = [
-			[1, "hood/legend_helmet_chain_scarf"], //70
+			[1, "hood/legend_helmet_aventail"], //70
 		],
 		Helms = [
 			[1, "helm/legend_helmet_great_helm"] //220
@@ -191,7 +191,7 @@
 	Script = "",
 	Sets = [{
 		Hoods = [
-			[1, "hood/legend_helmet_chain_scarf"] //70
+			[1, "hood/legend_helmet_aventail"] //70
 		],
 		Helms = [
 			[1, "helm/legend_helmet_great_helm"] //220
@@ -267,7 +267,7 @@
 	Sets = [{
 		Hoods = [
 			[2, "hood/legend_helmet_barb_chain_scarf"], //55
-			[2, "hood/legend_helmet_chain_scarf"], //70
+			[2, "hood/legend_helmet_aventail"], //70
 			[1, "hood/legend_helmet_bronze_chain"] //100
 		],
 		Helms = [
@@ -286,7 +286,7 @@
 	Script = "",
 	Sets = [{
 		Hoods = [
-			[2, "hood/legend_helmet_chain_scarf"], //70
+			[2, "hood/legend_helmet_aventail"], //70
 			[6, "hood/legend_helmet_chain_hood"], //80
 			[2, "hood/legend_helmet_chain_hood_full"], //90
 		],
@@ -415,7 +415,7 @@
 	Script = "",
 	Sets = [{
 		Hoods = [
-			[1, "hood/legend_helmet_chain_scarf"], //70
+			[1, "hood/legend_helmet_aventail"], //70
 			[1, "hood/legend_helmet_chain_hood"], //80
 			[1, "hood/legend_helmet_chain_hood_full"], //90
 		],
@@ -629,7 +629,7 @@
 			[1, "helm/legend_helmet_great_helm"] //220, -15, -3, 3000
 		],
 		Tops = [
-			[1, "top/legend_helmet_faceplate_full_gold"], //57, -1, -1
+			[1, "top/legend_helmet_faceplate_winged_full_named"], //57, -1, -1
 		],
 		Vanity = [
 			[1, "vanity/legend_helmet_noble_feather"], //10
@@ -657,12 +657,14 @@
 			[5, "top/legend_helmet_faceplate_long"],
 			[3, "top/legend_helmet_faceplate_snub_nose"],
 			[3, "top/legend_helmet_faceplate_snub_slit"],
-			[1, "top/legend_helmet_faceplate_full_gold"],
+			[1, "top/legend_helmet_faceplate_winged_full_named"],
 			[3, "top/legend_helmet_faceplate_full_breaths"],
 			[2, "top/legend_helmet_faceplate_flat"],
 			[2, "top/legend_helmet_faceplate_curved"],
 			[2, "top/legend_helmet_faceplate_sharp"],
-			[1, "top/legend_helmet_faceplate_gold"],
+			[1, "top/legend_helmet_faceplate_winged"],
+			[1, "top/legend_helmet_faceplate_winged_full"],
+			[1, "top/legend_helmet_faceplate_winged_long"],
 			[3, "top/legend_helmet_southern_faceplate"],
 			[1, "top/legend_helmet_facemask"],
 			[1, "top/legend_helmet_nose_plate"],
@@ -697,12 +699,13 @@
 		Tops = [
 
 			[3, ""],
-			[5, "top/legend_helmet_faceplate_winged"],
+			[2, "top/legend_helmet_faceplate_winged"],
+			[2, "top/legend_helmet_faceplate_winged_full"],
+			[2, "top/legend_helmet_faceplate_winged_long"],
 			[3, "top/legend_helmet_faceplate_long"],
 			[3, "top/legend_helmet_faceplate_full"],
-			[1, "top/legend_helmet_faceplate_gold"],
 			[3, "top/legend_helmet_faceplate_full_breaths"],
-			[1, "top/legend_helmet_faceplate_full_gold"],
+			[1, "top/legend_helmet_faceplate_winged_full_named"],
 			[2, "top/legend_helmet_faceplate_pointed"],
 			[3, "top/legend_helmet_faceplate_pointed_slit"],
 			[3, "top/legend_helmet_facemask"],

@@ -10,6 +10,15 @@ This activates Dual Wield:
 - Applies a **fatigue and hit chance penalty** based on the offhand weapon's weight
 - Grants the **Double Swing** active skill (an AoE attack hitting up to 3 adjacent tiles, using both weapons)
 
+## Traits
+- Hesitant now acts last in turn order
+- Impatient acts first in turn order but cannot wait and loses 10% of melee defense
+> Both of the above can still be manipulated by effects like adrenaline, the exact math is that Adrenaline increases turn order number by 2000, Hesitant and Impatient subtract/add 1000 respectively
+> A character with Adrenaline and Hesitant will act before every other character but will act after a character with Adrenaline who does not have Hesitant
+> A character with Impatient will act before everyone else but will act after a character with Adrenaline unless they also have Adrenaline, in which case they will always be first
+- Greedy will now increase wage by 25% but also gain 1 to every attribute for every 10 gold paid in wages
+- Eagle Eyes now increases vision by 2
+
 ## Favoured enemy rework
 
 Perks were condensed into a few:

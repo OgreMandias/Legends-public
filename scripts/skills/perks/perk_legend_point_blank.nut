@@ -21,12 +21,6 @@ this.perk_legend_point_blank <- this.inherit("scripts/skills/skill", {
 		{
 			id = 6,
 			type = "text",
-			icon = "ui/tooltips/warning.png",
-			text = "Reduces your maximum range of throwing weapons to [color=%negative%]3[/color]"
-		},
-		{
-			id = 6,
-			type = "text",
 			icon = "ui/icons/damage_dealt.png",
 			text = "Allows you to use throwing weapons in melee"
 		},

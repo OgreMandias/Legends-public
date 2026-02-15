@@ -463,9 +463,13 @@
 			if (::Legends.Weapons.isDualWielding(this)) {
 				this.setAlwaysApplySpriteOffset(true);
 				local flip = !this.isAlliedWithPlayer();
-				getSprite("shield_icon").setHorizontalFlipping(!flip);
+				local oh = this.getItems().getItemAtSlot(::Const.ItemSlot.Offhand);
+				local isTwoHanded = oh != null && oh.isItemType(this.Const.Items.ItemType.TwoHanded);
+				getSprite("shield_icon").setHorizontalFlipping(!flip && !isTwoHanded);
 				setSpriteOffset("shield_icon", this.createVec(flip ? -40 : 40, 0));
 			} else {
+				this.setAlwaysApplySpriteOffset(false);
+				getSprite("shield_icon").setHorizontalFlipping(false);
 				setSpriteOffset("shield_icon", this.createVec(0, 0));
 			}
 		}
@@ -477,7 +481,9 @@
 		if (hasSprite("shield_icon") && ::Legends.Weapons.isDualWielding(this)) {
 			this.setAlwaysApplySpriteOffset(true);
 			local flip = !this.isAlliedWithPlayer();
-			getSprite("shield_icon").setHorizontalFlipping(!flip);
+			local oh = this.getItems().getItemAtSlot(::Const.ItemSlot.Offhand);
+			local isTwoHanded = oh != null && oh.isItemType(this.Const.Items.ItemType.TwoHanded);
+			getSprite("shield_icon").setHorizontalFlipping(!flip && !isTwoHanded);
 			setSpriteOffset("shield_icon", this.createVec(flip ? -40 : 40, 0));
 		}
 	}

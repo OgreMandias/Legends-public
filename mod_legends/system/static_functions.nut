@@ -247,7 +247,9 @@
 }
 
 ::Legends.S.logArmor <- function (_armor) {
-	if (!_armor.isEquipped()) { return original(); }
+	if (!_armor.isEquipped())
+		return;
+
 	::logWarning("Armor Layering");
 	::logWarning("--------------");
 	::logWarning("Durability: " + _armor.getArmorMax());
@@ -255,7 +257,7 @@
 
 	local upgrade = _armor.getUpgradeIDs();
 	local upgText = [];
-	local clothText = "\"cloth/" + split(_armor.getID(), ".")[2] + "\", " + _armor.getVariant()
+	local clothText = "\"cloth/" + split(_armor.getID(), ".")[2] + "\", " + _armor.getVariant();
 
 	if (upgrade[0] == null) { upgText.push("\"\""); }
 		else {upgText.push("\"chain/" + split(upgrade[0], ".")[2] + "\", " + _armor.getUpgradeVariant(0))}
@@ -270,15 +272,15 @@
 		// local vv = "\"armor_upgrades/legend_" + split(upgrade[4], ".")[2] + "_upgrade\", " + this.getUpgradeVariant(4)
 		// if (split(vv, "_")[2] == "legend")
 		// {
-		//     vv = 
+		//     vv =
 		// }
 		upgText.push("\"armor_upgrades/" + split(upgrade[4], ".")[2] + "_upgrade\", " + _armor.getUpgradeVariant(4))
 	}
 
-	local toPrint = "{"       + 
-					"\n\tID = \"CHANGEME\"," + 
+	local toPrint = "{"       +
+					"\n\tID = \"CHANGEME\"," +
 					"\n\tScript = \"\"," +
-					"\n\tSets = [{" + 
+					"\n\tSets = [{" +
 					"\n\t\tCloth = [[1, "       + clothText  + "]]," +
 					"\n\t\tChain = [[1, "       + upgText[0] + "]]," +
 					"\n\t\tPlate = [[1, "       + upgText[1] + "]]," +
@@ -292,7 +294,9 @@
 }
 
 ::Legends.S.logHelmet <- function (_helmet) {
-	if (!_helmet.isEquipped()) { return original(); }
+	if (!_helmet.isEquipped())
+		return;
+
 	::logWarning("Helmet Layering");
 	::logWarning("---------------");
 	::logWarning("Durability: " + _helmet.getArmorMax());
@@ -309,10 +313,10 @@
 	if (upgrade[2] == null) { upgText.push("\"\""); }
 		else {upgText.push("\"vanity/" + split(upgrade[2], ".")[2] + "\", " + _helmet.getUpgradeVariant(2))}
 
-	local toPrint = "{"       + 
-					"\n\tID = \"CHANGEME\"," + 
+	local toPrint = "{"       +
+					"\n\tID = \"CHANGEME\"," +
 					"\n\tScript = \"\"," +
-					"\n\tSets = [{" + 
+					"\n\tSets = [{" +
 					"\n\t\tHoods = [[1, "  + hoodText   + "]]," +
 					"\n\t\tHelms = [[1, "  + upgText[0] + "]]," +
 					"\n\t\tTops = [[1, "   + upgText[1] + "]]," +

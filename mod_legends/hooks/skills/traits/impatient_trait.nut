@@ -1,18 +1,14 @@
-::mods_hookExactClass("skills/traits/impatient_trait", function(o)
-{
+::mods_hookExactClass("skills/traits/impatient_trait", function (o) {
 	local create = o.create;
-	o.create = function ()
-	{
+	o.create = function () {
 		create();
-		this.m.Excluded.extend(
-		[
+		this.m.Excluded.extend([
 			::Legends.Traits.getID(::Legends.Trait.LegendSureshot),
 			::Legends.Traits.getID(::Legends.Trait.LegendSlack)
 		]);
 	}
 
-	o.getTooltip = function ()
-	{
+	o.getTooltip = function () {
 		return [
 			{
 				id = 1,
@@ -45,17 +41,14 @@
 		];
 	}
 
-	o.onUpdate = function ( _properties )
-	{
-		if (this.getContainer().getActor().isPlacedOnMap())
-		{
+	o.onUpdate = function (_properties) {
+		if (this.getContainer().getActor().isPlacedOnMap()) {
 			_properties.InitiativeForTurnOrderAdditional += 1000;
 			_properties.MeleeDefenseMult *= 0.90;
 		}
 	}
 
-	o.onTurnStart = function (_properties)
-	{
+	o.onTurnStart <- function (_properties) {
 		this.getContainer().getActor().setWaitActionSpent(true);
 	}
 });

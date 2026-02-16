@@ -1,7 +1,7 @@
-this.legned_silk_blueprint <- this.inherit("scripts/crafting/blueprint", {
+this.legend_silk_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	m = {},
-	function create()
-	{
+
+	function create() {
 		this.blueprint.create();
 		this.m.ID = "blueprint.legend_silk";
 		this.m.Type = this.Const.Items.ItemType.Usable;
@@ -24,10 +24,8 @@ this.legned_silk_blueprint <- this.inherit("scripts/crafting/blueprint", {
 		this.initSkills(skills);
 	}
 
-	function onCraft( _stash )
-	{
+	function onCraft(_stash) {
 		_stash.add(this.new("scripts/items/trade/silk_item"));
 	}
 
 });
-

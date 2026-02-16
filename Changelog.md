@@ -65,6 +65,12 @@ Favoured Enemy - Sword Master
 
 - merged the two fencer hats
 
+### New recipes
+
+- new silk blueprint
+- 3 new gold ingot blueprints
+- 3 new silver ingot blueprints
+
 ### For modders:
 
 Bandit Warlord renamed to Robber Baron

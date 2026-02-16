@@ -31,12 +31,6 @@
 				type = "text",
 				icon = "ui/icons/warning.png",
 				text = "Is unable to use wait in combat"
-			},
-			{
-				id = 12,
-				type = "text",
-				icon = "ui/icons/melee_defense.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-10%[/color] Melee Defense"
 			}
 		];
 	}
@@ -44,7 +38,6 @@
 	o.onUpdate = function (_properties) {
 		if (this.getContainer().getActor().isPlacedOnMap()) {
 			_properties.InitiativeForTurnOrderAdditional += 1000;
-			_properties.MeleeDefenseMult *= 0.90;
 		}
 	}
 

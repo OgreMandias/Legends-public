@@ -1665,6 +1665,10 @@
 		_info.Container.onTargetHit(_info.Skill, _info.TargetEntity, hitInfo.BodyPart, hitInfo.DamageInflictedHitpoints, hitInfo.DamageInflictedArmor);
 		_info.User.getItems().onDamageDealt(_info.TargetEntity, this, hitInfo);
 
+		if (::Legends.S.isEntityNullOrDead(_info.TargetEntity)) {
+			return;
+		}
+
 		if (hitInfo.DamageInflictedHitpoints >= this.Const.Combat.SpawnBloodMinDamage && !_info.Skill.isRanged() && (_info.TargetEntity.getBloodType() == this.Const.BloodType.Red || _info.TargetEntity.getBloodType() == this.Const.BloodType.Dark))
 		{
 			_info.User.addBloodied();

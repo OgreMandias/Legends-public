@@ -87,9 +87,11 @@
 		local body = 0;
 		local head = 0;
 		local actor = this.getContainer().getActor();
-		local tile = actor.getTile();
-		if (::Legends.S.isEntityNullOrDead(actor))
+		
+		if (::Legends.S.isEntityNullOrDead(actor)) //In case actor dies to spearwall
 			return;
+		
+		local tile = actor.getTile();
 
 		//get the items
 		local bodyItem = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Body);

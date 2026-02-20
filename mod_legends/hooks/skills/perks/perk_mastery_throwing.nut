@@ -1,11 +1,17 @@
 ::mods_hookExactClass("skills/perks/perk_mastery_throwing", function(o) {
 	o.onAnySkillUsed = function( _skill, _targetEntity, _properties )
 	{
-		if (_targetEntity == null || !_skill.isRanged())
+		if (!_skill.isRanged())
+			return;
+
+		if (!_skill.m.IsWeaponSkill)
 			return;
 
 		local weapon = _skill.getItem();
-		if (weapon == null || !weapon.isWeaponType(::Const.Items.WeaponType.Throwing))
+		if (weapon == null)
+			return;
+
+		if (!weapon.isWeaponType(::Const.Items.WeaponType.Throwing))
 			return;
 
 		_properties.DamageArmorMult += 0.25;

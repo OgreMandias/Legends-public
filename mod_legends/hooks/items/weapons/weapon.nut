@@ -185,7 +185,7 @@
 	{
 		_properties.Stamina += this.m.StaminaModifier;
 
-		if (this.m.SlotType == this.Const.ItemSlot.Mainhand)
+		if (this.getCurrentSlotType() == this.Const.ItemSlot.Mainhand)
 		{
 			_properties.DamageRegularMin += this.m.RegularDamage;
 			_properties.DamageRegularMax += this.m.RegularDamageMax;

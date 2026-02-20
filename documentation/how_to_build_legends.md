@@ -10,7 +10,7 @@ The Legends mod uses a cross-platform Python-based build system that replaces th
 
 1. Download adam's [modkit](http://www.adammil.net/blog/v133_Battle_Brothers_mod_kit.html#modkit) and unpack it at the same level that legends project is (see screenshot). The tools should be placed in a `bin/` directory at the workspace level, one directory up from the `Legends-public` project folder.
 
-![dir_structure.webp](dir_structure.webp)
+![dir_structure.webp](img/build/dir_structure.webp)
 
 **Expected Directory Structure:**
 

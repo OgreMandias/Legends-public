@@ -476,7 +476,7 @@
 				}
 			} else {
 				local ohSprite = getSprite("shield_icon");
-				ohSprite.setHorizontalFlipping(false);
+				ohSprite.setHorizontalFlipping(!this.isAlliedWithPlayer());
 				ohSprite.Scale = 1.0;
 				this.setAlwaysApplySpriteOffset(false);
 				setSpriteOffset("shield_icon", this.createVec(0, 0));

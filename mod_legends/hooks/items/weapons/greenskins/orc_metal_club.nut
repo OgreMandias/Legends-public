@@ -16,9 +16,9 @@
 			return;
 		}
 		local v = this.getVariant();
-		this.m.Icon = "weapons/melee/orc_club_02" + v + "_70x70.png";
-		this.m.IconLarge = "weapons/melee/orc_club_02" + v + ".png";
-		this.m.ArmamentIcon = "icon_orc_weapon_07" + v;
+		this.m.Icon = "weapons/melee/orc_club_02_" + v + "_70x70.png";
+		this.m.IconLarge = "weapons/melee/orc_club_02_" + v + ".png";
+		this.m.ArmamentIcon = "icon_orc_weapon_07_" + v;
 	}
 
 });

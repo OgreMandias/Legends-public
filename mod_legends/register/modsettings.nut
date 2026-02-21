@@ -82,6 +82,8 @@ betterobituary.addBooleanSetting("SwapStats", 	 false, "Swap Stat Order", "Swaps
 betterobituary.addBooleanSetting("StackedStars", false, "Stacked Talent Stars", "Replace the 3 star talent icon (row of 3) with a triangle of stars.");
 betterobituary.addDivider("Divider");
 betterobituary.addBooleanSetting("HideObituarySetting",    false, "Hide Obituary Settings", "Hide the checkbox settings shown in top right of the obituary.\n\nThese mirror the settings above, providing a way to change them whilst in the obituary without using hotkeys, or simply to view the current settings.");
+betterobituary.addBooleanSetting("HideDismissOption", false, "Hide Dismiss Option", "Hide the checkbox option for adding a bro to the obituary when dismissing them.");
+betterobituary.addRangeSetting("Backgroundspecific", 50, 0, 100, 1, "Background specific fates", "Chance of getting a background specific message when dismissing a bro, as opposed to a generic message.\n\ne.g. Crusader:\n 'Continued their righteous war' vs 'Parted amicably' \n\nSet to 0 to disable and only use generic messaging." );
 betterobituary.addDivider("Divider");
 betterobituary.addTitle("DisplayLimit", "Display Limit (Icons shrink beyond defaults)");
 betterobituary.addRangeSetting( "show_num_traits", 8, 1, 12, 1, "Traits" );

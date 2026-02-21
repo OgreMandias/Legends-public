@@ -1004,7 +1004,7 @@
 	/**
 	 * Gets information on how many complete perk groups the character has,
 	 * as well as any additional perks that are not part of a complete set
-	 * 
+	 *
 	 * @return A table containing the following:
 	 * 	- CompleteGroupsIDs: Table whose keys are perk group categories; values are arrays containing IDs of complete perk groups
 	 * 	- RemainingPerkDefs: Array of perkDefs (numbers representing indeces in ::Const.Perks.PerkDefObjects) that do not belong to any complete perk group
@@ -1033,7 +1033,7 @@
 						PerkDefs = {}
 					}
 				}
-				
+
 				tmp[entry.ID].PerkDefs[Legends.Perk[perk.Const]] <- true;
 			}
 		}
@@ -1073,7 +1073,7 @@
 
 	/**
 	 * Update tooltip data to add a list of all perk groups this character has, organised by categories
-	 * 
+	 *
 	 * @param arr An array of tables to hold the tooltip data, as seen in tooltip_events.nut
 	 */
 	o.extendKnownPerksTooltip <- function(arr)

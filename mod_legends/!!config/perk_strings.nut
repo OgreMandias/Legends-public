@@ -463,9 +463,9 @@ Put full force in your every blow!
 Don't fire until you see the whites of their eyes!
 
 [color=%passive%][u]Passive:[/u][/color]
-• When using a ranged weapon against a target 4 or less tiles away, inflict additional damage, scaling based on [color=%positive%]20%[/color] of Ranged Defense.
+• When using a ranged weapon against a target 4 or less tiles away, inflict additional damage, scaling based on [color=%positive%]30%[/color] of Ranged Defense.
 
-• When using Throwing Weapons inflict additional damage, scaling based on [color=%positive%]30%[/color] of Melee Skill or [color=%positive%]50%[/color] of Ranged Defense, whichever stat is highest, but maximum range is reduced to 3.
+• When using Throwing Weapons additionally inflict additional damage [color=%positive%]30%[/color] of Melee Skill and [color=%positive%]50%[/color] of Ranged Defense combined.
 
 • Allows you to use Throwing Weapons in melee.
 ";
@@ -1091,6 +1091,53 @@ Siphon their lifeforce into yourself!
 • Chance to hit is based on Melee Attack.
 
 • Costs [color=%negative%]5[/color] AP and [color=%negative%]10[/color] Fatigue.
+";
+
+::Const.Strings.PerkDescription.LegendValaInscriptionMastery <- @"
+The Vala becomes is a master at the intricate and lost art of inscribing signs and sigils.
+
+[color=%passive%][u]Passive:[/u][/color]
+• When taking [color=%perk%]Polearm Mastery[/color], the Vala will become able to inscribe shields and weapons.
+
+• When taking [color=%perk%]Nimble[/color] or [color=%perk%]Lithe[/color], the Vala will become able to inscribe Armor and Helmets.
+
+• When she achieves level 11, she will also increase the speed at which she can craft runes by [color=%positive%]30%[/color].
+";
+
+::Const.Strings.PerkDescription.LegendValaInscribeWeapon <- @"
+Learn to inscribe rune sigils for weapons.
+
+[color=%passive%][u]Passive:[/u][/color]
+• Allows the Vala to inscribe rocks with weapon specific rune sigils while encamped to create powerful rune stones.
+
+• Possibilities: accuracy, bleeding, feeding, poison, power.
+";
+
+::Const.Strings.PerkDescription.LegendValaInscribeHelmet <- @"
+Learn to inscribe rune sigils for helmets.
+
+[color=%passive%][u]Passive:[/u][/color]
+• Allows the Vala to inscribe rocks with helmet specific rune sigils while encamped to create powerful rune stones.
+
+• Possibilities: bravery, clarity, luck.
+";
+
+::Const.Strings.PerkDescription.LegendValaInscribeArmor <- @"
+Learn to inscribe rune sigils for armor.
+
+[color=%passive%][u]Passive:[/u][/color]
+• Allows the Vala to inscribe rocks with armor specific rune sigils while encamped to create powerful rune stones.
+
+• Possibilities: endurance, resilience, safety.
+";
+
+::Const.Strings.PerkDescription.LegendValaInscribeShield <- @"
+Learn to inscribe rune sigils for shields
+
+[color=%passive%][u]Passive:[/u][/color]
+• Allows the Vala to inscribe rocks with shield specific rune sigils while encamped to create powerful rune stones.
+
+• Possibilities: defense, radiance.
 ";
 
 ::Const.Strings.PerkDescription.LegendValaChantMastery <- @"

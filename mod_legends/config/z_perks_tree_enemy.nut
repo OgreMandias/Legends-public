@@ -143,6 +143,7 @@ local category = "Enemy";
 };
 
 ::Const.Perks.EnemyTrees <- {
+	GroupsCategory = "Enemy",
 	Tree = [
 		::Const.Perks.BeastTree,
 		::Const.Perks.OccultTree,

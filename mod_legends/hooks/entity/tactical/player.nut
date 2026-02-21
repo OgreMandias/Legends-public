@@ -49,7 +49,7 @@
 		if (this.isInReserves() && !this.m.Skills.hasPerk(::Legends.Perk.LegendPeaceful)) {
 			food *= 2;
 		}
-		// See getDailyCost for the explanation behind this defensive check; technically it is not 
+		// See getDailyCost for the explanation behind this defensive check; technically it is not
 		// needed now, but if getDailyFood is ever used in a skill it would cause the same issue.
 		local player = this.World.State != null ? this.World.State.getPlayer() : null;
 		local foodModifier = player != null && ("getFoodModifier" in player) ? player.getFoodModifier() : 0.0;
@@ -675,6 +675,9 @@
 				bro.addXP(this.Math.max(1, this.Math.floor(XPgroup / brothers.len())));
 			}
 		}
+		if (this.Tactical.State.isScenarioMode())
+			return;
+
 		if (("State" in this.World) && this.World.State != null && ::World.Assets.m.HasDrillSergeant && this.getLevel() >= 12)
 		{
 			foreach( bro in brothers )

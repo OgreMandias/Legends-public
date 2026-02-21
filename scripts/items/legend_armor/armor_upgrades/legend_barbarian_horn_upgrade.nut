@@ -8,6 +8,8 @@ this.legend_barbarian_horn_upgrade <- this.inherit("scripts/items/legend_armor/l
 		this.m.Name = "Horn and Bone";
 		this.m.Description = "The ceremonial adornment of a self-proclaimed barbarian king. The rare and durable horns act as an suprisingly effective armor.";
 		this.m.ArmorDescription = "This armor has been adorned with ceremonial horns by barbarian craftsmen.";
+		this.m.ImpactSound = this.Const.Sound.ArmorBoneImpact;
+		this.m.InventorySound = this.Const.Sound.ArmorBoneImpact;
 		this.m.Icon = "armor_upgrades/upgrade_23.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_23.png";

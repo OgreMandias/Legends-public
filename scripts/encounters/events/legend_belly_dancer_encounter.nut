@@ -116,9 +116,9 @@ this.legend_belly_dancer_encounter <- this.inherit("scripts/encounters/encounter
 				local armor = items.getItemAtSlot(::Const.ItemSlot.Body);
 				if (armor != null)
 					items.unequip(armor);
-				armor = ::new("scripts/items/legend_armor/cloth/legend_ancient_cloth");
+				armor = ::new("scripts/items/legend_armor/cloth/ancient_cloth");
 				armor.setVariant(4);
-				armor.setUpgrade(::new("scripts/items/legend_armor/plate/legend_southern_arm_guards"));
+				armor.setUpgrade(::new("scripts/items/legend_armor/plate/southern_arm_guards"));
 				items.equip(armor);
 				local helmet = items.getItemAtSlot(::Const.ItemSlot.Head);
 				if (helmet != null)

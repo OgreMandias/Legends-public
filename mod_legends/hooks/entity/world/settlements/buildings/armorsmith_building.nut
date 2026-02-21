@@ -553,7 +553,7 @@
 			{
 				R = 90,
 				P = 1.0,
-				S = "legend_armor/cloth/legend_knightly_robe"
+				S = "legend_armor/cloth/knightly_robe"
 			},
 			{
 				R = 60,

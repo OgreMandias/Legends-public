@@ -8,6 +8,8 @@ this.legend_armor_stollwurm_scales_upgrade <- this.inherit("scripts/items/legend
 		this.m.Name = "Stollwurm Scale Cloak";
 		this.m.Description = "A cloak made out of the scales of a Stollwurm. Not only is it a rare and impressive trophy, it also offers additional protection";
 		this.m.ArmorDescription = "A cloak made out of Stollwurm scales is worn over this armor for additional protection.";
+		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
+		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.Variants = [1, 2];
 		this.m.Variant = 1;
 		this.m.Value = 6000;

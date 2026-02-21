@@ -8,6 +8,8 @@ this.legend_double_mail_upgrade <- this.inherit("scripts/items/legend_armor/lege
 		this.m.Name = "Double Mail";
 		this.m.Description = "A couple of thick double mail patches. Heavy, but effective in further adding to an armor\'s protection.";
 		this.m.ArmorDescription = "A thick double mail has been added to this armor for further protection.";
+		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
+		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.Icon = "armor_upgrades/upgrade_19.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_19.png";

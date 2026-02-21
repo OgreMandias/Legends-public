@@ -8,6 +8,8 @@ this.legend_mail_patch_upgrade <- this.inherit("scripts/items/legend_armor/legen
 		this.m.Name = "Mail Patch";
 		this.m.Description = "A large patch of mail that can be added to any armor to further protect the most vulnerable areas.";
 		this.m.ArmorDescription = "A large patch of mail has been added to this armor to further protect the most vulnerable areas.";
+		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
+		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.Icon = "armor_upgrades/upgrade_09.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_09.png";

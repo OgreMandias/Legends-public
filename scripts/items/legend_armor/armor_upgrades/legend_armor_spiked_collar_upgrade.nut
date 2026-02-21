@@ -8,6 +8,8 @@ this.legend_armor_spiked_collar_upgrade <- this.inherit("scripts/items/legend_ar
 		this.m.Name = "Spiked Coif";
 		this.m.Description = "A spiked mail coif which adds another layer of defense, at the expense of weight and sound as it jangles";
 		this.m.ArmorDescription = "This armor is topped with a noisey spiked mail coif";
+		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
+		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.Icon = "armor_upgrades/upgrade_spiked_chain_collar_01.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_spiked_chain_collar_01.png";

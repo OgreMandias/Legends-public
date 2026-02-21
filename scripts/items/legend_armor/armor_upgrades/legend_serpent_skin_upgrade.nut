@@ -8,6 +8,8 @@ this.legend_serpent_skin_upgrade <- this.inherit("scripts/items/legend_armor/leg
 		this.m.Name = "Serpent Skin Mantle";
 		this.m.Description = "A mantle crafted from the thin and shimmering scales of desert serpents, especially resistant to heat and flames.";
 		this.m.ArmorDescription = "A mantle of serpent skin has been attached to this armor, which makes it more resistant to heat and flames.";
+		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
+		this.m.InventorySound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.Icon = "armor_upgrades/upgrade_27.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_27.png";

@@ -222,7 +222,7 @@
 			[1, ::Legends.Armor.Standard.padded_leather],
 			[1, ::Legends.Armor.Standard.leather_tunic],
 			[1, ::Legends.Armor.Standard.linen_tunic],
-			[1, ::Legends.Armor.Standard.padded_surcoat]
+			[1, ::Legends.Armor.Standard.quilted_aketon]
 		]));
 		items.equip(this.Const.World.Common.pickHelmet([
 			[67, ::Legends.Helmet.None],

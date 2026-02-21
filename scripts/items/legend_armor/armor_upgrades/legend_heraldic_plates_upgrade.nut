@@ -8,6 +8,8 @@ this.legend_heraldic_plates_upgrade <- this.inherit("scripts/items/legend_armor/
 		this.m.Name = "Heraldic Shoulderplates";
 		this.m.Description = "Large protective plates to be fixed at the shoulders of an armor.";
 		this.m.ArmorDescription = "Large protective plates have been fixed at the shoulders of this armor.";
+		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
+		this.m.InventorySound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.Variants = [1, 2];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.m.Value = 1800;

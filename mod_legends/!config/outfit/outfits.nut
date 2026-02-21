@@ -276,7 +276,7 @@
 		[4, ::Legends.Armor.Standard.legend_blacksmith_apron],
 	//	 [4, ::Legends.Armor.Standard.mail_shirt],
 		[4, ::Legends.Armor.Standard.padded_leather],
-		[4, ::Legends.Armor.Standard.padded_surcoat],
+		[4, ::Legends.Armor.Standard.quilted_aketon],
 		[4, ::Legends.Armor.Standard.ragged_dark_surcoat],
 		[1, ::Legends.Armor.Standard.wizard_robe]
 	],
@@ -312,7 +312,7 @@
 		[4, ::Legends.Armor.Standard.leather_tunic],
 		[4, ::Legends.Armor.Standard.legend_blacksmith_apron],
 		[4, ::Legends.Armor.Standard.padded_leather],
-		[4, ::Legends.Armor.Standard.padded_surcoat],
+		[4, ::Legends.Armor.Standard.quilted_aketon],
 		[4, ::Legends.Armor.Standard.ragged_dark_surcoat],
 		[1, ::Legends.Armor.Standard.wizard_robe]
 	],
@@ -362,7 +362,7 @@
 	ID = "caravan_guard_outfit_00"
 	Body = [
 		[1, ::Legends.Armor.Standard.padded_leather],
-		[1, ::Legends.Armor.Standard.padded_surcoat]
+		[1, ::Legends.Armor.Standard.quilted_aketon]
 	],
 	Helmet = [
 		[1, ::Legends.Helmet.Standard.hood],
@@ -381,7 +381,7 @@
 	Body = [
 		[1, ::Legends.Armor.Standard.leather_tunic],
 		[1, ::Legends.Armor.Standard.padded_leather],
-		[1, ::Legends.Armor.Standard.padded_surcoat]
+		[1, ::Legends.Armor.Standard.quilted_aketon]
 	],
 	Helmet = [
 		[1, ::Legends.Helmet.Standard.hood],
@@ -407,7 +407,7 @@
 	Body = [
 		[1, ::Legends.Armor.Standard.leather_tunic],
 		[1, ::Legends.Armor.Standard.padded_leather],
-		[1, ::Legends.Armor.Standard.padded_surcoat]
+		[1, ::Legends.Armor.Standard.quilted_aketon]
 	],
 	Helmet = [
 		[1, ::Legends.Helmet.Standard.hood],
@@ -427,7 +427,7 @@
 		[10, ::Legends.Armor.Standard.leather_tunic],
 		[10, ::Legends.Armor.Standard.blotched_gambeson],
 		[10, ::Legends.Armor.Standard.ragged_surcoat],
-		[10, ::Legends.Armor.Standard.padded_surcoat],
+		[10, ::Legends.Armor.Standard.quilted_aketon],
 		[10, ::Legends.Armor.Standard.gambeson]
 	],
 	Helmet = [

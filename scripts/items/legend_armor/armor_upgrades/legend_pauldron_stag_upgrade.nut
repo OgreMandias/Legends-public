@@ -8,6 +8,8 @@ this.legend_pauldron_stag_upgrade <- this.inherit("scripts/items/legend_armor/le
 		this.m.Name = "Stag Pauldrons";
 		this.m.Description = "These segments of worked irons are spikey like antlers and excellent for protecting shoulders and arms. Worn over common armor, they can help to deflect incoming blows.";
 		this.m.ArmorDescription = "Segments of spikey iron plates provide additional protection.";
+		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
+		this.m.InventorySound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.Icon = "armor_upgrades/icon_pauldrons_stag_01.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "armor_upgrades/icon_pauldrons_stag_01.png";

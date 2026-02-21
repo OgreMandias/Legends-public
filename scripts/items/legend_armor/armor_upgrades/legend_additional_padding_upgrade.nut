@@ -8,6 +8,8 @@ this.legend_additional_padding_upgrade <- this.inherit("scripts/items/legend_arm
 		this.m.Name = "Additional Fur Padding";
 		this.m.Description = "Crafted from thick furs, this additional padding helps dampen the impact of any blow. Can be worn atop any armor to make the wearer more resilient against ranged weapons and stop blows penetrating the armor";
 		this.m.ArmorDescription = "Additional fur padding helps to further dampen the impact of any blow.";
+		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
+		this.m.InventorySound = this.Const.Sound.ClothEquip;
 		this.m.Icon = "armor_upgrades/upgrade_03.png";
 		this.m.OverlayIconLarge = "armor_upgrades/inventory_upgrade_03.png";
 		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_03.png";

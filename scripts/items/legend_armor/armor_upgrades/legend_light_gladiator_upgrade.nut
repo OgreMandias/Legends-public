@@ -8,6 +8,8 @@ this.legend_light_gladiator_upgrade <- this.inherit("scripts/items/legend_armor/
 		this.m.Name = "Padded Armor Pieces";
 		this.m.Description = "Padded armpieces that provides additional protection.";
 		this.m.ArmorDescription = "This harness has padded armpieces attached that provide additional protection.";
+		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
+		this.m.InventorySound = this.Const.Sound.ClothEquip;
 		this.m.Icon = "armor_upgrades/upgrade_24.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_24.png";

@@ -10,7 +10,8 @@ this.legend_hexen_leader_cloak <- this.inherit("scripts/items/legend_armor/legen
 		this.m.Name = "Hexen Leader Silk Cloak";
 		this.m.Description = "This elegant cloak is made from spider web that bolsters its users resolve";
 		this.m.ArmorDescription = "A Hexen cloak able to increase its users resolve";
-
+		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
+		this.m.InventorySound = this.Const.Sound.ClothEquip;
 		this.m.Value = 7500;
 		this.m.Condition = 25;
 		this.m.ConditionMax = 25;

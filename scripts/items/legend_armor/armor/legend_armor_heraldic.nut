@@ -1,8 +1,8 @@
-this.legend_armor_heraldic <- this.inherit("scripts/items/legend_armor/cloth/legend_gambeson", {
+this.legend_armor_heraldic <- this.inherit("scripts/items/legend_armor/cloth/gambeson", {
 	m = {},
 	function create()
 	{
-		this.legend_gambeson.create();
+		this.gambeson.create();
 		this.m.ID = "legend.armor.body.gambeson_rare_color.cloth";
 		this.m.Variants = [
 			2,
@@ -65,28 +65,28 @@ this.legend_armor_heraldic <- this.inherit("scripts/items/legend_armor/cloth/leg
 		switch (_variant)
 		{
 			case 1:
-				gambesons = [3,6,15,16,17,41,53];
+				gambesons = [6,15,16,17,40];//[3,6,15,16,17,41,53];
 				break;
 			case 2:
-				gambesons = [15,33,53];
+				gambesons = [15,33];//[15,33,53];
 				break;
 			case 3:
-				gambesons = [1,2,8,13,34,35,36,37,38,39,59,60,61,62,62,64];
+				gambesons = [2,3,8,13,34,35,36,37,38,39];//[1,2,8,13,34,35,36,37,38,39,59,60,61,62,62,64];
 				break;
 			case 4:
-				gambesons = [6,16,17,41];
+				gambesons = [6,16,17];//[6,16,17,41];
 				break;
 			case 5:
 				gambesons = [5,9,23,24,25,26,27,28];
 				break;
 			case 6:
-				gambesons = [7,8,29,30,31,32,33];
+				gambesons = [3,7,29,30,31,32,33];//[7,8,29,30,31,32,33];
 				break;
 			case 7:
 				gambesons = [11];
 				break;
 			case 8:
-				gambesons = [1,34,59];
+				gambesons = [2,34];//[1,34,59];
 				break;
 			case 9:
 				gambesons = [6,10,12];
@@ -99,21 +99,21 @@ this.legend_armor_heraldic <- this.inherit("scripts/items/legend_armor/cloth/leg
 		this.setVariant(this.Math.rand(0, gambesons.len() - 1));
 		local chains = [
 			[0, ""],
-			[0, "chain/legend_armor_mail_shirt"],
-			[0, "chain/legend_armor_mail_shirt_simple"],
-			[0, "chain/legend_armor_rusty_mail_shirt"],
-			[0, "chain/legend_armor_ancient_double_mail"],
-			[0, "chain/legend_armor_ancient_mail"],
-			[1, "chain/legend_armor_basic_mail"],
-			[1, "chain/legend_armor_hauberk"],
-			[1, "chain/legend_armor_hauberk_full"],
-			[0, "chain/legend_armor_hauberk_sleevless"],
-			[0, "chain/legend_armor_reinforced_mail"],
-			[0, "chain/legend_armor_reinforced_mail_shirt"],
-			[0, "chain/legend_armor_reinforced_rotten_mail_shirt"],
-			[0, "chain/legend_armor_reinforced_worn_mail"],
-			[0, "chain/legend_armor_reinforced_worn_mail_shirt"],
-			[0, "chain/legend_armor_short_mail"]
+			[0, "chain/mail_shirt"],
+			[0, "chain/mail_shirt_simple"],
+			[0, "chain/rusty_mail_shirt"],
+			[0, "chain/ancient_double_mail"],
+			[0, "chain/ancient_mail"],
+			[1, "chain/basic_mail"],
+			[1, "chain/hauberk"],
+			[1, "chain/hauberk_full"],
+			[0, "chain/hauberk_sleeveless"],
+			[0, "chain/reinforced_mail"],
+			[0, "chain/reinforced_mail_shirt"],
+			[0, "chain/reinforced_rotten_mail_shirt"],
+			[0, "chain/reinforced_worn_mail"],
+			[0, "chain/reinforced_worn_mail_shirt"],
+			[0, "chain/short_mail"]
 		];
 
 		local chain = this.Const.World.Common.pickLegendArmor(chains);
@@ -124,42 +124,42 @@ this.legend_armor_heraldic <- this.inherit("scripts/items/legend_armor/cloth/leg
 
 		local plates = [
 			[0, ""],
-			[1, "plate/legend_armor_leather_brigandine"],
-			[1, "plate/legend_armor_leather_brigandine_hardened"],
-			[0, "plate/legend_armor_leather_brigandine_hardened_full"],
-			[0, "plate/legend_armor_leather_jacket"],
-			[0, "plate/legend_armor_leather_jacket_simple"],
-			[0, "plate/legend_armor_leather_lamellar"],
-			[0, "plate/legend_armor_leather_lamellar_harness_heavy"],
-			[0, "plate/legend_armor_leather_lamellar_harness_reinforced"],
-			[0, "plate/legend_armor_leather_lamellar_heavy"],
-			[0, "plate/legend_armor_leather_lamellar_reinforced"],
-			[0, "plate/legend_armor_leather_noble"],
-			[0, "plate/legend_armor_leather_padded"],
-			[0, "plate/legend_armor_leather_riveted"],
-			[0, "plate/legend_armor_leather_riveted_light"],
-			[0, "plate/legend_armor_leather_scale"],
-			[0, "plate/legend_armor_plate_ancient_chest"],
-			[0, "plate/legend_armor_plate_ancient_harness"],
-			[0, "plate/legend_armor_plate_ancient_mail"],
-			[0, "plate/legend_armor_plate_ancient_scale"],
-			[0, "plate/legend_armor_plate_ancient_scale_coat"],
-			[0, "plate/legend_armor_plate_ancient_scale_harness"],
-			[0, "plate/legend_armor_plate_chest"],
-			[0, "plate/legend_armor_plate_chest_rotten"],
-			[0, "plate/legend_armor_plate_cuirass"],
-			[0, "plate/legend_armor_plate_full"],
-			[0, "plate/legend_armor_scale"],
-			[0, "plate/legend_armor_scale_coat"],
-			[0, "plate/legend_armor_scale_coat_rotten"],
-			[0, "plate/legend_armor_scale_shirt"]
+			[1, "plate/leather_brigandine"],
+			[1, "plate/leather_brigandine_hardened"],
+			[0, "plate/leather_brigandine_hardened_full"],
+			[0, "plate/leather_jacket"],
+			[0, "plate/leather_jacket_simple"],
+			[0, "plate/leather_lamellar"],
+			[0, "plate/leather_lamellar_harness_heavy"],
+			[0, "plate/leather_lamellar_harness_reinforced"],
+			[0, "plate/leather_lamellar_heavy"],
+			[0, "plate/leather_lamellar_reinforced"],
+			[0, "plate/leather_jacket_fine"],
+			[0, "plate/leather_padded"],
+			[0, "plate/leather_riveted"],
+			[0, "plate/leather_riveted_light"],
+			[0, "plate/leather_scale"],
+			[0, "plate/plate_ancient_chest"],
+			[0, "plate/plate_ancient_harness"],
+			[0, "plate/plate_ancient_mail"],
+			[0, "plate/plate_ancient_scale"],
+			[0, "plate/plate_ancient_scale_coat"],
+			[0, "plate/plate_ancient_scale_harness"],
+			[0, "plate/plate_chest"],
+			[0, "plate/rotten_plate_chest"],
+			[0, "plate/plate_cuirass"],
+			[0, "plate/plate_full"],
+			[0, "plate/scale"],
+			[0, "plate/scale_coat"],
+			[0, "plate/rotten_scale_coat"],
+			[0, "plate/scale_shirt"]
 		];
 		local plate = this.Const.World.Common.pickLegendArmor(plates);
 		if (plate != null)
 		{
 			this.setUpgrade(plate);
 		}
-		local tabard = this.new("scripts/items/legend_armor/tabard/legend_noble_tabard");
+		local tabard = this.new("scripts/items/legend_armor/tabard/tabard_noble");
 		tabard.setVariant(_variant);
 		this.setUpgrade(tabard);
 	}

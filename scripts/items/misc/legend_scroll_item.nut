@@ -183,7 +183,7 @@ this.legend_scroll_item <- ::inherit("scripts/items/item", {
 
 		local trait = ::Legends.Traits.get(_actor, ::Legends.Trait.LegendIntensiveTraining);
 		if (this.m.Selection == 4 && trait.isMaxReached())
-			return "Max training achieved so this scroll is not useful on this mercenary."
+			return "Max training achieved so this scroll is not useful on this mercenary.";
 
 		return true;
 	}

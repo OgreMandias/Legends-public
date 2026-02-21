@@ -34,7 +34,7 @@
 					if (!this.m.IsUpgraded)
 						continue;
 
-					skill = ::Legends.Actives.get(this, ::Legends.Active.Warcry)
+					skill = ::Legends.Actives.get(this, ::Legends.Active.Warcry);
 					if (skill != null && !skill.m.IsUpgraded)
 						skill.useForFree(a.getTile());
 				}

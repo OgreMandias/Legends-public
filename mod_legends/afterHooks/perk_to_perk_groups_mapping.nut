@@ -9,7 +9,7 @@
 	"Profession",
 	"Magic",
 	"Other"
-]
+];
 
 // Map to get the priority of a perk group category, as ordered in ::Legends.Perks.PerkGroupCategoriesOrder
 // ::Legends.Perks.PerkGroupCategoriesPriority
@@ -137,9 +137,9 @@ foreach (key, group in ::Const.Perks)
 	group.Perks <- []; // single array to store all the perkDefs that the perk group comprises
 	foreach (row in group.Tree) {
 		foreach (perkDef in row) {
-			
+
 			group.Perks.push(perkDef);
-			
+
 			if (!(perkDef in ::Legends.Perks.PerkToPerkGroupMap))
 			{
 				::Legends.Perks.PerkToPerkGroupMap[perkDef] <- {
@@ -153,7 +153,7 @@ foreach (key, group in ::Const.Perks)
 				Name = group.Name,
 				Category = category
 			};
-			
+
 			// ::MSU.Log.printData("Perk " + ::Const.Perks.PerkDefObjects[perkDef].Const + " from Group [" + key + "] categorized as [" + entry.Category + "]");
 			::Legends.Perks.PerkToPerkGroupMap[perkDef].Groups.push(entry);
 		}
@@ -164,7 +164,7 @@ foreach (key, group in ::Const.Perks)
 foreach (perk in ::Const.Perks.PerkDefObjects)
 {
 	local key = ::Legends.Perk[perk.Const];
-	
+
 	// Handle Perks that do not belong to any Perk Group
 	if (!(key in ::Legends.Perks.PerkToPerkGroupMap))
 	{
@@ -204,14 +204,14 @@ foreach (key, value in ::Const.Perks)
 
 /**
  * 	Check if the Perk Group's perks can all be found in a given table of perkDefs
- * 
+ *
  *	Will throw error if ::Const.Perks[_id].ID does not match the variable name
  * 	For example, the following must be true:
  * 	::Const.Perks.Foo.ID = "Foo"
- * 
+ *
  * 	@param _id - The ID of a perk group
  *	@param _perkDefsTable - A table whose keys are perkDefs
- * 
+ *
  * 	@return a boolean
  */
 ::Legends.Perks.isPerkGroupFullyRepresented <- function (_id, _perkDefsTable)
@@ -220,7 +220,7 @@ foreach (key, value in ::Const.Perks)
 	{
 		return false;
 	}
-	
+
 	foreach (perkDef in ::Const.Perks[_id].Perks)
 	{
 		if (!(perkDef in _perkDefsTable))

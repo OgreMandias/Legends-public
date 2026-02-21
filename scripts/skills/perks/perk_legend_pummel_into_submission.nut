@@ -15,10 +15,10 @@ this.perk_legend_pummel_into_submission <- this.inherit("scripts/skills/skill", 
 		local actor = this.getContainer().getActor();
 		local p = _targetEntity.getSkills().buildPropertiesForBeingHit(actor, _skill, _hitInfo);
 		local fatDamage = this.Math.round(_hitInfo.DamageFatigue * p.FatigueEffectMult * p.FatigueReceivedPerHitMult * p.FatigueLossOnAnyAttackMult);
-		local overflow = _targetEntity.getFatigue() + fatDamage - _targetEntity.getFatigueMax();		
+		local overflow = _targetEntity.getFatigue() + fatDamage - _targetEntity.getFatigueMax();
 		if (overflow > 0)
 		{
-			local distanceToTarget = _targetEntity.getTile().getDistanceTo(actor.getTile())
+			local distanceToTarget = _targetEntity.getTile().getDistanceTo(actor.getTile());
 			local properties = this.factoringOffhand(this.getContainer().buildPropertiesForUse(_skill, _targetEntity));
 			local damageMult = this.m.IsRanged ? properties.RangedDamageMult : properties.MeleeDamageMult;
 			damageMult = damageMult * properties.DamageTotalMult;

@@ -204,6 +204,7 @@
 			[1, "cloth/sackcloth_patched"],
 			[1, "cloth/sackcloth_tattered"],
 			[1, "cloth/thick_tunic"],
+			[1, "cloth/tunic_dark"],
 			[1, "cloth/tunic"],
 			[1, "cloth/gambeson", [1, 2, 3]],
 			[1, "cloth/robes"],
@@ -237,6 +238,7 @@
 			[1, "cloth/sackcloth_patched"],
 			[1, "cloth/sackcloth_tattered"],
 			[1, "cloth/thick_tunic"],
+			[1, "cloth/tunic_dark"],
 			[1, "cloth/tunic"],
 			[1, "cloth/gambeson", [1, 2, 3]],
 			[1, "cloth/robes"],
@@ -270,20 +272,18 @@
 			[1, "cloth/sackcloth_patched"],
 			[1, "cloth/sackcloth_tattered"],
 			[1, "cloth/thick_tunic"],
+			[1, "cloth/tunic_dark"],
 			[1, "cloth/tunic"],
 			[1, "cloth/gambeson", [1, 2, 3]],
 			[1, "cloth/robes"],
 		],
 		Chain = [
-			[1, "chain/reinforced_rotten_mail_shirt"],
 			[1, "chain/reinforced_worn_mail"],
 			[1, "chain/reinforced_worn_mail_shirt"],
-		],
-		Plate = [
-			[1, ""],
 			[1, "chain/hauberk_sleeveless"],
-			[1, "chain/hauberk"],
+			[1, "chain/hauberk"]
 		],
+		Plate = [],
 		Cloak = [
 		],
 		Tabard = [
@@ -293,6 +293,39 @@
 	}]
 };
 ::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Standard.decayed_reinforced_mail_hauberk);
+
+::Legends.Armor.Standard.ghost_armor <- {
+	ID = "ghost_armor",
+	Script = "",
+	Sets = [{
+		Cloth = [
+			[1, "cloth/tunic_dark"],
+			[1, "cloth/gambeson", [1, 2, 3]]
+		],
+		Chain = [
+			[1, "chain/reinforced_worn_mail"],
+			[1, "chain/reinforced_worn_mail_shirt"],
+			[1, "chain/rusty_mail_shirt"],
+		],
+		Plate = [
+			[1, "plate/plate_full"],
+			[10, "plate/plate_full_greaves"]
+		],
+		Cloak = [
+		],
+		Tabard = [
+		],
+		Attachments = [
+			[1, "armor_upgrades/legend_pauldron_swan_upgrade"],
+			[1, "armor_upgrades/legend_pauldron_upgrade"],
+			[1, "armor_upgrades/legend_pauldron_stag_upgrade"],
+			[1, "armor_upgrades/legend_pauldron_heavy_upgrade"],
+			[1, "armor_upgrades/legend_pauldron_strong_upgrade"],
+			[1, "armor_upgrades/legend_metal_pauldrons_upgrade"]
+		]
+	}]
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Standard.ghost_armor);
 
 ::Legends.Armor.Standard.footman_armor <- {
 	ID = "footman_armor",
@@ -2638,7 +2671,7 @@
 ::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Standard.bandit_armor_ultraheavy);
 
 ::Legends.Armor.Standard.lindwurm_armor <- {
-	ID = "noble_mail_armor",
+	ID = "lindwurm_armor",
 	Script = "",
 	Sets = [{
 		Cloth = [

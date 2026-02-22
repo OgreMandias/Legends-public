@@ -206,7 +206,6 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		this.addSprite("armor_upgrade_front");
 		this.addSprite("surcoat");
 		this.addSprite("dirt");
-		this.addSprite("armor_upgrade_back");
 		this.addSprite("armor_layer_chain");
 		this.addSprite("armor_layer_plate");
 		this.addSprite("armor_layer_tabbard");
@@ -216,6 +215,7 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		this.addSprite("helmet_vanity_lower_2");
 		this.addSprite("armor_layer_cloak");
 		this.addSprite("armor_layer_cloak_front");
+		this.addSprite("armor_upgrade_back");
 		this.addSprite("helmet_helm");
 		this.addSprite("helmet_top");
 		this.addSprite("helmet_vanity");
@@ -297,7 +297,7 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 				"weapons/greatsword",
 				"weapons/greataxe",
 				"weapons/two_handed_hammer",
-				"weapons/two_handed_flanged_mace", // Moved all weapons into one array because Legends requires all DLCs anyways
+				"weapons/two_handed_flanged_mace",
 				"weapons/two_handed_flail",
 				"weapons/bardiche"
 			];
@@ -307,11 +307,7 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body)) {
 			local armor = [
-				[1, ::Legends.Armor.Standard.coat_of_plates],
-				[1, ::Legends.Armor.Standard.coat_of_scales],
-				//[1, ::Legends.Armor.Standard.reinforced_mail_hauberk],
-				[1, ::Legends.Armor.Standard.heavy_lamellar_armor],
-				[1, ::Legends.Armor.Standard.brown_hedgeknight_armor]
+				[1, ::Legends.Armor.Standard.ghost_armor]
 			];
 			this.m.Items.equip(this.Const.World.Common.pickArmor(
 				armor
@@ -320,29 +316,7 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head)) {
 			local helmet = [
-				[30, ::Legends.Helmet.Standard.full_helm],
-				[10, ::Legends.Helmet.Standard.closed_flat_top_with_mail],
-				[5, ::Legends.Helmet.Standard.legend_helm_breathed],
-				[5, ::Legends.Helmet.Standard.legend_helm_full],
-				[5, ::Legends.Helmet.Standard.legend_helm_bearded],
-				[5, ::Legends.Helmet.Standard.legend_helm_point],
-				[5, ::Legends.Helmet.Standard.legend_helm_snub],
-				[5, ::Legends.Helmet.Standard.legend_helm_short],
-				[5, ::Legends.Helmet.Standard.legend_helm_curved],
-				[5, ::Legends.Helmet.Standard.legend_helm_sharp],
-				//[2, ::Legends.Helmet.Standard.wallace_sallet],
-				//[2, ::Legends.Helmet.Standard.deep_sallet],
-				//[2, ::Legends.Helmet.Standard.italo_norman_helm],
-				[2, ::Legends.Helmet.Standard.legend_enclave_vanilla_great_helm_01],
-				[2, ::Legends.Helmet.Standard.legend_enclave_vanilla_armet_01],
-				[2, ::Legends.Helmet.Standard.legend_enclave_vanilla_armet_02],
-				[2, ::Legends.Helmet.Standard.legend_enclave_vanilla_great_bascinet_01],
-				[2, ::Legends.Helmet.Standard.legend_enclave_vanilla_great_bascinet_02],
-				[2, ::Legends.Helmet.Standard.legend_enclave_vanilla_great_bascinet_03],
-				[2, ::Legends.Helmet.Standard.legend_enclave_vanilla_kettle_sallet_01],
-				[2, ::Legends.Helmet.Standard.legend_enclave_vanilla_kettle_sallet_02],
-				//[2, ::Legends.Helmet.Standard.legend_enclave_vanilla_kettle_sallet_03],
-				//[2, ::Legends.Helmet.Standard.brown_hedgeknight_helmet]
+				[1, ::Legends.Helmet.Standard.ghost_helmet]
 			];
 			this.m.Items.equip(this.Const.World.Common.pickHelmet(
 				helmet
@@ -366,24 +340,36 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 			"weapons/named/named_two_handed_flail"
 		];
 
-		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
-		local r = this.Math.rand(1, 2);
-		if (r == 1) {
-			this.m.Items.equip(this.Const.World.Common.pickArmor([
-				[1, ::Legends.Armor.Named.brown_coat_of_plates_armor],
-				[1, ::Legends.Armor.Named.golden_scale_armor],
-				[1, ::Legends.Armor.Named.green_coat_of_plates_armor]
-			]));
-		} else {
-			this.m.Items.equip(this.Const.World.Common.pickHelmet([
-				[3, ::Legends.Helmet.Named.bascinet_named],
-				[3, ::Legends.Helmet.Named.kettle_helm_named],
-				[3, ::Legends.Helmet.Named.deep_sallet_named],
-				[3, ::Legends.Helmet.Named.barbute_named],
-				[3, ::Legends.Helmet.Named.italo_norman_helm_named],
-				[3, ::Legends.Helmet.Named.wallace_sallet_named],
-				[3, ::Legends.Helmet.Named.named_helm_with_lion_pelt]
-			]));
+		local upgrades = [];
+		local r = this.Math.rand(1, 3);
+		if (r == 1)
+		{
+			local armor = this.Const.World.Common.pickArmor([
+				[1, ::Legends.Armor.Standard.ghost_armor]
+			]);
+			upgrades = [
+				"plate/plate_full_greaves_named",
+				"plate/plate_full_greaves_painted",
+				"chain/hauberk_full_named"
+			]
+			// armor.setUpgrade(this.new("scripts/items/legend_armor/" + upgrades[this.Math.rand(0, upgrades.len() - 1)]));
+			this.m.Items.equip(this.new("scripts/items/legend_armor/" + upgrades[this.Math.rand(0, upgrades.len() - 1)]));
+		}
+		else if (r == 2)
+		{
+			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
+		}
+		else
+		{
+			local helmet = this.Const.World.Common.pickArmor([
+				[1, ::Legends.Armor.Standard.ghost_helmet]
+			]);
+			upgrades = [
+				"helm/legend_helmet_frogmouth_named",
+				"helm/legend_helmet_armet_named"
+			]
+			// helmet.setUpgrade(this.new("scripts/items/legend_armor/" + upgrades[this.Math.rand(0, upgrades.len() - 1)]));
+			this.m.Items.equip(this.new("scripts/items/legend_helmets/" + upgrades[this.Math.rand(0, upgrades.len() - 1)]));
 		}
 
 		return true;

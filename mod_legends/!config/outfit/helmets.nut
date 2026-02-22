@@ -327,6 +327,7 @@
 			[1, "hood/legend_helmet_rusty_chain_hood"], //60, -3, 0
 		],
 		Helms = [
+			[1, "helm/legend_helmet_rotten_flat_top_face_mask"], //150, -14, -3
 			[1, "helm/legend_helmet_rotten_great_helm"] //160, -15, -3
 		],
 		Tops = [],
@@ -340,6 +341,27 @@
 	}]
 };
 ::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Standard.decayed_full_helm);
+
+::Legends.Helmet.Standard.ghost_helmet <- {
+	ID = "ghost_helmet", //240, -20, -3
+	Script = "",
+	Sets = [{
+		Hoods = [
+			[1, "hood/legend_helmet_barb_chain_scarf"], // 55, -3, 0
+			[1, "hood/legend_helmet_rotten_chain_scarf"], //60, -3, 0
+			[1, "hood/legend_helmet_rusty_chain_hood"], //60, -3, 0
+		],
+		Helms = [
+			[1, "helm/legend_helmet_rotten_great_helm"], //160, -15, -3
+			[1, "helm/legend_helmet_frogmouth", [2,3]], //155, -11, -2
+			[1, "helm/legend_helmet_enclave_great_helm"], //180, -16, -4
+			[1, "helm/legend_helmet_armet", 5], //160, -15, -3
+		],
+		Tops = [],
+		Vanity = []
+	}]
+};
+::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Standard.ghost_helmet);
 
 ::Legends.Helmet.Standard.decayed_great_helm <- {
 	ID = "decayed_great_helm", //255, -22, -3
@@ -1837,7 +1859,7 @@
 			[1, "hood/legend_helmet_chain_hood_full"] //90, -6, 0
 		],
 		Helms = [
-			[1, "helm/legend_helmet_enclave_great_helm"] //220, -15, -3
+			[1, "helm/legend_helmet_enclave_great_helm"] //180, -16, -4
 		],
 		Tops = [
 		],

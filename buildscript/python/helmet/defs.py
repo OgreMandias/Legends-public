@@ -97,13 +97,12 @@ class Defs:
  },
 {"name" : "aventail"                     , "layer" : "hood", "min" : 1, "max" : 5, "base" : True, "value" : 150, "con" : 60, "stam" : -3, "vis" : 0, "hair" : "false", "beard" : "true",
  "title" :  "Aventail",
- "desc" :  "A mail aventail that extends from below the eyeline to cover the neck and lower face."
+ "desc" :  "Truly fit for a knight, this aventail is made from the highest quality materials and boasts precious decorations and ornaments."
  },
-#!!ADD AVENTAIL_FULL_NAMED HERE:
-#{"name" : "aventail_named"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 1500, "con" : 80, "stam" : -2, "vis" : 0, "hair" : "false", "beard" : "true",
-# "title" :  "Famed Aventail",
-# "desc" :  "Description here."
-# },
+{"name" : "aventail_named"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 1500, "con" : 60, "stam" : -3, "vis" : 0, "hair" : "false", "beard" : "true", "named" : True, "rmaxViz" : 0, "rminViz" : 0, "rmaxStam" : 2, "rminStam" : 3, "rminCond" : 60, "rmaxCond" : 75, "names" : Names,
+"title" :  "",
+"desc" :  "Truly fit for a knight, this mail coif is made from the highest quality materials and boasts precious decorations and ornaments."
+},
 {"name" : "rusty_chain_hood"                     , "layer" : "hood", "min" : 1, "max" : 3, "base" : True, "value" : 150, "con" : 70, "stam" : -4, "vis" : 0, "hair" : "true", "beard" : "false",
  "title" :  "Rusty Mail Coif",
  "desc" :  "A rusty mail coif that still offers good protection - it leaves horrible stains though."
@@ -116,11 +115,10 @@ class Defs:
  "title" :  "Full Mail Coif",
  "desc" :  "A mail coif that also protects the neck."
  },
- #!!ADD CHAIN_HOOD_FULL_NAMED HERE:
- #{"name" : "chain_hood_full_named"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 3000, "con" : 120, "stam" : -3, "vis" : 0, "hair" : "true", "beard" : "true",
- #"title" :  "Famed Full Mail Coif",
- #"desc" :  "Description here."
- #},
+ {"name" : "chain_hood_full_named"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 3600, "con" : 80, "stam" : -4, "vis" : 0, "hair" : "true", "beard" : "true", "named" : True, "rmaxViz" : 0, "rminViz" : 0, "rmaxStam" : 4, "rminStam" : 3, "rminCond" : 80, "rmaxCond" : 95, "names" : Names,
+ "title" :  "",
+ "desc" :  "Truly fit for a knight, this mail coif is made from the highest quality materials and boasts precious decorations and ornaments."
+ },
 {"name" : "mail_coif"                     , "layer" : "hood", "min" : 1, "max" : 3, "base" : True, "value" : 450, "con" : 85, "stam" : -5, "vis" : 0, "hair" : "true", "beard" : "false",
  "title" :  "Heavy Mail Coif",
  "desc" :  "A full mail coif, heavier and sturdier than most others of its kind."
@@ -431,7 +429,7 @@ class Defs:
  "title" :  "Full Helm",
  "desc" :  "A closed metal helm with breathing holes. Lovingly maintained despite its extensive use"
  },
-{"name" : "enclave_great_helm"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 2650, "con" : 180, "stam" : -12, "vis" : -2, "hair" : "true", "beard" : "true",
+{"name" : "enclave_great_helm"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 2650, "con" : 180, "stam" : -16, "vis" : -4, "hair" : "true", "beard" : "true",
  "title" :  "Great Helm",
  "desc" :  "A closed metal helm with breathing holes. Great in the way of protection but hard to breathe in and limiting the field of view."
  },
@@ -532,7 +530,7 @@ class Defs:
  "desc" :  "Rotten Great Helm."
  },
  {"name" : "rotten_great_helm_named"                     , "layer" : "helm", "min" : 1, "max" : 5, "value" : 3400, "con" : 190, "stam" : -13, "vis" : -3, "hair" : "true", "beard" : "true", "named" : True, "rmaxViz" : 3, "rminViz" : 3, "rmaxStam" : 12, "rminStam" : 14, "rminCond" : 190, "rmaxCond" : 215, "names" : Names,
- "title" :  "Rotten Great Helm",
+ "title" :  "",
  "desc" :  "A Rotten Great Helm which once belonged to a decorated knight. Incrusted with gold and precious gems, it betrays a craftmanship which years of neglect could not diminish."
  },
 {"name" : "barb_metal_cap"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 150, "con" : 40, "stam" : -2, "vis" : 0, "hair" : "true", "beard" : "false",

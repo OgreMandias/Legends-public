@@ -12,6 +12,8 @@
 			this.m.ActionPointCost = 5;
 			this.m.FatigueCost = 20;
 		}
+	}
+
 	local create = o.create;
 	o.create = function ()
 	{

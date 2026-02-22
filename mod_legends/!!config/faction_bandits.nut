@@ -37,7 +37,7 @@
 	],
 	FatigueRecoveryRate = 20
 };
-::Const.Tactical.Actor.BanditWarlord <- { // You contracted in the wrong neighbourhood
+::Const.Tactical.Actor.LegendRobberBaron <- { // You contracted in the wrong neighbourhood
 	XP = 700,
 	ActionPoints = 11,
 	Hitpoints = 225,

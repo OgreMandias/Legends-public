@@ -1001,6 +1001,115 @@
 		return ::Const.Perks.PerkDefObjects[_perk].ID in this.m.PerkTreeMap;
 	}
 
+	/**
+	 * Gets information on how many complete perk groups the character has,
+	 * as well as any additional perks that are not part of a complete set
+	 *
+	 * @return A table containing the following:
+	 * 	- CompleteGroupsIDs: Table whose keys are perk group categories; values are arrays containing IDs of complete perk groups
+	 * 	- RemainingPerkDefs: Array of perkDefs (numbers representing indeces in ::Const.Perks.PerkDefObjects) that do not belong to any complete perk group
+	 */
+	o.getPerkGroups <- function ()
+	{
+		local tmp = {};
+		local nonStrayPerks = {};
+		local possibleStrayPerks = [];
+		local ret = {
+			CompleteGroupsIDs = ::Legends.Perks.buildPerkGroupCategoriesTableOfArrays(),
+			RemainingPerkDefs = [] // Array of perkDefs that do not belong to any complete perk group
+		}
+
+		foreach (perk in this.m.PerkTreeMap)
+		{
+			// 1. Find out which perk groups are possible
+			// 2. Check if each perk group is fully represented
+			// 3. List out all fully represented perk groups, and the remaining number of ungrouped perks
+			foreach (entry in perk.PerkGroups)
+			{
+				if (!(entry.ID in tmp))
+				{
+					tmp[entry.ID] <- {
+						Category = entry.Category,
+						PerkDefs = {}
+					}
+				}
+
+				tmp[entry.ID].PerkDefs[Legends.Perk[perk.Const]] <- true;
+			}
+		}
+
+		foreach (id, entry in tmp)
+		{
+			if (::Legends.Perks.isPerkGroupFullyRepresented(id, entry.PerkDefs))
+			{
+				ret.CompleteGroupsIDs[entry.Category].push(id);
+				foreach (key, v in entry.PerkDefs)
+				{
+					if (!(key in nonStrayPerks))
+					{
+						nonStrayPerks[key] <- true;
+					}
+				}
+			}
+			else
+			{
+				foreach (key, v in entry.PerkDefs)
+				{
+					possibleStrayPerks.push(key);
+				}
+			}
+		}
+
+		foreach (perkDef in possibleStrayPerks)
+		{
+			if (!(perkDef in nonStrayPerks))
+			{
+				ret.RemainingPerkDefs.push(perkDef);
+			}
+		}
+
+		return ret;
+	}
+
+	/**
+	 * Update tooltip data to add a list of all perk groups this character has, organised by categories
+	 *
+	 * @param arr An array of tables to hold the tooltip data, as seen in tooltip_events.nut
+	 */
+	o.extendKnownPerksTooltip <- function(arr)
+	{
+		local data = this.getPerkGroups();
+		local last = arr[arr.len() - 1];
+		local iter = "id" in last ? last.id : 3;
+		foreach (category in ::Legends.Perks.PerkGroupCategoriesOrder)
+		{
+			iter++;
+			if (data.CompleteGroupsIDs[category].len() > 0)
+			{
+				arr.push({
+					id = iter,
+					type = "text",
+					text = "\n[u]" + category + "[/u]"
+				});
+			}
+
+			local counter = 0;
+
+			foreach (index, group in data.CompleteGroupsIDs[category])
+			{
+				counter++;
+				arr.push({
+					id = iter,
+					type = "textDualColumn",
+					listCount = counter,
+					listLength = data.CompleteGroupsIDs[category].len(),
+					icon = "Icon" in ::Const.Perks[group] ? ::Const.Perks[group].Icon : "ui/perks/legend_vala_days.png",
+					text = ::Const.Perks[group].Name
+				});
+			}
+		}
+	}
+
 	o.buildDescription = function( _isFinal = false )
 	{
 		if (this.isBackgroundType(this.Const.BackgroundType.Scenario))
@@ -1383,7 +1492,7 @@
 			local tree = this.m.PerkTreeDynamic == null ? this.m.PerkTreeDynamicBase : this.m.PerkTreeDynamic;
 			local mins = this.getPerkTreeDynamicMins();
 
-			local result  = ::Const.Perks.GetDynamicPerkTree(mins, tree);
+			local result  = ::Const.Perks.GetDynamicPerkTree(mins, tree, false);
 			this.m.CustomPerkTree = result.Tree;
 			a = result.Attributes;
 		}
@@ -1420,10 +1529,6 @@
 		}
 		else
 		{
-			if(this.isBackgroundType(this.Const.BackgroundType.ConvertedCultist))
-			{
-				this.m.DailyCost = 4; // Converted cultists only cost 4, this is instead of saving the value for all bros.
-			}
 			local level = this.getContainer().getActor().getLevel();
 			local wage = this.Math.round(this.m.DailyCost * this.m.DailyCostMult);
 			_properties.DailyWage += wage * this.Math.pow(1.1, this.Math.min(10, level - 1));
@@ -1785,17 +1890,7 @@
 	o.Convert <- function()
 	{
 		this.addBackgroundType(this.Const.BackgroundType.ConvertedCultist);
-		local cultistGroup = [
-						[::Legends.Perk.LegendSpecialistCultist],
-						[::Legends.Perk.LegendSpecCultHood],
-						[],
-						[],
-						[::Legends.Perk.LegendPrepareGraze],
-						[::Legends.Perk.LegendSpecCultArmor],
-						[::Legends.Perk.LegendLacerate]
-					];
-
-		this.addPerkGroup(cultistGroup);
+		this.addPerkGroup(this.Const.Perks.NinetailsClassTree.Tree);
 		this.getContainer().getActor().getFlags().add("cultist");
 	}
 

@@ -49,7 +49,8 @@
 				::Const.Perks.MartyrTree,
 				::Const.Perks.ViciousTree,
 				::Const.Perks.FastTree,
-				::Const.Perks.IndestructibleTree
+				::Const.Perks.IndestructibleTree,
+				::Const.Perks.DeviousTree
 			],
 			Enemy = [],
 			Class = [

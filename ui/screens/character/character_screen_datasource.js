@@ -1931,7 +1931,19 @@ CharacterScreenDatasource.prototype.notifyBackendPopupDialogIsVisible = function
 CharacterScreenDatasource.prototype.notifyBackendDismissCharacter = function (_payCompensation)
 {
 	var activeCharacterID = this.mBrothersList[this.mSelectedBrotherIndex]['id'];
-	SQ.call(this.mSQHandle, 'onDismissCharacter', [ activeCharacterID, _payCompensation ]);
+	
+	var addToObituary = false;
+	var dlg = $('.character-screen .dismiss-popup');
+	if (dlg.length > 0) 
+	{
+		var checkbox = dlg.find('.obituary-checkbox');
+		if (checkbox.length > 0)
+		{
+			addToObituary = checkbox.prop('checked') === true;
+		}
+	}
+	
+	SQ.call(this.mSQHandle, 'onDismissCharacter', [ activeCharacterID, _payCompensation, addToObituary ]);
 };
 
 CharacterScreenDatasource.prototype.notifyBackendToggleReservesCharacter = function ()

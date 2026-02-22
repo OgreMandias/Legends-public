@@ -137,7 +137,7 @@
 	Sets = [{
 		Hoods = [
 			[1, "hood/legend_helmet_barb_chain_scarf"], //55, -2, 0
-			[1, "hood/legend_helmet_chain_scarf"], //70, -4, 0
+			[1, "hood/legend_helmet_aventail"], //70, -4, 0
 			[1, "hood/legend_helmet_open_chain_hood"], //60, -3, 0
 			[1, "hood/legend_helmet_chain_hood_full"] //90, -6, 0
 		],
@@ -156,7 +156,7 @@
 	Sets = [{
 		Hoods = [
 			[1, "hood/legend_helmet_barb_chain_scarf"], //55, -2, 0
-			[1, "hood/legend_helmet_chain_scarf"], //70, -4, 0
+			[1, "hood/legend_helmet_aventail"], //70, -4, 0
 			[1, "hood/legend_helmet_open_chain_hood"], //60, -3, 0
 			[1, "hood/legend_helmet_chain_hood_full"] //90, -6, 0
 		],
@@ -178,7 +178,7 @@
 	Sets = [{
 		Hoods = [ //avg like 72: Need 29
 			[1, "hood/legend_helmet_barb_chain_scarf"], //55, -2, 0
-			[1, "hood/legend_helmet_chain_scarf"], //70, -4, 0
+			[1, "hood/legend_helmet_aventail"], //70, -4, 0
 			[1, "hood/legend_helmet_open_chain_hood"], //60, -3, 0
 		],
 		Helms = [ //avg 190 : need 100

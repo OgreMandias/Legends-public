@@ -363,7 +363,7 @@ Through familiarity and training with your weapon, you know just how your projec
 Use your built up inertia to wreak havoc on the second swing.
 
 [color=%passive%][u]Passive:[/u][/color]
-• After performing [color=%skill%]Round Swing[/color], [color=%skill%]Swing[/color], [color=%skill%]Thresh[/color], [color=%skill%]Reap[/color], [color=%skill%]Castigate[/color] and [color=%skill%]Shatter[/color] you can perform a followup for [color=%negative%]-50%[/color] Fatigue and Action Points. [color=%skill%]Swing[/color] Damage is reduced by [color=%negative%]-25%[/color] and for the rest of the skills by [color=%negative%]-50%[/color].
+• After performing [color=%skill%]Round Swing[/color], [color=%skill%]Swing[/color], [color=%skill%]Thresh[/color], [color=%skill%]Reap[/color], [color=%skill%]Castigate[/color], [color=%skill%]Shatter[/color] and [color=%skill%]Double Swing[/color] you can perform a followup for [color=%negative%]-50%[/color] Fatigue and Action Points. [color=%skill%]Swing[/color] Damage is reduced by [color=%negative%]-25%[/color] and for the rest of the skills by [color=%negative%]-50%[/color].
 
 • Moving, ending your turn or waiting will all remove this effect.
 ";
@@ -408,7 +408,7 @@ Take a deep breath, then get to work.
 There's wolves, bears, nachzehrers, and you. All beings of vicious slaughter.
 
 [color=%passive%][u]Passive:[/u][/color]
-• [color=%positive%]50%[/color] of the skill's fatigue cost is translated to Damage and Chance to hit. This accounts for any fatigue reduction or increase.   
+• [color=%positive%]50%[/color] of the skill's fatigue cost is translated to Damage and Chance to hit. This accounts for any fatigue reduction or increase.
 ";
 
 ::Const.Strings.PerkDescription.LegendImmovableObject <- @"
@@ -417,7 +417,7 @@ Heavy armor, a trusty shield and your heels dug into the ground and you can weat
 [color=%passive%][u]Passive:[/u][/color]
 • For every 10 points of gear weight from all slot gain [color=%positive%]1[/color] Resolve and [color=%negative%]1%[/color] less damage ignoring armor.
 
-• If you have at least 50 gear weight become immune to stuns.
+• If you have at least 50 gear weight any attack that would stun you will instead daze you.
 
 • If you have at least 80 gear weight and [color=%perk%]Steel Brow[/color] become immune to knockback and grab.
 ";
@@ -462,9 +462,9 @@ Put full force in your every blow!
 Don't fire until you see the whites of their eyes!
 
 [color=%passive%][u]Passive:[/u][/color]
-• When using a ranged weapon against a target 4 or less tiles away, inflict additional damage, scaling based on [color=%positive%]20%[/color] of Ranged Defense.
+• When using a ranged weapon against a target 4 or less tiles away, inflict additional damage, scaling based on [color=%positive%]30%[/color] of Ranged Defense.
 
-• When using Throwing Weapons inflict additional damage, scaling based on [color=%positive%]30%[/color] of Melee Skill or [color=%positive%]50%[/color] of Ranged Defense, whichever stat is highest, but maximum range is reduced to 3.
+• When using Throwing Weapons additionally inflict additional damage [color=%positive%]30%[/color] of Melee Skill and [color=%positive%]50%[/color] of Ranged Defense combined.
 
 • Allows you to use Throwing Weapons in melee.
 ";
@@ -1092,6 +1092,53 @@ Siphon their lifeforce into yourself!
 • Costs [color=%negative%]5[/color] AP and [color=%negative%]10[/color] Fatigue.
 ";
 
+::Const.Strings.PerkDescription.LegendValaInscriptionMastery <- @"
+The Vala becomes is a master at the intricate and lost art of inscribing signs and sigils.
+
+[color=%passive%][u]Passive:[/u][/color]
+• When taking [color=%perk%]Polearm Mastery[/color], the Vala will become able to inscribe shields and weapons.
+
+• When taking [color=%perk%]Nimble[/color] or [color=%perk%]Lithe[/color], the Vala will become able to inscribe Armor and Helmets.
+
+• When she achieves level 11, she will also increase the speed at which she can craft runes by [color=%positive%]30%[/color].
+";
+
+::Const.Strings.PerkDescription.LegendValaInscribeWeapon <- @"
+Learn to inscribe rune sigils for weapons.
+
+[color=%passive%][u]Passive:[/u][/color]
+• Allows the Vala to inscribe rocks with weapon specific rune sigils while encamped to create powerful rune stones.
+
+• Possibilities: accuracy, bleeding, feeding, poison, power.
+";
+
+::Const.Strings.PerkDescription.LegendValaInscribeHelmet <- @"
+Learn to inscribe rune sigils for helmets.
+
+[color=%passive%][u]Passive:[/u][/color]
+• Allows the Vala to inscribe rocks with helmet specific rune sigils while encamped to create powerful rune stones.
+
+• Possibilities: bravery, clarity, luck.
+";
+
+::Const.Strings.PerkDescription.LegendValaInscribeArmor <- @"
+Learn to inscribe rune sigils for armor.
+
+[color=%passive%][u]Passive:[/u][/color]
+• Allows the Vala to inscribe rocks with armor specific rune sigils while encamped to create powerful rune stones.
+
+• Possibilities: endurance, resilience, safety.
+";
+
+::Const.Strings.PerkDescription.LegendValaInscribeShield <- @"
+Learn to inscribe rune sigils for shields
+
+[color=%passive%][u]Passive:[/u][/color]
+• Allows the Vala to inscribe rocks with shield specific rune sigils while encamped to create powerful rune stones.
+
+• Possibilities: defense, radiance.
+";
+
 ::Const.Strings.PerkDescription.LegendValaChantMastery <- @"
 Obtain mastery over chants.
 
@@ -1118,11 +1165,11 @@ A very disagreeable and cacophonous chant can makes it almost impossible for ene
 A chant that gets the blood boiling, making your allies eager to fight.
 
 [color=%active%][u]Active:[/u][/color]
-• Unlocks the [color=%skill%]Fury[/color] chant which grants all allies within three tiles of the Vala, including the Vala herself, [color=%positive%]+1%[/color] bonus damage for every [color=%positive%]30[/color] points of Resolve the Vala has, every [color=%positive%]30[/color] points of available Fatigue the Vala has, and every [color=%positive%]3[/color] Hitpoints the buff recipient has.
+• Unlocks the [color=%skill%]Fury[/color] chant which grants all allies within three tiles of the Vala, including the Vala herself, a scaling increase in damage based on [color=%positive%]5%[/color] of the Vala's resolve.
 
-• Also grants a chance for allies to retaliate against attackers that hit them in melee range that is equal to [color=%positive%]25%[/color] of the Vala's Resolve + [color=%positive%]33%[/color] of the recipient's base Hitpoints.
+• Also grants a chance for allies to retaliate against attackers that hit them in melee range that is equal to [color=%positive%]40%[/color] of the Vala's Resolve.
 
-• Retaliation damage is increased by [color=%positive%]+1[/color] for every [color=%positive%]4[/color] points of Resolve the Vala has and every [color=%positive%]3[/color] Hitpoints the buff recipient has.
+• Retaliation damage is scales by [color=%positive%]30%[/color] of the Vala's resolve.
 
 • This chants effectiveness is decreased by [color=%negative%]25%[/color] per one tile away from the Vala.
 
@@ -1646,7 +1693,7 @@ Twist and thrust with your staff to deflect blows and intercept strikes.
 [color=%passive%][u]Passive:[/u][/color]
 • Gain [color=%positive%]+12[/color] chance to hit and [color=%positive%]+16[/color] Defense while wielding a pure staves or magic staves.
 
-• When taking [color=%perk%]Staff Mastery[/color] gain [color=%positive%]10%[/color] damage.
+• When taking [color=%perk%]Polearm Mastery[/color] gain [color=%positive%]10%[/color] damage.
 
 • For other weapons classified as a Staff, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% according to your choice in campaign generation.
 
@@ -2827,11 +2874,12 @@ This character is keen to guard the horde of gold the company has accumulated �
 
 [color=%passive%][u]Passive:[/u][/color]
 • For every 10,000 crowns you have in your stash:
-- Gain [color=%positive%]+1.5[/color] to Melee Skill and Ranged Skill.
-- Gain [color=%positive%]+1.5[/color] as Melee Defense and Ranged Defense.
-- Gain [color=%positive%]+2[/color] to Resolve.
+- Gain [color=%positive%]+1[/color] to Melee Skill and Ranged Skill.
+- Gain [color=%positive%]+1[/color] as Melee Defense and Ranged Defense.
+- Gain [color=%positive%]+1.5[/color] to Resolve.
+- Gain [color=%positive%]+1.5[/color] to Initiative.
 
-• The Bonus gained from Crowns above 80000 is reduced by [color=%negative%]20%[/color].
+• The Bonus gained from Crowns is capped at 160000.
 
 • Additionally, your global Barter is divided by [color=%negative%](1 + Brothers with this perk)[/color] at all times.
 ";
@@ -3418,15 +3466,4 @@ Master the art of fighting with a weapon in each hand.
 
 [color=%passive%][u]Passive:[/u][/color]
 • Reduces off-hand weapon damage malus from [color=%negative%]-66%[/color] to [color=%negative%]-50%[/color] when dual wielding.
-";
-
-::Const.Strings.PerkDescription.LegendPrecisionStrikes <- @"
-When your offhand weapon is lighter than your main weapon, you can strike with deadly precision.
-
-[color=%passive%][u]Passive:[/u][/color]
-• Gain [color=%positive%]+10[/color] hit chance with offhand attacks.
-
-• Gain [color=%positive%]25%[/color] chance to deflect incoming melee damage up to offhand weapon's max damage.
-
-• Requires an offhand weapon with lower AP cost than mainhand.
 ";

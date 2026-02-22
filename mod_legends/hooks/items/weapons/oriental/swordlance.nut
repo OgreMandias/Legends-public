@@ -3,6 +3,7 @@
 	local create = o.create;
 	o.create = function() {
 		create();
+		this.m.Categories = "Cleaver/Polearm, Two-Handed";
 		this.m.WeaponType = this.Const.Items.WeaponType.Cleaver | this.Const.Items.WeaponType.Polearm;
 		this.m.Value = 1700;
 		this.setVariant(this.Math.rand(0, 2));
@@ -30,5 +31,14 @@
 		}
 
 		weapon.addSkill(_skill);
+	}
+
+	local onEquip = o.onEquip;
+	o.onEquip = function ()
+	{
+		onEquip();
+		::Legends.Actives.grant(this, ::Legends.Active.Decapitate, function (_skill) {
+			_skill.m.IsScytheDecapitate = true;
+		}.bindenv(this));
 	}
 });

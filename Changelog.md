@@ -1,3 +1,24 @@
+# 19.3.0 - Title Pending
+
+## Dual Wielding
+
+Any one-handed weapon can be equipped in the offhand slot when the mainhand already holds a one-handed weapon.
+
+This activates Dual Wield:
+
+- Automatically triggers a free **follow-up offhand attack** after every mainhand attack
+- Applies a **fatigue and hit chance penalty** based on the offhand weapon's weight
+- Grants the **Double Swing** active skill (an AoE attack hitting up to 3 adjacent tiles, using both weapons)
+
+## Traits
+- Hesitant now acts last in turn order
+- Impatient acts first in turn order but cannot wait and loses 10% of melee defense
+> Both of the above can still be manipulated by effects like adrenaline, the exact math is that Adrenaline increases turn order number by 2000, Hesitant and Impatient subtract/add 1000 respectively
+> A character with Adrenaline and Hesitant will act before every other character but will act after a character with Adrenaline who does not have Hesitant
+> A character with Impatient will act before everyone else but will act after a character with Adrenaline unless they also have Adrenaline, in which case they will always be first
+- Greedy will now increase wage by 25% but also gain 1 to every attribute for every 10 gold paid in wages
+- Eagle Eyes now increases vision by 2
+
 ## Favoured enemy rework
 
 Perks were condensed into a few:
@@ -9,6 +30,16 @@ Favoured Enemy - Civilization
 Favoured Enemy - Outlaw
 Favoured Enemy - Sword Master
 
+## New enemies
+
+- Orc Tyrant - elite orc warlord, his warcry can cascade on other warlords
+- Orc Mad Berserker - elite version of the orc berserker, has nimble and nudist
+- Wicht - armored ghost enemies who cannot be killed until you destroy their armor
+
+## Enemy Changes
+
+- Bandit Warlord is renamed to Robber Baron
+
 ## New Runes
 
 - Weapon Fire rune - sets tile on fire on hit
@@ -18,6 +49,15 @@ Favoured Enemy - Sword Master
 ## Integrated mods
 
 - Integrated Better Obituary v3, thanks to Allania
+- layer logger from Merc - check mod options under misc
+
+## Perk Changes
+
+- **Sword Mastery**: Riposte can trigger from both weapons when dual wielding swords
+- **Axe Mastery**: Split Shield uses combined shield damage from both weapons when dual wielding axes
+- **Flail Mastery**: Both attacks apply Bleed when dual wielding flails
+- **Dagger Mastery**: Offhand successful hits grant -1 AP and +10% damage on next mainhand attack when dual wielding daggers
+- **Ambidextrous**: Now also reduces weight penalty by 33% when dual wielding other weapons
 
 ## Item Changes
 
@@ -83,7 +123,24 @@ Favoured Enemy - Sword Master
 
 - `Knifeplay` perk has been deleted
 
+- merged the two fencer hats
+
+### New recipes
+
+- new silk blueprint
+- 3 new gold ingot blueprints
+- 3 new silver ingot blueprints
+
+### For modders:
+
+Bandit Warlord renamed to Robber Baron
+```
+LegendBanditWarlord.nut -> LegendRobberBaron.nut
+this.Const.EntityType.LegendBanditWarlord -> this.Const.EntityType.LegendRobberBaron
+```
+
 Following trees were removed, refer to `z_perks_tree_enemy.nut` for replacements:
+
 ```
 ::Const.Perks.GhoulTree
 ::Const.Perks.DirewolfTree

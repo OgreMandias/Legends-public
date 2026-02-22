@@ -106,7 +106,7 @@
 				},
 				{
 					MinR = 600,
-					Type = this.Const.World.Spawn.Troops.BanditWarlord,
+					Type = this.Const.World.Spawn.Troops.LegendRobberBaron,
 					Cost = 125,
 					Roll = true
 				}

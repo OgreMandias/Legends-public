@@ -1,28 +1,22 @@
-::mods_hookExactClass("entity/tactical/enemies/orc_berserker", function(o)
-{
-	o.onFactionChanged <- function ()
-	{
+::mods_hookExactClass("entity/tactical/enemies/orc_berserker", function (o) {
+	o.onFactionChanged <- function () {
 		this.actor.onFactionChanged();
 		//Doesn't use helmet layer, don't flip
 		local flip = this.isAlliedWithPlayer();
-		foreach (a in this.Const.CharacterSprites.Helmets)
-		{
-			if (!this.hasSprite(a))
-			{
+		foreach (a in this.Const.CharacterSprites.Helmets) {
+			if (!this.hasSprite(a)) {
 				continue;
 			}
 			this.getSprite(a).setHorizontalFlipping(flip);
 		}
 	}
 
-	o.onInit = function ()
-	{
+	o.onInit = function () {
 		this.actor.onInit();
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.OrcBerserker);
 
-		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 190)
-		{
+		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 190) {
 			b.MeleeSkill += 5;
 			b.DamageTotalMult += 0.1;
 			b.Bravery += 5;
@@ -45,8 +39,7 @@
 		body.varyColor(0.08, 0.08, 0.08);
 		local tattoo_body = this.addSprite("tattoo_body");
 
-		if (this.Math.rand(1, 100) <= 50)
-		{
+		if (this.Math.rand(1, 100) <= 50) {
 			tattoo_body.setBrush("bust_orc_02_body_paint_0" + this.Math.rand(1, 3));
 		}
 
@@ -60,24 +53,20 @@
 		head.Color = body.Color;
 		local tattoo_head = this.addSprite("tattoo_head");
 
-		if (this.Math.rand(1, 100) <= 50)
-		{
+		if (this.Math.rand(1, 100) <= 50) {
 			tattoo_head.setBrush("bust_orc_02_head_paint_0" + this.Math.rand(1, 3));
 		}
 
 		local injury = this.addSprite("injury");
 		injury.Visible = false;
 		injury.setBrush("bust_orc_02_head_injured");
-		foreach (a in this.Const.CharacterSprites.Helmets)
-		{
+		foreach (a in this.Const.CharacterSprites.Helmets) {
 			this.addSprite(a)
 		}
 		local v = 3;
 		local v2 = -5;
-		foreach (a in this.Const.CharacterSprites.Helmets)
-		{
-			if (!this.hasSprite(a))
-			{
+		foreach (a in this.Const.CharacterSprites.Helmets) {
+			if (!this.hasSprite(a)) {
 				continue;
 			}
 			this.setSpriteOffset(a, this.createVec(v2, v));
@@ -96,8 +85,7 @@
 		::Legends.Perks.grant(this, ::Legends.Perk.BattleFlow);
 		::Legends.Perks.grant(this, ::Legends.Perk.Pathfinder);
 		::Legends.Perks.grant(this, ::Legends.Perk.HoldOut);
-		if (::Legends.isLegendaryDifficulty())
-		{
+		if (::Legends.isLegendaryDifficulty()) {
 			b.MeleeSkill += 10;
 			::Legends.Perks.grant(this, ::Legends.Perk.Brawny);
 			::Legends.Perks.grant(this, ::Legends.Perk.Colossus);
@@ -106,8 +94,7 @@
 		}
 	}
 
-	o.assignRandomEquipment = function ()
-	{
+	o.assignRandomEquipment = function () {
 		local weapons = [
 			"weapons/greenskins/orc_axe",
 			"weapons/greenskins/orc_cleaver",
@@ -116,9 +103,17 @@
 			"weapons/greenskins/legend_limb_lopper",
 			"weapons/greenskins/legend_man_mangler",
 			"weapons/greenskins/legend_bough",
-			"weapons/greenskins/legend_skullbreaker"
+			"weapons/greenskins/legend_skullbreaker",
+			"weapons/greenskins/legend_skullsmasher",
 		];
-		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
+		local weapon = weapons[this.Math.rand(0, weapons.len() - 1)];
+		this.m.Items.equip(this.new("scripts/items/" + weapon));
+		if (!this.m.Items.hasBlockedSlot(::Const.ItemSlot.Offhand)
+			&& this.Math.rand(1, 100) <= 33)
+		{
+			this.m.Items.equip(this.new("scripts/items/" + weapon));
+			this.m.Items.updateDualWield();
+		}
 
 		local item = this.Const.World.Common.pickArmor([
 			[1, ::Legends.Armor.Greenskin.orc_berserker_light_armor],
@@ -127,21 +122,17 @@
 		]);
 		this.m.Items.equip(item);
 
-
 		local item = this.Const.World.Common.pickHelmet([
 			[2, ::Legends.Helmet.None],
 			[1, ::Legends.Helmet.Greenskin.orc_berserker_helmet]
 		]);
-		if (item != null)
-		{
+		if (item != null) {
 			this.m.Items.equip(item);
 		}
 	}
 
-	o.makeMiniboss <- function ()
-	{
-		if (!this.actor.makeMiniboss())
-		{
+	o.makeMiniboss <- function () {
+		if (!this.actor.makeMiniboss()) {
 			return false;
 		}
 
@@ -152,11 +143,17 @@
 			"weapons/named/legend_named_orc_flail_2h",
 			"weapons/named/named_orc_axe"
 		];
-		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
+		local weapon = weapons[this.Math.rand(0, weapons.len() - 1)];
+		this.m.Items.equip(this.new("scripts/items/" + weapon));
+		if (!this.m.Items.hasBlockedSlot(::Const.ItemSlot.Offhand)
+			&& this.Math.rand(1, 100) <= 33)
+		{
+			this.m.Items.equip(this.new("scripts/items/" + weapon));
+			this.m.Items.updateDualWield();
+		}
 
 		::Legends.Perks.grant(this, ::Legends.Perk.CripplingStrikes);
-		if (::Legends.isLegendaryDifficulty())
-		{
+		if (::Legends.isLegendaryDifficulty()) {
 			::Legends.Perks.grant(this, ::Legends.Perk.Nimble);
 		}
 		return true;

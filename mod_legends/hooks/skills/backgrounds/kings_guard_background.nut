@@ -39,8 +39,10 @@
 				::Const.Perks.SwordmastersTree
 			],
 			Class = [],
-			Profession = [],
-			Magic = []
+			Profession = [], 
+			Magic = [
+				this.Const.Perks.ImmortalMagicTree
+			]
 		}
 	}
 

@@ -178,6 +178,12 @@
 
 	// Incoming nerf to 3-headed flail in 3, 2, 1 ...
 	o.canDualWield <- function (_actor, _item) {
+		if (_item.isItemType(::Const.Items.ItemType.RangedWeapon)) {
+			return false;
+		}
+		if (_item.isItemType(::Const.Items.ItemType.TwoHanded) && _item.getBlockedSlotType() != null) {
+			return false;
+		}
 		return true;
 	}
 
@@ -192,12 +198,13 @@
 		local dw = mh != null
 			&& oh != null
 			&& mh.isItemType(::Const.Items.ItemType.Weapon)
-			&& oh.isItemType(::Const.Items.ItemType.Weapon);
+			&& oh.isItemType(::Const.Items.ItemType.Weapon)
+			&& this.canDualWield(actor, mh)
+			&& this.canDualWield(actor, oh);
 		if (dw) {
 			local ambidextrous = ::Legends.Perks.get(actor, ::Legends.Perk.LegendAmbidextrous);
 			dw = ambidextrous == null || ambidextrous.m.ApplicableItems.find(oh.getID()) == null;
 		}
-		actor.getFlags().set(::Legends.Flags.DualWield, dw);
 		if (dw) {
 			::Legends.Effects.grant(actor, ::Legends.Effect.LegendDualWield);
 			::Legends.Actives.grant(actor, ::Legends.Active.LegendDoubleSwing)

@@ -136,7 +136,7 @@
 	o.onPutIntoBag <- function ()
 	{
 		local skill = ::Legends.Actives.get(this, ::Legends.Active.LegendLaunchDazeBomb);
-		if (skill != null)
+		if (skill != null && this.getAmmo() > 0)
 			skill.setItem(this);
 	}
 

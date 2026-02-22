@@ -153,6 +153,49 @@
 			}
 			this.loadData();
 			this.World.State.updateTopbarAssets();
+			
+			local addToObituary = (_data.len() > 2 && _data[2] != null) ? _data[2] : false;
+			
+			local backgroundID = bro.getBackground().getID();
+			if (addToObituary)
+			{
+				// Get Background specific messages from config
+				local backgroundMessages = ::Legends.Obituary.FateText.BackgroundMessages;
+				local positiveMessages = ::Legends.Obituary.FateText.PositiveMessages;
+				local negativeMessages = ::Legends.Obituary.FateText.NegativeMessages;
+				local backgroundspecificchance = ::Legends.Mod.ModSettings.getSetting("Backgroundspecific").getValue();
+
+				local message = null;
+
+				if (payCompensation)
+				{
+					// Use background-specific positive message if it exists and passes the chance roll
+					if ((backgroundID in backgroundMessages) && (backgroundMessages[backgroundID].pos != "") && (this.Math.rand(1, 100) < backgroundspecificchance))
+					{
+						message = backgroundMessages[backgroundID].pos;
+					}
+					else
+					{
+						// Fall back to generic positive message
+						message = positiveMessages[this.Math.rand(0, positiveMessages.len() - 1)];
+					}
+				} 
+				else 
+				{
+					// Use background-specific negative message if it exists and passes the chance roll
+					if ((backgroundID in backgroundMessages) && (backgroundMessages[backgroundID].neg != "") && (this.Math.rand(1, 100) < backgroundspecificchance))
+					{
+						message = backgroundMessages[backgroundID].neg;
+					}
+					else
+					{
+						// Fall back to generic negative message
+						message = negativeMessages[this.Math.rand(0, negativeMessages.len() - 1)];
+					}
+				}
+
+				::Legends.addFallen(bro, message);
+			}
 		}
 	}
 
@@ -839,7 +882,8 @@
 
 		// Equipping to offhand
 		if ((targetSlot == this.Const.ItemSlot.Offhand || (mh != null && oh == null))
-			&& !ohBlocked)
+			&& !ohBlocked
+			&& inventory.canDualWield(entity, sourceItem))
 		{
 
 			local originalSlotType = sourceItem.m.SlotType;
@@ -903,7 +947,8 @@
 
 		// Equipping to offhand
 		if ((targetSlot == this.Const.ItemSlot.Offhand || (mh != null && oh == null))
-			&& !ohBlocked)
+			&& !ohBlocked
+			&& inventory.canDualWield(entity, sourceItem))
 		{
 
 			local originalSlotType = sourceItem.m.SlotType;

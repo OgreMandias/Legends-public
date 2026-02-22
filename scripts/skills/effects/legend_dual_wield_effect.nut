@@ -5,6 +5,7 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 		AmbidextrousBonus = 0.33,
 		IsRefreshing = false,
 		NeedsRefresh = null,
+		ExcludedSkills = [],
 	},
 
 	function create() {
@@ -17,6 +18,9 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 		this.m.IsActive = false;
 		this.m.IsStacking = false;
 		this.m.IsRemovedAfterBattle = false;
+		this.m.ExcludedSkills = [
+			::Legends.Actives.getID(::Legends.Active.LegendDoubleSwing)
+		];
 	}
 
 	function getTooltip() {
@@ -69,7 +73,6 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 
 	function onAdded() {
 		local actor = this.getContainer().getActor();
-		actor.getFlags().set(::Legends.Flags.DualWield, true);
 		::Legends.Actives.grant(this, ::Legends.Active.LegendDoubleSwing);
 
 		// Find and store the offhand attack skill
@@ -88,7 +91,6 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 
 	function onRemoved() {
 		local actor = this.getContainer().getActor();
-		actor.getFlags().set(::Legends.Flags.DualWield, false);
 		::Legends.Actives.remove(actor, ::Legends.Active.LegendDoubleSwing);
 	}
 
@@ -99,7 +101,7 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 
 		local actor = this.getContainer().getActor();
 		foreach (skill in actor.getSkills().m.Skills) {
-			if (skill.m.IsAttack) {
+			if (skill.m.IsAttack && this.m.ExcludedSkills.find(skill.getID()) == null) {
 				_properties.SkillCostAdjustments.push({
 					ID = skill.getID(),
 					FatigueAdjust = this.m.OffhandWeight
@@ -113,7 +115,11 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 		if (!_skill.m.IsAttack) {
 			return;
 		}
+		if (this.m.ExcludedSkills.find(_skill.getID()) != null) {
+			return;
+		}
 		_properties.MeleeSkill -= this.m.OffhandWeight;
+		_skill.m.HitChanceBonus -= this.m.OffhandWeight;
 	}
 
 	function onAnySkillExecuted(_skill, _targetTile, _targetEntity, _forFree) {
@@ -124,7 +130,7 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 		}
 
 		// Don't trigger for Double Swing (prevents infinite loop)
-		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.LegendDoubleSwing)) {
+		if (this.m.ExcludedSkills.find(_skill.getID()) != null) {
 			return;
 		}
 

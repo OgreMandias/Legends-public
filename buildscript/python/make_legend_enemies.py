@@ -217,6 +217,20 @@ enemies = r"""
 <sprite id="bust_orc_elite_helmet_01_damaged" offsetY="35" ic="FF343940" width="174" height="214" img="entity\orcs\bust_orc_elite_helmet_01_damaged.png" left="-41" right="15" top="-18" bottom="58" />
 <sprite id="bust_orc_elite_helmet_01_dead" offsetX="-5" offsetY="20" f="64F0" f1="40" f2="-15" ic="FF303439" width="238" height="186" img="entity\orcs\bust_orc_elite_helmet_01_dead.png" left="10" right="76" top="-52" bottom="18" />
 
+<sprite id="bust_orc_02_body_paint_04" offsetY="35" ic="FF868B8C" width="174" height="214" img="entity\orcs\bust_orc_02_body_paint_04.png" left="-18" right="44" top="-48" bottom="12" />
+<sprite id="bust_orc_02_body_paint_04_dead" offsetX="-5" offsetY="18" f="6402" ic="FF6B7677" width="238" height="186" img="entity\orcs\bust_orc_02_body_paint_04_dead.png" left="-63" right="27" top="-45" bottom="65" />
+<sprite id="bust_orc_02_body_paint_05" offsetY="35" ic="FF727F82" width="174" height="214" img="entity\orcs\bust_orc_02_body_paint_05.png" left="-35" right="47" top="-46" bottom="20" />
+<sprite id="bust_orc_02_body_paint_05_dead" offsetX="-5" offsetY="18" f="6402" ic="FF5E6A6C" width="238" height="186" img="entity\orcs\bust_orc_02_body_paint_05_dead.png" left="-64" right="32" top="-47" bottom="59" />
+<sprite id="bust_orc_02_body_paint_06" offsetY="35" ic="FF6D797B" width="174" height="214" img="entity\orcs\bust_orc_02_body_paint_06.png" left="-8" right="44" top="-49" bottom="13" />
+<sprite id="bust_orc_02_body_paint_06_dead" offsetX="-5" offsetY="18" f="6402" ic="FF586467" width="238" height="186" img="entity\orcs\bust_orc_02_body_paint_06_dead.png" left="-65" right="45" top="-44" bottom="38" />
+
+<sprite id="bust_orc_02_head_paint_04" offsetY="35" ic="FF7C8082" width="174" height="214" img="entity\orcs\bust_orc_02_head_paint_04.png" left="-38" right="-2" top="-3" bottom="41" />
+<sprite id="bust_orc_02_head_paint_04_dead" offsetX="-5" offsetY="18" f="64FE" f1="40" f2="-10" ic="FF7B8082" width="238" height="186" img="entity\orcs\bust_orc_02_head_paint_04_dead.png" left="13" right="63" top="-43" bottom="7" />
+<sprite id="bust_orc_02_head_paint_05" offsetY="35" ic="FF95A3A7" width="174" height="214" img="entity\orcs\bust_orc_02_head_paint_05.png" left="-17" right="-5" top="-3" bottom="45" />
+<sprite id="bust_orc_02_head_paint_05_dead" offsetX="-5" offsetY="18" f="64FE" f1="40" f2="-10" ic="FF909DA2" width="238" height="186" img="entity\orcs\bust_orc_02_head_paint_05_dead.png" left="20" right="52" top="-40" bottom="-2" />
+<sprite id="bust_orc_02_head_paint_06" offsetY="35" ic="FF8B9397" width="174" height="214" img="entity\orcs\bust_orc_02_head_paint_06.png" left="-39" right="3" top="-2" bottom="44" />
+<sprite id="bust_orc_02_head_paint_06_dead" offsetX="-5" offsetY="18" f="64FE" f1="40" f2="-10" ic="FF929B9E" width="238" height="186" img="entity\orcs\bust_orc_02_head_paint_06_dead.png" left="18" right="62" top="-39" bottom="3" />
+
 <sprite id="bust_warden_01" offsetY="35" b7="0" ic="FFBF9151" width="104" height="142" img="entity\undead\bust_warden_01.png" left="-50" right="52" top="-69" bottom="45" />
 <sprite id="bust_banshee_01" offsetY="35" b7="0" ic="FFBF9151" width="104" height="142" img="entity\undead\bust_banshee_01.png" left="-37" right="65" top="-56" bottom="58" />
 
@@ -557,11 +571,13 @@ s<sprite id="bust_demonalp_shadow_01" offsetY="35" ic="FF000000" width="174" hei
 <sprite id="mummy_bandage_03_damaged" offsetY="35" ic="FF3C6073" width="104" height="142" img="entity\undead\mummybandage_03_damaged.png" left="-31" right="39" top="-11" bottom="59" />
 <sprite id="mummy_bandage_04" offsetY="35" ic="FF3C6073" width="104" height="142" img="entity\undead\mummybandage_04.png" left="-32" right="38" top="-11" bottom="59" />
 <sprite id="mummy_bandage_04_damaged" offsetY="35" ic="FF3C6073" width="104" height="142" img="entity\undead\mummybandage_04_damaged.png" left="-32" right="38" top="-11" bottom="59" />
-<sprite id="mummy_bandage_04_dead" offsetY="35" ic="FF3C6073" width="104" height="142" img="entity\undead\mummybandage_01_dead.png" left="-17" right="29" top="-14" bottom="48" />
-<sprite id="mummy_bandage_04_dead" offsetY="35" ic="FF3C6073" width="104" height="142" img="entity\undead\mummybandage_01_dead.png" left="-17" right="29" top="-14" bottom="48" />
-<sprite id="mummy_bandage_04_dead" offsetY="35" ic="FF3C6073" width="104" height="142" img="entity\undead\mummybandage_01_dead.png" left="-17" right="29" top="-14" bottom="48" />
+<sprite id="mummy_bandage_01_dead" offsetY="35" ic="FF3C6073" width="104" height="142" img="entity\undead\mummybandage_01_dead.png" left="-17" right="29" top="-14" bottom="48" />
+<sprite id="mummy_bandage_02_dead" offsetY="35" ic="FF3C6073" width="104" height="142" img="entity\undead\mummybandage_01_dead.png" left="-17" right="29" top="-14" bottom="48" />
+<sprite id="mummy_bandage_03_dead" offsetY="35" ic="FF3C6073" width="104" height="142" img="entity\undead\mummybandage_01_dead.png" left="-17" right="29" top="-14" bottom="48" />
 <sprite id="mummy_bandage_04_dead" offsetY="35" ic="FF3C6073" width="104" height="142" img="entity\undead\mummybandage_01_dead.png" left="-17" right="29" top="-14" bottom="48" />
 
+<sprite id="bust_ghost_body_01" offsetY="35" ic="FF364656" width="104" height="142" img="entity\undead\bust_ghost_body_01.png" left="-39" right="43" top="-61" bottom="13" />
+<sprite id="bust_ghost_head_01" offsetY="35" ic="FF5877A6" width="104" height="142" img="entity\undead\bust_ghost_head_01.png" left="-20" right="30" top="-21" bottom="47" />
 """
 
 

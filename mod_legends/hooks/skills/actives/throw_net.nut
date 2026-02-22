@@ -44,6 +44,10 @@
 
 		if (_properties.IsSpecializedInNetCasting)
 			this.m.MaxRange = 5;
+
+		local skill = ::Legends.Perks.get(this, ::Legends.Perk.LegendSpecialistSpearfisher);
+		if (skill != null && skill.m.FreeNet)
+			this.m.ActionPointCost = 0;
 	}
 
 	local onUse = o.onUse;

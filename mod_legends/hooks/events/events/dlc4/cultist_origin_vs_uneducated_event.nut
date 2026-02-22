@@ -25,7 +25,6 @@
 					}];
 
 					_event.m.Cultist.getBaseProperties().Bravery += 2;
-					_event.m.Uneducated.getBaseProperties().MeleeSkill += 10;
 					_event.m.Cultist.getSkills().update();
 					this.List.push({
 						id = 16,

@@ -99,7 +99,7 @@ this.legend_beggar_commander_op_background <- this.inherit("scripts/skills/backg
 				::Legends.Perk.ReachAdvantage,
 				::Legends.Perk.Overwhelm,
 				::Legends.Perk.LegendFavouredEnemyUndead,
-				::Legends.Perk.LegendFavouredEnemyGreenskin
+				::Legends.Perk.LegendFavouredEnemyGreenskin,
 				::Legends.Perk.LegendFavouredEnemyCivilization,
 				::Legends.Perk.LegendFavouredEnemyOutlaw
 			],

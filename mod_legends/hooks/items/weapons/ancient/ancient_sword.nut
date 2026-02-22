@@ -9,6 +9,11 @@
 		::Legends.Actives.grant(this, ::Legends.Active.Hammer, function (_skill) {
 			_skill.m.IsMordhau = true;
 		}.bindenv(this));
+
+	local create = o.create;
+	o.create = function() {
+		create();
+		this.m.WeaponType = ::Const.Items.WeaponType.Sword;
 	}
 
 });

@@ -8,7 +8,7 @@ if (!("LegendMod" in ::Const))
 	::Const.EntityType.ZombieBoss,
 	::Const.EntityType.ZombieKnight,
 	::Const.EntityType.Necromancer,
-	::Const.EntityType.ZombieTreasureHunter
+	::Const.EntityType.ZombieTreasureHunter,
 	::Const.EntityType.SkeletonLight,
 	::Const.EntityType.SkeletonMedium,
 	::Const.EntityType.SkeletonHeavy,
@@ -20,7 +20,6 @@ if (!("LegendMod" in ::Const))
 	::Const.EntityType.SkeletonGladiator,
 	::Const.EntityType.FlyingSkull,
 	::Const.EntityType.Vampire,
-	::Const.EntityType.LegendDemonHound,
 	::Const.EntityType.LegendVampireLord,
 	::Const.EntityType.LegendMummyLight,
 	::Const.EntityType.LegendMummyMedium,
@@ -42,7 +41,9 @@ if (!("LegendMod" in ::Const))
 	::Const.EntityType.Schrat,
 	::Const.EntityType.SchratSmall,
 	::Const.EntityType.LegendGreenwoodSchrat,
-	::Const.EntityType.LegendGreenwoodSchratSmall
+	::Const.EntityType.LegendGreenwoodSchratSmall,
+	::Const.EntityType.LegendDemonHound,
+	::Const.EntityType.LegendWicht
 ];
 
 ::Const.LegendMod.FavoriteBeast <- [
@@ -51,17 +52,17 @@ if (!("LegendMod" in ::Const))
 	::Const.EntityType.Direwolf,
 	// ::Const.EntityType.Wolf, // i guess not beast
 	// ::Const.EntityType.KoboldWolfrider, //Not used currently
-	::Const.EntityType.LegendWhiteDirewolf
+	::Const.EntityType.LegendWhiteDirewolf,
 	::Const.EntityType.Ghoul,
-	::Const.EntityType.LegendSkinGhoul
+	::Const.EntityType.LegendSkinGhoul,
 	::Const.EntityType.Serpent,
 	::Const.EntityType.Lindwurm,
-	::Const.EntityType.LegendStollwurm
-	this.Const.EntityType.Spider,
-	this.Const.EntityType.LegendSpiderCluster,
-	//this.Const.EntityType.SpiderBodyguard,
-	this.Const.EntityType.SpiderEggs,
-	this.Const.EntityType.LegendRedbackSpider
+	::Const.EntityType.LegendStollwurm,
+	::Const.EntityType.Spider,
+	::Const.EntityType.LegendSpiderCluster,
+	//::Const.EntityType.SpiderBodyguard,
+	::Const.EntityType.SpiderEggs,
+	::Const.EntityType.LegendRedbackSpider,
 	::Const.EntityType.Unhold,
 	::Const.EntityType.UnholdBog,
 	::Const.EntityType.UnholdFrost,
@@ -72,10 +73,10 @@ if (!("LegendMod" in ::Const))
 
 ::Const.LegendMod.FavoriteGreenSkins <- [
 	::Const.EntityType.GoblinFighter,
-	this.Const.EntityType.LegendGoblinPlunderer //
-	::Const.EntityType.LegendGoblinHarrier // these 2 inherit from the goblin fighter but just in case?
+	::Const.EntityType.LegendGoblinPlunderer, //
+	::Const.EntityType.LegendGoblinHarrier, // these 2 inherit from the goblin fighter but just in case?
 	::Const.EntityType.GoblinAmbusher,
-	::Const.EntityType.LegendGoblinTribeDefender
+	::Const.EntityType.LegendGoblinTribeDefender,
 	::Const.EntityType.GoblinLeader,
 	::Const.EntityType.GoblinShaman,
 	::Const.EntityType.GoblinWolfrider,
@@ -84,7 +85,9 @@ if (!("LegendMod" in ::Const))
 	::Const.EntityType.OrcWarrior,
 	::Const.EntityType.OrcWarlord,
 	::Const.EntityType.LegendOrcBehemoth,
-	::Const.EntityType.LegendOrcElite
+	::Const.EntityType.LegendOrcElite,
+	::Const.EntityType.LegendOrcMadBerserker,
+	::Const.EntityType.LegendOrcTyrant,
 	//	::Const.EntityType.KoboldWolfrider, //Not used currently
 	//	::Const.EntityType.KoboldFighter //Not used currently
 ];
@@ -96,7 +99,7 @@ if (!("LegendMod" in ::Const))
 	::Const.EntityType.Swordmaster,
 	::Const.EntityType.BanditLeader,
 	// ::Const.EntityType.BanditVeteran,
-	::Const.EntityType.BanditWarlord,
+	::Const.EntityType.LegendRobberBaron,
 	::Const.EntityType.BarbarianChampion,
 	::Const.EntityType.BarbarianChosen, //King
 	::Const.EntityType.Sergeant,
@@ -116,7 +119,7 @@ if (!("LegendMod" in ::Const))
 	::Const.EntityType.BarbarianChampion,
 	::Const.EntityType.BarbarianChosen,
 	::Const.EntityType.BarbarianDrummer,
-	::Const.EntityType.BarbarianBeastmaster
+	::Const.EntityType.BarbarianBeastmaster,
 	::Const.EntityType.BanditRabble,
 	::Const.EntityType.BanditRabblePoacher,
 	::Const.EntityType.BanditThug,
@@ -124,14 +127,14 @@ if (!("LegendMod" in ::Const))
 	::Const.EntityType.BanditMarksman,
 	::Const.EntityType.BanditRaider,
 	::Const.EntityType.BanditVeteran,
-	::Const.EntityType.BanditWarlord,
+	::Const.EntityType.LegendRobberBaron,
 	::Const.EntityType.BanditLeader,
 	::Const.EntityType.Slave,
 	::Const.EntityType.NomadCutthroat,
 	::Const.EntityType.NomadOutlaw,
 	::Const.EntityType.NomadSlinger,
 	::Const.EntityType.NomadArcher,
-	::Const.EntityType.NomadLeader
+	::Const.EntityType.NomadLeader,
 	// I see sellswords as more civilized outlaws
 	::Const.EntityType.Mercenary, //Contains LOW varient
 	::Const.EntityType.MercenaryRanged,
@@ -156,7 +159,7 @@ if (!("LegendMod" in ::Const))
 	::Const.EntityType.MilitiaVeteran,
 	::Const.EntityType.MilitiaCaptain,
 	::Const.EntityType.MilitiaRanged,
-	::Const.EntityType.PeasantSouthern
+	::Const.EntityType.PeasantSouthern,
 	::Const.EntityType.Footman,
 	::Const.EntityType.LegendNobleGuard,
 	::Const.EntityType.LegendManAtArms,
@@ -171,7 +174,7 @@ if (!("LegendMod" in ::Const))
 	::Const.EntityType.NobleEliteFootman,
 	::Const.EntityType.NoblePollax,
 	::Const.EntityType.NobleSureshot,
-	::Const.EntityType.Knight
+	::Const.EntityType.Knight,
 	::Const.EntityType.Wardog,
 	::Const.EntityType.ArmoredWardog,
 	::Const.EntityType.Conscript,
@@ -470,7 +473,7 @@ if (!("LegendMod" in ::Const))
 	case ::Const.EntityType.BanditLeader :
 		return 4;
 
-	case ::Const.EntityType.BanditWarlord :
+	case ::Const.EntityType.LegendRobberBaron :
 		return 1;
 
 	case ::Const.EntityType.Warhound :

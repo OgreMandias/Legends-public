@@ -103,8 +103,8 @@
 		],
 		Helms = [
 			[1, "helm/legend_helmet_southern_gladiator_helm_crested"], //130
-			[1, "helm/legend_helmet_southern_gladiator_helm_split"], //130
-			[1, "helm/legend_helmet_southern_gladiator_helm_masked"], //130
+			[1, "helm/legend_helmet_southern_gladiator_helm_split", 1], //130
+			[1, "helm/legend_helmet_southern_gladiator_helm_masked", 1], //130
 		],
 		Tops = [
 		],
@@ -265,7 +265,7 @@
 		Helms = [
 			[1, "helm/legend_helmet_norman_helm"], //50
 			[1, "helm/legend_helmet_barbute"], //110
-			[1, "helm/legend_helmet_basinet"], //130
+			[1, "helm/legend_helmet_bascinet"], //130
 			[1, "helm/legend_helmet_conic_helm"], //170
 			[5, "helm/legend_helmet_southern_cap_smooth"], //160
 			[1, "helm/legend_helmet_southern_cap_spiked"] //160
@@ -523,8 +523,8 @@
 		Tops = [
 		],
 		Vanity = [
-			[1, "vanity/legend_helmet_noble_southern_crown"], //10
-			[1, "vanity/legend_helmet_noble_southern_hat"], //10
+			[1, "vanity/legend_helmet_southern_noble_crown"], //10
+			[1, "vanity/legend_helmet_southern_noble_hat"], //10
 			[1, "vanity/legend_helmet_southern_noble_turban"] //10
 		]
 	}]

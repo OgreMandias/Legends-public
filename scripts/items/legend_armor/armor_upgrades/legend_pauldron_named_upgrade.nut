@@ -1,8 +1,8 @@
-this.legend_pauldron_named_upgrade <- this.inherit("scripts/items/legend_armor/legend_armor_upgrade", {
+this.legend_pauldron_named_upgrade <- this.inherit("scripts/items/legend_armor/legend_named_armor_upgrade", {
 	m = {},
 	function create()
 	{
-		this.legend_armor_upgrade.create();
+		this.legend_named_armor_upgrade.create();
 		this.m.ID = "legend_armor_upgrade.body.legend_pauldron_named";
 		this.m.Type = this.Const.Items.ArmorUpgrades.Attachment;
 		this.m.Name = "Gilded Pauldrons";
@@ -29,6 +29,18 @@ this.legend_pauldron_named_upgrade <- this.inherit("scripts/items/legend_armor/l
 		this.m.Condition = this.Math.floor(this.m.Condition * this.Math.rand(110, 125) * 0.01) * 1.0;
 		this.m.DirectDamageModifier = this.Math.rand(40, 45) * -1.0;
 		this.m.ConditionMax = this.m.Condition;
+	}
+
+	function onSerialize( _out )
+	{
+		_out.writeI16(this.m.DirectDamageModifier);
+		this.legend_named_armor_upgrade.onSerialize(_out);
+	}
+
+	function onDeserialize( _in )
+	{
+		this.m.DirectDamageModifier = _in.readI16();
+		this.legend_named_armor_upgrade.onDeserialize(_in);
 	}
 });
 

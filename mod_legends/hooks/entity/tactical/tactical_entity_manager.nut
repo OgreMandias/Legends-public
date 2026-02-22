@@ -545,7 +545,7 @@
 		{
 			if (!_tile.hasNextTile(i))
 			{
-				continue
+				continue;
 			}
 
 			if (_tile.getNextTile(i).IsEmpty && this.Math.abs(_tile.Level - _tile.getNextTile(i).Level) <= 1)
@@ -638,6 +638,37 @@
 			_e.m.Outfits = _t.Outfits;
 		}
 		::Legends.Scaling.scaleEnemy(_e, _t);
+
+		// Small chance for enemies with a 1H weapon and free offhand to dual wield
+		local faction = _e.getFaction();
+		if (faction == ::Const.Faction.Player
+			|| faction == ::Const.Faction.PlayerAnimals
+			|| this.World.FactionManager.isAlliedWithPlayer(faction)) {
+			return;
+		}
+
+		if (::Legends.Effects.has(_e, ::Legends.Effect.LegendDualWield)) {
+			return;
+		}
+
+		local items = _e.getItems();
+		local mh = items.getItemAtSlot(::Const.ItemSlot.Mainhand);
+		local oh = items.getItemAtSlot(::Const.ItemSlot.Offhand);
+		if (mh == null || oh != null) {
+			return;
+		}
+		if (!mh.isItemType(::Const.Items.ItemType.Weapon)) {
+			return;
+		}
+		if (!items.canDualWield(_e, mh)) {
+			return;
+		}
+
+		if (::Math.rand(1, 100) <= 10) {
+			local copy = this.new(::IO.scriptFilenameByHash(mh.ClassNameHash));
+			items.equip(copy);
+			items.updateDualWield();
+		}
 	}
 
 	local getHostilesNum = o.getHostilesNum;

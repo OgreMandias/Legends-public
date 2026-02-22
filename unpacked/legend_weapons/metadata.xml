@@ -257,8 +257,8 @@
   <sprite id="icon_legend_footman_axe_02" offsetY="35" ic="FF4E5860" width="104" height="142" img="icons\icon_legend_footman_axe_02.png" left="-52" right="12" top="-64" bottom="54" />
   <sprite id="icon_legend_footman_axe_03_bloodied" offsetY="35" ic="FF3D4758" width="130" height="142" img="icons\icon_legend_footman_axe_03_bloodied.png" left="-52" right="12" top="-64" bottom="52" />
   <sprite id="icon_legend_footman_axe_03" offsetY="35" ic="FF4E5860" width="104" height="142" img="icons\icon_legend_footman_axe_03.png" left="-52" right="12" top="-64" bottom="54" />
-  <sprite id="icon_legend_footman_axe_04_bloodied" offsetY="35" ic="FF3D4758" width="130" height="142" img="icons\icon_legend_footman_axe_04_bloodied.png" left="-52" right="12" top="-64" bottom="52" />
-  <sprite id="icon_legend_footman_axe_04" offsetY="35" ic="FF4E5860" width="104" height="142" img="icons\icon_legend_footman_axe_04.png" left="-52" right="12" top="-64" bottom="54" />
+  <sprite id="icon_legend_footman_axe_04_bloodied" offsetY="35" ic="FF3D4758" width="130" height="142" img="icons\icon_legend_footman_axe_04_bloodied.png" left="-73" right="15" top="-50" bottom="42" />
+  <sprite id="icon_legend_footman_axe_04" offsetY="35" ic="FF4E5860" width="104" height="142" img="icons\icon_legend_footman_axe_04.png" left="-73" right="15" top="-50" bottom="42" />
   <sprite id="icon_legend_gladius_01_bloodied" offsetY="35" f1="20" f2="-45" ic="FF4D535A" width="130" height="142" img="icons\icon_legend_gladius_01_bloodied.png" left="-6" right="50" top="-60" bottom="14" />
   <sprite id="icon_legend_gladius_01" offsetY="35" f1="20" f2="-45" ic="FF4D535A" width="130" height="142" img="icons\icon_legend_gladius_01.png" left="-6" right="50" top="-60" bottom="14" />
   <sprite id="icon_legend_gladius_named_01_bloodied" offsetY="35" f1="20" f2="-45" ic="FF4D535A" width="130" height="142" img="icons\icon_legend_gladius_named_01_bloodied.png" left="-6" right="50" top="-60" bottom="14" />
@@ -479,8 +479,8 @@
   <sprite id="icon_named_throwing_axes_heavy_01" offsetY="35" ic="FF2D3C52" width="130" height="142" img="icons\icon_named_throwing_axes_heavy_01.png" left="-6" right="58" top="-55" bottom="-5" />
   <sprite id="icon_named_two_handed_axe_06_bloodied" offsetY="35" ic="FF34506D" width="130" height="142" img="icons\icon_named_two_handed_axe_06_bloodied.png" left="-63" right="3" top="-56" bottom="66" />
   <sprite id="icon_named_two_handed_axe_06" offsetY="35" ic="FF365471" width="130" height="142" img="icons\icon_named_two_handed_axe_06.png" left="-63" right="3" top="-56" bottom="66" />
-  <sprite id="icon_named_two_handed_axe_07_bloodied" offsetY="35" ic="FF34506D" width="130" height="142" img="icons\icon_named_two_handed_axe_07_bloodied.png" left="-63" right="3" top="-56" bottom="66" />
-  <sprite id="icon_named_two_handed_axe_07" offsetY="35" ic="FF365471" width="130" height="142" img="icons\icon_named_two_handed_axe_07.png" left="-63" right="3" top="-56" bottom="66" />
+  <sprite id="icon_named_two_handed_axe_07_bloodied" offsetY="35" ic="FF34506D" width="130" height="142" img="icons\icon_named_two_handed_axe_07_bloodied.png" left="-73" right="15" top="-50" bottom="42" />
+  <sprite id="icon_named_two_handed_axe_07" offsetY="35" ic="FF365471" width="130" height="142" img="icons\icon_named_two_handed_axe_07.png" left="-73" right="15" top="-50" bottom="42" />
   <sprite id="icon_named_two_handed_axe_08_bloodied" offsetY="35" ic="FF3A4154" width="146" height="142" img="icons\icon_named_two_handed_axe_08_bloodied.png" left="-70" right="16" top="-50" bottom="46" />
   <sprite id="icon_named_two_handed_axe_08" offsetY="35" ic="FF464D57" width="146" height="142" img="icons\icon_named_two_handed_axe_08.png" left="-70" right="16" top="-50" bottom="46" />
   <sprite id="icon_named_two_handed_goblin_axe_01_bloodied" offsetY="35" ic="FF292C3B" width="144" height="142" img="icons\icon_named_two_handed_goblin_axe_01_bloodied.png" left="-65" right="19" top="-53" bottom="49" />

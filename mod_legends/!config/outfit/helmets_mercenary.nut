@@ -67,7 +67,7 @@
 			[1, "hood/legend_helmet_padded_hood", 1]
 		],
 		Helms = [
-			[1, "helm/legend_helmet_basinet", 1], // 130, -8, -1
+			[1, "helm/legend_helmet_bascinet", 1], // 130, -8, -1
 			[1, "helm/legend_helmet_norman_helm", 1],
 			[1, "helm/legend_helmet_sallet", 1]
 		],
@@ -150,7 +150,9 @@
 			[1, "helm/legend_helmet_sallet", 1]
 		],
 		Tops = [
-			[1, "top/legend_helmet_faceplate_winged"], //20
+			[1, "top/legend_helmet_faceplate_winged"], //50
+			[1, "top/legend_helmet_faceplate_winged_full"], //65
+			[1, "top/legend_helmet_faceplate_winged_long"], //40
 			[1, "top/legend_helmet_faceplate_snub_nose"], //20
 			[1, "top/legend_helmet_faceplate_short"], //20
 			[1, "top/legend_helmet_faceplate_full"], //20
@@ -224,7 +226,7 @@
 			[1, "helm/legend_helmet_barbute", 3]
 		],
 		Tops = [
-			[1, "top/legend_helmet_faceplate_full_01_named"],
+			[1, "top/legend_helmet_faceplate_winged_full_named"],
 		],
 		Vanity = [
 		]

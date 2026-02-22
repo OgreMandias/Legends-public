@@ -6,9 +6,9 @@ this.legend_double_swing_skill <- this.inherit("scripts/skills/skill", {
 	function create() {
 		::Legends.Actives.onCreate(this, ::Legends.Active.LegendDoubleSwing);
 		this.m.Description = "Swing both weapons in a wide arc. The right tile is hit by the main hand, the left tile by the off hand, and the middle tile by both weapons.";
-		this.m.Icon = "skills/active_06.png";
-		this.m.IconDisabled = "skills/active_06_sw.png";
-		this.m.Overlay = "active_06";
+		this.m.Icon = "skills/legend_double_swing.png";
+		this.m.IconDisabled = "skills/legend_double_swing_sw.png";
+		this.m.Overlay = "legend_double_swing";
 		this.m.SoundOnUse = [
 			"sounds/combat/swing_01.wav",
 			"sounds/combat/swing_02.wav",
@@ -33,7 +33,7 @@ this.legend_double_swing_skill <- this.inherit("scripts/skills/skill", {
 		this.m.InjuriesOnHead = this.Const.Injury.CuttingHead;
 		this.m.DirectDamageMult = 0.25;
 		this.m.ActionPointCost = 6;
-		this.m.FatigueCost = 35;
+		this.m.FatigueCost = 25;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
 	}
@@ -56,6 +56,36 @@ this.legend_double_swing_skill <- this.inherit("scripts/skills/skill", {
 				text = this.getCostString()
 			},
 		];
+
+		local actor = this.getContainer().getActor();
+		local items = actor.getItems();
+		local mh = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		local oh = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
+
+		local mhSkill = ::Legends.Weapons.findPrimaryAttackSkill(actor, mh);
+		if (mhSkill == null) {
+			::logWarning("legend_double_swing: no valid attack skill found for mainhand");
+		} else {
+			ret.push({
+				id = 10,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Mainhand attack: [color=%skill%]" + mhSkill.getName() + "[/color]"
+			});
+		}
+
+		local ohSkill = ::Legends.Weapons.findPrimaryAttackSkill(actor, oh);
+		if (ohSkill == null) {
+			::logWarning("legend_double_swing: no valid attack skill found for offhand");
+		} else {
+			ret.push({
+				id = 11,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Offhand attack: [color=%skill%]" + ohSkill.getName() + "[/color]"
+			});
+		}
+
 		return ret;
 	}
 

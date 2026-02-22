@@ -21,12 +21,6 @@ this.perk_legend_point_blank <- this.inherit("scripts/skills/skill", {
 		{
 			id = 6,
 			type = "text",
-			icon = "ui/tooltips/warning.png",
-			text = "Reduces your maximum range of throwing weapons to [color=%negative%]3[/color]"
-		},
-		{
-			id = 6,
-			type = "text",
 			icon = "ui/icons/damage_dealt.png",
 			text = "Allows you to use throwing weapons in melee"
 		},
@@ -54,10 +48,10 @@ this.perk_legend_point_blank <- this.inherit("scripts/skills/skill", {
 		else
 		{
 			mskillBonus = 0;
-			rdefBonus = this.Math.floor(0.2 * _properties.getRangedDefense());
+			rdefBonus = this.Math.floor(0.3 * _properties.getRangedDefense());
 		}
 
-		return this.Math.max(mskillBonus, rdefBonus);
+		return mskillBonus + rdefBonus;
 	}
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )

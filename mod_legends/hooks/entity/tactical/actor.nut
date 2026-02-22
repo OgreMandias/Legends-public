@@ -463,6 +463,51 @@
 			getSprite("permanent_injury_burned").Visible = !_appearance.HideHead;
 
 		onAppearanceChanged(_appearance, _setDirty);
+
+		// Flip the offhand weapon sprite when dual wielding
+		if (hasSprite("shield_icon") && _appearance.Shield.len() != 0) {
+			if (::Legends.Weapons.isDualWielding(this)) {
+				this.setAlwaysApplySpriteOffset(true);
+				local flip = !this.isAlliedWithPlayer();
+				local oh = this.getItems().getItemAtSlot(::Const.ItemSlot.Offhand);
+				local ohSprite = getSprite("shield_icon");
+				ohSprite.setHorizontalFlipping(!flip);
+				if (oh != null && oh.isItemType(this.Const.Items.ItemType.TwoHanded)) {
+					// WIP, not sure if dual-wielding two handed weapons will stay
+					ohSprite.Scale = 0.80;
+					setSpriteOffset("shield_icon", this.createVec(flip ? -10 : 10, 0));
+				} else {
+					ohSprite.Scale = 1.0;
+					setSpriteOffset("shield_icon", this.createVec(flip ? -40 : 40, 0));
+				}
+			} else {
+				local ohSprite = getSprite("shield_icon");
+				ohSprite.setHorizontalFlipping(!this.isAlliedWithPlayer());
+				ohSprite.Scale = 1.0;
+				this.setAlwaysApplySpriteOffset(false);
+				setSpriteOffset("shield_icon", this.createVec(0, 0));
+			}
+		}
+	}
+
+	local onFactionChanged = o.onFactionChanged;
+	o.onFactionChanged = function () {
+		onFactionChanged();
+		if (hasSprite("shield_icon") && ::Legends.Weapons.isDualWielding(this)) {
+			this.setAlwaysApplySpriteOffset(true);
+			local flip = !this.isAlliedWithPlayer();
+			local oh = this.getItems().getItemAtSlot(::Const.ItemSlot.Offhand);
+			local ohSprite = getSprite("shield_icon");
+			ohSprite.setHorizontalFlipping(!flip);
+			if (oh != null && oh.isItemType(this.Const.Items.ItemType.TwoHanded)) {
+				// WIP, not sure if dual-wielding two handed weapons will stay
+				ohSprite.Scale = 0.80;
+				setSpriteOffset("shield_icon", this.createVec(flip ? -10 : 10, 0));
+			} else {
+				ohSprite.Scale = 1.0;
+				setSpriteOffset("shield_icon", this.createVec(flip ? -40 : 40, 0));
+			}
+		}
 	}
 
 	local setHitpoints = o.setHitpoints;

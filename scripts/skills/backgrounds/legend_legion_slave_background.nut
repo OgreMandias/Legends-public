@@ -26,7 +26,7 @@ this.legend_legion_slave_background <- this.inherit("scripts/skills/backgrounds/
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Bodies = this.Const.Bodies.Muscular;
 		//---
-		this.m.BackgroundType = this.Const.BackgroundType.Untalented;
+		// this.m.BackgroundType = this.Const.BackgroundType.Untalented;
 		this.m.Names = this.Const.Strings.AncientDeadNames;
 		// this.m.LastNames = this.Const.Strings.AncientDeadTitles;
 		// this.m.Level = this.Math.rand(2, 4);

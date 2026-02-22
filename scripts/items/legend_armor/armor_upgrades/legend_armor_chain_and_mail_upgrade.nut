@@ -8,6 +8,8 @@ this.legend_armor_chain_and_mail_upgrade <- this.inherit("scripts/items/legend_a
 		this.m.Name = "Amulet Coif";
 		this.m.Description = "The amulet and gold chains on this coif are expensive and certainly attract attention";
 		this.m.ArmorDescription = "This armor is topped with attractive gold chains";
+		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
+		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.Icon = "armor_upgrades/upgrade_chain_and_mail_01.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_chain_and_mail_01.png";

@@ -8,6 +8,8 @@ this.legend_protective_runes_upgrade <- this.inherit("scripts/items/legend_armor
 		this.m.Name = "Protective Runes and Sigils";
 		this.m.Description = "Protective runes and sigils written on parched skin and emitting an unsettling aura.";
 		this.m.ArmorDescription = "Protective runes and sigils written on parched skin are hefted to this armor.";
+		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
+		this.m.InventorySound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.Icon = "armor_upgrades/upgrade_07.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_07.png";

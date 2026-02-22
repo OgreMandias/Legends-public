@@ -8,6 +8,8 @@ this.legend_hyena_fur_upgrade <- this.inherit("scripts/items/legend_armor/legend
 		this.m.Name = "Hyena Fur Mantle";
 		this.m.Description = "Furs taken from ferocious hyenas, cured and sewn together to be worn as a beast hunter\'s trophy around the neck. Donning the skin of a beast like this bolsters one\'s drive to action.";
 		this.m.ArmorDescription = "A mantle of hyena furs has been attached to this armor, which bolsters the wearer\'s drive to action.";
+		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
+		this.m.InventorySound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.Icon = "armor_upgrades/upgrade_26.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_26.png";

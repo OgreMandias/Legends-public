@@ -8,6 +8,8 @@ this.legend_joint_cover_upgrade <- this.inherit("scripts/items/legend_armor/lege
 		this.m.Name = "Metal Joint Covers";
 		this.m.Description = "Large metal plates that cover the vulnerable shoulder joints.";
 		this.m.ArmorDescription = "Large metal plates have been added to protect the vulnerable shoulder joints.";
+		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
+		this.m.InventorySound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.Icon = "armor_upgrades/upgrade_10.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_10.png";

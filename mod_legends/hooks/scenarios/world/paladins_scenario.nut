@@ -48,9 +48,9 @@
 		local vanity = this.new("scripts/items/legend_helmets/vanity/legend_helmet_plait");
 		hood.setUpgrade(vanity);
 		items.equip(hood);
-		local armor = this.new("scripts/items/legend_armor/cloth/legend_knightly_robe");
-		local chain = this.new("scripts/items/legend_armor/chain/legend_armor_mail_shirt");
-		local plate = this.new("scripts/items/legend_armor/plate/legend_southern_padded");
+		local armor = this.new("scripts/items/legend_armor/cloth/knightly_robe");
+		local chain = this.new("scripts/items/legend_armor/chain/mail_shirt");
+		local plate = this.new("scripts/items/legend_armor/plate/southern_padded");
 		local attach = this.new("scripts/items/legend_armor/armor_upgrades/legend_armor_spiked_collar_upgrade");
 		armor.setUpgrade(chain);
 		armor.setUpgrade(plate);
@@ -92,9 +92,10 @@
 		hood.setUpgrade(vanity);
 		items.equip(hood);
 
-		local armor = this.new("scripts/items/legend_armor/cloth/legend_gambeson_plain");
-		local chain = this.new("scripts/items/legend_armor/chain/legend_armor_hauberk");
-		local plate = this.new("scripts/items/legend_armor/plate/legend_armor_leather_riveted");
+		local armor = this.new("scripts/items/legend_armor/cloth/gambeson");
+		armor.setVariant(::Math.rand(1,3));
+		local chain = this.new("scripts/items/legend_armor/chain/hauberk");
+		local plate = this.new("scripts/items/legend_armor/plate/leather_riveted");
 		local cloak = this.new("scripts/items/legend_armor/cloak/relic_hood");
 		local attach = this.new("scripts/items/legend_armor/armor_upgrades/legend_armor_sacred_shield_upgrade");
 		armor.setUpgrade(chain);

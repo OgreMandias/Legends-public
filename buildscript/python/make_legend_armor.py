@@ -98,6 +98,8 @@ def generate_legend_armor(base_path):
             invsound = "::Const.Sound.ClothEquip"
         elif d["invSound"] == "chain":
             invsound = "::Const.Sound.ArmorChainmailImpact"
+        elif d["invSound"] == "plate":
+            invsound = "::Const.Sound.ArmorHalfplateImpact"
 
         if d["impactSound"] == "chain":
             impactsound = "::Const.Sound.ArmorChainmailImpact"
@@ -106,11 +108,11 @@ def generate_legend_armor(base_path):
         elif d["impactSound"] == "bone":
             impactsound = "::Const.Sound.ArmorBoneImpact"
 
-        brushName = d["name"].replace("legend_armor", "legend")
+        brushName = d["name"]
         if "brush" in d:
             brushName = d["brush"]
 
-        brush = "bust_" + brushName
+        brush = brushName
         overlayLarge = "legend_armor/inventory_" + brushName
         overlay = "legend_armor/icon_" + brushName
         icon = "legend_armor/icon_" + brushName
@@ -122,20 +124,12 @@ def generate_legend_armor(base_path):
             icon = "armor/icon_" + d["vanilla"] + "_armor"
 
         if inherit != "":
-            if inherit == "legend_padded_surcoat":
-                has_missing = has_missing or checkForIcon(
-                    path, "legend_armor/inventory_" + "legend_gambeson", variants
-                )
-                has_missing = has_missing or checkForIcon(
-                    path, "legend_armor/icon_" + "legend_gambeson", variants
-                )
-            else:
-                has_missing = has_missing or checkForIcon(
-                    path, "legend_armor/inventory_" + inherit, variants
-                )
-                has_missing = has_missing or checkForIcon(
-                    path, "legend_armor/icon_" + inherit, variants
-                )
+            has_missing = has_missing or checkForIcon(
+                path, "legend_armor/inventory_" + inherit, variants
+            )
+            has_missing = has_missing or checkForIcon(
+                path, "legend_armor/icon_" + inherit, variants
+            )
         else:
             has_missing = has_missing or checkForIcon(path, overlayLarge, variants)
             has_missing = has_missing or checkForIcon(path, icon, variants)
@@ -208,7 +202,6 @@ def generate_legend_armor(base_path):
 
         for t in R:
             for name in names:
-                name = "bust_" + name
                 IC += 1
                 opts = dict(
                     ic=hex(IC).upper().lstrip("0X"),
@@ -245,7 +238,7 @@ def generate_legend_armor(base_path):
         if d["layer"] == "cloth":
             R = LBase
 
-        brushName = d["name"].replace("legend_armor", "legend")
+        brushName = d["name"]
         if "brush" in d:
             brushName = d["brush"]
 
@@ -264,7 +257,6 @@ def generate_legend_armor(base_path):
 
         for t in R:
             for name in names:
-                name = "bust_" + name
                 IC += 1
                 opts = dict(
                     ic=hex(IC).upper().lstrip("0X"),

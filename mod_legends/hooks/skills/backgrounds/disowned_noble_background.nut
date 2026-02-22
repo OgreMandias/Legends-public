@@ -272,7 +272,7 @@
 				[1, ::Legends.Armor.Standard.basic_mail_shirt],
 				[1, ::Legends.Armor.Standard.mail_shirt],
 				[1, ::Legends.Armor.Standard.mail_hauberk],
-				[1, ::Legends.Armor.Standard.padded_surcoat]
+				[1, ::Legends.Armor.Standard.quilted_aketon]
 			]));
 
 			items.equip(this.Const.World.Common.pickHelmet([

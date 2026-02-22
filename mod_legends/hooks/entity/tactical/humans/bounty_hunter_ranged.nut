@@ -55,7 +55,7 @@
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
 			[1, ::Legends.Armor.Standard.thick_tunic],
-			[1, ::Legends.Armor.Standard.padded_surcoat],
+			[1, ::Legends.Armor.Standard.quilted_aketon],
 			[1, ::Legends.Armor.Standard.leather_lamellar],
 			[1, ::Legends.Armor.Standard.basic_mail_shirt],
 			[1, ::Legends.Armor.Standard.ragged_surcoat],

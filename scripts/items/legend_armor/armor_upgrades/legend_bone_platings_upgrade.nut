@@ -8,6 +8,8 @@ this.legend_bone_platings_upgrade <- this.inherit("scripts/items/legend_armor/le
 		this.m.Name = "Bone Plating";
 		this.m.Description = "Crafted from strong but surprisingly light bones, these ornate platings make for an ablative armor to be worn ontop of regular armor.";
 		this.m.ArmorDescription = "A layer of ornate bone plates is attached to this armor.";
+		this.m.ImpactSound = this.Const.Sound.ArmorBoneImpact;
+		this.m.InventorySound = this.Const.Sound.ArmorBoneImpact;
 		this.m.Icon = "armor_upgrades/upgrade_06.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_06.png";

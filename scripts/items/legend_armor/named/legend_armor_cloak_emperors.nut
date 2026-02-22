@@ -8,8 +8,10 @@ this.legend_armor_cloak_emperors <- this.inherit("scripts/items/legend_armor/leg
 		this.m.Type = this.Const.Items.ArmorUpgrades.Cloak;
 		this.m.ID = "legend_armor.cloak_emperor";
 		this.m.Name = "The Emperor\'s Cloak";
-		this.m.Description = "A cloak of the finest material that was rumored to have been worn by the last emperor";
-		this.m.ArmorDescription = "Has a flowing embroidered cloak";
+		this.m.Description = "A cloak of the finest material that was rumored to have been worn by the last emperor.";
+		this.m.ArmorDescription = "Has a flowing embroidered cloak of the finest material.";
+		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
+		this.m.InventorySound = this.Const.Sound.ClothEquip;
 		this.m.Variants = [
 			1,
 		];
@@ -32,13 +34,13 @@ this.legend_armor_cloak_emperors <- this.inherit("scripts/items/legend_armor/leg
 	function updateVariant()
 	{
 		local variant = this.m.Variant < 10 ? "0" + this.m.Variant : this.m.Variant;
-		this.m.SpriteBack = "bust_named_emperors_cloak_" + variant + "";
-		this.m.SpriteDamagedBack = "bust_named_emperors_cloak_" + variant + "_damaged";
-		this.m.SpriteCorpseBack = "bust_named_emperors_cloak_" + variant + "_dead";
-		this.m.Icon = "legend_armor/icon_named_emporers_cloak_" + variant + ".png";
+		this.m.SpriteBack = "bust_cloak_emperors_named_" + variant + "";
+		this.m.SpriteDamagedBack = "bust_cloak_emperors_named_" + variant + "_damaged";
+		this.m.SpriteCorpseBack = "bust_cloak_emperors_named_" + variant + "_dead";
+		this.m.Icon = "legend_armor/icon_cloak_emperors_named_" + variant + ".png";
 		this.m.IconLarge = this.m.Icon;
-		this.m.OverlayIcon = "legend_armor/icon_named_emporers_cloak_" + variant + ".png";
-		this.m.OverlayIconLarge = "legend_armor/inventory_named_emporers_cloak_" + variant + ".png";
+		this.m.OverlayIcon = "legend_armor/icon_cloak_emperors_named_" + variant + ".png";
+		this.m.OverlayIconLarge = "legend_armor/inventory_cloak_emperors_named_" + variant + ".png";
 	}
 
 	function getTooltip()

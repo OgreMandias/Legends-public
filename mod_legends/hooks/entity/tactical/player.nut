@@ -931,7 +931,7 @@
 	{
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[1, ::Legends.Armor.Standard.padded_surcoat],
+			[1, ::Legends.Armor.Standard.quilted_aketon],
 			[1, ::Legends.Armor.Standard.mail_shirt],
 			[1, ::Legends.Armor.Standard.coat_of_plates],
 			[1, ::Legends.Armor.Standard.gambeson],
@@ -1068,7 +1068,7 @@
 	o.assignRandomRangedEquipment = function()
 	{
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[1, ::Legends.Armor.Standard.padded_surcoat],
+			[1, ::Legends.Armor.Standard.quilted_aketon],
 			[1, ::Legends.Armor.Standard.mail_shirt],
 			[1, ::Legends.Armor.Standard.padded_leather],
 			[1, ::Legends.Armor.Standard.gambeson],
@@ -1130,7 +1130,7 @@
 	o.assignRandomThrowingEquipment = function()
 	{
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[1, ::Legends.Armor.Standard.padded_surcoat],
+			[1, ::Legends.Armor.Standard.quilted_aketon],
 			[1, ::Legends.Armor.Standard.mail_shirt],
 			[1, ::Legends.Armor.Standard.padded_leather],
 			[1, ::Legends.Armor.Standard.gambeson],

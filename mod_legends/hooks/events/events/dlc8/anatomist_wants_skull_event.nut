@@ -77,7 +77,7 @@
 							[1, ::Legends.Armor.Standard.leather_tunic],
 							[1, ::Legends.Armor.Standard.thick_tunic],
 							[1, ::Legends.Armor.Standard.thick_tunic],
-							[1, ::Legends.Armor.Standard.padded_surcoat],
+							[1, ::Legends.Armor.Standard.quilted_aketon],
 							[1, ::Legends.Armor.Standard.padded_leather]
 						]);
 						this.List.push({

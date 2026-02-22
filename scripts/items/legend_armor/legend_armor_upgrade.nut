@@ -353,7 +353,7 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 
 	function playInventorySound( _eventType )
 	{
-		this.Sound.play(this.m.ImpactSound[0], this.Const.Sound.Volume.Inventory);
+		this.Sound.play(this.m.InventorySound[this.Math.rand(0, this.m.InventorySound.len() - 1)], this.Const.Sound.Volume.Inventory);
 	}
 
 	function addArmor( _a)

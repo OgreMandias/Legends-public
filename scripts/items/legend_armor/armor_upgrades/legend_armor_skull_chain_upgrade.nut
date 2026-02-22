@@ -8,6 +8,8 @@ this.legend_armor_skull_chain_upgrade <- this.inherit("scripts/items/legend_armo
 		this.m.Name = "Skull Chain";
 		this.m.Description = "The skull of a dead man hangs from this heavy chain. It serves as a reminder of the intended outcome.";
 		this.m.ArmorDescription = "The skull of a dead man hangs from this armor on a heavy chain, a grizzly trophy";
+		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
+		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.Icon = "armor_upgrades/upgrade_skull_and_chain_01.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_skull_and_chain_01.png";

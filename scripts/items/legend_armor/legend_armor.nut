@@ -10,7 +10,6 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		this.armor.create();
 		this.m.SlotType = this.Const.ItemSlot.Body;
 		this.m.Upgrades = [];
-
 		for (local i = 0; i < this.Const.Items.ArmorUpgrades.COUNT; i = ++i)
 		{
 			this.m.Upgrades.push(null);
@@ -744,12 +743,20 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 
 	function updateAppearance()
 	{
-		if (this.getContainer() == null || !this.isEquipped())
+		if (this.m.Upgrades[this.Const.Items.ArmorUpgrades.Plate] != null)
 		{
-			return;
+			this.m.InventorySound = this.m.Upgrades[this.Const.Items.ArmorUpgrades.Plate].m.InventorySound;
+		}
+		else if (this.m.Upgrades[this.Const.Items.ArmorUpgrades.Chain] != null)
+		{
+			this.m.InventorySound = this.m.Upgrades[this.Const.Items.ArmorUpgrades.Chain].m.InventorySound;
+		}
+		else
+		{
+			this.m.InventorySound = this.Const.Sound.ClothEquip; // assuming all bases are cloth
 		}
 
-		if (!this.m.ShowOnCharacter)
+		if (this.getContainer() == null || !this.isEquipped() || !this.m.ShowOnCharacter)
 		{
 			return;
 		}

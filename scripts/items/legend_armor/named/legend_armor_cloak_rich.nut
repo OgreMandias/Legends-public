@@ -18,6 +18,8 @@ this.legend_armor_cloak_rich <- this.inherit("scripts/items/legend_armor/legend_
 		];
 		this.m.Description = "A silk embroidered cloak made with the finest clothes. Those who wear it feel as if a king";
 		this.m.ArmorDescription = "Has a flowing embroidered cloak";
+		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
+		this.m.InventorySound = this.Const.Sound.ClothEquip;
 		this.m.Variants = [
 			1,
 			2,

@@ -180,7 +180,7 @@ this.legend_master_archer_background <- this.inherit("scripts/skills/backgrounds
 		}
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, ::Legends.Armor.Standard.padded_surcoat],
+			[1, ::Legends.Armor.Standard.quilted_aketon],
 			[1, ::Legends.Armor.Standard.thick_tunic],
 			[1, ::Legends.Armor.Standard.leather_tunic]
 		]));

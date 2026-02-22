@@ -8,6 +8,8 @@ this.legend_light_padding_replacement_upgrade <- this.inherit("scripts/items/leg
 		this.m.Name = "Light Padding Replacement";
 		this.m.Description = "Crafted from exotic materials, this replacement padding can provide the same amount of protection as regular padding at less weight.";
 		this.m.ArmorDescription = "This armor has its padding replaced by a lighter but no less durable one.";
+		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
+		this.m.InventorySound = this.Const.Sound.ClothEquip;
 		this.m.Icon = "armor_upgrades/upgrade_05.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_05.png";

@@ -17,8 +17,8 @@ this.legend_skin_armor <- this.inherit("scripts/items/legend_armor/legend_named_
 		this.m.Variants = [1, 2];
 		this.m.Variant = 1;
 		this.updateVariant();
-		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
-		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
+		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
+		this.m.InventorySound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.Value = 5000;
 		this.m.Condition = 130;
 		this.m.ConditionMax = 130;

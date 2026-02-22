@@ -8,6 +8,8 @@ this.legend_metal_pauldrons_upgrade <- this.inherit("scripts/items/legend_armor/
 		this.m.Name = "Metal Pauldrons";
 		this.m.Description = "Sturdy metal pauldrons that can be added to any armor for increased protection of the shoulders and upper body. Of course, it will also make the armor a bit heavier.";
 		this.m.ArmorDescription = "Sturdy metal pauldrons have been added to this armor for increased protection of the shoulders and upper body, but at the expense of additional weight.";
+		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
+		this.m.InventorySound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.Icon = "armor_upgrades/upgrade_11.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_11.png";

@@ -8,6 +8,8 @@ this.legend_heavy_gladiator_upgrade <- this.inherit("scripts/items/legend_armor/
 		this.m.Name = "Metal Armor Pieces";
 		this.m.Description = "Metal armor pieces that provides additional protection.";
 		this.m.ArmorDescription = "This harness has metal armor pieces attached that provide additional protection.";
+		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
+		this.m.InventorySound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.Icon = "armor_upgrades/upgrade_25.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_25.png";

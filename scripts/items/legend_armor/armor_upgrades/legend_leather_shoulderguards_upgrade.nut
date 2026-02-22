@@ -8,6 +8,8 @@ this.legend_leather_shoulderguards_upgrade <- this.inherit("scripts/items/legend
 		this.m.Name = "Leather Shoulderguards";
 		this.m.Description = "Studded leather shoulderguards can help in making even light armors a little bit more resilient.";
 		this.m.ArmorDescription = "Shoulderguards made of studded leather have been added to this armor for additional protection.";
+		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
+		this.m.InventorySound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.Icon = "armor_upgrades/upgrade_08.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_08.png";

@@ -93,16 +93,16 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		shield.onPaintSpecificColor(23);
 		items.equip(shield);
 		local cloths = [
-			[1, "cloth/legend_robes_nun"]
+			[1, "cloth/robes_nun"]
 		];
 		local armor = this.Const.World.Common.pickLegendArmor(cloths);
 
 		if (armor != null)
 		{
 			local chains = [
-				[1, "chain/legend_armor_mail_shirt"],
-				[1, "chain/legend_armor_mail_shirt_simple"],
-				[1, "chain/legend_armor_short_mail"]
+				[1, "chain/mail_shirt"],
+				[1, "chain/mail_shirt_simple"],
+				[1, "chain/short_mail"]
 			];
 			local chain = this.Const.World.Common.pickLegendArmor(chains);
 			if (chain != null)
@@ -111,8 +111,8 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 			}
 
 			local plates = [
-				[1, "plate/legend_armor_leather_jacket"],
-				[1, "plate/legend_armor_leather_jacket_simple"]
+				[1, "plate/leather_jacket"],
+				[1, "plate/leather_jacket_simple"]
 			];
 			local plate = this.Const.World.Common.pickLegendArmor(plates);
 			if (plate != null)
@@ -120,13 +120,11 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 				armor.setUpgrade(plate)
 			}
 			local tabards = [
-						[0, ""],
-						[1, "tabard/legend_common_tabard"]
+						[1, "tabard/tabard", [2,13]]
 					];
 			local tabard = this.Const.World.Common.pickLegendArmor(tabards);
 			if (tabard != null && armor != null)
 			{
-				tabard.setVariant(113);
 				armor.setUpgrade(tabard);
 			}
 			items.equip(armor);
@@ -137,13 +135,11 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 			local items = bro.getItems();
 			local armor = items.getItemAtSlot(this.Const.ItemSlot.Body);
 			local tabards = [
-					[0, ""],
-					[1, "tabard/legend_noble_tabard"]
+					[1, "tabard/tabard", [2,13]]
 				];
 				local tabard = this.Const.World.Common.pickLegendArmor(tabards);
 				if (tabard != null && armor != null)
 				{
-					tabard.setVariant(102);
 					armor.setUpgrade(tabard);
 				}
 		}

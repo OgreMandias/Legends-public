@@ -70,7 +70,7 @@ this.legend_noble_slinger <- this.inherit("scripts/entity/tactical/human", {
 		], "scripts/items/"));
 
 		this.getItems().equip(::Const.World.Common.pickArmor([
-			[1, ::Legends.Armor.Standard.padded_surcoat],
+			[1, ::Legends.Armor.Standard.quilted_aketon],
 			[1, ::Legends.Armor.Standard.gambeson]
 		]));
 		local helmet = ::Const.World.Common.pickHelmet([

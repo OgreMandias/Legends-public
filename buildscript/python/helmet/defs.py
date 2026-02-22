@@ -531,9 +531,9 @@ class Defs:
  "title" :  "Rotten Great Helm",
  "desc" :  "Rotten Great Helm."
  },
- {"name" : "rotten_great_helm_named"                     , "layer" : "helm", "min" : 1, "max" : 5, "value" : 3000, "con" : 190, "stam" : -13, "vis" : -3, "hair" : "true", "beard" : "true", "named" : True, "rmaxViz" : 3, "rminViz" : 3, "rmaxStam" : 11, "rminStam" : 13, "rminCond" : 190, "rmaxCond" : 215, "names" : Names,
+ {"name" : "rotten_great_helm_named"                     , "layer" : "helm", "min" : 1, "max" : 5, "value" : 3400, "con" : 190, "stam" : -13, "vis" : -3, "hair" : "true", "beard" : "true", "named" : True, "rmaxViz" : 3, "rminViz" : 3, "rmaxStam" : 12, "rminStam" : 14, "rminCond" : 190, "rmaxCond" : 215, "names" : Names,
  "title" :  "Rotten Great Helm",
- "desc" :  "A Rotten Great Helm in surprisingly good condition which once belonged to a great knight. Decorated with gold and precious gems."
+ "desc" :  "A Rotten Great Helm which once belonged to a decorated knight. Incrusted with gold and precious gems, it betrays a craftmanship which years of neglect could not diminish."
  },
 {"name" : "barb_metal_cap"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 150, "con" : 40, "stam" : -2, "vis" : 0, "hair" : "true", "beard" : "false",
  "title" :  "Rusted Metal Helm",

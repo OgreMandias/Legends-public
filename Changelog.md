@@ -135,7 +135,7 @@ Favoured Enemy - Sword Master
 
 Bandit Warlord renamed to Robber Baron
 ```
-LegendBanditWarlord.nut -> LegendRobberBaron.nut
+legend_bandit_warlord.nut -> legend_robber_baron.nut
 this.Const.EntityType.LegendBanditWarlord -> this.Const.EntityType.LegendRobberBaron
 ```
 

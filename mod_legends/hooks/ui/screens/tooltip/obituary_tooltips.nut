@@ -36,14 +36,10 @@
 		// New Obituary header UI elements
 		local statTooltip = getObituaryStatTooltip(_elementId);
 		if (statTooltip != null)
-		{
 			return statTooltip;
-		}
 
-		if (!_elementId || _elementId == "" || _elementId.find("scripts/skills/") == null)
-		{
+		if (typeof(_elementId) != "string" || _elementId.find("scripts/skills/") == null)
 			return original_onQueryUIElementTooltipData(_entityId, _elementId, _elementOwner);
-		}
 
 		local skill = ::new(_elementId);
 		local desc;

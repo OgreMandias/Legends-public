@@ -71,7 +71,7 @@
 	[],
 	[
 		"dagger_missed_01",
-		"dagger_missed_02"
+		"dagger_missed_02",
 		"dagger_missed_03"
 	]
 ]);

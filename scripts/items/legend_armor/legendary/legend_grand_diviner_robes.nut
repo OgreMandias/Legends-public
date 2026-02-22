@@ -23,7 +23,7 @@ this.legend_grand_diviner_robes <- this.inherit("scripts/items/legend_armor/lege
 	{
 		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
 		this.m.SpriteBack = "bust_diviner_jacket" + "_" + variant;
-		this.m.SpriteDamagedBack = "bust_diviner_jacket + "_" + variant + "_damaged";
+		this.m.SpriteDamagedBack = "bust_diviner_jacket" + "_" + variant + "_damaged";
 		this.m.SpriteCorpseBack = "bust_diviner_jacket" + "_" + variant + "_dead";
 		this.m.Icon = "legend_armor/icon_diviner_jacket" + "_" + variant + ".png";
 		this.m.IconLarge = this.m.Icon;

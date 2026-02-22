@@ -24,7 +24,7 @@ this.legend_legion_gladiator_background <- this.inherit("scripts/skills/backgrou
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Bodies = this.Const.Bodies.Muscular;
 		//---
-		this.m.BackgroundType = this.Const.BackgroundType.Untalented;
+		// this.m.BackgroundType = this.Const.BackgroundType.Untalented;
 		this.m.Names = this.Const.Strings.AncientDeadNames;
 		this.m.LastNames = this.Const.Strings.AncientDeadTitles;
 		this.m.Level = this.Math.rand(4, 5);

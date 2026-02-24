@@ -96,6 +96,8 @@ this.legend_barbarian_runechosen <- this.inherit("scripts/entity/tactical/human"
 	{
 		local weapons = [
 			"weapons/named/legend_named_rusty_serrated_axe",
+			"weapons/named/legend_named_rusty_warcleaver",
+			"weapons/named/legend_named_horn_decorated_mace",
 			"weapons/named/legend_named_rusty_greatsword"
 		];
 		local armor = this.Const.Items.NamedBarbarianArmors;

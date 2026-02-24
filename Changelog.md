@@ -66,6 +66,10 @@ Favoured Enemy - Sword Master
 	
 ### Weapons
 
+#### New Weapons
+- `Rusty Warcleaver` - named cleaver with very high shield damage, will appear on Runechosen
+- `Horn Decorated Mace` - named mace, will appear on Runechosen
+
 #### New Weapon Abilities
 
 **Throwing**

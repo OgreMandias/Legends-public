@@ -5,7 +5,7 @@ this.legend_named_rusty_greatsword <- this.inherit("scripts/items/weapons/named/
 	function create()
 	{
 		this.named_weapon.create();
-		this.m.Variant = this.Math.rand(1, 2);
+		this.m.Variant = 1;
 		this.updateVariant();
 		this.m.ID = "weapon.legend_named_rusty_greatsword";
 		this.m.NameList = this.Const.Strings.GreatswordNames;
@@ -45,15 +45,13 @@ this.legend_named_rusty_greatsword <- this.inherit("scripts/items/weapons/named/
 	function onEquip()
 	{
 		this.named_weapon.onEquip();
-		local skillToAdd = this.new("scripts/skills/actives/overhead_strike");
-		skillToAdd.setStunChance(this.m.StunChance);
-		this.addSkill(skillToAdd);
-		this.addSkill(this.new("scripts/skills/actives/split"));
-		this.addSkill(this.new("scripts/skills/actives/swing"));
-		local skillToAdd = this.new("scripts/skills/actives/split_shield");
-		skillToAdd.setFatigueCost(skillToAdd.getFatigueCostRaw() + 5);
-		this.addSkill(skillToAdd);
+		::Legends.Actives.grant(this, ::Legends.Active.OverheadStrike, function (_skill) {
+			_skill.setStunChance(this.m.StunChance);
+		}.bindenv(this));
+		::Legends.Actives.grant(this, ::Legends.Active.Split);
+		::Legends.Actives.grant(this, ::Legends.Active.Swing);
+		::Legends.Actives.grant(this, ::Legends.Active.SplitShield, function (_skill) {
+			_skill.setFatigueCost(skillToAdd.getFatigueCostRaw() + 5);
+		}.bindenv(this));
 	}
-
 });
-

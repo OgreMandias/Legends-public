@@ -7,12 +7,12 @@ this.legend_helmet_pimp_hat <- this.inherit("scripts/items/legend_helmets/legend
 		this.m.ID = "armor.head.legend_helmet_pimp_hat";
 		this.m.Name = "Pimp\'s hat";
 		this.m.Description = "An exceptionally gaudy piece of headwear that instantly attracts the wrong type of attention.";
-		this.m.ArmorDescription = this.m.Description;
+		this.m.ArmorDescription = "Includes a flamboyant hat.";
 		this.m.Variants = [1, 2];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
-		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
-		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
+		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
+		this.m.InventorySound = this.Const.Sound.ClothEquip;
 		this.m.Value = 1200;
 		this.m.Condition = 10;
 		this.m.ConditionMax = 10;

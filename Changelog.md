@@ -124,6 +124,16 @@ Favoured Enemy - Sword Master
 - `Knifeplay` perk has been deleted
 
 - merged the two fencer hats
+- added a number of recolors and new variants to a number of helmets
+- removed duplicate chain scarf / aventail (old chain scarf graphics replacing old aventail graphics)
+- added named rotten great helms, facemasks, horsetails, norman helms, aventails, full chain hoods
+- differentiated sounds for upgrades and composites
+
+### Armors
+
+- added Studded Aketon
+- description fixes and changes
+- differentiated sounds for upgrades, composites and attachments
 
 ### New recipes
 
@@ -137,6 +147,204 @@ Bandit Warlord renamed to Robber Baron
 ```
 legend_bandit_warlord.nut -> legend_robber_baron.nut
 this.Const.EntityType.LegendBanditWarlord -> this.Const.EntityType.LegendRobberBaron
+
+Added a new way of defining outfit variants: for example [1, "vanity/legend_helmet_southern_noble_crown", [1,2,3]], where variants can be now defined
+as an array.
+
+A number of armor name refactors and normalization to use the same value in the name field and the .pngs, removing the brush field and separating
+items that used the same brush name into standalone definitions. Note that items marked as 'separated' have their variant numbering restarted from 1.
+The .pngs have also gone necessary changes, see the link below for more details (includes removal of bust_ prefix).
+For clarity, legend_armor is prefixed at make_legends_armor level and should be referenced as such while building outfits.
+Description changes for both armors and helmets.
+
+Armor refactors in legend_armor defs.py: https://github.com/Battle-Brothers-Legends/Legends-public/commit/7e2a567abdfc71395283994a488e3150d47b53a0
+legend_ancient_cloth -> ancient_cloth
+legend_ancient_cloth_restored -> ancient_cloth_restored
+legend_apron_butcher -> apron_butcher / separated from legend_apron
+legend_gladiator_harness -> southern_gladiator_harness / moved over from vanilla
+legend_gambeson -> gambeson / normalized the numbering to 1-40 from 0-39
+legend_gambeson_plain -> removed / defined in the new way in outfits as [weight, gambeson, [1,2,3]]
+legend_gambeson_named -> gambeson_named
+legend_padded_surcoat -> quilted_aketon / separated from legend_gambeson, renamed to better fit it's role as L0
+legend_padded_surcoat_plain -> removed, see legend_gambeson_plain
+legend_peasant_dress -> peasant_dress
+legend_robes -> robes / separated from legend_robes
+legend_vala_dress -> vala_dress
+legend_vala_robe -> vala_robe
+legend_armor_rabble_fur -> fur_rabble
+legend_robe_magic -> robes_magic
+legend_robes_wizard -> robes_wizard
+anatomist_robe -> robe_anatomist
+legend_robes_nun -> robes_nun / separated from legend_robes
+legend_sackcloth_tattered -> sackcloth_tattered / separated from legend_sackcloth
+legend_sackcloth -> sackcloth / separated from legend_sackcloth
+legend_sackcloth_patched -> sackcloth-patched / separated from legend_sackcloth
+legend_bandages -> bandages
+legend_tunic -> tunic
+legend_tunic_wrap -> tunic wrap
+legend_tunic_collar_thin -> tunic_collar_thin
+legend_tunic_collar_deep -> tunic_collar_deep
+legend_dark_tunic -> dark_tunic
+legend_tunic_noble -> tunic_noble
+legend_tunic_noble_named -> tunic_noble_named
+legend_southern_robe -> southern_robe
+legend_knightly_robe -> knightly_robe
+legend_southern_gambeson -> southern_gambeson
+legend_southern_split_gambeson -> southern_split_gambeson
+legend_southern_tunic -> soutern_tunic
+legend_southern_noble_surcoat -> southern_noble_aketon
+legend_fleshcultist_tunic -> fleshcultist_tunic
+legend_armor_ancient_double_mail -> ancient_double_mail
+legend_armor_ancient_mail -> ancient_mail
+legend_armor_basic_mail -> basic_mail
+legend_armor_hauberk -> hauberk
+legend_armor_hauberk_full -> hauberk_full
+legend_armor_hauberk_full_named -> hauberk_full_named
+legend_armor_hauberk_sleevless -> hauberk_sleeveless
+legend_armor_mail_shirt -> mail_shirt
+legend_armor_mail_shirt_simple -> mail_shirt_simple
+legend_armor_reinforced_mail -> reinforced_mail
+legend_armor_reinforced_mail_shirt -> reinforced_mail_shirt
+legend_armor_reinforced_rotten_mail_shirt -> reinforced_rotten_mail_shirt
+legend_armor_reinforced_worn_mail -> reinforced_worn_mail
+legend_armor_reinforced_worn_mail_shirt -> reinforced_worn_mail_shirt
+legend_armor_rusty_mail_shirt -> rusty_mail_shirt
+legend_armor_short_mail -> short_mail
+legend_southern_cloth -> southern_cloth
+legend_southern_padded_chest -> southern_padded_chest
+legend_southern_mail -> southern_mail
+legend_armor_leather_brigandine -> leather_brigandine
+legend_armor_leather_brigandine_hardened -> leather_brigandine_hardened
+legend_armor_leather_brigandine_hardened_full -> leather_brigandine_hardened_full
+legend_armor_leather_brigandine_named -> leather_brigandine->named
+legend_armor_leather_jacket -> leather_jacket
+legend_armor_leather_jacket_named -> leather_jacket_named
+legend_armor_leather_studded_jacket_named -> leather_studded_jacket_named
+undertakers_apron -> apron_undertakers
+legend_armor_leather_jacket_simple -> leather_jacket_simple
+legend_armor_leather_lamellar -> leather_lamellar
+legend_armor_cult_armor -> cult_armor
+legend_armor_leather_lamellar_harness_heavy -> leather_lamellar_harness_heavy
+legend_armor_leather_lamellar_harness_reinforced -> leather_lamellar_harness_reinforced
+legend_armor_leather_lamellar_heavy -> leather_lamellar_heavy
+legend_armor_leather_lamellar_heavy_named -> leather_lamellar_heavy_named
+legend_armor_leather_lamellar_reinforced -> leather_lamellar_reinforced
+legend_armor_leather_noble -> leather_jacket_fine
+legend_armor_leather_padded -> leather_padded
+legend_armor_leather_riveted -> leather_riveted
+legend_armor_leather_riveted_light -> leather_riveted_light
+legend_armor_leather_scale -> leather_scale
+legend_armor_plate_ancient_chest -> plate_ancient_chest
+legend_armor_plate_ancient_chest_restored -> plate_ancient_chest_restored
+legend_armor_plate_ancient_gladiator -> plate_ancient_gladiator
+legend_armor_plate_ancient_harness -> plate_ancient_harness
+legend_armor_plate_ancient_mail -> plate_ancient_mail
+legend_armor_plate_ancient_scale -> plate_ancient_scale
+legend_armor_plate_ancient_scale_coat -> plate_ancient_scale_coat
+legend_armor_plate_ancient_scale_harness -> plate_ancient_scale_harness
+legend_armor_plate_ancient_scale_coat_restored -> plate_ancient_scale_coat_restored
+legend_armor_plate_ancient_scale_harness_restored -> plate_ancient_scale_harness_restored
+legend_armor_plate_chest -> plate_chest
+legend_armor_plate_chest_rotten -> rotten_plate_chest
+legend_armor_plate_cuirass -> plate_cuirass
+legend_armor_plate_milanese, legend_armor_plate_triangle, legend_armor_plate_krastenburst -> merged into legend_armor_plate_full_greaves as variants
+legend_armor_plate_full -> plate_full
+legend_armor_plate_full_greaves -> plate_full_greaves
+legend_armor_plate_full_greaves_named -> plate_full_greaves_named
+legend_armor_plate_full_greaves_painted -> plate_full_greaves_painted
+legend_armor_scale -> scale
+legend_armor_scale_coat -> scale_coat
+legend_noble_scale -> noble_scale
+legend_armor_scale_coat_named -> scale_coat_named
+legend_armor_scale_coat_rotten -> rotten_scale_coat
+legend_armor_scale_shirt -> scale_shirt
+legend_animal_hide_armor -> animal_hide_armor / note: barb armors are still using vanilla graphics for the time being
+legend_heavy_iron_armor -> heavy_iron_armor
+legend_hide_and_bone_armor -> hide_and_bone_armor
+legend_reinforced_animal_hide_armor -> animal_hide_armor_reinforced
+legend_rugged_scale_armor -> rugged_scale_armor
+legend_scrap_metal_armor -> scrap_metal_armor
+legend_thick_furs_armor -> thick_furs_armor
+legend_thick_plated_barbarian_armor -> thick_plated_barbarian_armor
+legend_thick_plated_barbarian_armor_named -> thick_plated_barbarian_armor_named
+legend_bronze_armor_named -> unused
+legend_southern_named_golden_plates -> unused
+legend_southern_named_plates -> southern_named_plate / in place of above legend_southern_named_golden_plates
+named_emperors_armor -> unused
+davkul -> unused
+legend_southern_plate_full -> southern_plate / it had the stats and description of southern plate
+legend_southern_plate -> southern_plate_full / it had the stats and description of full southern plate
+legend_southern_padded -> southern_padded
+legend_southern_arm_guards -> southern_arm_guards
+legend_southern_strips -> southern_strips
+legend_southern_leather_jacket -> southern_leather_jacket
+legend_southern_leather_plates -> southern_leather_plates
+legend_southern_leather_scale -> southern_leather_scale
+legend_southern_scale -> southern_scale
+legend_diviner_jacket_named -> diviner_jacket
+legend_fleshcultist_jacket -> fleshcultist_jacket
+legend_shoulder_cloth -> shoulder_cloth
+legend_noble_shawl -> noble_shawl
+legend_dark_wooly_cloak -> cloak_wooly_dark
+fur_cloak -> cloak_fur
+legend_armor_cloak_common -> cloak / separated from legend_armor_cloak_common
+cursed_cloak -> cursed_cloak
+legend_armor_cloak_crusader -> cloak_crusader / separated from cloak
+legend_armor_cloak_heavy -> cloak_heavy / separated from cloak
+legend_armor_cloak_noble -> cloak_noble / separated from cloak
+dukes_cloak -> cloak_duke
+legend_sash -> sash
+legend_southern_scarf -> southern_scarf
+legend_religious_scarf -> religious_scarf
+legend_animal_pelt -> animal_pelt
+legend_southern_scarf_wrap -> southern_scarf_wrap
+legend_common_tabard -> tabard / separated from legend_tabard
+legend_noble_tabard -> tabard_noble / separated from legend_tabard
+legend_southern_wrap_right -> southern_wrap_right
+legend_southern_wrap_left -> southern_wrap_left
+legend_southern_wide_belt -> southern_wide_belt
+legend_noble_vest -> noble_vest
+legend_southern_wrap -> southern_wrap
+legend_southern_shoulder_cloth -> southern_shoulder_cloth
+legend_southern_overcloth -> southern_overcloth
+legend_southern_tabard -> southern_tabard
+legend_diviner_tabard -> diviner_tabard
+legend_fleshcultist_tabard -> fleshcultist_tabard
+named_emperors_cloak -> cloak_emperors_named
+named_emperors_armor -> armor_emperors_named
+
+Helmet refactors:
+basinet -> bascinet
+bronze_helm -> unused
+legend_armet -> armet
+legend_frogmouth -> frogmouth
+legend_frogmouth_close -> frogmouth_named
+southern_named_conic -> southern_conic_named
+southern_cap_dark -> merged into southern_cap
+legend_ancient_gladiator -> ancient_gladiator
+legend_ancient_legionaire -> ancient_legionary_helm
+legend_ancient_legionaire_restored -> ancient_legionary_helm_restored
+dentist_helmet -> unused
+legend_armet_01_named -> armet_named
+leather_hood_barb -> barb_hood_leather
+helm_adornment_rotten -> rotten_helm_adornment
+faceplate_winged -> separated into faceplate_winged, faceplate_winged_full and faceplate_winged_long
+faceplate_full_01_named -> faceplate_winged_full_named
+faceplate_gold, faceplate_full_gold -> integrated into winged faceplates
+added -> rotten_great_helm_named
+added -> facemask_named
+noble_southern_crown -> southern_noble_crown
+noble_southern_hat -> southern_noble_hat
+faction_decayed_helmet -> rotten_faction_helmet
+thick_braid_rotten -> rotten_thick_braid
+wallace_sallet -> cervelliere / renamed to better fit the graphics
+deep_sallet -> deep cervelliere / renamed to better fit the graphics
+enclave_great_bascinet -> enclave_peaked_bascinet / renamed to fit the name used in game
+enclave_great_bascinet_visor -> enclave_peaked_bascinet_visor / renamed to fit the name used in game
+enclave_venitian_bascinet -> enclave_great_bascinet / renamed to fit the name used in game + typo
+enclave_venitian_bascinet_visor -> enclave_great_bascinet_visor / renamed to fit the name used in game + typo
+
+
 ```
 
 Following trees were removed, refer to `z_perks_tree_enemy.nut` for replacements:

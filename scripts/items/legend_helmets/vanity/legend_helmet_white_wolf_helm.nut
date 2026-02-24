@@ -18,13 +18,13 @@ this.legend_helmet_white_wolf_helm <- this.inherit("scripts/items/legend_helmets
 		// 	"Predator Crown"
 		// ];
 		// this.m.Name = this.m.NameList[this.Math.rand(0, this.m.NameList.len())];
-		this.m.Description = "The trophy of a white wolf head.";
-		this.m.ArmorDescription = this.m.Description;
+		this.m.Description = "A fur covering fashioned from of a dangerous beast. It serves as a grim trophy that unnerves adversaries.";
+		this.m.ArmorDescription = "Includes a heavy pelt of white fur.";
 		this.m.Variants = [1, 2];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
-		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
-		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
+		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
+		this.m.InventorySound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.Value = 200;
 		this.m.Condition = 10;
 		this.m.ConditionMax = 10;

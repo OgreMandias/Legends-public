@@ -6,7 +6,7 @@ this.legend_helmet_nach_helm <- this.inherit("scripts/items/legend_helmets/legen
 		this.legend_helmet_upgrade.create();
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_nach_helm";
-		this.m.Name = "Nacho Helm";
+		this.m.Name = "Skin Ghoul Helmet";
 		// this.m.NameList = [
 		// 	"Rotten visage",
 		// 	"Helm of the ghoul",
@@ -16,13 +16,13 @@ this.legend_helmet_nach_helm <- this.inherit("scripts/items/legend_helmets/legen
 		// 	"Skin Crown"
 		// ];
 		// this.m.Name = this.m.NameList[this.Math.rand(0, this.m.NameList.len())];
-		this.m.Description = "A trophy made from the face of a skin ghoul.";
-		this.m.ArmorDescription = this.m.Description;
+		this.m.Description = "A helmet fashioned made from the face and horns of a skin ghoul.";
+		this.m.ArmorDescription = "Includes some skin ghoul's parts.";
 		this.m.Variants = [1];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
-		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
-		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
+		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
+		this.m.InventorySound = this.Const.Sound.ClothEquip;
 		this.m.Value = 200;
 		this.m.Condition = 10;
 		this.m.ConditionMax = 10;

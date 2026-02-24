@@ -159,7 +159,7 @@ this.legend_man_at_arms_background <- this.inherit("scripts/skills/backgrounds/c
 		items.equip(this.Const.World.Common.pickHelmet([
 			[4, ::Legends.Helmet.None],
 			[3, ::Legends.Helmet.Standard.aketon_cap],
-			[1, ::Legends.Helmet.Standard.deep_sallet],
+			[1, ::Legends.Helmet.Standard.deep_cervelliere],
 			[2, ::Legends.Helmet.Standard.full_aketon_cap],
 			[2, ::Legends.Helmet.Standard.open_leather_cap],
 			[3, ::Legends.Helmet.Standard.full_leather_cap]

@@ -106,7 +106,7 @@
 			[0, "plate/scrap_metal_armor"],// 65
 			[1, "plate/thick_furs_armor"],// 10
 			[0, "plate/thick_plated_barbarian_armor"],// 155
-			[0, "plate/southern_named_golden_plates"],// 155
+			//[0, "plate/southern_named_plate"],// 155
 			[0, "plate/southern_named_plate"],// 155
 			[0, "plate/southern_plate"],// 155
 			[0, "plate/southern_plate_full"],// 155
@@ -256,7 +256,7 @@
 			[0, "plate/scrap_metal_armor"],// 65
 			[0, "plate/thick_furs_armor"],// 10
 			[0, "plate/thick_plated_barbarian_armor"],// 155
-			[0, "plate/southern_named_golden_plates"],// 155
+			//[0, "plate/southern_named_plate"],// 155
 			[0, "plate/southern_named_plate"],// 155
 			[0, "plate/southern_plate"],// 155
 			[0, "plate/southern_plate_full"],// 155
@@ -335,7 +335,7 @@
 			[0, "chain/southern_mail"],// 100
 		],
 		Plate = [
-			[0, "plate/southern_named_golden_plates"],// 155
+			//[0, "plate/southern_named_plate"],// 155
 			[0, "plate/southern_named_plate"],// 155
 			[0, "plate/southern_plate"],// 155
 			[0, "plate/southern_plate_full"],// 155
@@ -485,7 +485,7 @@
 			[0, "plate/scrap_metal_armor"],// 65
 			[0, "plate/thick_furs_armor"],// 10
 			[0, "plate/thick_plated_barbarian_armor"],// 155
-			[0, "plate/southern_named_golden_plates"],// 155
+			//[0, "plate/southern_named_plate"],// 155
 			[0, "plate/southern_named_plate"],// 155
 			[0, "plate/southern_plate"],// 155
 			[0, "plate/southern_plate_full"],// 155
@@ -635,7 +635,7 @@
 			[0, "plate/scrap_metal_armor"],// 65
 			[0, "plate/thick_furs_armor"],// 10
 			[0, "plate/thick_plated_barbarian_armor"],// 155
-			[0, "plate/southern_named_golden_plates"],// 155
+			//[0, "plate/southern_named_plate"],// 155
 			[0, "plate/southern_named_plate"],// 155
 			[5, "plate/southern_plate"],// 155
 			[0, "plate/southern_plate_full"],// 155
@@ -785,7 +785,7 @@
 			[0, "plate/scrap_metal_armor"],// 65
 			[0, "plate/thick_furs_armor"],// 10
 			[0, "plate/thick_plated_barbarian_armor"],// 155
-			[0, "plate/southern_named_golden_plates"],// 155
+			//[0, "plate/southern_named_plate"],// 155
 			[0, "plate/southern_named_plate"],// 155
 			[0, "plate/southern_plate"],// 155
 			[0, "plate/southern_plate_full"],// 155
@@ -935,7 +935,7 @@
 			[0, "plate/scrap_metal_armor"],// 65
 			[0, "plate/thick_furs_armor"],// 10
 			[0, "plate/thick_plated_barbarian_armor"],// 155
-			[5, "plate/southern_named_golden_plates"],// 155
+			[5, "plate/southern_named_plate"],// 155
 			[0, "plate/southern_named_plate"],// 155
 			[0, "plate/southern_plate"],// 155
 			[0, "plate/southern_plate_full"],// 155
@@ -1085,7 +1085,7 @@
 			[0, "plate/scrap_metal_armor"],// 65
 			[0, "plate/thick_furs_armor"],// 10
 			[0, "plate/thick_plated_barbarian_armor"],// 155
-			[0, "plate/southern_named_golden_plates"],// 155
+			//[0, "plate/southern_named_plate"],// 155
 			[0, "plate/southern_named_plate"],// 155
 			[0, "plate/southern_plate"],// 155
 			[0, "plate/southern_plate_full"],// 155
@@ -1235,7 +1235,7 @@
 			[0, "plate/scrap_metal_armor"],// 65
 			[0, "plate/thick_furs_armor"],// 10
 			[0, "plate/thick_plated_barbarian_armor"],// 155
-			[0, "plate/southern_named_golden_plates"],// 155
+			//[0, "plate/southern_named_plate"],// 155
 			[0, "plate/southern_named_plate"],// 155
 			[0, "plate/southern_plate"],// 155
 			[0, "plate/southern_plate_full"],// 155
@@ -1378,7 +1378,7 @@
 			[0, "plate/scrap_metal_armor"],// 65
 			[0, "plate/thick_furs_armor"],// 10
 			[0, "plate/thick_plated_barbarian_armor"],// 155
-			[0, "plate/southern_named_golden_plates"],// 155
+			//[0, "plate/southern_named_plate"],// 155
 			[0, "plate/southern_named_plate"],// 155
 			[0, "plate/southern_plate"],// 155
 			[3, "plate/southern_plate_full"],// 155
@@ -1531,7 +1531,7 @@
 			[0, "plate/scrap_metal_armor"],// 65
 			[0, "plate/thick_furs_armor"],// 10
 			[0, "plate/thick_plated_barbarian_armor"],// 155
-			[0, "plate/southern_named_golden_plates"],// 155
+			//[0, "plate/southern_named_plate"],// 155
 			[0, "plate/southern_named_plate"],// 155
 			[0, "plate/southern_plate"],// 155
 			[0, "plate/southern_plate_full"],// 155
@@ -1681,7 +1681,7 @@
 			[0, "plate/scrap_metal_armor"],// 65
 			[0, "plate/thick_furs_armor"],// 10
 			[0, "plate/thick_plated_barbarian_armor"],// 155
-			[0, "plate/southern_named_golden_plates"],// 155
+			//[0, "plate/southern_named_plate"],// 155
 			[0, "plate/southern_named_plate"],// 155
 			[0, "plate/southern_plate"],// 155
 			[0, "plate/southern_plate_full"],// 155
@@ -1835,7 +1835,7 @@
 			[0, "plate/scrap_metal_armor"],// 65
 			[0, "plate/thick_furs_armor"],// 10
 			[0, "plate/thick_plated_barbarian_armor"],// 155
-			[0, "plate/southern_named_golden_plates"],// 155
+			//[0, "plate/southern_named_plate"],// 155
 			[0, "plate/southern_named_plate"],// 155
 			[0, "plate/southern_plate"],// 155
 			[0, "plate/southern_plate_full"],// 155
@@ -1989,7 +1989,7 @@
 			[0, "plate/scrap_metal_armor"],// 65
 			[0, "plate/thick_furs_armor"],// 10
 			[0, "plate/thick_plated_barbarian_armor"],// 155
-			[0, "plate/southern_named_golden_plates"],// 155
+			//[0, "plate/southern_named_plate"],// 155
 			[0, "plate/southern_named_plate"],// 155
 			[0, "plate/southern_plate"],// 155
 			[0, "plate/southern_plate_full"],// 155

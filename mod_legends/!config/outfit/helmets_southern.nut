@@ -80,8 +80,6 @@
 	Sets = [{
 		Hoods = [
 			[1, "hood/legend_helmet_southern_cap"], //100
-			[1, "hood/legend_helmet_southern_cap_dark"] //100
-
 		],
 		Helms = [
 		],
@@ -120,7 +118,6 @@
 	Sets = [{
 		Hoods = [
 			[1, "hood/legend_helmet_southern_cap"], //100
-			[1, "hood/legend_helmet_southern_cap_dark"] //100
 		],
 		Helms = [
 		],
@@ -161,7 +158,6 @@
 	Sets = [{
 		Hoods = [
 			[1, "hood/legend_helmet_southern_cap"], //100
-			[1, "hood/legend_helmet_southern_cap_dark"] //100
 		],
 		Helms = [
 		],
@@ -200,7 +196,6 @@
 	Sets = [{
 		Hoods = [
 			[1, "hood/legend_helmet_southern_cap"], //100
-			[1, "hood/legend_helmet_southern_cap_dark"] //100
 		],
 		Helms = [
 		],
@@ -258,8 +253,7 @@
 	Sets = [{
 		Hoods = [
 			[1, "hood/legend_helmet_southern_cap"], //100
-			[1, "hood/legend_helmet_southern_cap_dark"], //100
-			[4, "hood/legend_helmet_southern_turban_light_hood"] //100
+			[2, "hood/legend_helmet_southern_turban_light_hood"] //100
 
 		],
 		Helms = [
@@ -307,7 +301,6 @@
 	Sets = [{
 		Hoods = [
 			[1, "hood/legend_helmet_southern_cap"], //100
-			[1, "hood/legend_helmet_southern_cap_dark"] //100
 		],
 		Helms = [
 		],

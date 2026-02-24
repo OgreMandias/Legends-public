@@ -233,8 +233,27 @@ def generate_legend_helmets(base_path):
         for x in range(d["max"]):
             variants.append(x + 1)
 
+        impactsound = "::Const.Sound.ArmorLeatherImpact"
+        invsound = "::Const.Sound.ArmorLeatherImpact"
+        if d["invSound"] == "cloth":
+            invsound = "::Const.Sound.ClothEquip"
+        elif d["invSound"] == "chain":
+            invsound = "::Const.Sound.ArmorChainmailImpact"
+        elif d["invSound"] == "plate":
+            invsound = "::Const.Sound.ArmorHalfplateImpact"
+        elif d["invSound"] == "bone":
+            invsound = "::Const.Sound.ArmorBoneImpact"
+
+        if d["impactSound"] == "chain":
+            impactsound = "::Const.Sound.ArmorChainmailImpact"
+        elif d["impactSound"] == "plate":
+            impactsound = "::Const.Sound.ArmorHalfplateImpact"
+        elif d["impactSound"] == "bone":
+            impactsound = "::Const.Sound.ArmorBoneImpact"
+
         title = d["title"]
         desc = d["desc"]
+        adesc = d["adesc"]
 
         has_missing = has_missing or checkForIcon(path, "inventory_" + d["name"], variants)
 
@@ -247,6 +266,7 @@ def generate_legend_helmets(base_path):
             name=fname,
             title=title,
             desc=desc,
+            adesc=adesc,
             condition=d["con"],
             value=d["value"],
             stamina=d["stam"],
@@ -257,6 +277,8 @@ def generate_legend_helmets(base_path):
             type=d["layer"].capitalize(),
             brush="legendhelms_" + d["name"],
             icon="inventory_" + d["name"],
+            impactSound=impactsound,
+            invSound=invsound,
             lower=lower,
             hair=d["hair"],
             beard=d["beard"],
@@ -364,7 +386,7 @@ Sets = [{
         [1, "helm/legend_helmet_ancient_dome"], //15
         [1, "helm/legend_helmet_ancient_dome_tailed"], //15
         [1, "helm/legend_helmet_ancient_face_plate"], //50
-        [1, "helm/legend_helmet_ancient_legionaire"], //50
+        [1, "helm/legend_helmet_ancient_legionary_helm"], //50
         [1, "helm/legend_helmet_ancient_side_hawk"], //50
         [1, "helm/legend_helmet_ancient_tailed_conic_helm"], //50
         [1, "helm/legend_helmet_ancient_crested"], //100
@@ -394,7 +416,7 @@ Sets = [{
         [1, "helm/legend_helmet_armet"], //260
         [1, "helm/legend_helmet_frogmouth"], //265
         [1, "helm/legend_helmet_ancient_gladiator"], //115
-        [1, "helm/legend_helmet_ancient_legionaire_restored"], //60
+        [1, "helm/legend_helmet_ancient_legionary_helm_restored"], //60
         [1, "helm/legend_helmet_tailed_conic"], //185
         [1, "helm/legend_helmet_armet_named"], //260
         [1, "helm/legend_helmet_stag_helm"], //230

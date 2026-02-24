@@ -79,8 +79,8 @@
 				[5, ::Legends.Helmet.Standard.legend_helm_short],
 				[5, ::Legends.Helmet.Standard.legend_helm_curved],
 				[5, ::Legends.Helmet.Standard.legend_helm_sharp],
-				//[2, ::Legends.Helmet.Standard.wallace_sallet],
-				//[2, ::Legends.Helmet.Standard.deep_sallet],
+				//[2, ::Legends.Helmet.Standard.cervelliere],
+				//[2, ::Legends.Helmet.Standard.deep_cervelliere],
 				//[2, ::Legends.Helmet.Standard.italo_norman_helm],
 				[2, ::Legends.Helmet.Standard.legend_enclave_vanilla_great_helm_01],
 				[2, ::Legends.Helmet.Standard.legend_enclave_vanilla_armet_01],
@@ -132,10 +132,10 @@
 			this.m.Items.equip(this.Const.World.Common.pickHelmet([
 				[3, ::Legends.Helmet.Named.bascinet_named],
 				[3, ::Legends.Helmet.Named.kettle_helm_named],
-				[3, ::Legends.Helmet.Named.deep_sallet_named],
+				[3, ::Legends.Helmet.Named.deep_cervelliere_named],
 				[3, ::Legends.Helmet.Named.barbute_named],
 				[3, ::Legends.Helmet.Named.italo_norman_helm_named],
-				[3, ::Legends.Helmet.Named.wallace_sallet_named],
+				[3, ::Legends.Helmet.Named.cervelliere_named],
 				[3, ::Legends.Helmet.Named.named_helm_with_lion_pelt]
 			]));
 		}

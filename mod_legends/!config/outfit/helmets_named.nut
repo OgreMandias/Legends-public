@@ -420,7 +420,7 @@
 			[1, "hood/legend_helmet_chain_hood_full"], //90
 		],
 		Helms = [
-			[1, "helm/legend_helmet_wallace_sallet_named"] //140, -7, -2
+			[1, "helm/legend_helmet_cervelliere_named"] //140, -7, -2
 		],
 		Tops = [],
 		Vanity = [
@@ -430,8 +430,8 @@
 };
 ::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Named.wolf_helmet);
 
-::Legends.Helmet.Named.wallace_sallet_named <- {
-	ID = "named/wallace_sallet_named", //170, -10, -2, 1000
+::Legends.Helmet.Named.cervelliere_named <- {
+	ID = "named/cervelliere_named", //170, -10, -2, 1000
 	Script = "",
 	Sets = [{
 		Hoods = [
@@ -440,7 +440,7 @@
 			[1, "hood/legend_helmet_southern_chain_hood"] //90, -6, 0
 		],
 		Helms = [
-			[1, "helm/legend_helmet_wallace_sallet_named"] //140, -7, -2
+			[1, "helm/legend_helmet_cervelliere_named"] //140, -7, -2
 		],
 		Tops = [
 			[1, "top/legend_helmet_wallace_sallet_visor_named"] //60, -2, -1
@@ -456,7 +456,7 @@
 		]
 	}]
 };
-::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Named.wallace_sallet_named);
+::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Named.cervelliere_named);
 
 ::Legends.Helmet.Named.kettle_helm_named <- {
 	ID = "named/kettle_helm_named", //170, -10, -2, 1000
@@ -566,8 +566,8 @@
 };
 ::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Named.italo_norman_helm_named);
 
-::Legends.Helmet.Named.deep_sallet_named <- {
-	ID = "named/deep_sallet_named", //180, -10, -1, 1000
+::Legends.Helmet.Named.deep_cervelliere_named <- {
+	ID = "named/deep_cervelliere_named", //180, -10, -1, 1000
 	Script = "",
 	Sets = [{
 		Hoods = [
@@ -576,7 +576,7 @@
 			[1, "hood/legend_helmet_southern_chain_hood"] //90, -6, 0
 		],
 		Helms = [
-			[1, "helm/legend_helmet_deep_sallet_named"] //180, -7, -1
+			[1, "helm/legend_helmet_deep_cervelliere_named"] //180, -7, -1
 		],
 		Tops = [
 		],
@@ -591,7 +591,7 @@
 		]
 	}]
 };
-::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Named.deep_sallet_named);
+::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Named.deep_cervelliere_named);
 
 ::Legends.Helmet.Named.named_helm_with_lion_pelt <- {
 	ID = "named/named_helm_with_lion_pelt", //180, -10, -1, 1000
@@ -603,7 +603,7 @@
 			[1, "hood/legend_helmet_southern_chain_hood"] //90, -6, 0
 		],
 		Helms = [
-			[1, "helm/legend_helmet_deep_sallet_named"], //180, -7, -1
+			[1, "helm/legend_helmet_deep_cervelliere_named"], //180, -7, -1
 			[1, "helm/legend_helmet_italo_norman_helm_named"],
 			[1, "helm/legend_helmet_barbute_named"],
 			[1, "helm/legend_helmet_barbute_two_piece_named"],

@@ -227,13 +227,13 @@
 
 				R = 80,
 				P = 1.0,
-				S = "helmets/wallace_sallet"
+				S = "helmets/cervelliere"
 			},
 			{
 
 				R = 80,
 				P = 1.0,
-				S = "helmets/deep_sallet"
+				S = "helmets/deep_cervelliere"
 			},
 			{
 
@@ -364,13 +364,13 @@
 
 				R = 80,
 				P = 1.0,
-				S = "helmets/wallace_sallet"
+				S = "helmets/cervelliere"
 			},
 			{
 
 				R = 80,
 				P = 1.0,
-				S = "helmets/deep_sallet"
+				S = "helmets/deep_cervelliere"
 			},
 			{
 

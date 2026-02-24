@@ -161,7 +161,7 @@
 			[3, ::Legends.Helmet.Named.legend_frogmouth_helm_crested_painted],
 			[3, ::Legends.Helmet.Named.bascinet_named],
 			[3, ::Legends.Helmet.Named.kettle_helm_named],
-			[3, ::Legends.Helmet.Named.deep_sallet_named],
+			[3, ::Legends.Helmet.Named.deep_cervelliere_named],
 			[3, ::Legends.Helmet.Named.barbute_named],
 			[3, ::Legends.Helmet.Named.italo_norman_helm_named],
 			[1, ::Legends.Helmet.Named.legend_helm_full_named]

@@ -2,7 +2,7 @@ this.legend_named_horn_decorated_mace <- this.inherit("scripts/items/weapons/nam
 	m = {},
 	function create()
 	{
-		this.weapon.create();
+		this.named_weapon.create();
 		this.m.ID = "weapon.legend_named_horn_decorated_mace";
 		this.m.NameList = this.Const.Strings.GreatswordNames;
 		this.m.PrefixList = this.Const.Strings.BarbarianPrefix;

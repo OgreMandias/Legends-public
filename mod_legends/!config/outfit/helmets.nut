@@ -1754,11 +1754,11 @@
 			[1, "hood/legend_helmet_chain_hood_full"] //90, -6, 0
 		],
 		Helms = [
-			[1, "helm/legend_helmet_enclave_venitian_bascinet"] //260, -13, -2
+			[1, "helm/legend_helmet_enclave_great_bascinet"] //260, -13, -2
 		],
 		Tops = [
 			[2, ""],
-			[2, "top/legend_helmet_enclave_venitian_bascinet_visor"], //40, -3, 0
+			[2, "top/legend_helmet_enclave_great_bascinet_visor"], //40, -3, 0
 			[1, "top/legend_helmet_faceplate_pointed"], //25, -1, -1
 			[1, "top/legend_helmet_faceplate_flat"], //22, -1, -1
 			[1, "top/legend_helmet_faceplate_pointed_slit"], //35, -1, -2
@@ -2099,7 +2099,7 @@
 			[1, "helm/legend_helmet_cervelliere"] //140, -7, -2
 		],
 		Tops = [
-			[1, "top/legend_helmet_cervelliere_visor"] //60, -2, -1
+			[1, "top/legend_helmet_wallace_sallet_visor"] //60, -2, -1
 		],
 		Vanity = [
 			[10, ""],

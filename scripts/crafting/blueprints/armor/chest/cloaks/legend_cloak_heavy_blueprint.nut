@@ -8,7 +8,7 @@ this.legend_cloak_heavy_blueprint <- this.inherit("scripts/crafting/blueprint", 
 		this.blueprint.create();
 		this.m.ID = "blueprint.legend_cloak_heavy_blueprint";
 		this.m.Type = this.Const.Items.ItemType.Armor;
-		this.m.PreviewCraftable = this.new("scripts/items/legend_armor/cloak/cloak_heavy");
+		this.m.PreviewCraftable = this.new("scripts/items/legend_armor/cloak/legend_armor_cloak_heavy");
 		this.m.Variants = this.m.PreviewCraftable.m.Variants.len();
 		this.m.PreviewCraftable.setVariant(this.m.PreviewCraftable.m.Variants[0]);
 		this.m.Cost = 500;
@@ -37,7 +37,7 @@ this.legend_cloak_heavy_blueprint <- this.inherit("scripts/crafting/blueprint", 
 
 	function onCraft( _stash )
 	{
-		local item = this.new("scripts/items/legend_armor/cloak/cloak_heavy");
+		local item = this.new("scripts/items/legend_armor/cloak/legend_armor_cloak_heavy");
 		item.setVariant(item.m.Variants[this.m.Variant-1]);
 		_stash.add(item);
 	}

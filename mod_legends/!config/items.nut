@@ -3,26 +3,26 @@
 ]);
 
 ::Const.Items.LegendNamedClothLayers <- [
-	"legend_armor/cloth/gambeson_named",
-	"legend_armor/cloth/tunic_noble_named"
+	"legend_armor/cloth/legend_armor_gambeson_named",
+	"legend_armor/cloth/legend_armor_tunic_noble_named"
 ];
 
 ::Const.Items.LegendNamedChainLayers <- [
-	"legend_armor/chain/hauberk_full_named",
+	"legend_armor/chain/legend_armor_hauberk_full_named",
 ];
 
 ::Const.Items.LegendNamedPlateLayers <- [
-	"legend_armor/plate/plate_full_greaves_painted",
-	"legend_armor/plate/plate_full_greaves_named",
-	"legend_armor/plate/leather_jacket_named",
-	"legend_armor/plate/leather_studded_jacket_named",
-	"legend_armor/plate/leather_lamellar_heavy_named",
-	"legend_armor/plate/leather_brigandine_named",
-	"legend_armor/plate/scale_coat_named",
-	//"legend_armor/plate/southern_named_golden_plates",
-	"legend_armor/plate/southern_named_plate",
-	// "legend_armor/plate/thick_plated_barbarian_armor_named",
-	// "legend_armor/plate/bronze_armor_named"
+	"legend_armor/plate/legend_armor_plate_full_greaves_painted",
+	"legend_armor/plate/legend_armor_plate_full_greaves_named",
+	"legend_armor/plate/legend_armor_leather_jacket_named",
+	"legend_armor/plate/legend_armor_leather_studded_jacket_named",
+	"legend_armor/plate/legend_armor_leather_lamellar_heavy_named",
+	"legend_armor/plate/legend_armor_leather_brigandine_named",
+	"legend_armor/plate/legend_armor_scale_coat_named",
+	//"legend_armor/plate/legend_armor_southern_named_golden_plates",
+	"legend_armor/plate/legend_armor_southern_named_plate",
+	// "legend_armor/plate/legend_armor_thick_plated_barbarian_armor_named",
+	// "legend_armor/plate/legend_armor_bronze_armor_named"
 ];
 
 ::Const.Items.LegendNamedTabardLayers <- [
@@ -35,13 +35,13 @@
 ];
 
 ::Const.Items.LegendNamedSouthernArmorLayers <- [
-	//"legend_armor/plate/southern_named_golden_plates",
-	"legend_armor/plate/southern_named_plate"
+	//"legend_armor/plate/legend_armor_southern_named_golden_plates",
+	"legend_armor/plate/legend_armor_southern_named_plate"
 ];
 
 ::Const.Items.LegendNamedBarbarianArmorLayers <- [
-	//"legend_armor/plate/southern_named_golden_plates",
-	"legend_armor/plate/southern_named_plate"
+	//"legend_armor/plate/legend_armor_southern_named_golden_plates",
+	"legend_armor/plate/legend_armor_southern_named_plate"
 ];
 
 ::Const.Items.LegendNamedArmorUpgrades <- [

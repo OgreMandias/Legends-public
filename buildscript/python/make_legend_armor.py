@@ -83,6 +83,7 @@ def generate_legend_armor(base_path):
         if not os.path.exists(dirpath):
             os.makedirs(dirpath)
 
+        fname = "legend_armor_" + d["name"]
         filepath = os.path.join(dirpath, fname + ".nut")
         F = open(filepath, "w")
         variants = []

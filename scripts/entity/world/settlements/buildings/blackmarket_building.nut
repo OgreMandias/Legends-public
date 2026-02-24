@@ -553,12 +553,12 @@ this.blackmarket_building <- this.inherit("scripts/entity/world/settlements/buil
 			{
 				R = 30,
 				P = 3.0,
-				S = "legend_armor/cloak/animal_pelt"
+				S = "legend_armor/cloak/legend_armor_animal_pelt"
 			},
 			{
 				R = 60,
 				P = 5.0,
-				S = "legend_armor/cloak/cloak_fur"
+				S = "legend_armor/cloak/legend_armor_cloak_fur"
 			},
 			{
 				R = 70,
@@ -568,7 +568,7 @@ this.blackmarket_building <- this.inherit("scripts/entity/world/settlements/buil
 			{
 				R = 80,
 				P = 5.0,
-				S = "legend_armor/cloak/cloak_cursed"
+				S = "legend_armor/cloak/legend_armor_cloak_cursed"
 			},
 			{
 				R = 80,
@@ -653,12 +653,12 @@ this.blackmarket_building <- this.inherit("scripts/entity/world/settlements/buil
 			{
 				R = 70,
 				P = 2.0,
-				S = "legend_armor/cloth/robes_wizard"
+				S = "legend_armor/cloth/legend_armor_robes_wizard"
 			},
 			{
 				R = 70,
 				P = 2.0,
-				S = "legend_armor/cloth/robes_magic"
+				S = "legend_armor/cloth/legend_armor_robes_magic"
 			},
 			{
 				R = 70,

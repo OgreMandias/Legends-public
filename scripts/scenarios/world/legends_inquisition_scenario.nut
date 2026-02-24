@@ -93,16 +93,16 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		shield.onPaintSpecificColor(23);
 		items.equip(shield);
 		local cloths = [
-			[1, "cloth/robes_nun"]
+			[1, "cloth/legend_armor_robes_nun"]
 		];
 		local armor = this.Const.World.Common.pickLegendArmor(cloths);
 
 		if (armor != null)
 		{
 			local chains = [
-				[1, "chain/mail_shirt"],
-				[1, "chain/mail_shirt_simple"],
-				[1, "chain/short_mail"]
+				[1, "chain/legend_armor_mail_shirt"],
+				[1, "chain/legend_armor_mail_shirt_simple"],
+				[1, "chain/legend_armor_short_mail"]
 			];
 			local chain = this.Const.World.Common.pickLegendArmor(chains);
 			if (chain != null)
@@ -111,8 +111,8 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 			}
 
 			local plates = [
-				[1, "plate/leather_jacket"],
-				[1, "plate/leather_jacket_simple"]
+				[1, "plate/legend_armor_leather_jacket"],
+				[1, "plate/legend_armor_leather_jacket_simple"]
 			];
 			local plate = this.Const.World.Common.pickLegendArmor(plates);
 			if (plate != null)
@@ -120,7 +120,7 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 				armor.setUpgrade(plate)
 			}
 			local tabards = [
-						[1, "tabard/tabard", [2,13]]
+						[1, "tabard/legend_armor_tabard", [2,13]]
 					];
 			local tabard = this.Const.World.Common.pickLegendArmor(tabards);
 			if (tabard != null && armor != null)
@@ -135,7 +135,7 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 			local items = bro.getItems();
 			local armor = items.getItemAtSlot(this.Const.ItemSlot.Body);
 			local tabards = [
-					[1, "tabard/tabard", [2,13]]
+					[1, "tabard/legend_armor_tabard", [2,13]]
 				];
 				local tabard = this.Const.World.Common.pickLegendArmor(tabards);
 				if (tabard != null && armor != null)

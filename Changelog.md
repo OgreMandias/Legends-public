@@ -148,8 +148,13 @@ Bandit Warlord renamed to Robber Baron
 legend_bandit_warlord.nut -> legend_robber_baron.nut
 this.Const.EntityType.LegendBanditWarlord -> this.Const.EntityType.LegendRobberBaron
 
-Added a new way of defining outfit variants: for example [1, "vanity/legend_helmet_southern_noble_crown", [1,2,3]], where variants can be now defined
-as an array.
+```
+
+Item refactors:
+
+```
+
+Added a new way of defining outfit variants: for example [1, "vanity/legend_helmet_southern_noble_crown", [1,2,3]], where variants can be now defined as an array.
 
 A number of armor name refactors and normalization to use the same value in the name field and the .pngs, removing the brush field and separating
 items that used the same brush name into standalone definitions. Note that items marked as 'separated' have their variant numbering restarted from 1.
@@ -157,7 +162,9 @@ The .pngs have also gone necessary changes, see the link below for more details 
 For clarity, legend_armor is prefixed at make_legends_armor level and should be referenced as such while building outfits.
 Description changes for both armors and helmets.
 
-Armor refactors in legend_armor defs.py: https://github.com/Battle-Brothers-Legends/Legends-public/commit/7e2a567abdfc71395283994a488e3150d47b53a0
+Armor refactors in legend_armor defs.py: 
+https://github.com/Battle-Brothers-Legends/Legends-public/commit/7e2a567abdfc71395283994a488e3150d47b53a0
+
 legend_ancient_cloth -> ancient_cloth
 legend_ancient_cloth_restored -> ancient_cloth_restored
 legend_apron_butcher -> apron_butcher / separated from legend_apron
@@ -343,8 +350,6 @@ enclave_great_bascinet -> enclave_peaked_bascinet / renamed to fit the name used
 enclave_great_bascinet_visor -> enclave_peaked_bascinet_visor / renamed to fit the name used in game
 enclave_venitian_bascinet -> enclave_great_bascinet / renamed to fit the name used in game + typo
 enclave_venitian_bascinet_visor -> enclave_great_bascinet_visor / renamed to fit the name used in game + typo
-
-
 ```
 
 Following trees were removed, refer to `z_perks_tree_enemy.nut` for replacements:

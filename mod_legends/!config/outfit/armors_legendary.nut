@@ -5,17 +5,17 @@
 	Script = "",
 	Sets = [{
 		Cloth = [
-			[1, "cloth/sackcloth_patched"],
-			[1, "cloth/sackcloth_tattered"],
-			[1, "cloth/sackcloth"],
+			[1, "cloth/legend_armor_sackcloth_patched"],
+			[1, "cloth/legend_armor_sackcloth_tattered"],
+			[1, "cloth/legend_armor_sackcloth"],
 		],
 		Chain = [
-			[1, "chain/reinforced_worn_mail"],
-			[1, "chain/reinforced_worn_mail_shirt"],
-			[1, "chain/rusty_mail_shirt"],
+			[1, "chain/legend_armor_reinforced_worn_mail"],
+			[1, "chain/legend_armor_reinforced_worn_mail_shirt"],
+			[1, "chain/legend_armor_rusty_mail_shirt"],
 		],
 		Plate = [
-			[1, "plate/davkul"],
+			[1, "plate/legend_armor_davkul"],
 		],
 		Cloak = [
 		],
@@ -32,10 +32,10 @@
 	Script = "",
 	Sets = [{
 		Cloth = [
-			[1, "cloth/ancient_cloth_restored"], // 35
+			[1, "cloth/legend_armor_ancient_cloth_restored"], // 35
 		],
 		Chain = [
-			[1, "chain/ancient_mail"], // 35
+			[1, "chain/legend_armor_ancient_mail"], // 35
 		],
 		Plate = [
 			[1, "legendary/legend_emperors_armor"],
@@ -86,7 +86,7 @@
 	Script = "",
 	Sets = [{
 		Cloth = [
-			[1, "cloth/gambeson_wolf"]
+			[1, "cloth/legend_armor_gambeson_wolf"]
 		],
 		Chain = [
 
@@ -109,9 +109,9 @@
 	Script = "",
 	Sets = [{
 		Cloth = [
-			[5, "cloth/tunic", 4],
-			[1, "cloth/gambeson", 2],
-			[1, "cloth/quilted_aketon", 1],
+			[5, "cloth/legend_armor_tunic", 4],
+			[1, "cloth/legend_armor_gambeson", 2],
+			[1, "cloth/legend_armor_quilted_aketon", 1],
 		],
 		Chain = [
 
@@ -179,11 +179,11 @@
 	ID = "golems/grand_diviner_robes",
 	Script = "",
 	Sets = [{
-		Cloth = [[1, "cloth/fleshcultist_tunic", 1]],
+		Cloth = [[1, "cloth/legend_armor_fleshcultist_tunic", 1]],
 		Chain = [[1, ""]],
-		Plate = [[1, "plate/diviner_jacket", 1]],
+		Plate = [[1, "plate/legend_armor_diviner_jacket", 1]],
 		Cloak = [[1, ""]],
-		Tabard = [[1, "tabard/diviner_tabard"]],
+		Tabard = [[1, "tabard/legend_armor_diviner_tabard"]],
 		Attachments = [[1, ""]],
 	}]
 };

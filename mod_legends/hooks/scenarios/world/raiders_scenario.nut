@@ -39,8 +39,8 @@
 		local warhound = this.new("scripts/items/accessory/legend_warhound_item");
 		warhound.m.Name = "Fenrir the Warhound";
 		items.equip(warhound);
-		local armor = this.new("scripts/items/legend_armor/cloth/sackcloth");
-		local plate = this.new("scripts/items/legend_armor/plate/animal_hide_armor_reinforced");
+		local armor = this.new("scripts/items/legend_armor/cloth/legend_armor_sackcloth");
+		local plate = this.new("scripts/items/legend_armor/plate/legend_armor_animal_hide_armor_reinforced");
 		armor.setUpgrade(plate);
 		items.equip(armor);
 		items.equip(this.Const.World.Common.pickHelmet([
@@ -65,8 +65,8 @@
 		local items = bros[1].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
-		local armor = this.new("scripts/items/legend_armor/cloth/sackcloth");
-		local plate = this.new("scripts/items/legend_armor/plate/scrap_metal_armor");
+		local armor = this.new("scripts/items/legend_armor/cloth/legend_armor_sackcloth");
+		local plate = this.new("scripts/items/legend_armor/plate/legend_armor_scrap_metal_armor");
 		armor.setUpgrade(plate);
 		items.equip(armor);
 
@@ -92,8 +92,8 @@
 		local items = bros[2].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
-		local armor = this.new("scripts/items/legend_armor/cloth/sackcloth_patched");
-		local plate = this.new("scripts/items/legend_armor/plate/hide_and_bone_armor");
+		local armor = this.new("scripts/items/legend_armor/cloth/legend_armor_sackcloth_patched");
+		local plate = this.new("scripts/items/legend_armor/plate/legend_armor_hide_and_bone_armor");
 		armor.setUpgrade(plate);
 		items.equip(armor);
 		items.equip(this.Const.World.Common.pickHelmet([

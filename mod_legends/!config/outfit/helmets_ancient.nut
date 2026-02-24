@@ -228,7 +228,7 @@
 			[1, "hood/legend_helmet_leather_cap"] //35, -1, 0
 		],
 		Helms = [
-			[1, "helm/ancient_legionary_helm_restored"] // 140
+			[1, "helm/legend_helmet_ancient_legionary_helm_restored"] // 140
 		],
 		Tops = [
 		],

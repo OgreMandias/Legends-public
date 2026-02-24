@@ -553,12 +553,12 @@
 			{
 				R = 90,
 				P = 1.0,
-				S = "legend_armor/cloth/knightly_robe"
+				S = "legend_armor/cloth/legend_armor_knightly_robe"
 			},
 			{
 				R = 60,
 				P = 1.0,
-				S = "legend_armor/cloth/wanderers_coat"
+				S = "legend_armor/cloth/legend_armor_wanderers_coat"
 			},
 			{
 				R = 70,

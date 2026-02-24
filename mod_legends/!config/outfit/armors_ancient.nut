@@ -5,14 +5,14 @@
 	Script = "",
 	Sets = [{
 		Cloth = [
-			[1, "cloth/ancient_cloth"], // 30
-			[1, "cloth/ancient_cloth_restored"], // 35
+			[1, "cloth/legend_armor_ancient_cloth"], // 30
+			[1, "cloth/legend_armor_ancient_cloth_restored"], // 35
 		],
 		Chain = [
 		],
 		Plate = [
-			[1, "plate/plate_ancient_chest"], // 105
-			[1, "plate/plate_ancient_chest_restored"], // 110
+			[1, "plate/legend_armor_plate_ancient_chest"], // 105
+			[1, "plate/legend_armor_plate_ancient_chest_restored"], // 110
 		],
 		Cloak = [
 		],
@@ -29,11 +29,11 @@
 	Script = "",
 	Sets = [{
 		Cloth = [
-			[1, "cloth/ancient_cloth"], // 30
-			[1, "cloth/ancient_cloth_restored"], // 35
+			[1, "cloth/legend_armor_ancient_cloth"], // 30
+			[1, "cloth/legend_armor_ancient_cloth_restored"], // 35
 		],
 		Chain = [
-			[1, "chain/ancient_double_mail"], // 80
+			[1, "chain/legend_armor_ancient_double_mail"], // 80
 		],
 		Plate = [
 		],
@@ -73,14 +73,14 @@
 	Script = "",
 	Sets = [{
 		Cloth = [
-			[1, "cloth/ancient_cloth"], // 30
-			[1, "cloth/ancient_cloth_restored"], // 35
+			[1, "cloth/legend_armor_ancient_cloth"], // 30
+			[1, "cloth/legend_armor_ancient_cloth_restored"], // 35
 		],
 		Chain = [
-			[1, "chain/ancient_mail"], // 35
+			[1, "chain/legend_armor_ancient_mail"], // 35
 		],
 		Plate = [
-			[1, "plate/plate_ancient_mail"], // 45
+			[1, "plate/legend_armor_plate_ancient_mail"], // 45
 		],
 		Cloak = [
 		],
@@ -97,16 +97,16 @@
 	Script = "",
 	Sets = [{
 		Cloth = [
-			[1, "cloth/ancient_cloth"], // 30
-			[1, "cloth/ancient_cloth_restored"], // 35
+			[1, "cloth/legend_armor_ancient_cloth"], // 30
+			[1, "cloth/legend_armor_ancient_cloth_restored"], // 35
 		],
 		Chain = [
-			[1, "chain/ancient_mail"], // 35
+			[1, "chain/legend_armor_ancient_mail"], // 35
 		],
 		Plate = [
-			[1, "plate/plate_ancient_chest"], // 105
-			[1, "plate/plate_ancient_chest_restored"], // 110
-			[1, "plate/plate_ancient_scale"], // 105
+			[1, "plate/legend_armor_plate_ancient_chest"], // 105
+			[1, "plate/legend_armor_plate_ancient_chest_restored"], // 110
+			[1, "plate/legend_armor_plate_ancient_scale"], // 105
 		],
 		Cloak = [
 		],
@@ -123,14 +123,14 @@
 	Script = "",
 	Sets = [{
 		Cloth = [
-			[1, "cloth/ancient_cloth"], // 30
-			[1, "cloth/ancient_cloth_restored"], // 35
+			[1, "cloth/legend_armor_ancient_cloth"], // 30
+			[1, "cloth/legend_armor_ancient_cloth_restored"], // 35
 		],
 		Chain = [
-			[1, "chain/ancient_mail"], // 35
+			[1, "chain/legend_armor_ancient_mail"], // 35
 		],
 		Plate = [
-			[1, "plate/plate_ancient_scale_coat"], // 140
+			[1, "plate/legend_armor_plate_ancient_scale_coat"], // 140
 
 		],
 		Cloak = [
@@ -148,16 +148,16 @@
 	Script = "",
 	Sets = [{
 		Cloth = [
-			[1, "cloth/ancient_cloth"], // 30
-			[1, "cloth/ancient_cloth_restored"], // 35
+			[1, "cloth/legend_armor_ancient_cloth"], // 30
+			[1, "cloth/legend_armor_ancient_cloth_restored"], // 35
 		],
 		Chain = [
-			[1, "chain/ancient_double_mail"], // 80
-			[1, "chain/ancient_mail"], // 35
+			[1, "chain/legend_armor_ancient_double_mail"], // 80
+			[1, "chain/legend_armor_ancient_mail"], // 35
 		],
 		Plate = [
-			[1, "plate/plate_ancient_harness"], // 115
-			[1, "plate/plate_ancient_scale_harness"], // 75
+			[1, "plate/legend_armor_plate_ancient_harness"], // 115
+			[1, "plate/legend_armor_plate_ancient_scale_harness"], // 75
 		],
 		Cloak = [
 		],
@@ -194,8 +194,8 @@
 	Script = "",
 	Sets = [{
 		Cloth = [
-			[1, "cloth/ancient_cloth"], // 30
-			[1, "cloth/ancient_cloth_restored"], // 35
+			[1, "cloth/legend_armor_ancient_cloth"], // 30
+			[1, "cloth/legend_armor_ancient_cloth_restored"], // 35
 		],
 		Chain = [
 		],
@@ -216,17 +216,17 @@
 	Script = "",
 	Sets = [{
 		Cloth = [
-			[1, "cloth/ancient_cloth"], // 30
-			[1, "cloth/ancient_cloth_restored"], // 35
+			[1, "cloth/legend_armor_ancient_cloth"], // 30
+			[1, "cloth/legend_armor_ancient_cloth_restored"], // 35
 		],
 		Chain = [
-			[1, "chain/ancient_mail"], // 35
+			[1, "chain/legend_armor_ancient_mail"], // 35
 		],
 		Plate = [
-			[1, "plate/plate_ancient_chest"], // 105
-			[1, "plate/plate_ancient_chest_restored"], // 110
-			[1, "plate/plate_ancient_harness"], // 115
-			[1, "plate/plate_ancient_scale"], // 105
+			[1, "plate/legend_armor_plate_ancient_chest"], // 105
+			[1, "plate/legend_armor_plate_ancient_chest_restored"], // 110
+			[1, "plate/legend_armor_plate_ancient_harness"], // 115
+			[1, "plate/legend_armor_plate_ancient_scale"], // 105
 		],
 		Cloak = [
 		],
@@ -243,14 +243,14 @@
 	Script = "",
 	Sets = [{
 		Cloth = [
-			[1, "cloth/ancient_cloth"], // 30
-			[1, "cloth/ancient_cloth_restored"], // 35
+			[1, "cloth/legend_armor_ancient_cloth"], // 30
+			[1, "cloth/legend_armor_ancient_cloth_restored"], // 35
 		],
 		Chain = [
-			[1, "chain/ancient_mail"], // 35
+			[1, "chain/legend_armor_ancient_mail"], // 35
 		],
 		Plate = [
-			[1, "plate/plate_ancient_scale_harness"], // 75
+			[1, "plate/legend_armor_plate_ancient_scale_harness"], // 75
 		],
 		Cloak = [
 		],
@@ -407,16 +407,16 @@
 	Script = "",
 	Sets = [{
 		Cloth = [
-			[1, "cloth/ancient_cloth"], // 30
-			[1, "cloth/ancient_cloth_restored"], // 35
+			[1, "cloth/legend_armor_ancient_cloth"], // 30
+			[1, "cloth/legend_armor_ancient_cloth_restored"], // 35
 		],
 		Chain = [
-			[1, "chain/ancient_double_mail"], // 80
+			[1, "chain/legend_armor_ancient_double_mail"], // 80
 		],
 		Plate = [
-			[1, "plate/plate_ancient_chest_restored"], // 110
-			[1, "plate/plate_ancient_chest_restored"], // 130
-			[1, "plate/plate_ancient_scale_coat_restored"] // 170
+			[1, "plate/legend_armor_plate_ancient_chest_restored"], // 110
+			[1, "plate/legend_armor_plate_ancient_chest_restored"], // 130
+			[1, "plate/legend_armor_plate_ancient_scale_coat_restored"] // 170
 		],
 		Cloak = [
 		],

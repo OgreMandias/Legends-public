@@ -348,9 +348,9 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 				[1, ::Legends.Armor.Standard.ghost_armor]
 			]);
 			upgrades = [
-				"plate/plate_full_greaves_named",
-				"plate/plate_full_greaves_painted",
-				"chain/hauberk_full_named"
+				"plate/legend_armor_plate_full_greaves_named",
+				"plate/legend_armor_plate_full_greaves_painted",
+				"chain/legend_armor_hauberk_full_named"
 			]
 			// armor.setUpgrade(this.new("scripts/items/legend_armor/" + upgrades[this.Math.rand(0, upgrades.len() - 1)]));
 			this.m.Items.equip(this.new("scripts/items/legend_armor/" + upgrades[this.Math.rand(0, upgrades.len() - 1)]));

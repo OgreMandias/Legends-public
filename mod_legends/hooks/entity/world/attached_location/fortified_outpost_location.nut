@@ -58,17 +58,17 @@
 			_list.push({
 				R = 50,
 				P = 1.0,
-				S = "legend_armor/cloak/cloak"
+				S = "legend_armor/cloak/legend_armor_cloak"
 			});
 			_list.push({
 				R = 95,
 				P = 1.0,
-				S = "legend_armor/cloak/cloak_noble"
+				S = "legend_armor/cloak/legend_armor_cloak_noble"
 			});
 			_list.push({
 				R = 45,
 				P = 1.0,
-				S = "legend_armor/cloak/cloak_heavy"
+				S = "legend_armor/cloak/legend_armor_cloak_heavy"
 			});
 			_list.push({
 				R = 99,
@@ -78,12 +78,12 @@
 			_list.push({
 				R = 45,
 				P = 1.0,
-				S = "legend_armor/cloak/sash"
+				S = "legend_armor/cloak/legend_armor_sash"
 			});
 			_list.push({
 				R = 45,
 				P = 1.0,
-				S = "legend_armor/tabard/tabard"
+				S = "legend_armor/tabard/legend_armor_tabard"
 			});
 			_list.push({
 				R = 99,

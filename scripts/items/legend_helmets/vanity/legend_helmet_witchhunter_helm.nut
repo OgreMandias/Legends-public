@@ -7,13 +7,13 @@ this.legend_helmet_witchhunter_helm <- this.inherit("scripts/items/legend_helmet
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_witchhunter_helm";
 		this.m.Name = "Witchhunter\'s Capotain";
-		this.m.Description = "A tough leather hat that provides decent protection against scratches.";
-		this.m.ArmorDescription = this.m.Description;
+		this.m.Description = "A tall, wide-brimmed leather hat. Those who favour such headwear are almost always an unwanted presence, bringing with them a grim air of scrutiny and unease.";
+		this.m.ArmorDescription = "Includes a tall, wide-brimmed leather hat.";
 		this.m.Variants = [1, 2, 3, 4, 5, 6, 7, 8];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
-		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
-		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
+		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
+		this.m.InventorySound = this.Const.Sound.ClothEquip;
 		this.m.Value = 200;
 		this.m.Condition = 10;
 		this.m.ConditionMax = 10;

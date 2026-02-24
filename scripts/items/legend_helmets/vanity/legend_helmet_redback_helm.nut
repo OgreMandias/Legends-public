@@ -16,13 +16,13 @@ this.legend_helmet_redback_helm <- this.inherit("scripts/items/legend_helmets/le
 		// 	"Poison Crown"
 		// ];
 		// this.m.Name = this.m.NameList[this.Math.rand(0, this.m.NameList.len())];
-		this.m.Description = "A sturdy yet light helmet made from the carapace of a redback spider.";
-		this.m.ArmorDescription = this.m.Description;
+		this.m.Description = "A light helmet made from the carapace of a redback spider.";
+		this.m.ArmorDescription = "Includes a dark carapace helmet.";
 		this.m.Variants = [1];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
-		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
-		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
+		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
+		this.m.InventorySound = this.Const.Sound.ClothEquip;
 		this.m.Value = 200;
 		this.m.Condition = 10;
 		this.m.ConditionMax = 10;

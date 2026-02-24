@@ -7,14 +7,14 @@ this.legend_helmet_jester_hat <- this.inherit("scripts/items/legend_helmets/lege
 		this.m.ID = "armor.head.legend_helmet_jester_hat";
 		this.m.Name = "Jester Hat";
 		this.m.Description = "The quintessential hat of performing folk in noble court. Wearing it makes you feel like a fool, but the jingling bells make you an irritating target for all.";
-		this.m.ArmorDescription = this.m.Description;
+		this.m.ArmorDescription = "Includes a colorful jester's hat.";
 		this.m.Variants = [];
 		for(local i = 1; i <= 66; i++)
 			this.m.Variants.push(i);
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
-		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
-		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
+		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
+		this.m.InventorySound = this.Const.Sound.ClothEquip;
 		this.m.Value = 200;
 		this.m.Condition = 10;
 		this.m.ConditionMax = 10;

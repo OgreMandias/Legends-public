@@ -8,12 +8,12 @@ this.legend_helmet_hunter_cap <- this.inherit("scripts/items/legend_helmets/lege
 		this.m.ID = "armor.head.legend_helmet_hunter_cap";
 		this.m.Name = "Hunter Cap";
 		this.m.Description = "The distinctive hat of a game hunter, the pointed shape focuses vision and its ornate feather and shape bristles with confidence, but also makes it an easy target for others.";
-		this.m.ArmorDescription = this.m.Description;
+		this.m.ArmorDescription = "Includes a distinctive hat of a game hunter.";
 		this.m.Variants = [1, 2];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
-		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
-		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
+		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
+		this.m.InventorySound = this.Const.Sound.ClothEquip;
 		this.m.Value = 1200;
 		this.m.Condition = 10;
 		this.m.ConditionMax = 10;

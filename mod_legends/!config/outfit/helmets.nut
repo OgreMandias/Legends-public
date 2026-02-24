@@ -1789,11 +1789,11 @@
 			[1, "hood/legend_helmet_chain_hood_full"] //90, -6, 0
 		],
 		Helms = [
-			[1, "helm/legend_helmet_enclave_great_bascinet"] //260, -13, -2
+			[1, "helm/legend_helmet_enclave_peaked_bascinet"] //260, -13, -2
 		],
 		Tops = [
 			[10, ""],
-			[2, "top/legend_helmet_enclave_great_bascinet_visor"], //40, -3, 0
+			[2, "top/legend_helmet_enclave_peaked_bascinet_visor"], //40, -3, 0
 			[1, "top/legend_helmet_faceplate_pointed"], //25, -1, -1
 			[1, "top/legend_helmet_faceplate_flat"], //22, -1, -1
 			[1, "top/legend_helmet_faceplate_pointed_slit"], //35, -1, -2
@@ -1824,11 +1824,11 @@
 			[1, "hood/legend_helmet_chain_hood_full"] //90, -6, 0
 		],
 		Helms = [
-			[1, "helm/legend_helmet_enclave_great_bascinet"] //210, -15, -2
+			[1, "helm/legend_helmet_enclave_peaked_bascinet"] //210, -15, -2
 		],
 		Tops = [
 			[2, ""],
-			[2, "top/legend_helmet_enclave_great_bascinet_visor"], //40, -3, 0
+			[2, "top/legend_helmet_enclave_peaked_bascinet_visor"], //40, -3, 0
 			[1, "top/legend_helmet_faceplate_pointed"], //25, -1, -1
 			[1, "top/legend_helmet_faceplate_flat"], //22, -1, -1
 			[1, "top/legend_helmet_faceplate_pointed_slit"],//35, -1, -2
@@ -2059,8 +2059,8 @@
 };
 ::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Standard.rondel_helm);
 
-::Legends.Helmet.Standard.deep_sallet <- {
-	ID = "deep_sallet", //170, -10, -2, 1000
+::Legends.Helmet.Standard.deep_cervelliere <- {
+	ID = "deep_cervelliere", //170, -10, -2, 1000
 	Script = "",
 	Sets = [{
 		Hoods = [
@@ -2069,7 +2069,7 @@
 			[1, "hood/legend_helmet_southern_chain_hood"] //90, -6, 0
 		],
 		Helms = [
-			[1, "helm/legend_helmet_deep_sallet"] //75. -5. 1
+			[1, "helm/legend_helmet_deep_cervelliere"] //75. -5. 1
 		],
 		Tops = [
 		],
@@ -2084,10 +2084,10 @@
 		]
 	}]
 };
-::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Standard.deep_sallet);
+::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Standard.deep_cervelliere);
 
-::Legends.Helmet.Standard.wallace_sallet <- {
-	ID = "wallace_sallet", //170, -10, -2, 1000
+::Legends.Helmet.Standard.cervelliere <- {
+	ID = "cervelliere", //170, -10, -2, 1000
 	Script = "",
 	Sets = [{
 		Hoods = [
@@ -2096,10 +2096,10 @@
 			[1, "hood/legend_helmet_southern_open_chain_hood"], //65, -3, 0
 		],
 		Helms = [
-			[1, "helm/legend_helmet_wallace_sallet"] //140, -7, -2
+			[1, "helm/legend_helmet_cervelliere"] //140, -7, -2
 		],
 		Tops = [
-			[1, "top/legend_helmet_wallace_sallet_visor"] //60, -2, -1
+			[1, "top/legend_helmet_cervelliere_visor"] //60, -2, -1
 		],
 		Vanity = [
 			[10, ""],
@@ -2112,7 +2112,7 @@
 		]
 	}]
 };
-::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Standard.wallace_sallet);
+::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Standard.cervelliere);
 
 ::Legends.Helmet.Standard.red_bandit_leader_helmet <- {
 	ID = "red_bandit_leader_helmet", //215
@@ -2357,7 +2357,7 @@
 			[1, "helm/legend_helmet_norman_helm"], //170
 			[1, "helm/legend_helmet_barbute"], //170
 			[1, "helm/legend_helmet_sallet"], //170
-			[1, "helm/legend_helmet_deep_sallet"] //170
+			[1, "helm/legend_helmet_deep_cervelliere"] //170
 		],
 		Tops = [
 			[1, "top/legend_helmet_faceplate_winged"], //50, -5, -1
@@ -2442,8 +2442,7 @@
 	Sets = [{
 		Hoods = [
 			[1, "hood/legend_helmet_cloth_scarf"],
-			[1, "hood/legend_helmet_southern_cap"],
-			[1, "hood/legend_helmet_southern_cap_dark"]
+			[2, "hood/legend_helmet_southern_cap"]
 		],
 		Helms = [
 		],
@@ -2464,8 +2463,7 @@
 	Sets = [{
 		Hoods = [
 			[1, "hood/legend_helmet_southern_open_chain_hood"],
-			[1, "hood/legend_helmet_southern_cap"],
-			[1, "hood/legend_helmet_southern_cap_dark"]
+			[2, "hood/legend_helmet_southern_cap"]
 		],
 		Helms = [
 		],
@@ -2949,7 +2947,7 @@
 		Tops = [
 			[1, "top/legend_helmet_faceplate_full", 1],
 			[1, "top/legend_helmet_faceplate_snub_slit", 1],
-			[1, "top/legend_helmet_enclave_great_bascinet_visor", 1],
+			[1, "top/legend_helmet_enclave_peaked_bascinet_visor", 1],
 			[1, "top/legend_helmet_faceplate_pointed_slit", 1],
 			[1, "top/legend_helmet_faceplate_pointed", 1],
 			[1, "top/legend_helmet_faceplate_flat", 1]
@@ -3172,7 +3170,7 @@
 			[1, "helm/legend_helmet_norman_helm", 1]
 		],
 		Tops = [
-			[1, "top/legend_helmet_enclave_great_bascinet_visor", 1],
+			[1, "top/legend_helmet_enclave_peaked_bascinet_visor", 1],
 			[1, "top/legend_helmet_faceplate_full_breaths", 1]
 		],
 		Vanity = [

@@ -70,7 +70,7 @@
 			[1, ::Legends.Helmet.Standard.rondel_helm],
 			[1, ::Legends.Helmet.Standard.scale_helm],
 			[1, ::Legends.Helmet.Standard.greatsword_faction_helm, banner],
-			[1, ::Legends.Helmet.Standard.wallace_sallet],
+			[1, ::Legends.Helmet.Standard.cervelliere],
 			[5, ::Legends.Helmet.Standard.heavy_noble_house_helmet_00]
 		]));
 	}

@@ -54,7 +54,7 @@ class Defs:
 },
 {"name": "gambeson_named",                         "layer": "cloth", "min": 1, "max": 13, "value" : 1500, "con" : 70, "stam" : -7, "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "",
- "desc" :  "A master crafted heavy padded tunic that offers excellent protection.",
+ "desc" :  "A mastercrafted heavy padded tunic that offers excellent protection.",
  "adesc" :"",
  "named" : True, "rminStam" : 4, "rmaxStam": 6, "rminCond" : 75, "rmaxCond" : 90,  "names" : ["Heraldic Gambeson", "Splendor", "Grandiosity", "Pageantry", "Swank", "Noble Gambeson", "Duty", "Honor", "Noble\'s Burden", "Protector", "Ward"]
 },
@@ -548,7 +548,7 @@ class Defs:
  "desc" :  "A sturdy body vest made of overlapping metal scales.",
  "adesc" : "Includes a body vest of overlapping metal scales."
 },
-{"name": "noble_padded",                            "layer": "plate", "min": 1, "max": 1, "value" : 2800, "con" : 70, "stam" : -6, "impactSound" : "leather", "invSound" : "clother",
+{"name": "noble_padded",                            "layer": "plate", "min": 1, "max": 1, "value" : 2800, "con" : 70, "stam" : -6, "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Padded Noble Vest",
  "desc" :  "An expensive padded vest with thick leather strapping, tailored for high-society protection.",
  "adesc" : "Includes an expensive padded vest with thick leather strapping."

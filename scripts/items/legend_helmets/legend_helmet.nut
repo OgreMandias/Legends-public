@@ -3,7 +3,8 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		Upgrades = null,
 		Blocked = [],
 		Variants = [],
-		Type = -1
+		Type = -1,
+		BaseInventorySound = ::Const.Sound.ClothEquip
 	},
 
 	function create()
@@ -812,12 +813,17 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 
 	function updateAppearance()
 	{
-		if (this.getContainer() == null || !this.isEquipped())
+
+		if (this.m.Upgrades[this.Const.Items.HelmetUpgrades.Helm] != null)
 		{
-			return;
+			this.m.InventorySound = this.m.Upgrades[this.Const.Items.HelmetUpgrades.Helm].m.InventorySound;
+		}
+		else
+		{
+			this.m.InventorySound = this.m.BaseInventorySound;
 		}
 
-		if (!this.m.ShowOnCharacter)
+		if (this.getContainer() == null || !this.isEquipped() || !this.m.ShowOnCharacter)
 		{
 			return;
 		}

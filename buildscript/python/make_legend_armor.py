@@ -100,6 +100,8 @@ def generate_legend_armor(base_path):
             invsound = "::Const.Sound.ArmorChainmailImpact"
         elif d["invSound"] == "plate":
             invsound = "::Const.Sound.ArmorHalfplateImpact"
+        elif d["invSound"] == "bone":
+            invsound = "::Const.Sound.ArmorBoneImpact"
 
         if d["impactSound"] == "chain":
             impactsound = "::Const.Sound.ArmorChainmailImpact"

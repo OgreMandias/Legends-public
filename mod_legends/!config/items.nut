@@ -57,8 +57,8 @@
 	"legend_helmets/helm/legend_helmet_barbute_two_piece_named",
 	"legend_helmets/helm/legend_helmet_bascinet_named",
 	"legend_helmets/helm/legend_helmet_kettle_helm_named",
-	"legend_helmets/helm/legend_helmet_wallace_sallet_named",
-	"legend_helmets/helm/legend_helmet_deep_sallet_named",
+	"legend_helmets/helm/legend_helmet_cervelliere_named",
+	"legend_helmets/helm/legend_helmet_deep_cervelliere_named",
 	"legend_helmets/helm/legend_helmet_stag_helm",
 	"legend_helmets/helm/legend_helmet_swan_helm"
 ];
@@ -107,7 +107,7 @@ foreach (i in garbage)
 ::Const.Items.NamedHelmets.extend([
 	"helmets/named/legend_frogmouth_helm_crested_painted",
 	"helmets/named/legend_frogmouth_helm_decorated",
-	"helmets/named/wallace_sallet_named",
+	"helmets/named/cervelliere_named",
 	"helmets/named/barbute_named",
 	"helmets/named/bascinet_named",
 	"helmets/named/kettle_helm_named",

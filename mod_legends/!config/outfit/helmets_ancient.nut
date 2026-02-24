@@ -168,7 +168,7 @@
 		Helms = [
 			[1, "helm/legend_helmet_ancient_dome_tailed", [1, 3, 4]],
 			[1, "helm/legend_helmet_ancient_face_plate", [1, 3, 4]],
-			[1, "helm/legend_helmet_ancient_legionaire", [1, 3, 4]],
+			[1, "helm/legend_helmet_ancient_legionary_helm", [1, 3, 4]],
 			[1, "helm/legend_helmet_ancient_side_hawk", [1, 3, 4]],
 			[1, "helm/legend_helmet_ancient_tailed_conic_helm", [1, 3, 4]]
 		],
@@ -196,7 +196,7 @@
 			[1, "hood/legend_helmet_leather_cap"] //35, -1, 0
 		],
 		Helms = [
-			[1, "helm/legend_helmet_ancient_legionaire_restored"] // 105, -7, -1
+			[1, "helm/legend_helmet_ancient_legionary_helm_restored"] // 105, -7, -1
 		],
 		Tops = [
 		],
@@ -228,7 +228,7 @@
 			[1, "hood/legend_helmet_leather_cap"] //35, -1, 0
 		],
 		Helms = [
-			[1, "helm/ancient_legionaire_restored"] // 140
+			[1, "helm/ancient_legionary_helm_restored"] // 140
 		],
 		Tops = [
 		],

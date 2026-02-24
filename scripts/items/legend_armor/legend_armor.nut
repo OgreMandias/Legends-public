@@ -4,6 +4,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		Variants = [],
 		Blocked = [],
 		Type = -1
+		BaseInventorySound = ::Const.Sound.ClothEquip
 	},
 	function create()
 	{
@@ -753,7 +754,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		}
 		else
 		{
-			this.m.InventorySound = this.Const.Sound.ClothEquip; // assuming all bases are cloth
+			this.m.InventorySound = this.m.BaseInventorySound;
 		}
 
 		if (this.getContainer() == null || !this.isEquipped() || !this.m.ShowOnCharacter)

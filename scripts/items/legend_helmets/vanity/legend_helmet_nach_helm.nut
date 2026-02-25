@@ -28,7 +28,7 @@ this.legend_helmet_nach_helm <- this.inherit("scripts/items/legend_helmets/legen
 		this.m.ConditionMax = 10;
 		this.m.StaminaModifier = -1;
 		this.m.Vision = 0;
-		this.m.IsLowerVanity = false;
+		this.m.IsLower = false;
 		this.m.HideHair = true;
 		this.m.HideBeard = false;
 	}

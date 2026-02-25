@@ -95,9 +95,9 @@ this.legend_skin_armor <- this.inherit("scripts/items/legend_armor/legend_named_
 	function updateVariant()
 	{
 		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
-		this.m.SpriteBack = "bust_skin_armor" + "_" + variant;
-		this.m.SpriteDamagedBack = "bust_skin_armor" + "_" + variant + "_damaged";
-		this.m.SpriteCorpseBack = "bust_skin_armor" + "_" + variant + "_dead";
+		this.m.SpriteBack = "skin_armor" + "_" + variant;
+		this.m.SpriteDamagedBack = "skin_armor" + "_" + variant + "_damaged";
+		this.m.SpriteCorpseBack = "skin_armor" + "_" + variant + "_dead";
 		this.m.Icon = "legend_armor/icon_skin_armor" + "_" + variant + ".png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/icon_skin_armor" + "_" + variant + ".png";

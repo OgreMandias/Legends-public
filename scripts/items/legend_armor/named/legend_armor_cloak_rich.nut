@@ -9,15 +9,19 @@ this.legend_armor_cloak_rich <- this.inherit("scripts/items/legend_armor/legend_
 		this.m.ID = "legend_armor.cloak_rich";
 		this.m.Name = "";
 		this.m.NameList = [
-			"Kingly",
+			"Majesty",
 			"Splendor",
 			"Pageantry",
 			"Swank",
-			"Noble",
-			"Undead"
+			"Nobility",
+			"Elegance",
+			"Opulence",
+			"Excess",
+			"Resplendence",
+			"Glory"
 		];
-		this.m.Description = "A silk embroidered cloak made with the finest clothes. Those who wear it feel as if a king";
-		this.m.ArmorDescription = "Has a flowing embroidered cloak";
+		this.m.Description = "An embroidered silk cloak made with the finest materials affordable only for those in positions of great power.";
+		this.m.ArmorDescription = "Includes embroidered an silk cloak.";
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.InventorySound = this.Const.Sound.ClothEquip;
 		this.m.Variants = [
@@ -46,9 +50,9 @@ this.legend_armor_cloak_rich <- this.inherit("scripts/items/legend_armor/legend_
 	function updateVariant()
 	{
 		local variant = this.m.Variant < 10 ? "0" + this.m.Variant : this.m.Variant;
-		this.m.SpriteBack = "bust_cloak_rich_" + variant + "";
-		this.m.SpriteDamagedBack = "bust_cloak_rich_" + variant + "_damaged";
-		this.m.SpriteCorpseBack = "bust_cloak_rich_" + variant + "_dead";
+		this.m.SpriteBack = "cloak_rich_" + variant + "";
+		this.m.SpriteDamagedBack = "cloak_rich_" + variant + "_damaged";
+		this.m.SpriteCorpseBack = "cloak_rich_" + variant + "_dead";
 		this.m.Icon = "legend_armor/icon_cloak_rich_" + variant + ".png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/icon_cloak_rich_" + variant + ".png";

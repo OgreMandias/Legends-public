@@ -142,6 +142,8 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		this.getSprite("armor_layer_cloak_front").setHorizontalFlipping(flip);
 		this.getSprite("armor_layer_cloak").setHorizontalFlipping(flip);
 
+		this.getSprite("helmet_helm_lower").setHorizontalFlipping(flip);
+		this.getSprite("helmet_top_lower").setHorizontalFlipping(flip);
 		this.getSprite("helmet_vanity_lower").setHorizontalFlipping(flip);
 		this.getSprite("helmet_vanity_lower_2").setHorizontalFlipping(flip);
 		this.getSprite("helmet_helm").setHorizontalFlipping(flip);

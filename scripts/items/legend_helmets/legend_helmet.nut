@@ -39,7 +39,7 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 
 		foreach (u in this.m.Upgrades)
 		{
-			if (u != null && u.m.HideHair)
+			if (u != null && u.m.HideHair && u.isVisible())
 			{
 				return true;
 			}
@@ -57,7 +57,7 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 
 		foreach (u in this.m.Upgrades)
 		{
-			if (u != null && u.m.HideBeard)
+			if (u != null && u.m.HideBeard && u.isVisible())
 			{
 				return true;
 			}
@@ -472,16 +472,21 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	}
 
 	function getUpgradesNamed() {
-
+		local upgradePrice = 0;
+		local name = "";
 		foreach(u in this.m.Upgrades)
 		{
 			if (u != null && u.isNamed())
 			{
-				return u.getName()
+				if(u.getValue()>upgradePrice)
+				{
+					upgradePrice = u.getValue();
+					name = u.getName();
+				}
 			}
 		}
 
-		return ""
+		return name;
 	}
 
 	function setUpgrade( _upgrade )
@@ -556,7 +561,7 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		local uname = this.getUpgradesNamed();
 
 		if (uname != "") {
-			NAME = uname + " " + this.getName();
+			NAME = uname + " on " + this.getName();
 		}
 		else if (this.getUpgrade(1) != null)
 		{
@@ -869,20 +874,25 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		local app = this.getContainer().getAppearance();
 		app.HelmetColor = this.createColor("#ffffff");
 		app.HelmetDamage = "";
-		app.HelmetLayerVanityLower = "";
-		app.HelmetLayerVanity2Lower = "";
+		
 		app.Helmet = "";
 		app.HelmetLayerHelm = "";
+		app.HelmetLayerHelmLower = "";
 		app.HelmetLayerTop = "";
+		app.HelmetLayerTopLower = "";
 		app.HelmetLayerVanity = "";
 		app.HelmetLayerVanity2 = "";
-		app.HelmetLayerVanityLowerCorpse = "";
-		app.HelmetLayerVanity2LowerCorpse = "";
+		app.HelmetLayerVanityLower = "";
+		app.HelmetLayerVanity2Lower = "";
 		app.HelmetCorpse = "";
 		app.HelmetLayerHelmCorpse = "";
+		app.HelmetLayerHelmLowerCorpse = "";
 		app.HelmetLayerTopCorpse = "";
+		app.HelmetLayerTopLowerCorpse = "";
 		app.HelmetLayerVanityCorpse = "";
 		app.HelmetLayerVanity2Corpse = "";
+		app.HelmetLayerVanityLowerCorpse = "";
+		app.HelmetLayerVanity2LowerCorpse = "";
 		app.HideHead = false;
 		app.HideCorpseHead = false;
 		app.HideHair = false;

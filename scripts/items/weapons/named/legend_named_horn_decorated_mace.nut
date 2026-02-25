@@ -1,4 +1,4 @@
-this.legend_named_horn_decorated_mace <- this.inherit("scripts/items/weapons/named_weapon", {
+this.legend_named_horn_decorated_mace <- this.inherit("scripts/items/weapons/named_weapon/named_weapon", {
 	m = {},
 	function create()
 	{

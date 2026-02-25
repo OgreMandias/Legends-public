@@ -82,7 +82,7 @@ this.legend_legion_prefect_background <- this.inherit("scripts/skills/background
 			],
 			Enemy = [],
 			Class = [
-				::Const.Perks.ScytheClassTree
+				// ::Const.Perks.ScytheClassTree
 			],
 			Profession = [],
 			Magic = []

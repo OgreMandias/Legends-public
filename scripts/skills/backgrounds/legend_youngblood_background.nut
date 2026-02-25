@@ -97,7 +97,7 @@ this.legend_youngblood_background <- this.inherit("scripts/skills/backgrounds/ch
 			],
 			Class = [
 				::Const.Perks.FaithClassTree,
-				::Const.Perks.InquisitionClassTree
+				// ::Const.Perks.InquisitionClassTree
 			],
 			Profession = [
 				::Const.Perks.ChefProfessionTree,

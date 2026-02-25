@@ -82,7 +82,7 @@
 				::Const.Perks.BeastTree
 			],
 			Class = [
-				::Const.Perks.PickaxeClassTree
+				// ::Const.Perks.PickaxeClassTree
 			],
 			Profession = [
 				::Const.Perks.MinerProfessionTree

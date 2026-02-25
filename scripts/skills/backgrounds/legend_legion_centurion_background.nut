@@ -83,8 +83,8 @@ this.legend_legion_centurion_background <- this.inherit("scripts/skills/backgrou
 			],
 			Enemy = [],
 			Class = [
-				::Const.Perks.ButcherClassTree,
-				::Const.Perks.ScytheClassTree
+				// ::Const.Perks.ButcherClassTree,
+				// ::Const.Perks.ScytheClassTree
 			],
 			Profession = [],
 			Magic = []

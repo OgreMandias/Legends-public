@@ -79,8 +79,8 @@ this.legend_legion_legionary_background <- this.inherit("scripts/skills/backgrou
 			],
 			Enemy = [],
 			Class = [
-				::Const.Perks.SpearfisherClassTree,
-				::Const.Perks.ScytheClassTree
+				// ::Const.Perks.SpearfisherClassTree,
+				// ::Const.Perks.ScytheClassTree
 			],
 			Profession = [],
 			Magic = []

@@ -111,7 +111,7 @@
 			],
 			Enemy = [],
 			Class = [
-				::Const.Perks.SickleClassTree,
+				// ::Const.Perks.SickleClassTree,
 				::Const.Perks.HealerClassTree
 
 			],

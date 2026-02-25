@@ -65,7 +65,7 @@
 			],
 			Enemy = [],
 			Class = [
-				::Const.Perks.ButcherClassTree
+				// ::Const.Perks.ButcherClassTree
 			],
 			Profession = [
 				::Const.Perks.ChefProfessionTree

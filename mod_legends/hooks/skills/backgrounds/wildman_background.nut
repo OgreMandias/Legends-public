@@ -106,7 +106,7 @@
 				::Const.Perks.GreenskinTree
 			],
 			Class = [
-				::Const.Perks.ClubClassTree
+				// ::Const.Perks.ClubClassTree
 			],
 			Profession = [],
 			Magic = []

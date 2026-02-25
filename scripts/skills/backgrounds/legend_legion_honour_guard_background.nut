@@ -83,8 +83,8 @@ this.legend_legion_honour_guard_background <- this.inherit("scripts/skills/backg
 			],
 			Enemy = [],
 			Class = [
-				::Const.Perks.LongswordClassTree,
-				::Const.Perks.ScytheClassTree
+				// ::Const.Perks.LongswordClassTree,
+				// ::Const.Perks.ScytheClassTree
 			],
 			Profession = [],
 			Magic = []

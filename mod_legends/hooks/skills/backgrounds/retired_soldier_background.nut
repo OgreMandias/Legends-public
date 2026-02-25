@@ -76,7 +76,7 @@
 				::Const.Perks.OutlawTree
 			],
 			Class = [
-				::Const.Perks.LongswordClassTree
+				// ::Const.Perks.LongswordClassTree
 			],
 			Profession = [
 				::Const.Perks.FencingTeacherProfessionTree

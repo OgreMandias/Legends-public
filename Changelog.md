@@ -19,7 +19,16 @@ This activates Dual Wield:
 - Greedy will now increase wage by 25% but also gain 1 to every attribute for every 10 gold paid in wages
 - Eagle Eyes now increases vision by 2
 
-## Favoured enemy rework
+## Perks
+
+### Specialist Perk
+- spec perks are now disabled from this version onwards
+- because recent legends perk work focused on making a lot more recruits viable and interesting to play we decided that spec perks aren't as worthwhile anymore
+- they also pigeonhole players into certain builds and make lowborn backgrounds disproportionately better than expensive recruits
+- they're still in legends so we don't break compatibility and some of their effects will make their way on other perks
+- you also might see it in a submod ;)
+
+### Favoured enemy rework
 
 Perks were condensed into a few:
 Favoured Enemy - Beasts

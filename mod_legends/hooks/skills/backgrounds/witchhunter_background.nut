@@ -85,7 +85,7 @@
 				::Const.Perks.OccultTree
 			],
 			Class = [
-				::Const.Perks.InquisitionClassTree,
+				// ::Const.Perks.InquisitionClassTree,
 				::Const.Perks.PoisonClassTree
 			],
 			Profession = [],

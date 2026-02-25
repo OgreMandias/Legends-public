@@ -79,7 +79,7 @@ this.legend_legion_auxiliary_background <- this.inherit("scripts/skills/backgrou
 			Enemy = [],
 			Class = [
 				::Const.Perks.BeastClassTree,
-				::Const.Perks.SpearfisherClassTree
+				// ::Const.Perks.SpearfisherClassTree
 			],
 			Profession = [],
 			Magic = []

@@ -61,7 +61,7 @@
 			],
 			Enemy = [],
 			Class = [
-				::Const.Perks.StaffClassTree
+				// ::Const.Perks.StaffClassTree
 			],
 			Profession = [],
 			Magic = []

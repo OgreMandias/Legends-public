@@ -69,7 +69,7 @@
 				::Const.Perks.CivilizationTree
 			],
 			Class = [
-				::Const.Perks.LongswordClassTree
+				// ::Const.Perks.LongswordClassTree
 			],
 			Profession = [],
 			Magic = []

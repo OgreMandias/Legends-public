@@ -81,7 +81,7 @@
 				::Const.Perks.OutlawTree
 			],
 			Class = [
-				::Const.Perks.KnifeClassTree,
+				// ::Const.Perks.KnifeClassTree,
 				::Const.Perks.ConArtistTree
 			],
 			Profession = [],

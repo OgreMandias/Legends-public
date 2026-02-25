@@ -70,7 +70,7 @@
 			],
 			Enemy = [],
 			Class = [
-				::Const.Perks.PitchforkClassTree
+				// ::Const.Perks.PitchforkClassTree
 			],
 			Profession = [],
 			Magic = []

@@ -136,6 +136,8 @@
 		this.getSprite("armor_layer_cloak_front").setHorizontalFlipping(flip);
 		this.getSprite("armor_layer_cloak").setHorizontalFlipping(flip);
 
+		this.getSprite("helmet_helm_lower").setHorizontalFlipping(flip);
+		this.getSprite("helmet_top_lower").setHorizontalFlipping(flip);
 		this.getSprite("helmet_vanity_lower").setHorizontalFlipping(flip);
 		this.getSprite("helmet_vanity_lower_2").setHorizontalFlipping(flip);
 		this.getSprite("helmet_helm").setHorizontalFlipping(flip);
@@ -164,6 +166,8 @@
 			else if (_id == "helmet") {
 				original_addSprite("accessory");
 				original_addSprite("accessory_special");
+				original_addSprite("helmet_helm_lower");
+				original_addSprite("helmet_top_lower");
 				original_addSprite("helmet_vanity_lower");
 				original_addSprite("helmet_vanity_lower_2");
 			}

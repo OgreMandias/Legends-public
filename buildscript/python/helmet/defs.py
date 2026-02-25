@@ -17,7 +17,7 @@ class Defs:
     ]
 
     layers = [
-{"name" : "goblin_scarf"                     , "layer" : "hood", "min" : 1, "max" : 5, "base" : True, "value" : 5, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false", "impactSound" : "leather", "invSound" : "cloth",
+{"name" : "goblin_scarf"                     , "layer" : "hood", "min" : 1, "max" : 5, "base" : True, "value" : 5, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "true", "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Goblin Scarf",
  "desc" :  "A tattered, foul-smelling scrap of cloth that offers little more than a bit of warmth.",
  "adesc":  "Includes a shoddy cloth scarf."
@@ -835,7 +835,7 @@ class Defs:
  "desc" :  "A metal jaw guard formed into the shape of wings with a faceplate and a neck guard.",
  "adesc" : "Includes a metal winged jaw guard with a faceplate and a neck guard."
  },
- {"name" : "faceplate_winged_long"                     , "layer" : "top", "min" : 1, "max" : 7, "value" : 600, "con" : 40, "stam" : -4, "vis" : 0, "hair" : "false", "beard" : "true", "impactSound" : "plate", "invSound" : "plate",
+ {"name" : "faceplate_winged_long"                     , "layer" : "top", "lower" : True, "min" : 1, "max" : 7, "value" : 600, "con" : 40, "stam" : -4, "vis" : 0, "hair" : "false", "beard" : "true", "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Winged Faceplate",
  "desc" :  "A metal jaw guard formed into the shape of wings with a neck guard.",
   "adesc" : "Includes a metal winged jaw guard with a neck guard."
@@ -1393,42 +1393,42 @@ class Defs:
 
 ### Vanity - lower
 
-{"name" : "back_crest"                     , "layer" : "vanity", "lowervanity" : True, "min" : 1, "max" : 4, "value" : 50, "con" : 3, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false", "impactSound" : "leather", "invSound" : "cloth",
+{"name" : "back_crest"                     , "layer" : "vanity", "lower" : True, "min" : 1, "max" : 4, "value" : 50, "con" : 3, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false", "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Crest",
  "desc" :  "A huge crest of colorful feathers arrayed behind a helm.",
  "adesc" : "Includes a crest of colorful feathers."
  },
-{"name" : "back_feathers"                     , "layer" : "vanity", "lowervanity" : True, "min" : 1, "max" : 4, "value" : 50, "con" : 3, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false", "impactSound" : "leather", "invSound" : "cloth",
+{"name" : "back_feathers"                     , "layer" : "vanity", "lower" : True, "min" : 1, "max" : 4, "value" : 50, "con" : 3, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false", "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Feathers",
  "desc" :  "A set of rich feathers to be displayed behind a helm.",
  "adesc" : "Includes a set of rich feathers."
  },
-{"name" : "feather_crest"                     , "layer" : "vanity", "lowervanity" : True, "min" : 1, "max" : 5, "value" : 50, "con" : 3, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false", "impactSound" : "leather", "invSound" : "cloth",
+{"name" : "feather_crest"                     , "layer" : "vanity", "lower" : True, "min" : 1, "max" : 5, "value" : 50, "con" : 3, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false", "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Feather Crest",
  "desc" :  "A fan of large feathers to be displayed behind a helm.",
  "adesc" : "Includes a fan of large feathers."
  },
-{"name" : "knotted_tail"                     , "layer" : "vanity", "lowervanity" : True, "min" : 1, "max" : 4, "value" : 30, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false", "impactSound" : "leather", "invSound" : "cloth",
+{"name" : "knotted_tail"                     , "layer" : "vanity", "lower" : True, "min" : 1, "max" : 4, "value" : 30, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false", "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Knotted Tail",
  "desc" :  "A knotted pony tail. A sign of prowess in some of the lands.",
  "adesc" : "Includes a knotted pony tail."
  },
-{"name" : "orc_tail"                     , "layer" : "vanity", "lowervanity" : True, "min" : 1, "max" : 7, "value" : 20, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false", "impactSound" : "leather", "invSound" : "cloth",
+{"name" : "orc_tail"                     , "layer" : "vanity", "lower" : True, "min" : 1, "max" : 7, "value" : 20, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false", "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Orc Tail",
  "desc" :  "A thick tail of hair decorated with bone pieces. A symbol of status among the orcs.",
  "adesc" : "Includes a thick tail of hair."
  },
-{"name" : "top_plume"                     , "layer" : "vanity", "lowervanity" : True, "min" : 1, "max" : 6, "value" : 20, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false", "impactSound" : "leather", "invSound" : "cloth",
+{"name" : "top_plume"                     , "layer" : "vanity", "lower" : True, "min" : 1, "max" : 6, "value" : 20, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false", "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Top Plume",
  "desc" :  "A sleek plume of light hair designed to crest a helm.",
  "adesc" : "Includes a plume of hair."
  },
-{"name" : "wings"                     , "layer" : "vanity", "lowervanity" : True, "min" : 1, "max" : 6, "value" : 20, "con" : 2, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false", "impactSound" : "leather", "invSound" : "cloth",
+{"name" : "wings"                     , "layer" : "vanity", "lower" : True, "min" : 1, "max" : 6, "value" : 20, "con" : 2, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false", "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Wings",
  "desc" :  "A set of feathers arrayed on supports to form wings.",
  "adesc" : "Includes a set of feathers in the form of wings."
  },
-{"name" : "goblin_tail"                     , "layer" : "vanity", "lowervanity" : True, "min" : 1, "max" : 4, "value" : 20, "con" : 3, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false", "impactSound" : "leather", "invSound" : "cloth",
+{"name" : "goblin_tail"                     , "layer" : "vanity", "lower" : True, "min" : 1, "max" : 4, "value" : 20, "con" : 3, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false", "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Goblin Tail",
  "desc" :  "A wiry plume of matted dark hair used by a goblin to crest a helm.",
  "adesc" : ""

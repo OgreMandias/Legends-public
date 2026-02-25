@@ -10,7 +10,7 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 		ConditionModifier = 0,
 		StaminaModifier = 0,
 		Type = -1,
-		IsLowerVanity = false,
+		IsLower = false,
 		ImpactSound = this.Const.Sound.ArmorLeatherImpact,
 		InventorySound = this.Const.Sound.ArmorLeatherImpact,
 		IsDestroyedOnRemove = false,
@@ -427,6 +427,8 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 		if (this.m.Armor != null && this.m.Armor.getContainer() != null && this.m.Armor.isEquipped())
 		{
 			local app = this.getContainer().getAppearance();
+			app.HideHair = this.m.Armor.getHideHair();
+			app.HideBeard = this.m.Armor.getHideBeard();
 			this.updateAppearance(app);
 			this.getContainer().updateAppearance();
 		}
@@ -467,17 +469,39 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 		switch(slot)
 		{
 			case this.Const.Items.HelmetUpgrades.Helm:
-				_app.HelmetLayerHelm = sprite;
-				_app.HelmetLayerHelmCorpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
+				if (this.m.IsLower){
+					_app.HelmetLayerHelm = "";
+					_app.HelmetLayerHelmCorpse = "";
+					_app.HelmetLayerHelmLower = sprite;
+					_app.HelmetLayerHelmLowerCorpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
+				}
+				else
+				{
+					_app.HelmetLayerHelm = sprite;
+					_app.HelmetLayerHelmCorpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
+					_app.HelmetLayerHelmLower = "";
+					_app.HelmetLayerHelmLowerCorpse = "";
+				}
 				break;
 
 			case this.Const.Items.HelmetUpgrades.Top:
-				_app.HelmetLayerTop = sprite;
-				_app.HelmetLayerTopCorpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
+				if (this.m.IsLower){
+					_app.HelmetLayerTop = "";
+					_app.HelmetLayerTopCorpse = "";
+					_app.HelmetLayerTopLower = sprite;
+					_app.HelmetLayerTopLowerCorpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
+				}
+				else
+				{
+					_app.HelmetLayerTop = sprite;
+					_app.HelmetLayerTopCorpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
+					_app.HelmetLayerTopLower = "";
+					_app.HelmetLayerTopLowerCorpse = "";
+				}
 				break;
 
 			case this.Const.Items.HelmetUpgrades.Vanity:
-				if (this.m.IsLowerVanity)
+				if (this.m.IsLower)
 				{
 					_app.HelmetLayerVanity = "";
 					_app.HelmetLayerVanityCorpse = "";
@@ -494,7 +518,7 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 				break;
 
 			case this.Const.Items.HelmetUpgrades.ExtraVanity:
-				if (this.m.IsLowerVanity)
+				if (this.m.IsLower)
 				{
 					_app.HelmetLayerVanity2 = "";
 					_app.HelmetLayerVanity2Corpse = "";

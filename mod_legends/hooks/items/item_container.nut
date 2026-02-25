@@ -9,19 +9,23 @@
 	o.m.Appearance.CorpseArmorLayerTabbard <- "";
 	o.m.Appearance.CorpseArmorLayerCloakFront <- "";
 	o.m.Appearance.CorpseArmorLayerCloakBack <- "";
-	o.m.Appearance.HelmetLayerVanityLower <- "";
-	o.m.Appearance.HelmetLayerVanity2Lower <- "";
 	o.m.Appearance.Helmet <- "";
 	o.m.Appearance.HelmetLayerHelm <- "";
+	o.m.Appearance.HelmetLayerHelmLower <- "";
 	o.m.Appearance.HelmetLayerTop <- "";
+	o.m.Appearance.HelmetLayerTopLower <- "";
 	o.m.Appearance.HelmetLayerVanity <- "";
 	o.m.Appearance.HelmetLayerVanity2 <- "";
-	o.m.Appearance.HelmetLayerVanityLowerCorpse <- "";
-	o.m.Appearance.HelmetLayerVanity2LowerCorpse <- "";
+	o.m.Appearance.HelmetLayerVanityLower <- "";
+	o.m.Appearance.HelmetLayerVanity2Lower <- "";
 	o.m.Appearance.HelmetLayerHelmCorpse <- "";
+	o.m.Appearance.HelmetLayerHelmLowerCorpse <- "";
 	o.m.Appearance.HelmetLayerTopCorpse <- "";
+	o.m.Appearance.HelmetLayerTopLowerCorpse <- "";
 	o.m.Appearance.HelmetLayerVanityCorpse <- "";
 	o.m.Appearance.HelmetLayerVanity2Corpse <- "";
+	o.m.Appearance.HelmetLayerVanityLowerCorpse <- "";
+	o.m.Appearance.HelmetLayerVanity2LowerCorpse <- "";
 
 	local addToBag = o.addToBag;
 	o.addToBag = function (_item, _slot = -1) {

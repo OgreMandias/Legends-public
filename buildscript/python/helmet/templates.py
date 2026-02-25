@@ -48,6 +48,7 @@ class Templates:
     ]
 
     BaseLayer = load_template("templates/BaseLayer.template")
+    BaseNamedLayer = load_template("templates/BaseNamedLayer.template")
     Layer = load_template("templates/Layer.template")
     NamedLayer = load_template("templates/NamedLayer.template")
 

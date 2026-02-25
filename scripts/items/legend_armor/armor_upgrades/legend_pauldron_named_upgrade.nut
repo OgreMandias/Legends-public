@@ -5,7 +5,16 @@ this.legend_pauldron_named_upgrade <- this.inherit("scripts/items/legend_armor/l
 		this.legend_named_armor_upgrade.create();
 		this.m.ID = "legend_armor_upgrade.body.legend_pauldron_named";
 		this.m.Type = this.Const.Items.ArmorUpgrades.Attachment;
-		this.m.Name = "Gilded Pauldrons";
+		this.m.Name = "";
+		this.m.NameList = [
+			"Aurelian Mantle",
+			"Midas\' Curse",
+			"Tyrant\'s Gilt",
+			"Gilded Pauldrons",
+			"Gilded Bulwark",
+			"Imperial Epaulets",
+			"Vanguard\'s Radiance"
+		];
 		this.m.Description = "These segments of worked iron are beautifully decorated and excellent for protecting shoulders and arms. Worn over common armor, they can help to deflect incoming blows.";
 		this.m.ArmorDescription = "Segments of decorated iron plates provide additional protection.";
 		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;

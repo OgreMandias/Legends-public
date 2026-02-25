@@ -63,7 +63,20 @@ Favoured Enemy - Sword Master
 
 ### Helmets
 - merged the two fencer hats
+- removed duplicate aventail (chain scarf)
+- added named Rotten Great Helm, Facemask, Horsetail, Norman Helm, Aventail, Full Chain Hoods
+- added a number of recolors and new variants to a number of helmets
+- differentiated sounds for upgrades and composites
+- description fixes and changes
+- named items naming fixes and changes
+- fixed beard/hair hiding while covering items are set to invisible
 	
+### Armors
+- added Studded Aketon
+- differentiated sounds for upgrades, composites and attachments
+- description fixes and changes
+- named items naming fixes and changes
+
 ### Weapons
 
 #### New Weapons
@@ -126,18 +139,6 @@ Favoured Enemy - Sword Master
 ### For modders:
 
 - `Knifeplay` perk has been deleted
-
-- merged the two fencer hats
-- added a number of recolors and new variants to a number of helmets
-- removed duplicate chain scarf / aventail (old chain scarf graphics replacing old aventail graphics)
-- added named rotten great helms, facemasks, horsetails, norman helms, aventails, full chain hoods
-- differentiated sounds for upgrades and composites
-
-### Armors
-
-- added Studded Aketon
-- description fixes and changes
-- differentiated sounds for upgrades, composites and attachments
 
 ### New recipes
 
@@ -354,6 +355,7 @@ enclave_great_bascinet -> enclave_peaked_bascinet / renamed to fit the name used
 enclave_great_bascinet_visor -> enclave_peaked_bascinet_visor / renamed to fit the name used in game
 enclave_venitian_bascinet -> enclave_great_bascinet / renamed to fit the name used in game + typo
 enclave_venitian_bascinet_visor -> enclave_great_bascinet_visor / renamed to fit the name used in game + typo
+fencerhat and fencer_hat -> merged into fencer_hat
 ```
 
 Following trees were removed, refer to `z_perks_tree_enemy.nut` for replacements:

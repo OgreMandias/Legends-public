@@ -49,6 +49,8 @@
 ];
 
 ::Const.Items.LegendNamedHoodLayers <- [
+	"legend_helmets/hood/legend_helmet_aventail_named",
+	"legend_helmets/hood/legend_helmet_chain_hood_full_named",
 ];
 
 ::Const.Items.LegendNamedHelmLayers <- [

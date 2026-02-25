@@ -421,16 +421,21 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 	}
 
 	function getUpgradesNamed() {
-
+		local upgradePrice = 0;
+		local name = "";
 		foreach(u in this.m.Upgrades)
 		{
 			if (u != null && u.isNamed())
 			{
-				return u.getName();
+				if(u.getValue()>upgradePrice)
+				{
+					upgradePrice = u.getValue();
+					name = u.getName();
+				}
 			}
 		}
 
-		return ""
+		return name;
 	}
 
 	function setUpgrade( _upgrade )
@@ -504,7 +509,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		local uname = this.getUpgradesNamed();
 
 		if (uname != "") {
-			NAME = uname + " " + this.getName();
+			NAME = uname + " on " + this.getName();
 		}
 		else if (this.getUpgrade(1) != null)
 		{

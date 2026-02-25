@@ -152,7 +152,7 @@
 		Tops = [
 			[1, "top/legend_helmet_faceplate_winged"], //50
 			[1, "top/legend_helmet_faceplate_winged_full"], //65
-			[1, "top/legend_helmet_faceplate_winged_long"], //40
+			[1, "top_lower/legend_helmet_faceplate_winged_long"], //40
 			[1, "top/legend_helmet_faceplate_snub_nose"], //20
 			[1, "top/legend_helmet_faceplate_short"], //20
 			[1, "top/legend_helmet_faceplate_full"], //20

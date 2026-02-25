@@ -174,7 +174,7 @@ class Defs:
  "adesc" :""
 },
 {"name": "tunic_noble_named",                      "layer": "cloth", "min": 1, "max": 3, "value" : 1500, "con" : 40, "stam" : -2, "impactSound" : "leather", "invSound" : "cloth",
- "title" :  "Noble Tunic",
+ "title" :  "",
  "desc" :  "A fine, linen tunic of exquisite material, embroidered with pleasing patterns. Light and sturdy.",
  "adesc" :"",
  "named" : True, "rminStam" : 0, "rmaxStam": 2, "rminCond" : 46, "rmaxCond" : 56,  "names" : ['Heraldic Tunic', "Splendor", "Grandiosity", "Pageantry", "Swank", "Duty", "Honor", "Noble"]
@@ -382,13 +382,13 @@ class Defs:
  "title" :  "",
  "desc" :  "A well-crafted, hardened leather armor. Light to wear, yet exceptionally sturdy.",
  "adesc" : "Includes a masterwork hardened leather jacket.",
- "named" : True, "rminStam" : 1, "rmaxStam": 2, "rminCond" : 35, "rmaxCond" : 45,  "names" : ["Leather Cuirass", "Leather Armor", "Skin", "Peel", "Guard", "Coat", "Nightcloak", "Black", "Dark Omen", "Toadskin", "Ogreskin"]
+ "named" : True, "rminStam" : 1, "rmaxStam": 2, "rminCond" : 35, "rmaxCond" : 45,  "names" : ["Leather Cuirass", "Leather Armor", "Skin", "Peel", "Guard", "Coat", "Nightcloak", "Black Leather", "Dark Omen", "Toadskin", "Ogreskin"]
 },
 {"name": "leather_studded_jacket_named",             "layer": "plate", "min": 1, "max": 13, "value" : 750, "con" : 30, "stam" : -3, "impactSound" : "leather", "invSound" : "leather",
  "title" :  "",
  "desc" :  "A well-crafted, studded leather jacket with reinforced padding. Light to wear, but very sturdy.",
  "adesc" : "Includes a well-crafted studded leather jacket.",
- "named" : True, "rminStam" : 1, "rmaxStam": 2, "rminCond" : 35, "rmaxCond" : 45,  "names" : ["Leather Cuirass", "Leather Armor", "Skin", "Peel", "Guard", "Coat", "Nightcloak", "Black", "Dark Omen", "Toadskin", "Ogreskin"]
+ "named" : True, "rminStam" : 1, "rmaxStam": 2, "rminCond" : 35, "rmaxCond" : 45,  "names" : ["Leather Cuirass", "Leather Armor", "Skin", "Peel", "Guard", "Coat", "Nightcloak", "Black Leather", "Dark Omen", "Toadskin", "Ogreskin"]
 },
 {"name": "apron_undertakers",                                  "layer": "plate", "min": 1, "max": 1, "value" : 60, "con" : 35, "stam" : -4, "impactSound" : "leather", "invSound" : "leather",
  "title" :  "Undertakers Apron",
@@ -532,13 +532,13 @@ class Defs:
  "adesc" : "Includes a full set of solid, plated steel armor with greaves."
 },
 {"name": "plate_full_greaves_named",         "layer": "plate", "min": 1, "max": 3, "value" : 10000, "con" : 170, "stam" : -26, "impactSound" : "plate", "invSound" : "plate",
- "title" :  "Full Coat Heavy Plate Armor",
+ "title" :  "",
  "desc" :  "A masterfully crafted harness of solid, plated steel.",
  "adesc" : "Includes a masterfully crafted set of painted, solid plated steel with matching greaves.",
  "named" : True, "rminStam" : 23, "rmaxStam": 25, "rminCond" : 185, "rmaxCond" : 225,  "names" : ["Glory", "Triumph", "Victory", "Joy"]
 },
 {"name": "plate_full_greaves_painted",       "layer": "plate", "min": 1, "max": 1, "value" : 10000, "con" : 170, "stam" : -26, "impactSound" : "plate", "invSound" : "plate",
- "title" :  "Full Coat of Painted Heavy Plate Armor",
+ "title" :  "",
  "desc" :  "A masterfully crafted harness of solid, plated steel, finished with a layer of decorative paint.",
  "adesc" : "Includes a masterfully crafted set of painted, solid plated steel with matching greaves.",
  "named" : True, "rminStam" : 23, "rmaxStam": 25, "rminCond" : 185, "rmaxCond" : 225,  "names" : ["Ward", "Death", "Barrier", "Plate Armor", "Dark Plated Armor", "Life Stealer"]
@@ -620,7 +620,7 @@ class Defs:
  "adesc" : "Includes a heavy armor that is made from mostly metal. Only one chosen by the ancestors will own a set like this."
 },
 {"name": "thick_plated_barbarian_armor_named",           "layer": "plate", "min": 103, "max": 103, "value" : 5500, "con" : 155, "stam" : -26, "impactSound" : "plate", "invSound" : "plate", "vanilla" : "body",
- "title" :  "Alloy Plated Barbarian Armor",
+ "title" :  "",
  "desc" :  "This armor is composed of a strange alloy, and well crafted for barbarian standards. A truly rare and remarkable piece.",
  "adesc" : "Includes a heavy armor composed of a strange alloy, and well crafted for barbarian standards. A truly rare and remarkable piece.",
  "named" : True, "rminStam" : 23, "rmaxStam": 26, "rminCond" : 155, "rmaxCond" : 175,  "names" : ["Tarnished Harness", "Alloy Plate Armor", "Tainted Bulwark", "Tribal Plate"]
@@ -639,7 +639,7 @@ class Defs:
 #},
 
 {"name": "southern_named_plate",                  "layer": "plate", "min": 1, "max": 1, "value" : 9000, "con" : 210, "stam" : -25, "impactSound" : "plate", "invSound" : "plate",
- "title" :  "Famed Southern plates",
+ "title" :  "",
  "desc" :  "Ancient knowledge has been used when forging this unique set of armor. Its light mail overlapped with golden splints offers high protection with manageable encumbrance.",
  "adesc" : "Includes light mail overlapped with golden splints offering high protection with manageable encumbrance.",
     "named" : True, "rminStam" : 23, "rmaxStam": 26, "rminCond" : 210, "rmaxCond" : 230,  "names" : ["Gilder\'s Shining Ward", "Gilder\'s Skin", "Suncloak", "Snakeskin", "Blazing Mail", "Suntouched Harness", "Shining Hauberk", "Armor of the Scorpion King"]

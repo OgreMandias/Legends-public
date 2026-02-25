@@ -633,6 +633,8 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"hood/legend_helmet_full_mask",
 			"hood/legend_helmet_beak_hood",
 			"hood/legend_helmet_enclave_bevor",
+			"hood/legend_helmet_aventail_named",
+			"hood/legend_helmet_chain_hood_full_named",
 
 			"helm/legend_helmet_ancient_conic_helm",
 			"helm/legend_helmet_ancient_kettle",
@@ -749,7 +751,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"top/legend_helmet_faceplate_long",
 			"top/legend_helmet_faceplate_winged",
 			"top/legend_helmet_faceplate_winged_full",
-			"top/legend_helmet_faceplate_winged_long",
+			"top_lower/legend_helmet_faceplate_winged_long",
 			"top/legend_helmet_faceplate_snub_nose",
 			"top/legend_helmet_faceplate_snub_slit",
 			"top/legend_helmet_faceplate_sharp",

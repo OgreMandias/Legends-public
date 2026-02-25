@@ -18,7 +18,7 @@ this.legend_named_warlock_hood <- this.inherit("scripts/items/legend_helmets/leg
 		this.m.ConditionMax = 10;
 		this.m.StaminaModifier = 0;
 		this.m.Vision = 0;
-		this.m.IsLowerVanity = false;
+		this.m.IsLower = false;
 		this.m.HideHair = true;
 		this.m.HideBeard = false;
         this.m.ItemType = this.m.ItemType | this.Const.Items.ItemType.Cultist;

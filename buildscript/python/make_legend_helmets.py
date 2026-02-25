@@ -65,7 +65,7 @@ def makeBrushes(path):
 
         layer = d["layer"]
 
-        if "lowervanity" in d:
+        if "lower" in d:
             layer += "_lower"
 
         for t in R:
@@ -137,7 +137,7 @@ def makeBrushes(path):
 
         layer = d["layer"]
 
-        if "lowervanity" in d:
+        if "lower" in d:
             layer += "_lower"
 
         for t in R:
@@ -209,12 +209,14 @@ def generate_legend_helmets(base_path):
         lower = "false"
 
         temp = Templates.Layer
-        if "base" in d:
+        if layer == "hood":
             temp = Templates.BaseLayer
-        if "named" in d:
+            if "named" in d:
+                temp = Templates.BaseNamedLayer
+        elif "named" in d:
             temp = Templates.NamedLayer
 
-        if "lowervanity" in d:
+        if "lower" in d:
             layer += "_lower"
             lower = "true"
 
@@ -334,7 +336,7 @@ if __name__ == "__main__":
 "top/legend_helmet_faceplate_long",
 "top/legend_helmet_faceplate_winged",
 "top/legend_helmet_faceplate_winged_full",
-"top/legend_helmet_faceplate_winged_long",
+"top_lower/legend_helmet_faceplate_winged_long",
 "top/legend_helmet_faceplate_pointed",
 "top/legend_helmet_faceplate_pointed_slit",
 "top/legend_helmet_faceplate_full",
@@ -454,7 +456,7 @@ Sets = [{
         [1, "top/legend_helmet_faceplate_long"], //65
         [1, "top/legend_helmet_faceplate_winged"], //50
         [1, "top/legend_helmet_faceplate_winged_full"], //65
-        [1, "top/legend_helmet_faceplate_winged_long"], //40
+        [1, "top_lower/legend_helmet_faceplate_winged_long"], //40
         [1, "top/legend_helmet_faceplate_snub_nose"], //75
         [1, "top/legend_helmet_faceplate_snub_slit"], //80
         [1, "top/legend_helmet_faceplate_sharp"], //85

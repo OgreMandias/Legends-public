@@ -19,7 +19,7 @@ this.legend_helmet_hunter_cap <- this.inherit("scripts/items/legend_helmets/lege
 		this.m.ConditionMax = 10;
 		this.m.StaminaModifier = -1;
 		this.m.Vision = 1;
-		this.m.IsLowerVanity = false;
+		this.m.IsLower = false;
 		this.m.HideHair = false;
 		this.m.HideBeard = false;
 	}

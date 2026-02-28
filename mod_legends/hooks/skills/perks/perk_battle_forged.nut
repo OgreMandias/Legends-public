@@ -1,24 +1,20 @@
-::mods_hookExactClass("skills/perks/perk_battle_forged", function(o) {
+::mods_hookExactClass("skills/perks/perk_battle_forged", function (o) {
 	o.m.ArmorPercentageAsReduction <- 5;
 
-	o.isHidden = function()
-	{
+	o.isHidden = function () {
 		return this.getReductionPercentage() <= 0;
 	}
 
-	o.getDescription = function()
-	{
+	o.getDescription = function () {
 		return "Specialize in heavy armor! Armor damage taken is reduced by a percentage equal to [color=%positive%]" + this.m.ArmorPercentageAsReduction + "[/color] of the current total armor value of both body and head armor. The heavier your armor and helmet, the more you benefit.";
 	}
 
-	o.getReductionPercentage <- function()
-	{
+	o.getReductionPercentage <- function () {
 		local armor = this.getContainer().getActor().getArmor(this.Const.BodyPart.Head) + this.getContainer().getActor().getArmor(this.Const.BodyPart.Body);
-		return this.Math.floor(armor * this.m.ArmorPercentageAsReduction * 0.01);
+		return this.Math.min(100, this.Math.floor(armor * this.m.ArmorPercentageAsReduction * 0.01));
 	}
 
-	o.getTooltip = function()
-	{
+	o.getTooltip = function () {
 		local tooltip = this.skill.getTooltip();
 
 		tooltip.push({
@@ -31,9 +27,13 @@
 		return tooltip;
 	}
 
-	o.onBeforeDamageReceived = function( _attacker, _skill, _hitInfo, _properties )
-	{
-		if (_attacker != null && _attacker.getID() == this.getContainer().getActor().getID() || _skill != null && !_skill.isAttack()) return;
+	o.onBeforeDamageReceived = function (_attacker, _skill, _hitInfo, _properties) {
+		if (_attacker != null
+			&& _attacker.getID() == this.getContainer().getActor().getID()
+			|| _skill != null
+			&& !_skill.isAttack()) {
+			return;
+		}
 
 		_properties.DamageReceivedArmorMult *= 1.0 - this.getReductionPercentage() * 0.01;
 	}

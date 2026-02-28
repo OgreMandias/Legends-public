@@ -160,7 +160,7 @@
 				_item.setCurrentSlotType(::Const.ItemSlot.None);
 				this.m.Items[::Const.ItemSlot.Offhand][0] = null;
 
-				if (this.m.Actor != null && !this.m.Actor.isNull() && this.m.Actor.isAlive()) {
+				if (!::Legends.S.isEntityNullOrDead(this.m.Actor)) {
 					this.m.Actor.getSkills().update();
 					this.updateDualWield();
 				}
@@ -173,7 +173,10 @@
 
 		local result = unequip(_item);
 		local slot = _item.getSlotType();
-		if (slot == ::Const.ItemSlot.Mainhand || slot == ::Const.ItemSlot.Offhand) {
+		if (result
+			&& (slot == ::Const.ItemSlot.Mainhand || slot == ::Const.ItemSlot.Offhand)
+			&& !::Legends.S.isEntityNullOrDead(this.m.Actor))
+		{
 			this.updateDualWield();
 		}
 
@@ -185,7 +188,9 @@
 		if (_item.isItemType(::Const.Items.ItemType.RangedWeapon)) {
 			return false;
 		}
-		if (_item.isItemType(::Const.Items.ItemType.TwoHanded) && _item.getBlockedSlotType() != null) {
+		if (_item.isItemType(::Const.Items.ItemType.TwoHanded)
+			&& _item.getBlockedSlotType() != null)
+		{
 			return false;
 		}
 		return true;

@@ -1302,7 +1302,8 @@ CharacterScreenPaperdollModule.prototype.assignItemToSlot = function (
 		_slot.Container.assignPaperdollItemOverlayImage(
 			_item["imageOverlayPath"],
 			isSmall,
-			isSlotBlocked
+			isSlotBlocked,
+			_item
 		);
 
 		// show amount

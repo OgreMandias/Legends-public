@@ -22,7 +22,7 @@ this.legend_helmet_mountain_helm <- this.inherit("scripts/items/legend_helmets/l
 		this.m.ConditionMax = 30;
 		this.m.StaminaModifier = -2;
 		this.m.Vision = 0;
-		this.m.IsLower = false;
+		this.m.Lower = false;
 		this.m.HideHair = true;
 		this.m.HideBeard = false;
 	}

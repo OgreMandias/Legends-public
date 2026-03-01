@@ -18,7 +18,7 @@ this.legend_helmet_pimp_hat <- this.inherit("scripts/items/legend_helmets/legend
 		this.m.ConditionMax = 10;
 		this.m.StaminaModifier = -1;
 		// this.m.Vision = 1;
-		this.m.IsLower = false;
+		this.m.Lower = false;
 		this.m.HideHair = false;
 		this.m.HideBeard = false;
 	}

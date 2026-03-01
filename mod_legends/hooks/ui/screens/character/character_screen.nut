@@ -720,7 +720,7 @@
 			local toRemove = [];
 			foreach (idx, value in _item.getUpgrades())
 			{
-				if (value != 1) continue;
+				if (value != 1 && value != 2 && value != 3) continue;
 				toRemove.push(idx);
 			}
 			if (this.Stash.getNumberOfEmptySlots() < toRemove.len()){

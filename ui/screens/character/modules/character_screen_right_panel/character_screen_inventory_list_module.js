@@ -522,7 +522,7 @@ CharacterScreenInventoryListModule.prototype.createItemSlot = function (_owner, 
 		var data = _item.data('item');
 
 
-		var isEmpty = (data !== null && 'isEmpty' in data) ? data.isEmpty : ytrue;
+		var isEmpty = (data !== null && 'isEmpty' in data) ? data.isEmpty : true;
 		//var owner = (data !== null && 'owner' in data) ? data.owner : null;
 		var itemId = (data !== null && 'itemId' in data) ? data.itemId : null;
 		var entityId = (data !== null && 'entityId' in data) ? data.entityId : null;
@@ -631,7 +631,7 @@ CharacterScreenInventoryListModule.prototype.assignItemToSlot = function(_entity
 
 		// assign image
 		_slot.assignListItemImage(Path.ITEMS + _item[CharacterScreenIdentifier.Item.ImagePath]);
-		_slot.assignListItemOverlayImage(_item['imageOverlayPath']);
+		_slot.assignListItemOverlayImage(_item['imageOverlayPath'], _item);
 
 		// show repair icon?
 		itemData.repair = _item['repair'];

@@ -18,7 +18,7 @@ this.legend_named_warlock_skull <- this.inherit("scripts/items/legend_helmets/le
 		this.m.ConditionMax = 90;
 		this.m.StaminaModifier = -2;
 		this.m.Vision = 0;
-		this.m.IsLower = false;
+		this.m.Lower = false;
 		this.m.HideHair = false;
 		this.m.HideBeard = true;
         this.m.ItemType = this.m.ItemType | this.Const.Items.ItemType.Cultist;

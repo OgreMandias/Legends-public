@@ -177,7 +177,7 @@ The .pngs have also gone necessary changes, see the link below for more details 
 For clarity, legend_armor is prefixed at make_legends_armor level and should be referenced as such while building outfits.
 Description changes for both armors and helmets.
 Added named helmet bases support.
-Refactored vanity_lower -> vanity in outfits and lowervanity defs field to lower.
+Refactored vanity_lower -> vanity in outfits and lowervanity defs field to lower, IsLower to Lower, created IsLower() helper function.
 Lower layers are now available for helms and masks.
 The display ordering is as follows:
 VanityLower -> VanityLower2 -> Head -> Helmet -> HelmLower -> TopLower -> Helm -> Top -> Vanity -> Vanity2

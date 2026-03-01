@@ -444,6 +444,10 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 			{
 				slots.push(2);
 			}
+			else if (u.isLower())
+			{
+				slots.push(3);
+			}
 			else
 			{
 				slots.push(1);

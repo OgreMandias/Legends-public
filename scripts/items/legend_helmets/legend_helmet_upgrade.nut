@@ -10,7 +10,7 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 		ConditionModifier = 0,
 		StaminaModifier = 0,
 		Type = -1,
-		IsLower = false,
+		Lower = false,
 		ImpactSound = this.Const.Sound.ArmorLeatherImpact,
 		InventorySound = this.Const.Sound.ArmorLeatherImpact,
 		IsDestroyedOnRemove = false,
@@ -440,6 +440,11 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 		return this.m.Visible;
 	}
 
+	function isLower()
+	{
+		return this.m.Lower;
+	}
+
 	function updateAppearance( _app )
 	{
 		if (_app == null)
@@ -480,10 +485,10 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 			local normal = "HelmetLayer" + key;
 			local lower = "HelmetLayer" + key + "Lower";
 
-			_app[normal] = this.m.IsLower ? "" : sprite;
-			_app[normal + "Corpse"] = this.m.IsLower ? "" : spriteCorpse;
-			_app[lower] = this.m.IsLower ? sprite : "";
-			_app[lower + "Corpse"] = this.m.IsLower ? spriteCorpse : "";
+			_app[normal] = this.m.Lower ? "" : sprite;
+			_app[normal + "Corpse"] = this.m.Lower ? "" : spriteCorpse;
+			_app[lower] = this.m.Lower ? sprite : "";
+			_app[lower + "Corpse"] = this.m.Lower ? spriteCorpse : "";
 		}
 
 		return true;

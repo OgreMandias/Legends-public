@@ -10,10 +10,9 @@
 		this.m.IsRanged = true;
 	}
 
-	local getTooltip = o.getTooltip;
 	o.getTooltip = function ()
 	{
-		local tooltip = getTooltip();
+		local tooltip = this.getDefaultUtilityTooltip();
 		if (this.m.IsUnholdNet) {
 			tooltip.push({
 				id = 6,

@@ -40,12 +40,6 @@ this.legend_revolt_skill <- this.inherit("scripts/skills/skill", {
 		ret.push({
 			id = 7,
 			type = "text",
-			icon = "ui/icons/vision.png",
-			text = "Has a range of [color=%positive%]6[/color] tiles"
-		});
-		ret.push({
-			id = 7,
-			type = "text",
 			icon = "ui/icons/special.png",
 			text = "Has a [color=%positive%]100%[/color] chance to stagger on a hit"
 		});

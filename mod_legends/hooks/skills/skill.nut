@@ -63,6 +63,40 @@
 		return [];
 	}
 
+	local getDefaultUtilityTooltip = o.getDefaultUtilityTooltip;
+	o.getDefaultUtilityTooltip = function ()
+	{
+		local ret = getDefaultUtilityTooltip();
+		if (!this.m.IsAttack && this.m.IsTargetingActor)
+		{
+			ret.push({
+				id = 4,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Is not considered an attack"
+			});
+		}
+		if (this.m.MaxRange > 1)
+		{
+			ret.push({
+				id = 7,
+				type = "text",
+				icon = "ui/icons/vision.png",
+				text = "Has a range of [color=%positive%]" + this.m.MaxRange + "[/color] tiles"
+			});
+		}
+		if (this.m.MaxLevelDifference > 0)
+		{
+			ret.push({
+				id = 4,
+				type = "text",
+				icon = "ui/icons/vision.png",
+				text = "Has [color=%positive%]" + this.m.MaxLevelDifference + "[/color] max terrain level difference"
+			});
+		}
+		return ret;
+	}
+
 	o.getDefaultTooltip = function()
 	{
 		local p = this.factoringOffhand(this.m.Container.buildPropertiesForUse(this, null));

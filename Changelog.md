@@ -156,6 +156,15 @@ Favoured Enemy - Sword Master
 - 3 new gold ingot blueprints
 - 3 new silver ingot blueprints
 
+## Various
+
+- additional info is now provided on support skill including if the skill is considered an attack, it's range and the maximum level difference
+- african male heads have been updated and adjusted to start showing up on brothers
+
+## Bug Fixes
+
+- possible fix for ai rotation crashes
+
 ### For modders:
 
 Bandit Warlord renamed to Robber Baron

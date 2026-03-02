@@ -57,9 +57,8 @@
 			Weapon = [
 				::Const.Perks.AxeTree,
 				::Const.Perks.PolearmTree,
-				::Const.Perks.TwoHandedTree,
-				::Const.Perks.OneHandedTree,
-				::Const.Perks.ThrowingTree
+				::Const.Perks.ThrowingTree,
+				::Const.Perks.FlailTree,
 			],
 			Defense = [
 				::Const.Perks.MediumArmorTree,

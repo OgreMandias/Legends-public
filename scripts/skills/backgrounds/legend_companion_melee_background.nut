@@ -79,7 +79,6 @@ this.legend_companion_melee_background <- this.inherit("scripts/skills/backgroun
 
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				::Const.Perks.TwoHandedTree,
 				::Const.Perks.PolearmTree,
 				::Const.Perks.AxeTree,
 				::Const.Perks.MaceTree,

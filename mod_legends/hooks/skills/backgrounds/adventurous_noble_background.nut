@@ -50,7 +50,6 @@
 				::Const.Perks.PolearmTree,
 				::Const.Perks.DaggerTree,
 				::Const.Perks.CrossbowTree,
-				::Const.Perks.OneHandedTree
 			],
 			Defense = [
 				::Const.Perks.MediumArmorTree

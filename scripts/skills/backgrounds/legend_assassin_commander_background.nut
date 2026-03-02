@@ -73,8 +73,7 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 				::Const.Perks.FlailTree,
 				::Const.Perks.BowTree,
 				::Const.Perks.ThrowingTree,
-				::Const.Perks.CrossbowTree,
-				::Const.Perks.OneHandedTree
+				::Const.Perks.CrossbowTree
 			],
 			Defense = [
 				::Const.Perks.LightArmorTree,

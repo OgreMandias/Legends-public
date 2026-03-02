@@ -53,7 +53,6 @@
 				::Const.Perks.HammerTree,
 				::Const.Perks.CrossbowTree,
 				::Const.Perks.AxeTree,
-				::Const.Perks.OneHandedTree
 			],
 			Defense = [
 				::Const.Perks.MediumArmorTree

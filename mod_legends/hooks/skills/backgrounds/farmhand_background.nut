@@ -57,7 +57,7 @@
 				::Const.Perks.PolearmTree,
 				::Const.Perks.FlailTree,
 				::Const.Perks.SlingTree,
-				::Const.Perks.TwoHandedTree
+				::Const.Perks.CleaverTree,
 			],
 			Defense = [
 				::Const.Perks.MediumArmorTree

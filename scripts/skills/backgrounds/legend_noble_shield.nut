@@ -63,7 +63,7 @@ this.legend_noble_shield <- this.inherit("scripts/skills/backgrounds/character_b
 				::Const.Perks.SpearTree,
 				::Const.Perks.ThrowingTree,
 				::Const.Perks.ShieldTree,
-				::Const.Perks.OneHandedTree
+				::Const.Perks.SwordTree,
 			],
 			Defense = [
 				::Const.Perks.HeavyArmorTree

@@ -72,7 +72,6 @@
 			Weapon = [
 				::Const.Perks.SwordTree,
 				::Const.Perks.ShieldTree,
-				::Const.Perks.TwoHandedTree,
 				::Const.Perks.FlailTree,
 				::Const.Perks.HammerTree,
 				::Const.Perks.MaceTree,

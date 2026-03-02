@@ -69,11 +69,9 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 				::Const.Perks.HammerTree,
 				::Const.Perks.AxeTree,
 				::Const.Perks.SwordTree,
-				::Const.Perks.TwoHandedTree,
 				::Const.Perks.PolearmTree,
 				::Const.Perks.ThrowingTree,
-				::Const.Perks.ShieldTree,
-				::Const.Perks.OneHandedTree
+				::Const.Perks.ShieldTree
 			],
 			Defense = [
 				::Const.Perks.MediumArmorTree,

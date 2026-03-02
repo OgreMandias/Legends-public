@@ -51,7 +51,6 @@ this.legend_qiyan_background <- this.inherit("scripts/skills/backgrounds/charact
 				::Const.Perks.DaggerTree,
 				::Const.Perks.SwordTree,
 				::Const.Perks.ThrowingTree,
-				::Const.Perks.OneHandedTree
 			],
 			Defense = [
 				::Const.Perks.ClothArmorTree,

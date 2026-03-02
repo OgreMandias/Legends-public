@@ -64,7 +64,6 @@
 				::Const.Perks.DaggerTree,
 				::Const.Perks.CrossbowTree,
 				::Const.Perks.ThrowingTree,
-				::Const.Perks.OneHandedTree
 			],
 			Defense = [
 				::Const.Perks.LightArmorTree,

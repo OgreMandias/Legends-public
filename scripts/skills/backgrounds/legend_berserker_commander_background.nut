@@ -97,7 +97,6 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 				::Const.Perks.CleaverTree,
 				::Const.Perks.SwordTree,
 				::Const.Perks.ThrowingTree,
-				::Const.Perks.TwoHandedTree,
 				::Const.Perks.FistsTree
 			],
 			Defense = [

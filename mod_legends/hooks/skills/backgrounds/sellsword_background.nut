@@ -49,9 +49,9 @@
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				::Const.Perks.SwordTree,
-				::Const.Perks.TwoHandedTree,
 				::Const.Perks.ShieldTree,
-				::Const.Perks.CrossbowTree
+				::Const.Perks.CrossbowTree,
+				::Const.Perks.AxeTree,
 			],
 			Defense = [
 				::Const.Perks.HeavyArmorTree

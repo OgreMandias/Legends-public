@@ -23,6 +23,17 @@ This activates Dual Wield:
 
 - Onslaught now increases melee damage by your 2% for every 100 armor you have
 
+### One Handed Tree
+- no longer exists in short
+- `Duelist` is in the Sword Tree
+- `Push The Advantage` is in the Polearm Tree
+- `Versatile` is in the Throwing Tree
+
+### Two Handed Tree
+- no longer exists as well
+- `Push The Advantage` is in the Mace Tree
+- `Slaughterer` and `Bloody Harvest` are in the Axe Tree 
+
 ### Specialist Perks
 - spec perks are now disabled from this version onwards
 - because recent legends perk work focused on making a lot more recruits viable and interesting to play we decided that spec perks aren't as worthwhile anymore

@@ -47,8 +47,7 @@ this.legend_blacksmith_background <- this.inherit("scripts/skills/backgrounds/ch
 			Weapon = [
 				::Const.Perks.HammerTree,
 				::Const.Perks.PolearmTree,
-				::Const.Perks.ThrowingTree,
-				::Const.Perks.OneHandedTree
+				::Const.Perks.ThrowingTree
 			],
 			Defense = [
 				::Const.Perks.HeavyArmorTree

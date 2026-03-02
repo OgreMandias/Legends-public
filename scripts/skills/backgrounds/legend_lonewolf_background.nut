@@ -89,15 +89,14 @@ this.legend_lonewolf_background <- this.inherit("scripts/skills/backgrounds/char
 
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				::Const.Perks.TwoHandedTree,
+				::Const.Perks.SwordTree,
 				::Const.Perks.MaceTree,
 				::Const.Perks.FlailTree,
 				::Const.Perks.HammerTree,
 				::Const.Perks.AxeTree,
 				::Const.Perks.HammerTree,
 				::Const.Perks.ThrowingTree,
-				::Const.Perks.FistsTree,
-				::Const.Perks.OneHandedTree
+				::Const.Perks.FistsTree
 			],
 			Defense = [
 				::Const.Perks.HeavyArmorTree

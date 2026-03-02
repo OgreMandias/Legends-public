@@ -82,7 +82,6 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 				::Const.Perks.ThrowingTree,
 				::Const.Perks.DaggerTree,
 				::Const.Perks.AxeTree,
-				::Const.Perks.OneHandedTree
 			],
 			Defense = [
 				::Const.Perks.ClothArmorTree,

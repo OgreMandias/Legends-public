@@ -55,7 +55,6 @@
 				::Const.Perks.PolearmTree,
 				::Const.Perks.HammerTree,
 				::Const.Perks.CrossbowTree,
-				::Const.Perks.OneHandedTree
 			],
 			Defense = [
 				::Const.Perks.HeavyArmorTree,

@@ -48,7 +48,7 @@ if (!("Perks" in ::Const)) {
 		[],
 		[::Legends.Perk.LegendOnslaught],
 		[::Legends.Perk.SpecMace],
-		[],
+		[::Legends.Perk.LegendPushTheAdvantage],
 		[::Legends.Perk.LegendReturnFavor],
 		[]
 	]
@@ -205,8 +205,8 @@ if (!("Perks" in ::Const)) {
 		[::Legends.Perk.LegendSmashingShields],
 		[],
 		[::Legends.Perk.SpecAxe],
-		[],
-		[],
+		[::Legends.Perk.LegendSlaughterer],
+		[::Legends.Perk.LegendBloodyHarvest],
 		[::Legends.Perk.KillingFrenzy]
 	]
 };
@@ -263,110 +263,6 @@ if (!("Perks" in ::Const)) {
 	]
 };
 
-::Const.Perks.TwoHandedTree <- {
-	ID = "TwoHandedTree",
-	Name = "Two-Handed",
-	Icon = "ui/perks/spec_greatsword.png",
-	Descriptions = [
-		"two handed weapons"
-	],
-	Attributes = {
-		Hitpoints = [
-			0,
-			0
-		],
-		Bravery = [
-			0,
-			0
-		],
-		Stamina = [
-			0,
-			0
-		],
-		MeleeSkill = [
-			0,
-			0
-		],
-		RangedSkill = [
-			0,
-			0
-		],
-		MeleeDefense = [
-			0,
-			0
-		],
-		RangedDefense = [
-			0,
-			0
-		],
-		Initiative = [
-			0,
-			0
-		]
-	},
-	Tree = [
-		[],
-		[],
-		[],
-		[],
-		[::Legends.Perk.LegendSlaughterer, ::Legends.Perk.ReachAdvantage],
-		[::Legends.Perk.LegendBloodyHarvest],
-		[]
-	]
-};
-
-::Const.Perks.OneHandedTree <- {
-	ID = "OneHandedTree",
-	Name = "One-Handed",
-	Icon = "ui/perks/perk_41.png",
-	Descriptions = [
-		"one handed weapons"
-	],
-	Attributes = {
-		Hitpoints = [
-			0,
-			0
-		],
-		Bravery = [
-			0,
-			0
-		],
-		Stamina = [
-			0,
-			0
-		],
-		MeleeSkill = [
-			0,
-			0
-		],
-		RangedSkill = [
-			0,
-			0
-		],
-		MeleeDefense = [
-			0,
-			0
-		],
-		RangedDefense = [
-			0,
-			0
-		],
-		Initiative = [
-			0,
-			0
-		]
-	},
-	Tree = [
-		[],
-		[],
-		[::Legends.Perk.LegendVersatile],
-		[],
-		[::Legends.Perk.LegendPushTheAdvantage],
-		[::Legends.Perk.Duelist],
-		[]
-	]
-};
-
 ::Const.Perks.SwordTree <- {
 	ID = "SwordTree",
 	Name = "Sword",
@@ -414,7 +310,7 @@ if (!("Perks" in ::Const)) {
 		[],
 		[::Legends.Perk.SpecSword],
 		[],
-		[::Legends.Perk.LegendBackswing],
+		[::Legends.Perk.LegendBackswing, ::Legends.Perk.Duelist],
 		[]
 	]
 };
@@ -516,7 +412,7 @@ if (!("Perks" in ::Const)) {
 		[::Legends.Perk.CoupDeGrace],
 		[],
 		[::Legends.Perk.SpecPolearm],
-		[::Legends.Perk.ReachAdvantage],
+		[::Legends.Perk.ReachAdvantage, ::Legends.Perk.LegendPushTheAdvantage],
 		[],
 		[]
 	]
@@ -722,7 +618,7 @@ if (!("Perks" in ::Const)) {
 	Tree = [
 		[],
 		[::Legends.Perk.QuickHands],
-		[],
+		[::Legends.Perk.LegendVersatile],
 		[::Legends.Perk.SpecThrowing],
 		[::Legends.Perk.LegendFirstBlood],
 		[],
@@ -904,8 +800,6 @@ if (!("Perks" in ::Const)) {
 		::Const.Perks.HammerTree,
 		::Const.Perks.AxeTree,
 		::Const.Perks.CleaverTree,
-		::Const.Perks.OneHandedTree,
-		::Const.Perks.TwoHandedTree,
 		::Const.Perks.SwordTree,
 		::Const.Perks.DaggerTree,
 		::Const.Perks.PolearmTree,
@@ -940,7 +834,6 @@ if (!("Perks" in ::Const)) {
 		::Const.Perks.HammerTree,
 		::Const.Perks.AxeTree,
 		::Const.Perks.CleaverTree,
-		::Const.Perks.TwoHandedTree,
 		::Const.Perks.SwordTree,
 		::Const.Perks.DaggerTree,
 		::Const.Perks.PolearmTree,

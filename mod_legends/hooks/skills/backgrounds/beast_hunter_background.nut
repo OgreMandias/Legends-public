@@ -79,7 +79,6 @@
 				::Const.Perks.ThrowingTree,
 				::Const.Perks.BowTree,
 				::Const.Perks.AxeTree,
-				::Const.Perks.OneHandedTree
 			],
 			Defense = [
 				::Const.Perks.MediumArmorTree,

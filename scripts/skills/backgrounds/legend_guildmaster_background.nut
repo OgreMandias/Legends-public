@@ -78,8 +78,7 @@ this.legend_guildmaster_background <- this.inherit("scripts/skills/backgrounds/c
 				::Const.Perks.PolearmTree,
 				::Const.Perks.ThrowingTree,
 				::Const.Perks.AxeTree,
-				::Const.Perks.CrossbowTree,
-				::Const.Perks.OneHandedTree
+				::Const.Perks.CrossbowTree
 			],
 			Defense = [
 				::Const.Perks.MediumArmorTree,

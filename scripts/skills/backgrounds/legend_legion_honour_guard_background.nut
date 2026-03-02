@@ -63,13 +63,11 @@ this.legend_legion_honour_guard_background <- this.inherit("scripts/skills/backg
 			Weapon = [
 				::Const.Perks.DaggerTree,
 				::Const.Perks.SpearTree,
-				::Const.Perks.TwoHandedTree,
 				::Const.Perks.ShieldTree,
 				::Const.Perks.PolearmTree,
 				::Const.Perks.SwordTree,
 				::Const.Perks.ThrowingTree,
-				::Const.Perks.CleaverTree,
-				::Const.Perks.OneHandedTree
+				::Const.Perks.CleaverTree
 			],
 			Defense = [
 				::Const.Perks.HeavyArmorTree

@@ -63,7 +63,6 @@ this.legend_legion_centurion_background <- this.inherit("scripts/skills/backgrou
 			Weapon = [
 				::Const.Perks.DaggerTree,
 				::Const.Perks.SpearTree,
-				::Const.Perks.TwoHandedTree,
 				::Const.Perks.ShieldTree,
 				::Const.Perks.PolearmTree,
 				::Const.Perks.SwordTree,

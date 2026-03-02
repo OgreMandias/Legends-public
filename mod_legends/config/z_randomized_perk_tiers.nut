@@ -813,13 +813,6 @@
 // Greatswords are special in that they're the only 2-Handed weapon that also isn't it's own weapon type (I guess like contrary to Staves, but Staves have no 1-Handed equivalent)
 // Otherwise, we just return the actual weapon tree(s) applicable, sometimes a weapon is multiple so it returns both
 ::Const.GetWeaponPerkTree <- function ( _item ) {
-
-    //Greatsword
-    if (_item.isWeaponType(this.Const.Items.WeaponType.Sword) && _item.isItemType(this.Const.Items.ItemType.TwoHanded))
-    {
-        return [::Const.Perks.TwoHandedTree];
-    }
-
     // WeaponTypes
     local ret = []; // Push all applicable WeaponTypes into array (supports Hybrid weapons)
     local weaponToPerkMap = {

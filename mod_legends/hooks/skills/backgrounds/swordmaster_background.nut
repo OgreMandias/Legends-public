@@ -70,7 +70,6 @@
 				::Const.Perks.PolearmTree,
 				::Const.Perks.DaggerTree,
 				::Const.Perks.ThrowingTree,
-				::Const.Perks.OneHandedTree,
 				::Const.Perks.FistsTree
 			],
 			Defense = [

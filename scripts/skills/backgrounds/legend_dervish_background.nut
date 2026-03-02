@@ -36,8 +36,8 @@ this.legend_dervish_background <- this.inherit("scripts/skills/backgrounds/chara
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				::Const.Perks.SwordTree,
-				::Const.Perks.TwoHandedTree,
-				::Const.Perks.CleaverTree
+				::Const.Perks.PolearmTree,
+				::Const.Perks.CleaverTree,
 			],
 			Defense = [
 				::Const.Perks.LightArmorTree,

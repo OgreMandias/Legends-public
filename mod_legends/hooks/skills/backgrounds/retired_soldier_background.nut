@@ -60,7 +60,6 @@
 				::Const.Perks.AxeTree,
 				::Const.Perks.ShieldTree,
 				::Const.Perks.ThrowingTree,
-				::Const.Perks.OneHandedTree,
 			],
 			Defense = [
 				::Const.Perks.HeavyArmorTree,

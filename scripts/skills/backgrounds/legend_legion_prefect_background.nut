@@ -64,7 +64,6 @@ this.legend_legion_prefect_background <- this.inherit("scripts/skills/background
 				::Const.Perks.DaggerTree,
 				::Const.Perks.SpearTree,
 				::Const.Perks.SlingTree,
-				::Const.Perks.TwoHandedTree,
 				::Const.Perks.PolearmTree,
 				::Const.Perks.SwordTree,
 				::Const.Perks.CleaverTree

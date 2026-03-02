@@ -85,24 +85,39 @@ var Helper = {
             }
         }
     }
-	console.error(hasVanillaBase)
-	var priority = [];
-	if (_upgrades[0] === 3) priority.push(2) 		// helm lower
-	else if (_upgrades[0] === 1) priority.push(4) 	// helm
-	if (_upgrades[1] === 3) priority.push(3) 		// top lower
-	else if (_upgrades[1] === 1) priority.push(5) 	// top
-	if (_upgrades[2] === 3) priority.push(0) 		// vanity1 lower
-	else if (_upgrades[2] === 1) priority.push(6) 	// vanity1
-	if (_upgrades[3] === 3) priority.push(1) 		// vanity2 lower
-	else if (_upgrades[3] === 1) priority.push(7) 	// vanity2
-	if (_upgrades[4] === 1) priority.push(8) 		// runes
 
-	var sorted = priority.slice().sort(function (a, b) { return a - b; });
+	var layers = [];
+
+	function addLayer(slotIndex, pNormal, pLower) {
+		var state = _upgrades[slotIndex];
+		if (!state) return;
+
+		var p = pNormal;
+		if (state === 3 && pLower !== undefined) {
+			p = pLower;
+		}
+
+		layers.push({
+			index: slotIndex + hasVanillaBase,
+			p: p,
+			visible: (state !== 2)
+		});
+	}
+
+	addLayer(0, 4, 2); // helm   
+	addLayer(1, 5, 3); // top
+	addLayer(2, 6, 0); // vanity1
+	addLayer(3, 7, 1); // vanity2
+	addLayer(4, 8);    // runes
+
+	layers.sort(function (a, b) { return a.p - b.p; });
 	var order = [];
-	if(hasVanillaBase)
-		order.push(0);
-	for (var i = 0; i < priority.length; i++) { 
-		order.push(sorted.indexOf(priority[i])+hasVanillaBase); 
+	if(hasVanillaBase) order.push(0);
+
+	for (var i = 0; i < layers.length; i++) { 
+		if (layers[i].visible) {
+            order.push(layers[i].index);
+        }
 	}
 	return order;
 	}

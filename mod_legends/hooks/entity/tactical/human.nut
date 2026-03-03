@@ -101,63 +101,62 @@
 	}
 
 	local onDeath = o.onDeath;
-	o.onDeath = function ( _killer, _skill, _tile, _fatalityType )
-	{
+	o.onDeath = function (_killer, _skill, _tile, _fatalityType) {
 		local originalFunc = null;
 		local needToCheese = getFlags().get("donkey");
 
-		if (_tile != null && needToCheese) { // a cheese to stop donkey background from being raised back as zombie during undead crisis
+		if (_tile != null && needToCheese) {
+			// a cheese to stop donkey background from being raised back as zombie during undead crisis
 			originalFunc = ::World.FactionManager.get().isUndeadScourge;
-			::World.FactionManager.get().isUndeadScourge = function() { return false };
+			::World.FactionManager.get().isUndeadScourge = function () {
+				return false
+			};
 		}
 
 		onDeath(_killer, _skill, _tile, _fatalityType);
 
-		local appearance = this.getItems().getAppearance();
-		local flip = this.m.IsCorpseFlipped;
+		if (_tile != null) {
+			local appearance = this.getItems().getAppearance();
+			local flip = this.m.IsCorpseFlipped;
 
-		local armorLayers = [
-			"CorpseArmorLayerChain",
-			"CorpseArmorLayerPlate",
-			"CorpseArmorLayerTabbard",
-			"CorpseArmorLayerCloakBack",
-			"CorpseArmorLayerCloakFront"
-		];
-
-		foreach (layer in armorLayers) 
-		{
-			if (appearance[layer] != "") 
-			{
-				local decal = _tile.spawnDetail(appearance[layer], this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-				decal.Scale = 0.9;
-				decal.setBrightness(0.9);
-			}
-		}
-
-		if (!appearance.HideCorpseHead && _fatalityType != this.Const.FatalityType.Decapitated){
-			local helmetLayers = [
-    			"HelmetLayerVanityLowerCorpse",
-    			"HelmetLayerVanity2LowerCorpse",
-				"HelmetCorpse",
-				"HelmetLayerHelmLowerCorpse",
-				"HelmetLayerTopLowerCorpse",
-				"HelmetLayerHelmCorpse",
-				"HelmetLayerTopCorpse",
-				"HelmetLayerVanityCorpse",
-				"HelmetLayerVanity2Corpse"
+			local armorLayers = [
+				"CorpseArmorLayerChain",
+				"CorpseArmorLayerPlate",
+				"CorpseArmorLayerTabbard",
+				"CorpseArmorLayerCloakBack",
+				"CorpseArmorLayerCloakFront"
 			];
-			foreach (layer in helmetLayers) 
-				{
-					if (appearance[layer] != "") 
-					{
+
+			foreach (layer in armorLayers) {
+				if (appearance[layer] != "") {
+					local decal = _tile.spawnDetail(appearance[layer], this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
+					decal.Scale = 0.9;
+					decal.setBrightness(0.9);
+				}
+			}
+
+			if (!appearance.HideCorpseHead
+				&& _fatalityType != this.Const.FatalityType.Decapitated)
+			{
+				local helmetLayers = [
+					"HelmetLayerVanityLowerCorpse",
+					"HelmetLayerVanity2LowerCorpse",
+					"HelmetCorpse",
+					"HelmetLayerHelmLowerCorpse",
+					"HelmetLayerTopLowerCorpse",
+					"HelmetLayerHelmCorpse",
+					"HelmetLayerTopCorpse",
+					"HelmetLayerVanityCorpse",
+					"HelmetLayerVanity2Corpse"
+				];
+				foreach (layer in helmetLayers) {
+					if (appearance[layer] != "") {
 						local decal = _tile.spawnDetail(appearance[layer], this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
 						decal.Scale = 0.9;
 						decal.setBrightness(0.9);
 					}
 				}
-		}
-
-		if (_tile != null) {
+			}
 			_tile.Properties.get("Corpse").isHuman = 1;
 
 			if (needToCheese) {

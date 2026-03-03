@@ -1,7 +1,7 @@
 this.legend_obliterate_skill <- this.inherit("scripts/skills/skill", {
 	m = {},
-	function create()
-	{
+
+	function create() {
 		::Legends.Actives.onCreate(this, ::Legends.Active.LegendObliterate);
 		this.m.Description = "Wind up your hammer and strike with full force against an enemy. Exceptionally slow and prone to missing, can only be reliable against targets that can't move. Will apply [color=%status%]Staggered[/color] on hit and if the target is already [color=%status%]Staggered[/color] it will apply [color=%status%]Stunned[/color].";
 		this.m.KilledString = "Obliterated";
@@ -40,8 +40,7 @@ this.legend_obliterate_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ChanceSmash = 100;
 	}
 
-	function getTooltip()
-	{
+	function getTooltip() {
 		local ret = this.getDefaultTooltip();
 		ret.push({
 			id = 7,
@@ -52,43 +51,44 @@ this.legend_obliterate_skill <- this.inherit("scripts/skills/skill", {
 		return ret;
 	}
 
-	function onAfterUpdate( _properties )
-	{
-		this.m.FatigueCostMult = _properties.IsSpecializedInHammers ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+	function onAfterUpdate(_properties) {
+		this.m.FatigueCostMult = _properties.IsSpecializedInHammers
+			? this.Const.Combat.WeaponSpecFatigueMult
+			: 1.0;
 	}
 
-	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
-	{
-		if (_skill != this)
+	function onTargetHit(_skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor) {
+		if (_skill != this) {
 			return;
+		}
 
-		if (::Legends.S.skillEntityAliveCheck(_targetEntity))
+		if (::Legends.S.skillEntityAliveCheck(_targetEntity)) {
 			return;
+		}
 
-		if (::Legends.Effects.has(_targetEntity, ::Legends.Effect.Staggered))
-		{
+		local user = this.getContainer().getActor();
+		local targetTile = _targetEntity.getTile();
+
+		if (::Legends.Effects.has(_targetEntity, ::Legends.Effect.Staggered)) {
 			local stunned = ::Legends.Effects.grant(_targetEntity, ::Legends.Effect.Stunned);
-			if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
-			{
-				this.Tactical.EventLog.log(stunned.getLogEntryOnAdded(this.Const.UI.getColorizedEntityName(_user), this.Const.UI.getColorizedEntityName(target)));
+			if (!_targetEntity.isHiddenToPlayer() && targetTile.IsVisibleForPlayer) {
+				this.Tactical.EventLog.log(stunned.getLogEntryOnAdded(this.Const.UI.getColorizedEntityName(user), this.Const.UI.getColorizedEntityName(_targetEntity)));
 			}
 			return;
 		}
 		local stagger = ::Legends.Effects.grant(_targetEntity, ::Legends.Effect.Staggered);
-		if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
-		{
-			this.Tactical.EventLog.log(stagger.getLogEntryOnAdded(this.Const.UI.getColorizedEntityName(_user), this.Const.UI.getColorizedEntityName(target)));
+		if (!_targetEntity.isHiddenToPlayer() && targetTile.IsVisibleForPlayer) {
+			this.Tactical.EventLog.log(stagger.getLogEntryOnAdded(this.Const.UI.getColorizedEntityName(user), this.Const.UI.getColorizedEntityName(_targetEntity)));
 		}
 	}
 
-	function onAnySkillUsed( _skill, _targetEntity, _properties )
-	{
-		if (_skill == this)
-		{
+	function onAnySkillUsed(_skill, _targetEntity, _properties) {
+		if (_skill == this) {
 			this.m.HitChanceBonus += _properties.IsSpecializedInHammers ? 25 : 0;
 			_properties.DamageTotalMult *= 1.5;
 			_properties.ThresholdToInflictInjuryMult *= 0.66;
-			if (_targetEntity != null && (_targetEntity.IsRooted || ::Legends.Effects.has(_targetEntity, ::Legends.Effect.Stunned)))
+			if (_targetEntity != null
+				&& (_targetEntity.getCurrentProperties().IsRooted || ::Legends.Effects.has(_targetEntity, ::Legends.Effect.Stunned)))
 			{
 				this.m.HitChanceBonus += 50;
 			}
@@ -96,4 +96,3 @@ this.legend_obliterate_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
-

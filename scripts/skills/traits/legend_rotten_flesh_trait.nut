@@ -116,9 +116,12 @@ this.legend_rotten_flesh_trait <- this.inherit("scripts/skills/traits/character_
 			this.getSprite("status_rage").setHorizontalFlipping(flip);
 		};
 
-		if (this.m.IsNew) {
-			foreach (trait in ::Legends.Necromancer.excludedTraits()) {
-				if (this.getContainer().getSkillByID(trait)) {
+		if (this.m.IsNew)
+		{
+			foreach (trait in ::Legends.Necromancer.excludedTraits())
+			{
+				if (this.getContainer().getSkillByID(trait))
+				{
 					this.getContainer().removeByID(trait);
 				}
 			}

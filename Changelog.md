@@ -61,6 +61,8 @@ Favoured Enemy - Sword Master
 ## Enemy Changes
 
 - Bandit Warlord is renamed to Robber Baron
+- Webknechts lose 10 rdef and 10 mdef on Legendary, but retain Dodge
+- 
 
 ## New Runes
 

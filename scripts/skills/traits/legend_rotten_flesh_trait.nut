@@ -136,7 +136,7 @@ this.legend_rotten_flesh_trait <- this.inherit("scripts/skills/traits/character_
 			{
 				if (this.getContainer().getSkillByID(trait))
 				{
-					this.getContainer().removeByID(::Legends.Traits.getID(trait));
+					this.getContainer().removeByID(trait);
 				}
 			}
 

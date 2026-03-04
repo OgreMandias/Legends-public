@@ -41,17 +41,16 @@ this.legend_named_rusty_warcleaver <- this.inherit("scripts/items/weapons/named/
 	function onEquip()
 	{
 		this.named_weapon.onEquip();
-		local cleave = this.new("scripts/skills/actives/cleave");
-		cleave.m.Icon = "skills/active_182.png";
-		cleave.m.IconDisabled = "skills/active_182_sw.png";
-		cleave.m.Overlay = "active_182";
-		cleave.m.FatigueCost = 15;
-		this.addSkill(cleave);
-		this.addSkill(this.new("scripts/skills/actives/decapitate"));
-		local skillToAdd = this.new("scripts/skills/actives/split_shield");
-		skillToAdd.setFatigueCost(skillToAdd.getFatigueCostRaw() + 5);
-		this.addSkill(skillToAdd);
+		::Legends.Actives.grant(this, ::Legends.Active.Cleave, function (_skill) {
+			_skill.m.Icon = "skills/active_182.png";
+			_skill.m.IconDisabled = "skills/active_182_sw.png";
+			_skill.m.Overlay = "active_182";
+			_skill.m.FatigueCost = 15;
+		}.bindenv(this));
+		::Legends.Actives.grant(this, ::Legends.Active.Decapitate);
+		::Legends.Actives.grant(this, ::Legends.Active.SplitShield, function (_skill) {
+			_skill.setFatigueCost(_skill.getFatigueCostRaw() + 5);
+		}.bindenv(this));
 	}
-
 });
 

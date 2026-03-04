@@ -160,9 +160,9 @@
 };
 ::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Barbarian.rugged_scale_armor);
 
-::Legends.Armor.Barbarian.legend_barbarian_southern_armor <- {
+::Legends.Armor.Barbarian.legend_barbarian_southern_armor <- { // from Kamy in fashion-show
 	ID = "barbarians/legend_barbarian_southern_armor", // 70 -6 490
-	Script = "", ; from Kamy in fashion-show
+	Script = "", 
 	Sets = [{
 		Cloth = [
 			[1, "cloth/legend_armor_thick_tunic"] // 30 -3 40

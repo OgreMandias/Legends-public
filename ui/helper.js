@@ -72,21 +72,20 @@ var Helper = {
     getHelmetDrawOrder: function(_upgrades, _imagePaths) {
 	if (!_upgrades) return [];
 
-	// Vanilla helmets like Fangshire sneak in the base helmet into imagepaths, so check if there's one and add it later before everything else for upgrade drawing purposes
-    var hasVanillaBase = 0;
-    if (_imagePaths && _imagePaths.length)
-    {
-        for (var k = 0; k < _imagePaths.length; k++)
-        {
-            if (_imagePaths[k].indexOf("helmets/") === 0)
-            {
-                hasVanillaBase = 1;
-                break;
-            }
+	// Helmets with a glow sneak in the base helmet into imagepaths, so check if there's one and add it later before everything else for upgrade drawing purposes
+    var hasBaseHood = 0;
+    var activeUpgradesCount = 0;
+    for (var u = 0; u < _upgrades.length; u++) {
+        if (_upgrades[u]) {
+            activeUpgradesCount++;
         }
+    }
+    if (_imagePaths && _imagePaths.length > activeUpgradesCount) {
+        hasBaseHood = 1;
     }
 
 	var layers = [];
+	var currentImageIndex = hasBaseHood;
 
 	function addLayer(slotIndex, pNormal, pLower) {
 		var state = _upgrades[slotIndex];
@@ -98,10 +97,12 @@ var Helper = {
 		}
 
 		layers.push({
-			index: slotIndex + hasVanillaBase,
+			index:  currentImageIndex,
 			p: p,
 			visible: (state !== 2)
 		});
+
+		currentImageIndex++;
 	}
 
 	addLayer(0, 4, 2); // helm   
@@ -112,7 +113,7 @@ var Helper = {
 
 	layers.sort(function (a, b) { return a.p - b.p; });
 	var order = [];
-	if(hasVanillaBase) order.push(0);
+	if(hasBaseHood) order.push(0);
 
 	for (var i = 0; i < layers.length; i++) { 
 		if (layers[i].visible) {

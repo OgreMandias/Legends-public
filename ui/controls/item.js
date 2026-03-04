@@ -159,7 +159,7 @@ $.fn.assignListItemOverlayImage = function(_imagePaths, _item)
 
 	var drawOrder = [];
 
-	if (_item && _item.slot === "head") {
+	if (_item && _item.slot === "head" && _item.upgrades[0]) {
 		drawOrder = Helper.getHelmetDrawOrder(_item.upgrades, _imagePaths);
 	}
 	else {

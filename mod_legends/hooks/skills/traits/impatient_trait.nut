@@ -41,7 +41,7 @@
 		}
 	}
 
-	o.onTurnStart <- function (_properties) {
+	o.onTurnStart <- function () {
 		this.getContainer().getActor().setWaitActionSpent(true);
 	}
 });

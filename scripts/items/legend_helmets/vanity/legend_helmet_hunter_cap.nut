@@ -6,7 +6,7 @@ this.legend_helmet_hunter_cap <- this.inherit("scripts/items/legend_helmets/lege
 		this.legend_helmet_upgrade.create();
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_hunter_cap";
-		this.m.Name = "Hunter Cap";
+		this.m.Name = "Hunter's Cap";
 		this.m.Description = "The distinctive hat of a game hunter, the pointed shape focuses vision and its ornate feather and shape bristles with confidence, but also makes it an easy target for others.";
 		this.m.ArmorDescription = "Includes a distinctive hat of a game hunter.";
 		this.m.Variants = [1, 2];

@@ -5,7 +5,7 @@ this.legend_helmet_jester_hat <- this.inherit("scripts/items/legend_helmets/lege
 		this.legend_helmet_upgrade.create();
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_jester_hat";
-		this.m.Name = "Jester Hat";
+		this.m.Name = "Jester's Hat";
 		this.m.Description = "The quintessential hat of performing folk in noble court. Wearing it makes you feel like a fool, but the jingling bells make you an irritating target for all.";
 		this.m.ArmorDescription = "Includes a colorful jester's hat.";
 		this.m.Variants = [];

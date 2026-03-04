@@ -8,8 +8,8 @@ this.legend_redback_cloak <- this.inherit("scripts/items/legend_armor/legend_arm
 		this.m.ID = "legend_armor.body.legend_redback_cloak";
 		this.m.Type = this.Const.Items.ArmorUpgrades.Cloak;
 		this.m.Name = "Redback Silk Cloak";
-		this.m.Description = "This lightweight, flowing cloak is made from spider web. It offers excellent protection against poison and ranged attacks.";
-		this.m.ArmorDescription = "A cloak of spider silk offers protection against ranged attacks and poisons";
+		this.m.Description = "A lightweight, flowing cloak made from spider web. It offers excellent protection against poison and ranged attacks.";
+		this.m.ArmorDescription = "Includes a lightweight cloak of spider silk.";
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.InventorySound = this.Const.Sound.ClothEquip;
 		this.m.Icon = "armor_upgrades/upgrade_cloak_black.png";

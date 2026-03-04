@@ -74,9 +74,9 @@ this.legend_lindwurm_scale_armor <- this.inherit("scripts/items/legend_armor/leg
 
 	function updateVariant()
 	{
-		this.m.SpriteBack = "bust_wild_scale_01";
-		this.m.SpriteDamagedBack = "bust_wild_scale_01_damaged";
-		this.m.SpriteCorpseBack = "bust_wild_scale_01_dead";
+		this.m.SpriteBack = "wild_scale_01";
+		this.m.SpriteDamagedBack = "wild_scale_01_damaged";
+		this.m.SpriteCorpseBack = "wild_scale_01_dead";
 		this.m.Icon = "legend_armor/icon_wild_scale_01.png";
 		this.m.IconLarge = "legend_armor/inventory_wild_scale_01.png";
 		this.m.OverlayIcon = "legend_armor/icon_wild_scale_01.png";

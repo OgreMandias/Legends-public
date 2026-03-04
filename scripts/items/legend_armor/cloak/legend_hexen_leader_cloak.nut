@@ -20,9 +20,9 @@ this.legend_hexen_leader_cloak <- this.inherit("scripts/items/legend_armor/legen
 
 	function updateVariant()
 	{
-		this.m.SpriteBack = "bust_cloak_hexe";
-		this.m.SpriteDamagedBack = "bust_cloak_hexe_damaged";
-		this.m.SpriteCorpseBack = "bust_cloak_hexe_dead";
+		this.m.SpriteBack = "cloak_hexe";
+		this.m.SpriteDamagedBack = "cloak_hexe_damaged";
+		this.m.SpriteCorpseBack = "cloak_hexe_dead";
 		this.m.Icon = "legend_armor/icon_cloak_hexe.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/inventory_cloak_hexe.png";

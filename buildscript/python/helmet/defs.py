@@ -658,7 +658,7 @@ class Defs:
 ### Top
 
 {"name" : "mask_beak"                     , "layer" : "top", "lower": True, "min" : 1, "max" : 7, "value" : 50, "con" : 20, "stam" : -1, "vis" : -1, "hair" : "true", "beard" : "false", "impactSound" : "leather", "invSound" : "cloth",
- "title" :  "Physicians Mask",
+ "title" :  "Physician's Mask",
  "desc" :  "A distinctive, bird-like mask. The beak acts as a ventilator, containing sweet-smelling herbs to ward away sickness and disease.",
  "adesc" : "Includes a distinctive, bird-like mask."
  },
@@ -683,7 +683,7 @@ class Defs:
  "adesc" : "Includes a set of leaves."
  },
 {"name" : "undertakers_scarf"                     , "layer" : "top", "lower": True, "min" : 1, "max" : 4, "value" : 20, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false", "impactSound" : "leather", "invSound" : "cloth",
- "title" :  "Undertaker Scarf",
+ "title" :  "Undertaker's Scarf",
  "desc" :  "A cloth scarf designed to shield the face from the elements and the cloying stench of the dead.",
  "adesc" : "Includes a cloth scarf worn over the mouth."
  },
@@ -821,7 +821,7 @@ class Defs:
  "adesc" : "Includes a metal winged jaw guard with a faceplate."
  },
  {"name" : "faceplate_winged_full"                     , "layer" : "top", "lower": True, "min" : 1, "max" : 7, "value" : 900, "con" : 65, "stam" : -7, "vis" : -2, "hair" : "false", "beard" : "true", "impactSound" : "plate", "invSound" : "plate",
- "title" :  "Winged Faceplate",
+ "title" :  "Full Winged Faceplate",
  "desc" :  "A metal jaw guard formed into the shape of wings with a faceplate and a neck guard.",
  "adesc" : "Includes a metal winged jaw guard with a faceplate and a neck guard."
  },
@@ -831,7 +831,7 @@ class Defs:
   "adesc" : "Includes a metal winged jaw guard with a neck guard."
  },
  {"name" : "faceplate_winged_full_named"                     , "layer" : "top", "lower": True, "min" : 1, "max" : 4, "value" : 1000, "con" : 65, "stam" : -4, "vis" : -2, "hair" : "false", "beard" : "false", "impactSound" : "plate", "invSound" : "plate", "named" : True, "rmaxViz" : 1, "rminViz" : 2, "rmaxStam" : 3, "rminStam" : 4, "rminCond" : 65, "rmaxCond" : 90, "names" : Names,
- "title" :  "Winged Full Faceplate",
+ "title" :  "Full Winged Faceplate",
  "desc" :  "An exceptionally well crafted faceplate adorned with angelic wings. The design is very light and the materials are of the highest quality.",
  "adesc" : "Includes an exceptionally well crafted faceplate adorned with angelic wings."
  },
@@ -931,7 +931,7 @@ class Defs:
  "adesc" : "Includes an unhold head chain."
  },
 {"name" : "unhold_head_spike"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 800, "con" : 90, "stam" : -13, "vis" : -2, "hair" : "false", "beard" : "true", "impactSound" : "plate", "invSound" : "plate",
- "title" :  "Unhold head Spike",
+ "title" :  "Unhold Head Spike",
  "desc" :  "The heavy spiked armor used by barbarian unholds.",
  "adesc" : "Includes an unhold head spike."
  },
@@ -1251,12 +1251,12 @@ class Defs:
 #  "desc" :  "A tough leather hat that provides decent protection against scratches." \
 # },
 {"name" : "wizard_cowl"                     , "layer" : "vanity", "min" : 1, "max" : 21, "value" : 20, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false", "impactSound" : "leather", "invSound" : "cloth",
- "title" :  "Wizard Cowl",
+ "title" :  "Wizard's Cowl",
  "desc" :  "A weathered pointy hat with a broad rim. Typically used by charlatans and fortune tellers trying to look the part, though a real wizard could actually wear one.",
  "adesc" : "Includes a pointy hat."
  },
 {"name" : "undertakers_hat"                     , "layer" : "vanity", "min" : 1, "max" : 3, "value" : 50, "con" : 12, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false", "impactSound" : "leather", "invSound" : "cloth",
- "title" :  "Undertaker Hat",
+ "title" :  "Undertaker's Hat",
  "desc" :  "A wide-brimmed feathered hat, a practical choice for those whose work continues regardless of the weather.",
  "adesc" : "Includes a wide-brimmed feathered hat."
  },
@@ -1280,7 +1280,7 @@ class Defs:
  "adesc" : "Includes an ornate hood."
  },
 {"name" : "physicians_hood"                     , "layer" : "vanity", "min" : 1, "max" : 7, "value" : 20, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false", "impactSound" : "leather", "invSound" : "cloth",
- "title" :  "Physician Hood",
+ "title" :  "Physician's Hood",
  "desc" :  "A thick hood designed to keep out splatters and vapours.",
  "adesc" : "Includes a thick hood."
  },
@@ -1324,7 +1324,7 @@ class Defs:
 #  "desc" :  "A sturdy yet light helm made from the carapace of a redback spider." \
 # },
 {"name" : "nun_habit"                     , "layer" : "vanity", "min" : 1, "max" : 7, "value" : 10, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false", "impactSound" : "leather", "invSound" : "cloth",
- "title" :  "Nun Habit",
+ "title" :  "Nun's Habit",
  "desc" :  "A modest head covering of the women of the cloth, its white lining symboling purity and innocence.",
  "adesc" : "Includes a nun habit."
  },
@@ -1341,7 +1341,7 @@ class Defs:
 #  "desc" :  "A trophy made from the face of a demon" \
 # },
 {"name" : "warlock_hood"                     ,"itemType" : "this.Const.Items.ItemType.Cultist", "layer" : "vanity", "min" : 1, "max" : 5, "value" : 100, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false", "impactSound" : "leather", "invSound" : "cloth",
- "title" :  "Warlock Hood",
+ "title" :  "Warlock's Hood",
  "desc" :  "A tattered hood of discolored fabric. Counts as a cultist item.",
  "adesc" : "Includes a tattered hood."
  },

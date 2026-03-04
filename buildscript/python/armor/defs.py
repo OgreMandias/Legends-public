@@ -391,7 +391,7 @@ class Defs:
  "named" : True, "rminStam" : 1, "rmaxStam": 2, "rminCond" : 35, "rmaxCond" : 45,  "names" : ["Leather Cuirass", "Leather Armor", "Skin", "Peel", "Guard", "Coat", "Nightcloak", "Black Leather", "Dark Omen", "Toadskin", "Ogreskin"]
 },
 {"name": "apron_undertakers",                                  "layer": "plate", "min": 1, "max": 1, "value" : 60, "con" : 35, "stam" : -4, "impactSound" : "leather", "invSound" : "leather",
- "title" :  "Undertakers Apron",
+ "title" :  "Undertaker's Apron",
  "desc" :  "A heavy leather apron designed to protect the wearer's clothing from stains and fluids. Usually worn by those who tend to the dead.",
  "adesc" :"Includes a heavy leather undertaker's apron."
 },
@@ -655,7 +655,7 @@ class Defs:
 # "desc" :  "",
 # "adesc" : "",
 #},
-{"name": "southern_plate",                 "layer": "plate", "min": 1, "max": 2, "value" : 750, "con" : 75, "stam" : -12, "impactSound" : "plate", "invSound" : "plate",
+{"name": "southern_plate",                 "layer": "plate", "min": 1, "max": 2, "value" : 750, "con" : 75, "stam" : -8, "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Mail with Lamellar Plating",
  "desc" :  "A heavy shirt of interlapping metal plates worn over mail.",
  "adesc" : "Includes a heavy shirt of interlapping metal plates."
@@ -701,7 +701,7 @@ class Defs:
  "adesc" : "Includes a heavy lamellar harness of metal plates."
 },
 {"name": "diviner_jacket",           "itemType" : "this.Const.Items.ItemType.Cultist", "layer": "plate", "min": 1, "max": 2, "value" : 3000, "con" : 40, "stam" : -3, "impactSound" : "leather", "invSound" : "cloth",
- "title" :  "Diviner Jacket",
+ "title" :  "Diviner's Jacket",
  "desc" :  "An embellished jacket previously worn by the Diviner. You\'d expect the stench of rotting flesh to cling to it, but it remains pristine",
  "adesc" : "Includes an embellished jacket previously worn by the Diviner. You\'d expect the stench of rotting flesh to cling to it, but it remains pristine",
  "named" : True, "rminStam" : 2, "rmaxStam": 4, "rminCond" : 35, "rmaxCond" : 60, "names" : ["Heretic\'s Wrap", "Beholder\'s vestments", "Jacket of the Augur", "Empyrian Coat", "Attestor\'s Skin", "Goreflesh Mantle"]
@@ -750,7 +750,7 @@ class Defs:
  "adesc" : "Includes a hooded cowl with decorated, scalloped edges."
 },
 {"name": "nun_wimple",           "layer": "cloak", "min": 1, "max": 1, "value" : 50, "con" : 15, "stam" : -1, "bravery" : 0, "impactSound" : "leather", "invSound" : "cloth",
- "title" :  "Nun Wimple",
+ "title" :  "Nun's Wimple",
  "desc" :  "A basic wimple of plain grey cloth that signifies a life of devotion and poverty.",
  "adesc" : "Includes a basic wimple of plain grey cloth."
 },
@@ -770,7 +770,7 @@ class Defs:
  "adesc" : "Includes a cloak of the feathers of a strange creature of the abyss."
 },
 {"name": "cloak_crusader",           "layer": "cloak", "min": 1, "max": 1, "value" : 500, "con" : 35, "stam" : -5, "bravery" : 4, "impactSound" : "leather", "invSound" : "cloth",
- "title" :  "Crusader Cloak",
+ "title" :  "Crusader's Cloak",
  "desc" :  "A holy cloak of thick, layered, warm wool that provides some protection, but is quite hefty.",
  "adesc" : "Includes a holy cloak of thick, layered wool."
 },
@@ -780,7 +780,7 @@ class Defs:
  "adesc" : "Includes a fine, flowing cloak of light foreign silk."
 },
 {"name": "cloak_duke",           "layer": "cloak", "min": 1, "max": 4, "value" : 2000, "con" : 20, "stam" : -2, "bravery" : 4, "impactSound" : "leather", "invSound" : "cloth",
- "title" :  "Dukes Cloak",
+ "title" :  "Duke's Cloak",
  "desc" :  "A refined cloak of fine, lightweight silk that marks the wearer as a distinguished figure of the highest circles.",
  "adesc" : "Includes a refined cloak of fine, lightweight silk."
 },

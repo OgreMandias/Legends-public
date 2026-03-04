@@ -68,6 +68,7 @@ this.legend_haftstrike <- this.inherit("scripts/skills/skill", {
 	function onUse( _user, _targetTile )
 	{
 		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectThrust);
+		this.m.SkillsUsed = 0;
 		return this.attackEntity(_user, _targetTile.getEntity());
 	}
 

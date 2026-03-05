@@ -166,8 +166,8 @@ $.fn.assignPaperdollItemOverlayImage = function (_imagePaths, _imageIsSmall, _is
 
 	var drawOrder = [];
 
-	if (_item && _item.slot === "head") {
-		drawOrder = Helper.getHelmetDrawOrder(_item.upgrades, _imagePaths);
+	if (_item && (_item.slot === "head" || _item.slot === "body")) {
+		drawOrder = Helper.getLayerUpgradeDrawOrder(_item.upgrades, _imagePaths, _item.slot);
 	}
 	else {
 		for (var i = 0; i < _imagePaths.length; i++)

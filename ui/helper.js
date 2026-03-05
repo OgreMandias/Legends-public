@@ -69,23 +69,27 @@ var Helper = {
 	/**
      * Returns the order of helmet upgrades according to priority.push
      */
-    getHelmetDrawOrder: function(_upgrades, _imagePaths) {
+    getLayerUpgradeDrawOrder: function(_upgrades, _imagePaths, _slot, _showInInventory) {
 	if (!_upgrades) return [];
 
-	// Helmets with a glow sneak in the base helmet into imagepaths, so check if there's one and add it later before everything else for upgrade drawing purposes
-    var hasBaseHood = 0;
+	// Items with a glow or blocking sneak in the base into imagepaths, so check if there's one and add it later before everything else for upgrade drawing purposes
+    var hasBaseLayer = 0;
     var activeUpgradesCount = 0;
+	var blockedUpgradesCount = 0;
     for (var u = 0; u < _upgrades.length; u++) {
-        if (_upgrades[u]) {
+        if (_upgrades[u] && _upgrades[u] !== -1) {
             activeUpgradesCount++;
         }
+		else if(_upgrades[u] === -1){
+			blockedUpgradesCount++;
+		}
     }
     if (_imagePaths && _imagePaths.length > activeUpgradesCount) {
-        hasBaseHood = 1;
+        hasBaseLayer = 1;
     }
 
 	var layers = [];
-	var currentImageIndex = hasBaseHood;
+	var currentImageIndex = hasBaseLayer;
 
 	function addLayer(slotIndex, pNormal, pLower) {
 		var state = _upgrades[slotIndex];
@@ -99,25 +103,36 @@ var Helper = {
 		layers.push({
 			index:  currentImageIndex,
 			p: p,
-			visible: (state !== 2)
+			visible: (state !== 2 && state !== -1)
 		});
 
 		currentImageIndex++;
 	}
 
-	addLayer(0, 4, 2); // helm   
-	addLayer(1, 5, 3); // top
-	addLayer(2, 6, 0); // vanity1
-	addLayer(3, 7, 1); // vanity2
-	addLayer(4, 8);    // runes
+	if(_slot === "head"){
+		addLayer(0, 4, 2); // helm   
+		addLayer(1, 5, 3); // top
+		addLayer(2, 6, 0); // vanity1
+		addLayer(3, 7, 1); // vanity2
+		addLayer(4, 8);    // runes
+	}
+	else if(_slot === "body")
+	{
+		addLayer(0, 0); // chain   
+		addLayer(1, 1); // plate
+		addLayer(2, 2); // tabard
+		addLayer(3, 3); // cloak
+		addLayer(4, 4); // upgrade
+		addLayer(5, 5); // runes
+	}
 
 	layers.sort(function (a, b) { return a.p - b.p; });
 	var order = [];
-	if(hasBaseHood) order.push(0);
+	if(hasBaseLayer) order.push(0);
 
 	for (var i = 0; i < layers.length; i++) { 
-		if (layers[i].visible) {
-            order.push(layers[i].index);
+		if (layers[i].visible || _showInInventory) {
+            order.push(layers[i].index-blockedUpgradesCount);
         }
 	}
 	return order;

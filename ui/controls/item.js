@@ -158,9 +158,8 @@ $.fn.assignListItemOverlayImage = function(_imagePaths, _item)
 	}
 
 	var drawOrder = [];
-
-	if (_item && _item.slot === "head" && _item.upgrades[0]) {
-		drawOrder = Helper.getHelmetDrawOrder(_item.upgrades, _imagePaths);
+	if (_item && (_item.slot === "head" || _item.slot === "body") && _item.upgrades[0]) {
+		drawOrder = Helper.getLayerUpgradeDrawOrder(_item.upgrades, _imagePaths, _item.slot, true);
 	}
 	else {
 		for (var i = 0; i < _imagePaths.length; i++)

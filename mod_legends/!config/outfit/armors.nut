@@ -2658,37 +2658,6 @@
 };
 ::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Standard.bandit_armor_ultraheavy);
 
-::Legends.Armor.Standard.lindwurm_armor <- {
-	ID = "lindwurm_armor", // 105-145 -12-17 525-1800
-	Script = "",
-	Sets = [{
-		Cloth = [
-			[1, "cloth/legend_armor_gambeson", [1, 2, 3]], // 65 -8 250
-			[1, "cloth/legend_armor_gambeson"], // 65 -8 250
-			[1, "cloth/legend_armor_quilted_aketon"], // 55 -6 150
-			[1, "cloth/legend_armor_gambeson_wolf"], // 70 -9 300
-		],
-		Chain = [
-			[1, "chain/legend_armor_hauberk_sleeveless"], // 65 -7 1250
-			[1, "chain/legend_armor_mail_shirt"], // 50 -6 375
-			[1, "chain/legend_armor_short_mail"], // 60 -8 500
-		],
-		Plate = [
-			[1, "named/legend_lindwurm_scale_armor"],
-		],
-		Cloak = [
-			[10, ""],
-			[2, "cloak/legend_armor_noble_shawl"], // 10 -0 250
-			[1, "cloak/legend_armor_sash"], // 3 -0 150
-		],
-		Tabard = [
-		],
-		Attachments = [
-		]
-	}]
-};
-::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Standard.lindwurm_armor);
-
 ::Legends.Armor.Standard.mercury_noble_elite_footman_00 <- {
 	ID = "mercury_noble_elite_footman_00", // 220 -25 3140
 	Script = "",

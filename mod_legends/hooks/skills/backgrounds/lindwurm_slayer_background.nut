@@ -199,7 +199,7 @@
 		}
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, ::Legends.Armor.Standard.lindwurm_armor]
+			[1, ::Legends.Armor.Named.lindwurm_armor]
 		]));
 
 		items.equip(this.Const.World.Common.pickHelmet([

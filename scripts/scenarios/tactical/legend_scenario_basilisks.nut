@@ -69,7 +69,7 @@ this.legend_scenario_basilisks <- this.inherit("scripts/scenarios/tactical/scena
 		items = entity.getItems();
 		items.equip(this.Const.World.Common.pickHelmet([[1, ::Legends.Helmet.Standard.full_helm]]));
 		items.equip(this.new("scripts/items/armor/coat_of_plates"));
-		items.equip(this.new("scripts/items/weapons/greatsword"));
+		items.equip(this.new("scripts/items/weapons/legend_zweihander"));
 		entity = this.spawnEntity("scripts/entity/tactical/player", 14, 16, 14, 16);
 		this.World.getPlayerRoster().add(entity);
 		entity.setFaction(this.Const.Faction.Player);
@@ -191,8 +191,8 @@ this.legend_scenario_basilisks <- this.inherit("scripts/scenarios/tactical/scena
 		this.Stash.add(this.new("scripts/items/weapons/noble_sword"));
 		this.Stash.add(this.new("scripts/items/weapons/military_cleaver"));
 		this.Stash.add(this.new("scripts/items/weapons/military_cleaver"));
-		this.Stash.add(this.new("scripts/items/weapons/greatsword"));
-		this.Stash.add(this.new("scripts/items/weapons/greatsword"));
+		this.Stash.add(this.new("scripts/items/weapons/legend_zweihander"));
+		this.Stash.add(this.new("scripts/items/weapons/legend_zweihander"));
 		this.Stash.add(this.new("scripts/items/weapons/billhook"));
 		this.Stash.add(this.new("scripts/items/weapons/billhook"));
 		this.Stash.add(this.new("scripts/items/weapons/winged_mace"));

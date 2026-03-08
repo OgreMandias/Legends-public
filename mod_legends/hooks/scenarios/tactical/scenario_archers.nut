@@ -117,10 +117,10 @@
 		this.Stash.add(this.new("scripts/items/weapons/arming_sword"));
 		this.Stash.add(this.new("scripts/items/weapons/military_cleaver"));
 		this.Stash.add(this.new("scripts/items/weapons/military_cleaver"));
-		this.Stash.add(this.new("scripts/items/weapons/greatsword"));
-		this.Stash.add(this.new("scripts/items/weapons/greatsword"));
-		this.Stash.add(this.new("scripts/items/weapons/greatsword"));
-		this.Stash.add(this.new("scripts/items/weapons/greatsword"));
+		this.Stash.add(this.new("scripts/items/weapons/legend_zweihander"));
+		this.Stash.add(this.new("scripts/items/weapons/legend_zweihander"));
+		this.Stash.add(this.new("scripts/items/weapons/legend_zweihander"));
+		this.Stash.add(this.new("scripts/items/weapons/legend_zweihander"));
 		this.Stash.add(this.new("scripts/items/weapons/greataxe"));
 		this.Stash.add(this.new("scripts/items/weapons/greataxe"));
 		this.Stash.add(this.new("scripts/items/weapons/greataxe"));

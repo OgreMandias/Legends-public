@@ -347,8 +347,8 @@
         [1, ["legend_ranged_flail", 70], [::Legends.Perk.Colossus]],
         [1, ["legend_reinforced_flail", 70], [::Legends.Perk.LegendVengeance]],
         [1, ["two_handed_mace", 70], [::Legends.Perk.LegendForcefulSwing]],
-        [1, ["longsword", 70], [::Legends.Perk.Colossus]],
-        [1, ["legend_longsword",  70], [::Legends.Perk.Duelist]],
+        [1, ["greatsword", 70], [::Legends.Perk.Colossus]],
+        [1, ["longsword",  70], [::Legends.Perk.Duelist]],
         [1, ["legend_two_handed_club", 70], [::Legends.Perk.LegendSmashingShields]],
         [5, ["shortsword", 70, 30], [::Legends.Perk.Overwhelm]],
         [5, ["hand_axe", 70], [::Legends.Perk.LegendOnslaught]],
@@ -775,7 +775,7 @@
             return ::Const.Perks.InventorClassTree;
 
     //Bodyguard
-        case _item.getID() == "weapon.legend_longsword" || _item.getID() == "weapon.longsword":
+        case _item.getID() == "weapon.greatsword" || _item.getID() == "weapon.longsword":
             return ::Const.Perks.LongswordClassTree;
 
     //Slings

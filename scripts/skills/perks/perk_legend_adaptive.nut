@@ -259,7 +259,7 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 	            return ::Const.Perks.InventorClassTree;
 
 	    //Bodyguard
-	        case _item.getID() == "weapon.legend_longsword" || _item.getID() == "weapon.longsword":
+	        case _item.getID() == "weapon.longsword" || _item.getID() == "weapon.longsword":
 	            return ::Const.Perks.LongswordClassTree;
 
 	    //Slings

@@ -240,7 +240,7 @@ this.legend_companion_melee_background <- this.inherit("scripts/skills/backgroun
 		}
 		else if (r == 2)
 		{
-			items.equip(this.new("scripts/items/weapons/greatsword"));
+			items.equip(this.new("scripts/items/weapons/legend_zweihander"));
 		}
 		else if (r == 3)
 		{

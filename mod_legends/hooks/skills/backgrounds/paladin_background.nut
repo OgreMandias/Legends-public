@@ -250,25 +250,14 @@
 				"weapons/longaxe",
 				"weapons/billhook",
 				"weapons/greataxe",
-				"weapons/greatsword"
+				"weapons/greatsword",
+				"weapons/legend_zweihander",
+				"weapons/longsword",
+				"weapons/polehammer",
+				"weapons/two_handed_flail",
+				"weapons/two_handed_flanged_mace",
+				"weapons/bardiche"
 			];
-
-			if (this.Const.DLC.Unhold)
-			{
-				weapons.extend([
-					"weapons/longsword",
-					"weapons/polehammer",
-					"weapons/two_handed_flail",
-					"weapons/two_handed_flanged_mace"
-				]);
-			}
-
-			if (this.Const.DLC.Wildmen)
-			{
-				weapons.extend([
-					"weapons/bardiche"
-				]);
-			}
 
 			items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		}

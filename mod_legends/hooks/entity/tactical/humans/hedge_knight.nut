@@ -39,7 +39,7 @@
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Offhand))
 		{
 			local weapons = [
-				"weapons/greatsword",
+				"weapons/legend_zweihander",
 				"weapons/greataxe",
 				"weapons/two_handed_hammer",
 				"weapons/two_handed_flanged_mace",	// Moved all weapons into one array because Legends requires all DLCs anyways
@@ -109,7 +109,7 @@
 		this.getSprite("miniboss").setBrush("bust_miniboss");
 		local weapons = [
 			"weapons/named/named_greataxe",
-			"weapons/named/named_greatsword",
+			"weapons/named/legend_named_zweihander",
 			"weapons/named/legend_named_flamberge",
 			"weapons/named/named_bardiche",
 			"weapons/named/named_two_handed_hammer",

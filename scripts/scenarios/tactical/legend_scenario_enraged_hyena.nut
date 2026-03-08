@@ -80,7 +80,7 @@ this.legend_scenario_enraged_hyena <- this.inherit("scripts/scenarios/tactical/s
 		items = entity.getItems();
 		items.equip(this.Const.World.Common.pickHelmet([[1, ::Legends.Helmet.Named.sallet_green_helmet]]));
 		items.equip(this.new("scripts/items/armor/lamellar_harness"));
-		items.equip(this.new("scripts/items/weapons/greatsword"));
+		items.equip(this.new("scripts/items/weapons/legend_zweihander"));
 		entity = this.spawnEntity("scripts/entity/tactical/player", 13, 13, 13, 13);
 		this.World.getPlayerRoster().add(entity);
 		entity.setName(this.getRandomPlayerName());
@@ -114,7 +114,7 @@ this.legend_scenario_enraged_hyena <- this.inherit("scripts/scenarios/tactical/s
 		items = entity.getItems();
 		items.equip(this.Const.World.Common.pickHelmet([[1, ::Legends.Helmet.Standard.mail_coif]]));
 		items.equip(this.new("scripts/items/armor/coat_of_plates"));
-		items.equip(this.new("scripts/items/weapons/greatsword"));
+		items.equip(this.new("scripts/items/weapons/legend_zweihander"));
 
 		local x = 19;
 		for (local y = 12; y <= 23; y++) {
@@ -172,10 +172,10 @@ this.legend_scenario_enraged_hyena <- this.inherit("scripts/scenarios/tactical/s
 		this.Stash.add(this.new("scripts/items/weapons/arming_sword"));
 		this.Stash.add(this.new("scripts/items/weapons/military_cleaver"));
 		this.Stash.add(this.new("scripts/items/weapons/military_cleaver"));
-		this.Stash.add(this.new("scripts/items/weapons/greatsword"));
-		this.Stash.add(this.new("scripts/items/weapons/greatsword"));
-		this.Stash.add(this.new("scripts/items/weapons/greatsword"));
-		this.Stash.add(this.new("scripts/items/weapons/greatsword"));
+		this.Stash.add(this.new("scripts/items/weapons/legend_zweihander"));
+		this.Stash.add(this.new("scripts/items/weapons/legend_zweihander"));
+		this.Stash.add(this.new("scripts/items/weapons/legend_zweihander"));
+		this.Stash.add(this.new("scripts/items/weapons/legend_zweihander"));
 		this.Stash.add(this.new("scripts/items/weapons/greataxe"));
 		this.Stash.add(this.new("scripts/items/weapons/greataxe"));
 		this.Stash.add(this.new("scripts/items/weapons/greataxe"));

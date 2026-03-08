@@ -34,7 +34,7 @@
 			"weapons/legend_battle_glaive",
 			"weapons/legend_reinforced_flail",
 			"weapons/legend_infantry_axe",
-			"weapons/legend_longsword",
+			"weapons/legend_zweihander",
 		];
 
 		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));

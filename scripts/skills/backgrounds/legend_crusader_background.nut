@@ -245,7 +245,7 @@ function onAddEquipment()
 		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
 
-		items.equip(this.new("scripts/items/weapons/legend_longsword"));
+		items.equip(this.new("scripts/items/weapons/legend_zweihander"));
 
 		items.equip(this.Const.World.Common.pickArmor([
 			[1, ::Legends.Armor.Standard.mail_hauberk],

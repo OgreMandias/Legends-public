@@ -1,7 +1,7 @@
 this.perk_legend_specialist_bodyguard <- this.inherit("scripts/skills/legend_specialist_abstract", {
 	m = {
 		SpecialistWeaponIds = [
-			"weapon.legend_longsword",
+			"weapon.longsword",
 			"weapon.legend_named_longsword",
 			"weapon.longsword",
 		],

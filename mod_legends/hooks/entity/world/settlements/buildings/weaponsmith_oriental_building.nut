@@ -131,7 +131,7 @@
 			{
 				R = 90,
 				P = 1.0,
-				S = "weapons/greatsword"
+				S = "weapons/legend_zweihander"
 			},
 			{
 				R = 90,

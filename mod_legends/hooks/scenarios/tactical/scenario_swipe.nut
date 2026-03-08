@@ -97,7 +97,7 @@
 		this.Stash.add(this.new("scripts/items/weapons/hand_axe"));
 		this.Stash.add(this.new("scripts/items/weapons/hand_axe"));
 		this.Stash.add(this.new("scripts/items/weapons/military_cleaver"));
-		this.Stash.add(this.new("scripts/items/weapons/greatsword"));
+		this.Stash.add(this.new("scripts/items/weapons/legend_zweihander"));
 		this.Stash.add(this.new("scripts/items/weapons/pike"));
 		this.Stash.add(this.new("scripts/items/weapons/billhook"));
 		this.Stash.add(this.new("scripts/items/weapons/boar_spear"));

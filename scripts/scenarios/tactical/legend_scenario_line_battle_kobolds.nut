@@ -129,7 +129,7 @@
 // 		items = entity.getItems();
 // 		items.equip(this.Const.World.Common.pickHelmet([[1, ::Legends.Helmet.Standard.mail_coif]]));
 // 		items.equip(this.new("scripts/items/armor/coat_of_plates"));
-// 		items.equip(this.new("scripts/items/weapons/greatsword"));
+// 		items.equip(this.new("scripts/items/weapons/legend_zweihander"));
 // 		entity = this.spawnEntity("scripts/entity/tactical/enemies/serpent", 5, 5, 10, 10);
 // 		entity.setFaction(this.Const.Faction.Goblins);
 // 		entity.assignRandomEquipment();
@@ -233,10 +233,10 @@
 // 		this.Stash.add(this.new("scripts/items/weapons/arming_sword"));
 // 		this.Stash.add(this.new("scripts/items/weapons/military_cleaver"));
 // 		this.Stash.add(this.new("scripts/items/weapons/military_cleaver"));
-// 		this.Stash.add(this.new("scripts/items/weapons/greatsword"));
-// 		this.Stash.add(this.new("scripts/items/weapons/greatsword"));
-// 		this.Stash.add(this.new("scripts/items/weapons/greatsword"));
-// 		this.Stash.add(this.new("scripts/items/weapons/greatsword"));
+// 		this.Stash.add(this.new("scripts/items/weapons/legend_zweihander"));
+// 		this.Stash.add(this.new("scripts/items/weapons/legend_zweihander"));
+// 		this.Stash.add(this.new("scripts/items/weapons/legend_zweihander"));
+// 		this.Stash.add(this.new("scripts/items/weapons/legend_zweihander"));
 // 		this.Stash.add(this.new("scripts/items/weapons/greataxe"));
 // 		this.Stash.add(this.new("scripts/items/weapons/greataxe"));
 // 		this.Stash.add(this.new("scripts/items/weapons/greataxe"));

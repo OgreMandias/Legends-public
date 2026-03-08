@@ -25,7 +25,7 @@
 
 		local weapons = [
 			"weapons/winged_mace",
-			"weapons/greatsword",
+			"weapons/legend_zweihander",
 			"weapons/noble_sword",
 			"weapons/bardiche",
 			"weapons/fighting_axe",

@@ -132,10 +132,10 @@ this.legend_robber_baron <- this.inherit("scripts/entity/tactical/human", {
 			if (this.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand) == null)
 			{
 				weapons.extend([
-					"weapons/greatsword",
+					"weapons/legend_zweihander",
 					"weapons/greataxe",
 					"weapons/legend_swordstaff",
-					"weapons/legend_longsword",
+					"weapons/greatsword",
 					"weapons/warbrand",
 					"weapons/legend_estoc",
 					"weapons/legend_battle_glaive"

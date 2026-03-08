@@ -191,7 +191,7 @@
 	{
 		local items = this.getContainer().getActor().getItems();
 		local r;
-		items.equip(this.new("scripts/items/weapons/greatsword"));
+		items.equip(this.new("scripts/items/weapons/legend_zweihander"));
 		items.equip(this.Const.World.Common.pickArmor([
 			[1, ::Legends.Armor.Standard.mail_hauberk],
 			[2, ::Legends.Armor.Standard.reinforced_mail_hauberk],

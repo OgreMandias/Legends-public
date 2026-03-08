@@ -35,7 +35,7 @@
 				"weapons/pike",
 				"weapons/warbrand",
 				"weapons/longsword",
-				"weapons/legend_longsword",
+				"weapons/legend_zweihander",
 				"weapons/hand_axe",
 				"weapons/fighting_spear",
 				"weapons/legend_battle_glaive",

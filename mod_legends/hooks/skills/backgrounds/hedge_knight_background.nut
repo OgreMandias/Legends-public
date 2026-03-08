@@ -266,7 +266,7 @@
 		}
 		else if (r == 1)
 		{
-			items.equip(this.new("scripts/items/weapons/greatsword"));
+			items.equip(this.new("scripts/items/weapons/legend_zweihander"));
 		}
 
 		items.equip(this.Const.World.Common.pickArmor([

@@ -124,7 +124,7 @@
 		this.getSprite("miniboss").setBrush("bust_miniboss");
 		local weapons = [
 			"weapons/named/named_axe",
-			"weapons/named/named_greatsword",
+			"weapons/named/legend_named_zweihander",
 			"weapons/named/legend_named_flamberge",
 			"weapons/named/named_mace",
 			"weapons/named/named_sword",

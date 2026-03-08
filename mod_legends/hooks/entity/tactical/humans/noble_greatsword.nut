@@ -43,12 +43,12 @@
 		}
 
 		local weapons = [
+			"weapons/legend_zweihander",
+			"weapons/legend_zweihander",
+			"weapons/legend_zweihander",
 			"weapons/greatsword",
 			"weapons/greatsword",
-			"weapons/greatsword",
-			"weapons/longsword",
-			"weapons/longsword",
-			"weapons/legend_longsword"
+			"weapons/legend_zweihander"
 		];
 
 		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
@@ -84,8 +84,8 @@
 
 		this.getSprite("miniboss").setBrush("bust_miniboss");
 		local weapons = [
-			"weapons/named/legend_named_longsword",
 			"weapons/named/named_greatsword",
+			"weapons/named/legend_named_zweihander",
 			"weapons/named/legend_named_flamberge"
 		];
 

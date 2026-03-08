@@ -70,10 +70,10 @@
 	"weapon.two_handed_hammer",
 	"weapon.spetum",
 	"weapon.pike",
-	"weapon.longsword",
+	"weapon.greatsword",
 	"weapon.longaxe",
 	"weapon.reinforced_wooden_flail",
-	"weapon.legend_longsword",
+	"weapon.longsword",
 	"weapon.hooked_blade",
 	"weapon.goedendag",
 	"weapon.bardiche"

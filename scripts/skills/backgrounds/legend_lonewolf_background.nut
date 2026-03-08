@@ -246,7 +246,7 @@ this.legend_lonewolf_background <- this.inherit("scripts/skills/backgrounds/char
 
 		// // if (r == 0)
 		// // {
-		// // 	items.equip(this.new("scripts/items/weapons/legend_longsword"));
+		// // 	items.equip(this.new("scripts/items/weapons/legend_zweihander"));
 		// // }
 		// // else if (r == 1)
 		// // {

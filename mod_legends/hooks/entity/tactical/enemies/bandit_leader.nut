@@ -88,7 +88,7 @@
 					"weapons/greatsword",
 					"weapons/greataxe",
 					"weapons/legend_swordstaff",
-					"weapons/legend_longsword",
+					"weapons/legend_zweihander",
 					"weapons/warbrand",
 					"weapons/legend_estoc",
 					"weapons/legend_battle_glaive",

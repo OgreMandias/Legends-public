@@ -90,7 +90,7 @@
 			],
 			function start( _event )
 			{
-				local item = this.new("scripts/items/weapons/legend_longsword");
+				local item = this.new("scripts/items/weapons/legend_zweihander");
 				this.World.Assets.getStash().add(item);
 				this.List.push({
 					id = 10,

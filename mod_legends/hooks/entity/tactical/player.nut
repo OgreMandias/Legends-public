@@ -1004,7 +1004,7 @@
 		}
 		else if (r == 3)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/greatsword"));
+			this.m.Items.equip(this.new("scripts/items/weapons/legend_zweihander"));
 		}
 		else if (r == 4)
 		{

@@ -107,6 +107,7 @@ Favoured Enemy - Sword Master
 #### New Weapons
 - `Rusty Warcleaver` - named cleaver with very high shield damage, will appear on Runechosen
 - `Horn Decorated Mace` - named mace, will appear on Runechosen
+- `Named Longsword` - named version of the longsword
 
 #### New Weapon Abilities
 
@@ -132,6 +133,18 @@ Favoured Enemy - Sword Master
 > 5 ap cost and requires double grip to be usable
 * `Mordhau` - batter (hammer)
 > 5 ap cost, doubles your armor damage with this skill and always deals at least 10 hp
+
+**Longsword**
+- `Slash` - unchanged
+- `Riposte` - unchanged
+- `Halfsword`
+- `Mordhau`
+
+**Greatsword**
+- `Overhead Strike` - unchanged
+- `Swing` - unchanged
+- `Halfsword`
+- `Mordhau`
 
 **Falchions**
 - `Breach` - `Slash`
@@ -161,10 +174,6 @@ Favoured Enemy - Sword Master
 * `Line Them Up`
 > 3 (4 with mastery) tile shot in a straight line, does 25% more damage
 
-### For modders:
-
-- `Knifeplay` perk has been deleted
-
 ### New recipes
 
 - new silk blueprint
@@ -182,7 +191,17 @@ Favoured Enemy - Sword Master
 
 ### For modders:
 
-Bandit Warlord renamed to Robber Baron
+- `LegendKnifeplay`, `perk_legend_knifeplay` perk has been deleted
+- Bandit Warlord renamed to Robber Baron
+> `LegendBanditWarlord` -> `LegendRobberBaron`
+> `legend_bandit_warlord` -> `legend_robber_baron`
+
+- `longsword` now refers to longsword instead of greatsword
+- `greatsword` and `named_greatsword` now refers to greatsword instead of zweihander
+- `legend_zweihander` and `legend_named_zweihander` are now the zweihander
+- `legend_named_longsword` is the newly added named longsword
+- hopefully this clears up the confusions about 2h swords with minimal confusion to the player
+
 ```
 legend_bandit_warlord.nut -> legend_robber_baron.nut
 this.Const.EntityType.LegendBanditWarlord -> this.Const.EntityType.LegendRobberBaron

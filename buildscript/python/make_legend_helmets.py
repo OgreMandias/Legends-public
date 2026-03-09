@@ -85,9 +85,9 @@ def makeBrushes(path):
                 cardinals = Templates.Cardinals
 
                 opts = dict(
-                    name="legendhelms_" + name,
-                    damaged="legendhelms_" + name + "_damaged",
-                    dead="legendhelms_" + name + "_dead",
+                    name=name,
+                    damaged=name + "_damaged",
+                    dead=name + "_dead",
                     name_path=c_name_path,
                     damaged_path=c_damaged_path,
                     dead_path=c_dead_path,
@@ -152,7 +152,7 @@ def makeBrushes(path):
                 cardinals = Templates.Cardinals
 
                 opts = dict(
-                    name="legendhelms_" + name,
+                    name=name,
                     name_path=c_name_path,
                     damaged_path=c_damaged_path,
                     dead_path=c_dead_path,
@@ -266,7 +266,7 @@ def generate_legend_helmets(base_path):
             variants=variants,
             layer=layer,
             type=d["layer"].capitalize(),
-            brush="legendhelms_" + d["name"],
+            brush=d["name"],
             icon="inventory_" + d["name"],
             impactSound=impactsound,
             invSound=invsound,

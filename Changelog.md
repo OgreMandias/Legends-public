@@ -101,6 +101,7 @@ Favoured Enemy - Sword Master
 - differentiated sounds for upgrades, composites and attachments
 - description fixes and changes
 - named items naming fixes and changes
+- hyena fur, white wolf pelt, direwolf pelt upgrades reformed into cloaks
 
 ### Weapons
 
@@ -385,6 +386,60 @@ legend_fleshcultist_tabard -> fleshcultist_tabard
 named_emperors_cloak -> cloak_emperors_named
 named_emperors_armor -> armor_emperors_named
 
+Armors defined via manual scripts:
+cloak_spider -> removed
+cloak_lindwurm (added to defs)
+cloak_stollwurm (added to defs)
+cloak_serpent (added to defs)
+cloak_basilisk (added to defs)
+cloak_hexe (standardized for defs)
+cloak_redback (added to defs)
+cloak_cursed (warlock item, added to defs, reformed into a cloak)
+armor_davkul_named (added to defs)
+pauldrons (added to defs)
+pauldrons_belt_shield (added to defs)
+pauldrons_bone_platings (added to defs)
+pauldrons_chain_and_mail (added to defs)
+pauldrons_double_mail (added to defs)
+pauldrons_gladiator_light (added to defs)
+pauldrons_gladiator_heavy (added to defs)
+pauldrons_heavy (added to defs)
+pauldrons_heraldic_plates (added to defs)
+pauldrons_joint_cover (added to defs)
+pauldrons_leather (added to defs)
+pauldrons_leather_neck (added to defs)
+pauldrons_mail_patch (added to defs)
+pauldrons_metal (added to defs)
+pauldrons_metal_plates (added to defs)
+pauldrons_named (added to defs)
+pauldrons_padding_light (added to defs)
+pauldrons_protective_runes", "min" : 1 (added to defs)
+pauldrons_skull_chain (added to defs)
+pauldrons_spiked_chain (added to defs)
+pauldrons_stag" (added to defs)
+pauldrons_strong" (added to defs)
+pauldrons_swan (added to defs)
+
+
+Old and unlayered armored scripts removed:
+legend_named_warlock_cloak
+legend_redback_cloak_upgrade
+legend_named_warlock_hood
+legend_armor_hexe_leader_cloak_upgrade
+legend_armor_redback_cloak_upgrade
+legend_lindwurm_armor
+legend_black_leather_armor
+legend_brown_coat_of_plates_armor
+legend_golden_scale_armor
+legend_green_coat_of_plates_armor
+legend_heraldic_mail_armor
+legend_named_bronze_armor
+legend_named_golden_lamellar_armor
+legend_named_noble_mail_armor
+legend_named_plated_fur_armor
+legend_named_sellswords_armor
+legend_named_skull_and_chain_armor
+
 Helmet refactors:
 basinet -> bascinet
 bronze_helm -> unused
@@ -420,7 +475,20 @@ flat_top_helm_polished -> removed / removing well-maintained version that only e
 kettle_helm_low -> kettle_helm_rusted
 kettle_helm_med -> kettle_helm 
 kettle_helm -> removed (unused)
+warlock_skull -> removed (item from defs, unused)
 fencerhat and fencer_hat -> merged into fencer_hat
+
+Helmet added via manual script:
+warlock_skull (added to defs)
+removed extra legendhelms_ prefix from scripts (legend_helmets_ still prefixed)
+
+Old unlayered helmet scripts removed:
+legend_demonalp_helmet
+legend_mountain_helmet
+legend_redback_helmet
+legend_skin_helmet
+legend_stollwurm_helmet
+legend_white_wolf_helmet
 ```
 
 Following trees were removed, refer to `z_perks_tree_enemy.nut` for replacements:

@@ -6,18 +6,26 @@ this.legend_protective_runes_upgrade <- this.inherit("scripts/items/legend_armor
 		this.m.ID = "legend_armor_upgrade.body.legend_protective_runes";
 		this.m.Type = this.Const.Items.ArmorUpgrades.Attachment;
 		this.m.Name = "Protective Runes and Sigils";
-		this.m.Description = "Protective runes and sigils written on parched skin and emitting an unsettling aura.";
-		this.m.ArmorDescription = "Protective runes and sigils written on parched skin are hefted to this armor.";
+		this.m.Description = "A set of protective runes and sigils written on parched skin and emitting an unsettling aura.";
+		this.m.ArmorDescription = "Includes a set of protective runes and sigils.";
+		this.m.Variants = [1];
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
+		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorLeatherImpact;
-		this.m.Icon = "armor_upgrades/upgrade_07.png";
-		this.m.IconLarge = this.m.Icon;
-		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_07.png";
-		this.m.OverlayIconLarge = "armor_upgrades/inventory_upgrade_07.png";
-		this.m.SpriteBack = "upgrade_07_back";
-		this.m.SpriteDamagedBack = "upgrade_07_back_damaged";
-		this.m.SpriteCorpseBack = "upgrade_07_back_dead";
 		this.m.Value = 1100;
+	}
+
+	function updateVariant()
+	{
+		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
+		this.m.SpriteBack = "pauldrons_protective_runes_" + variant + "";
+		this.m.SpriteDamagedBack = "pauldrons_protective_runes_" + variant + "_damaged";
+		this.m.SpriteCorpseBack = "pauldrons_protective_runes_" + variant + "_dead";
+		this.m.Icon = "legend_armor/upgrades/pauldrons_protective_runes_" + variant + "_upgrade.png";
+		this.m.IconLarge = this.m.Icon;
+		this.m.OverlayIcon = "legend_armor/icon_pauldrons_protective_runes_" + variant + ".png";
+		this.m.OverlayIconLarge = "legend_armor/inventory_pauldrons_protective_runes_"  + variant + ".png";
 	}
 
 	function getTooltip()

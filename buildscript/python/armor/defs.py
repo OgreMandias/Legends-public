@@ -2,21 +2,63 @@ Names = "::Const.Strings.LegendArmorLayers"
 
 
 class Defs:
-    brush_only_layers = [ #sounds aren't actually used here, added only for readability
-        #{"name": "runed", "layer": "rune"},
-        {"name": "cloak_hexe", "min" : 1, "max" : 1, "layer": "cloak", "impactSound" : "leather", "invSound" : "cloth"},
-        {"name": "cloak_spider", "min" : 1, "max" : 1, "layer": "cloak", "impactSound" : "leather", "invSound" : "cloth"},
-        {"name" :"cloak_emperors_named", "min" : 1, "max" : 1, "layer" : "cloak", "impactSound" : "leather", "invSound" : "cloth"},
+    brush_only_layers = [ #sounds unused, only for readability
+        ### Plate
+        {"name" :"armor_davkul_named", "min" : 1, "max" : 1, "layer" : "plate"}, # custom sounds
         {"name" :"armor_emperors_named", "min" : 1, "max" : 2, "layer" : "plate", "impactSound" : "plate", "invSound" : "plate"},
-        {"name" :"wurm_hauberk", "min" : 1, "max" : 1, "layer" : "chain", "impactSound" : "chain", "invSound" : "chain"},
-        {"name": "cloak_rich", "min" : 1, "max" : 6, "layer": "cloak", "impactSound" : "leather", "invSound" : "cloth"},
-        {"name": "tabard_named", "min" : 1, "max" : 26, "layer": "tabard", "impactSound" : "leather", "invSound" : "cloth"},
+        #{"name": "armor_ijirok_named", "min" : 1, "max" : 1, "layer": "plate", "impactSound" : "plate", "invSound" : "plate"},
         {"name": "mountain_armor", "min" : 1, "max" : 2, "layer": "plate", "impactSound" : "plate", "invSound" : "plate"},
         {"name": "skin_armor", "min" : 1, "max" : 2, "layer": "plate", "impactSound" : "leather", "invSound" : "leather"},
-        {"name": "wild_scale", "min" : 1, "max" : 1, "layer" : "chain", "impactSound" : "chain", "invSound" : "chain"}
+        {"name": "wild_scale", "min" : 1, "max" : 1, "layer" : "chain", "impactSound" : "chain", "invSound" : "chain"},
+        {"name" :"wurm_hauberk", "min" : 1, "max" : 1, "layer" : "chain", "impactSound" : "chain", "invSound" : "chain"},
+        ### Tabard
+        {"name": "tabard_named", "min" : 1, "max" : 26, "layer": "tabard", "impactSound" : "leather", "invSound" : "cloth"},
+        ### Cloak
+        {"name": "cloak_basilisk", "min" : 1, "max" : 1, "layer": "cloak", "impactSound" : "leather", "invSound" : "cloth"},
+        {"name": "cloak_cursed", "min" : 1, "max" : 1, "layer": "cloak", "impactSound" : "leather", "invSound" : "cloth"},
+        {"name" :"cloak_emperors_named", "min" : 1, "max" : 1, "layer" : "cloak", "impactSound" : "leather", "invSound" : "cloth"},
+        #{"name": "cloak_fur_hyena", "min" : 1, "max" : 1, "layer": "cloak", "impactSound" : "leather", "invSound" : "cloth"},
+        #{"name": "cloak_fur_unhold", "min" : 1, "max" : 1, "layer": "cloak", "impactSound" : "leather", "invSound" : "cloth"},
+        {"name": "cloak_hexe", "min" : 1, "max" : 1, "layer": "cloak", "impactSound" : "leather", "invSound" : "cloth"},
+        {"name": "cloak_lindwurm", "min" : 1, "max" : 1, "layer": "cloak", "impactSound" : "leather", "invSound" : "cloth"},
+        #{"name": "cloak_pelt_wolf_dire", "min" : 1, "max" : 1, "layer": "cloak", "impactSound" : "leather", "invSound" : "cloth"},
+        #{"name": "cloak_pelt_wolf_white", "min" : 1, "max" : 1, "layer": "cloak", "impactSound" : "leather", "invSound" : "cloth"},
+        {"name": "cloak_redback", "min" : 1, "max" : 1, "layer": "cloak", "impactSound" : "leather", "invSound" : "cloth"},
+        {"name": "cloak_serpent", "min" : 1, "max" : 1, "layer": "cloak", "impactSound" : "leather", "invSound" : "cloth"},
+        {"name": "cloak_stollwurm", "min" : 1, "max" : 2, "layer": "cloak", "impactSound" : "leather", "invSound" : "cloth"},
+        {"name": "cloak_rich", "min" : 1, "max" : 6, "layer": "cloak", "impactSound" : "leather", "invSound" : "cloth"},
+        ### Pauldrons
+        #{"name": "horn_plate", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "plate", "invSound" : "plate"},
+        {"name": "pauldrons", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "plate", "invSound" : "plate"},
+        #{"name": "pauldrons_barbarian_horn", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "bone", "invSound" : "bone"},
+        {"name": "pauldrons_belt_shield", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "leather", "invSound" : "leather"},
+        {"name": "pauldrons_bone_platings", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "bone", "invSound" : "bone"},
+        {"name": "pauldrons_chain_and_mail", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "chain", "invSound" : "chain"},
+        {"name": "pauldrons_double_mail", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "chain", "invSound" : "chain"},
+        {"name": "pauldrons_gladiator_light", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "leather", "invSound" : "cloth"},
+        {"name": "pauldrons_gladiator_heavy", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "plate", "invSound" : "plate"},
+        {"name": "pauldrons_heavy", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "plate", "invSound" : "plate"},
+        {"name": "pauldrons_heraldic_plates", "min" : 1, "max" : 2, "layer": "attachment", "impactSound" : "plate", "invSound" : "plate"},
+        {"name": "pauldrons_joint_cover", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "plate", "invSound" : "plate"},
+        {"name": "pauldrons_leather", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "leather", "invSound" : "leather"},
+        {"name": "pauldrons_leather_neck", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "leather", "invSound" : "leather"},
+        {"name": "pauldrons_mail_patch", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "chain", "invSound" : "chain"},
+        {"name": "pauldrons_metal", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "plate", "invSound" : "plate"},
+        {"name": "pauldrons_metal_plates", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "plate", "invSound" : "plate"},
+        {"name": "pauldrons_named", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "plate", "invSound" : "plate"},
+        #{"name": "pauldrons_padding_fur", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "leather", "invSound" : "cloth"},
+        {"name": "pauldrons_padding_light", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "leather", "invSound" : "cloth"},
+        {"name": "pauldrons_protective_runes", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "leather", "invSound" : "leather"},
+        {"name": "pauldrons_skull_chain", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "chain", "invSound" : "chain"},
+        {"name": "pauldrons_spiked_chain", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "chain", "invSound" : "chain"},
+        {"name": "pauldrons_stag", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "plate", "invSound" : "plate"},
+        {"name": "pauldrons_strong", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "plate", "invSound" : "plate"},
+        {"name": "pauldrons_swan", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "plate", "invSound" : "plate"},
+        #{"name": "runed", "layer": "rune"}
     ]
 
     layers = [
+### Cloth
 {"name": "ancient_cloth",                          "layer": "cloth", "min": 1, "max": 4, "value" : 20, "con" : 30, "stam" : -5, "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Ancient Cloth",
  "desc" :  "An ancient cloth wrap, heavy and offering little protection.",
@@ -702,8 +744,8 @@ class Defs:
 },
 {"name": "diviner_jacket",           "itemType" : "this.Const.Items.ItemType.Cultist", "layer": "plate", "min": 1, "max": 2, "value" : 3000, "con" : 40, "stam" : -3, "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Diviner's Jacket",
- "desc" :  "An embellished jacket previously worn by the Diviner. You\'d expect the stench of rotting flesh to cling to it, but it remains pristine",
- "adesc" : "Includes an embellished jacket previously worn by the Diviner. You\'d expect the stench of rotting flesh to cling to it, but it remains pristine",
+ "desc" :  "An embellished jacket previously worn by the Diviner. You\'d expect the stench of rotting flesh to cling to it, but it remains pristine.",
+ "adesc" : "Includes an embellished jacket.",
  "named" : True, "rminStam" : 2, "rmaxStam": 4, "rminCond" : 35, "rmaxCond" : 60, "names" : ["Heretic\'s Wrap", "Beholder\'s vestments", "Jacket of the Augur", "Empyrian Coat", "Attestor\'s Skin", "Goreflesh Mantle"]
 },
 {"name": "fleshcultist_jacket",           "itemType" : "this.Const.Items.ItemType.Cultist", "layer": "plate", "min": 1, "max": 2, "value" : 350, "con" : 30, "stam" : -3, "impactSound" : "leather", "invSound" : "cloth",

@@ -373,14 +373,6 @@
 	<sprite id="upgrade_white_wolf_front_damaged" offsetY="35" ic="FF2A313D" width="140" height="248" img="entity\armor_upgrades\upgrade_white_wolf_front_damaged.png" left="-70" right="0" top="-56" bottom="18" />
 	<sprite id="upgrade_white_wolf_front_dead" offsetX="6" offsetY="10" f="64EF" ic="FF2A313E" width="191" height="185" img="entity\armor_upgrades\upgrade_white_wolf_front_dead.png" left="-14" right="60" top="-76" bottom="2" />
 
-	<sprite id="upgrade_stollwurm_back_01_dead" offsetX="6" offsetY="10" f="64FD" ic="FF25424E" width="191" height="185" img="entity\armor_upgrades\upgrade_stollwurm_back_01_dead.png" left="-52" right="36" top="-52" bottom="8" />
-	<sprite id="upgrade_stollwurm_back_01" offsetY="35" ic="FF274752" width="140" height="248" img="entity\armor_upgrades\upgrade_stollwurm_back_01.png" left="-42" right="50" top="-51" bottom="13" />
-	<sprite id="upgrade_stollwurm_back_01_damaged" offsetY="35" ic="FF25424E" width="140" height="248" img="entity\armor_upgrades\upgrade_stollwurm_back_01_damaged.png" left="-42" right="50" top="-51" bottom="13" />
-
-	<sprite id="upgrade_stollwurm_back_02_dead" offsetX="6" offsetY="10" f="64FD" ic="FF25424E" width="191" height="185" img="entity\armor_upgrades\upgrade_stollwurm_back_02_dead.png" left="-52" right="36" top="-52" bottom="8" />
-	<sprite id="upgrade_stollwurm_back_02" offsetY="35" ic="FF274752" width="140" height="248" img="entity\armor_upgrades\upgrade_stollwurm_back_02.png" left="-42" right="50" top="-51" bottom="13" />
-	<sprite id="upgrade_stollwurm_back_02_damaged" offsetY="35" ic="FF25424E" width="140" height="248" img="entity\armor_upgrades\upgrade_stollwurm_back_02_damaged.png" left="-42" right="50" top="-51" bottom="13" />
-
 	<sprite id="bust_cat_01_body_01" offsetY="25" ic="FF242B3A" width="104" height="142" img="entity\misc\bust_cat_01_body_01.png" left="-31" right="29" top="-38" bottom="12" />
 	<sprite id="bust_cat_01_injured" offsetY="25" ic="FF111134" width="104" height="142" img="entity\misc\bust_cat_01_injured.png" left="-22" right="30" top="-31" bottom="27" />
 	<sprite id="bust_cat_01_body_01_dead" offsetY="8" ic="FF22293E" img="entity\misc\bust_cat_01_body_01_dead.png" left="-58" right="59" />
@@ -405,17 +397,10 @@
 
 	<sprite id="basilisk_trophy" offsetY="35" ic="FF374C5A" width="140" height="248" img="entity\details\basilisk_trophy.png" left="-26" right="34" top="-49" bottom="3" />
 	<sprite id="basilisk_trophy_dead" offsetX="6" offsetY="10" f="64FD" ic="FF384D5B" width="191" height="185" img="entity\details\basilisk_trophy_dead.png" left="-36" right="16" top="-47" bottom="17" />
-	<sprite id="upgrade_basilisk_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF25424E" width="191" height="185" img="entity\armor_upgrades\upgrade_basilisk_back_dead.png" left="-52" right="36" top="-52" bottom="8" />
-	<sprite id="upgrade_basilisk_back" offsetY="35" ic="FF274752" width="140" height="248" img="entity\armor_upgrades\upgrade_basilisk_back.png" left="-42" right="50" top="-51" bottom="13" />
-	<sprite id="upgrade_basilisk_back_damaged" offsetY="35" ic="FF25424E" width="140" height="248" img="entity\armor_upgrades\upgrade_basilisk_back_damaged.png" left="-42" right="50" top="-51" bottom="13" />
 
 	<sprite id="cloak_white" offsetY="35" ic="FF2F424E" width="140" height="248" img="entity\armor_upgrades\cloak_white.png" left="-45" right="63" top="-95" bottom="7" />
 	<sprite id="cloak_white_damaged" offsetY="35" ic="FF2F414E" width="140" height="248" img="entity\armor_upgrades\cloak_white_damaged.png" left="-45" right="63" top="-95" bottom="7" />
 	<sprite id="cloak_white_dead" offsetX="6" offsetY="10" f="64FD" ic="FF2A3A45" width="191" height="185" img="entity\armor_upgrades\cloak_white_dead.png" left="-54" right="64" top="-53" bottom="49" />
-
-	<sprite id="cloak_black" offsetY="35" ic="FF2F424E" width="140" height="248" img="entity\armor_upgrades\cloak_black.png" left="-45" right="63" top="-95" bottom="7" />
-	<sprite id="cloak_black_damaged" offsetY="35" ic="FF2F414E" width="140" height="248" img="entity\armor_upgrades\cloak_black_damaged.png" left="-45" right="63" top="-95" bottom="7" />
-	<sprite id="cloak_black_dead" offsetX="6" offsetY="10" f="64FD" ic="FF2A3A45" width="191" height="185" img="entity\armor_upgrades\cloak_black_dead.png" left="-54" right="64" top="-53" bottom="49" />
 
 	<sprite id="cloak_blue" offsetY="35" ic="FF2F424E" width="140" height="248" img="entity\armor_upgrades\cloak_blue.png" left="-45" right="63" top="-95" bottom="7" />
 	<sprite id="cloak_blue_damaged" offsetY="35" ic="FF2F414E" width="140" height="248" img="entity\armor_upgrades\cloak_blue_damaged.png" left="-45" right="63" top="-95" bottom="7" />
@@ -772,44 +757,4 @@
 	<sprite id="bust_miniboss_trader" offsetY="35" ic="FF4F647A" width="140" height="248" img="entity\misc\bust_miniboss_trader.png" left="-48" right="50" top="-67" bottom="-25" />
 	<sprite id="bust_miniboss_undead" offsetY="35" ic="FF4F647A" width="140" height="248" img="entity\misc\bust_miniboss_undead.png" left="-48" right="50" top="-67" bottom="-25" />
 	<sprite id="bust_miniboss_assassin" offsetY="35" ic="FF4F647A" width="140" height="248" img="entity\misc\bust_miniboss_assassin.png" left="-48" right="50" top="-67" bottom="-25" />
-
-	<sprite id="upgrade_chain_and_mail" offsetY="35" ic="FF242D3B" width="104" height="142" img="entity\armor_upgrades\upgrade_chain_and_mail.png" left="-44" right="50" top="-53" bottom="13" />
-	<sprite id="upgrade_chain_and_mail_damaged" offsetY="35" ic="FF242D3F" width="104" height="142" img="entity\armor_upgrades\upgrade_chain_and_mail_damaged.png" left="-44" right="50" top="-53" bottom="13" />
-	<sprite id="upgrade_chain_and_mail_dead" offsetX="6" offsetY="10" f="64FD" ic="FF242D43" width="131" height="125" img="entity\armor_upgrades\upgrade_chain_and_mail_dead.png" left="-57" right="59" top="-53" bottom="55" />
-	<sprite id="upgrade_skull_and_chain" offsetY="35" ic="FF242D3B" width="104" height="142" img="entity\armor_upgrades\upgrade_skull_and_chain.png" left="-44" right="50" top="-53" bottom="13" />
-	<sprite id="upgrade_skull_and_chain_damaged" offsetY="35" ic="FF242D3F" width="104" height="142" img="entity\armor_upgrades\upgrade_skull_and_chain_damaged.png" left="-44" right="50" top="-53" bottom="13" />
-	<sprite id="upgrade_skull_and_chain_dead" offsetX="6" offsetY="10" f="64FD" ic="FF242D43" width="131" height="125" img="entity\armor_upgrades\upgrade_skull_and_chain_dead.png" left="-57" right="59" top="-53" bottom="55" />
-	<sprite id="upgrade_spiked_collar" offsetY="35" ic="FF242D3B" width="104" height="142" img="entity\armor_upgrades\upgrade_spiked_chain_collar.png" left="-44" right="50" top="-53" bottom="13" />
-	<sprite id="upgrade_spiked_collar_damaged" offsetY="35" ic="FF242D3F" width="104" height="142" img="entity\armor_upgrades\upgrade_spiked_chain_collar_damaged.png" left="-44" right="50" top="-53" bottom="13" />
-	<sprite id="upgrade_spiked_collar_dead" offsetX="6" offsetY="10" f="64FD" ic="FF242D43" width="131" height="125" img="entity\armor_upgrades\upgrade_spiked_chain_collar_dead.png" left="-57" right="59" top="-53" bottom="55" />
-	<sprite id="upgrade_belt_and_shield" offsetY="35" ic="FF242D3B" width="104" height="142" img="entity\armor_upgrades\upgrade_belt_and_shield.png" left="-44" right="50" top="-53" bottom="13" />
-	<sprite id="upgrade_belt_and_shield_damaged" offsetY="35" ic="FF242D3F" width="104" height="142" img="entity\armor_upgrades\upgrade_belt_and_shield_damaged.png" left="-44" right="50" top="-53" bottom="13" />
-	<sprite id="upgrade_belt_and_shield_dead" offsetX="6" offsetY="10" f="64FD" ic="FF242D43" width="131" height="125" img="entity\armor_upgrades\upgrade_belt_and_shield_dead.png" left="-57" right="59" top="-53" bottom="55" />
-
-	<sprite id="upgrade_pauldrons" offsetY="35" ic="FF242D3B" width="104" height="142" img="entity\armor_upgrades\pauldrons_01.png" left="-44" right="50" top="-53" bottom="13" />
-	<sprite id="upgrade_pauldrons_damaged" offsetY="35" ic="FF242D3F" width="104" height="142" img="entity\armor_upgrades\pauldrons_01_damaged.png" left="-44" right="50" top="-53" bottom="13" />
-	<sprite id="upgrade_pauldrons_dead" offsetX="6" offsetY="10" f="64FD" ic="FF242D43" width="131" height="125" img="entity\armor_upgrades\pauldrons_01_dead.png" left="-57" right="59" top="-53" bottom="55" />
-	<sprite id="upgrade_pauldrons_strong" offsetY="35" ic="FF242D3B" width="104" height="142" img="entity\armor_upgrades\pauldrons_strong_01.png" left="-44" right="50" top="-53" bottom="13" />
-	<sprite id="upgrade_pauldrons_strong_damaged" offsetY="35" ic="FF242D3F" width="104" height="142" img="entity\armor_upgrades\pauldrons_strong_01_damaged.png" left="-44" right="50" top="-53" bottom="13" />
-	<sprite id="upgrade_pauldrons_strong_dead" offsetX="6" offsetY="10" f="64FD" ic="FF242D43" width="131" height="125" img="entity\armor_upgrades\pauldrons_strong_01_dead.png" left="-57" right="59" top="-53" bottom="55" />
-	<sprite id="upgrade_pauldrons_named" offsetY="35" ic="FF242D3B" width="104" height="142" img="entity\armor_upgrades\pauldrons_named_01.png" left="-44" right="50" top="-53" bottom="13" />
-	<sprite id="upgrade_pauldrons_named_damaged" offsetY="35" ic="FF242D3F" width="104" height="142" img="entity\armor_upgrades\pauldrons_named_01_damaged.png" left="-44" right="50" top="-53" bottom="13" />
-	<sprite id="upgrade_pauldrons_named_dead" offsetX="6" offsetY="10" f="64FD" ic="FF242D43" width="131" height="125" img="entity\armor_upgrades\pauldrons_named_01_dead.png" left="-57" right="59" top="-53" bottom="55" />
-	<sprite id="upgrade_pauldrons_heavy" offsetY="35" ic="FF242D3B" width="104" height="142" img="entity\armor_upgrades\pauldrons_heavy_01.png" left="-44" right="50" top="-53" bottom="13" />
-	<sprite id="upgrade_pauldrons_heavy_damaged" offsetY="35" ic="FF242D3F" width="104" height="142" img="entity\armor_upgrades\pauldrons_heavy_01_damaged.png" left="-44" right="50" top="-53" bottom="13" />
-	<sprite id="upgrade_pauldrons_heavy_dead" offsetX="6" offsetY="10" f="64FD" ic="FF242D43" width="131" height="125" img="entity\armor_upgrades\pauldrons_heavy_01_dead.png" left="-57" right="59" top="-53" bottom="55" />
-	<sprite id="upgrade_pauldrons_stag" offsetY="35" ic="FF242D3B" width="104" height="142" img="entity\armor_upgrades\pauldrons_stag_01.png" left="-44" right="50" top="-53" bottom="13" />
-	<sprite id="upgrade_pauldrons_stag_damaged" offsetY="35" ic="FF242D3F" width="104" height="142" img="entity\armor_upgrades\pauldrons_stag_01_damaged.png" left="-44" right="50" top="-53" bottom="13" />
-	<sprite id="upgrade_pauldrons_stag_dead" offsetX="6" offsetY="10" f="64FD" ic="FF242D43" width="131" height="125" img="entity\armor_upgrades\pauldrons_stag_01_dead.png" left="-57" right="59" top="-53" bottom="55" />
-	<sprite id="upgrade_pauldrons_swan" offsetY="35" ic="FF242D3B" width="104" height="142" img="entity\armor_upgrades\pauldrons_swan_01.png" left="-44" right="50" top="-53" bottom="13" />
-	<sprite id="upgrade_pauldrons_swan_damaged" offsetY="35" ic="FF242D3F" width="104" height="142" img="entity\armor_upgrades\pauldrons_swan_01_damaged.png" left="-44" right="50" top="-53" bottom="13" />
-	<sprite id="upgrade_pauldrons_swan_dead" offsetX="6" offsetY="10" f="64FD" ic="FF242D43" width="131" height="125" img="entity\armor_upgrades\pauldrons_swan_01_dead.png" left="-57" right="59" top="-53" bottom="55" />
-
-	<sprite id="upgrade_heraldic_plates_01" offsetY="35" ic="FF242D3B" width="104" height="142" img="entity\armor_upgrades\upgrade_heraldic_plates_01.png" left="-44" right="50" top="-53" bottom="13" />
-	<sprite id="upgrade_heraldic_plates_01_damaged" offsetY="35" ic="FF242D3F" width="104" height="142" img="entity\armor_upgrades\upgrade_heraldic_plates_01_damaged.png" left="-44" right="50" top="-53" bottom="13" />
-	<sprite id="upgrade_heraldic_plates_01_dead" offsetX="6" offsetY="10" f="64FD" ic="FF242D43" width="131" height="125" img="entity\armor_upgrades\upgrade_heraldic_plates_01_dead.png" left="-57" right="59" top="-53" bottom="55" />
-
-	<sprite id="upgrade_heraldic_plates_02" offsetY="35" ic="FF242D3B" width="104" height="142" img="entity\armor_upgrades\upgrade_heraldic_plates_02.png" left="-44" right="50" top="-53" bottom="13" />
-	<sprite id="upgrade_heraldic_plates_02_damaged" offsetY="35" ic="FF242D3F" width="104" height="142" img="entity\armor_upgrades\upgrade_heraldic_plates_02_damaged.png" left="-44" right="50" top="-53" bottom="13" />
-	<sprite id="upgrade_heraldic_plates_02_dead" offsetX="6" offsetY="10" f="64FD" ic="FF242D43" width="131" height="125" img="entity\armor_upgrades\upgrade_heraldic_plates_02_dead.png" left="-57" right="59" top="-53" bottom="55" />
 </brush>

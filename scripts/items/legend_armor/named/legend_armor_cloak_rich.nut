@@ -5,32 +5,14 @@ this.legend_armor_cloak_rich <- this.inherit("scripts/items/legend_armor/legend_
 	function create()
 	{
 		this.legend_named_armor_upgrade.create();
-		this.m.Type = this.Const.Items.ArmorUpgrades.Cloak;
 		this.m.ID = "legend_armor.cloak_rich";
+		this.m.Type = this.Const.Items.ArmorUpgrades.Cloak;
 		this.m.Name = "";
-		this.m.NameList = [
-			"Majesty",
-			"Splendor",
-			"Pageantry",
-			"Swank",
-			"Nobility",
-			"Elegance",
-			"Opulence",
-			"Excess",
-			"Resplendence",
-			"Glory"
-		];
 		this.m.Description = "An embroidered silk cloak made with the finest materials affordable only for those in positions of great power.";
 		this.m.ArmorDescription = "Includes an embroidered silk cloak.";
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.InventorySound = this.Const.Sound.ClothEquip;
-		this.m.Variants = [
-			1,
-			2,
-			3,
-			4,
-			5
-		];
+		this.m.Variants = [1,2,3,4,5];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.Value = 10000;
@@ -38,6 +20,7 @@ this.legend_armor_cloak_rich <- this.inherit("scripts/items/legend_armor/legend_
 		this.m.ConditionMax = 35;
 		this.m.StaminaModifier = -2;
 		this.randomizeValues();
+		this.m.NameList = ["Majesty","Splendor","Pageantry","Swank","Nobility","Elegance","Opulence","Excess","Resplendence","Glory"];
 	}
 
 	function randomizeValues()
@@ -49,7 +32,7 @@ this.legend_armor_cloak_rich <- this.inherit("scripts/items/legend_armor/legend_
 
 	function updateVariant()
 	{
-		local variant = this.m.Variant < 10 ? "0" + this.m.Variant : this.m.Variant;
+		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
 		this.m.SpriteBack = "cloak_rich_" + variant + "";
 		this.m.SpriteDamagedBack = "cloak_rich_" + variant + "_damaged";
 		this.m.SpriteCorpseBack = "cloak_rich_" + variant + "_dead";

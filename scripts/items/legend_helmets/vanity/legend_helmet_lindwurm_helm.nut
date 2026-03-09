@@ -33,6 +33,18 @@ this.legend_helmet_lindwurm_helm <- this.inherit("scripts/items/legend_helmets/l
 		this.m.HideBeard = false;
 	}
 
+	function updateVariant()
+	{
+		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
+		this.m.Sprite = "lindwurm_helm_" + variant;
+		this.m.SpriteDamaged = "lindwurm_helm_" + variant + "_damaged";
+		this.m.SpriteCorpse = "lindwurm_helm_" + variant + "_dead";
+		this.m.Icon = "legend_helmets/inventory_lindwurm_helm_" + variant + ".png";
+		this.m.IconLarge = this.m.Icon;
+		this.m.OverlayIcon = this.m.Icon;
+		this.m.OverlayIconLarge = this.m.OverlayIcon;
+	}
+
 	function getTooltip()
 	{
 		local result = this.legend_helmet_upgrade.getTooltip();
@@ -69,17 +81,5 @@ this.legend_helmet_lindwurm_helm <- this.inherit("scripts/items/legend_helmets/l
 		_properties.IsImmuneToKnockBackAndGrab = true;
 		_properties.FatigueReceivedPerHitMult *= 0.01;
 		_properties.IsImmuneToSurrounding = true;
-	}
-
-	function updateVariant()
-	{
-		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
-		this.m.Sprite = "legendhelms_lindwurm_helm" + "_" + variant;
-		this.m.SpriteDamaged = "legendhelms_lindwurm_helm" + "_" + variant + "_damaged";
-		this.m.SpriteCorpse = "legendhelms_lindwurm_helm" + "_" + variant + "_dead";
-		this.m.Icon = "legend_helmets/inventory_lindwurm_helm" + "_" + variant + ".png";
-		this.m.IconLarge = this.m.Icon;
-		this.m.OverlayIcon = this.m.Icon;
-		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}
 });

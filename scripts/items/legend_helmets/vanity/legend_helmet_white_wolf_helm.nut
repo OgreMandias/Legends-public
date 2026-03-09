@@ -6,18 +6,9 @@ this.legend_helmet_white_wolf_helm <- this.inherit("scripts/items/legend_helmets
 	function create()
 	{
 		this.legend_helmet_upgrade.create();
-		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_white_wolf_helm";
+		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.Name = "White Wolf Helm";
-		// this.m.NameList = [
-		// 	"Crown of the king of beasts",
-		// 	"Helmet of the White Wolf",
-		// 	"Wulfserker Coif",
-		// 	"Wolf Kings Helm",
-		// 	"White Wolf Crown",
-		// 	"Predator Crown"
-		// ];
-		// this.m.Name = this.m.NameList[this.Math.rand(0, this.m.NameList.len())];
 		this.m.Description = "A fur covering fashioned from of a dangerous beast. It serves as a grim trophy that unnerves adversaries.";
 		this.m.ArmorDescription = "Includes a heavy pelt of white fur.";
 		this.m.Variants = [1, 2];
@@ -33,6 +24,20 @@ this.legend_helmet_white_wolf_helm <- this.inherit("scripts/items/legend_helmets
 		this.m.Lower = false;
 		this.m.HideHair = true;
 		this.m.HideBeard = false;
+		// this.m.NameList = ["Crown of the King of Beasts","Helmet of the White Wolf","Wulfserker Coif","Wolf Kings Helm","White Wolf Crown","Predator Crown"];
+		// this.m.Name = this.m.NameList[this.Math.rand(0, this.m.NameList.len())];
+	}
+
+	function updateVariant()
+	{
+		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
+		this.m.Sprite = "white_wolf_helm_" + variant;
+		this.m.SpriteDamaged = "white_wolf_helm_" + variant + "_damaged";
+		this.m.SpriteCorpse = "white_wolf_helm_" + variant + "_dead";
+		this.m.Icon = "legend_helmets/inventory_white_wolf_helm_" + variant + ".png";
+		this.m.IconLarge = this.m.Icon;
+		this.m.OverlayIcon = this.m.Icon;
+		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}
 
 	function getTooltip()
@@ -57,17 +62,5 @@ this.legend_helmet_white_wolf_helm <- this.inherit("scripts/items/legend_helmets
 	{
 		this.legend_helmet_upgrade.onUpdateProperties(_properties);
 		_properties.Threat += this.m.ThreatBonus;
-	}
-
-	function updateVariant()
-	{
-		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
-		this.m.Sprite = "legendhelms_white_wolf_helm" + "_" + variant;
-		this.m.SpriteDamaged = "legendhelms_white_wolf_helm" + "_" + variant + "_damaged";
-		this.m.SpriteCorpse = "legendhelms_white_wolf_helm" + "_" + variant + "_dead";
-		this.m.Icon = "legend_helmets/inventory_white_wolf_helm" + "_" + variant + ".png";
-		this.m.IconLarge = this.m.Icon;
-		this.m.OverlayIcon = this.m.Icon;
-		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}
 });

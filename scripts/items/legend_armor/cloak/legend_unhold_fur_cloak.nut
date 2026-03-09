@@ -7,9 +7,11 @@ this.legend_unhold_fur_cloak <- this.inherit("scripts/items/legend_armor/legend_
 		this.m.Type = this.Const.Items.ArmorUpgrades.Cloak;
 		this.m.Name = "Unhold Fur Cloak";
 		this.m.Description = "A thick cloak made out of a Frost Unhold\'s majestic white fur. Can be worn atop any armor to make the wearer more resilient against ranged weapons.";
-		this.m.ArmorDescription = "A cloak of thick white fur has been attached to this armor to make it more resilient against ranged weapons.";
+		this.m.ArmorDescription = "Includes a cloak of thick white fur.";
 		this.m.Icon = "armor_upgrades/upgrade_02.png";
 		this.m.IconLarge = this.m.Icon;
+		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
+		this.m.InventorySound = this.Const.Sound.ClothEquip;
 		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_02.png";
 		this.m.OverlayIconLarge = "armor_upgrades/inventory_upgrade_02.png";
 		this.m.SpriteFront = "upgrade_02_front";

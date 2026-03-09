@@ -3,17 +3,24 @@ Names = "::Const.Strings.LegendHelmetLayers"
 
 class Defs:
     brush_only_layers = [
+        ### Helm
+        #{"name": "helm_emperor_named", "min" : 1, "max" : 1, "layer": "helm", "impactSound" : "plate", "invSound" : "plate"},
+        #{"name": "helm_ijirok_named", "min" : 1, "max" : 1, "layer": "helm", "impactSound" : "plate", "invSound" : "plate"},
+        {"name": "wild_helmet", "min" : 1, "max" : 4, "layer": "helm", "impactSound" : "chain", "invSound" : "chain"},
+        ### Top
+        {"name": "warlock_skull", "min" : 1, "max" : 3, "layer": "top", "impactSound" : "bone", "invSound" : "bone"},
+        ### Vanity
+        {"name": "demon_alp_helm", "min" : 1, "max" : 1, "layer": "vanity", "impactSound" : "leather", "invSound" : "cloth"},
         {"name": "hunter_cap", "min" : 1, "max" : 17, "layer": "vanity", "impactSound" : "leather", "invSound" : "cloth"},
-        {"name": "pimp_hat", "min" : 1, "max" : 2, "layer": "vanity", "impactSound" : "leather", "invSound" : "cloth"},
         {"name": "jester_hat", "min" : 1, "max" : 66, "layer": "vanity", "impactSound" : "leather", "invSound" : "cloth"},
+        {"name": "lindwurm_helm", "min" : 1, "max" : 1, "layer": "vanity", "impactSound" : "leather", "invSound" : "leather"},
+        {"name": "mountain_helm", "min" : 1, "max" : 2, "layer": "vanity", "impactSound" : "plate", "invSound" : "plate"},
+        {"name": "nach_helm", "min" : 1, "max" : 1, "layer": "vanity", "impactSound" : "leather", "invSound" : "cloth"},
+        {"name": "pimp_hat", "min" : 1, "max" : 2, "layer": "vanity", "impactSound" : "leather", "invSound" : "cloth"},
+        {"name": "redback_helm", "min" : 1, "max" : 1, "layer": "vanity", "impactSound" : "leather", "invSound" : "cloth"},
+        {"name": "warlock_hood", "min" : 1, "max" : 5, "layer": "top", "impactSound" : "leather", "invSound" : "cloth"},
         {"name": "witchhunter_helm", "min" : 1, "max" : 8, "layer" : "vanity", "impactSound" : "leather", "invSound" : "cloth"},
         {"name": "white_wolf_helm", "min" : 1, "max" : 2, "layer": "vanity", "impactSound" : "leather", "invSound" : "leather"},
-        {"name": "lindwurm_helm", "min" : 1, "max" : 1, "layer": "vanity", "impactSound" : "leather", "invSound" : "leather"},
-        {"name": "redback_helm", "min" : 1, "max" : 1, "layer": "vanity", "impactSound" : "leather", "invSound" : "cloth"},
-        {"name": "nach_helm", "min" : 1, "max" : 1, "layer": "vanity", "impactSound" : "leather", "invSound" : "cloth"},
-        {"name": "mountain_helm", "min" : 1, "max" : 2, "layer": "vanity", "impactSound" : "plate", "invSound" : "plate"},
-        {"name": "demon_alp_helm", "min" : 1, "max" : 1, "layer": "vanity", "impactSound" : "leather", "invSound" : "cloth"},
-        {"name": "wild_helmet", "min" : 1, "max" : 4, "layer": "helm", "impactSound" : "leather", "invSound" : "cloth"}
     ]
 
     layers = [
@@ -112,7 +119,7 @@ class Defs:
  "desc" :  "A mail aventail that extends from below the eyeline to cover the neck and lower face.",
 "adesc" : "Includes a mail aventail."
  },
-{"name" : "aventail_named"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 1500, "con" : 60, "stam" : -3, "vis" : 0, "hair" : "false", "beard" : "true", "impactSound" : "chain", "invSound" : "chain", "named" : True, "rmaxViz" : 0, "rminViz" : 0, "rmaxStam" : 2, "rminStam" : 3, "rminCond" : 60, "rmaxCond" : 75, "names" : Names,
+{"name" : "aventail_named"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 1500, "con" : 60, "stam" : -3, "vis" : 0, "hair" : "false", "beard" : "true", "impactSound" : "chain", "invSound" : "chain", "named" : True, "rmaxViz" : 0, "rminViz" : 0, "rmaxStam" : 2, "rminStam" : 2, "rminCond" : 65, "rmaxCond" : 75, "names" : Names,
 "title" :  "",
 "desc" :  "Truly fit for a knight, this mail aventail is made from the highest quality materials and boasts precious decorations and ornaments.",
 "adesc" : "Includes a mail aventail of the highest quality."
@@ -132,7 +139,7 @@ class Defs:
  "desc" :  "A full mail hood with an integrated neck guard.",
  "adesc" : "Includes a full mail hood."
  },
-{"name" : "chain_hood_full_named"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 3600, "con" : 80, "stam" : -4, "vis" : 0, "hair" : "true", "beard" : "true", "impactSound" : "chain", "invSound" : "chain", "named" : True, "rmaxViz" : 0, "rminViz" : 0, "rmaxStam" : 4, "rminStam" : 3, "rminCond" : 80, "rmaxCond" : 95, "names" : Names,
+{"name" : "chain_hood_full_named"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 3600, "con" : 80, "stam" : -4, "vis" : 0, "hair" : "true", "beard" : "true", "impactSound" : "chain", "invSound" : "chain", "named" : True, "rmaxViz" : 0, "rminViz" : 0, "rmaxStam" : 3, "rminStam" : 3, "rminCond" : 85, "rmaxCond" : 95, "names" : Names,
  "title" :  "",
  "desc" :  "Truly fit for a knight, this mail coif is made from the highest quality materials and boasts precious decorations and ornaments.",
  "adesc" : "Includes a full mail hood of the highest quality."
@@ -949,11 +956,6 @@ class Defs:
  "title" :  "Golden Mask",
  "desc" :  "An exquisite golden mask of distant royalty, its impassive, youthful features are rendered with such exceptional craftsmanship that one could mistake the cold metal for a living face.",
   "adesc" : "Includes an exquisite golden mask of distant royalty."
- },
-{"name" : "warlock_skull"                     , "itemType" : "this.Const.Items.ItemType.Cultist", "layer" : "top", "lower": True, "min" : 1, "max" : 3, "value" : 2000, "con" : 45, "stam" : -2, "vis" : 0, "hair" : "false", "beard" : "true", "impactSound" : "bone", "invSound" : "bone", "named" : True, "rmaxViz" : 0, "rminViz" : 1, "rmaxStam" : 1, "rminStam" : 2, "rminCond" : 90, "rmaxCond" : 115, "names" : Names,
- "title" :  "Warlock Skull Helm",
- "desc" :  "A Warlock Skull Helm. Counts as a cultist item.",
- "adesc" : "Includes a warlock skull helm."
  },
  {"name" : "fleshcultist_mask"                  , "layer" : "top", "min" : 1, "max" : 5, "value" : 100, "con" : 15, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "true", "impactSound" : "leather", "invSound" : "cloth",
   "title" :  "Fleshcultist Mask",

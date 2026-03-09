@@ -3,8 +3,8 @@ this.legend_helmet_jester_hat <- this.inherit("scripts/items/legend_helmets/lege
 	function create()
 	{
 		this.legend_helmet_upgrade.create();
-		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_jester_hat";
+		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.Name = "Jester's Hat";
 		this.m.Description = "The quintessential hat of performing folk in noble court. Wearing it makes you feel like a fool, but the jingling bells make you an irritating target for all.";
 		this.m.ArmorDescription = "Includes a colorful jester's hat.";
@@ -25,6 +25,18 @@ this.legend_helmet_jester_hat <- this.inherit("scripts/items/legend_helmets/lege
 		this.m.HideBeard = false;
 		//option for bhc range
 		// this.m.BonusHeadChance = this.Math.rand(this.m.HCMin, this.m.HCMax);
+	}
+
+	function updateVariant()
+	{
+		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
+		this.m.Sprite = "jester_hat_" + variant;
+		this.m.SpriteDamaged = "jester_hat_" + variant + "_damaged";
+		this.m.SpriteCorpse = "jester_hat_" + variant + "_dead";
+		this.m.Icon = "legend_helmets/inventory_jester_hat_" + variant + ".png";
+		this.m.IconLarge = this.m.Icon;
+		this.m.OverlayIcon = this.m.Icon;
+		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}
 
 	function getTooltip()
@@ -63,18 +75,6 @@ this.legend_helmet_jester_hat <- this.inherit("scripts/items/legend_helmets/lege
 		this.legend_helmet_upgrade.onUpdateProperties(_properties);
   		_properties.SurroundedDefense -= 3; // -3 defence per enemy surrounding this unit while equipped
 		_properties.TargetAttractionMult *= 1.2; // 1.0 = normal aggression, 0.1 = minimal aggression
-	}
-
-	function updateVariant()
-	{
-		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
-		this.m.Sprite = "legendhelms_jester_hat" + "_" + variant;
-		this.m.SpriteDamaged = "legendhelms_jester_hat" + "_" + variant + "_damaged";
-		this.m.SpriteCorpse = "legendhelms_jester_hat" + "_" + variant + "_dead";
-		this.m.Icon = "legend_helmets/inventory_jester_hat" + "_" + variant + ".png";
-		this.m.IconLarge = this.m.Icon;
-		this.m.OverlayIcon = this.m.Icon;
-		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}
 
 	function onEquip()

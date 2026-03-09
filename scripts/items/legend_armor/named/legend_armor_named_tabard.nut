@@ -5,21 +5,9 @@ this.legend_armor_named_tabard <- this.inherit("scripts/items/legend_armor/legen
 	function create()
 	{
 		this.legend_named_armor_upgrade.create();
-		this.m.Type = this.Const.Items.ArmorUpgrades.Tabbard;
 		this.m.ID = "legend_armor.named_tabard";
+		this.m.Type = this.Const.Items.ArmorUpgrades.Tabbard;
 		this.m.Name = "";
-		this.m.NameList = [
-			"Majesty",
-			"Splendor",
-			"Pageantry",
-			"Swank",
-			"Nobility",
-			"Elegance",
-			"Opulence",
-			"Excess",
-			"Resplendence",
-			"Glory"
-		];
 		this.m.Description = "A luxurious striped tabard made of a sturdy material, reinforced at seams with pure gold.";
 		this.m.ArmorDescription = "Includes a luxurious striped tabard.";
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
@@ -32,6 +20,7 @@ this.legend_armor_named_tabard <- this.inherit("scripts/items/legend_armor/legen
 		this.m.ConditionMax = 10;
 		this.m.StaminaModifier = 0;
 		this.randomizeValues();
+		this.m.NameList = ["Majesty","Splendor","Pageantry","Swank","Nobility","Elegance","Opulence","Excess","Resplendence","Glory"];
 	}
 
 	function randomizeValues()
@@ -43,7 +32,7 @@ this.legend_armor_named_tabard <- this.inherit("scripts/items/legend_armor/legen
 
 	function updateVariant()
 	{
-		local variant = this.m.Variant < 10 ? "0" + this.m.Variant : this.m.Variant;
+		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
 		this.m.SpriteBack = "tabard_named_" + variant;
 		this.m.SpriteDamagedBack = "tabard_named_" + variant + "_damaged";
 		this.m.SpriteCorpseBack = "tabard_named_" + variant + "_dead";

@@ -6,23 +6,30 @@ this.legend_armor_sacred_shield_upgrade <- this.inherit("scripts/items/legend_ar
 		this.m.ID = "legend_armor_upgrade.body.legend_armor_sacred_shield";
 		this.m.Type = this.Const.Items.ArmorUpgrades.Attachment;
 		this.m.Name = "Sacred Shield";
-		this.m.Description = "A holy relic shield to be strapped to your shoulder, it protects both physically and spiritually. This is primarily of benefit to those who are strong of mind";
-		this.m.ArmorDescription = "A holy relic shield has been attached to this armor, it protects both physically and spiritually";
+		this.m.Description = "A holy relic shield to be strapped to the shoulder, it protects the wearer both physically and spiritually. Primarily of benefit to the strong of mind.";
+		this.m.ArmorDescription = "Includes a holy relic shield.";
+		this.m.Variants = [1];
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
+		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorLeatherImpact;
-		this.m.Icon = "armor_upgrades/icon_upgrade_belt_and_shield_01.png";
-		this.m.IconLarge = this.m.Icon;
-		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_belt_and_shield_01.png";
-		this.m.OverlayIconLarge = "armor_upgrades/inventory_upgrade_belt_and_shield_01.png";
-		this.m.SpriteBack = "upgrade_belt_and_shield";
-		this.m.SpriteDamagedBack = "upgrade_belt_and_shield_damaged";
-		this.m.SpriteCorpseBack = "upgrade_belt_and_shield_dead";
-
 		this.m.Value = 200;
 		this.m.Condition = 10;
 		this.m.ConditionMax = 10;
 		this.m.StaminaModifier = -1;
 	}
+
+	function updateVariant() {
+		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
+		this.m.SpriteBack = "pauldrons_belt_shield_" + variant + "";
+		this.m.SpriteDamagedBack = "pauldrons_belt_shield_" + variant + "_damaged";
+		this.m.SpriteCorpseBack = "pauldrons_belt_shield_" + variant + "_dead";
+		this.m.Icon = "legend_armor/upgrades/pauldrons_belt_shield_" + variant + "_upgrade.png";
+		this.m.IconLarge = this.m.Icon;
+		this.m.OverlayIcon = "legend_armor/icon_pauldrons_belt_shield_" + variant + ".png";
+		this.m.OverlayIconLarge = "legend_armor/inventory_pauldrons_belt_shield_"  + variant + ".png";
+	}
+
 	function getTooltip()
 	{
 		local result = this.legend_armor_upgrade.getTooltip();

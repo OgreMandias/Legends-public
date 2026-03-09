@@ -6,8 +6,8 @@ this.legend_rune_patience <- this.inherit("scripts/items/legend_helmets/legend_h
 		this.m.ID = "legend_helmet_upgrade.legend_rune_patience";
 		this.m.Type = this.Const.Items.HelmetUpgrades.Rune;
 		this.m.Name = "Helmet Rune Sigil: Patience";
-		this.m.Description = "An inscribed rock that can be attached to a character\'s helmet.";
-		this.m.ArmorDescription = "Includes An inscribed rock that grants additional initiative bonuses.";
+		this.m.Description = "An inscribed rock that can be attached to a character\'s armor to increase the wearer's patience.";
+		this.m.ArmorDescription = "Includes a patience rune.";
 		this.m.Icon = "rune_sigils/rune_stone_2.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "layers/glow_runed_icon.png";

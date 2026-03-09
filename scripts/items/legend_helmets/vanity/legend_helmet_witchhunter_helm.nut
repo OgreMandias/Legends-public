@@ -9,7 +9,7 @@ this.legend_helmet_witchhunter_helm <- this.inherit("scripts/items/legend_helmet
 		this.m.Name = "Witchhunter\'s Capotain";
 		this.m.Description = "A tall, wide-brimmed leather hat. Those who favour such headwear are almost always an unwanted presence, bringing with them a grim air of scrutiny and unease.";
 		this.m.ArmorDescription = "Includes a tall, wide-brimmed leather hat.";
-		this.m.Variants = [1, 2, 3, 4, 5, 6, 7, 8];
+		this.m.Variants = [1,2,3,4,5,6,7,8];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
@@ -22,6 +22,18 @@ this.legend_helmet_witchhunter_helm <- this.inherit("scripts/items/legend_helmet
 		this.m.Lower = false;
 		this.m.HideHair = true;
 		this.m.HideBeard = false;
+	}
+
+	function updateVariant()
+	{
+		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
+		this.m.Sprite = "witchhunter_helm_" + variant;
+		this.m.SpriteDamaged = "witchhunter_helm_" + variant + "_damaged";
+		this.m.SpriteCorpse = "witchhunter_helm_" + variant + "_dead";
+		this.m.Icon = "legend_helmets/inventory_witchhunter_helm_" + variant + ".png";
+		this.m.IconLarge = this.m.Icon;
+		this.m.OverlayIcon = this.m.Icon;
+		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}
 
 	function getTooltip()
@@ -47,17 +59,4 @@ this.legend_helmet_witchhunter_helm <- this.inherit("scripts/items/legend_helmet
 		this.legend_helmet_upgrade.onUpdateProperties(_properties);
 		_properties.MoraleCheckBravery[1] += 5;
 	}
-
-	function updateVariant()
-	{
-		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
-		this.m.Sprite = "legendhelms_witchhunter_helm" + "_" + variant;
-		this.m.SpriteDamaged = "legendhelms_witchhunter_helm" + "_" + variant + "_damaged";
-		this.m.SpriteCorpse = "legendhelms_witchhunter_helm" + "_" + variant + "_dead";
-		this.m.Icon = "legend_helmets/inventory_witchhunter_helm" + "_" + variant + ".png";
-		this.m.IconLarge = this.m.Icon;
-		this.m.OverlayIcon = this.m.Icon;
-		this.m.OverlayIconLarge = this.m.OverlayIcon;
-	}
-
 });

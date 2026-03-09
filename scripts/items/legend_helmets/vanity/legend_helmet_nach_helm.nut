@@ -4,18 +4,9 @@ this.legend_helmet_nach_helm <- this.inherit("scripts/items/legend_helmets/legen
 	function create()
 	{
 		this.legend_helmet_upgrade.create();
-		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_nach_helm";
+		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.Name = "Skin Ghoul Helmet";
-		// this.m.NameList = [
-		// 	"Rotten visage",
-		// 	"Helm of the ghoul",
-		// 	"Ghoul Crown",
-		// 	"Ghoul Helm",
-		// 	"Ghoul Crown",
-		// 	"Skin Crown"
-		// ];
-		// this.m.Name = this.m.NameList[this.Math.rand(0, this.m.NameList.len())];
 		this.m.Description = "A helmet fashioned made from the face and horns of a skin ghoul.";
 		this.m.ArmorDescription = "Includes some skin ghoul's parts.";
 		this.m.Variants = [1];
@@ -31,6 +22,20 @@ this.legend_helmet_nach_helm <- this.inherit("scripts/items/legend_helmets/legen
 		this.m.Lower = false;
 		this.m.HideHair = true;
 		this.m.HideBeard = false;
+		// this.m.NameList = ["Rotten visage","Helm of the Ghoul","Ghoul Crown","Ghoul Helm","Ghoul Crown","Skin Crown"];
+		// this.m.Name = this.m.NameList[this.Math.rand(0, this.m.NameList.len())];
+	}
+
+	function updateVariant()
+	{
+		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
+		this.m.Sprite = "nach_helm_" + variant;
+		this.m.SpriteDamaged = "nach_helm_" + variant + "_damaged";
+		this.m.SpriteCorpse = "nach_helm_" + variant + "_dead";
+		this.m.Icon = "legend_helmets/inventory_nach_helm_" + variant + ".png";
+		this.m.IconLarge = this.m.Icon;
+		this.m.OverlayIcon = this.m.Icon;
+		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}
 
 	function getTooltip()
@@ -58,17 +63,5 @@ this.legend_helmet_nach_helm <- this.inherit("scripts/items/legend_helmets/legen
 		{
 			::Legends.Actives.grant(this, ::Legends.Active.LegendGruesomeFeast);
 		}
-	}
-
-	function updateVariant()
-	{
-		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
-		this.m.Sprite = "legendhelms_nach_helm" + "_" + variant;
-		this.m.SpriteDamaged = "legendhelms_nach_helm" + "_" + variant + "_damaged";
-		this.m.SpriteCorpse = "legendhelms_nach_helm" + "_" + variant + "_dead";
-		this.m.Icon = "legend_helmets/inventory_nach_helm" + "_" + variant + ".png";
-		this.m.IconLarge = this.m.Icon;
-		this.m.OverlayIcon = this.m.Icon;
-		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}
 });

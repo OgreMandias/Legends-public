@@ -1404,11 +1404,11 @@
 			[4, "plate/legend_armor_leather_jacket_simple"], // 15 -2 30
 		],
 		Cloak = [
+			[1, "cloak/legend_direwolf_pelt_cloak"], // 10
 		],
 		Tabard = [
 		],
 		Attachments = [
-			[1, "armor_upgrades/legend_direwolf_pelt_upgrade"], // 10
 		]
 	}]
 };
@@ -1432,11 +1432,11 @@
 		Plate = [
 		],
 		Cloak = [
+			[1, "cloak/legend_direwolf_pelt_cloak"], // 10
 		],
 		Tabard = [
 		],
 		Attachments = [
-			[1, "armor_upgrades/legend_direwolf_pelt_upgrade"], // 10
 		]
 	}]
 };
@@ -1748,14 +1748,14 @@
 		],
 		Cloak = [
 			[1, ""],
-			[2, "cloak/legend_armor_shoulder_cloth", 2] // 5 -0 50
+			[2, "cloak/legend_armor_shoulder_cloth", 2], // 5 -0 50,
+			[2, "cloak/legend_direwolf_pelt_cloak"], // 10
 		],
 		Tabard = [
 
 		],
 		Attachments = [
-			[4, "armor_upgrades/legend_double_mail_upgrade"],
-			[4, "armor_upgrades/legend_direwolf_pelt_upgrade"]
+			[4, "armor_upgrades/legend_double_mail_upgrade"]
 		]
 	}]
 };
@@ -1902,15 +1902,15 @@
 			[1, "cloak/legend_armor_southern_scarf", 7], // 5 -0 100
 			[1, "cloak/legend_armor_southern_scarf", 6], // 5 -0 100
 			[1, "cloak/legend_armor_southern_scarf", 13], // 5 -0 100
+			[1, "cloak/legend_direwolf_pelt_cloak"] // 10
 		],
 		Tabard = [
 			[1, "tabard/legend_armor_southern_shoulder_cloth", 7], // 5 -0 100
 			[1, "tabard/legend_armor_southern_wrap"], // 5 -0 100
 		],
 		Attachments = [
-			[4, ""],
-			[1, "armor_upgrades/legend_bone_platings_upgrade"],
-			[1, "armor_upgrades/legend_direwolf_pelt_upgrade"],
+			[2, ""],
+			[1, "armor_upgrades/legend_bone_platings_upgrade"]
 		]
 	}]
 };
@@ -2414,11 +2414,11 @@
 			[1, "plate/legend_armor_leather_lamellar_harness_reinforced"], // 55 -7 350
 		],
 		Cloak = [
+			[1, "cloak/legend_direwolf_pelt_cloak"], // 10
 		],
 		Tabard = [
 		],
 		Attachments = [
-			[1, "armor_upgrades/legend_direwolf_pelt_upgrade"],
 		]
 	}]
 };

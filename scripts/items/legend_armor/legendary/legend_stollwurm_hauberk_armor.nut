@@ -6,10 +6,9 @@ this.legend_stollwurm_hauberk_armor <- this.inherit("scripts/items/legend_armor/
 		this.m.Type = this.Const.Items.ArmorUpgrades.Chain;
 		this.m.ID = "legend_armor.body.legend_stollwurm_hauberk_armor";
 		this.m.Name = "";
-        this.m.NameList = ["Heraldic Scale", "Splendor", "Grandiosity", "Pageantry", "Swank", "Full Scale", "Scale Hauberk", "Scalemail", "Surcoat", "Duty", "Honor", "Noble Scale"];
+        this.m.NameList = ["Heraldic Scale", "Splendor", "Grandiosity", "Pageantry", "Swank", "Full Scale", "Scale Hauberk", "Scalemail", "Duty", "Honor", "Noble Scale"];
 		this.m.Description = "An exceptional hauberk made from the small, flexible scales of a Stollwurm. Incredibly sturdy, but still bendable enough to not impede movement more than a regular chain hauberk.";
-		this.m.ArmorDescription = "Includes a stollwurm hauberk, boasting flexibility and sturdiness.";
-		this.m.SlotType = this.Const.ItemSlot.Body;
+		this.m.ArmorDescription = "Includes a stollwurm scale hauberk, boasting flexibility and sturdiness.";
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
@@ -20,6 +19,29 @@ this.legend_stollwurm_hauberk_armor <- this.inherit("scripts/items/legend_armor/
         this.m.ItemType = this.m.ItemType;
         this.randomizeValues();
         this.resetStats();
+	}
+
+	function updateVariant()
+	{
+		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
+		this.m.SpriteBack = "wurm_hauberk_" + variant;
+		this.m.SpriteDamagedBack = "wurm_hauberk_" + variant + "_damaged";
+		this.m.SpriteCorpseBack = "wurm_hauberk_" + variant + "_dead";
+		this.m.Icon = "legend_armor/icon_wurm_hauberk_" + variant + ".png";
+		this.m.IconLarge = this.m.Icon;
+		this.m.OverlayIcon = "legend_armor/icon_wurm_hauberk_" + variant + ".png";
+		this.m.OverlayIconLarge = "legend_armor/inventory_wurm_hauberk_" + variant + ".png";
+	}
+
+	function updateVariant()
+	{
+		this.m.SpriteBack = "wurm_hauberk_01";
+		this.m.SpriteDamagedBack = "wurm_hauberk_01_damaged";
+		this.m.SpriteCorpseBack = "wurm_hauberk_01_dead";
+		this.m.Icon = "legend_armor/icon_wurm_hauberk_01.png";
+		this.m.IconLarge = "legend_armor/inventory_wurm_hauberk_01.png";
+		this.m.OverlayIcon = "legend_armor/icon_wurm_hauberk_01.png";
+		this.m.OverlayIconLarge = "legend_armor/inventory_wurm_hauberk_01.png";
 	}
 
 	function resetStats()
@@ -79,16 +101,4 @@ this.legend_stollwurm_hauberk_armor <- this.inherit("scripts/items/legend_armor/
 		}
 		this.legend_named_armor_upgrade.onUnequip();
 	}
-
-	function updateVariant()
-	{
-		this.m.SpriteBack = "wurm_hauberk_01";
-		this.m.SpriteDamagedBack = "wurm_hauberk_01_damaged";
-		this.m.SpriteCorpseBack = "wurm_hauberk_01_dead";
-		this.m.Icon = "legend_armor/icon_wurm_hauberk_01.png";
-		this.m.IconLarge = "legend_armor/inventory_wurm_hauberk_01.png";
-		this.m.OverlayIcon = "legend_armor/icon_wurm_hauberk_01.png";
-		this.m.OverlayIconLarge = "legend_armor/inventory_wurm_hauberk_01.png";
-	}
-
 });

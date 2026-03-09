@@ -2,10 +2,9 @@ this.legend_haftstrike <- this.inherit("scripts/skills/skill", {
 	m = {
 		SkillsUsed = 0	
 	},
-	function create()
-	{
+	function create() {
 		::Legends.Actives.onCreate(this, ::Legends.Active.LegendHaftstrike);
-		this.m.Description = "A swift strike with the weapon\'s haft. Not particularly effective, but offers versatility on heavy weapons. Becomes easier to use after successful hits from other skills.";
+		this.m.Description = "A swift strike with the weapon\'s haft. Not particularly effective, but offers versatility on heavy weapons. Becomes easier to use after successful hits from other skills in the same turn.";
 		this.m.KilledString = "Bashed";
 		this.m.Icon = "skills/active_haftstrike.png";
 		this.m.IconDisabled = "skills/active_haftstrike_bw.png";
@@ -38,42 +37,39 @@ this.legend_haftstrike <- this.inherit("scripts/skills/skill", {
 		this.m.MaxRange = 1;
 	}
 
-	function getTooltip()
-	{
+	function getTooltip() {
 		return this.getDefaultTooltip();
 	}
 
-	function onTargetHit (_skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor)
-	{
+	function onTargetHit (_skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor) {
 		if (_skill != this)
 			this.m.SkillsUsed += 1;
 	}
 
-	function onCombatStarted()
-	{
+	function onTurnStart() {
 		this.m.SkillsUsed = 0;
 	}
 
-	function onCombatFinished()
-	{
+	function onCombatStarted() {
 		this.m.SkillsUsed = 0;
 	}
 
-	function onAfterUpdate( _properties )
-	{
+	function onCombatFinished() {
+		this.m.SkillsUsed = 0;
+	}
+
+	function onAfterUpdate( _properties ) {
 		local cost = this.m.ActionPointCost - this.m.SkillsUsed;
 		this.m.ActionPointCost = this.Math.max(cost, 0);
 	}
 
-	function onUse( _user, _targetTile )
-	{
+	function onUse( _user, _targetTile ) {
 		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectThrust);
 		this.m.SkillsUsed = 0;
 		return this.attackEntity(_user, _targetTile.getEntity());
 	}
 
-	function onAnySkillUsed( _skill, _targetEntity, _properties )
-	{
+	function onAnySkillUsed( _skill, _targetEntity, _properties ) {
 		if (_skill == this)
 			_properties.DamageTotalMult *= 0.4;
 	}

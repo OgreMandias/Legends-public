@@ -15,7 +15,8 @@ this.perk_legend_immovable_object <- this.inherit("scripts/skills/skill", {
 				::Const.ItemSlot.Head,
 				::Const.ItemSlot.Mainhand,
 				::Const.ItemSlot.Offhand,
-				::Const.ItemSlot.Bag
+				::Const.ItemSlot.Bag,
+				::Const.ItemSlot.Accessory
 			]
 		);
 		fat *= -1;

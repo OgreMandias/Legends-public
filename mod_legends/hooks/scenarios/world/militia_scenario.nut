@@ -10,6 +10,7 @@
 		this.m.StartingRosterTier = this.Const.Roster.getTierForSize(27);
 		this.m.RosterTierMax = this.Const.Roster.getTierForSize(27);
 		this.m.StartingBusinessReputation = -100; // Still use default reputation tiers even if starting at negative reputation
+		this.m.BrotherScaling = 0.66;
 	}
 
 	o.onSpawnAssets = function ()

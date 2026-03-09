@@ -11,6 +11,7 @@
 		this.m.RosterTierMax = this.Const.Roster.getTierForSize(12);
 		this.m.StartingBusinessReputation = 1250;
 		this.setRosterReputationTiers(this.Const.Roster.createReputationTiers(this.m.StartingBusinessReputation));
+		this.m.BrotherScaling = 1.66;
 	}
 
 	o.onSpawnAssets = function ()

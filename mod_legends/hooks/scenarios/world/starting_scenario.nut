@@ -13,6 +13,7 @@
 	//I think this would be better if we instead automatically set the size to be faction_manager's update()
 	//Useful for when you set the relations and want them to be permanent e.g. legion scenario
 	o.m.ExcludedAmbitions <- []; // set in onInit, it's not serialized and doesn't need to be
+	o.m.BrotherScaling <- 1.0;
 
 	o.isDroppedAsLoot = function (_item)
 	{
@@ -36,6 +37,11 @@
 		if (this.m.Difficulty == 4)
 			return "difficulty_legend";
 		return getDifficultyForUI();
+	}
+
+	o.getBrotherScaling <- function ()
+	{
+		return this.m.BrotherScaling;
 	}
 
 	o.getStaticRelations <- function ()

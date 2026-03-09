@@ -15,30 +15,26 @@
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRabble,
-					// MaxR = 0.25 * 420,
-					MaxR = 130,
+					MaxR = 100,
 					Cost = 7
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.BanditThug,
-					MinR = 110,
+					MinR = 75,
 					Cost = 8
 				},
 				{
+					MinR = 150,
 					Type = this.Const.World.Spawn.Troops.BanditRaiderLOW,
-					//MinR = 200,
-					MinR = 125,
-					Cost = 13
+					Cost = 16
 				},
 				{
+					MinR = 225,
 					Type = this.Const.World.Spawn.Troops.BanditRaider,
-					//MinR = 400,
-					MinR = 320,
-					Cost = 18
+					Cost = 20
 				},
 				{
-					//MinR = 800,
-					MinR = 480,
+					MinR = 500,
 					Type = this.Const.World.Spawn.Troops.BanditVeteran,
 					Cost = 30
 				}
@@ -141,27 +137,26 @@
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRabble,
-					MaxR = 130,
+					MaxR = 100,
 					Cost = 7
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.BanditThug,
-					MinR = 110,
+					MinR = 75,
 					Cost = 8
 				},
 				{
-					//MinR = 200,
-					MinR = 160,
+					MinR = 150,
 					Type = this.Const.World.Spawn.Troops.BanditRaiderLOW,
 					Cost = 16
 				},
 				{
-					MinR = 250,
+					MinR = 225,
 					Type = this.Const.World.Spawn.Troops.BanditRaider,
 					Cost = 20
 				},
 				{
-					MinR = 340,
+					MinR = 500,
 					Type = this.Const.World.Spawn.Troops.BanditVeteran,
 					Cost = 30
 				}
@@ -271,31 +266,26 @@
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRabble,
-					// MaxR = 0.15 * 400,
-					//MaxR = 60, Luft change
-					MaxR = 130,
+					MaxR = 100,
 					Cost = 7
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.BanditThug,
-					//MinR = 80,
-					MinR = 110,
+					MinR = 75,
 					Cost = 8
 				},
 				{
-					//MinR = 200,
-					MinR = 160,
+					MinR = 150,
 					Type = this.Const.World.Spawn.Troops.BanditRaiderLOW,
 					Cost = 16
 				},
 				{
-					//MinR = 400,
-					MinR = 320,
+					MinR = 225,
 					Type = this.Const.World.Spawn.Troops.BanditRaider,
 					Cost = 20
 				},
 				{
-					MinR = 600,
+					MinR = 500,
 					Type = this.Const.World.Spawn.Troops.BanditVeteran,
 					Cost = 30
 				}

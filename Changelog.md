@@ -21,7 +21,8 @@ This activates Dual Wield:
 
 ## Perks
 
-- Onslaught now increases melee damage by your 2% for every 100 armor you have
+- `Onslaught` now increases melee damage by your 2% for every 100 armor you have
+- `Immovable Object` now also counts accessory slot
 
 ### One Handed Tree
 - no longer exists in short
@@ -62,7 +63,7 @@ Favoured Enemy - Sword Master
 
 - Bandit Warlord is renamed to Robber Baron
 - Webknechts lose 10 rdef and 10 mdef on Legendary, but retain Dodge
-- 
+- Bandit Rabble should start being phased out by Bandit Thugs much quicker
 
 ## New Runes
 
@@ -189,8 +190,13 @@ Favoured Enemy - Sword Master
 ## Bug Fixes
 
 - possible fix for ai rotation crashes
+- fixed an error giving higher scaling to starts that have less than 3 characters
+- fixed an error with gear scaling using sell price instead of value
 
 ### For modders:
+
+- you can assign scaling on the origin itself with the `BrotherScaling` property
+> look at `militia_scenario` and `lone_wolf_scenario`
 
 - `LegendKnifeplay`, `perk_legend_knifeplay` perk has been deleted
 - Bandit Warlord renamed to Robber Baron

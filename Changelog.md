@@ -195,6 +195,8 @@ Favoured Enemy - Sword Master
 
 ### For modders:
 
+> deleted `legend_hanunted_01_trait`, `legend_hanunted_02_trait`, `legend_hanunted_03_trait`, `legend_hanunted_04_trait`, `legend_hanunted_05_trait`, `legend_hanunted_06_trait`
+
 - you can assign scaling on the origin itself with the `BrotherScaling` property
 > look at `militia_scenario` and `lone_wolf_scenario`
 

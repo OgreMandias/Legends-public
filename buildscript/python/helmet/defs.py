@@ -1178,11 +1178,6 @@ class Defs:
  "desc" :  "An old mouldy linen torse, its fabric brittle and colors faded.",
  "adesc" : "Includes a decayed linen torse."
  },
-{"name" : "ponytail"                     , "layer" : "vanity", "min" : 1, "max" : 4, "value" : 50, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false", "impactSound" : "leather", "invSound" : "cloth",
- "title" :  "Ponytail",
- "desc" :  "A long tail of horsehair used to crest helms.",
- "adesc" : "Includes a horsehair ponytail."
- },
 {"name" : "ram_horns"                     , "layer" : "vanity", "min" : 1, "max" : 6, "value" : 50, "con" : 6, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false", "impactSound" : "bone", "invSound" : "bone",
  "title" :  "Ram Horns",
  "desc" :  "A pair of curled horns of a wild beast, used as a sign of competency in northern tribes.",
@@ -1233,20 +1228,10 @@ class Defs:
  "desc" :  "A southern head wrap topped by a decorative feather.",
  "adesc" : "Includes a feathered head wrap."
  },
-{"name" : "southern_top_tail"                     , "layer" : "vanity", "min" : 1, "max" : 8, "value" : 20, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false", "impactSound" : "leather", "invSound" : "cloth",
- "title" :  "Southern Top Tail",
- "desc" :  "A decorative tail made of desert animal hair.",
- "adesc" : "Includes a decorative animal hair tail."
- },
 {"name" : "straw_hat"                     , "layer" : "vanity", "min" : 1, "max" : 3, "value" : 20, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false", "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Straw Hat",
  "desc" :  "A simple straw hat, often used by farmers and peasants.",
  "adesc" : "Includes a straw hat."
- },
-{"name" : "top_feather"                     , "layer" : "vanity", "min" : 1, "max" : 5, "value" : 20, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false", "impactSound" : "leather", "invSound" : "cloth",
- "title" :  "Top Feather",
- "desc" :  "A short, decorative feather that can be pinned on a hat to add a dash of color.",
- "adesc" : "Includes a short, decorative feather."
  },
 # {"name" : "witchhunter_helm"                     , "layer" : "vanity", "min" : 1, "max" : 7, "value" : 200, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
 #  "title" :  "Witchhunter Helm", \
@@ -1410,10 +1395,25 @@ class Defs:
  "desc" :  "A thick tail of hair decorated with bone pieces. A symbol of status among the orcs.",
  "adesc" : "Includes a thick tail of hair."
  },
+ {"name" : "ponytail"                     , "layer" : "vanity", "lower" : True, "min" : 1, "max" : 4, "value" : 50, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false", "impactSound" : "leather", "invSound" : "cloth",
+ "title" :  "Ponytail",
+ "desc" :  "A long tail of horsehair used to crest helms.",
+ "adesc" : "Includes a horsehair ponytail."
+ },
+ {"name" : "southern_top_tail"                     , "layer" : "vanity", "lower" : True, "min" : 1, "max" : 8, "value" : 20, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false", "impactSound" : "leather", "invSound" : "cloth",
+ "title" :  "Southern Top Tail",
+ "desc" :  "A decorative tail made of desert animal hair.",
+ "adesc" : "Includes a decorative animal hair tail."
+ },
 {"name" : "top_plume"                     , "layer" : "vanity", "lower" : True, "min" : 1, "max" : 6, "value" : 20, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false", "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Top Plume",
  "desc" :  "A sleek plume of light hair designed to crest a helm.",
  "adesc" : "Includes a plume of hair."
+ },
+ {"name" : "top_feather"                     , "layer" : "vanity", "lower" : True, "min" : 1, "max" : 5, "value" : 20, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false", "impactSound" : "leather", "invSound" : "cloth",
+ "title" :  "Top Feather",
+ "desc" :  "A short, decorative feather that can be pinned on a hat to add a dash of color.",
+ "adesc" : "Includes a short, decorative feather."
  },
 {"name" : "wings"                     , "layer" : "vanity", "lower" : True, "min" : 1, "max" : 6, "value" : 20, "con" : 2, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false", "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Wings",

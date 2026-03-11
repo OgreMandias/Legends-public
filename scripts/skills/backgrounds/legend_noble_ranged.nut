@@ -187,7 +187,7 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 		items.addToBag(this.new("scripts/items/weapons/knife"));
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[2, ::Legends.Armor.Standard.quilted_aketon],
+			[2, ::Legends.Armor.Standard.padded_surcoat],
 			[1, ::Legends.Armor.Standard.basic_mail_shirt]
 		]));
 	}

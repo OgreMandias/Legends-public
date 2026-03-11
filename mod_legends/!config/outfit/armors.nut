@@ -1087,8 +1087,8 @@
 };
 ::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Standard.padded_leather);
 
-::Legends.Armor.Standard.quilted_aketon <- {
-	ID = "quilted_aketon", // 55-70 -6-7 150-200
+::Legends.Armor.Standard.padded_surcoat <- {
+	ID = "padded_surcoat", // 55-70 -6-7 150-200
 	Script = "",
 	Sets = [{
 		Cloth = [
@@ -1108,7 +1108,7 @@
 		]
 	}]
 };
-::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Standard.quilted_aketon);
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Standard.padded_surcoat);
 
 ::Legends.Armor.Standard.patched_mail_shirt <- {
 	ID = "patched_mail_shirt", // 75-120 -9-16 275-675

@@ -112,7 +112,7 @@
 										local upgrades = item.getUpgrades();
 										foreach( i, u in upgrades )
 										{
-											if (u != 1)
+											if (u != 1 && u!= 3)
 											{
 												continue;
 											}

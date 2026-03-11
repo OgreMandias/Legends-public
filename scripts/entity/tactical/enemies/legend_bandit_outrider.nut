@@ -321,7 +321,7 @@ this.legend_bandit_outrider <- this.inherit("scripts/entity/tactical/human", {
 
 		this.getItems().equip(::Const.World.Common.pickArmor([
 			[3, ::Legends.Armor.Standard.gambeson],
-			[1, ::Legends.Armor.Standard.quilted_aketon]
+			[1, ::Legends.Armor.Standard.padded_surcoat]
 		]));
 
 		if (this.Math.rand(1, 100) <= 75)

@@ -45,7 +45,7 @@
 			[1, ::Legends.Armor.Standard.linen_tunic],
 			[1, ::Legends.Armor.Standard.tattered_sackcloth],
 			[1, ::Legends.Armor.Standard.sackcloth],
-			[1, ::Legends.Armor.Standard.quilted_aketon],
+			[1, ::Legends.Armor.Standard.padded_surcoat],
 			[1, ::Legends.Armor.Standard.thick_tunic],
 			[1, ::Legends.Armor.Standard.apron]
 		]));

@@ -167,7 +167,7 @@
 
 		items.equip(this.Const.World.Common.pickArmor([
 			[1, ::Legends.Armor.Standard.ragged_surcoat],
-			[1, ::Legends.Armor.Standard.quilted_aketon],
+			[1, ::Legends.Armor.Standard.padded_surcoat],
 			[1, ::Legends.Armor.Standard.gambeson]
 		]));
 

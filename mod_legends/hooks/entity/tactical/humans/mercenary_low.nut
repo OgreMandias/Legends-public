@@ -113,7 +113,7 @@
 			[2, ::Legends.Armor.Standard.werewolf_mail_armor],
 			[1, ::Legends.Armor.Standard.northern_mercenary_armor_00],
 			[3, ::Legends.Armor.Standard.northern_mercenary_armor_01],
-			[3, ::Legends.Armor.Standard.quilted_aketon],
+			[3, ::Legends.Armor.Standard.padded_surcoat],
 			[4, ::Legends.Armor.Standard.basic_mail_shirt],
 			[4, ::Legends.Armor.Standard.mail_shirt],
 			[4, ::Legends.Armor.Standard.mail_hauberk]

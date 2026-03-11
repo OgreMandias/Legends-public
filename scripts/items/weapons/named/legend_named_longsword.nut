@@ -2,9 +2,10 @@ this.legend_named_longsword <- this.inherit("scripts/items/weapons/named/named_w
 	m = {
 		StunChance = 0
 	},
+
 	function create() {
 		this.named_weapon.create();
-		this.m.Variants = [1,2,3];
+		this.m.Variants = [1, 2];
 		this.m.ID = "weapon.legend_named_longsword";
 		this.m.NameList = this.Const.Strings.GreatswordNames;
 		this.m.Description = "This longsword is a marvel to look at. The long blade is rigid and sturdy, but trades nothing in balance. Lends itself well to a diverse array of fighting moves.";
@@ -53,4 +54,3 @@ this.legend_named_longsword <- this.inherit("scripts/items/weapons/named/named_w
 	}
 
 });
-

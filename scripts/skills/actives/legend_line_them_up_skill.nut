@@ -55,7 +55,7 @@ this.legend_line_them_up_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local tooltip = this.getRangedTooltip(this.getDefaultTooltip());
 		local targets = this.getContainer().getActor().getCurrentProperties().IsSpecializedInCrossbows ? 4 : 3;
-		ret.push({
+		tooltip.push({
 			id = 10,
 			type = "text",
 			icon = "ui/icons/special.png",
@@ -65,7 +65,7 @@ this.legend_line_them_up_skill <- this.inherit("scripts/skills/skill", {
 
 		if (ammo > 0)
 		{
-			ret.push({
+			tooltip.push({
 				id = 8,
 				type = "text",
 				icon = "ui/icons/ammo.png",
@@ -74,7 +74,7 @@ this.legend_line_them_up_skill <- this.inherit("scripts/skills/skill", {
 		}
 		else
 		{
-			ret.push({
+			tooltip.push({
 				id = 8,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
@@ -82,7 +82,7 @@ this.legend_line_them_up_skill <- this.inherit("scripts/skills/skill", {
 			});
 		}
 
-		return ret;
+		return tooltip;
 	}
 
 	function isUsable()
@@ -92,23 +92,16 @@ this.legend_line_them_up_skill <- this.inherit("scripts/skills/skill", {
 
 	function getAmmo()
 	{
-		local item = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		local item = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Ammo);
 
 		if (item == null)
 		{
 			return 0;
 		}
 
-		return item.getAmmo();
-	}
-
-	function consumeAmmo()
-	{
-		local item = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-
-		if (item != null)
+		if (item.getAmmoType() == this.Const.Items.AmmoType.Powder)
 		{
-			item.consumeAmmo();
+			return item.getAmmo();
 		}
 	}
 
@@ -177,7 +170,8 @@ this.legend_line_them_up_skill <- this.inherit("scripts/skills/skill", {
 		local ret = [
 			_targetTile
 		];
-		local ownTile = this.getContainer().getActor().getTile();
+		local actor = this.getContainer().getActor();
+		local ownTile = actor.getTile();
 		local dir = ownTile.getDirectionTo(_targetTile);
 		local forwardTile;
 
@@ -185,7 +179,7 @@ this.legend_line_them_up_skill <- this.inherit("scripts/skills/skill", {
 		{
 			forwardTile = _targetTile.getNextTile(dir);
 
-			if (forwardTile.IsOccupiedByActor && this.Math.abs(forwardTile.Level - ownTile.Level) <= 1)
+			if (this.Math.abs(forwardTile.Level - ownTile.Level) <= 1)
 			{
 				ret.push(forwardTile)
 			}
@@ -193,11 +187,11 @@ this.legend_line_them_up_skill <- this.inherit("scripts/skills/skill", {
 
 		if (forwardTile.hasNextTile(dir))
 		{
-			local forwardTile = _targetTile.getNextTile(dir);
+			local forwardTile = forwardTile.getNextTile(dir);
 
-			if (forwardTile.IsOccupiedByActor && forwardTile.getEntity().isAttackable() && this.Math.abs(forwardTile.Level - ownTile.Level) <= 1)
+			if (this.Math.abs(forwardTile.Level - ownTile.Level) <= 1)
 			{
-				ret = this.attackEntity(_user, forwardTile.getEntity()) || ret;
+				ret.push(forwardTile)
 			}
 		}
 
@@ -206,11 +200,11 @@ this.legend_line_them_up_skill <- this.inherit("scripts/skills/skill", {
 
 		if (forwardTile.hasNextTile(dir))
 		{
-			local forwardTile = _targetTile.getNextTile(dir);
+			local forwardTile = forwardTile.getNextTile(dir);
 
-			if (forwardTile.IsOccupiedByActor && forwardTile.getEntity().isAttackable() && this.Math.abs(forwardTile.Level - ownTile.Level) <= 1)
+			if (this.Math.abs(forwardTile.Level - ownTile.Level) <= 1)
 			{
-				ret = this.attackEntity(_user, forwardTile.getEntity()) || ret;
+				ret.push(forwardTile)
 			}
 		}
 

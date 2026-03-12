@@ -422,7 +422,6 @@
 		[15, ::Legends.Armor.Standard.leather_wraps],
 		[15, ::Legends.Armor.Standard.thick_tunic],
 		[15, ::Legends.Armor.Standard.monk_robe],
-		[15, ::Legends.Armor.Standard.bandit_armor_light],
 		[15, ::Legends.Armor.Standard.tattered_sackcloth],
 		[10, ::Legends.Armor.Standard.leather_tunic],
 		[10, ::Legends.Armor.Standard.blotched_gambeson],

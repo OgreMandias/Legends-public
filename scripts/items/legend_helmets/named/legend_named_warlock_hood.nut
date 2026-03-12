@@ -28,9 +28,9 @@ this.legend_named_warlock_hood <- this.inherit("scripts/items/legend_helmets/leg
 	function updateVariant()
 	{
 		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
-		this.m.Sprite = "warlock_hood_" + variant;
-		this.m.SpriteDamaged = "warlock_hood_" + variant + "_damaged";
-		this.m.SpriteCorpse = "warlock_hood_" + variant + "_dead";
+		this.m.Sprite = "legendhelms_warlock_hood_" + variant;
+		this.m.SpriteDamaged = "legendhelms_warlock_hood_" + variant + "_damaged";
+		this.m.SpriteCorpse = "legendhelms_warlock_hood_" + variant + "_dead";
 		this.m.Icon = "legend_helmets/inventory_warlock_hood_" + variant + ".png";
         this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = this.m.Icon;

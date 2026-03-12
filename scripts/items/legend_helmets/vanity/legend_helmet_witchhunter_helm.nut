@@ -27,9 +27,9 @@ this.legend_helmet_witchhunter_helm <- this.inherit("scripts/items/legend_helmet
 	function updateVariant()
 	{
 		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
-		this.m.Sprite = "witchhunter_helm_" + variant;
-		this.m.SpriteDamaged = "witchhunter_helm_" + variant + "_damaged";
-		this.m.SpriteCorpse = "witchhunter_helm_" + variant + "_dead";
+		this.m.Sprite = "legendhelms_witchhunter_helm_" + variant;
+		this.m.SpriteDamaged = "legendhelms_witchhunter_helm_" + variant + "_damaged";
+		this.m.SpriteCorpse = "legendhelms_witchhunter_helm_" + variant + "_dead";
 		this.m.Icon = "legend_helmets/inventory_witchhunter_helm_" + variant + ".png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = this.m.Icon;

@@ -29,9 +29,9 @@ this.legend_helmet_redback_helm <- this.inherit("scripts/items/legend_helmets/le
 	function updateVariant()
 	{
 		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
-		this.m.Sprite = "redback_helm_" + variant;
-		this.m.SpriteDamaged = "redback_helm_" + variant + "_damaged";
-		this.m.SpriteCorpse = "redback_helm_" + variant + "_dead";
+		this.m.Sprite = "legendhelms_redback_helm_" + variant;
+		this.m.SpriteDamaged = "legendhelms_redback_helm_" + variant + "_damaged";
+		this.m.SpriteCorpse = "legendhelms_redback_helm_" + variant + "_dead";
 		this.m.Icon = "legend_helmets/inventory_redback_helm_" + variant + ".png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = this.m.Icon;

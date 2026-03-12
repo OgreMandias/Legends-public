@@ -490,7 +490,6 @@ fencerhat and fencer_hat -> merged into fencer_hat
 
 Helmet added via manual script:
 warlock_skull (added to defs)
-removed extra legendhelms_ prefix from scripts (legend_helmets_ still prefixed)
 
 Old unlayered helmet scripts removed:
 legend_demonalp_helmet

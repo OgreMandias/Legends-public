@@ -30,9 +30,9 @@ this.legend_helmet_jester_hat <- this.inherit("scripts/items/legend_helmets/lege
 	function updateVariant()
 	{
 		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
-		this.m.Sprite = "jester_hat_" + variant;
-		this.m.SpriteDamaged = "jester_hat_" + variant + "_damaged";
-		this.m.SpriteCorpse = "jester_hat_" + variant + "_dead";
+		this.m.Sprite = "legendhelms_jester_hat_" + variant;
+		this.m.SpriteDamaged = "legendhelms_jester_hat_" + variant + "_damaged";
+		this.m.SpriteCorpse = "legendhelms_jester_hat_" + variant + "_dead";
 		this.m.Icon = "legend_helmets/inventory_jester_hat_" + variant + ".png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = this.m.Icon;

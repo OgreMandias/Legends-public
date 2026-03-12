@@ -31,9 +31,9 @@ this.legend_helmet_white_wolf_helm <- this.inherit("scripts/items/legend_helmets
 	function updateVariant()
 	{
 		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
-		this.m.Sprite = "white_wolf_helm_" + variant;
-		this.m.SpriteDamaged = "white_wolf_helm_" + variant + "_damaged";
-		this.m.SpriteCorpse = "white_wolf_helm_" + variant + "_dead";
+		this.m.Sprite = "legendhelms_white_wolf_helm_" + variant;
+		this.m.SpriteDamaged = "legendhelms_white_wolf_helm_" + variant + "_damaged";
+		this.m.SpriteCorpse = "legendhelms_white_wolf_helm_" + variant + "_dead";
 		this.m.Icon = "legend_helmets/inventory_white_wolf_helm_" + variant + ".png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = this.m.Icon;

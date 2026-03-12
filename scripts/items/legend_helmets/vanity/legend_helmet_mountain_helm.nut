@@ -28,9 +28,9 @@ this.legend_helmet_mountain_helm <- this.inherit("scripts/items/legend_helmets/l
 	function updateVariant()
 	{
 		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
-		this.m.Sprite = "mountain_helm_" + variant;
-		this.m.SpriteDamaged = "mountain_helm_" + variant + "_damaged";
-		this.m.SpriteCorpse = "mountain_helm_" + variant + "_dead";
+		this.m.Sprite = "legendhelms_mountain_helm_" + variant;
+		this.m.SpriteDamaged = "legendhelms_mountain_helm_" + variant + "_damaged";
+		this.m.SpriteCorpse = "legendhelms_mountain_helm_" + variant + "_dead";
 		this.m.Icon = "legend_helmets/inventory_mountain_helm_" + variant + ".png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = this.m.Icon;

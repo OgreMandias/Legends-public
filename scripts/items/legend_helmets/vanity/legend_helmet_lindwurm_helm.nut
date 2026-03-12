@@ -36,9 +36,9 @@ this.legend_helmet_lindwurm_helm <- this.inherit("scripts/items/legend_helmets/l
 	function updateVariant()
 	{
 		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
-		this.m.Sprite = "lindwurm_helm_" + variant;
-		this.m.SpriteDamaged = "lindwurm_helm_" + variant + "_damaged";
-		this.m.SpriteCorpse = "lindwurm_helm_" + variant + "_dead";
+		this.m.Sprite = "legendhelms_lindwurm_helm_" + variant;
+		this.m.SpriteDamaged = "legendhelms_lindwurm_helm_" + variant + "_damaged";
+		this.m.SpriteCorpse = "legendhelms_lindwurm_helm_" + variant + "_dead";
 		this.m.Icon = "legend_helmets/inventory_lindwurm_helm_" + variant + ".png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = this.m.Icon;

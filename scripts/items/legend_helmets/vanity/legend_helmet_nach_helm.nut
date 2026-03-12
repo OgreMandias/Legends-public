@@ -29,9 +29,9 @@ this.legend_helmet_nach_helm <- this.inherit("scripts/items/legend_helmets/legen
 	function updateVariant()
 	{
 		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
-		this.m.Sprite = "nach_helm_" + variant;
-		this.m.SpriteDamaged = "nach_helm_" + variant + "_damaged";
-		this.m.SpriteCorpse = "nach_helm_" + variant + "_dead";
+		this.m.Sprite = "legendhelms_nach_helm_" + variant;
+		this.m.SpriteDamaged = "legendhelms_nach_helm_" + variant + "_damaged";
+		this.m.SpriteCorpse = "legendhelms_nach_helm_" + variant + "_dead";
 		this.m.Icon = "legend_helmets/inventory_nach_helm_" + variant + ".png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = this.m.Icon;

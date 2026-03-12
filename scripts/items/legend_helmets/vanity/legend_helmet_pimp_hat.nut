@@ -26,9 +26,9 @@ this.legend_helmet_pimp_hat <- this.inherit("scripts/items/legend_helmets/legend
 	function updateVariant()
 	{
 		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
-		this.m.Sprite = "pimp_hat_" + variant;
-		this.m.SpriteDamaged = "pimp_hat_" + variant + "_damaged";
-		this.m.SpriteCorpse = "pimp_hat_" + variant + "_dead";
+		this.m.Sprite = "legendhelms_pimp_hat_" + variant;
+		this.m.SpriteDamaged = "legendhelms_pimp_hat_" + variant + "_damaged";
+		this.m.SpriteCorpse = "legendhelms_pimp_hat_" + variant + "_dead";
 		this.m.Icon = "legend_helmets/inventory_pimp_hat_" + variant + ".png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = this.m.Icon;

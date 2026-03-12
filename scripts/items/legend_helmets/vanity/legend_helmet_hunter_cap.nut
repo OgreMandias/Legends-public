@@ -27,9 +27,9 @@ this.legend_helmet_hunter_cap <- this.inherit("scripts/items/legend_helmets/lege
 	function updateVariant()
 	{
 		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
-		this.m.Sprite = "hunter_cap_" + variant;
-		this.m.SpriteDamaged = "hunter_cap_" + variant + "_damaged";
-		this.m.SpriteCorpse = "hunter_cap_" + variant + "_dead";
+		this.m.Sprite = "legendhelms_hunter_cap_" + variant;
+		this.m.SpriteDamaged = "legendhelms_hunter_cap_" + variant + "_damaged";
+		this.m.SpriteCorpse = "legendhelms_hunter_cap_" + variant + "_dead";
 		this.m.Icon = "legend_helmets/inventory_hunter_cap_" + variant + ".png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = this.m.Icon;

@@ -1,6 +1,12 @@
 ::Const.Tactical.Actor.SkeletonLight.ActionPoints = 8;
 
-::Const.Tactical.Actor.Zombie.ActionPoints = 5;
+::Const.Tactical.Actor.Zombie.ActionPoints = 8;
+
+::Const.Tactical.Actor.ZombieYeoman.ActionPoints = 8;
+
+::Const.Tactical.Actor.ZombieKnight.ActionPoints = 9;
+
+::Const.Tactical.Actor.ZombiePlayer.ActionPoints = 8;
 
 ::Const.Tactical.Actor.ZombieBetrayer.XP = 500;
 ::Const.Tactical.Actor.ZombieBetrayer.ActionPoints = 10;

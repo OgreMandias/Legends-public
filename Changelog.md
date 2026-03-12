@@ -66,6 +66,11 @@ Favoured Enemy - Sword Master
 - Bandit Warlord is renamed to Robber Baron
 - Webknechts lose 10 rdef and 10 mdef on Legendary, but retain Dodge
 - Bandit Rabble should start being phased out by Bandit Thugs much quicker
+- Zombies will now have increased action points but will move slower on all terrains (like a reverse pathfinder)
+> Wiederganger 6 to 8;
+> Armored Wiederganger 6 to 8;
+> Fallen Hero 7 to 9;
+> players turned Wiederganger 6 to 8;
 
 ## New Runes
 

@@ -21,7 +21,7 @@
 			this.m.Hitpoints = b.Hitpoints * 1.5;
 		}
 		this.m.CurrentProperties = clone b;
-		this.m.ActionPointCosts = this.Const.DefaultMovementAPCost;
+		this.m.ActionPointCosts = this.Const.ZombieMovementAPCost;
 		this.m.FatigueCosts = this.Const.DefaultMovementFatigueCost;
 		local app = this.getItems().getAppearance();
 		app.Body = "bust_naked_body_0" + this.Math.rand(0, 2);

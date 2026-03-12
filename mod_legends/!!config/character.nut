@@ -83,6 +83,18 @@
 	"projectile_dagger"
 ]);
 
+::Const.ZombieMovementAPCost <- [
+	0		// none
+	3		// paved ground
+	3		// flat ground
+	4		// rough ground
+	4		// forest
+	5		// rocks
+	5		// swamp
+	3		// sand
+	5		// shallow water
+];
+
 ::Const.HorseMovementAPCost <- [
 	0,
 	1,

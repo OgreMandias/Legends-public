@@ -16,7 +16,6 @@ this.legend_dervish_background <- this.inherit("scripts/skills/backgrounds/chara
 			::Legends.Traits.getID(::Legends.Trait.Ailing),
 			::Legends.Traits.getID(::Legends.Trait.Fragile),
 			::Legends.Traits.getID(::Legends.Trait.Gluttonous),
-			::Legends.Traits.getID(::Legends.Trait.LegendFrail),
 			::Legends.Traits.getID(::Legends.Trait.LegendLight),
 			::Legends.Traits.getID(::Legends.Trait.Dumb),
 			::Legends.Traits.getID(::Legends.Trait.LegendSeductive)

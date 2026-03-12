@@ -28,8 +28,7 @@ this.legend_talented_trait <- this.inherit("scripts/skills/traits/character_trai
 			::Legends.Traits.getID(::Legends.Trait.LegendSlack),
 			::Legends.Traits.getID(::Legends.Trait.Pessimist),
 			::Legends.Traits.getID(::Legends.Trait.Dumb),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearted),
-			::Legends.Traits.getID(::Legends.Trait.LegendFrail)
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted)
 		];
 	}
 

@@ -47,7 +47,6 @@
 	// ::Legends.Traits.getID(::Legends.Trait.LegendAmbitious),
 	::Legends.Traits.getID(::Legends.Trait.LegendFearNobles),
 	// ::Legends.Traits.getID(::Legends.Trait.LegendHateNobles),
-	// ::Legends.Traits.getID(::Legends.Trait.LegendFrail),
 	//::Legends.Traits.getID(::Legends.Trait.LegendCannibalistic),
 	// ::Legends.Traits.getID(::Legends.Trait.LegendSteadyHands),
 	// ::Legends.Traits.getID(::Legends.Trait.LegendPragmatic),

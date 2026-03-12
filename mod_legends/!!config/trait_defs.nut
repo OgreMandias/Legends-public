@@ -726,14 +726,6 @@ traitDefs.push({
 	Random = true
 });
 
-::Legends.Trait.LegendFrail <- null;
-traitDefs.push({
-	ID = "trait.legend_frail",
-	Script = "scripts/skills/traits/legend_frail_trait",
-	Const = "LegendFrail",
-	Random = true
-});
-
 ::Legends.Trait.LegendTalented <- null;
 traitDefs.push({
 	ID = "trait.legend_natural",
@@ -1252,4 +1244,3 @@ traitDefs.push({
 
 
 ::Legends.Traits.addTraitDefObjects(traitDefs);
-::Const.CharacterTraits = ::Const.CharacterTraits.filter(@(idx, trait) trait[0] != "trait.legend_frail");

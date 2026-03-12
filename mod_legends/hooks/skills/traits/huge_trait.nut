@@ -7,8 +7,7 @@
 		this.m.Description = "Being particularly huge and burly, this character\'s strikes hurt plenty, but they\'re also a bigger target than most.";
 		this.m.Excluded.extend(
 		[
-			::Legends.Traits.getID(::Legends.Trait.LegendLight),
-			::Legends.Traits.getID(::Legends.Trait.LegendFrail)
+			::Legends.Traits.getID(::Legends.Trait.LegendLight)
 		]);
 	}
 

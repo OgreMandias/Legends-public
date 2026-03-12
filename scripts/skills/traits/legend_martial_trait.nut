@@ -15,7 +15,6 @@ this.legend_martial_trait <- this.inherit("scripts/skills/traits/character_trait
 		this.m.Excluded = [
 			::Legends.Traits.getID(::Legends.Trait.Bleeder),
 			::Legends.Traits.getID(::Legends.Trait.Ailing),
-			::Legends.Traits.getID(::Legends.Trait.LegendFrail),
 			::Legends.Traits.getID(::Legends.Trait.Fragile)
 		];
 	}

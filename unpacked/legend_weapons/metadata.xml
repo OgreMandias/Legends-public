@@ -804,6 +804,15 @@
   <sprite id="shield_metal_round_03_named_03_damaged" offsetY="35" ic="FF363F3E" width="130" height="142" img="icons\shield_metal_round_03_named_03_damaged.png" left="3" right="59" top="-60" bottom="8" />
   <sprite id="shield_metal_round_03_named_03_destroyed" offsetX="30" offsetY="-3" f="6404" ic="FF363F3E" width="70" height="68" img="icons\shield_metal_round_03_named_03_destroyed.png" top="-33" bottom="27" />
   <sprite id="shield_metal_round_03_named_03" offsetY="35" ic="FF3A4340" width="130" height="142" img="icons\shield_metal_round_03_named_03.png" left="4" right="60" top="-61" bottom="9" />
+  <sprite id="shield_round_101" offsetY="35" ic="FF28344A" width="104" height="142" img="icons\shield_round_101.png" left="8" right="52" top="-53" bottom="3" />
+  <sprite id="shield_round_101_damaged" offsetY="35" ic="FF273246" width="104" height="142" img="icons\shield_round_101_damaged.png" left="6" right="52" top="-53" bottom="3" />
+  <sprite id="shield_round_101_destroyed" offsetX="-25" offsetY="-6" f="6404" ic="FF273143" img="icons\shield_round_101_destroyed.png" />
+  <sprite id="shield_round_102" offsetY="35" ic="FF28344A" width="104" height="142" img="icons\shield_round_102.png" left="8" right="52" top="-53" bottom="3" />
+  <sprite id="shield_round_102_damaged" offsetY="35" ic="FF273246" width="104" height="142" img="icons\shield_round_102_damaged.png" left="6" right="52" top="-53" bottom="3" />
+  <sprite id="shield_round_102_destroyed" offsetX="-25" offsetY="-6" f="6404" ic="FF273143" img="icons\shield_round_102_destroyed.png" />
+  <sprite id="shield_round_103" offsetY="35" ic="FF28344A" width="104" height="142" img="icons\shield_round_103.png" left="8" right="52" top="-53" bottom="3" />
+  <sprite id="shield_round_103_damaged" offsetY="35" ic="FF273246" width="104" height="142" img="icons\shield_round_103_damaged.png" left="6" right="52" top="-53" bottom="3" />
+  <sprite id="shield_round_103_destroyed" offsetX="-25" offsetY="-6" f="6404" ic="FF273143" img="icons\shield_round_103_destroyed.png" />
   <sprite id="shield_round_104" offsetY="35" ic="FF28344A" width="104" height="142" img="icons\shield_round_104.png" left="8" right="52" top="-53" bottom="3" />
   <sprite id="shield_round_104_damaged" offsetY="35" ic="FF273246" width="104" height="142" img="icons\shield_round_104_damaged.png" left="6" right="52" top="-53" bottom="3" />
   <sprite id="shield_round_104_destroyed" offsetX="-25" offsetY="-6" f="6404" ic="FF273143" img="icons\shield_round_104_destroyed.png" />

@@ -52,6 +52,7 @@ def generate_legend_armor(base_path):
     Brush = makeSheet(path, fileCount)
     L = Templates.Layer
     LBase = Templates.LBase
+    LFrontBack = Templates.LFrontBack
 
     IC = 4280560954
 
@@ -240,6 +241,8 @@ def generate_legend_armor(base_path):
         R = L
         if d["layer"] == "cloth":
             R = LBase
+        elif "front_back" in d:
+            R = LFrontBack
 
         brushName = d["name"]
         if "brush" in d:
@@ -276,6 +279,26 @@ def generate_legend_armor(base_path):
                     arrow_path=os.path.join("..", "..", "dead_arrows.png"),
                     javelin_path=os.path.join("..", "..", "dead_javelin.png"),
                 )
+                if "front_back" in d:
+                    fbo=d["front_back"]
+                    opts.update(
+                        front_name = f"{name}_front",
+                        front_damaged = f"{name}_front_damaged",
+                        front_dead = f"{name}_front_dead",
+                        back_name = f"{name}_back",
+                        back_damaged = f"{name}_back_damaged",
+                        back_dead = f"{name}_back_dead",
+                        front_name_path=os.path.join(f"../entity/legend_armor/front_back/{name}_front.png"),
+                        front_damaged_path=os.path.join(f"../entity/legend_armor/front_back/{name}_front_damaged.png"),
+                        front_dead_path=os.path.join(f"../entity/legend_armor/front_back/{name}_front_dead.png"),
+                        back_name_path=os.path.join(f"../entity/legend_armor/front_back/{name}_back.png"),
+                        back_damaged_path=os.path.join(f"../entity/legend_armor/front_back/{name}_back_damaged.png"),
+                        back_dead_path=os.path.join(f"../entity/legend_armor/front_back/{name}_back_dead.png"),
+                        fl=fbo["front"][0], fr=fbo["front"][1], ft=fbo["front"][2], fb=fbo["front"][3],
+                        fld=fbo["front_dead"][0], frd=fbo["front_dead"][1], ftd=fbo["front_dead"][2], fbd=fbo["front_dead"][3],
+                        bl=fbo["back"][0], br=fbo["back"][1], bt=fbo["back"][2], bb=fbo["back"][3],
+                        bld=fbo["back_dead"][0], brd=fbo["back_dead"][1], btd=fbo["back_dead"][2], bbd=fbo["back_dead"][3]
+                    )
                 s = Template(t)
                 text = s.substitute(opts)
                 # Only replace forward slashes in img paths, not in "/>" endings

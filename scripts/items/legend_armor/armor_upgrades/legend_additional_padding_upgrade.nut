@@ -8,24 +8,31 @@ this.legend_additional_padding_upgrade <- this.inherit("scripts/items/legend_arm
 		this.m.Name = "Additional Fur Padding";
 		this.m.Description = "An additional set of padding crafted from thick furs. Worn atop armor to make the wearer more resilient against piercing attacks.";
 		this.m.ArmorDescription = "Includes an additional set of fur padding.";
+		this.m.Variants = [1];
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
+		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.InventorySound = this.Const.Sound.ClothEquip;
-		this.m.Icon = "armor_upgrades/upgrade_03.png";
-		this.m.OverlayIconLarge = "armor_upgrades/inventory_upgrade_03.png";
-		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_03.png";
-		this.m.OverlayIconLarge = "armor_upgrades/inventory_upgrade_03.png";
-		this.m.SpriteFront = "upgrade_03_front";
-		this.m.SpriteBack = "upgrade_03_back";
-		this.m.SpriteDamagedFront = "upgrade_03_front_damaged";
-		this.m.SpriteDamagedBack = "upgrade_03_back";
-		this.m.SpriteCorpseFront = "upgrade_03_front_dead";
-		this.m.SpriteCorpseBack = "upgrade_03_back_dead";
-
 		this.m.Value = 1200;
 		this.m.Condition = 5;
 		this.m.ConditionMax = 5;
 		this.m.StaminaModifier = -1;
 		this.m.DirectDamageModifier = -15.0;
+	}
+
+	function updateVariant()
+	{
+		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
+		this.m.SpriteBack = "pauldrons_padding_fur_" + variant + "_back";
+		this.m.SpriteDamagedBack = "pauldrons_padding_fur_" + variant + "_back_damaged";
+		this.m.SpriteCorpseBack = "pauldrons_padding_fur_" + variant + "_back_dead";
+		this.m.SpriteFront = "pauldrons_padding_fur_" + variant + "_front";
+		this.m.SpriteDamagedFront = "pauldrons_padding_fur_" + variant + "_front_damaged";
+		this.m.SpriteCorpseFront = "pauldrons_padding_fur_" + variant + "_front_dead";
+		this.m.Icon = "legend_armor/upgrades/pauldrons_padding_fur_" + variant + "_upgrade.png";
+		this.m.IconLarge = this.m.Icon;
+		this.m.OverlayIcon = "legend_armor/icon_pauldrons_padding_fur_" + variant + ".png";
+		this.m.OverlayIconLarge = "legend_armor/inventory_pauldrons_padding_fur_"  + variant + ".png";
 	}
 
 	function getTooltip()

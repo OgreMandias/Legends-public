@@ -242,6 +242,7 @@ The display ordering is as follows:
 VanityLower -> VanityLower2 -> Head -> Helmet -> HelmLower -> TopLower -> Helm -> Top -> Vanity -> Vanity2
 Chain, Plate, Tabard and Cloak layers are now displayed on bodies.
 Base, Chain, Helm, Vanity layers are now displayed on bodies.
+Added template definition for armor's brush_only_layers to define armors with custom size via front/back sprites.
 
 Armor refactors in legend_armor defs.py: 
 https://github.com/Battle-Brothers-Legends/Legends-public/commit/7e2a567abdfc71395283994a488e3150d47b53a0

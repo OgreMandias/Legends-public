@@ -367,12 +367,6 @@
 	<sprite id="bust_body_512_dead_arrows" offsetX="6" offsetY="10" f="64FB" ic="FF495054" width="131" height="114" img="entity\bodies\_bust_body_dead_arrows.png" left="-13" right="25" top="-16" bottom="44" />
 	<sprite id="bust_body_512_dead_javelin" offsetX="6" offsetY="10" f="64FB" ic="FF12182B" width="131" height="134" img="entity\bodies\_bust_body_dead_javelin.png" left="-26" right="6" top="-27" bottom="67" />
 
-	<sprite id="upgrade_white_wolf_back" offsetY="35" ic="FF1A1C21" width="140" height="248" img="entity\armor_upgrades\upgrade_white_wolf_back.png" left="-61" right="55" top="-49" bottom="43" />
-	<sprite id="upgrade_white_wolf_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF1A1D21" width="191" height="185" img="entity\armor_upgrades\upgrade_white_wolf_back_dead.png" left="-56" right="50" top="-71" bottom="23" />
-	<sprite id="upgrade_white_wolf_front" offsetY="35" ic="FF2A313D" width="140" height="248" img="entity\armor_upgrades\upgrade_white_wolf_front.png" left="-70" right="0" top="-56" bottom="18" />
-	<sprite id="upgrade_white_wolf_front_damaged" offsetY="35" ic="FF2A313D" width="140" height="248" img="entity\armor_upgrades\upgrade_white_wolf_front_damaged.png" left="-70" right="0" top="-56" bottom="18" />
-	<sprite id="upgrade_white_wolf_front_dead" offsetX="6" offsetY="10" f="64EF" ic="FF2A313E" width="191" height="185" img="entity\armor_upgrades\upgrade_white_wolf_front_dead.png" left="-14" right="60" top="-76" bottom="2" />
-
 	<sprite id="bust_cat_01_body_01" offsetY="25" ic="FF242B3A" width="104" height="142" img="entity\misc\bust_cat_01_body_01.png" left="-31" right="29" top="-38" bottom="12" />
 	<sprite id="bust_cat_01_injured" offsetY="25" ic="FF111134" width="104" height="142" img="entity\misc\bust_cat_01_injured.png" left="-22" right="30" top="-31" bottom="27" />
 	<sprite id="bust_cat_01_body_01_dead" offsetY="8" ic="FF22293E" img="entity\misc\bust_cat_01_body_01_dead.png" left="-58" right="59" />

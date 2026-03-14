@@ -4,290 +4,170 @@ from PIL import Image
 from buildscript.python.crop import CropTool
 import re, os, argparse
 from pathlib import Path
+import itertools
 
 
 def checkForIcon(path, iconpath, variants):
-    dirpath = os.path.join(path, "gfx", "ui", "items", "legend_helmets")
-    parts = iconpath.split("/")
+    dirpath = path / "gfx/ui/items/legend_helmets" / iconpath
 
-    for p in parts:
-        dirpath = os.path.join(dirpath, p)
-
-    if len(variants) == 0:
-        if not os.path.exists(dirpath + ".png"):
-            print("Missing " + dirpath)
+    if len(variants) == 0: # unused by now?
+        if not dirpath.with_suffix(".png").exists():
+            print(f"Missing {dirpath}")
             return True
         return False
 
     has_missing = False
     for v in variants:
-        variant = str(v)
-        if v < 10:
-            variant = "0" + variant
-        if not os.path.exists(dirpath + "_" + variant + ".png"):
-            print("Missing " + dirpath + "_" + variant)
+        variant_path = dirpath.with_name(f"{dirpath.name}_{v:02d}.png")
+        if not variant_path.exists():
+            print(f"Missing {variant_path}")
             has_missing = True
 
     return has_missing
 
 
-def makeSheet(path, num):
-    dirpath = os.path.join(path, "unpacked", "legend_helmets", "" + str(num))
-    if not os.path.exists(dirpath):
-        os.makedirs(dirpath)
+def makeSheet(helmetsPath, num):
+    dirpath = helmetsPath / str(num)
+    dirpath.mkdir(parents=True, exist_ok=True)
 
-    filepath = os.path.join(dirpath, "metadata.xml")
-    F = open(filepath, "w")
-    F.write('<brush name="gfx/legend_helmets_' + str(num) + '.png" version="17">\n')
+    metadataPath = dirpath / "metadata.xml"
+    F = open(metadataPath, "w")
+    F.write(f'<brush name="gfx/legend_helmets_{num}.png" version="17">\n')
     return F
 
 
 def makeBrushes(path):
-    cleanupDirs(os.path.join(path, "unpacked", "legend_helmets"))
-    helmetDir = os.path.join(path, "unpacked", "legend_helmets", "entity")
+    helmetsPath = Path(path) / "unpacked/legend_helmets"
+    cleanupDirs(helmetsPath)
+    helmetDir = helmetsPath / "entity"
     fileCount = 0
     imageCount = 0
-    F = makeSheet(path, fileCount)
+    F = makeSheet(helmetsPath, fileCount)
 
-    L = Templates.BLayer
-    for d in Defs.layers:
+    templates = [Template(t) for t in Templates.BLayer]
+    cardinals = Templates.Cardinals
+
+    for d in itertools.chain(Defs.layers, Defs.brush_only_layers):
         # ratio = 0
         # if d["stam"] < -1 and d["layer"] == "helm":
         #     ratio = (d["con"] * 1.0) / (-1.0 * d["stam"])
         #     print("{} {} : {}".format(d["name"], d["con"], ratio))
-        R = L
-        names = [d["name"]]
         if "min" in d:
-            names = []
-            for i in range(d["min"], d["max"] + 1):
-                ind = "0" + str(i) if i < 10 else str(i)
-                names.append(d["name"] + "_" + ind)
+            names = [f"{d['name']}_{i:02d}" for i in range(d["min"], d["max"] + 1)]
+        else: # unused by now?
+            names = [d["name"]]
 
-        for t in R:
-            for name in names:
-                name_path, damaged_path, dead_path, _dir = Templates.get_sprites(name)
-                c_name_path, c_damaged_path, c_dead_path, c_dir = Templates.get_cropped_sprites(
-                    name
-                )
+        for name in names:
+            name_path, damaged_path, dead_path, _dir = Templates.get_sprites(name)
+            c_name_path, c_damaged_path, c_dead_path, c_dir = Templates.get_cropped_sprites(name)
 
-                CropTool.crop(
-                    os.path.abspath(os.path.join(helmetDir, name_path)),
-                    os.path.abspath(os.path.join(helmetDir, c_name_path)),
-                )
-                CropTool.crop(
-                    os.path.abspath(os.path.join(helmetDir, damaged_path)),
-                    os.path.abspath(os.path.join(helmetDir, c_damaged_path)),
-                )
-                CropTool.crop(
-                    os.path.abspath(os.path.join(helmetDir, dead_path)),
-                    os.path.abspath(os.path.join(helmetDir, c_dead_path)),
-                )
-                cardinals = Templates.Cardinals
+            def fixPathsAndGetCardinals(rel_path, crop_rel_path, cardinal_index):            
+                CropTool.crop(helmetDir / rel_path, helmetDir / crop_rel_path)
+                return crop_rel_path.replace("/", "\\"), Templates.calculate_cardinals(cardinals[cardinal_index], CropTool.getBounds(helmetDir / rel_path))
 
-                opts = dict(
-                    name="legendhelms_" + name,
-                    damaged="legendhelms_" + name + "_damaged",
-                    dead="legendhelms_" + name + "_dead",
-                    name_path=c_name_path,
-                    damaged_path=c_damaged_path,
-                    dead_path=c_dead_path,
-                    name_cardinals=Templates.calculate_cardinals(
-                        cardinals[0],
-                        CropTool.getBounds(os.path.abspath(os.path.join(helmetDir, name_path))),
-                    ),
-                    damaged_cardinals=Templates.calculate_cardinals(
-                        cardinals[1],
-                        CropTool.getBounds(os.path.abspath(os.path.join(helmetDir, damaged_path))),
-                    ),
-                    dead_cardinals=Templates.calculate_cardinals(
-                        cardinals[2],
-                        CropTool.getBounds(os.path.abspath(os.path.join(helmetDir, dead_path))),
-                    ),
-                )
-                #                 print(calculateCropArea(os.path.abspath(os.path.join(helmetDir, name + ".png"))))
+            fin_name_path, name_cardinals = fixPathsAndGetCardinals(name_path, c_name_path, 0)
+            fin_damaged_path, damaged_cardinals   = fixPathsAndGetCardinals(damaged_path, c_damaged_path, 1)
+            fin_dead_path, dead_cardinals = fixPathsAndGetCardinals(dead_path, c_dead_path, 2)
 
-                s = Template(t)
+            opts = {
+                "name": f"legendhelms_{name}",
+                "damaged": f"legendhelms_{name}_damaged",
+                "dead": f"legendhelms_{name}_dead",
+                "name_path": fin_name_path,
+                "damaged_path": fin_damaged_path,
+                "dead_path": fin_dead_path,
+                "name_cardinals": name_cardinals,
+                "damaged_cardinals": damaged_cardinals,
+                "dead_cardinals": dead_cardinals,
+            }
+            #print(calculateCropArea(os.path.abspath(os.path.join(helmetDir, name + ".png"))))
+
+            for s in templates:
                 text = s.substitute(opts)
-                # Only replace forward slashes in img paths, not in "/>" endings
-                text = re.sub(
-                    r'img="([^"]*)"', lambda m: f'img="{m.group(1).replace("/", chr(92))}"', text
-                )
                 F.write(text)
-                imageCount += 1
-                if imageCount > 1600:
+
+                imageCount += 1  
+                if imageCount > 1600:           
                     F.write("</brush>\n")
                     F.close()
                     imageCount = 0
                     fileCount += 1
-                    F = makeSheet(path, fileCount)
-
-    for d in Defs.brush_only_layers:
-        R = L
-        names = [d["name"]]
-        if "min" in d:
-            names = []
-            for i in range(d["min"], d["max"] + 1):
-                ind = "0" + str(i) if i < 10 else str(i)
-                names.append(d["name"] + "_" + ind)
-
-        for t in R:
-            for name in names:
-                name_path, damaged_path, dead_path, _dir = Templates.get_sprites(name)
-                c_name_path, c_damaged_path, c_dead_path, c_dir = Templates.get_cropped_sprites(
-                    name
-                )
-
-                CropTool.crop(
-                    os.path.abspath(os.path.join(helmetDir, name_path)),
-                    os.path.abspath(os.path.join(helmetDir, c_name_path)),
-                )
-                CropTool.crop(
-                    os.path.abspath(os.path.join(helmetDir, damaged_path)),
-                    os.path.abspath(os.path.join(helmetDir, c_damaged_path)),
-                )
-                CropTool.crop(
-                    os.path.abspath(os.path.join(helmetDir, dead_path)),
-                    os.path.abspath(os.path.join(helmetDir, c_dead_path)),
-                )
-                cardinals = Templates.Cardinals
-
-                opts = dict(
-                    name="legendhelms_" + name,
-                    name_path=c_name_path,
-                    damaged_path=c_damaged_path,
-                    dead_path=c_dead_path,
-                    name_cardinals=Templates.calculate_cardinals(
-                        cardinals[0],
-                        CropTool.getBounds(os.path.abspath(os.path.join(helmetDir, name_path))),
-                    ),
-                    damaged_cardinals=Templates.calculate_cardinals(
-                        cardinals[1],
-                        CropTool.getBounds(os.path.abspath(os.path.join(helmetDir, damaged_path))),
-                    ),
-                    dead_cardinals=Templates.calculate_cardinals(
-                        cardinals[2],
-                        CropTool.getBounds(os.path.abspath(os.path.join(helmetDir, dead_path))),
-                    ),
-                )
-                s = Template(t)
-                text = s.substitute(opts)
-                # Only replace forward slashes in img paths, not in "/>" endings
-                text = re.sub(
-                    r'img="([^"]*)"', lambda m: f'img="{m.group(1).replace("/", chr(92))}"', text
-                )
-                F.write(text)
-                imageCount += 1
-                if imageCount > 1600:
-                    F.write("</brush>\n")
-                    F.close()
-                    imageCount = 0
-                    fileCount += 1
-                    F = makeSheet(path, fileCount)
+                    F = makeSheet(helmetsPath, fileCount)
 
     F.write("</brush>\n")
     F.close()
 
 
 def generate_legend_helmets(base_path):
-    path = str(base_path)  # Convert Path to string for compatibility
-
     has_missing = False
     for d in Defs.layers:
 
         layer = d["layer"]
-
-        lower = "false"
-
-        temp = Templates.Layer
-        if layer == "hood":
-            temp = Templates.BaseLayer
-            if "named" in d:
-                temp = Templates.BaseNamedLayer
-        elif "named" in d:
-            temp = Templates.NamedLayer
-
-        if "lower" in d:
-            lower = "true"
-
-        fname = "legend_helmet_" + d["name"]
+        fname = f"legend_helmet_{d['name']}"
 
         # print('"' + layer + '/' + fname + '",')
         # continue
 
-        dirpath = os.path.join(path, "helmet_scripts", layer)
-        if not os.path.exists(dirpath):
-            os.makedirs(dirpath)
+        if layer == "hood":
+            temp = Templates.BaseNamedLayer if "named" in d else Templates.BaseLayer
+        else:
+            temp = Templates.NamedLayer if "named" in d else Templates.Layer
 
-        filepath = os.path.join(dirpath, fname + ".nut")
-        F = open(filepath, "w")
-        variants = []
-        for x in range(d["max"]):
-            variants.append(x + 1)
+        sounds = {
+            "cloth": "::Const.Sound.ClothEquip",
+            "leather": "::Const.Sound.ArmorLeatherImpact",
+            "chain": "::Const.Sound.ArmorChainmailImpact",
+            "plate": "::Const.Sound.ArmorHalfplateImpact",
+            "bone":  "::Const.Sound.ArmorBoneImpact",
+        }
+        default_sound = "::Const.Sound.ArmorLeatherImpact"
+        invsound = sounds.get(d.get("invSound"), default_sound)
+        impactsound = sounds.get(d.get("impactSound"), default_sound)
 
-        impactsound = "::Const.Sound.ArmorLeatherImpact"
-        invsound = "::Const.Sound.ArmorLeatherImpact"
-        if d["invSound"] == "cloth":
-            invsound = "::Const.Sound.ClothEquip"
-        elif d["invSound"] == "chain":
-            invsound = "::Const.Sound.ArmorChainmailImpact"
-        elif d["invSound"] == "plate":
-            invsound = "::Const.Sound.ArmorHalfplateImpact"
-        elif d["invSound"] == "bone":
-            invsound = "::Const.Sound.ArmorBoneImpact"
+        variants = list(range(1, d["max"] + 1))
+        has_missing = has_missing or checkForIcon(base_path, f"inventory_{d['name']}", variants)
 
-        if d["impactSound"] == "chain":
-            impactsound = "::Const.Sound.ArmorChainmailImpact"
-        elif d["impactSound"] == "plate":
-            impactsound = "::Const.Sound.ArmorHalfplateImpact"
-        elif d["impactSound"] == "bone":
-            impactsound = "::Const.Sound.ArmorBoneImpact"
+        opts = {
+            "test": "true",
+            "name": fname,
+            "title": d["title"],
+            "desc": d["desc"],
+            "adesc": d["adesc"],
+            "condition": d["con"],
+            "value": d["value"],
+            "stamina": d["stam"],
+            "vision": d["vis"],
+            "id": f"armor.head.{fname}",
+            "variants": variants,
+            "layer": layer,
+            "type": layer.capitalize(),
+            "brush": f"legendhelms_{d['name']}",
+            "icon": f"inventory_{d['name']}",
+            "impactSound": impactsound,
+            "invSound": invsound,
+            "lower": "true" if "lower" in d else "false",
+            "hair": d["hair"],
+            "beard": d["beard"],
+            "itemType": f"this.m.ItemType | {d['itemType']}" if "itemType" in d else "this.m.ItemType",
+        }
+        if "named" in d:
+            opts.update({
+                "names":    d.get("names", []),
+                "rminViz":  d.get("rminViz", 0),
+                "rmaxViz":  d.get("rmaxViz", 0),
+                "rminStam": d.get("rminStam", 0),
+                "rmaxStam": d.get("rmaxStam", 0),
+                "rminCond": d.get("rminCond", 0),
+                "rmaxCond": d.get("rmaxCond", 0),
+            })
 
-        title = d["title"]
-        desc = d["desc"]
-        adesc = d["adesc"]
+        dirpath = base_path / "helmet_scripts" / layer
+        dirpath.mkdir(parents=True, exist_ok=True)
+        filepath = dirpath / f"{fname}.nut"
+        text = Template(temp).substitute(opts)
+        filepath.write_text(text.strip())
 
-        has_missing = has_missing or checkForIcon(path, "inventory_" + d["name"], variants)
-
-        itemType = "this.m.ItemType"
-        if "itemType" in d:
-            itemType += " | " + d["itemType"]
-
-        opts = dict(
-            test="true",
-            name=fname,
-            title=title,
-            desc=desc,
-            adesc=adesc,
-            condition=d["con"],
-            value=d["value"],
-            stamina=d["stam"],
-            vision=d["vis"],
-            id="armor.head." + fname,
-            variants=variants,
-            layer=layer,
-            type=d["layer"].capitalize(),
-            brush="legendhelms_" + d["name"],
-            icon="inventory_" + d["name"],
-            impactSound=impactsound,
-            invSound=invsound,
-            lower=lower,
-            hair=d["hair"],
-            beard=d["beard"],
-            names=d["names"] if "names" in d else [],
-            rminViz=d["rminViz"] if "rminViz" in d else 0,
-            rmaxViz=d["rmaxViz"] if "rmaxViz" in d else 0,
-            rminStam=d["rminStam"] if "rminStam" in d else 0,
-            rmaxStam=d["rmaxStam"] if "rmaxStam" in d else 0,
-            rminCond=d["rminCond"] if "rminCond" in d else 0,
-            rmaxCond=d["rmaxCond"] if "rmaxCond" in d else 0,
-            itemType=itemType,
-        )
-        s = Template(temp)
-        text = s.substitute(opts)
-        F.write(text.strip())
-        F.close()
-
-    makeBrushes(path)
+    makeBrushes(base_path)
 
     if has_missing:
         raise ValueError("Missing gfx icons")

@@ -33,12 +33,11 @@ this.legend_military_crypt_cleaver <- this.inherit("scripts/items/weapons/weapon
 	{
 		this.weapon.onEquip();
 		::Legends.Actives.grant(this, ::Legends.Active.Cleave, function (_skill) {
-			_skill.m.FatigueCost = 20;
+			_skill.m.FatigueCost = 15;
 		}.bindenv(this));
 		::Legends.Actives.grant(this, ::Legends.Active.Decapitate);
-		// ::Legends.Actives.grant(this, ::Legends.Active.Swing);
 		::Legends.Actives.grant(this, ::Legends.Active.SplitShield, function (_skill) {
-			_skill.m.FatigueCost = 10;
+			_skill.m.FatigueCost = 5;
 		}.bindenv(this));
 	}
 });

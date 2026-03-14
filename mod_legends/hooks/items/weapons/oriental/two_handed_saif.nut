@@ -4,7 +4,7 @@
 	o.create = function() {
 		create();
 		this.m.Value = 2400;
-		this.m.Categories = "Sword/Cleaver, Two-Handed";
+		this.m.Categories = "Cleaver, Two-Handed";
 		this.setVariant(this.Math.rand(0, 2));
 	}
 
@@ -18,5 +18,13 @@
 			this.m.IconLarge = "weapons/melee/two_handed_saif_01_" + this.getVariant() + ".png";
 			this.m.ArmamentIcon = "icon_two_handed_saif_01_" + this.getVariant();
 		}
+	}
+
+	o.onEquip = function ()
+	{
+		this.weapon.onEquip();
+		::Legends.Actives.grant(this, ::Legends.Active.LegendHew);
+		::Legends.Actives.grant(this, ::Legends.Active.LegendHarvest);
+		::Legends.Actives.grant(this, ::Legends.Active.Decapitate);
 	}
 });

@@ -47,6 +47,7 @@ this.legend_named_rusty_warcleaver <- this.inherit("scripts/items/weapons/named/
 			_skill.m.Overlay = "active_182";
 			_skill.m.FatigueCost = 15;
 		}.bindenv(this));
+		::Legends.Actives.grant(this, ::Legends.Active.LegendHarvest);
 		::Legends.Actives.grant(this, ::Legends.Active.Decapitate);
 		::Legends.Actives.grant(this, ::Legends.Active.SplitShield, function (_skill) {
 			_skill.setFatigueCost(_skill.getFatigueCostRaw() + 5);

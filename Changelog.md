@@ -117,8 +117,11 @@ Favoured Enemy - Sword Master
 - `Rusty Warcleaver` - named cleaver with very high shield damage, will appear on Runechosen
 - `Horn Decorated Mace` - named mace, will appear on Runechosen
 - `Named Longsword` - named version of the longsword
+- `Blooddrinker` - Legendary Cleaver which will drop from the Mastaba
 
 #### New Weapon Abilities
+
+* Named Cleaver and sword riposte effects will no longer roll on named items
 
 **Throwing**
 - `Throw Backup Spear` - each one handed spear has 1 stack of a throwable ability
@@ -182,6 +185,12 @@ Favoured Enemy - Sword Master
 * `Reload`
 * `Line Them Up`
 > 3 (4 with mastery) tile shot in a straight line, does 25% more damage
+
+**Sword Cleavers**
+* Two Handed Saif, Scimitars and Khopesh are now all purely cleaver weapons
+* `Hew` - overhead strike with 10 less bonus damage but 10-20 bleeding damage
+* `Harvest` - two tile swing which applies 5-10 bleeding damage
+* `Decapitate` - unchanged
 
 ### New recipes
 

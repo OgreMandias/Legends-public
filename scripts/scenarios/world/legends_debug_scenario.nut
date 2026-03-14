@@ -400,6 +400,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"javelin",
 			"knife",
 			"legendary/legend_mage_swordstaff",
+			"legendary/legend_blooddrinker",
 			"legendary/lightbringer_sword",
 			"legendary/obsidian_dagger",
 			"greatsword",

@@ -350,6 +350,14 @@ activesDefs.push({
 	Name = "Overhead Strike",
 });
 
+::Legends.Active.LegendHew <- null;
+activesDefs.push({
+	ID = "actives.legend_hew",
+	Script = "scripts/skills/actives/legend_hew_skill",
+	Const = "LegendHew",
+	Name = "Hew",
+});
+
 ::Legends.Active.Smite <- null;
 activesDefs.push({
 	ID = "actives.smite",
@@ -684,6 +692,14 @@ activesDefs.push({
 	Script = "scripts/skills/actives/swing",
 	Const = "Swing",
 	Name = "Swing",
+});
+
+::Legends.Active.LegendHarvest <- null;
+activesDefs.push({
+	ID = "actives.legend_harvest",
+	Script = "scripts/skills/actives/legend_harvest_skill",
+	Const = "LegendHarvest",
+	Name = "Harvest",
 });
 
 ::Legends.Active.Shatter <- null;

@@ -5,6 +5,14 @@
 	{
 		create();
 		this.m.Variants = [1,2];
-		this.m.Categories = "Cleaver/Sword, Two-Handed";
+		this.m.Categories = "Cleaver, Two-Handed";
+	}
+
+	o.onEquip = function ()
+	{
+		this.named_weapon.onEquip();
+		::Legends.Actives.grant(this, ::Legends.Active.LegendHew);
+		::Legends.Actives.grant(this, ::Legends.Active.LegendHarvest);
+		::Legends.Actives.grant(this, ::Legends.Active.Decapitate);
 	}
 });

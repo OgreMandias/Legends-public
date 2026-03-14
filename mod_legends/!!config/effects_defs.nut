@@ -1502,12 +1502,68 @@ effectsDefs.push({
 	Const = "LegendNamedFencingSword"
 });
 
+::Legends.Effect.LegendNamedFlail <- null;
+effectsDefs.push({
+	ID = "effects.legend_named_flail",
+	Script = "scripts/skills/effects/legend_named_flail_effect",
+	Name = "Named Flail",
+	Const = "LegendNamedFlail"
+});
+
+::Legends.Effect.LegendNamedHammerStun <- null;
+effectsDefs.push({
+	ID = "effects.legend_named_hammer_stun",
+	Script = "scripts/skills/effects/legend_named_hammer_stun_effect",
+	Name = "Named Hammer Stun",
+	Const = "LegendNamedHammerStun"
+});
+
+::Legends.Effect.LegendNamedMaceStagger <- null;
+effectsDefs.push({
+	ID = "effects.legend_named_mace_stagger",
+	Script = "scripts/skills/effects/legend_named_mace_stagger_effect",
+	Name = "Named Mace Stagger",
+	Const = "LegendNamedMaceStagger"
+});
+
+::Legends.Effect.LegendNamedShamshir <- null;
+effectsDefs.push({
+	ID = "effects.legend_named_shamshir",
+	Script = "scripts/skills/effects/legend_named_shamshir_effect",
+	Name = "Named Shamshir",
+	Const = "LegendNamedShamshir"
+});
+
+::Legends.Effect.LegendNamedWhipBleed <- null;
+effectsDefs.push({
+	ID = "effects.legend_whip_bleed_effect",
+	Script = "scripts/skills/effects/legend_named_whip_bleed_effect",
+	Name = "Named Whip Bleed",
+	Const = "LegendNamedWhipBleed"
+});
+
+::Legends.Effect.LegendWhipFeint <- null;
+effectsDefs.push({
+	ID = "effects.legend_whip_feint_effect",
+	Script = "scripts/skills/effects/legend_named_whip_feint_effect",
+	Name = "Named Whip Feint",
+	Const = "LegendWhipFeint"
+});
+
 ::Legends.Effect.LegendParryingDagger <- null;
 effectsDefs.push({
 	ID = "effects.legend_parrying_dagger",
 	Script = "scripts/skills/effects/legend_parrying_dagger_effect",
 	Name = "Parrying Dagger Defense",
 	Const = "LegendParryingDagger"
+});
+
+::Legends.Effect.LegendBlooddrinker <- null;
+effectsDefs.push({
+	ID = "effects.legend_blooddrinker",
+	Script = "scripts/skills/effects/legend_blooddrinker_effect",
+	Name = "Named Shamshir",
+	Const = "LegendNamedShamshir"
 });
 
 ::Legends.Effect.LegendParrying <- null;

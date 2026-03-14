@@ -40,11 +40,9 @@ this.legend_named_great_khopesh <- this.inherit("scripts/items/weapons/named/nam
 	function onEquip()
 	{
 		this.named_weapon.onEquip();
-		::Legends.Actives.grant(this, ::Legends.Active.Cleave, function (_skill) {
-			_skill.m.FatigueCost = 15;
-		}.bindenv(this));
+		::Legends.Actives.grant(this, ::Legends.Active.LegendHew);
+		::Legends.Actives.grant(this, ::Legends.Active.LegendHarvest);
 		::Legends.Actives.grant(this, ::Legends.Active.Decapitate);
-		::Legends.Actives.grant(this, ::Legends.Active.Swing);
 	}
 
 });
